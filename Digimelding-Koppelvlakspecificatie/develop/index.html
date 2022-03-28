@@ -432,11 +432,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </tr>
 </tbody></table></section>
 
-  <section data-format="markdown" id="inleiding"><h2 id="x2-inleiding"><bdi class="secno">2. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 2."></a></h2><section id="achtergrond"><h3 id="x2-1-achtergrond"><bdi class="secno">2.1 </bdi>Achtergrond<a class="self-link" href="#achtergrond" aria-label="Permalink for Section 2.1"></a></h3><p>Voor terugmeldvoorzieningen in het algemeen is de DMKS
-(Digimelding-koppelvlakspecificatie) opgesteld, waarin wordt
+  <section data-format="markdown" id="inleiding"><h2 id="x2-inleiding"><bdi class="secno">2. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 2."></a></h2><section id="achtergrond"><h3 id="x2-1-achtergrond"><bdi class="secno">2.1 </bdi>Achtergrond<a class="self-link" href="#achtergrond" aria-label="Permalink for Section 2.1"></a></h3><p>Voor terugmeldvoorzieningen in het algemeen is de Digimelding
+Koppelvlakspecificatie (DMKS) opgesteld, waarin wordt
 gespecificeerd hoe terugmeldingen verzonden dienen te worden. De
 webservices waarmee gemeentelijke pakketleveranciers geautomatiseerde
-terugmeldingen kunnen doen zijn ook gebaseerd op DMKS.</p><p>De volgende partijen hebben meegewerkt aan de totstandkoming van dit
+terugmeldingen kunnen doen zijn ook gebaseerd op Digimelding.</p><p>De volgende partijen hebben meegewerkt aan de totstandkoming van dit
 document: Gemeente Amsterdam, Centric, Gemeente Den Haag, Gemeente
 Rotterdam, ICTU, Kamer van Koophandel, KING, Logius, PinkRoccade, Vicrea
 en de Waarderingskamer.</p></section><section id="bronverwijzing-en-referentiedocumenten"><h3 id="x2-2-bronverwijzing-en-referentiedocumenten"><bdi class="secno">2.2 </bdi>Bronverwijzing en referentiedocumenten<a class="self-link" href="#bronverwijzing-en-referentiedocumenten" aria-label="Permalink for Section 2.2"></a></h3><p>  Referentiedocument                 Bronverwijzing</p><hr><p>  GEMMA Informatiearchitectuur 1.0   <a href="http://www.noraonline.nl/images/noraonline/a/a3/GEMMA_Informatiearchitectuur_v10_KING.pdf">http://www.noraonline.nl/images/noraonline/a/a3/GEMMA_Informatiearchitectuur_v10_KING.pdf</a>
@@ -465,11 +465,34 @@ beide varianten toe.</p><p>Aangaande deze catalogusvoorziening kunnen de verschi
 als bestanden beschikbaar gesteld worden aan de terugmeldende
 organisaties voor implementaties in de eigen terugmeldapplicatie.</p><p>Aan deze specificatie wordt voldaan indien de in hoofdstuk 4 beschreven
 services, voor zover deze relevant zijn voor de betreffende applicatie,
-worden ondersteund.</p><p>Aanvullend geldt dat er een aantal implementatievarianten zijn.</p><p>  Implementatie�variant   Specifieke en aanvullende eisen</p><hr><p>  A1                      De terugmeldende ambtenaar maakt gebruik van het landelijke Digimelding Webservice portaal.
-  A2                      De terugmeldende ambtenaar maakt gebruik van een lokaal binnen de organisatie geïnstalleerd terugmeldportaal welke middels webservices communiceert
-  A3                      De terugmeldende ambtenaar maakt gebruik van een terugmeldoptie binnen zijn taakapplicatie; de taakapplicatie zet deze terugmelding door naar een terugmeldapplicatie binnen de organisatie welke middels webservices communiceert.
-  B1                      De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt via een webservices koppelvlak op de Digimelding Webservice, als landelijke voorziening. Deze landelijke voorziening verzorgt routering naar basisregistraties (en mogelijk protocoltransformatie naar een vorige of volgende versie van het koppelvlak).
-  B2                      De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt rechtstreeks (staat niet geïllustreerd in referentieplaatje hierboven).</p></section></section>
+worden ondersteund.</p><p>Aanvullend geldt dat er een aantal implementatievarianten zijn.</p><table class="simple">
+<thead>
+<tr>
+<th align="left">Implementatievariant</th>
+<th align="left">Specifieke en aanvullende eisen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">A1</td>
+<td align="left">De terugmeldende ambtenaar maakt gebruik van het landelijke Digimelding Webservice portaal.</td>
+</tr>
+<tr>
+<td align="left">A2</td>
+<td align="left">De terugmeldende ambtenaar maakt gebruik van een lokaal binnen de organisatie geïnstalleerd terugmeldportaal welke middels webservices communiceert.</td>
+</tr>
+<tr>
+<td align="left">A3</td>
+<td align="left">De terugmeldende ambtenaar maakt gebruik van een terugmeldoptie binnen zijn taakapplicatie; de taakapplicatie zet deze terugmelding door naar een terugmeldapplicatie binnen de organisatie welke middels webservices communiceert.</td>
+</tr>
+<tr>
+<td align="left">B1</td>
+<td align="left">De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt via een webservices koppelvlak op de Digimelding Webservice, als landelijke voorziening. Deze landelijke voorziening verzorgt routering naar basisregistraties (en mogelijk protocoltransformatie naar een vorige of volgende versie van het koppelvlak).</td>
+</tr>
+<tr>
+<td align="left">B2</td>
+<td align="left">De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt rechtstreeks (staat niet geïllustreerd in referentieplaatje hierboven).</td>
+</tr>
+</tbody></table></section></section>
   <section data-format="markdown" id="beveiliging-autorisatie-en-protocollen"><h2 id="x4-beveiliging-autorisatie-en-protocollen"><bdi class="secno">4. </bdi>Beveiliging, autorisatie en protocollen<a class="self-link" href="#beveiliging-autorisatie-en-protocollen" aria-label="Permalink for Section 4."></a></h2><section id="authenticatie-en-autorisatie"><h3 id="x4-1-authenticatie-en-autorisatie"><bdi class="secno">4.1 </bdi>Authenticatie en autorisatie<a class="self-link" href="#authenticatie-en-autorisatie" aria-label="Permalink for Section 4.1"></a></h3><p>Binnen de Digimelding-keten vindt op meerdere plaatsen authenticatie en
 autorisatie plaats.</p><p>In deze sectie wordt uitgelegd welke verschillende middelen er zijn en
 in welke stap ze gebruikt worden. Binnen Digimelding vinden
