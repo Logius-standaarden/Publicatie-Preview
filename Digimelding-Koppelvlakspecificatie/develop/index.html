@@ -680,12 +680,34 @@ versturen</li>
 <li>om een eerder door de afnemer gedane terugmelding in te trekken</li>
 <li>om een status terug te melden van een bronhouder naar een Landelijke
 Voorziening</li>
-</ul><section id="algemeen"><h4 id="x5-2-1-algemeen"><bdi class="secno">5.2.1 </bdi>Algemeen<a class="self-link" href="#algemeen" aria-label="Permalink for Section 5.2.1"></a></h4><p>| | |
-| Doel          | Het toevoegen van een annotatie(boom) bij een op Digimelding aangesloten basisregistratie door een (medewerker van) een organisatie.<br>Het effect van het annotatie toevoegen, <strong>terugmelden</strong> is het doen van een terugmelding.<br>Het effect van een annotatie toevoegen, <strong>intrekken</strong> is het intrekken van een terugmelding.<br> Het effect van een annotatie toevoegen, <strong>statuswijziging</strong> is het geven van een statusupdate. |
-| Voorwaarde    | Afname van gegevens uit basisregistraties door de terugmeldende organisatie, en het gedaan hebben van een check van de actuele waarde in de basisregistratie bij het doen van een terugmelding.<br>Voor het <strong>intrekken</strong> van een terugmelding moet er al een terugmelding gedaan is.<br>Voor het verzenden van een <strong>statuswijziging</strong> moet een terugmelding zijn ontvangen door de bronhouder |
-| Trigger       | Gerede twijfel over de juistheid van een gegeven in een op Digimelding aangesloten basisregistratie bij een ambtenaar binnen de organisatie.<br>Het terugkomen op de gerede twijfel van een eerder gedane terugmelding in het geval van <strong>intrekken</strong>.<br>Het veranderen van een status door middel van een <strong>statuswijziging</strong> van een terugmelding bij een bronhouder. |
-| Direct gevolg | Versturen van een bericht naar de betreffende bronhouder of landelijke voorziening.               |
-| Vervolgactie  | De landelijke voorziening van de basisregistratie  neemt de terugmelding in behandeling. De gebruiker van de terugmeldende organisatie kan dit volgen  middels status opvragen.<br>De landelijke voorziening verwerkt de statusupdate. |</p></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><p>+--------------------------------------------------------+------------+
+</ul><section id="algemeen"><h4 id="x5-2-1-algemeen"><bdi class="secno">5.2.1 </bdi>Algemeen<a class="self-link" href="#algemeen" aria-label="Permalink for Section 5.2.1"></a></h4><table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Doel</td>
+<td>Het toevoegen van een annotatie(boom) bij een op Digimelding aangesloten basisregistratie door een (medewerker van) een organisatie.<br>Het effect van het annotatie toevoegen, <strong>terugmelden</strong> is het doen van een terugmelding.<br>Het effect van een annotatie toevoegen, <strong>intrekken</strong> is het intrekken van een terugmelding.<br> Het effect van een annotatie toevoegen, <strong>statuswijziging</strong> is het geven van een statusupdate.</td>
+</tr>
+<tr>
+<td>Voorwaarde</td>
+<td>Afname van gegevens uit basisregistraties door de terugmeldende organisatie, en het gedaan hebben van een check van de actuele waarde in de basisregistratie bij het doen van een terugmelding.<br>Voor het <strong>intrekken</strong> van een terugmelding moet er al een terugmelding gedaan is.<br>Voor het verzenden van een <strong>statuswijziging</strong> moet een terugmelding zijn ontvangen door de bronhouder</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Gerede twijfel over de juistheid van een gegeven in een op Digimelding aangesloten basisregistratie bij een ambtenaar binnen de organisatie.<br>Het terugkomen op de gerede twijfel van een eerder gedane terugmelding in het geval van <strong>intrekken</strong>.<br>Het veranderen van een status door middel van een <strong>statuswijziging</strong> van een terugmelding bij een bronhouder.</td>
+</tr>
+<tr>
+<td>Direct gevolg</td>
+<td>Versturen van een bericht naar de betreffende bronhouder of landelijke voorziening.</td>
+</tr>
+<tr>
+<td>Vervolgactie</td>
+<td>De landelijke voorziening van de basisregistratie  neemt de terugmelding in behandeling. De gebruiker van de terugmeldende organisatie kan dit volgen  middels status opvragen.<br>De landelijke voorziening verwerkt de statusupdate.</td>
+</tr>
+</tbody></table></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><p>+--------------------------------------------------------+------------+
 | <strong>AnnotatieToevoegenRequest</strong>                          |            |
 +========================================================+============+
 |                                                        |            |
