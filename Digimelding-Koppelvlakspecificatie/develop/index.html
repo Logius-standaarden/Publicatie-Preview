@@ -112,12 +112,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "doJsonLd": true,
   "editors": [
     {
-      "name": "Peter Haasnoot",
+      "name": "Edwin Wisse",
       "url": "https://logius.nl/standaarden",
       "company": "Logius"
     },
     {
-      "name": "Edwin Wisse",
+      "name": "Peter Haasnoot",
       "url": "https://logius.nl/standaarden",
       "company": "Logius"
     }
@@ -321,9 +321,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
-    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
-  </dd><dd class="editor p-author h-card vcard">
     <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Edwin Wisse</a> (<span class="p-org org h-org">Logius</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
   </dd>
       
       <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
@@ -534,46 +534,208 @@ nog te ontwikkelen andere oplossingen die gebruik maken van eHerkenning
 of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
 authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
-specificatie.</p><p><figure id="fig-generatedID"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title"></span></figcaption></figure>{width="4.715277777777778in"
-height="1.0243055555555556in"}</p><p>+----------------+----------------+----------------+----------------+
-| *              |                |                |                |
-| <em>Autorisatie</em>* |                |                |                |
-+================+================+================+================+
-| *              | <em><em>Terugmeld\   | **             | <em><em>TMV\         |
-| <em>Terugmelder</em></em> | Applicatie</em></em>   | Digikoppeling\ | Basi           |
-|                |                | Adapter</em>*      | sregistratie** |
-+----------------+----------------+----------------+----------------+
-| *             | * OIN in DMKS | * OIN in      | * Transport   |
-| E-herkenning\  | bericht        | Digikoppeling  | via            |
-| in DMKS        |                |                |                |
-| bericht        | * (PKIO       | Headers        | Digikoppeling  |
-|                | certificaat    | WS-Adressing   |                |
-| _ OIN         |                |                | * Applicatie: |
-|                | met OIN voor   | * PKIO        |                |
-| _             | signing)       | certificaat    | via OIN in     |
-| Vestigingsnr   |                |                | DMKS bericht   |
-|                | * OIN in      | met OIN voor   |                |
-| _             | Digikoppeling  | TLS/signing    | of             |
-| Pers           |                |                |                |
-| oonsaanduiding | Header         |                | via            |
-|                | WS-security    |                | E-Herkenning : |
-| * SSOn Rijk   |                |                | OIN,           |
-|                |                |                |                |
-| _ OIN         |                |                | ve             |
-|                |                |                | stigingsnummer |
-| _             |                |                | en             |
-| Vestigingsnr   |                |                |                |
-|                |                |                | pers           |
-| _             |                |                | oonsaanduiding |
-| Pers           |                |                | in             |
-| oonsaanduiding |                |                |                |
-|                |                |                | DMKS bericht   |
-| * Vrije keuze |                |                |                |
-|                |                |                | of             |
-|                |                |                |                |
-|                |                |                | via SSOn Rijk  |
-|                |                |                | attributen     |
-+----------------+----------------+----------------+----------------+</p><p>Figuur 2. Authenticatie en autorisatie bij Digimelding</p><p>Indien in de keten de terugmelder met eHerkenning geauthenticeerd wordt,
+specificatie.</p><p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p><p>|                 |                |                |                |</p><table class="simple">
+<thead>
+<tr>
+<th align="left"><strong>Autorisatie</strong></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Terugmelder</strong></td>
+<td align="left"><strong>Terugmeld Applicatie</strong></td>
+<td align="left">** Digikoppeling Adapter**</td>
+<td align="left"><strong>TMV Basisregistratie</strong></td>
+</tr>
+<tr>
+<td align="left">:---</td>
+<td align="left">:---</td>
+<td align="left">:---</td>
+<td align="left">:---</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">* OIN in DMKS</td>
+<td align="left">* OIN in Digikoppeling</td>
+<td align="left">* Transport</td>
+</tr>
+<tr>
+<td align="left">E-herkenning\</td>
+<td align="left">bericht</td>
+<td align="left">Digikoppeling</td>
+<td align="left">via</td>
+</tr>
+<tr>
+<td align="left">in DMKS</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">bericht</td>
+<td align="left">* (PKIO</td>
+<td align="left">Headers</td>
+<td align="left">Digikoppeling</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">certificaat</td>
+<td align="left">WS-Adressing</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">_ OIN</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">* Applicatie:</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">met OIN voor</td>
+<td align="left">* PKIO</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">_</td>
+<td align="left">signing)</td>
+<td align="left">certificaat</td>
+<td align="left">via OIN in</td>
+</tr>
+<tr>
+<td align="left">Vestigingsnr</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">DMKS bericht</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">* OIN in</td>
+<td align="left">met OIN voor</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">_</td>
+<td align="left">Digikoppeling</td>
+<td align="left">TLS/signing</td>
+<td align="left">of</td>
+</tr>
+<tr>
+<td align="left">Pers</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">oonsaanduiding</td>
+<td align="left">Header</td>
+<td align="left"></td>
+<td align="left">via</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">WS-security</td>
+<td align="left"></td>
+<td align="left">E-Herkenning :</td>
+</tr>
+<tr>
+<td align="left">* SSOn Rijk</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">OIN,</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">_ OIN</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">ve</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">stigingsnummer</td>
+</tr>
+<tr>
+<td align="left">_</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">en</td>
+</tr>
+<tr>
+<td align="left">Vestigingsnr</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">pers</td>
+</tr>
+<tr>
+<td align="left">_</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">oonsaanduiding</td>
+</tr>
+<tr>
+<td align="left">Pers</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">in</td>
+</tr>
+<tr>
+<td align="left">oonsaanduiding</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">DMKS bericht</td>
+</tr>
+<tr>
+<td align="left">* Vrije keuze</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">of</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">via SSOn Rijk</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">attributen</td>
+</tr>
+</tbody></table><p>Figuur 2. Authenticatie en autorisatie bij Digimelding</p><p>Indien in de keten de terugmelder met eHerkenning geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
 dienen de eHerkenningsgegevens ( 'OIN'[^1], 'vestigingsnummer' en
 'pseudoID' van de natuurlijk persoon(ontvangen via een SAML-token) in
@@ -622,10 +784,8 @@ basisregistratie ten gevolge van het bericht;</p>
 <ul>
 <li><p>specificatie van de vulling van het veld,</p>
 </li>
-<li><p>toelichting, bijvoorbeeld met de gebruikersactie of configuratie</p>
-<blockquote>
-<p>die nodig is om de juiste vulling te krijgen.</p>
-</blockquote>
+<li><p>toelichting, bijvoorbeeld met de gebruikersactie of configuratie
+die nodig is om de juiste vulling te krijgen.</p>
 </li>
 </ul>
 </li>
@@ -751,7 +911,7 @@ Voorziening</p>
 |               |                                                     |
 |               | -De landelijke voorziening verwerkt de              |
 |               | statusupdate.                                       |
-+---------------+-----------------------------------------------------+</p></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure>{width="4.7243055555555555in" height="1.9756944444444444in"}</p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure>{width="4.7243055555555555in" height="1.6215277777777777in"}</p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure>{width="3.167361111111111in" height="1.910890201224847in"}</p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><p>+--------------------------------------------------------+------------+
++---------------+-----------------------------------------------------+</p></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><p>+--------------------------------------------------------+------------+
 | <strong>AnnotatieToevoegenRequest</strong>                          |            |
 +========================================================+============+
 |                                                        |            |
@@ -1046,7 +1206,7 @@ huidige status van deze terugmeldingen.</p><section id="algemeen-0"><h4 id="x5-3
   Bijzonderheden   -</p><hr></section><section id="statusoverzichtrequest"><h4 id="x5-3-2-statusoverzichtrequest"><bdi class="secno">5.3.2 </bdi>StatusoverzichtRequest<a class="self-link" href="#statusoverzichtrequest" aria-label="Permalink for Section 5.3.2"></a></h4><p>Het bericht StatusoverzichtRequest wordt gebruikt in de communicatie
 tussen Afnemer en LV/Basisregistratie alsook tussen LV/Basisregistratie
 en Bronhouder om een statusoverzicht op te vragen.</p><p>Ter illustratie onderstaand de interactie tussen Afnemer en
-Basisregistratie.</p><p><figure id="fig-interactiediagram-status-opvragen-via-de-digimelding-webservice"><img src="images/image6.png" alt="Interactiediagram status opvragen via de Digimelding Webservice" title="Interactiediagram status opvragen via de Digimelding Webservice"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Interactiediagram status opvragen via de Digimelding Webservice</span></figcaption></figure>{width="4.7243055555555555in" height="2.1569444444444446in"}</p><p><figure id="fig-interactiediagram-status-opvragen-rechtstreeks"><img src="images/image7.png" alt="Interactiediagram status opvragen rechtstreeks" title="Interactiediagram status opvragen rechtstreeks"><figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">Interactiediagram status opvragen rechtstreeks</span></figcaption></figure>{width="4.7243055555555555in" height="2.442361111111111in"}</p><p>Het statusoverzicht wordt opgevraagd op basis van de verplichte
+Basisregistratie.</p><p><figure id="fig-interactiediagram-status-opvragen-via-de-digimelding-webservice"><img src="images/image6.png" alt="Interactiediagram status opvragen via de Digimelding Webservice" title="Interactiediagram status opvragen via de Digimelding Webservice"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Interactiediagram status opvragen via de Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-opvragen-rechtstreeks"><img src="images/image7.png" alt="Interactiediagram status opvragen rechtstreeks" title="Interactiediagram status opvragen rechtstreeks"><figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">Interactiediagram status opvragen rechtstreeks</span></figcaption></figure></p><p>Het statusoverzicht wordt opgevraagd op basis van de verplichte
 elementen OIN en basisregistratie. Het OIN is verplicht omdat alle
 aangesloten basisregistraties alleen van plan zijn terugmeldingen van de
 afnemer zelf terug te geven. Basisregistratie is verplicht, omdat dit
@@ -1185,7 +1345,7 @@ ondernomen.</p><p>+---------------------------------------------------------+---
 +---------------------------------------------------------+-----------+</p></section><section id="detailsterugmeldingrequest"><h4 id="x5-3-4-detailsterugmeldingrequest"><bdi class="secno">5.3.4 </bdi>DetailsTerugmeldingRequest<a class="self-link" href="#detailsterugmeldingrequest" aria-label="Permalink for Section 5.3.4"></a></h4><p>Het bericht DetailsTerugmeldingRequest wordt gebruikt in de communicatie
 tussen Afnemer en LV/Basisregistratie alsook tussen LV/Basisregistratie
 en Bronhouder om details van een bepaalde terugmelding op te vragen.</p><p>Ter illustratie onderstaand de interactie tussen Afnemer en
-Basisregistratie.</p><p><figure id="fig-interactiediagram-details-terugmelding-bevragen-via-digimelding-webservice"><img src="images/image8.png" alt="Interactiediagram details terugmelding bevragen via Digimelding Webservice" title="Interactiediagram details terugmelding bevragen via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Interactiediagram details terugmelding bevragen via Digimelding Webservice</span></figcaption></figure>{width="4.7243055555555555in" height="2.08125in"}</p><p><figure id="fig-interactiediagram-detail-terugmelding-bevragen-rechtstreeks"><img src="images/image9.png" alt="Interactiediagram detail terugmelding bevragen rechtstreeks" title="Interactiediagram detail terugmelding bevragen rechtstreeks"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Interactiediagram detail terugmelding bevragen rechtstreeks</span></figcaption></figure>{width="4.7243055555555555in" height="2.332638888888889in"}</p><p>Het doel van dit bericht is het opvragen van alle informatie over één
+Basisregistratie.</p><p><figure id="fig-interactiediagram-details-terugmelding-bevragen-via-digimelding-webservice"><img src="images/image8.png" alt="Interactiediagram details terugmelding bevragen via Digimelding Webservice" title="Interactiediagram details terugmelding bevragen via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Interactiediagram details terugmelding bevragen via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-detail-terugmelding-bevragen-rechtstreeks"><img src="images/image9.png" alt="Interactiediagram detail terugmelding bevragen rechtstreeks" title="Interactiediagram detail terugmelding bevragen rechtstreeks"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Interactiediagram detail terugmelding bevragen rechtstreeks</span></figcaption></figure></p><p>Het doel van dit bericht is het opvragen van alle informatie over één
 terugmelding bij een basisregistratie. Hiervoor wordt het OIN van de
 afnemer meegegeven en de basisregistratie waar de detailopvraging wordt
 gedaan, tot slot wordt de UUID van de annotatie meegegeven. In de
@@ -1431,7 +1591,7 @@ is.</p><section id="algemeen-1"><h4 id="x5-4-1-algemeen"><bdi class="secno">5.4.
   Trigger          Behoefte om te controleren of berichtverwerking naar behoren functioneert.
   Direct gevolg    Terugsturen van een echobericht.
   Vervolgactie     Indien de echo faalt onderzoeken waardoor dit wordt veroorzaakt.
-  Bijzonderheden   </p><hr><p><figure id="fig-interactiediagram-voor-echo-s"><img src="images/image10.png" alt=" Interactiediagram voor echo's" title=" Interactiediagram voor echo's"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title"> Interactiediagram voor echo's</span></figcaption></figure>{width="4.119011373578303in" height="2.515277777777778in"}</p><p><figure id="fig-interactiediagram-echoverzoek-via-digimelding-webservice"><img src="images/image11.png" alt="Interactiediagram echoverzoek via Digimelding Webservice" title="Interactiediagram echoverzoek via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Interactiediagram echoverzoek via Digimelding Webservice</span></figcaption></figure>{width="4.7243055555555555in" height="2.1979166666666665in"}</p></section><section id="echorequest"><h4 id="x5-4-2-echorequest"><bdi class="secno">5.4.2 </bdi>EchoRequest<a class="self-link" href="#echorequest" aria-label="Permalink for Section 5.4.2"></a></h4><p>De structuur van het echoverzoek is als volgt:</p><p>+----------------------------------------------------------+----------+
+  Bijzonderheden   </p><hr><p><figure id="fig-interactiediagram-voor-echo-s"><img src="images/image10.png" alt=" Interactiediagram voor echo's" title=" Interactiediagram voor echo's"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title"> Interactiediagram voor echo's</span></figcaption></figure></p><p><figure id="fig-interactiediagram-echoverzoek-via-digimelding-webservice"><img src="images/image11.png" alt="Interactiediagram echoverzoek via Digimelding Webservice" title="Interactiediagram echoverzoek via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Interactiediagram echoverzoek via Digimelding Webservice</span></figcaption></figure></p></section><section id="echorequest"><h4 id="x5-4-2-echorequest"><bdi class="secno">5.4.2 </bdi>EchoRequest<a class="self-link" href="#echorequest" aria-label="Permalink for Section 5.4.2"></a></h4><p>De structuur van het echoverzoek is als volgt:</p><p>+----------------------------------------------------------+----------+
 | <strong>Berichttype: EchoRequest</strong>                             |          |
 +==========================================================+==========+
 |                                                          |          |
