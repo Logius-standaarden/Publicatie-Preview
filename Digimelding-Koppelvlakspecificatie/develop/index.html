@@ -293,7 +293,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     }
   },
   "publishISODate": "2021-02-19T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 31 maart 2022"
+  "generatedSubtitle": "Werkversie 01 april 2022"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
@@ -304,7 +304,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2021-02-19">31 maart 2022</time>
+      <time class="dt-published" datetime="2021-02-19">01 april 2022</time>
     </h2>
 	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
     <dl>
@@ -441,14 +441,13 @@ webservices waarmee gemeentelijke pakketleveranciers geautomatiseerde
 terugmeldingen kunnen doen zijn ook gebaseerd op Digimelding.</p><p>De volgende partijen hebben meegewerkt aan de totstandkoming van dit
 document: Gemeente Amsterdam, Centric, Gemeente Den Haag, Gemeente
 Rotterdam, ICTU, Kamer van Koophandel, KING, Logius, PinkRoccade, Vicrea
-en de Waarderingskamer.</p></section><section id="bronverwijzing-en-referentiedocumenten"><h3 id="x2-2-bronverwijzing-en-referentiedocumenten"><bdi class="secno">2.2 </bdi>Bronverwijzing en referentiedocumenten<a class="self-link" href="#bronverwijzing-en-referentiedocumenten" aria-label="Permalink for Section 2.2"></a></h3><p>  Referentiedocument                 Bronverwijzing</p><hr><p>  GEMMA Informatiearchitectuur 1.0   <a href="http://www.noraonline.nl/images/noraonline/a/a3/GEMMA_Informatiearchitectuur_v10_KING.pdf">http://www.noraonline.nl/images/noraonline/a/a3/GEMMA_Informatiearchitectuur_v10_KING.pdf</a>
-  StUF 3.01                          <a href="http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard">http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard</a>
-  StUF protocolbindingen 3.02        <a href="http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard">http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard</a>
+en de Waarderingskamer.</p></section><section id="bronverwijzing-en-referentiedocumenten"><h3 id="x2-2-bronverwijzing-en-referentiedocumenten"><bdi class="secno">2.2 </bdi>Bronverwijzing en referentiedocumenten<a class="self-link" href="#bronverwijzing-en-referentiedocumenten" aria-label="Permalink for Section 2.2"></a></h3><p>  Referentiedocument                 Bronverwijzing</p><hr><p>  GEMMA Informatiearchitectuur 1.0   <a href="http://www.noraonline.nl/images/noraonline/a/a3/GEMMA_Informatiearchitectuur_v10_KING.pdf">PDF versie op NORA</a>
+  StUF 3.01                          <a href="http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard">StUF website</a>
+  StUF protocolbindingen 3.02        <a href="http://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard">StUF website</a>
   ArchiMate 2.n                      <a href="https://www.opengroup.org/">The Open Group Website</a>
-  DMKS cookiebox                     <a href="https://www.logius.nl/diensten/digimelding/">https://www.logius.nl/diensten/Digimelding/</a>
-  Digikoppeling WUS 3.0              &lt;https: publicatie.centrumvoorstandaarden.nl="" dk="" wus=""&gt;
-  Digikoppeling-architectuur         <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/">https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/</a>
-</p></section></section>
+  DMKS cookiebox                     <a href="https://www.logius.nl/diensten/digimelding/">Digimelding pagina op Logius website</a>
+  Digikoppeling WUS 3.0              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">Vastgestelde versie 06 oktober 2020</a>
+  Digikoppeling-architectuur         <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/">Vastgestelde versie 07 oktober 2018</a></p></section></section>
   <section data-format="markdown" id="functionaliteit-op-hoofdlijnen-en-architectuur"><h2 id="x3-functionaliteit-op-hoofdlijnen-en-architectuur"><bdi class="secno">3. </bdi>Functionaliteit op hoofdlijnen en architectuur<a class="self-link" href="#functionaliteit-op-hoofdlijnen-en-architectuur" aria-label="Permalink for Section 3."></a></h2><p>Deze specificatie geeft een technische en functionele beschrijving van
 een aantal services voor het uitwisselen van informatie tussen
 terugmeldapplicaties, Digimelding Webservice en landelijke voorzieningen
@@ -456,8 +455,8 @@ van basisregistraties</p><p>De beschreven services zorgen ervoor dat de informat
 manier wordt uitgewisseld.</p><p>In de volgende paragraaf wordt ingegaan op hoe de services zich
 verhouden tot de NORA-informatiearchitectuur en welke standaarden worden
 gebruikt. Vervolgens wordt dieper ingegaan op de functionaliteit die
-deze services moeten bieden.</p><section id="referentiearchitectuur"><h3 id="x3-1-referentiearchitectuur"><bdi class="secno">3.1 </bdi>Referentiearchitectuur<a class="self-link" href="#referentiearchitectuur" aria-label="Permalink for Section 3.1"></a></h3><p>In deze specificatie wordt uitgegaan van een referentiearchitectuur.</p><p><figure id="fig-generatedID"><img src="images/image1.png" alt="De referentiearchitectuur"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title"></span></figcaption></figure>{width="5.986629483814523in"
-height="3.164179790026247in"}</p><p>In figuur 1 is de referentie-applicatiearchitectuur weergegeven. Deze
+deze services moeten bieden.</p><section id="referentiearchitectuur"><h3 id="x3-1-referentiearchitectuur"><bdi class="secno">3.1 </bdi>Referentiearchitectuur<a class="self-link" href="#referentiearchitectuur" aria-label="Permalink for Section 3.1"></a></h3><p>In deze specificatie wordt uitgegaan van een referentiearchitectuur.</p><p><figure id="fig-de-referentiearchitectuur"><img src="images/image1.png" alt="De referentiearchitectuur" title="De referentiearchitectuur"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De referentiearchitectuur</span></figcaption></figure>{width="5.986629483814523in"
+height="3.164179790026247in"}</p><p>In <a href="#fig-de-referentiearchitectuur">bovenstaande figuur</a> is de referentie-applicatiearchitectuur weergegeven. Deze
 gaat uit van een generiek overheidsperspectief, waarbij wordt
 teruggemeld op meerdere basisregistraties en het dus handig is om
 gebruik te maken van de routering door Digimelding Webservice. Het is
@@ -506,7 +505,7 @@ nog te ontwikkelen andere oplossingen die gebruik maken van eHerkenning
 of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
 authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
-specificatie.</p><p><figure id="fig-generatedID-0"><img src="media/image2.png" alt="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title"></span></figcaption></figure>{width="4.715277777777778in"
+specificatie.</p><p><figure id="fig-generatedID"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title"></span></figcaption></figure>{width="4.715277777777778in"
 height="1.0243055555555556in"}</p><p>+----------------+----------------+----------------+----------------+
 | *              |                |                |                |
 | <em>Autorisatie</em>* |                |                |                |
