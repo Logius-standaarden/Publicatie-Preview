@@ -707,34 +707,34 @@ Voorziening</li>
 <td>Vervolgactie</td>
 <td>De landelijke voorziening van de basisregistratie  neemt de terugmelding in behandeling. De gebruiker van de terugmeldende organisatie kan dit volgen  middels status opvragen.<br>De landelijke voorziening verwerkt de statusupdate.</td>
 </tr>
-</tbody></table></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><p>+--------------------------------------------------------+------------+
-| <strong>AnnotatieToevoegenRequest</strong>                          |            |
-+========================================================+============+
-|                                                        |            |
-+--------------------------------------------------------+------------+
-| OinBasisregistratie                                    | [1..1]   |
-|                                                        |            |
-| *\                                                     |            |
-| *Het OIN van de houder van een landelijke voorziening  |            |
-| van de basisregistratie;                               |            |
-+--------------------------------------------------------+------------+
-| Registratie                                            | [0..1]   |
-|                                                        |            |
-| Code (maximaal 3 letterig) waarmee de basisregistratie |            |
-| wordt aangeduid wanneer de houder van een landelijke   |            |
-| voorziening meer dan 1 basisregistratie beheert (bv    |            |
-| BRT, BGT).                                             |            |
-+--------------------------------------------------------+------------+
-| Annotatie                                              | [1..1]* |
-|                                                        |            |
-| &gt; <em>Dit element wordt alleen gevuld met een annotatie   |            |
-| &gt; die moet worden ingetrokken..</em>                       |            |
-+--------------------------------------------------------+------------+
-| AnnotatieBoom                                          | [1..1]* |
-|                                                        |            |
-| &gt; <em>Bestaat uit minimaal één annotatie (de              |            |
-| &gt; terugmelding) en de bijbehorende leafs.</em>             |            |
-+--------------------------------------------------------+------------+</p><p>* De elementen Annotatie en AnnotatieBoom zijn onderdeel van een
+</tbody></table></section><section id="scenario-s-communicatie"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie<a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></h4><p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p><p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p></section><section id="inhoud-bericht-annotatie-toevoegenrequest"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest<a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></h4><table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AnnotatieToevoegenRequest</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke  voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Annotatie<br><em>Dit element wordt alleen gevuld met een annotatie die moet worden ingetrokken.</em></td>
+<td>[1..1]*</td>
+</tr>
+<tr>
+<td>AnnotatieBoom<br><em>Bestaat uit minimaal één annotatie (de terugmelding) en de bijbehorende leafs.</em></td>
+<td>[1..1]*</td>
+</tr>
+</tbody></table><p>* De elementen Annotatie en AnnotatieBoom zijn onderdeel van een
 verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 één van de twee.</p><section id="annotatie-toevoegen-terugmelden"><h5 id="x5-2-3-1-annotatie-toevoegen-terugmelden"><bdi class="secno">5.2.3.1 </bdi>Annotatie toevoegen (terugmelden)<a class="self-link" href="#annotatie-toevoegen-terugmelden" aria-label="Permalink for Section 5.2.3.1"></a></h5><p>De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:</p><p>| <strong>AnnotatieBoom . Annotatie</strong>                           | [1..*] |
