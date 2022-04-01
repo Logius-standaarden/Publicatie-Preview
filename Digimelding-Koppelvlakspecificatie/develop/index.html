@@ -534,7 +534,7 @@ nog te ontwikkelen andere oplossingen die gebruik maken van eHerkenning
 of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
 authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
-specificatie.</p><p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p><p>|                 |                |                |                |</p><table class="simple">
+specificatie.</p><p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p><table class="simple">
 <thead>
 <tr>
 <th align="left"><strong>Autorisatie</strong></th>
@@ -546,7 +546,7 @@ specificatie.</p><p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding
 <tbody><tr>
 <td align="left"><strong>Terugmelder</strong></td>
 <td align="left"><strong>Terugmeld Applicatie</strong></td>
-<td align="left">** Digikoppeling Adapter**</td>
+<td align="left"><strong>Digikoppeling Adapter</strong></td>
 <td align="left"><strong>TMV Basisregistratie</strong></td>
 </tr>
 <tr>
@@ -556,184 +556,28 @@ specificatie.</p><p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding
 <td align="left">:---</td>
 </tr>
 <tr>
-<td align="left">*</td>
-<td align="left">* OIN in DMKS</td>
-<td align="left">* OIN in Digikoppeling</td>
-<td align="left">* Transport</td>
+<td align="left">E-herkenning in DMKS bericht<br>OIN<br>Vestigingsnr<br>Persoonsaanduiding</td>
+<td align="left">OIN in DMKS bericht</td>
+<td align="left">OIN in Digikoppeling Headers WS-Adressing</td>
+<td align="left">Transport via Digikoppeling</td>
 </tr>
 <tr>
-<td align="left">E-herkenning\</td>
-<td align="left">bericht</td>
-<td align="left">Digikoppeling</td>
-<td align="left">via</td>
-</tr>
-<tr>
-<td align="left">in DMKS</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">SSOn Rijk<br>OIN<br>Vestigingsnr<br>Persoonsaanduiding</td>
+<td align="left">(PKIO certificaat met OIN voor signing)</td>
+<td align="left">PKIO certificaat</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">bericht</td>
-<td align="left">* (PKIO</td>
-<td align="left">Headers</td>
-<td align="left">Digikoppeling</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">certificaat</td>
-<td align="left">WS-Adressing</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">_ OIN</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">* Applicatie:</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">met OIN voor</td>
-<td align="left">* PKIO</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">_</td>
-<td align="left">signing)</td>
-<td align="left">certificaat</td>
-<td align="left">via OIN in</td>
-</tr>
-<tr>
-<td align="left">Vestigingsnr</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">DMKS bericht</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">* OIN in</td>
-<td align="left">met OIN voor</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">_</td>
-<td align="left">Digikoppeling</td>
-<td align="left">TLS/signing</td>
-<td align="left">of</td>
-</tr>
-<tr>
-<td align="left">Pers</td>
-<td align="left"></td>
+<td align="left">met OIN voor TLS/signing</td>
+<td align="left">Applicatie: via OIN in DMKS bericht of via E-Herkenning : OIN, vestigingsnummer en persoonsaanduiding in DMKS bericht of via SSOn Rijk attributen</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">oonsaanduiding</td>
-<td align="left">Header</td>
-<td align="left"></td>
-<td align="left">via</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">WS-security</td>
-<td align="left"></td>
-<td align="left">E-Herkenning :</td>
-</tr>
-<tr>
-<td align="left">* SSOn Rijk</td>
+<td align="left">Vrije keuze</td>
+<td align="left">OIN in Digikoppeling Header WS-security</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">OIN,</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">_ OIN</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">ve</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">stigingsnummer</td>
-</tr>
-<tr>
-<td align="left">_</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">en</td>
-</tr>
-<tr>
-<td align="left">Vestigingsnr</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">pers</td>
-</tr>
-<tr>
-<td align="left">_</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">oonsaanduiding</td>
-</tr>
-<tr>
-<td align="left">Pers</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">in</td>
-</tr>
-<tr>
-<td align="left">oonsaanduiding</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">DMKS bericht</td>
-</tr>
-<tr>
-<td align="left">* Vrije keuze</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">of</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">via SSOn Rijk</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">attributen</td>
 </tr>
 </tbody></table><p>Figuur 2. Authenticatie en autorisatie bij Digimelding</p><p>Indien in de keten de terugmelder met eHerkenning geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
