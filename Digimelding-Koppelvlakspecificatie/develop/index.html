@@ -749,8 +749,8 @@ als volgt:</p><table class="simple">
 <td>[1..*]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . Terugmelding</strong></td>
@@ -801,8 +801,8 @@ als volgt:</p><table class="simple">
 <td>[0..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . Annotatiestatus</strong><br><em>Status van de terugmelding</em></td>
@@ -817,8 +817,8 @@ als volgt:</p><table class="simple">
 <td>[1..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . Referentiekenmerk</strong><br><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em></td>
@@ -833,8 +833,8 @@ als volgt:</p><table class="simple">
 <td>[1..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens</em></td>
@@ -865,16 +865,16 @@ als volgt:</p><table class="simple">
 <td>[0..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . Bijlageverwijzing</strong></td>
 <td>[0..*]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td>&gt; <em>HR ondersteunt maximaal 5 bijlagen.</em></td>
@@ -901,8 +901,8 @@ als volgt:</p><table class="simple">
 <td>[0..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em></td>
@@ -916,117 +916,189 @@ als volgt:</p><table class="simple">
 <td>BehandelendeBronhouder . Bronhouder<br><em>De gewenste bronhouder</em></td>
 <td>[1..1]</td>
 </tr>
-</tbody></table></section><section id="annotatie-toevoegen-intrekken"><h5 id="x5-2-3-2-annotatie-toevoegen-intrekken"><bdi class="secno">5.2.3.2 </bdi>Annotatie toevoegen (intrekken)<a class="self-link" href="#annotatie-toevoegen-intrekken" aria-label="Permalink for Section 5.2.3.2"></a></h5><p>De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><p>+---------------------------------------------------------+-----------+
-| <strong>Annotatiestatus</strong>                                     | [1..*] |
-|                                                         |           |
-| &gt; <em>Status van de terugmelding.</em>                         |           |
-+=========================================================+===========+
-| <strong>Annotatiestatus . Annotatiebasis</strong>                    |           |
-|                                                         |           |
-| Inclusief toelichting en annotatieverwijzing            |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | [0..1]  |
-|                                                         |           |
-| Een afnemer kan bij het doen van een intrekking alleen  |           |
-| de status: INGETROKKEN gebruiken in de huidige          |           |
-| praktijk.                                               |           |
-+---------------------------------------------------------+-----------+</p><p>**Annotatie toevoegen (statuswijziging)<br>**De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><p>+---------------------------------------------------------+-----------+
-| <strong>Annotatiestatus</strong>                                     | [1..*] |
-|                                                         |           |
-| &gt; <em>Status van de terugmelding.</em>                         |           |
-+=========================================================+===========+
-| <strong>Annotatiestatus . Annotatiebasis</strong>                    |           |
-|                                                         |           |
-| Inclusief toelichting en annotatieverwijzing            |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | [0..1]  |
-|                                                         |           |
-| <em>Zie bijlage B voor lijst met geadviseerde statussen    |           |
-| voor aangesloten basisregistraties.(Het is toegestaan   |           |
-| om in de eigen catalogus afwijkende statussen op te     |           |
-| nemen)</em>                                                 |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Statustype                            | [0..1]  |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| <strong>Annotatie . Contactinformatie</strong>                       | [0..*] |
-|                                                         |           |
-| &gt; <em>Contactgegevens.</em>                                    |           |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . @ContactType                       | [1..1]  |
-|                                                         |           |
-| <em>kan alleen de waarden 'Melder' of 'Behandelaar'    |           |
-| hebben</em>                                                 |           |
-+---------------------------------------------------------+-----------+
-| <strong>Contactinformatie . Annotatiebasis</strong>                  |           |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . Naam                                | [1..1]  |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . Telefoon                            | [0..1]  |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . Email                               | [1..1]  |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . Afdeling                            | [0..1]  |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| <strong>Annotatie . Planningsverwachting</strong>                    | [0..*] |
-|                                                         |           |
-| &gt; <em>Verwachte termijn voor behandeling</em>                  |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . <strong>Annotatiebasis</strong>               |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalAanduiding               | [0..1]  |
-|                                                         |           |
-| &gt; <em>Beschrijving van de planningsverwachting.</em>           |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalTijdstempel              | [0..1]  |
-|                                                         |           |
-| &gt; <em>Datum waarop de planning gereed is.</em>                 |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| <strong>Annotatie . BehandelendeBronhouder</strong>                  | [0 *]  |
-|                                                         |           |
-| &gt; <em>Behandelende bronhouder</em>                             |           |
-+---------------------------------------------------------+-----------+
-| BehandelendeBronhouder . <strong>Annotatiebasis</strong>             |           |
-+---------------------------------------------------------+-----------+
-| BehandelendeBronhouder . Bronhouder                     | [1..1]  |
-|                                                         |           |
-| &gt; <em>De gewenste bronhouder (bij status "Verkeerde        |           |
-| &gt; Bronhouder")</em>                                         |           |
-+---------------------------------------------------------+-----------+</p><p>Optioneel kan bij een statuswijziging worden meegezonden:</p><p>Planningsverwachting, Contactinformatie en Behandelendbronhouder
+</tbody></table></section><section id="annotatie-toevoegen-intrekken"><h5 id="x5-2-3-2-annotatie-toevoegen-intrekken"><bdi class="secno">5.2.3.2 </bdi>Annotatie toevoegen (intrekken)<a class="self-link" href="#annotatie-toevoegen-intrekken" aria-label="Permalink for Section 5.2.3.2"></a></h5><p>De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Annotatiestatus</strong><br><em>Status van de terugmelding.</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td><strong>Annotatiestatus . Annotatiebasis</strong><br>Inclusief toelichting en annotatieverwijzing</td>
+<td></td>
+</tr>
+<tr>
+<td>Annotatiestatus . Status<br>Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk.</td>
+<td>[0..1]</td>
+</tr>
+</tbody></table><p><strong>Annotatie toevoegen (statuswijziging)</strong>
+De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Annotatiestatus</strong><br><em>Status van de terugmelding.</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td><strong>Annotatiestatus . Annotatiebasis</strong><br>Inclusief toelichting en annotatieverwijzing</td>
+<td></td>
+</tr>
+<tr>
+<td>Annotatiestatus . Status<br><em>Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Annotatiestatus . Statustype</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens.</em></td>
+<td>[0..*]</td>
+</tr>
+<tr>
+<td>Contactinformatie . @ContactType<br><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td><strong>Contactinformatie . Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Contactinformatie . Naam</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Telefoon</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Email</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Afdeling</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td><strong>Annotatie . Planningsverwachting</strong><br><em>Verwachte termijn voor behandeling</em></td>
+<td>[0..*]</td>
+</tr>
+<tr>
+<td>Planningsverwachting . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Planningsverwachting . MijlpaalAanduiding<br><em>Beschrijving van de planningsverwachting.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Planningsverwachting . MijlpaalTijdstempel<br><em>Datum waarop de planning gereed is.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em></td>
+<td>[0 *]</td>
+</tr>
+<tr>
+<td>BehandelendeBronhouder . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>BehandelendeBronhouder . Bronhouder<br><em>De gewenste bronhouder (bij status "Verkeerde Bronhouder")</em></td>
+<td>[1..1]</td>
+</tr>
+</tbody></table><p>Optioneel kan bij een statuswijziging worden meegezonden:</p><p>Planningsverwachting, Contactinformatie en Behandelendbronhouder
 (hiermee kan bij de statuswijziging <em>"Verkeerde Bronhouder"</em> de gewenste
 bronhouder worden aangegeven).</p></section><section id="annotatie-toevoegen-aanpassing"><h5 id="x5-2-3-3-annotatie-toevoegen-aanpassing"><bdi class="secno">5.2.3.3 </bdi>Annotatie toevoegen (aanpassing)<a class="self-link" href="#annotatie-toevoegen-aanpassing" aria-label="Permalink for Section 5.2.3.3"></a></h5><p>Het antwoord op het toevoegen van een annotatie of het nu een
 annotatieboom met volledige terugmelding is of een annotatie voor een
 intrekking is altijd een AnnotatieToevoegenResponse-bericht met daarin
 een tijdstempel. Het is een zogeheten functionele acknowledgement wat
 betekent dat de achterliggende (TMV-)applicatie het vraagbericht in
-goede orde ontvangen heeft.</p><p>+----------------------------------------------------------+----------+
-| <strong>Berichttype:</strong> AnnotatieToevoegenResponse              |          |
-+==========================================================+==========+
-| <strong>Elementen/attributen</strong>                                 |          |
-+----------------------------------------------------------+----------+
-| AnnotatieToevoegenResponse                               |          |
-+----------------------------------------------------------+----------+
-| AnnotatieToevoegenResponse . Tijdstempel                 | [1..1] |
-|                                                          |          |
-| &gt; <em>Tijd waarop antwoord verstuurd is.</em>                   |          |
-+----------------------------------------------------------+----------+
-| AnnotatieToevoegenResponse . AnnotatieVerwijzing         | [1..1] |
-|                                                          |          |
-| &gt; <em>UUID van de toegevoegde annotatie waar het antwoord   |          |
-| &gt; betrekking op heeft.</em>                                  |          |
-+----------------------------------------------------------+----------+</p></section></section></section><section id="status-bevragen"><h3 id="x5-3-status-bevragen"><bdi class="secno">5.3 </bdi>Status bevragen<a class="self-link" href="#status-bevragen" aria-label="Permalink for Section 5.3"></a></h3><p>Deze interactie wordt gebruikt door de afnemer om meer informatie te
+goede orde ontvangen heeft.</p><table class="simple">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>----------------------------------------------------------</td>
+<td>----------</td>
+</tr>
+<tr>
+<td><strong>Berichttype:</strong> AnnotatieToevoegenResponse</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Elementen/attributen</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>AnnotatieToevoegenResponse</td>
+<td></td>
+</tr>
+<tr>
+<td>AnnotatieToevoegenResponse . Tijdstempel<br><em>Tijd waarop antwoord verstuurd is.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>AnnotatieToevoegenResponse . AnnotatieVerwijzing<br><em>UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.</em></td>
+<td>[1..1]</td>
+</tr>
+</tbody></table></section></section></section><section id="status-bevragen"><h3 id="x5-3-status-bevragen"><bdi class="secno">5.3 </bdi>Status bevragen<a class="self-link" href="#status-bevragen" aria-label="Permalink for Section 5.3"></a></h3><p>Deze interactie wordt gebruikt door de afnemer om meer informatie te
 verkrijgen over de door zijn organisatie gedane terugmeldingen en de
-huidige status van deze terugmeldingen.</p><section id="algemeen-0"><h4 id="x5-3-1-algemeen"><bdi class="secno">5.3.1 </bdi>Algemeen<a class="self-link" href="#algemeen-0" aria-label="Permalink for Section 5.3.1"></a></h4><hr><p>  Doel             Het opvragen van de status van terugmeldingen van een terugmeldende organisatie.
-  Voorwaarde       De organisatie heeft terugmeldingen gedaan.
-  Trigger          Een gebruiker wil de status van terugmeldingen van zijn organisatie weten.
-  Direct gevolg    De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.
-  Vervolgactie     De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht.
-  Bijzonderheden   -</p><hr></section><section id="statusoverzichtrequest"><h4 id="x5-3-2-statusoverzichtrequest"><bdi class="secno">5.3.2 </bdi>StatusoverzichtRequest<a class="self-link" href="#statusoverzichtrequest" aria-label="Permalink for Section 5.3.2"></a></h4><p>Het bericht StatusoverzichtRequest wordt gebruikt in de communicatie
+huidige status van deze terugmeldingen.</p><section id="algemeen-0"><h4 id="x5-3-1-algemeen"><bdi class="secno">5.3.1 </bdi>Algemeen<a class="self-link" href="#algemeen-0" aria-label="Permalink for Section 5.3.1"></a></h4><table class="simple">
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Doel</td>
+<td align="left">Het opvragen van de status van terugmeldingen van een terugmeldende organisatie.</td>
+</tr>
+<tr>
+<td align="left">Voorwaarde</td>
+<td align="left">De organisatie heeft terugmeldingen gedaan.</td>
+</tr>
+<tr>
+<td align="left">Trigger</td>
+<td align="left">Een gebruiker wil de status van terugmeldingen van zijn organisatie weten.</td>
+</tr>
+<tr>
+<td align="left">Direct gevolg</td>
+<td align="left">De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.</td>
+</tr>
+<tr>
+<td align="left">Vervolgactie</td>
+<td align="left">De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht.</td>
+</tr>
+<tr>
+<td align="left">Bijzonderheden</td>
+<td align="left">-</td>
+</tr>
+</tbody></table></section><section id="statusoverzichtrequest"><h4 id="x5-3-2-statusoverzichtrequest"><bdi class="secno">5.3.2 </bdi>StatusoverzichtRequest<a class="self-link" href="#statusoverzichtrequest" aria-label="Permalink for Section 5.3.2"></a></h4><p>Het bericht StatusoverzichtRequest wordt gebruikt in de communicatie
 tussen Afnemer en LV/Basisregistratie alsook tussen LV/Basisregistratie
 en Bronhouder om een statusoverzicht op te vragen.</p><p>Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.</p><p><figure id="fig-interactiediagram-status-opvragen-via-de-digimelding-webservice"><img src="images/image6.png" alt="Interactiediagram status opvragen via de Digimelding Webservice" title="Interactiediagram status opvragen via de Digimelding Webservice"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Interactiediagram status opvragen via de Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-status-opvragen-rechtstreeks"><img src="images/image7.png" alt="Interactiediagram status opvragen rechtstreeks" title="Interactiediagram status opvragen rechtstreeks"><figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">Interactiediagram status opvragen rechtstreeks</span></figcaption></figure></p><p>Het statusoverzicht wordt opgevraagd op basis van de verplichte
