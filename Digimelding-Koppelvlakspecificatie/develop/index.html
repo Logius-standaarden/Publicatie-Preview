@@ -1247,32 +1247,16 @@ de praktijk niet toegepast en is niet getest.</p><table class="simple">
 <td></td>
 </tr>
 <tr>
-<td>----------------------------------------------------------</td>
-<td>----------</td>
-</tr>
-<tr>
 <td>OinVragendeOrganisatie<br><em>Identificatie d.m.v. OIN-vragende organisatie.</em></td>
 <td>[1..1]</td>
-</tr>
-<tr>
-<td>----------------------------------------------------------</td>
-<td>----------</td>
 </tr>
 <tr>
 <td>OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>----------------------------------------------------------</td>
-<td>----------</td>
-</tr>
-<tr>
 <td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
 <td>[0..1]</td>
-</tr>
-<tr>
-<td>----------------------------------------------------------</td>
-<td>----------</td>
 </tr>
 <tr>
 <td>Uuid<br><em>UUID van root annotatie.</em></td>
@@ -1297,19 +1281,42 @@ annotatie kent een eigen instantie, zoals ook bij
 'AnnotatieToevoegenRequest' en elke annotatie kan slechts één van de
 volgende soorten annotaties bevatten: Terugmelding, Annotatiestatus,
 Referentiekenmerk, Contactinformatie, Bijlageverwijzing,
-Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</strong>: DetailsTerugmeldingResponse            |           |
-| <strong>Elementen/attributen</strong>                                |           |
-| <strong>AnnotatieBoom</strong>                                       | [1..1]  |
-|                                                         |           |
-| &gt; *De container die de verzameling annotaties bevat die |           |
-| &gt; ofwel het gevraagde UUID als kenmerk hebben of daar   |           |</p><table class="simple">
+Planningsverwachting en BehandelendeBronhouder.</p><table class="simple">
 <thead>
 <tr>
-<th>&gt; middels een annotatieverwijzing naar verwijzen.*</th>
+<th><strong>Berichttype</strong>: DetailsTerugmeldingResponse</th>
 <th></th>
 </tr>
 </thead>
 <tbody><tr>
+<td><strong>Elementen/attributen</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AnnotatieBoom</strong></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; *De container die de verzameling annotaties bevat die</td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; ofwel het gevraagde UUID als kenmerk hebben of daar</td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; middels een annotatieverwijzing naar verwijzen.*</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td><strong>Annotatie . Terugmelding</strong><br><em>De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)</em></td>
 <td>[1..1]</td>
 </tr>
@@ -1358,8 +1365,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Annotatiestatus</strong><br><em>Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.</em></td>
@@ -1374,8 +1381,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Referentiekenmerk</strong><br><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em></td>
@@ -1390,8 +1397,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens.</em></td>
@@ -1422,8 +1429,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Bijlageverwijzing</strong><br><em>Metainformatie over bijlagen.</em><br><em>Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.</em></td>
@@ -1450,8 +1457,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Planningsverwachting</strong><br><em>Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.</em></td>
@@ -1470,8 +1477,8 @@ Planningsverwachting en BehandelendeBronhouder.</p><p>| <strong>Berichttype</str
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.</em></td>
