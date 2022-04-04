@@ -293,7 +293,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     }
   },
   "publishISODate": "2021-02-19T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 01 april 2022"
+  "generatedSubtitle": "Werkversie 04 april 2022"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
@@ -304,7 +304,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2021-02-19">01 april 2022</time>
+      <time class="dt-published" datetime="2021-02-19">04 april 2022</time>
     </h2>
 	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
     <dl>
@@ -1119,76 +1119,118 @@ gefilterd worden op de datum van indienen en de datum van laatste
 wijziging. Tot slot kan er gefilterd worden op de status van
 terugmeldingen. Dit is enigszins bewerkelijk aangezien iedere
 basisregistratie zijn eigen statussen mag definiëren. In de
-berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p><p>+---------------------------------------------------------+-----------+
-| <strong>Berichttype</strong>: StatusoverzichtRequest                 |           |
-+=========================================================+===========+
-| <strong>Elementen/attributen</strong>                                |           |
-+---------------------------------------------------------+-----------+
-| OinVragendeOrganisatie                                  | [1..1]  |
-|                                                         |           |
-| <em>OIN van de vragende organisatie.</em>                      |           |
-+---------------------------------------------------------+-----------+
-| OinBasisregistratie                                     | [1..1]  |
-|                                                         |           |
-| *\                                                      |           |
-| *Het OIN van de houder van een landelijke voorziening   |           |
-| van de basisregistratie                                 |           |
-+---------------------------------------------------------+-----------+
-| Registratie                                             | [0..1]  |
-|                                                         |           |
-| Code (maximaal 3 letterig) waarmee de basisregistratie  |           |
-| wordt aangeduid wanneer de houder van een landelijke    |           |
-| voorziening meer dan 1 basisregistratie beheert (bv     |           |
-| BRT, BGT).                                              |           |
-+---------------------------------------------------------+-----------+
-| <strong>Filter</strong>                                              | [0..1]  |
-+---------------------------------------------------------+-----------+
-| Filter.MeldingskenmerkenLijst                           | [0..1]  |
-|                                                         |           |
-| <em>(Lijst met)Eigen kenmerk(en) terugmeldende             |           |
-| organisatie.</em>                                           |           |
-+---------------------------------------------------------+-----------+
-| Fi                                                      | [1..*] |
-| lter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement |           |
-+---------------------------------------------------------+-----------+
-| Filter.VanafTijdstempelIndienen                         | [0..1]  |
-|                                                         |           |
-| <em>Filtert resultaten die zijn ingediend voor dit         |           |
-| tijdstempel weg. Resultaten op de tijdstempel of daarna |           |
-| worden getoond.</em>                                        |           |
-+---------------------------------------------------------+-----------+
-| Filter.TotEnMetTijdstempelIndienen                      | [0..1]  |
-|                                                         |           |
-| <em>Filtert resultaten die zijn ingediend na dit           |           |
-| tijdstempel weg. Resultaten op de tijdstempel of        |           |
-| daarvoor worden getoond.</em>                               |           |
-+---------------------------------------------------------+-----------+
-| Filter.VanafTijdstempelWijziging                        | [0..1]  |
-|                                                         |           |
-| *Filtert resultaten die zijn gewijzigd voor dit         |           |
-| tijdstempel weg. Resultaten op de tijdstempel of daarna |           |
-| worden getoond.(*)\                                    |           |
-| *                                                       |           |
-+---------------------------------------------------------+-----------+
-| Filter.TotEnMetTijdstempelWijziging                     | [0..1]  |
-|                                                         |           |
-| <em>Filtert resultaten die zijn gewijzigd na dit           |           |
-| tijdstempel weg. Resultaten op de tijdstempel of        |           |
-| daarvoor worden getoond.(*)</em>                           |           |
-+---------------------------------------------------------+-----------+
-| Filter.StatusTerugmelding                               | [0..1]  |
-|                                                         |           |
-| <em>String met daarin een status behorende bij de          |           |
-| basisregistratie waarvan het overzicht gevraagd wordt.</em> |           |
-+---------------------------------------------------------+-----------+
-| Filter.Objectidentificatie                              | [0..1]  |
-|                                                         |           |
-| <em>String met daarin een objectidentificatie behorende    |           |
-| bij de basisregistratie waarvan het overzicht gevraagd  |           |
-| wordt. Hiermee kunnen terugmeldingen ook op basis van   |           |
-| KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden       |           |
-| worden.</em>                                                |           |
-+---------------------------------------------------------+-----------+</p><p>(*) <em>Het resultaat</em> betreft terugmeldingen (annotatiebomen) waarvoor
+berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p><table class="simple">
+<thead>
+<tr>
+<th><strong>Berichttype</strong>: StatusoverzichtRequest</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Elementen/attributen</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>+---------------------------------------------------------+-----------+</td>
+<td></td>
+</tr>
+<tr>
+<td>OinVragendeOrganisatie&gt;br&gt;<em>OIN van de vragende organisatie.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td><strong>Filter</strong></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.MeldingskenmerkenLijst<br><em>(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement</td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.VanafTijdstempelIndienen<br><em>Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.TotEnMetTijdstempelIndienen<br>  <em>Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^1].</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^1].</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.StatusTerugmelding<br><em>String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Filter.Objectidentificatie<br><em>String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+</tbody></table><p>[^1]: <em>Het resultaat</em> betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat <strong>de laatste annotatie</strong> is toegevoegd tussen
 VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging</p></section><section id="statusoverzichtresponse"><h4 id="x5-3-3-statusoverzichtresponse"><bdi class="secno">5.3.3 </bdi>StatusoverzichtResponse<a class="self-link" href="#statusoverzichtresponse" aria-label="Permalink for Section 5.3.3"></a></h4><p>Het statusoverzicht geeft een lijst met annotaties terug. Dit zijn in
 dit geval altijd 'root' annotaties waar een annotatieboom aan hangt. Dit
@@ -1200,44 +1242,94 @@ afspraken berichtstandaarden'-voorstel voor 'geen waarde' wordt hierbij
 als reden meegegeven 'geenWaarde'. Een regulier antwoordbericht is in
 deze foutsituaties op zijn plaats omdat dit geen kritieke fouten zijn en
 het aan de afnemer is om te bepalen of hier actie op moet worden
-ondernomen.</p><p>+---------------------------------------------------------+-----------+
-| <strong>Berichttype</strong>: StatusoverzichtResponse                |           |
-+=========================================================+===========+
-| <strong>Elementen/attributen</strong>                                |           |
-+---------------------------------------------------------+-----------+
-| <strong>AnnotatieLijst</strong>                                      | [1..*] |
-+---------------------------------------------------------+-----------+
-| Annotatie                                               | [0..*] |
-+---------------------------------------------------------+-----------+
-| Annotatie . Tijdstempel                                 | [1..1]  |
-|                                                         |           |
-| <em>Datum/tijd waarop de annotatie heeft plaatsgevonden</em>   |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Uuid                                        | [1..1]  |
-|                                                         |           |
-| <em>Unieke verwijzing naar de root annotatie van een       |           |
-| annotatieboom.</em>                                         |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Meldingskenmerk                             | [1..1]  |
-|                                                         |           |
-| <em>Eigen kenmerk terugmeldende organisatie.</em>              |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Bronverwijzing                              | [1..1]  |
-+---------------------------------------------------------+-----------+
-| Annotatie . Bronverwijzing . Uri                        | [1..1]  |
-|                                                         |           |
-| <em>Een combinatie van OIN en de unieke sleutel van het    |           |
-| brongegeven zodat een unieke referentie ontstaat naar   |           |
-| het brongegeven (bijv. OIN en HRN).</em>                    |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Bronverwijzing . Selectie                   | [0..1]  |
-|                                                         |           |
-| <em>Object waarop is teruggemeld.</em>                         |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Annotatiestatus                             | [1..1]  |
-|                                                         |           |
-| <em>Laatste status annotatie van de terugmelding.</em>         |           |
-+---------------------------------------------------------+-----------+</p></section><section id="detailsterugmeldingrequest"><h4 id="x5-3-4-detailsterugmeldingrequest"><bdi class="secno">5.3.4 </bdi>DetailsTerugmeldingRequest<a class="self-link" href="#detailsterugmeldingrequest" aria-label="Permalink for Section 5.3.4"></a></h4><p>Het bericht DetailsTerugmeldingRequest wordt gebruikt in de communicatie
+ondernomen.</p><table class="simple">
+<thead>
+<tr>
+<th><strong>Berichttype</strong>: StatusoverzichtResponse</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Elementen/attributen</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td><strong>AnnotatieLijst</strong></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie</td>
+<td>[0..*]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Tijdstempel<br><em>Datum/tijd waarop de annotatie heeft plaatsgevonden</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Uuid<br><em>Unieke verwijzing naar de root annotatie van een annotatieboom.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Meldingskenmerk<br><em>Eigen kenmerk terugmeldende organisatie.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Bronverwijzing</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Bronverwijzing . Uri<br><em>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Bronverwijzing . Selectie<br><em>Object waarop is teruggemeld.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+<tr>
+<td>Annotatie . Annotatiestatus<br><em>Laatste status annotatie van de terugmelding.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>---------------------------------------------------------</td>
+<td>-----------</td>
+</tr>
+</tbody></table></section><section id="detailsterugmeldingrequest"><h4 id="x5-3-4-detailsterugmeldingrequest"><bdi class="secno">5.3.4 </bdi>DetailsTerugmeldingRequest<a class="self-link" href="#detailsterugmeldingrequest" aria-label="Permalink for Section 5.3.4"></a></h4><p>Het bericht DetailsTerugmeldingRequest wordt gebruikt in de communicatie
 tussen Afnemer en LV/Basisregistratie alsook tussen LV/Basisregistratie
 en Bronhouder om details van een bepaalde terugmelding op te vragen.</p><p>Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.</p><p><figure id="fig-interactiediagram-details-terugmelding-bevragen-via-digimelding-webservice"><img src="images/image8.png" alt="Interactiediagram details terugmelding bevragen via Digimelding Webservice" title="Interactiediagram details terugmelding bevragen via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Interactiediagram details terugmelding bevragen via Digimelding Webservice</span></figcaption></figure></p><p><figure id="fig-interactiediagram-detail-terugmelding-bevragen-rechtstreeks"><img src="images/image9.png" alt="Interactiediagram detail terugmelding bevragen rechtstreeks" title="Interactiediagram detail terugmelding bevragen rechtstreeks"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Interactiediagram detail terugmelding bevragen rechtstreeks</span></figcaption></figure></p><p>Het doel van dit bericht is het opvragen van alle informatie over één
