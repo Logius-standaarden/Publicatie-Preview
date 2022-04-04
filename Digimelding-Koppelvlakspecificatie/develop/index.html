@@ -573,7 +573,11 @@ dienen de eHerkenningsgegevens ( 'OIN'[^1], 'vestigingsnummer' en
 'pseudoID' van de natuurlijk persoon(ontvangen via een SAML-token) in
 het DMKS-bericht doorgegeven te worden. In deze gevallen is de
 autorisatie voor de TMV-applicatie geregeld middels eHerkenning op
-persoonsniveau.</p><p>Indien in de keten de terugmelder met SSOn-Rijk geauthenticeerd wordt,
+persoonsniveau.</p><p>[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met daarin
+o.a. het 'OIN' zoals in de eHerkenningskoppelvlakstandaard is
+gespecificeerd. Dit 'OIN' met een prefix 00000003 is niet gelijk aan
+het door Logius uitgegeven OIN zoals in het OIN-register is
+opgenomen.</p><p>Indien in de keten de terugmelder met SSOn-Rijk geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
 dienen de gegevens ('OIN', en 'pseudoID' ) van de natuurlijk persoon
 (ontvangen via een SAML-token) in het DMKS-bericht doorgegeven te
@@ -598,9 +602,9 @@ authenticatie en autorisatie (indien anders dan eHerkenning/SSOn-Rijk)
 is volledig vrij door de afnemende organisatie in te vullen. Hiervan
 hoeft niets meegegeven te worden in DMKS-berichten.</p><section id="protocollen"><h4 id="x4-1-1-protocollen"><bdi class="secno">4.1.1 </bdi>Protocollen<a class="self-link" href="#protocollen" aria-label="Permalink for Section 4.1.1"></a></h4><p>Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
 volgens het '2W-be'-profiel[^2] met ondersteuning voor MTOM voor
-efficiënt transport van attachments.</p><p>Indien een basisregistratie verzoekt om een authenticatie van de
+efficiënt transport van attachments.</p><p>[^2]: Best Effort, beveiligd met tweezijdige TLS</p><p>Indien een basisregistratie verzoekt om een authenticatie van de
 terugmeldende organisatie wordt bij synchrone communicatie gebruikt
-gemaakt van WUS Profiel Digikoppeling 2W-be-S[^3].</p></section></section></section>
+gemaakt van WUS Profiel Digikoppeling 2W-be-S[^3].</p><p>[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde berichten</p></section></section></section>
   <section data-format="markdown" id="specificaties-services"><h2 id="x5-specificaties-services"><bdi class="secno">5. </bdi>Specificaties Services<a class="self-link" href="#specificaties-services" aria-label="Permalink for Section 5."></a></h2><p>Dit hoofdstuk beschrijft de berichten tussen terugmeldapplicatie,
 Digimelding Webservice en de LV van basisregistraties (gerouteerd via
 Digimelding Webservice)</p><p>Het interactiediagram biedt overzicht in hoe de berichten zich tot
@@ -1645,12 +1649,13 @@ is.</p><section id="algemeen-1"><h4 id="x5-4-1-algemeen"><bdi class="secno">5.4.
 <td>[1..1]</td>
 </tr>
 </tbody></table></section></section></section>
-  <section data-format="markdown" id="foutberichten"><h2 id="x6-foutberichten"><bdi class="secno">6. </bdi>Foutberichten<a class="self-link" href="#foutberichten" aria-label="Permalink for Section 6."></a></h2><hr><p>  Doel             Aangeven dat er een fout is opgetreden.
-  Voorwaarde       Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest).
-  Trigger          Het verzonden vraagbericht leidt tot een fout in de verwerking ervan.
-  Direct gevolg    Een foutbericht wordt verstuurd.
-  Vervolgactie     De ontvanger van het foutbericht dient de fout af te handelen.
-  Bijzonderheden   </p><hr><p>Een aantal foutsituaties is voorstelbaar. Er kan een probleem zijn met
+  <section data-format="markdown" id="foutberichten"><h2 id="x6-foutberichten"><bdi class="secno">6. </bdi>Foutberichten<a class="self-link" href="#foutberichten" aria-label="Permalink for Section 6."></a></h2><p>|-------------------|---------------------------------------------------------|
+|  Doel             | Aangeven dat er een fout is opgetreden.                 |
+|  Voorwaarde       | Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest). |
+|  Trigger          | Het verzonden vraagbericht leidt tot een fout in de verwerking ervan. |
+|  Direct gevolg    | Een foutbericht wordt verstuurd. |
+|  Vervolgactie     | De ontvanger van het foutbericht dient de fout af te handelen. |
+|  Bijzonderheden   |                                  |</p><p>Een aantal foutsituaties is voorstelbaar. Er kan een probleem zijn met
 autorisatie, met de syntax van de gegevens of er kan een fout optreden
 in het systeem dat de annotatie moet verwerken.</p><section id="autorisatiefouten"><h3 id="x6-1-autorisatiefouten"><bdi class="secno">6.1 </bdi>Autorisatiefouten<a class="self-link" href="#autorisatiefouten" aria-label="Permalink for Section 6.1"></a></h3><p>Wanneer een systeem van de afnemer op transportniveau of
 applicatieniveau niet geautoriseerd is bij het leverende systeem dan
