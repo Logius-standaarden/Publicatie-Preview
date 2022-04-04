@@ -956,8 +956,8 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens.</em></td>
@@ -988,8 +988,8 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . Planningsverwachting</strong><br><em>Verwachte termijn voor behandeling</em></td>
@@ -1008,8 +1008,8 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em></td>
@@ -1119,102 +1119,54 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p><table 
 <td></td>
 </tr>
 <tr>
-<td>+---------------------------------------------------------+-----------+</td>
-<td></td>
-</tr>
-<tr>
 <td>OinVragendeOrganisatie&gt;br&gt;<em>OIN van de vragende organisatie.</em></td>
 <td>[1..1]</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
 </tr>
 <tr>
 <td>OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
 <td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
 <td>[0..1]</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
 </tr>
 <tr>
 <td><strong>Filter</strong></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
 <td>Filter.MeldingskenmerkenLijst<br><em>(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.</em></td>
 <td>[0..1]</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
 </tr>
 <tr>
 <td>Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement</td>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
 <td>Filter.VanafTijdstempelIndienen<br><em>Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.</em></td>
 <td>[0..1]</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
 </tr>
 <tr>
 <td>Filter.TotEnMetTijdstempelIndienen<br>  <em>Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
-<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^1].</em></td>
+<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^7].</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
-<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^1].</em></td>
+<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^7].</em></td>
 <td>[0..1]</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
 </tr>
 <tr>
 <td>Filter.StatusTerugmelding<br><em>String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>---------------------------------------------------------</td>
-<td>-----------</td>
-</tr>
-<tr>
 <td>Filter.Objectidentificatie<br><em>String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.</em></td>
 <td>[0..1]</td>
 </tr>
-</tbody></table><p>[^1]: <em>Het resultaat</em> betreft terugmeldingen (annotatiebomen) waarvoor
+</tbody></table><p>[^7]: <em>Het resultaat</em> betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat <strong>de laatste annotatie</strong> is toegevoegd tussen
 VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging</p></section><section id="statusoverzichtresponse"><h4 id="x5-3-3-statusoverzichtresponse"><bdi class="secno">5.3.3 </bdi>StatusoverzichtResponse<a class="self-link" href="#statusoverzichtresponse" aria-label="Permalink for Section 5.3.3"></a></h4><p>Het statusoverzicht geeft een lijst met annotaties terug. Dit zijn in
 dit geval altijd 'root' annotaties waar een annotatieboom aan hangt. Dit
