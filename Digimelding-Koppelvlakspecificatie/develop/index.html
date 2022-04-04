@@ -741,49 +741,178 @@ Voorziening</li>
 </tbody></table><p>* De elementen Annotatie en AnnotatieBoom zijn onderdeel van een
 verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 één van de twee.</p><section id="annotatie-toevoegen-terugmelden"><h5 id="x5-2-3-1-annotatie-toevoegen-terugmelden"><bdi class="secno">5.2.3.1 </bdi>Annotatie toevoegen (terugmelden)<a class="self-link" href="#annotatie-toevoegen-terugmelden" aria-label="Permalink for Section 5.2.3.1"></a></h5><p>De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
-als volgt:</p><p>| <strong>AnnotatieBoom . Annotatie</strong>                           | [1..*] |
-|                                                         |           |
-| <strong>Annotatie . Terugmelding</strong>                            | [1..1]  |
-| Terugmelding . <strong>Annotatiebasis</strong>                       |           |
-| Terugmelding . Bronverwijzingen<br><em>Bronverwijzingen bestaande uit één of meerdere bronverwijzing</em><br><em>Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.</em> | [1..1] |
-| Terugmelding . Bronverwijzingen . Bronverwijzing<br><em>Bestaande uit een URI en een selectieverwijzing naar het basisregistratie-element waarop wordt teruggemeld. Dit zijn er meerdere, maar in de huidige praktijk is dit er altijd precies één.</em> | [1..*] |
-| Terugmelding . Bronverwijzingen . Bronverwijzing .  Uri<br> <em>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</em> | [1..1] |
-| Terugmelding . Bronverwijzingen . Bronverwijzing . Selectie<br> <em>Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).</em> | [0..*] |
-| Terugmelding . Attributenset<br> <em>De set van attributen die daadwerkelijk gewijzigd dienen te worden.</em> | [1..1] |
-| Attribuut<br><em>Eén of meerdere attributen die gewijzigd dienen te worden.</em> | [1..*] |
-| Attribuut . Uri<br>De unieke aanduiding van het attribuut | [1..1] |
-| Attribuut . BetwijfeldeWaarde<br><em>De bestaande waarde in de basisregistratie.</em>  | [0..1] |
-| Attribuut . VoorgesteldeWaarde<br><em>De voorgestelde nieuwe waarde.</em> | [0..1] |
-| Terugmelding . Peilmoment<br><em>De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.</em> | [0..1] |
-|                                                         |           |
-| <strong>Annotatie . Annotatiestatus</strong><br><em>Status van de terugmelding</em> | [1..*] |
-| Annotatiestatus . <strong>Annotatiebasis</strong>                    |           |
-| Annotatiestatus . Status<br> <em>Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)</em> | [1..1]  |
-|                                                         |           |
-| <strong>Annotatie . Referentiekenmerk</strong><br><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em> | [1..*] |
-| Referentiekenmerk . <strong>Annotatiebasis</strong>                  |           |
-| Referentiekenmerk . Kenmerk<br><em>Eigen kenmerk terugmeldende organisatie.</em><br><em>In de huidige praktijk maximaal 12 posities</em> | [1..1]  |
-|                                                         |           |
-| <strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens</em>  | [1..*] |
-| Contactinformatie . @ContactType<br><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em> | [1..1] |
-| Contactinformatie . <strong>Annotatiebasis</strong>                  |           |
-| Contactinformatie . Naam                                | [1..1]  |
-| Contactinformatie . Telefoon                            | [0..1]  |
-| Contactinformatie . Email                               | [1..1]  |
-| Contactinformatie . Afdeling                            | [0..1]  |
-|                                                         |           |
-| <strong>Annotatie . Bijlageverwijzing</strong>                       | [0..*] |
-|                                                         |           |
-| &gt; <em>HR ondersteunt maximaal 5 bijlagen.</em>                 |           |
-| Bijlageverwijzing . <strong>Annotatiebasis</strong>                  |           |
-| Bijlageverwijzing . Bestandsnaam<br><em>De naam van het bestand.</em>  | [1..1]  |
-| Bijlageverwijzing . MIMEType<br><em>Het MIME type van de bijlage.</em> | [1..1]  |
-| Bijlageverwijzing . BijlageData<br><em>Het bestand zelf in Base64-binary encoding.</em> | [1..1]  |
-| Bijlageverwijzing . Beschrijving<br><em>Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.</em> | [0..1] |
-|                                                         |           |
-| <strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em> | [0 *]  |
-| BehandelendeBronhouder . <strong>Annotatiebasis</strong>             |           |
-| BehandelendeBronhouder . Bronhouder<br><em>De gewenste bronhouder</em>     | [1..1]  |</p></section><section id="annotatie-toevoegen-intrekken"><h5 id="x5-2-3-2-annotatie-toevoegen-intrekken"><bdi class="secno">5.2.3.2 </bdi>Annotatie toevoegen (intrekken)<a class="self-link" href="#annotatie-toevoegen-intrekken" aria-label="Permalink for Section 5.2.3.2"></a></h5><p>De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table class="simple">
+als volgt:</p><table class="simple">
+<thead>
+<tr>
+<th><strong>AnnotatieBoom . Annotatie</strong></th>
+<th>[1..*]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Annotatie . Terugmelding</strong></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Terugmelding . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Terugmelding . Bronverwijzingen<br><em>Bronverwijzingen bestaande uit één of meerdere bronverwijzing</em><br><em>Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Terugmelding . Bronverwijzingen . Bronverwijzing<br><em>Bestaande uit een URI en een selectieverwijzing naar het basisregistratie-element waarop wordt teruggemeld. Dit zijn er meerdere, maar in de huidige praktijk is dit er altijd precies één.</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>Terugmelding . Bronverwijzingen . Bronverwijzing .  Uri<br> <em>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Terugmelding . Bronverwijzingen . Bronverwijzing . Selectie<br> <em>Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).</em></td>
+<td>[0..*]</td>
+</tr>
+<tr>
+<td>Terugmelding . Attributenset<br> <em>De set van attributen die daadwerkelijk gewijzigd dienen te worden.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Attribuut<br><em>Eén of meerdere attributen die gewijzigd dienen te worden.</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>Attribuut . Uri<br>De unieke aanduiding van het attribuut</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Attribuut . BetwijfeldeWaarde<br><em>De bestaande waarde in de basisregistratie.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Attribuut . VoorgesteldeWaarde<br><em>De voorgestelde nieuwe waarde.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Terugmelding . Peilmoment<br><em>De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Annotatie . Annotatiestatus</strong><br><em>Status van de terugmelding</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>Annotatiestatus . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Annotatiestatus . Status<br> <em>Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Annotatie . Referentiekenmerk</strong><br><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>Referentiekenmerk . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Referentiekenmerk . Kenmerk<br><em>Eigen kenmerk terugmeldende organisatie.</em><br><em>In de huidige praktijk maximaal 12 posities</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens</em></td>
+<td>[1..*]</td>
+</tr>
+<tr>
+<td>Contactinformatie . @ContactType<br><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Contactinformatie . Naam</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Telefoon</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Email</td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Contactinformatie . Afdeling</td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Annotatie . Bijlageverwijzing</strong></td>
+<td>[0..*]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt; <em>HR ondersteunt maximaal 5 bijlagen.</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Bijlageverwijzing . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Bijlageverwijzing . Bestandsnaam<br><em>De naam van het bestand.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Bijlageverwijzing . MIMEType<br><em>Het MIME type van de bijlage.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Bijlageverwijzing . BijlageData<br><em>Het bestand zelf in Base64-binary encoding.</em></td>
+<td>[1..1]</td>
+</tr>
+<tr>
+<td>Bijlageverwijzing . Beschrijving<br><em>Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.</em></td>
+<td>[0..1]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em></td>
+<td>[0 *]</td>
+</tr>
+<tr>
+<td>BehandelendeBronhouder . <strong>Annotatiebasis</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>BehandelendeBronhouder . Bronhouder<br><em>De gewenste bronhouder</em></td>
+<td>[1..1]</td>
+</tr>
+</tbody></table></section><section id="annotatie-toevoegen-intrekken"><h5 id="x5-2-3-2-annotatie-toevoegen-intrekken"><bdi class="secno">5.2.3.2 </bdi>Annotatie toevoegen (intrekken)<a class="self-link" href="#annotatie-toevoegen-intrekken" aria-label="Permalink for Section 5.2.3.2"></a></h5><p>De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p><table class="simple">
 <thead>
 <tr>
 <th></th>
