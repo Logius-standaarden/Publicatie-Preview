@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 28.1.0 Logius profile 20220113">
+<meta name="generator" content="ReSpec 32.1.2 Logius profile 20220404">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -80,14 +80,16 @@ details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin 
 details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
 details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
-a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-h2,h3,h4,h5,h6{position:relative}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
-:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
 @media (max-width:767px){
 dd{margin-left:0}
-:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
 }
 @media print{
 .removeOnSave{display:none}
@@ -110,22 +112,23 @@ var[data-type]::after{content:attr(data-type);transform:translateX(-50%) transla
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "EO",
-  "specType": "ST",
+  "specStatus": "WV",
+  "specType": "WA",
   "pubDomain": "dk",
   "shortName": "beheer",
-  "publishDate": "2019-05-15",
-  "publishVersion": "1.6",
+  "publishDate": "2022-06-01",
+  "publishVersion": "1.7",
+  "previousPublishVersion": "1.6",
   "license": "cc-by-nd",
   "doJsonLd": true,
   "editors": [
     {
-      "name": "Peter Haasnoot",
+      "name": "Edwin Wisse",
       "url": "https://logius.nl/standaarden",
       "company": "Logius"
     },
     {
-      "name": "Maarten van der Veen",
+      "name": "Peter Haasnoot",
       "url": "https://logius.nl/standaarden",
       "company": "Logius"
     }
@@ -148,9 +151,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "nl_emailComments": "digikoppeling@logius.nl",
   "nl_addReleaseTagTitle": true,
-  "nl_markdownSplitH1sections": true,
   "nl_github": {
-    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel/"
+    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel"
   },
   "nl_organisationName": "Logius",
   "nl_organisationPrefix": "LS-",
@@ -228,21 +230,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "Logius"
     }
   },
-  "publishISODate": "2019-05-15T00:00:00.000Z",
-  "generatedSubtitle": "Verouderde versie 15 mei 2019"
+  "publishISODate": "2022-06-01T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 05 april 2022"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-EO.css"></head>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
 <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Beheermodel</h1>
     
     <h2>
-      Logius Standaard<br>
-      Verouderde versie
-      <time class="dt-published" datetime="2019-05-15">15 mei 2019</time>
+      Logius Werkafspraak<br>
+      Werkversie
+      <time class="dt-published" datetime="2022-06-01">05 april 2022</time>
     </h2>
-	<a lang="nl" href="https://publicatie.centrumvoorstandaarden.nl/">Overzicht standaarden</a>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://logius-standaarden.github.io/Digikoppeling-Beheermodel/">https://logius-standaarden.github.io/Digikoppeling-Beheermodel/</a>
@@ -253,13 +254,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       
       
-      
+      <dt>Vorige versie</dt><dd><a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/1.6/">https://publicatie.centrumvoorstandaarden.nl/dk/beheer/1.6/</a></dd>
       
       <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
-    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Edwin Wisse</a> (<span class="p-org org h-org">Logius</span>)
   </dd><dd class="editor p-author h-card vcard">
-    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Maarten van der Veen</a> (<span class="p-org org h-org">Logius</span>)
+    <a class="u-url url p-name fn" href="https://logius.nl/standaarden">Peter Haasnoot</a> (<span class="p-org org h-org">Logius</span>)
   </dd>
       
       <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
@@ -270,7 +271,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/Digikoppeling-Beheermodel/issues/">Dien een melding in</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/Digikoppeling-Beheermodel/">Revisiehistorie</a>
+    <a href="https://github.com/Logius-standaarden/Digikoppeling-Beheermodel/commits/">Revisiehistorie</a>
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/Digikoppeling-Beheermodel/pulls/">Pull requests</a>
   </dd>
@@ -287,7 +288,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </p>
     <hr title="Separator for header">
   </div>
-    <section id="abstract" class="introductory"><h2 id="samenvatting">Samenvatting<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2><p>Dit document beschrijft het beheermodel voor de
+    <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft het beheermodel voor de
   Digikoppeling-standaarden. Het geeft alle belanghebbenden
   inzicht in het releasebeleid, in de wijze waarop het beheer
   van Digikoppeling is belegd, hoe het proces van wijzigen en
@@ -297,8 +298,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   release-nummering en de publicatie en informatievoorziening
   rond Digikoppeling.</p>
 </section>
-    <section id="sotd" class="introductory"><h2 id="status-van-dit-document">Status van dit document<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2><p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#achtergrond"><bdi class="secno">1.1 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#doel-van-document"><bdi class="secno">1.2 </bdi>Doel van document</a></li><li class="tocline"><a class="tocxref" href="#doelgroep-van-dit-document"><bdi class="secno">1.3 </bdi>Doelgroep van dit document</a></li><li class="tocline"><a class="tocxref" href="#bijdragen"><bdi class="secno">1.4 </bdi>Bijdragen</a></li><li class="tocline"><a class="tocxref" href="#licentie-en-patentrechten"><bdi class="secno">1.5 </bdi>Licentie en patentrechten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><bdi class="secno">2. </bdi>Digikoppeling Beheer en onderhoud op hoofdlijnen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#scope-beheer"><bdi class="secno">2.1 </bdi>Scope beheer</a></li><li class="tocline"><a class="tocxref" href="#belanghebbenden"><bdi class="secno">2.2 </bdi>Belanghebbenden</a></li><li class="tocline"><a class="tocxref" href="#structuur-van-participatie-en-ondersteuning"><bdi class="secno">2.3 </bdi>Structuur van participatie en ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#releasebeleid"><bdi class="secno">2.4 </bdi>Releasebeleid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#participatie"><bdi class="secno">2.4.1 </bdi>Participatie</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-releases"><bdi class="secno">2.4.2 </bdi>Nieuwe releases</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-andere-standaarden"><bdi class="secno">2.4.3 </bdi>Aansluiting op andere standaarden</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">2.4.4 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#implementatie-en-gebruik"><bdi class="secno">2.4.5 </bdi>Implementatie en gebruik</a></li><li class="tocline"><a class="tocxref" href="#overige-principes"><bdi class="secno">2.4.6 </bdi>Overige principes</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-beheer-en-onderhoudsprocessen"><bdi class="secno">3. </bdi>Bijlage A: Beheer- en onderhoudsprocessen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#procesoverview"><bdi class="secno">3.1 </bdi>Procesoverview</a></li><li class="tocline"><a class="tocxref" href="#proces-digikoppeling-product-cycle-management"><bdi class="secno">3.2 </bdi>Proces: Digikoppeling Product Cycle Management</a></li><li class="tocline"><a class="tocxref" href="#proces-intake-en-analyse"><bdi class="secno">3.3 </bdi>Proces: Intake en Analyse</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intake-wijzigingsaanvraag"><bdi class="secno">3.3.1 </bdi>Intake wijzigingsaanvraag</a></li><li class="tocline"><a class="tocxref" href="#beoordelen-wijzigingsaanvraag"><bdi class="secno">3.3.2 </bdi>Beoordelen wijzigingsaanvraag</a></li><li class="tocline"><a class="tocxref" href="#uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><bdi class="secno">3.3.3 </bdi>Uitwerken en analyse wijzigingsaanvraag tot RFC</a></li><li class="tocline"><a class="tocxref" href="#proces-administratie-en-ondersteuning"><bdi class="secno">3.3.4 </bdi>Proces: Administratie en ondersteuning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-releaseplanning"><bdi class="secno">3.4 </bdi>Proces: Releaseplanning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opstellen-releasevoorstellen"><bdi class="secno">3.4.1 </bdi>Opstellen Releasevoorstellen</a></li><li class="tocline"><a class="tocxref" href="#vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><bdi class="secno">3.4.2 </bdi>Vaststellen releaseplan eerstvolgende Digikoppeling release</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-onderhouden-digikoppeling-onderdelen"><bdi class="secno">3.5 </bdi>Proces: Onderhouden Digikoppeling onderdelen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opstellen-digikoppeling-standaard"><bdi class="secno">3.5.1 </bdi>Opstellen Digikoppeling standaard</a></li><li class="tocline"><a class="tocxref" href="#review-en-openbare-consultatie-digikoppeling-standaard"><bdi class="secno">3.5.2 </bdi>Review en openbare consultatie Digikoppeling standaard</a></li><li class="tocline"><a class="tocxref" href="#vaststellen-in-gebruik"><bdi class="secno">3.5.3 </bdi>Vaststellen ‘In Gebruik’</a></li><li class="tocline"><a class="tocxref" href="#implementatie-in-softwareproducten"><bdi class="secno">3.5.4 </bdi>Implementatie in softwareproducten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-ingebruikname"><bdi class="secno">3.6 </bdi>Proces: Ingebruikname</a></li><li class="tocline"><a class="tocxref" href="#proces-vernieuwing-en-onderhoud-additionele-producten"><bdi class="secno">3.7 </bdi>Proces: Vernieuwing en onderhoud additionele producten</a></li><li class="tocline"><a class="tocxref" href="#proces-incidentbeheer"><bdi class="secno">3.8 </bdi>Proces: Incidentbeheer</a></li><li class="tocline"><a class="tocxref" href="#proces-publicatie-en-communicatie"><bdi class="secno">3.9 </bdi>Proces: Publicatie en Communicatie</a></li><li class="tocline"><a class="tocxref" href="#proces-support"><bdi class="secno">3.10 </bdi>Proces: Support</a></li><li class="tocline"><a class="tocxref" href="#proces-klachten"><bdi class="secno">3.11 </bdi>Proces: Klachten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-informatievoorziening-rond-digikoppeling"><bdi class="secno">4. </bdi>Bijlage B: Informatievoorziening rond Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geinteresseerden-en-gebruikers-van-de-standaard"><bdi class="secno">4.1 </bdi>Geïnteresseerden en gebruikers van de standaard</a></li><li class="tocline"><a class="tocxref" href="#community-technisch-overleg-en-klantenraad"><bdi class="secno">4.2 </bdi>Community, Technisch Overleg en Klantenraad</a></li><li class="tocline"><a class="tocxref" href="#medewerkers-beheerder"><bdi class="secno">4.3 </bdi>Medewerkers beheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-c-begrippen-en-afkortingen"><bdi class="secno">5. </bdi>Bijlage C: Begrippen en afkortingen</a></li><li class="tocline"><a class="tocxref" href="#bijlage-d-versie-nummering-digikoppeling-onderdelen"><bdi class="secno">6. </bdi>Bijlage D: versie-nummering Digikoppeling onderdelen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioneringsmethodiek"><bdi class="secno">6.1 </bdi>Versioneringsmethodiek</a></li><li class="tocline"><a class="tocxref" href="#patch-releases"><bdi class="secno">6.2 </bdi>Patch Releases</a></li><li class="tocline"><a class="tocxref" href="#minor-releases"><bdi class="secno">6.3 </bdi>Minor releases</a></li><li class="tocline"><a class="tocxref" href="#major-releases"><bdi class="secno">6.4 </bdi>Major Releases</a></li><li class="tocline"><a class="tocxref" href="#versie-overgangen"><bdi class="secno">6.5 </bdi>Versie overgangen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li></ol></nav>
-    <section class="introductory" data-format="markdown"><h1>Documentbeheer</h1><table class="dkkvs">
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#achtergrond"><bdi class="secno">1.1 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#doel-van-document"><bdi class="secno">1.2 </bdi>Doel van document</a></li><li class="tocline"><a class="tocxref" href="#doelgroep-van-dit-document"><bdi class="secno">1.3 </bdi>Doelgroep van dit document</a></li><li class="tocline"><a class="tocxref" href="#bijdragen"><bdi class="secno">1.4 </bdi>Bijdragen</a></li><li class="tocline"><a class="tocxref" href="#licentie-en-patentrechten"><bdi class="secno">1.5 </bdi>Licentie en patentrechten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><bdi class="secno">2. </bdi>Digikoppeling Beheer en onderhoud op hoofdlijnen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#scope-beheer"><bdi class="secno">2.1 </bdi>Scope beheer</a></li><li class="tocline"><a class="tocxref" href="#belanghebbenden"><bdi class="secno">2.2 </bdi>Belanghebbenden</a></li><li class="tocline"><a class="tocxref" href="#structuur-van-participatie-en-ondersteuning"><bdi class="secno">2.3 </bdi>Structuur van participatie en ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#releasebeleid"><bdi class="secno">2.4 </bdi>Releasebeleid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#participatie"><bdi class="secno">2.4.1 </bdi>Participatie</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-releases"><bdi class="secno">2.4.2 </bdi>Nieuwe releases</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-andere-standaarden"><bdi class="secno">2.4.3 </bdi>Aansluiting op andere standaarden</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">2.4.4 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#implementatie-en-gebruik"><bdi class="secno">2.4.5 </bdi>Implementatie en gebruik</a></li><li class="tocline"><a class="tocxref" href="#overige-principes"><bdi class="secno">2.4.6 </bdi>Overige principes</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-beheer-en-onderhoudsprocessen"><bdi class="secno">3. </bdi>Bijlage A: Beheer- en onderhoudsprocessen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#procesoverview"><bdi class="secno">3.1 </bdi>Procesoverview</a></li><li class="tocline"><a class="tocxref" href="#proces-digikoppeling-product-cycle-management"><bdi class="secno">3.2 </bdi>Proces: Digikoppeling Product Cycle Management</a></li><li class="tocline"><a class="tocxref" href="#proces-intake-en-analyse"><bdi class="secno">3.3 </bdi>Proces: Intake en Analyse</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intake-wijzigingsaanvraag"><bdi class="secno">3.3.1 </bdi>Intake wijzigingsaanvraag</a></li><li class="tocline"><a class="tocxref" href="#beoordelen-wijzigingsaanvraag"><bdi class="secno">3.3.2 </bdi>Beoordelen wijzigingsaanvraag</a></li><li class="tocline"><a class="tocxref" href="#uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><bdi class="secno">3.3.3 </bdi>Uitwerken en analyse wijzigingsaanvraag tot RFC</a></li><li class="tocline"><a class="tocxref" href="#proces-administratie-en-ondersteuning"><bdi class="secno">3.3.4 </bdi>Proces: Administratie en ondersteuning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-releaseplanning"><bdi class="secno">3.4 </bdi>Proces: Releaseplanning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opstellen-releasevoorstellen"><bdi class="secno">3.4.1 </bdi>Opstellen Releasevoorstellen</a></li><li class="tocline"><a class="tocxref" href="#vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><bdi class="secno">3.4.2 </bdi>Vaststellen releaseplan eerstvolgende Digikoppeling release</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-onderhouden-digikoppeling-onderdelen"><bdi class="secno">3.5 </bdi>Proces: Onderhouden Digikoppeling onderdelen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opstellen-digikoppeling-standaard"><bdi class="secno">3.5.1 </bdi>Opstellen Digikoppeling standaard</a></li><li class="tocline"><a class="tocxref" href="#review-en-openbare-consultatie-digikoppeling-standaard"><bdi class="secno">3.5.2 </bdi>Review en openbare consultatie Digikoppeling standaard</a></li><li class="tocline"><a class="tocxref" href="#vaststellen-in-gebruik"><bdi class="secno">3.5.3 </bdi>Vaststellen ‘In Gebruik’</a></li><li class="tocline"><a class="tocxref" href="#implementatie-in-softwareproducten"><bdi class="secno">3.5.4 </bdi>Implementatie in softwareproducten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proces-ingebruikname"><bdi class="secno">3.6 </bdi>Proces: Ingebruikname</a></li><li class="tocline"><a class="tocxref" href="#proces-vernieuwing-en-onderhoud-additionele-producten"><bdi class="secno">3.7 </bdi>Proces: Vernieuwing en onderhoud additionele producten</a></li><li class="tocline"><a class="tocxref" href="#proces-incidentbeheer"><bdi class="secno">3.8 </bdi>Proces: Incidentbeheer</a></li><li class="tocline"><a class="tocxref" href="#proces-publicatie-en-communicatie"><bdi class="secno">3.9 </bdi>Proces: Publicatie en Communicatie</a></li><li class="tocline"><a class="tocxref" href="#proces-support"><bdi class="secno">3.10 </bdi>Proces: Support</a></li><li class="tocline"><a class="tocxref" href="#proces-klachten"><bdi class="secno">3.11 </bdi>Proces: Klachten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-informatievoorziening-rond-digikoppeling"><bdi class="secno">4. </bdi>Bijlage B: Informatievoorziening rond Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geinteresseerden-en-gebruikers-van-de-standaard"><bdi class="secno">4.1 </bdi>Geïnteresseerden en gebruikers van de standaard</a></li><li class="tocline"><a class="tocxref" href="#community-technisch-overleg-en-klantenraad"><bdi class="secno">4.2 </bdi>Community, Technisch Overleg en Klantenraad</a></li><li class="tocline"><a class="tocxref" href="#medewerkers-beheerder"><bdi class="secno">4.3 </bdi>Medewerkers beheerder</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-c-begrippen-en-afkortingen"><bdi class="secno">5. </bdi>Bijlage C: Begrippen en afkortingen</a></li><li class="tocline"><a class="tocxref" href="#bijlage-d-versie-nummering-digikoppeling-onderdelen"><bdi class="secno">6. </bdi>Bijlage D: versie-nummering Digikoppeling onderdelen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioneringsmethodiek"><bdi class="secno">6.1 </bdi>Versioneringsmethodiek</a></li><li class="tocline"><a class="tocxref" href="#patch-releases"><bdi class="secno">6.2 </bdi>Patch Releases</a></li><li class="tocline"><a class="tocxref" href="#minor-releases"><bdi class="secno">6.3 </bdi>Minor releases</a></li><li class="tocline"><a class="tocxref" href="#major-releases"><bdi class="secno">6.4 </bdi>Major Releases</a></li><li class="tocline"><a class="tocxref" href="#versie-overgangen"><bdi class="secno">6.5 </bdi>Versie overgangen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li></ol></nav>
+    <section class="introductory"><h1>Documentbeheer</h1>
+<table>
 <thead>
 <tr>
 <th>Datum</th>
@@ -373,8 +375,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <td>Logius</td>
 <td>Governancestructuur aangepast aan GDI governance, wijzigingsproces beschreven. BOMOS versie 3 als basis gebruikt.</td>
 </tr>
-</tbody></table></section>
-    <section class="introductory" data-format="markdown"><h1>Colofon</h1><table class="dkkvs">
+</tbody></table>
+</section>
+    <section class="introductory"><h1>Colofon</h1>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -385,14 +389,17 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <td>Logius Servicecentrum:</td>
 <td>Postbus 96810 <br>2509 JE Den Haag<br>tel. 0900 555 4555 (10 ct p/m)<br>email <a href="mailto:servicecentrum@logius.nl">servicecentrum@logius.nl</a></td>
 </tr>
-</tbody></table></section>
-    
-<section data-format="markdown" id="inleiding"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding<a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></h2><p>Het Digikoppeling beheermodel beschrijft hoe de governance van de
+</tbody></table>
+</section>
+    <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+<p>Het Digikoppeling beheermodel beschrijft hoe de governance van de
 Digikoppeling is ingericht, welke overleggen adviseren en beslissen
 over de standaard en hoe wijzigingsverzoeken in behandeling worden
 genomen. De basis van het beheermodel is BOMOS. BOMOS geeft
 richtlijnen voor de inrichting van een open beheerproces voor
-standaarden.</p><section id="achtergrond"><h3 id="x1-1-achtergrond"><bdi class="secno">1.1 </bdi>Achtergrond<a class="self-link" href="#achtergrond" aria-label="Permalink for Section 1.1"></a></h3><p>De Nederlandse Overheid Referentie Architectuur (NORA) positioneert
+standaarden.</p>
+<section id="achtergrond"><div class="header-wrapper"><h3 id="x1-1-achtergrond"><bdi class="secno">1.1 </bdi>Achtergrond</h3><a class="self-link" href="#achtergrond" aria-label="Permalink for Section 1.1"></a></div>
+<p>De Nederlandse Overheid Referentie Architectuur (NORA) positioneert
 Digikoppeling als de logistieke laag voor standaardisatie van
 communicatie tussen systemen bij overheidsorganisatie op basis van
 webservice standaarden. Digikoppeling is daardoor een laag die zich
@@ -401,16 +408,21 @@ de applicatielaag (functionele berichtinhoud). De systemen die
 Digikoppeling gebruiken zijn zowel frontoffice-systemen (die
 interactie met burgers en bedrijven afhandelen) als systemen van
 andere overheden en in het bijzonder de basisregistraties (zie
-onderstaand figuur).</p><p><figure id="fig-systemen-die-digikoppeling-gebruiken"><img src="media/DK_Systemen_die_Digikoppeling_gebruiken.png" alt="Systemen die DIgikoppeling gebruiken" title="Systemen die DIgikoppeling gebruiken"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Systemen die DIgikoppeling gebruiken</span></figcaption></figure></p><p>Doel van Digikoppeling is om door vergaande standaardisatie de
+onderstaand figuur).</p>
+<p><figure id="fig-systemen-die-digikoppeling-gebruiken"><img src="media/DK_Systemen_die_Digikoppeling_gebruiken.png" alt="Systemen die DIgikoppeling gebruiken" title="Systemen die DIgikoppeling gebruiken"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Systemen die DIgikoppeling gebruiken</span></figcaption></figure></p>
+<p>Doel van Digikoppeling is om door vergaande standaardisatie de
 interoperabiliteit tussen overheden te bevorderen. Als de 'envelop'
 van de 'berichten' is gestandaardiseerd kan ieder voorzieningen voor
 postverzending inrichten die onafhankelijk zijn van de berichten in de
-'envelop'.</p><p>De Digikoppeling standaard is door het College
+'envelop'.</p>
+<p>De Digikoppeling standaard is door het College
 Standaardisatie<sup>1</sup> in november 2007 geselecteerd als
 standaard voor het Comply-or-Explain regime en in mei 2009 opnieuw
 bekrachtigd. Het College stelde ook als eis dat een beheerproces voor
 een goed te keuren standaard is ingericht. Dit document beschrijft
-deze inrichting.</p><p><sup>1</sup>: Het College Standaardisatie is begin 2018 voortgezet in het Overheidsbreed Beleidsoverleg Digitale Overheid (OBDO).</p><p>De Digikoppeling-standaard is binnen de overheid in gebruik bij
+deze inrichting.</p>
+<p><sup>1</sup>: Het College Standaardisatie is begin 2018 voortgezet in het Overheidsbreed Beleidsoverleg Digitale Overheid (OBDO).</p>
+<p>De Digikoppeling-standaard is binnen de overheid in gebruik bij
 diverse organisaties, samenwerkingsverbanden en/of ketens. Een groot
 aantal ICT leveranciers biedt ondersteuning aan de voor Digikoppeling
 benodigde open standaarden (WUS, ebMS, https) in hun producten en
@@ -421,12 +433,15 @@ Digikoppeling-standaard zijn veel verschillende organisaties betrokken
 uit de gehele eOverheid. De voornaamste organisaties zijn ministeries,
 Manifestpartijen, houders van basisregistraties en landelijke
 voorzieningen, ketenpartijen, ICT leveranciers en gemeenten via
-KING. Opdrachtgever voor Digikoppeling is het Ministerie van BZK.</p><p>Omdat de Digikoppeling standaard steeds meer en breder wordt gebruikt,
+KING. Opdrachtgever voor Digikoppeling is het Ministerie van BZK.</p>
+<p>Omdat de Digikoppeling standaard steeds meer en breder wordt gebruikt,
 is het noodzakelijk dat het beheer en onderhoud voor alle
 belang-hebbenden inzichtelijk en transparant is, duidelijk belegd is
 en de doorontwikkeling releasematig plaatsvindt. Dit document geeft
 hier invulling aan en beschrijft het beheermodel voor de
-Digikoppeling-standaarden.</p><p>In dit beheermodel komen de volgende onderwerpen aan bod:</p><ul>
+Digikoppeling-standaarden.</p>
+<p>In dit beheermodel komen de volgende onderwerpen aan bod:</p>
+<ul>
 <li><p>Scope van het beheer, de te beheren objecten van Digikoppeling;</p>
 </li>
 <li><p>Releasebeleid;</p>
@@ -435,29 +450,37 @@ Digikoppeling-standaarden.</p><p>In dit beheermodel komen de volgende onderwerpe
 </li>
 <li><p>Informatievoorziening t.b.v. belanghebbenden inclusief communicatie en publicatie.</p>
 </li>
-</ul><p>Voor het opstellen van dit document is zoveel mogelijk aangesloten bij
+</ul>
+<p>Voor het opstellen van dit document is zoveel mogelijk aangesloten bij
 het beheermodel van StUF om de eenvormigheid van beheerprocessen bij
-de eOverheid te bevorderen.</p></section><section id="doel-van-document"><h3 id="x1-2-doel-van-document"><bdi class="secno">1.2 </bdi>Doel van document<a class="self-link" href="#doel-van-document" aria-label="Permalink for Section 1.2"></a></h3><p>Dit document beschrijft het beheermodel voor de
+de eOverheid te bevorderen.</p>
+</section><section id="doel-van-document"><div class="header-wrapper"><h3 id="x1-2-doel-van-document"><bdi class="secno">1.2 </bdi>Doel van document</h3><a class="self-link" href="#doel-van-document" aria-label="Permalink for Section 1.2"></a></div>
+<p>Dit document beschrijft het beheermodel voor de
 Digikoppeling-standaarden. Het geeft alle belanghebbenden inzicht in
 het releasebeleid, in de wijze waarop het beheer van Digikoppeling is
 belegd, hoe het proces van wijzigen en releaseplanning van de
 Digikoppeling standaard eruit ziet en hoe de besluitvorming en
 participatie is georganiseerd. Daarnaast komen aanvullende onderwerpen
 aan de orde zoals release-nummering en de publicatie en
-informatievoorziening rond Digikoppeling.</p><p>Door dit inzicht kunnen de belanghebbenden beter rekening houden met
+informatievoorziening rond Digikoppeling.</p>
+<p>Door dit inzicht kunnen de belanghebbenden beter rekening houden met
 en gebruik maken van de Digikoppeling standaard. Voor sommige
 belanghebbenden, zoals basisregistraties en andere
 informatieleveranciers binnen de eOverheid, is dit beheermodel van
 belang voor de planning van hun ontwikkeling en onderhoud. Maar ook
 ICT-leveranciers zullen, ieder op hun eigen manier, rekening moeten
 houden met het beheermodel om ondersteuning te kunnen leveren aan de
-betrokken overheidsorganisaties.</p><p>In Hoofdstuk 2 is het beheer op hoofdlijnen beschreven. Daarin komen
+betrokken overheidsorganisaties.</p>
+<p>In Hoofdstuk 2 is het beheer op hoofdlijnen beschreven. Daarin komen
 aan de orde: de afbakening van het beheer; de verschillende
 belanghebbenden; de structuur van participatie en ondersteuning en het
-releasebeleid.</p><p>In Bijlage A zijn de beheer- en onderhoudsprocessen beschreven; in
+releasebeleid.</p>
+<p>In Bijlage A zijn de beheer- en onderhoudsprocessen beschreven; in
 Bijlage B de informatievoorziening rond de Digikoppeling standaard en
 in Bijlage C het gehanteerde begrippenkader. Tot slot komt in Bijlage
-D en E een aantal overige onderwerpen aan de orde.</p></section><section id="doelgroep-van-dit-document"><h3 id="x1-3-doelgroep-van-dit-document"><bdi class="secno">1.3 </bdi>Doelgroep van dit document<a class="self-link" href="#doelgroep-van-dit-document" aria-label="Permalink for Section 1.3"></a></h3><table class="dkkvs">
+D en E een aantal overige onderwerpen aan de orde.</p>
+</section><section id="doelgroep-van-dit-document"><div class="header-wrapper"><h3 id="x1-3-doelgroep-van-dit-document"><bdi class="secno">1.3 </bdi>Doelgroep van dit document</h3><a class="self-link" href="#doelgroep-van-dit-document" aria-label="Permalink for Section 1.3"></a></div>
+<table>
 <thead>
 <tr>
 <th>Afkorting</th>
@@ -490,7 +513,10 @@ D en E een aantal overige onderwerpen aan de orde.</p></section><section id="doe
 <td>Ontwikkelt, bouwt en configureert de techniek conform specificaties. Zorgen voor beheer na ingebruikname.</td>
 <td>Ja</td>
 </tr>
-</tbody></table></section><section id="bijdragen"><h3 id="x1-4-bijdragen"><bdi class="secno">1.4 </bdi>Bijdragen<a class="self-link" href="#bijdragen" aria-label="Permalink for Section 1.4"></a></h3><p>Onderstaande personen hebben bijgedragen aan de totstandkoming van dit beheermodel:</p><ul>
+</tbody></table>
+</section><section id="bijdragen"><div class="header-wrapper"><h3 id="x1-4-bijdragen"><bdi class="secno">1.4 </bdi>Bijdragen</h3><a class="self-link" href="#bijdragen" aria-label="Permalink for Section 1.4"></a></div>
+<p>Onderstaande personen hebben bijgedragen aan de totstandkoming van dit beheermodel:</p>
+<ul>
 <li><p>Tom Peelen, Logius stelselarchitect</p>
 </li>
 <li><p>Peter Klaver, EGEM i-teams</p>
@@ -503,7 +529,9 @@ D en E een aantal overige onderwerpen aan de orde.</p></section><section id="doe
 </li>
 <li><p>Marcel Reuvers, GeoNovum</p>
 </li>
-</ul><p>In de review-fase van het beheermodel is een belangrijke bijdrage geleverd door de volgende leden van het Technisch Overleg Digikoppeling:</p><ul>
+</ul>
+<p>In de review-fase van het beheermodel is een belangrijke bijdrage geleverd door de volgende leden van het Technisch Overleg Digikoppeling:</p>
+<ul>
 <li><p>Sylvia Majdoubi, Kamers van Koophandel,</p>
 </li>
 <li><p>Hans Lussing, ICTU/OverheidsDienstenPlatform,</p>
@@ -526,62 +554,88 @@ D en E een aantal overige onderwerpen aan de orde.</p></section><section id="doe
 </li>
 <li><p>Tom Peelen, Logius stelselarchitect</p>
 </li>
-</ul><p>Bij de toetsing met Bomos2i is een belangrijke bijdrage geleverd door:</p><ul>
+</ul>
+<p>Bij de toetsing met Bomos2i is een belangrijke bijdrage geleverd door:</p>
+<ul>
 <li><p>Marijke Salters, Logius Centrum voor Standaarden</p>
 </li>
 <li><p>Lia van der Knijff, Logius projectleider Digikoppeling</p>
 </li>
 <li><p>Tom Peelen, Logius stelselarchitect</p>
 </li>
-</ul></section><section id="licentie-en-patentrechten"><h3 id="x1-5-licentie-en-patentrechten"><bdi class="secno">1.5 </bdi>Licentie en patentrechten<a class="self-link" href="#licentie-en-patentrechten" aria-label="Permalink for Section 1.5"></a></h3><p>Dit werk is gelicenseerd onder een Creative Commons Naamsvermelding 3.0 Unported licentie.</p><p><figure id="fig-creative-commons-naamsvermelding-3-0-unported-licentie"><img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie" title="Creative Commons Naamsvermelding 3.0 Unported licentie"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Creative Commons Naamsvermelding 3.0 Unported licentie</span></figcaption></figure></p><p>Meer informatie over de precieze voorwaarden van deze licentie vindt u
+</ul>
+</section><section id="licentie-en-patentrechten"><div class="header-wrapper"><h3 id="x1-5-licentie-en-patentrechten"><bdi class="secno">1.5 </bdi>Licentie en patentrechten</h3><a class="self-link" href="#licentie-en-patentrechten" aria-label="Permalink for Section 1.5"></a></div>
+<p>Dit werk is gelicenseerd onder een Creative Commons Naamsvermelding 3.0 Unported licentie.</p>
+<p><figure id="fig-creative-commons-naamsvermelding-3-0-unported-licentie"><img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie" title="Creative Commons Naamsvermelding 3.0 Unported licentie"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Creative Commons Naamsvermelding 3.0 Unported licentie</span></figcaption></figure></p>
+<p>Meer informatie over de precieze voorwaarden van deze licentie vindt u
 op de website van Creative Commons <a href="http://creativecommons.nl/">http://creativecommons.nl/</a> en
 specifiek voor deze licentie een samenvatting onder
 <a href="http://creativecommons.org/licenses/by/3.0/deed.nl">http://creativecommons.org/licenses/by/3.0/deed.nl</a> en de volledige
 licentietekst onder
-<a href="http://creativecommons.org/licenses/by/3.0/legalcode">http://creativecommons.org/licenses/by/3.0/legalcode</a>.</p><p>Dit werk en de specificaties van de Digikoppeling-standaard worden
+<a href="http://creativecommons.org/licenses/by/3.0/legalcode">http://creativecommons.org/licenses/by/3.0/legalcode</a>.</p>
+<p>Dit werk en de specificaties van de Digikoppeling-standaard worden
 royaltee-free ter beschikking gesteld. Organisaties en personen die
 bijdragen aan Digikoppeling dienen hun bijdragen vrij te geven zodanig
 dat hieraan voldaan kan worden. Door bij te dragen aan Digikoppeling
-verklaren zij hiermee in te stemmen.</p><p>Uitgesloten van alle bovenstaande zijn rechten verbonden aan de
+verklaren zij hiermee in te stemmen.</p>
+<p>Uitgesloten van alle bovenstaande zijn rechten verbonden aan de
 standaarden, profielen en andere onderdelen waar Digikoppeling gebruik
 van maakt. Hierop zijn de rechten van de betreffende standaarden,
-profielen en andere onderdelen zelf van toepassing.</p></section></section>
-<section data-format="markdown" id="digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><h2 id="x2-digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><bdi class="secno">2. </bdi>Digikoppeling Beheer en onderhoud op hoofdlijnen<a class="self-link" href="#digikoppeling-beheer-en-onderhoud-op-hoofdlijnen" aria-label="Permalink for Section 2."></a></h2><section id="scope-beheer"><h3 id="x2-1-scope-beheer"><bdi class="secno">2.1 </bdi>Scope beheer<a class="self-link" href="#scope-beheer" aria-label="Permalink for Section 2.1"></a></h3><p>Het beheer van de Digikoppeling-standaard omvat het geheel van
+profielen en andere onderdelen zelf van toepassing.</p>
+</section></section>
+    <section id="digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><div class="header-wrapper"><h2 id="x2-digikoppeling-beheer-en-onderhoud-op-hoofdlijnen"><bdi class="secno">2. </bdi>Digikoppeling Beheer en onderhoud op hoofdlijnen</h2><a class="self-link" href="#digikoppeling-beheer-en-onderhoud-op-hoofdlijnen" aria-label="Permalink for Section 2."></a></div>
+<section id="scope-beheer"><div class="header-wrapper"><h3 id="x2-1-scope-beheer"><bdi class="secno">2.1 </bdi>Scope beheer</h3><a class="self-link" href="#scope-beheer" aria-label="Permalink for Section 2.1"></a></div>
+<p>Het beheer van de Digikoppeling-standaard omvat het geheel van
 processen, besturing, organisatie, informatievoorziening en
 hulpmiddelen die noodzakelijk zijn om gebaseerd op open standaarden
 ook Digikoppeling zelf als open standaard in stand te houden, te
 onderhouden en door te ontwikkelen. Het beheer van Digikoppeling is
-gebaseerd op de principes uit de BOMOS standaard.</p><p>De Digikoppeling is beschreven in een set van documenten. Deze set is
-als volgt opgebouwd:</p><p>Alle met de kleur groen aangegeven documenten vallen onder het beheer
-zoals geformaliseerd in het Beheermodel en releasebeleid.</p><p>De Nederlandse Overheid Referentie Architectuur (NORA) maakt geen deel
+gebaseerd op de principes uit de BOMOS standaard.</p>
+<p>De Digikoppeling is beschreven in een set van documenten. Deze set is
+als volgt opgebouwd:</p>
+<p>Alle met de kleur groen aangegeven documenten vallen onder het beheer
+zoals geformaliseerd in het Beheermodel en releasebeleid.</p>
+<p>De Nederlandse Overheid Referentie Architectuur (NORA) maakt geen deel
 uit van het in dit document beschreven beheer van de
 Digikoppeling-standaard, maar bevat wel belangrijke informatie over
-Digikoppeling en haar toepassing.</p><p>De Digikoppeling Koppelvlakstandaarden bevatten meerdere profielen
+Digikoppeling en haar toepassing.</p>
+<p>De Digikoppeling Koppelvlakstandaarden bevatten meerdere profielen
 waarin een samenhangend interactiepatroon voor berichtuitwisseling is
-beschreven<sup>2</sup>.</p><p><sup>2</sup>: Een Digikoppeling service (Service Provider en Service
+beschreven<sup>2</sup>.</p>
+<p><sup>2</sup>: Een Digikoppeling service (Service Provider en Service
 Requester) werkt altijd volgens een vooraf bepaald profiel voor
-berichtenuitwisseling volgens een Koppelvlakstandaard.</p><p>"Gebruik en achtergrond Digikoppeling-certificaten" en de Best
+berichtenuitwisseling volgens een Koppelvlakstandaard.</p>
+<p>"Gebruik en achtergrond Digikoppeling-certificaten" en de Best
 Practice documenten zullen blijvend beheerd worden, maar volgens
 afwijkende procedures. Deze documenten vereisen niet dezelfde strikte
 besluitvorming aangezien zij een toelichting vormen bij de
-Koppelvlakstandaarden en architectuur.</p><p>Het beheer heeft ook betrekking op de bij de Digikoppeling-familie
+Koppelvlakstandaarden en architectuur.</p>
+<p>Het beheer heeft ook betrekking op de bij de Digikoppeling-familie
 behorende documenten, bestanden en voorzieningen, zoals nieuws en
 persberichten, factsheets, presentaties, opleidingsmateriaal,
 relatiegegevens van Digikoppeling participanten. Het beheer hiervan
-vraagt echter ook een minder formele besluitvormingsprocedure.</p><p>Bij de Digikoppeling horen de volgende ondersteunende hulpmiddelen en
-ICT voorzieningen:</p><ul>
+vraagt echter ook een minder formele besluitvormingsprocedure.</p>
+<p>Bij de Digikoppeling horen de volgende ondersteunende hulpmiddelen en
+ICT voorzieningen:</p>
+<ul>
 <li><p>Digikoppeling OIN Register en het hieraan gekoppelde CPA-register ,</p>
 </li>
 <li><p>Digikoppeling Compliance Voorzieningen (WUS, ebMS2, grote berichten),</p>
 </li>
-</ul><p>Het beheer over deze voorzieningen is in bestaande beheerprocedures
-van Logius ondergebracht.</p></section><section id="belanghebbenden"><h3 id="x2-2-belanghebbenden"><bdi class="secno">2.2 </bdi>Belanghebbenden<a class="self-link" href="#belanghebbenden" aria-label="Permalink for Section 2.2"></a></h3><p>Veel verschillende partijen hebben direct dan wel indirect belang bij
+</ul>
+<p>Het beheer over deze voorzieningen is in bestaande beheerprocedures
+van Logius ondergebracht.</p>
+</section><section id="belanghebbenden"><div class="header-wrapper"><h3 id="x2-2-belanghebbenden"><bdi class="secno">2.2 </bdi>Belanghebbenden</h3><a class="self-link" href="#belanghebbenden" aria-label="Permalink for Section 2.2"></a></div>
+<p>Veel verschillende partijen hebben direct dan wel indirect belang bij
 de ontwikkeling, de implementatie en het gebruik van de
 Digikoppeling-standaard. Dit geldt dus ook voor het beheer en
 onderhoud ervan. In onderstaand schema zijn de belanghebbenden
-aangegeven.</p><p><figure id="fig-belang-bij-digikoppeling"><img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling" title="Belang bij DIgikoppeling"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Belang bij DIgikoppeling</span></figcaption></figure></p><p>De Digikoppeling standaard wordt in stand gehouden en doorontwikkeld
+aangegeven.</p>
+<p><figure id="fig-belang-bij-digikoppeling"><img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling" title="Belang bij DIgikoppeling"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Belang bij DIgikoppeling</span></figcaption></figure></p>
+<p>De Digikoppeling standaard wordt in stand gehouden en doorontwikkeld
 door participatie van de belanghebbenden. Ruwweg zijn drie rollen te
-onderkennen, de vraagkant, de aanbodkant en de ondersteuningskant:</p><ul>
+onderkennen, de vraagkant, de aanbodkant en de ondersteuningskant:</p>
+<ul>
 <li>De vraagkant bestaat uit organisaties die Digikoppeling koppelingen
 gebruiken voor de eigen informatievoorziening, sectoren die
 Digikoppeling gebruiken als standaard voor
@@ -597,9 +651,13 @@ komen.</li>
 Digikoppeling-standaarden en beheerders van de
 Digikoppeling-voorzieningen. Expertise voor Digikoppeling is ook
 verkrijgbaar in de markt.</li>
-</ul><p>Afhankelijk van eigen doelstellingen, verantwoordelijkheden en
-belangen zullen belanghebbenden op een andere wijze participeren.</p></section><section id="structuur-van-participatie-en-ondersteuning"><h3 id="x2-3-structuur-van-participatie-en-ondersteuning"><bdi class="secno">2.3 </bdi>Structuur van participatie en ondersteuning<a class="self-link" href="#structuur-van-participatie-en-ondersteuning" aria-label="Permalink for Section 2.3"></a></h3><p>In het beheer van Digikoppeling kunnen belanghebbenden participeren in
-vier vormen:</p><ol>
+</ul>
+<p>Afhankelijk van eigen doelstellingen, verantwoordelijkheden en
+belangen zullen belanghebbenden op een andere wijze participeren.</p>
+</section><section id="structuur-van-participatie-en-ondersteuning"><div class="header-wrapper"><h3 id="x2-3-structuur-van-participatie-en-ondersteuning"><bdi class="secno">2.3 </bdi>Structuur van participatie en ondersteuning</h3><a class="self-link" href="#structuur-van-participatie-en-ondersteuning" aria-label="Permalink for Section 2.3"></a></div>
+<p>In het beheer van Digikoppeling kunnen belanghebbenden participeren in
+vier vormen:</p>
+<ol>
 <li><p>Digikoppeling Community, dit omvat alle belanghebbenden. De
 standaard wordt open beheerd dus voorstellen, vragen en adviezen
 kunnen van iedereen aangenomen worden.</p>
@@ -617,10 +675,12 @@ Beleidsoverleg Digitale Overheid (OBDO)</del></p>
 <li><p>Programmeringstafel voor de Generieke Data Infrastructuur (GDI) of
 het OBDO als beslissend gremium.</p>
 </li>
-</ol><p>In deze groepen zijn de diverse rollen uit de vraagkant, aanbodkant en
+</ol>
+<p>In deze groepen zijn de diverse rollen uit de vraagkant, aanbodkant en
 de ondersteuningskant vertegenwoordigd. De participatie beperkt zich
 tot de eerder beschreven scope en omvat geen
-(Digikoppeling-)voorzieningen.</p><table class="dkkvs">
+(Digikoppeling-)voorzieningen.</p>
+<table>
 <thead>
 <tr>
 <th>Participatievorm</th>
@@ -653,12 +713,18 @@ tot de eerder beschreven scope en omvat geen
 <td>Samen met andere bestuurders: Vaststellen Digikoppeling <em>major</em> releases3  Vaststellen beheermodel van de standaard. Vaststellen externe publicaties over Digikoppeling beleid en releases</td>
 <td>Doorgeleiding van de Klantenraad en inbreng via secretariaat OBDO  Publiceren Digikoppeling standaard en andere Digikoppeling-informatie</td>
 </tr>
-</tbody></table><p><sup>3</sup>: Zie bijlage D voor meer informatie over versionering.</p><p>Het OBDO de Klantenraad gegevens worden geacht in hun besluiten het
+</tbody></table>
+<p><sup>3</sup>: Zie bijlage D voor meer informatie over versionering.</p>
+<p>Het OBDO de Klantenraad gegevens worden geacht in hun besluiten het
 belang van gebruik van Digikoppeling in het gehele organisatorische
-werkingsgebied mee te wegen.</p></section><section id="releasebeleid"><h3 id="x2-4-releasebeleid"><bdi class="secno">2.4 </bdi>Releasebeleid<a class="self-link" href="#releasebeleid" aria-label="Permalink for Section 2.4"></a></h3><p>De te beheren Digikoppeling standaard en haar onderdelen zullen zowel
+werkingsgebied mee te wegen.</p>
+</section><section id="releasebeleid"><div class="header-wrapper"><h3 id="x2-4-releasebeleid"><bdi class="secno">2.4 </bdi>Releasebeleid</h3><a class="self-link" href="#releasebeleid" aria-label="Permalink for Section 2.4"></a></div>
+<p>De te beheren Digikoppeling standaard en haar onderdelen zullen zowel
 gezamenlijk als elk afzonderlijk onderhevig zijn aan beheer en
 onderhoud. Het beleid dat gehanteerd wordt voor aanpassingen van de
-Digikoppeling is als volgt:</p><section id="participatie"><h4 id="x2-4-1-participatie"><bdi class="secno">2.4.1 </bdi>Participatie<a class="self-link" href="#participatie" aria-label="Permalink for Section 2.4.1"></a></h4><ol>
+Digikoppeling is als volgt:</p>
+<section id="participatie"><div class="header-wrapper"><h4 id="x2-4-1-participatie"><bdi class="secno">2.4.1 </bdi>Participatie</h4><a class="self-link" href="#participatie" aria-label="Permalink for Section 2.4.1"></a></div>
+<ol>
 <li><p>Uitbreidingen en aanpassingen in (een onderdeel van) de
 Digikoppeling-standaard komt tot stand door participatie van de
 verschillende belanghebbenden.</p>
@@ -678,7 +744,11 @@ OBDO<sup>5</sup>.</p>
 <li><p>De samenstelling van de overleggen dient zodanig te zijn dat de
 eigenaar van de Standaard (MinBZK) deze als gezaghebbend beschouwt.</p>
 </li>
-</ol><p><sup>4</sup>: Logius kijkt hierbij of de belangstellende partij ook een belanghebbende partij is.</p><p><sup>5</sup>: <a href="https://zoek.officielebekendmakingen.nl/stcrt-2018-9728.html">https://zoek.officielebekendmakingen.nl/stcrt-2018-9728.html</a></p></section><section id="nieuwe-releases"><h4 id="x2-4-2-nieuwe-releases"><bdi class="secno">2.4.2 </bdi>Nieuwe releases<a class="self-link" href="#nieuwe-releases" aria-label="Permalink for Section 2.4.2"></a></h4><ol>
+</ol>
+<p><sup>4</sup>: Logius kijkt hierbij of de belangstellende partij ook een belanghebbende partij is.</p>
+<p><sup>5</sup>: <a href="https://zoek.officielebekendmakingen.nl/stcrt-2018-9728.html">https://zoek.officielebekendmakingen.nl/stcrt-2018-9728.html</a></p>
+</section><section id="nieuwe-releases"><div class="header-wrapper"><h4 id="x2-4-2-nieuwe-releases"><bdi class="secno">2.4.2 </bdi>Nieuwe releases</h4><a class="self-link" href="#nieuwe-releases" aria-label="Permalink for Section 2.4.2"></a></div>
+<ol>
 <li><p>De Digikoppeling-standaard dient in principe zo stabiel te zijn dat
 nieuwe releases van de standaard bestaande implementaties van een
 oudere release niet tot migratie verplichten.</p>
@@ -734,14 +804,19 @@ Digikoppeling, waarvoor het pas-toe-of-leg-uit- regime geldt, wijzigd,
 wordt dit voorgelegd aan Forum Standaardisatie &amp; het OBDO zodat het
 regime kan worden bekrachtigd voor dit nieuwe toepassingsgebied.</p>
 </li>
-</ol><p><sup>6</sup>: De releasekalender is te vinden op
-<a href="http://www.e-overheid.nl">www.e-overheid.nl</a>.</p><p><sup>7</sup>: Het streven is dat een nieuw release uitsluitend
+</ol>
+<p><sup>6</sup>: De releasekalender is te vinden op
+<a href="http://www.e-overheid.nl">www.e-overheid.nl</a>.</p>
+<p><sup>7</sup>: Het streven is dat een nieuw release uitsluitend
 uitbreidingen ten opzichte van de vorige release bevat. Daardoor
 voldoen implementaties van de oude release automatisch ook aan deze
 nieuwe release. In dit geval zal alleen de nieuwe release de status
-'In Gebruik' krijgen.</p></section><section id="aansluiting-op-andere-standaarden"><h4 id="x2-4-3-aansluiting-op-andere-standaarden"><bdi class="secno">2.4.3 </bdi>Aansluiting op andere standaarden<a class="self-link" href="#aansluiting-op-andere-standaarden" aria-label="Permalink for Section 2.4.3"></a></h4><p>Digikoppeling sluit aan op onderstaande standaarden. De aansluiting
+'In Gebruik' krijgen.</p>
+</section><section id="aansluiting-op-andere-standaarden"><div class="header-wrapper"><h4 id="x2-4-3-aansluiting-op-andere-standaarden"><bdi class="secno">2.4.3 </bdi>Aansluiting op andere standaarden</h4><a class="self-link" href="#aansluiting-op-andere-standaarden" aria-label="Permalink for Section 2.4.3"></a></div>
+<p>Digikoppeling sluit aan op onderstaande standaarden. De aansluiting
 vindt plaats binnen de vastgestelde releasetermijnen van de
-Digikoppeling onderdelen.</p><ol>
+Digikoppeling onderdelen.</p>
+<ol>
 <li><p>Digikoppeling volgt de ontwikkeling van internationale standaarden
 (zoals W3C en OASIS) in het algemeen en die voor de daarin opgenomen
 standaarden zoals WUS, ebMS en http in het bijzonder.</p>
@@ -753,7 +828,9 @@ Architectuur (NORA).</p>
 achtergrond Digikoppeling-certificaten" sluiten aan bij de
 PKI.Overheid.</p>
 </li>
-</ol></section><section id="publicatie"><h4 id="x2-4-4-publicatie"><bdi class="secno">2.4.4 </bdi>Publicatie<a class="self-link" href="#publicatie" aria-label="Permalink for Section 2.4.4"></a></h4><ol>
+</ol>
+</section><section id="publicatie"><div class="header-wrapper"><h4 id="x2-4-4-publicatie"><bdi class="secno">2.4.4 </bdi>Publicatie</h4><a class="self-link" href="#publicatie" aria-label="Permalink for Section 2.4.4"></a></div>
+<ol>
 <li><p>De Digikoppeling beheerder zal na besluitvorming in de klantenraad
 de Roadmap en de specificaties van de betreffende Digikoppeling
 onderdelen publiceren.</p>
@@ -767,7 +844,8 @@ Voorzieningen.</p>
 gemaakt in vier statussen van ontwikkeling. De te onderscheiden
 statussen zijn:</p>
 </li>
-</ol><table class="dkkvs">
+</ol>
+<table>
 <thead>
 <tr>
 <th>Afkorting</th>
@@ -795,7 +873,9 @@ statussen zijn:</p>
 <td>Teruggetrokken</td>
 <td>Een Digikoppeling onderdeel krijgt de status “Teruggetrokken” indien een release van een Digikoppeling onderdeel niet bruikbaar blijkt (bijv. vanwege implementatieproblemen).</td>
 </tr>
-</tbody></table></section><section id="implementatie-en-gebruik"><h4 id="x2-4-5-implementatie-en-gebruik"><bdi class="secno">2.4.5 </bdi>Implementatie en gebruik<a class="self-link" href="#implementatie-en-gebruik" aria-label="Permalink for Section 2.4.5"></a></h4><ol>
+</tbody></table>
+</section><section id="implementatie-en-gebruik"><div class="header-wrapper"><h4 id="x2-4-5-implementatie-en-gebruik"><bdi class="secno">2.4.5 </bdi>Implementatie en gebruik</h4><a class="self-link" href="#implementatie-en-gebruik" aria-label="Permalink for Section 2.4.5"></a></div>
+<ol>
 <li><p>Leveranciers en gebruikers worden geadviseerd de meeste recente
 release met de Status “In Gebruik” zo spoedig mogelijk in software te
 implementeren respectievelijk deze toe te passen.</p>
@@ -810,7 +890,9 @@ Digikoppeling-standaarden gelijktijdig moeten ondersteunen. Het
 betreft applicaties zoals middleware, brokers, servicebus en
 distributiesystemen.</p>
 </li>
-</ol></section><section id="overige-principes"><h4 id="x2-4-6-overige-principes"><bdi class="secno">2.4.6 </bdi>Overige principes<a class="self-link" href="#overige-principes" aria-label="Permalink for Section 2.4.6"></a></h4><ol>
+</ol>
+</section><section id="overige-principes"><div class="header-wrapper"><h4 id="x2-4-6-overige-principes"><bdi class="secno">2.4.6 </bdi>Overige principes</h4><a class="self-link" href="#overige-principes" aria-label="Permalink for Section 2.4.6"></a></div>
+<ol>
 <li><p>De standaarden die binnen Digikoppeling toegepast worden, voldoen
 aan de door het Forum Standaardisatie vastgestelde criteria van een
 open standaard<sup>8</sup>. Er zijn geen toetredingscriteria van
@@ -834,9 +916,19 @@ het Rijk verantwoorden.</p>
 volgens vastgelegde processen (zie Bijlage A) en informatievoorziening
 (zie Bijlage B).</p>
 </li>
-</ol><p><sup>8</sup>:<a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Toetsingsprocedure%20en%20criteria%202.2_0.pdf">https://www.forumstandaardisatie.nl/sites/bfs/files/Toetsingsprocedure%20en%20criteria%202.2_0.pdf</a></p></section></section></section>
-<section data-format="markdown" id="bijlage-a-beheer-en-onderhoudsprocessen"><h2 id="x3-bijlage-a-beheer-en-onderhoudsprocessen"><bdi class="secno">3. </bdi>Bijlage A: Beheer- en onderhoudsprocessen<a class="self-link" href="#bijlage-a-beheer-en-onderhoudsprocessen" aria-label="Permalink for Section 3."></a></h2><section id="procesoverview"><h3 id="x3-1-procesoverview"><bdi class="secno">3.1 </bdi>Procesoverview<a class="self-link" href="#procesoverview" aria-label="Permalink for Section 3.1"></a></h3><p><figure id="fig-hoofdprocessen"><img src="media/DK_Procesoverview.png" alt="Hoofdprocessen" title="Hoofdprocessen"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Hoofdprocessen</span></figcaption></figure>
-De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zijn in onderstaande figuur schematisch aangegeven. De hoofdprocessen zijn in de volgende paragrafen nader uitwerkt.</p><p><em>Noot: gestippelde processen vallen buiten het beheermodel.</em></p></section><section id="proces-digikoppeling-product-cycle-management"><h3 id="x3-2-proces-digikoppeling-product-cycle-management"><bdi class="secno">3.2 </bdi>Proces: Digikoppeling Product Cycle Management<a class="self-link" href="#proces-digikoppeling-product-cycle-management" aria-label="Permalink for Section 3.2"></a></h3><p>Digikoppeling kent net als veel andere producten een strategisch proces van Product Cycle Management. Het doel van dit strategische proces is dat de Digikoppeling standaard zowel inhoudelijk als organisatorisch goed aansluit bij de behoefte van de verschillende belanghebbenden.</p><p>Jaarlijks wordt een verbeterplan voor de Digikoppeling standaard opgesteld door de beheerder ervan. Op grond van een omgevingsanalyse worden daarvoor nieuwe kansen en mogelijkheden voor het beheerde deel van de Digikoppeling standaard in kaart gebracht. Daarnaast worden de interne verbeterpunten voor de beheerorganisatie en participatievormen in kaart gebracht. De kansen samen met de interne verbeterpunten worden vertaald in een “Digikoppeling jaarplan”.</p><p>In dit verbeterplan komen de volgende onderwerpen aan de orde:</p><ul>
+</ol>
+<p><sup>8</sup>:<a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Toetsingsprocedure%20en%20criteria%202.2_0.pdf">https://www.forumstandaardisatie.nl/sites/bfs/files/Toetsingsprocedure%20en%20criteria%202.2_0.pdf</a></p>
+</section></section></section>
+    <section id="bijlage-a-beheer-en-onderhoudsprocessen"><div class="header-wrapper"><h2 id="x3-bijlage-a-beheer-en-onderhoudsprocessen"><bdi class="secno">3. </bdi>Bijlage A: Beheer- en onderhoudsprocessen</h2><a class="self-link" href="#bijlage-a-beheer-en-onderhoudsprocessen" aria-label="Permalink for Section 3."></a></div>
+<section id="procesoverview"><div class="header-wrapper"><h3 id="x3-1-procesoverview"><bdi class="secno">3.1 </bdi>Procesoverview</h3><a class="self-link" href="#procesoverview" aria-label="Permalink for Section 3.1"></a></div>
+<p><figure id="fig-hoofdprocessen"><img src="media/DK_Procesoverview.png" alt="Hoofdprocessen" title="Hoofdprocessen"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Hoofdprocessen</span></figcaption></figure>
+De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zijn in onderstaande figuur schematisch aangegeven. De hoofdprocessen zijn in de volgende paragrafen nader uitwerkt.</p>
+<p><em>Noot: gestippelde processen vallen buiten het beheermodel.</em></p>
+</section><section id="proces-digikoppeling-product-cycle-management"><div class="header-wrapper"><h3 id="x3-2-proces-digikoppeling-product-cycle-management"><bdi class="secno">3.2 </bdi>Proces: Digikoppeling Product Cycle Management</h3><a class="self-link" href="#proces-digikoppeling-product-cycle-management" aria-label="Permalink for Section 3.2"></a></div>
+<p>Digikoppeling kent net als veel andere producten een strategisch proces van Product Cycle Management. Het doel van dit strategische proces is dat de Digikoppeling standaard zowel inhoudelijk als organisatorisch goed aansluit bij de behoefte van de verschillende belanghebbenden.</p>
+<p>Jaarlijks wordt een verbeterplan voor de Digikoppeling standaard opgesteld door de beheerder ervan. Op grond van een omgevingsanalyse worden daarvoor nieuwe kansen en mogelijkheden voor het beheerde deel van de Digikoppeling standaard in kaart gebracht. Daarnaast worden de interne verbeterpunten voor de beheerorganisatie en participatievormen in kaart gebracht. De kansen samen met de interne verbeterpunten worden vertaald in een “Digikoppeling jaarplan”.</p>
+<p>In dit verbeterplan komen de volgende onderwerpen aan de orde:</p>
+<ul>
 <li><p>Een geactualiseerd productbeleid, –strategie en –portfolio;</p>
 </li>
 <li><p>Aanpassingen aan proces, besluitvorming, participatie en informatievoorziening i.c het beheermodel;</p>
@@ -849,7 +941,14 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>Prioriteren van ontwikkelopdrachten: op welke wijze wordt de beschikbare capaciteit zo efficiënt en effectief mogelijk ingezet.</p>
 </li>
-</ul><p>Het jaarplan voor Digikoppeling maakt deel uit van de jaarplan-cyclus van Logius en wordt gepresenteerd aan eigenaar (beheer en exploitatie) en Klantenraad(doorontwikkeling). Vervolgens wordt het ter goedkeuring aangeboden aan de opdrachtgever van de Digikoppeling beheerder, die de financiële middelen verstrekt voor het uitvoeren van het verbeterplan en de beheeractiviteiten. Momenteel is het Ministerie van BZK de opdrachtgever van de beheerder.</p></section><section id="proces-intake-en-analyse"><h3 id="x3-3-proces-intake-en-analyse"><bdi class="secno">3.3 </bdi>Proces: Intake en Analyse<a class="self-link" href="#proces-intake-en-analyse" aria-label="Permalink for Section 3.3"></a></h3><p><figure id="fig-intake-en-analyse"><img src="media/DK_Intake_en_analyse.png" alt="Intake en analyse" title="Intake en analyse"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Intake en analyse</span></figcaption></figure></p><section id="intake-wijzigingsaanvraag"><h4 id="x3-3-1-intake-wijzigingsaanvraag"><bdi class="secno">3.3.1 </bdi>Intake wijzigingsaanvraag<a class="self-link" href="#intake-wijzigingsaanvraag" aria-label="Permalink for Section 3.3.1"></a></h4><p>Een Wijzigingsaanvraag voor een Digikoppeling onderdeel kan ontstaan uit een breed scala van ontwikkelingen of problemen. Ontwikkelingen die van invloed zijn, zijn bijvoorbeeld: ontwikkelingen in de standaardisatie wereld, nieuw beleid, veranderingen in samenwerking of processen, vernieuwing van dienstverlening, veranderingen in basisregistraties of in infrastructuur en ontwikkeling van technologie. Verder zijn problemen uit de praktijk of het hebben van een goed idee aanleiding voor een wijzigingsaanvraag. De aanvraag wordt via mail naar <a href="mailto:Servicecentrum@logius.nl">Servicecentrum@logius.nl</a>, telefonisch of direct via contact met een Digikoppeling deskundige van Logius ingediend. Bij voorkeur vult degene van de betrokken partij die het idee, het probleem of aanvraag doet zelf het formulier “Wijzigingsaanvraag” in.</p><p>De ideeën of problemen kunnen van verschillende partijen op diverse manieren binnenkomen:</p><ul>
+</ul>
+<p>Het jaarplan voor Digikoppeling maakt deel uit van de jaarplan-cyclus van Logius en wordt gepresenteerd aan eigenaar (beheer en exploitatie) en Klantenraad(doorontwikkeling). Vervolgens wordt het ter goedkeuring aangeboden aan de opdrachtgever van de Digikoppeling beheerder, die de financiële middelen verstrekt voor het uitvoeren van het verbeterplan en de beheeractiviteiten. Momenteel is het Ministerie van BZK de opdrachtgever van de beheerder.</p>
+</section><section id="proces-intake-en-analyse"><div class="header-wrapper"><h3 id="x3-3-proces-intake-en-analyse"><bdi class="secno">3.3 </bdi>Proces: Intake en Analyse</h3><a class="self-link" href="#proces-intake-en-analyse" aria-label="Permalink for Section 3.3"></a></div>
+<p><figure id="fig-intake-en-analyse"><img src="media/DK_Intake_en_analyse.png" alt="Intake en analyse" title="Intake en analyse"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Intake en analyse</span></figcaption></figure></p>
+<section id="intake-wijzigingsaanvraag"><div class="header-wrapper"><h4 id="x3-3-1-intake-wijzigingsaanvraag"><bdi class="secno">3.3.1 </bdi>Intake wijzigingsaanvraag</h4><a class="self-link" href="#intake-wijzigingsaanvraag" aria-label="Permalink for Section 3.3.1"></a></div>
+<p>Een Wijzigingsaanvraag voor een Digikoppeling onderdeel kan ontstaan uit een breed scala van ontwikkelingen of problemen. Ontwikkelingen die van invloed zijn, zijn bijvoorbeeld: ontwikkelingen in de standaardisatie wereld, nieuw beleid, veranderingen in samenwerking of processen, vernieuwing van dienstverlening, veranderingen in basisregistraties of in infrastructuur en ontwikkeling van technologie. Verder zijn problemen uit de praktijk of het hebben van een goed idee aanleiding voor een wijzigingsaanvraag. De aanvraag wordt via mail naar <a href="mailto:Servicecentrum@logius.nl">Servicecentrum@logius.nl</a>, telefonisch of direct via contact met een Digikoppeling deskundige van Logius ingediend. Bij voorkeur vult degene van de betrokken partij die het idee, het probleem of aanvraag doet zelf het formulier “Wijzigingsaanvraag” in.</p>
+<p>De ideeën of problemen kunnen van verschillende partijen op diverse manieren binnenkomen:</p>
+<ul>
 <li><p>Gebruikers van Digikoppeling onderdelen,</p>
 </li>
 <li><p>Beheerders van Basisregistraties;</p>
@@ -862,14 +961,25 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>Geregistreerde problemen en fouten vanuit het incident management proces.</p>
 </li>
-</ul><p>Het probleem, de behoefte of het idee wordt beschreven in een Wijzigingsaanvraag. De beheerder registreert deze wijzigingsaanvraag. Elke wijzigingsaanvraag wordt voorzien van een Aanvraagnummer en bijgehouden in een overzicht (b.v. spreadsheet). Deze wordt bewaard in een wijzigingsaanvraag administratie.</p><p>Alleen Wijzigingsaanvragen die betrekking hebben op aanpassingen ten opzichte van de meest recente release van een Digikoppeling onderdeel met de status “In Gebruik” worden in behandeling genomen.</p></section><section id="beoordelen-wijzigingsaanvraag"><h4 id="x3-3-2-beoordelen-wijzigingsaanvraag"><bdi class="secno">3.3.2 </bdi>Beoordelen wijzigingsaanvraag<a class="self-link" href="#beoordelen-wijzigingsaanvraag" aria-label="Permalink for Section 3.3.2"></a></h4><p>Een Digikoppeling deskundige van de Digikoppeling beheerder doet een eerste beoordeling of de aanvraag voldoende helder en uitgewerkt is voor verdere behandeling. Zonodig verzamelt hij aanvullende informatie. Hij bepaalt of de betreffende wijzigingsaanvraag in een bijeenkomst van het Digikoppeling Technisch Overleg beoordeeld kan gaan worden. Als een wijzigingaanvraag niet verder in behandeling wordt genomen zal de deskundige dit aan de aanvrager kenbaar maken.</p><p>Het Digikoppeling Technisch Overleg beoordeelt vervolgens ook de wijzigingsaanvraag. Digikoppeling Technisch Overleg beslist of de wijzigingsaanvraag uitgewerkt en geanalyseerd moet gaan worden. Daarvoor neemt het Digikoppeling Technisch Overleg per wijzigingsaanvraag een besluit over:</p><ul>
+</ul>
+<p>Het probleem, de behoefte of het idee wordt beschreven in een Wijzigingsaanvraag. De beheerder registreert deze wijzigingsaanvraag. Elke wijzigingsaanvraag wordt voorzien van een Aanvraagnummer en bijgehouden in een overzicht (b.v. spreadsheet). Deze wordt bewaard in een wijzigingsaanvraag administratie.</p>
+<p>Alleen Wijzigingsaanvragen die betrekking hebben op aanpassingen ten opzichte van de meest recente release van een Digikoppeling onderdeel met de status “In Gebruik” worden in behandeling genomen.</p>
+</section><section id="beoordelen-wijzigingsaanvraag"><div class="header-wrapper"><h4 id="x3-3-2-beoordelen-wijzigingsaanvraag"><bdi class="secno">3.3.2 </bdi>Beoordelen wijzigingsaanvraag</h4><a class="self-link" href="#beoordelen-wijzigingsaanvraag" aria-label="Permalink for Section 3.3.2"></a></div>
+<p>Een Digikoppeling deskundige van de Digikoppeling beheerder doet een eerste beoordeling of de aanvraag voldoende helder en uitgewerkt is voor verdere behandeling. Zonodig verzamelt hij aanvullende informatie. Hij bepaalt of de betreffende wijzigingsaanvraag in een bijeenkomst van het Digikoppeling Technisch Overleg beoordeeld kan gaan worden. Als een wijzigingaanvraag niet verder in behandeling wordt genomen zal de deskundige dit aan de aanvrager kenbaar maken.</p>
+<p>Het Digikoppeling Technisch Overleg beoordeelt vervolgens ook de wijzigingsaanvraag. Digikoppeling Technisch Overleg beslist of de wijzigingsaanvraag uitgewerkt en geanalyseerd moet gaan worden. Daarvoor neemt het Digikoppeling Technisch Overleg per wijzigingsaanvraag een besluit over:</p>
+<ul>
 <li><p>Het wel of niet analyseren en uitwerken van de wijzigingsaanvraag in een Wijzigingsverzoek (RFC),</p>
 </li>
 <li><p>Het wel of niet opstellen van een impactanalyse. Er wordt geen impactanalyse gemaakt als het gaat om het oplossen van fouten of kleine wijzigingen aan een Digikoppeling onderdeel;</p>
 </li>
 <li><p>Terugverwijzen, Afwijzen of Uitstellen. Als een wijzigingaanvraag niet verder of later in behandeling kan worden genomen zal dit door de beheerder namens het Digikoppeling Technisch Overleg aan de aanvrager kenbaar worden gemaakt.</p>
 </li>
-</ul></section><section id="uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><h4 id="x3-3-3-uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><bdi class="secno">3.3.3 </bdi>Uitwerken en analyse wijzigingsaanvraag tot RFC<a class="self-link" href="#uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc" aria-label="Permalink for Section 3.3.3"></a></h4><p>Een Digikoppeling deskundige analyseert en werkt de wijzigingsaanvraag uit tot een wijzigingsverzoek (RFC). Dit kan een Digikoppeling deskundige zijn van de Digikoppeling beheerder, van een ICT-leverancier, een gemeente of een andere belanghebbende partij. Het resultaat van dit proces is het wijzigingsverzoek.</p><p>De Digikoppeling deskundige stuurt het wijzigingsverzoek aan alle leden van het Digikoppeling Technisch Overleg. Het wijzigingsverzoek wordt behandeld in een bijeenkomst van het Digikoppeling Technisch Overleg. De Digikoppeling deskundige die de analyse en uitwerking heeft uitgevoerd, licht de voorgestelde aanpassingen toe. het Digikoppeling Technisch Overleg is eindverantwoordelijk voor de inhoudelijke kwaliteit van het wijzigingsverzoek.</p><p>Na behandeling neemt het Digikoppeling Technisch Overleg een besluit over de “status” van het wijzigingsverzoek:</p><table class="dkkvs">
+</ul>
+</section><section id="uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><div class="header-wrapper"><h4 id="x3-3-3-uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc"><bdi class="secno">3.3.3 </bdi>Uitwerken en analyse wijzigingsaanvraag tot RFC</h4><a class="self-link" href="#uitwerken-en-analyse-wijzigingsaanvraag-tot-rfc" aria-label="Permalink for Section 3.3.3"></a></div>
+<p>Een Digikoppeling deskundige analyseert en werkt de wijzigingsaanvraag uit tot een wijzigingsverzoek (RFC). Dit kan een Digikoppeling deskundige zijn van de Digikoppeling beheerder, van een ICT-leverancier, een gemeente of een andere belanghebbende partij. Het resultaat van dit proces is het wijzigingsverzoek.</p>
+<p>De Digikoppeling deskundige stuurt het wijzigingsverzoek aan alle leden van het Digikoppeling Technisch Overleg. Het wijzigingsverzoek wordt behandeld in een bijeenkomst van het Digikoppeling Technisch Overleg. De Digikoppeling deskundige die de analyse en uitwerking heeft uitgevoerd, licht de voorgestelde aanpassingen toe. het Digikoppeling Technisch Overleg is eindverantwoordelijk voor de inhoudelijke kwaliteit van het wijzigingsverzoek.</p>
+<p>Na behandeling neemt het Digikoppeling Technisch Overleg een besluit over de “status” van het wijzigingsverzoek:</p>
+<table>
 <thead>
 <tr>
 <th>Status</th>
@@ -912,7 +1022,11 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 <td>Afgewezen</td>
 <td>Het RFC zal niet (langer) door het Digikoppeling Technisch Overleg in behandeling genomen worden</td>
 </tr>
-</tbody></table><p>De status van elk wijzigingsverzoek wordt bijgehouden in een statusoverzicht. In bijlage E is een voorbeeld opgenomen. Het statusoverzicht maakt deel uit van de wijzigingenadministratie.</p></section><section id="proces-administratie-en-ondersteuning"><h4 id="x3-3-4-proces-administratie-en-ondersteuning"><bdi class="secno">3.3.4 </bdi>Proces: Administratie en ondersteuning<a class="self-link" href="#proces-administratie-en-ondersteuning" aria-label="Permalink for Section 3.3.4"></a></h4><p>Dit proces is een ondersteunend proces van het beheer en onderhoud van Digikoppeling. Het bestaat uit:</p><ul>
+</tbody></table>
+<p>De status van elk wijzigingsverzoek wordt bijgehouden in een statusoverzicht. In bijlage E is een voorbeeld opgenomen. Het statusoverzicht maakt deel uit van de wijzigingenadministratie.</p>
+</section><section id="proces-administratie-en-ondersteuning"><div class="header-wrapper"><h4 id="x3-3-4-proces-administratie-en-ondersteuning"><bdi class="secno">3.3.4 </bdi>Proces: Administratie en ondersteuning</h4><a class="self-link" href="#proces-administratie-en-ondersteuning" aria-label="Permalink for Section 3.3.4"></a></div>
+<p>Dit proces is een ondersteunend proces van het beheer en onderhoud van Digikoppeling. Het bestaat uit:</p>
+<ul>
 <li><p>Het registreren, bijhouden en het bewaken van de wijzigingsaanvragen;</p>
 </li>
 <li><p>Het bijhouden van het statusoverzicht met de wijzigingsverzoeken (zie voorbeeld in bijlage E);</p>
@@ -935,7 +1049,15 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 </ul>
 </li>
-</ul></section></section><section id="proces-releaseplanning"><h3 id="x3-4-proces-releaseplanning"><bdi class="secno">3.4 </bdi>Proces: Releaseplanning<a class="self-link" href="#proces-releaseplanning" aria-label="Permalink for Section 3.4"></a></h3><p><figure id="fig-release-planning"><img src="media/DK_ReleasePlanning.png" alt="Release Planning" title="Release Planning"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Release Planning</span></figcaption></figure></p><p>De onderdelen van de Digikoppeling standaard en Digikoppeling voorzieningen zullen gezamenlijk en afzonderlijk onderhevig zijn aan beheer en onderhoud wat leidt tot nieuwe releases. Het vaststellen van nieuwe releases vindt plaats binnen het releaseplanningsproces. De Klantenraad gegevensuitwisselingis verantwoordelijk voor de juiste uitvoering. In de Klantenraad komen alle belanghebbenden met verantwoordelijkheid voor de behoefte, effecten en impact op de bedrijfsvoering, informatievoorziening en ICT samen.</p><p>Het vaststellen van een nieuwe release van afzonderlijke Digikoppeling onderdelen en een samenhangende Digikoppeling architectuur wordt gedaan volgens het beleid in paragraaf 2.4. De Klantenraadzal binnen de releaseplanning niet alleen nieuwe releases voordragen aan het OBDOmaar ook voorstellen hoe lang oude releases in bedrijf blijven en ondersteund zullen worden.</p><section id="opstellen-releasevoorstellen"><h4 id="x3-4-1-opstellen-releasevoorstellen"><bdi class="secno">3.4.1 </bdi>Opstellen Releasevoorstellen<a class="self-link" href="#opstellen-releasevoorstellen" aria-label="Permalink for Section 3.4.1"></a></h4><p>Circa een half jaar voor de beoogde releasedatum stelt de beheerder per release verschillende voorstellen op.</p><p>Voor het opstellen van releasevoorstellen worden naast de ingediende wijzigingsverzoeken, omgevingsontwikkelingen, ontwikkeling achterliggende standaarden, het releasebeleid de volgende releasetermijnen gehanteerd:</p><table class="dkkvs">
+</ul>
+</section></section><section id="proces-releaseplanning"><div class="header-wrapper"><h3 id="x3-4-proces-releaseplanning"><bdi class="secno">3.4 </bdi>Proces: Releaseplanning</h3><a class="self-link" href="#proces-releaseplanning" aria-label="Permalink for Section 3.4"></a></div>
+<p><figure id="fig-release-planning"><img src="media/DK_ReleasePlanning.png" alt="Release Planning" title="Release Planning"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Release Planning</span></figcaption></figure></p>
+<p>De onderdelen van de Digikoppeling standaard en Digikoppeling voorzieningen zullen gezamenlijk en afzonderlijk onderhevig zijn aan beheer en onderhoud wat leidt tot nieuwe releases. Het vaststellen van nieuwe releases vindt plaats binnen het releaseplanningsproces. De Klantenraad gegevensuitwisselingis verantwoordelijk voor de juiste uitvoering. In de Klantenraad komen alle belanghebbenden met verantwoordelijkheid voor de behoefte, effecten en impact op de bedrijfsvoering, informatievoorziening en ICT samen.</p>
+<p>Het vaststellen van een nieuwe release van afzonderlijke Digikoppeling onderdelen en een samenhangende Digikoppeling architectuur wordt gedaan volgens het beleid in paragraaf 2.4. De Klantenraadzal binnen de releaseplanning niet alleen nieuwe releases voordragen aan het OBDOmaar ook voorstellen hoe lang oude releases in bedrijf blijven en ondersteund zullen worden.</p>
+<section id="opstellen-releasevoorstellen"><div class="header-wrapper"><h4 id="x3-4-1-opstellen-releasevoorstellen"><bdi class="secno">3.4.1 </bdi>Opstellen Releasevoorstellen</h4><a class="self-link" href="#opstellen-releasevoorstellen" aria-label="Permalink for Section 3.4.1"></a></div>
+<p>Circa een half jaar voor de beoogde releasedatum stelt de beheerder per release verschillende voorstellen op.</p>
+<p>Voor het opstellen van releasevoorstellen worden naast de ingediende wijzigingsverzoeken, omgevingsontwikkelingen, ontwikkeling achterliggende standaarden, het releasebeleid de volgende releasetermijnen gehanteerd:</p>
+<table>
 <thead>
 <tr>
 <th>Digikoppeling onderdeel</th>
@@ -954,7 +1076,9 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 <td>Gebruik &amp; Achtergrond Digikoppeling Certificaten Digikoppeling Best Practices</td>
 <td>Maximaal 2 x per jaar</td>
 </tr>
-</tbody></table><p>Afwijkende releasetermijnen van Digikoppeling zijn toegestaan in de volgende situaties:</p><ul>
+</tbody></table>
+<p>Afwijkende releasetermijnen van Digikoppeling zijn toegestaan in de volgende situaties:</p>
+<ul>
 <li><p>vanwege invoering van nieuwe wet- en regelgeving;</p>
 </li>
 <li><p>vanwege het oplossen van fouten in de standaard die de continuïteit van de bedrijfsvoering in gevaar brengen;</p>
@@ -963,7 +1087,9 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>indien 2/3 meerderheid van de Klantenraad het eens is over de noodzaak.</p>
 </li>
-</ul><p>Elk releasevoorstel bestaat uit dezelfde onderwerpen als een releaseplan, dit zijn:</p><ul>
+</ul>
+<p>Elk releasevoorstel bestaat uit dezelfde onderwerpen als een releaseplan, dit zijn:</p>
+<ul>
 <li><p>vaststelling van de nieuwe verzameling van samenhangende releases van de Digikoppeling-onderdelen (de samenhang zal veelal in de release-nummering tot uitdrukking komen);</p>
 </li>
 <li><p>een overzicht van de wijzigingsverzoeken die wel en niet meegenomen worden in het aan te passen Digikoppeling onderdeel;</p>
@@ -974,7 +1100,20 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>een advies over de periode van uitfasering van de oude Digikoppeling release.</p>
 </li>
-</ul><p>De releasevoorstellen worden gepubliceerd op het Digikoppeling forum.</p></section><section id="vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><h4 id="x3-4-2-vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><bdi class="secno">3.4.2 </bdi>Vaststellen releaseplan eerstvolgende Digikoppeling release<a class="self-link" href="#vaststellen-releaseplan-eerstvolgende-digikoppeling-release" aria-label="Permalink for Section 3.4.2"></a></h4><p>Het releaseplan van Digikoppeling zal worden vastgesteld in een bijeenkomst van deKlantenraad. De belanghebbenden krijgen de gelegenheid om de eigen voorkeur toe te lichten.</p><p>Bij het vaststellen van de inhoud van een nieuwe release van een Digikoppeling onderdeel wordt gestreefd naar consensus en acceptatie binnen de Klantenraad. Indien besluitvorming over de nieuwe release uitblijft zal de beheerder van de standaard samen met het Ministerie van BZK een releaseplan vaststellen.</p><p>Het releaseplan van Digikoppeling bestaat uit dezelfde onderdelen als het release-voorstel (zie paragraaf 3.4.1).</p><p>Het releaseplan wordt gebruikt voor de realisatie van de Digikoppeling onderdelen, het doorvoeren van de wijzigingsverzoeken in de desbetreffende Digikoppeling koppelvlakstandaarden en technische documentatie.</p><p>Het vastgestelde releaseplan wordt gepubliceerd en wordt verwerkt in de Digikoppeling roadmap, waarin de afhankelijkheden tussen releases zichtbaar zijn gemaakt.</p></section></section><section id="proces-onderhouden-digikoppeling-onderdelen"><h3 id="x3-5-proces-onderhouden-digikoppeling-onderdelen"><bdi class="secno">3.5 </bdi>Proces: Onderhouden Digikoppeling onderdelen<a class="self-link" href="#proces-onderhouden-digikoppeling-onderdelen" aria-label="Permalink for Section 3.5"></a></h3><p>Het proces Onderhouden Digikoppeling onderdelen bestaat uit het doorvoeren van de wijzigingen in de Digikoppeling (deel)specificatie(s). Het gaat zowel om de aanpassingen aan de Digikoppeling Architectuur als om aanpassingen aan de Koppelvlak standaarden. De belangrijkste input voor dit proces bestaat uit het definitieve releaseplan, de wijzigingsverzoeken en specificaties van onderliggende standaarden gebruik gemaakt moet worden.</p><p><figure id="fig-onderhouden-digikoppeling-onderdelen"><img src="media/DK_onderhouden_Digikoppeling_onderdelen.png" alt="Onderhouden Digikoppeling onderdelen" title="Onderhouden Digikoppeling onderdelen"><figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">Onderhouden Digikoppeling onderdelen</span></figcaption></figure></p><section id="opstellen-digikoppeling-standaard"><h4 id="x3-5-1-opstellen-digikoppeling-standaard"><bdi class="secno">3.5.1 </bdi>Opstellen Digikoppeling standaard<a class="self-link" href="#opstellen-digikoppeling-standaard" aria-label="Permalink for Section 3.5.1"></a></h4><p>Een Digikoppeling deskundige verzamelt en verwerkt alle uitgewerkte wijzigingsverzoeken (RFC’s), die deel uitmaken van het vastgestelde releaseplan, tot een complete en nieuwe Digikoppeling standaard. Het geheel bestaat uit:</p><ul>
+</ul>
+<p>De releasevoorstellen worden gepubliceerd op het Digikoppeling forum.</p>
+</section><section id="vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><div class="header-wrapper"><h4 id="x3-4-2-vaststellen-releaseplan-eerstvolgende-digikoppeling-release"><bdi class="secno">3.4.2 </bdi>Vaststellen releaseplan eerstvolgende Digikoppeling release</h4><a class="self-link" href="#vaststellen-releaseplan-eerstvolgende-digikoppeling-release" aria-label="Permalink for Section 3.4.2"></a></div>
+<p>Het releaseplan van Digikoppeling zal worden vastgesteld in een bijeenkomst van deKlantenraad. De belanghebbenden krijgen de gelegenheid om de eigen voorkeur toe te lichten.</p>
+<p>Bij het vaststellen van de inhoud van een nieuwe release van een Digikoppeling onderdeel wordt gestreefd naar consensus en acceptatie binnen de Klantenraad. Indien besluitvorming over de nieuwe release uitblijft zal de beheerder van de standaard samen met het Ministerie van BZK een releaseplan vaststellen.</p>
+<p>Het releaseplan van Digikoppeling bestaat uit dezelfde onderdelen als het release-voorstel (zie paragraaf 3.4.1).</p>
+<p>Het releaseplan wordt gebruikt voor de realisatie van de Digikoppeling onderdelen, het doorvoeren van de wijzigingsverzoeken in de desbetreffende Digikoppeling koppelvlakstandaarden en technische documentatie.</p>
+<p>Het vastgestelde releaseplan wordt gepubliceerd en wordt verwerkt in de Digikoppeling roadmap, waarin de afhankelijkheden tussen releases zichtbaar zijn gemaakt.</p>
+</section></section><section id="proces-onderhouden-digikoppeling-onderdelen"><div class="header-wrapper"><h3 id="x3-5-proces-onderhouden-digikoppeling-onderdelen"><bdi class="secno">3.5 </bdi>Proces: Onderhouden Digikoppeling onderdelen</h3><a class="self-link" href="#proces-onderhouden-digikoppeling-onderdelen" aria-label="Permalink for Section 3.5"></a></div>
+<p>Het proces Onderhouden Digikoppeling onderdelen bestaat uit het doorvoeren van de wijzigingen in de Digikoppeling (deel)specificatie(s). Het gaat zowel om de aanpassingen aan de Digikoppeling Architectuur als om aanpassingen aan de Koppelvlak standaarden. De belangrijkste input voor dit proces bestaat uit het definitieve releaseplan, de wijzigingsverzoeken en specificaties van onderliggende standaarden gebruik gemaakt moet worden.</p>
+<p><figure id="fig-onderhouden-digikoppeling-onderdelen"><img src="media/DK_onderhouden_Digikoppeling_onderdelen.png" alt="Onderhouden Digikoppeling onderdelen" title="Onderhouden Digikoppeling onderdelen"><figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">Onderhouden Digikoppeling onderdelen</span></figcaption></figure></p>
+<section id="opstellen-digikoppeling-standaard"><div class="header-wrapper"><h4 id="x3-5-1-opstellen-digikoppeling-standaard"><bdi class="secno">3.5.1 </bdi>Opstellen Digikoppeling standaard</h4><a class="self-link" href="#opstellen-digikoppeling-standaard" aria-label="Permalink for Section 3.5.1"></a></div>
+<p>Een Digikoppeling deskundige verzamelt en verwerkt alle uitgewerkte wijzigingsverzoeken (RFC’s), die deel uitmaken van het vastgestelde releaseplan, tot een complete en nieuwe Digikoppeling standaard. Het geheel bestaat uit:</p>
+<ul>
 <li><p>verzamelde wijzigingsverzoeken,</p>
 </li>
 <li><p>toelichting bij verwerking van wijzingsverzoeken in nieuwe standaard,</p>
@@ -983,22 +1122,68 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>documentatie met wijzigingshistorie.</p>
 </li>
-</ul><p>Het resultaat wordt ter review aangeboden aan de leden van het Digikoppeling Technisch Overleg.</p></section><section id="review-en-openbare-consultatie-digikoppeling-standaard"><h4 id="x3-5-2-review-en-openbare-consultatie-digikoppeling-standaard"><bdi class="secno">3.5.2 </bdi>Review en openbare consultatie Digikoppeling standaard<a class="self-link" href="#review-en-openbare-consultatie-digikoppeling-standaard" aria-label="Permalink for Section 3.5.2"></a></h4><p>Nadat een (deel) standaard is opgesteld door een Digikoppeling deskundige volgt de beoordeling ervan door het Digikoppeling Technisch Overleg. In een bijeenkomst van het Digikoppeling Technisch Overleg wordt de Digikoppeling standaard doorgenomen en het eventuele commentaar besproken en afspraken gemaakt over de verwerking ervan. Zonodig vindt een extra iteratie plaats van opstellen en reviewen. Als het Digikoppeling Technisch Overleg de deelspecificatie goedkeurt bestaat het resultaat uit een vastgestelde (deel)specificatie voor een Digikoppeling onderdeel.</p><p>Nadat het Digikoppeling Technisch Overleg heeft aangegeven dat een nieuwe release van een Digikoppeling onderdeel gereed is voor ingebruikname, zal een openbare consultatie plaatsvinden van de wijziging. De resultaten van deze openbare consultatie worden door de beheerder verzameld en aangeboden voor besluitvorming.</p></section><section id="vaststellen-in-gebruik"><h4 id="x3-5-3-vaststellen-in-gebruik"><bdi class="secno">3.5.3 </bdi>Vaststellen ‘In Gebruik’<a class="self-link" href="#vaststellen-in-gebruik" aria-label="Permalink for Section 3.5.3"></a></h4><p>Na de openbare consultatie, zal aan de leden van de Klantenraad gevraagd worden om een besluit over toekenning van de status “In gebruik” aan deze nieuwe release van het Digikoppeling onderdeel te nemen. In dit besluit weegt de Klantenraadde resultaten uit de openbare consultatie. Dit besluit wordt in een Klantenraadbijeenkomst genomen waarbij aan de volgende criteria voldaan moet worden:</p><ul>
+</ul>
+<p>Het resultaat wordt ter review aangeboden aan de leden van het Digikoppeling Technisch Overleg.</p>
+</section><section id="review-en-openbare-consultatie-digikoppeling-standaard"><div class="header-wrapper"><h4 id="x3-5-2-review-en-openbare-consultatie-digikoppeling-standaard"><bdi class="secno">3.5.2 </bdi>Review en openbare consultatie Digikoppeling standaard</h4><a class="self-link" href="#review-en-openbare-consultatie-digikoppeling-standaard" aria-label="Permalink for Section 3.5.2"></a></div>
+<p>Nadat een (deel) standaard is opgesteld door een Digikoppeling deskundige volgt de beoordeling ervan door het Digikoppeling Technisch Overleg. In een bijeenkomst van het Digikoppeling Technisch Overleg wordt de Digikoppeling standaard doorgenomen en het eventuele commentaar besproken en afspraken gemaakt over de verwerking ervan. Zonodig vindt een extra iteratie plaats van opstellen en reviewen. Als het Digikoppeling Technisch Overleg de deelspecificatie goedkeurt bestaat het resultaat uit een vastgestelde (deel)specificatie voor een Digikoppeling onderdeel.</p>
+<p>Nadat het Digikoppeling Technisch Overleg heeft aangegeven dat een nieuwe release van een Digikoppeling onderdeel gereed is voor ingebruikname, zal een openbare consultatie plaatsvinden van de wijziging. De resultaten van deze openbare consultatie worden door de beheerder verzameld en aangeboden voor besluitvorming.</p>
+</section><section id="vaststellen-in-gebruik"><div class="header-wrapper"><h4 id="x3-5-3-vaststellen-in-gebruik"><bdi class="secno">3.5.3 </bdi>Vaststellen ‘In Gebruik’</h4><a class="self-link" href="#vaststellen-in-gebruik" aria-label="Permalink for Section 3.5.3"></a></div>
+<p>Na de openbare consultatie, zal aan de leden van de Klantenraad gevraagd worden om een besluit over toekenning van de status “In gebruik” aan deze nieuwe release van het Digikoppeling onderdeel te nemen. In dit besluit weegt de Klantenraadde resultaten uit de openbare consultatie. Dit besluit wordt in een Klantenraadbijeenkomst genomen waarbij aan de volgende criteria voldaan moet worden:</p>
+<ul>
 <li><p>De bijeenkomst van de Klantenraad waar dit besluit wordt genomen is tenminste één maand van te voren aangekondigd;</p>
 </li>
 <li><p>De nieuwe release van het Digikoppeling onderdeel is tenminste 10 werkdagen voor de Klantenraadbijeenkomst beschikbaar op het Digikoppeling forum;</p>
 </li>
 <li><p>Een meerderheid van de aanwezigen geeft aan dat de nieuwe release van het Digikoppeling onderdeel aan hun eisen en wensen voldoet en geschikt is om door hen toegepast te worden;</p>
 </li>
-</ul><p>Indien aan bovenstaande criteria is voldaan dan zal de Digikoppeling beheerder namens de Klantenraadde nieuwe release van het Digikoppeling onderdeel als “In Gebruik” publiceren en dit openbaar maken middels een persbericht.</p></section><section id="implementatie-in-softwareproducten"><h4 id="x3-5-4-implementatie-in-softwareproducten"><bdi class="secno">3.5.4 </bdi>Implementatie in softwareproducten<a class="self-link" href="#implementatie-in-softwareproducten" aria-label="Permalink for Section 3.5.4"></a></h4><p>Nadat een Digikoppeling onderdeel de status “In Gebruik” heeft gekregen kunnen gebruikersorganisaties het betreffende Digikoppeling onderdeel in hun softwareproducten implementeren en toepassen.</p><p>De aanvang en de tijdsduur van het implementeren in software kan sterk variëren. Afhankelijk van de wijziging kan deze zich beperken tot een (kleine) herconfiguratie van adapter-software tot aanpassing van bestaande informatiesystemen die Digikoppeling toepassen. De website van Logius en de Digikoppeling community bieden handige handvatten en ook Logius biedt implementatie-ondersteuning.</p><p>Het feitelijk implementeren van Digikoppeling of een nieuwe release of onderdeel ervan in softwareproducten valt grotendeels buiten het beheermodel.</p></section></section><section id="proces-ingebruikname"><h3 id="x3-6-proces-ingebruikname"><bdi class="secno">3.6 </bdi>Proces: Ingebruikname<a class="self-link" href="#proces-ingebruikname" aria-label="Permalink for Section 3.6"></a></h3><p>Het zwaartepunt van de uitvoering van het proces Ingebruikname ligt bij de gebruikers van een Digikoppeling onderdeel en bij de leveranciers van software. Enerzijds betreft de ingebruikname het voorschrijven van een bepaalde release van een Digikoppeling onderdeel en anderzijds het proces van het in bedrijf nemen van adapters en informatiesystemen met Digikoppeling koppelingen.</p><p>Voorschrijven en planning</p><p>Voor gebruik van Digikoppeling binnen de eigen informatievoorziening zal een gebruiker bij de keuze van een release van een Digikoppeling onderdeel rekening houden met de eigen ambitie, doelstellingen, ICT strategie, ketenafspraken, roadmap, de beschikbaarheid van software en de status van de benodigde Digikoppeling onderdelen.</p><p>Gebruikers die zelf de regie voeren over de eigen applicatieportfolio wordt geadviseerd de meeste recent vastgestelde Digikoppeling release voor te schrijven voor nieuwe software en bij vervanging of upgrading van bestaande koppelingen mee te nemen in de onderhoudsplanning.</p><p>Gebruikers zullen in hun programma‟s van eisen opnemen dat applicaties die gericht zijn op integratie (zoals middleware, brokers, servicebus en distributiesystemen) van alle relevante Digikoppeling configuraties ten minste twee opeenvolgende releases gelijktijdig ondersteunen.</p><p>In bedrijf nemen</p><p>Dit deel betreft de softwaredistributie, de integratie- en acceptatietesten en het in bedrijf stellen van software waar Digikoppeling koppelingen zijn ingebouwd.</p><p>Het preventief testen en keuren van de Digikoppeling koppelingen in aangepaste software of nieuwe software maakt deel uit van dit proces. De Digikoppeling Compliance voorzieningen zullen hierbij toegepast worden. Dit proces speelt zich voornamelijk af buiten het beheer van de Digikoppeling standaard. Het is daarom niet nader uitgewerkt.</p></section><section id="proces-vernieuwing-en-onderhoud-additionele-producten"><h3 id="x3-7-proces-vernieuwing-en-onderhoud-additionele-producten"><bdi class="secno">3.7 </bdi>Proces: Vernieuwing en onderhoud additionele producten<a class="self-link" href="#proces-vernieuwing-en-onderhoud-additionele-producten" aria-label="Permalink for Section 3.7"></a></h3><p><figure id="fig-additionele-producten"><img src="media/DK_Additionele_producten.png" alt="Additionele producten" title="Additionele producten"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Additionele producten</span></figcaption></figure></p><p>Nadat de nieuwe Digikoppeling-standaarden zijn vastgesteld, past de beheerder de additionele Digikoppeling producten aan. Het gaat om Compliance Voorzieningen OIN Register, CPA register. Ook gaat het om website, opleidingsdocumenten, documenten ter ondersteuning van implementatie en andere algemene documentatie.</p></section><section id="proces-incidentbeheer"><h3 id="x3-8-proces-incidentbeheer"><bdi class="secno">3.8 </bdi>Proces: Incidentbeheer<a class="self-link" href="#proces-incidentbeheer" aria-label="Permalink for Section 3.8"></a></h3><p><figure id="fig-incidentbeheer"><img src="media/DK_Incidentbeheer.png" alt="Incidentbeheer" title="Incidentbeheer"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Incidentbeheer</span></figcaption></figure></p><p>Indien een Digikoppeling onderdeel de status “In Gebruik” heeft, worden problemen en fouten die geconstateerd worden bij de implementatie in software of tijdens het gebruik in de praktijk aangemeld, geregistreerd en afgehandeld in het incident management proces. Dit geldt uitsluitend indien deze veroorzaakt worden door fouten in de Digikoppeling standaard zelf. Problemen veroorzaakt door afwijkingen op en/of onjuist gebruik van de Digikoppeling standaard worden niet in behandeling genomen. Een integratiedeskundige met Digikoppeling expertise kan verstoringen of fouten aanmelden. Afhankelijk van de urgentie en de noodzaak wordt ofwel de fout opgelost in het reguliere onderhoudsproces van Digikoppeling dan wel in een versnelde procedure. In het laatste geval wordt in overleg tussen degene die het incident heeft aangemeld en een Digikoppeling deskundige van de Digikoppeling beheerder een „patch‟ gemaakt. Het probleem of de fout samen met de patch of „work around‟ worden gepubliceerd opde Logius website<sup>9</sup>.. Naderhand worden de verschillende problemen en fouten meegenomen in een nieuwe release van Digikoppeling voor een structurele oplossing. De structurele afhandeling vindt plaats binnen de reguliere hoofdprocessen Onderhoud en vernieuwing.</p><p><sup>9</sup>: Zie <a href="https://logius.nl/diensten/digikoppeling">https://logius.nl/diensten/digikoppeling</a></p></section><section id="proces-publicatie-en-communicatie"><h3 id="x3-9-proces-publicatie-en-communicatie"><bdi class="secno">3.9 </bdi>Proces: Publicatie en Communicatie<a class="self-link" href="#proces-publicatie-en-communicatie" aria-label="Permalink for Section 3.9"></a></h3><p><figure id="fig-generatedID"><img src="media/DK_Communicatie_en_PR.png" alt="Communicatie en PR"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title"></span></figcaption></figure></p><p>Als een Digikoppeling onderdeel de status „In Gebruik‟ heeft, worden verschillende zaken gepubliceerd. De Digikoppeling beheerder publiceert de volledige specificatie („In Gebruik‟) van een Digikoppeling onderdeel en een kort bericht op het publieke deel van zijn website. Publicatie houdt in dat de nieuwe release van een Digikoppeling onderdeel openbaar wordt gemaakt voor inbouw in software, brede uitrol en ingebruikname.</p><p>Verder wordt een persbericht uitgegeven, waarin de publicatie van de nieuwe release van het Digikoppeling onderdeel wordt aangekondigd. Ook wordt er door de beheerder een bericht in relevante nieuwsbrieven geplaatst.</p><p>Naast de nieuwe release van de standaard en nieuws- en persberichten worden ook additionele producten gepubliceerd na aangepast ze zijn. Factsheets, opleidingsmateriaal, presentaties, maar ook releasebeleid en Roadmap zullen worden gepubliceerd.</p></section><section id="proces-support"><h3 id="x3-10-proces-support"><bdi class="secno">3.10 </bdi>Proces: Support<a class="self-link" href="#proces-support" aria-label="Permalink for Section 3.10"></a></h3><p>Het proces Support bestaat uit het afhandelen van vragen over Digikoppeling. In principe worden vragen ingediend via het Digikoppeling forum. Ook kunnen gebruikers van Digikoppeling (bijvoorbeeld overheidsorganisaties en softwareleveranciers) supportvragen indienen via <a href="mailto:Servicecentrum@logius.nl">Servicecentrum@logius.nl</a>.</p><p>De vragen worden beantwoord door een Digikoppeling deskundige van de verantwoordelijke beheerder.</p><p>Voor de communicatie met basisregistraties zijn de betreffende beheerorganisaties aldaar het aanspreekpunt.</p></section><section id="proces-klachten"><h3 id="x3-11-proces-klachten"><bdi class="secno">3.11 </bdi>Proces: Klachten<a class="self-link" href="#proces-klachten" aria-label="Permalink for Section 3.11"></a></h3><p>Klachten over de opzet of de uitvoering van het beheerproces dienen ingediend te worden bij de beheerder. Klachten dienen niet gericht te zijn op personen en niet beledigend of anderszins fatsoensnormen te overschrijden. De beheerder maakt klachten openbaar, inclusief organisatie en functie van de indiener.</p><p>De indiener van de klacht krijgt zo spoedig mogelijk en altijd terugkoppeling over de voortgang van en beslissing over zijn klacht.</p></section></section>
-<section data-format="markdown" id="bijlage-b-informatievoorziening-rond-digikoppeling"><h2 id="x4-bijlage-b-informatievoorziening-rond-digikoppeling"><bdi class="secno">4. </bdi>Bijlage B: Informatievoorziening rond Digikoppeling<a class="self-link" href="#bijlage-b-informatievoorziening-rond-digikoppeling" aria-label="Permalink for Section 4."></a></h2><p>Op verschillende plaatsen is informatie over Digikoppeling te vinden. Ter ondersteuning van het beheer, het gebruik van de Digikoppeling standaard en ten behoeve van de communicatie is de informatievoorziening rond Digikoppeling ingericht. De informatievoorziening voorziet de verschillende belanghebbenden van informatie. Hiervoor worden drie doelgroepen onderscheiden:</p><ol>
+</ul>
+<p>Indien aan bovenstaande criteria is voldaan dan zal de Digikoppeling beheerder namens de Klantenraadde nieuwe release van het Digikoppeling onderdeel als “In Gebruik” publiceren en dit openbaar maken middels een persbericht.</p>
+</section><section id="implementatie-in-softwareproducten"><div class="header-wrapper"><h4 id="x3-5-4-implementatie-in-softwareproducten"><bdi class="secno">3.5.4 </bdi>Implementatie in softwareproducten</h4><a class="self-link" href="#implementatie-in-softwareproducten" aria-label="Permalink for Section 3.5.4"></a></div>
+<p>Nadat een Digikoppeling onderdeel de status “In Gebruik” heeft gekregen kunnen gebruikersorganisaties het betreffende Digikoppeling onderdeel in hun softwareproducten implementeren en toepassen.</p>
+<p>De aanvang en de tijdsduur van het implementeren in software kan sterk variëren. Afhankelijk van de wijziging kan deze zich beperken tot een (kleine) herconfiguratie van adapter-software tot aanpassing van bestaande informatiesystemen die Digikoppeling toepassen. De website van Logius en de Digikoppeling community bieden handige handvatten en ook Logius biedt implementatie-ondersteuning.</p>
+<p>Het feitelijk implementeren van Digikoppeling of een nieuwe release of onderdeel ervan in softwareproducten valt grotendeels buiten het beheermodel.</p>
+</section></section><section id="proces-ingebruikname"><div class="header-wrapper"><h3 id="x3-6-proces-ingebruikname"><bdi class="secno">3.6 </bdi>Proces: Ingebruikname</h3><a class="self-link" href="#proces-ingebruikname" aria-label="Permalink for Section 3.6"></a></div>
+<p>Het zwaartepunt van de uitvoering van het proces Ingebruikname ligt bij de gebruikers van een Digikoppeling onderdeel en bij de leveranciers van software. Enerzijds betreft de ingebruikname het voorschrijven van een bepaalde release van een Digikoppeling onderdeel en anderzijds het proces van het in bedrijf nemen van adapters en informatiesystemen met Digikoppeling koppelingen.</p>
+<p>Voorschrijven en planning</p>
+<p>Voor gebruik van Digikoppeling binnen de eigen informatievoorziening zal een gebruiker bij de keuze van een release van een Digikoppeling onderdeel rekening houden met de eigen ambitie, doelstellingen, ICT strategie, ketenafspraken, roadmap, de beschikbaarheid van software en de status van de benodigde Digikoppeling onderdelen.</p>
+<p>Gebruikers die zelf de regie voeren over de eigen applicatieportfolio wordt geadviseerd de meeste recent vastgestelde Digikoppeling release voor te schrijven voor nieuwe software en bij vervanging of upgrading van bestaande koppelingen mee te nemen in de onderhoudsplanning.</p>
+<p>Gebruikers zullen in hun programma‟s van eisen opnemen dat applicaties die gericht zijn op integratie (zoals middleware, brokers, servicebus en distributiesystemen) van alle relevante Digikoppeling configuraties ten minste twee opeenvolgende releases gelijktijdig ondersteunen.</p>
+<p>In bedrijf nemen</p>
+<p>Dit deel betreft de softwaredistributie, de integratie- en acceptatietesten en het in bedrijf stellen van software waar Digikoppeling koppelingen zijn ingebouwd.</p>
+<p>Het preventief testen en keuren van de Digikoppeling koppelingen in aangepaste software of nieuwe software maakt deel uit van dit proces. De Digikoppeling Compliance voorzieningen zullen hierbij toegepast worden. Dit proces speelt zich voornamelijk af buiten het beheer van de Digikoppeling standaard. Het is daarom niet nader uitgewerkt.</p>
+</section><section id="proces-vernieuwing-en-onderhoud-additionele-producten"><div class="header-wrapper"><h3 id="x3-7-proces-vernieuwing-en-onderhoud-additionele-producten"><bdi class="secno">3.7 </bdi>Proces: Vernieuwing en onderhoud additionele producten</h3><a class="self-link" href="#proces-vernieuwing-en-onderhoud-additionele-producten" aria-label="Permalink for Section 3.7"></a></div>
+<p><figure id="fig-additionele-producten"><img src="media/DK_Additionele_producten.png" alt="Additionele producten" title="Additionele producten"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Additionele producten</span></figcaption></figure></p>
+<p>Nadat de nieuwe Digikoppeling-standaarden zijn vastgesteld, past de beheerder de additionele Digikoppeling producten aan. Het gaat om Compliance Voorzieningen OIN Register, CPA register. Ook gaat het om website, opleidingsdocumenten, documenten ter ondersteuning van implementatie en andere algemene documentatie.</p>
+</section><section id="proces-incidentbeheer"><div class="header-wrapper"><h3 id="x3-8-proces-incidentbeheer"><bdi class="secno">3.8 </bdi>Proces: Incidentbeheer</h3><a class="self-link" href="#proces-incidentbeheer" aria-label="Permalink for Section 3.8"></a></div>
+<p><figure id="fig-incidentbeheer"><img src="media/DK_Incidentbeheer.png" alt="Incidentbeheer" title="Incidentbeheer"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Incidentbeheer</span></figcaption></figure></p>
+<p>Indien een Digikoppeling onderdeel de status “In Gebruik” heeft, worden problemen en fouten die geconstateerd worden bij de implementatie in software of tijdens het gebruik in de praktijk aangemeld, geregistreerd en afgehandeld in het incident management proces. Dit geldt uitsluitend indien deze veroorzaakt worden door fouten in de Digikoppeling standaard zelf. Problemen veroorzaakt door afwijkingen op en/of onjuist gebruik van de Digikoppeling standaard worden niet in behandeling genomen. Een integratiedeskundige met Digikoppeling expertise kan verstoringen of fouten aanmelden. Afhankelijk van de urgentie en de noodzaak wordt ofwel de fout opgelost in het reguliere onderhoudsproces van Digikoppeling dan wel in een versnelde procedure. In het laatste geval wordt in overleg tussen degene die het incident heeft aangemeld en een Digikoppeling deskundige van de Digikoppeling beheerder een „patch‟ gemaakt. Het probleem of de fout samen met de patch of „work around‟ worden gepubliceerd opde Logius website<sup>9</sup>.. Naderhand worden de verschillende problemen en fouten meegenomen in een nieuwe release van Digikoppeling voor een structurele oplossing. De structurele afhandeling vindt plaats binnen de reguliere hoofdprocessen Onderhoud en vernieuwing.</p>
+<p><sup>9</sup>: Zie <a href="https://logius.nl/diensten/digikoppeling">https://logius.nl/diensten/digikoppeling</a></p>
+</section><section id="proces-publicatie-en-communicatie"><div class="header-wrapper"><h3 id="x3-9-proces-publicatie-en-communicatie"><bdi class="secno">3.9 </bdi>Proces: Publicatie en Communicatie</h3><a class="self-link" href="#proces-publicatie-en-communicatie" aria-label="Permalink for Section 3.9"></a></div>
+<p><figure id="fig-generatedID"><img src="media/DK_Communicatie_en_PR.png" alt="Communicatie en PR"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title"></span></figcaption></figure></p>
+<p>Als een Digikoppeling onderdeel de status „In Gebruik‟ heeft, worden verschillende zaken gepubliceerd. De Digikoppeling beheerder publiceert de volledige specificatie („In Gebruik‟) van een Digikoppeling onderdeel en een kort bericht op het publieke deel van zijn website. Publicatie houdt in dat de nieuwe release van een Digikoppeling onderdeel openbaar wordt gemaakt voor inbouw in software, brede uitrol en ingebruikname.</p>
+<p>Verder wordt een persbericht uitgegeven, waarin de publicatie van de nieuwe release van het Digikoppeling onderdeel wordt aangekondigd. Ook wordt er door de beheerder een bericht in relevante nieuwsbrieven geplaatst.</p>
+<p>Naast de nieuwe release van de standaard en nieuws- en persberichten worden ook additionele producten gepubliceerd na aangepast ze zijn. Factsheets, opleidingsmateriaal, presentaties, maar ook releasebeleid en Roadmap zullen worden gepubliceerd.</p>
+</section><section id="proces-support"><div class="header-wrapper"><h3 id="x3-10-proces-support"><bdi class="secno">3.10 </bdi>Proces: Support</h3><a class="self-link" href="#proces-support" aria-label="Permalink for Section 3.10"></a></div>
+<p>Het proces Support bestaat uit het afhandelen van vragen over Digikoppeling. In principe worden vragen ingediend via het Digikoppeling forum. Ook kunnen gebruikers van Digikoppeling (bijvoorbeeld overheidsorganisaties en softwareleveranciers) supportvragen indienen via <a href="mailto:Servicecentrum@logius.nl">Servicecentrum@logius.nl</a>.</p>
+<p>De vragen worden beantwoord door een Digikoppeling deskundige van de verantwoordelijke beheerder.</p>
+<p>Voor de communicatie met basisregistraties zijn de betreffende beheerorganisaties aldaar het aanspreekpunt.</p>
+</section><section id="proces-klachten"><div class="header-wrapper"><h3 id="x3-11-proces-klachten"><bdi class="secno">3.11 </bdi>Proces: Klachten</h3><a class="self-link" href="#proces-klachten" aria-label="Permalink for Section 3.11"></a></div>
+<p>Klachten over de opzet of de uitvoering van het beheerproces dienen ingediend te worden bij de beheerder. Klachten dienen niet gericht te zijn op personen en niet beledigend of anderszins fatsoensnormen te overschrijden. De beheerder maakt klachten openbaar, inclusief organisatie en functie van de indiener.</p>
+<p>De indiener van de klacht krijgt zo spoedig mogelijk en altijd terugkoppeling over de voortgang van en beslissing over zijn klacht.</p>
+</section></section>
+    <section id="bijlage-b-informatievoorziening-rond-digikoppeling"><div class="header-wrapper"><h2 id="x4-bijlage-b-informatievoorziening-rond-digikoppeling"><bdi class="secno">4. </bdi>Bijlage B: Informatievoorziening rond Digikoppeling</h2><a class="self-link" href="#bijlage-b-informatievoorziening-rond-digikoppeling" aria-label="Permalink for Section 4."></a></div>
+<p>Op verschillende plaatsen is informatie over Digikoppeling te vinden. Ter ondersteuning van het beheer, het gebruik van de Digikoppeling standaard en ten behoeve van de communicatie is de informatievoorziening rond Digikoppeling ingericht. De informatievoorziening voorziet de verschillende belanghebbenden van informatie. Hiervoor worden drie doelgroepen onderscheiden:</p>
+<ol>
 <li><p>Geïnteresseerden en gebruikers van de standaard,</p>
 </li>
 <li><p>Leden van de Digikoppeling Community, de Klantenraaden het Technisch Overleg</p>
 </li>
 <li><p>Interne Logius medewerkers.</p>
 </li>
-</ol><section id="geinteresseerden-en-gebruikers-van-de-standaard"><h3 id="x4-1-geinteresseerden-en-gebruikers-van-de-standaard"><bdi class="secno">4.1 </bdi>Geïnteresseerden en gebruikers van de standaard<a class="self-link" href="#geinteresseerden-en-gebruikers-van-de-standaard" aria-label="Permalink for Section 4.1"></a></h3><p>Het publieke deel van de Digikoppeling website biedt informatie over de Digikoppeling standaard. Er staan:</p><ul>
+</ol>
+<section id="geinteresseerden-en-gebruikers-van-de-standaard"><div class="header-wrapper"><h3 id="x4-1-geinteresseerden-en-gebruikers-van-de-standaard"><bdi class="secno">4.1 </bdi>Geïnteresseerden en gebruikers van de standaard</h3><a class="self-link" href="#geinteresseerden-en-gebruikers-van-de-standaard" aria-label="Permalink for Section 4.1"></a></div>
+<p>Het publieke deel van de Digikoppeling website biedt informatie over de Digikoppeling standaard. Er staan:</p>
+<ul>
 <li><p>De beschrijving van de standaard in de diverse onderdelen (Architectuur, Koppelvlakstandaard, etc.);</p>
 </li>
 <li><p>Informatie over voorzieningen ter ondersteuning van het Digikoppeling gebruik;</p>
@@ -1009,14 +1194,24 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>Algemene documenten als factsheets, presentaties, opleidingsmateriaal, etc.</p>
 </li>
-</ul></section><section id="community-technisch-overleg-en-klantenraad"><h3 id="x4-2-community-technisch-overleg-en-klantenraad"><bdi class="secno">4.2 </bdi>Community, Technisch Overleg en Klantenraad<a class="self-link" href="#community-technisch-overleg-en-klantenraad" aria-label="Permalink for Section 4.2"></a></h3><p>Leden van de Digikoppeling Community kunnen in vier vormen participeren: als lid van de Community als lid van het Technisch Overleg, als lid van de Klantenraaden als lid vanhet OBDO.. Via de website van Digikoppeling is het forum bereikbaar. Elke geïnteresseerde kan zich aanmelden om toegang te krijgen tot het Digikoppeling forum. Op het Digikoppeling forum is te vinden:</p><ul>
+</ul>
+</section><section id="community-technisch-overleg-en-klantenraad"><div class="header-wrapper"><h3 id="x4-2-community-technisch-overleg-en-klantenraad"><bdi class="secno">4.2 </bdi>Community, Technisch Overleg en Klantenraad</h3><a class="self-link" href="#community-technisch-overleg-en-klantenraad" aria-label="Permalink for Section 4.2"></a></div>
+<p>Leden van de Digikoppeling Community kunnen in vier vormen participeren: als lid van de Community als lid van het Technisch Overleg, als lid van de Klantenraaden als lid vanhet OBDO.. Via de website van Digikoppeling is het forum bereikbaar. Elke geïnteresseerde kan zich aanmelden om toegang te krijgen tot het Digikoppeling forum. Op het Digikoppeling forum is te vinden:</p>
+<ul>
 <li><p>Agenda, notulen en overige vergaderstukken van alle bijeenkomsten van het Technisch Overleg;</p>
 </li>
 <li><p>Documenten met wijzigingsverzoeken en het statusoverzicht wijzigingsverzoeken;</p>
 </li>
 <li><p>Diverse achtergrondinformatie.</p>
 </li>
-</ul><p>Leden van het Technisch Overleg en van de Klantenraad ontvangen per mail agenda‟s, notulen en overige vergaderstukken. Leden van het OBDOworden via het OBDO-secretariaat: Bureau Digitale Overheid geïnformeerd.</p><p>Op het forum van de Digikoppeling Community<sup>10</sup> worden ook discussies gevoerd. Er zijn algemene discussies, waar vragen worden gesteld en antwoorden worden gegeven. Er zijn discussies over wijzigingsvoorstellen die behandeld worden.</p><p><sup>10</sup>: Zie: <a href="https://digistandaarden.pleio.nl/groups/profile/387288/digikoppeling-community">https://digistandaarden.pleio.nl/groups/profile/387288/digikoppeling-community</a></p><p>Het forum wordt ook ingezet voor openbare consultatie van wijzigingen aan Digikoppeling.</p></section><section id="medewerkers-beheerder"><h3 id="x4-3-medewerkers-beheerder"><bdi class="secno">4.3 </bdi>Medewerkers beheerder<a class="self-link" href="#medewerkers-beheerder" aria-label="Permalink for Section 4.3"></a></h3><p>Binnen de beheerorganisatie wordt ten behoeve van eigen medewerkers bewaard:</p><ul>
+</ul>
+<p>Leden van het Technisch Overleg en van de Klantenraad ontvangen per mail agenda‟s, notulen en overige vergaderstukken. Leden van het OBDOworden via het OBDO-secretariaat: Bureau Digitale Overheid geïnformeerd.</p>
+<p>Op het forum van de Digikoppeling Community<sup>10</sup> worden ook discussies gevoerd. Er zijn algemene discussies, waar vragen worden gesteld en antwoorden worden gegeven. Er zijn discussies over wijzigingsvoorstellen die behandeld worden.</p>
+<p><sup>10</sup>: Zie: <a href="https://digistandaarden.pleio.nl/groups/profile/387288/digikoppeling-community">https://digistandaarden.pleio.nl/groups/profile/387288/digikoppeling-community</a></p>
+<p>Het forum wordt ook ingezet voor openbare consultatie van wijzigingen aan Digikoppeling.</p>
+</section><section id="medewerkers-beheerder"><div class="header-wrapper"><h3 id="x4-3-medewerkers-beheerder"><bdi class="secno">4.3 </bdi>Medewerkers beheerder</h3><a class="self-link" href="#medewerkers-beheerder" aria-label="Permalink for Section 4.3"></a></div>
+<p>Binnen de beheerorganisatie wordt ten behoeve van eigen medewerkers bewaard:</p>
+<ul>
 <li><p>Overzicht van relaties en participanten;</p>
 </li>
 <li><p>(voorlopige) agenda, notulen en presentaties van alle bijeenkomsten van het Technisch Overleg, de Klantenraad en inbreng inhet OBDO;</p>
@@ -1029,8 +1224,10 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 </li>
 <li><p>Diverse werkdocumenten.</p>
 </li>
-</ul></section></section>
-<section data-format="markdown" id="bijlage-c-begrippen-en-afkortingen"><h2 id="x5-bijlage-c-begrippen-en-afkortingen"><bdi class="secno">5. </bdi>Bijlage C: Begrippen en afkortingen<a class="self-link" href="#bijlage-c-begrippen-en-afkortingen" aria-label="Permalink for Section 5."></a></h2><table class="dkkvs">
+</ul>
+</section></section>
+    <section id="bijlage-c-begrippen-en-afkortingen"><div class="header-wrapper"><h2 id="x5-bijlage-c-begrippen-en-afkortingen"><bdi class="secno">5. </bdi>Bijlage C: Begrippen en afkortingen</h2><a class="self-link" href="#bijlage-c-begrippen-en-afkortingen" aria-label="Permalink for Section 5."></a></div>
+<table>
 <thead>
 <tr>
 <th>Afkortingen</th>
@@ -1065,7 +1262,11 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 <td>WUS</td>
 <td>Verzameling van WS-I standaarden voor uitwisseling van berichten; afkorting van WSDL, UDDI en SOAP.</td>
 </tr>
-</tbody></table><br><br><table class="dkkvs">
+</tbody></table>
+<br>
+<br>
+
+<table>
 <thead>
 <tr>
 <th>Begrippen</th>
@@ -1232,17 +1433,30 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 <td>Wijzigingsverzoek</td>
 <td>Het verzoek een wijziging in een Digikoppeling onderdeel door te voeren (RFC)</td>
 </tr>
-</tbody></table></section>
-<section data-format="markdown" id="bijlage-d-versie-nummering-digikoppeling-onderdelen"><h2 id="x6-bijlage-d-versie-nummering-digikoppeling-onderdelen"><bdi class="secno">6. </bdi>Bijlage D: versie-nummering Digikoppeling onderdelen<a class="self-link" href="#bijlage-d-versie-nummering-digikoppeling-onderdelen" aria-label="Permalink for Section 6."></a></h2><p>Deze bijlage beschrijft de versioneringsmethodiek van de digikoppeling standaard.</p><section id="versioneringsmethodiek"><h3 id="x6-1-versioneringsmethodiek"><bdi class="secno">6.1 </bdi>Versioneringsmethodiek<a class="self-link" href="#versioneringsmethodiek" aria-label="Permalink for Section 6.1"></a></h3><p>Per document wordt met <code class="code">[documentnaam]_vX.Y.Z</code> de versie aangegeven. Met <code class="code">vX.Y.Z</code> wordt gerefereerd aan major (X) en minor (Y) releases en (Z) patches, dit wordt hieronder toegelicht:</p></section><section id="patch-releases"><h3 id="x6-2-patch-releases"><bdi class="secno">6.2 </bdi>Patch Releases<a class="self-link" href="#patch-releases" aria-label="Permalink for Section 6.2"></a></h3><p>In een patchrelease worden wijzigingen doorgevoerd die de technische specificatie niet raken. Dit kunnen tekstuele wijzigen zijn of inhoudelijke ndelingen van de documenten. De wijzigen worden vastgelegd in release notes. Een patch releases wordt door de beheerder op eigen initiatief of op aanwijzingen van gebruikers doorgevoerd en gepubliceerd. Een patchrelease wordt aan het TO Digikoppeling ter kennisgeving medegedeeld. Een nieuwe patchrelease vervangt een eerdere versie in zijn geheel.</p></section><section id="minor-releases"><h3 id="x6-3-minor-releases"><bdi class="secno">6.3 </bdi>Minor releases<a class="self-link" href="#minor-releases" aria-label="Permalink for Section 6.3"></a></h3><p>In een minor release kunnen wijzigingen doorgevoerd worden die de technische specificatie van een koppelvlak raken. Dat kunnen fouten zijn in de specificatie zijn, het verzwaren of verlichten van een restrictie of het een aanpassing van een beveiligingstandaard (zoals TLS 1.0 naar TLS 1.2). In de SEMVER aanpak zijn minor releases backwards compatible. Voor de Digikoppeling standaard is backwards compatibility lastiger te bepalen omdat uiteindelijk twee partijen met elkaar moeten meebewegen. <em>Minor Releases kunnen dus mogelijk backwards incompatible zijn</em>. Voor Minor Releases wordt een uitgebreid vaststellings-procedure gevolgd (conform het Digikoppeling Beheermodel) en er kan in overleg met de deelnemers van het TO tot een migratiepad worden besloten. Dit migratiepad wordt in de release meegenomen.</p></section><section id="major-releases"><h3 id="x6-4-major-releases"><bdi class="secno">6.4 </bdi>Major Releases<a class="self-link" href="#major-releases" aria-label="Permalink for Section 6.4"></a></h3><p>Er zijn twee Major release momenten: de overgang naar nieuwe internationale standaarden binnen een bestaand profiel, bijvoorbeeld HTTP 2.0 of SOAP 1.2 binnen WUS of de toevoeging van een geheel nieuw profiel, zoals de Grote Berichten Push variant of ebMS3. In het eerste geval komt er een nieuw major versie van Digikoppeling WUS Specificatie document vast te stellen volgens het de uitgebreid vaststellingsprocedure (conform het Digikoppeling Beheer-model). In het tweede geval wordt er een <em>geheel nieuw</em> document toegevoegd aan de standaard. Als hierbij het functionele toepassingsgebied van de standaard, waarvoor het pas toe of leg uit regime geldt, veranderd, dan wordt eerst de uitgebreide vaststellingsprocedure gevolgd en vervolgens de procedure van het Forum Standaardisatie.</p></section><section id="versie-overgangen"><h3 id="x6-5-versie-overgangen"><bdi class="secno">6.5 </bdi>Versie overgangen<a class="self-link" href="#versie-overgangen" aria-label="Permalink for Section 6.5"></a></h3><p>Wanneer een nieuwe versie uitkomt zal de oude versie conform de afgestemde overgangsperiode een einddatum van geldigheid krijgen. in de overgangsperiode kunnen dus 2 documenten de status geldig hebben.</p></section></section>
+</tbody></table>
+</section>
+    <section id="bijlage-d-versie-nummering-digikoppeling-onderdelen"><div class="header-wrapper"><h2 id="x6-bijlage-d-versie-nummering-digikoppeling-onderdelen"><bdi class="secno">6. </bdi>Bijlage D: versie-nummering Digikoppeling onderdelen</h2><a class="self-link" href="#bijlage-d-versie-nummering-digikoppeling-onderdelen" aria-label="Permalink for Section 6."></a></div>
+<p>Deze bijlage beschrijft de versioneringsmethodiek van de digikoppeling standaard.</p>
+<section id="versioneringsmethodiek"><div class="header-wrapper"><h3 id="x6-1-versioneringsmethodiek"><bdi class="secno">6.1 </bdi>Versioneringsmethodiek</h3><a class="self-link" href="#versioneringsmethodiek" aria-label="Permalink for Section 6.1"></a></div>
+<p>Per document wordt met <code>[documentnaam]_vX.Y.Z</code> de versie aangegeven. Met <code>vX.Y.Z</code> wordt gerefereerd aan major (X) en minor (Y) releases en (Z) patches, dit wordt hieronder toegelicht:</p>
+</section><section id="patch-releases"><div class="header-wrapper"><h3 id="x6-2-patch-releases"><bdi class="secno">6.2 </bdi>Patch Releases</h3><a class="self-link" href="#patch-releases" aria-label="Permalink for Section 6.2"></a></div>
+<p>In een patchrelease worden wijzigingen doorgevoerd die de technische specificatie niet raken. Dit kunnen tekstuele wijzigen zijn of inhoudelijke ndelingen van de documenten. De wijzigen worden vastgelegd in release notes. Een patch releases wordt door de beheerder op eigen initiatief of op aanwijzingen van gebruikers doorgevoerd en gepubliceerd. Een patchrelease wordt aan het TO Digikoppeling ter kennisgeving medegedeeld. Een nieuwe patchrelease vervangt een eerdere versie in zijn geheel.</p>
+</section><section id="minor-releases"><div class="header-wrapper"><h3 id="x6-3-minor-releases"><bdi class="secno">6.3 </bdi>Minor releases</h3><a class="self-link" href="#minor-releases" aria-label="Permalink for Section 6.3"></a></div>
+<p>In een minor release kunnen wijzigingen doorgevoerd worden die de technische specificatie van een koppelvlak raken. Dat kunnen fouten zijn in de specificatie zijn, het verzwaren of verlichten van een restrictie of het een aanpassing van een beveiligingstandaard (zoals TLS 1.0 naar TLS 1.2). In de SEMVER aanpak zijn minor releases backwards compatible. Voor de Digikoppeling standaard is backwards compatibility lastiger te bepalen omdat uiteindelijk twee partijen met elkaar moeten meebewegen. <em>Minor Releases kunnen dus mogelijk backwards incompatible zijn</em>. Voor Minor Releases wordt een uitgebreid vaststellings-procedure gevolgd (conform het Digikoppeling Beheermodel) en er kan in overleg met de deelnemers van het TO tot een migratiepad worden besloten. Dit migratiepad wordt in de release meegenomen.</p>
+</section><section id="major-releases"><div class="header-wrapper"><h3 id="x6-4-major-releases"><bdi class="secno">6.4 </bdi>Major Releases</h3><a class="self-link" href="#major-releases" aria-label="Permalink for Section 6.4"></a></div>
+<p>Er zijn twee Major release momenten: de overgang naar nieuwe internationale standaarden binnen een bestaand profiel, bijvoorbeeld HTTP 2.0 of SOAP 1.2 binnen WUS of de toevoeging van een geheel nieuw profiel, zoals de Grote Berichten Push variant of ebMS3. In het eerste geval komt er een nieuw major versie van Digikoppeling WUS Specificatie document vast te stellen volgens het de uitgebreid vaststellingsprocedure (conform het Digikoppeling Beheer-model). In het tweede geval wordt er een <em>geheel nieuw</em> document toegevoegd aan de standaard. Als hierbij het functionele toepassingsgebied van de standaard, waarvoor het pas toe of leg uit regime geldt, veranderd, dan wordt eerst de uitgebreide vaststellingsprocedure gevolgd en vervolgens de procedure van het Forum Standaardisatie.</p>
+</section><section id="versie-overgangen"><div class="header-wrapper"><h3 id="x6-5-versie-overgangen"><bdi class="secno">6.5 </bdi>Versie overgangen</h3><a class="self-link" href="#versie-overgangen" aria-label="Permalink for Section 6.5"></a></div>
+<p>Wanneer een nieuwe versie uitkomt zal de oude versie conform de afgestemde overgangsperiode een einddatum van geldigheid krijgen. in de overgangsperiode kunnen dus 2 documenten de status geldig hebben.</p>
+</section></section>
     
     
-    <section id="conformance"><h2 id="x7-conformiteit"><bdi class="secno">7. </bdi>Conformiteit<a class="self-link" href="#conformance" aria-label="Permalink for Section 7."></a></h2><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+    <section id="conformance"><div class="header-wrapper"><h2 id="x7-conformiteit"><bdi class="secno">7. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 7."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
         
     </section>
 
     <section id="tof">
         
-    <h2 id="x8-lijst-met-figuren"><bdi class="secno">8. </bdi>Lijst met figuren<a class="self-link" href="#tof" aria-label="Permalink for Section 8."></a></h2><ul class="tof">
+    <div class="header-wrapper"><h2 id="x8-lijst-met-figuren"><bdi class="secno">8. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 8."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-systemen-die-digikoppeling-gebruiken">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Systemen die DIgikoppeling gebruiken</span></a>
   </li><li class="tofline">
@@ -1276,6 +1490,7 @@ De hoofdprocessen voor het beheer en onderhoud van de Digikoppeling standaard zi
 
     
     
+
 
 
 

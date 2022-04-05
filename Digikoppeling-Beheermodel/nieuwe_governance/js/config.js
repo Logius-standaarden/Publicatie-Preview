@@ -1,6 +1,6 @@
 var respecConfig = {
   // this template doesn''t use all possible config parameters
-  // see https://respec.org/docs/ for alle 
+  // see https://respec.org/docs/ for alle
 
   // specStatus currently supported
   // WW, GN-WV: Werkversie
@@ -10,7 +10,7 @@ var respecConfig = {
   // EO: Einde ondersteuning, verouderde versie, vervangen door nieuwe versie
   // TG: Versie teruggetrokken
   // BASIS, GN-BASIS: 'geen status'
-  specStatus: "EO",
+  specStatus: "WV",
 
   // SpecType currently supported
   // NO: "Norm"
@@ -22,9 +22,9 @@ var respecConfig = {
   // AL: "Algemeen"
   // BD: "Beheerdocumentatie"
   // BP: "Best Practice"
-  specType: "ST",
+  specType: "WA",
 
-  // subtitle will be shown below title, can be omitted 
+  // subtitle will be shown below title, can be omitted
   //subtitle: "Hier komt een subtitle",
 
   // The specification's publish domain, which is used to publish the specification
@@ -34,16 +34,16 @@ var respecConfig = {
   // The specification's "short name", which is the name used in NL_Respec URLs
   shortName: "beheer",
 
-  // A YYYY-MM-DD date. The publication date of the present document. 
+  // A YYYY-MM-DD date. The publication date of the present document.
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
   // Belangrijk: als publishDate niet opgegeven is, wordt bij de link "Laatst gepubliceerde versie" "geen" gezet. Anders wordt een link opgebouwd voor de laatste versie, met het formaat:
-  publishDate: "2019-05-15",
+  publishDate: "2022-06-01",
 
   // A YYYY-MM-DD date. When there is a previous release of a given specification, (W3C)
   // previousPublishDate: "2017-10-01",
 
-  publishVersion: "1.6",
-  // previousPublishVersion: "1.5",
+  publishVersion: "1.7",
+  previousPublishVersion: "1.6",
 
   // Zie https://github.com/w3c/respec/wiki/previousMaturity. Dit moet een
   // A YYYY-MM-DD date. When a previousPublishDate is specified, this is typically required as well in order to generate the "Previous Version"
@@ -54,7 +54,7 @@ var respecConfig = {
 
   // Overrides the standard logo with one or more other logos. (see https://respec.org/docs/#logos)
   // Geef een lege array op als er geen <default> logo moet staan
-  // logos: [], 
+  // logos: [],
 
   //Adds a JSON-LD script element containing schema.org information, which can be useful for search engines.
   doJsonLd: true,
@@ -62,12 +62,12 @@ var respecConfig = {
   // An array of person objects describing the editors of the document
   // this can be simple or more elaborated
   editors: [{
-    name: "Peter Haasnoot",
+    name: "Edwin Wisse",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   },
   {
-    name: "Maarten van der Veen",
+    name: "Peter Haasnoot",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   }
@@ -125,11 +125,11 @@ var respecConfig = {
 
   // if you use a single document for your spec, which uses more than one markdown H1 header, e.g. '# inleiding'
   // this configuration can be set to make sure that the alle H1 headers and navigation bars are preserved
-  nl_markdownSplitH1sections: true,
+  // nl_markdownSplitH1sections: true,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
   // thi scan be configured below
-  // if not set, the url's will be generated on the respecConfig.github automatically  
+  // if not set, the url's will be generated on the respecConfig.github automatically
   nl_github: {
     //issueBase: "https://github.com/Logius-standaarden/<repository>/issues",
     revision: "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel",
@@ -137,16 +137,16 @@ var respecConfig = {
   },
 
   // nl_organisationName is used for some company specific values in the header (and Sotd)
-  // currently supported: Logius and Geonovum (default)  
+  // currently supported: Logius and Geonovum (default)
   nl_organisationName: "Logius",
 
   // prefix for the names of company specific css, svg and ico prefixes
-  // defaults to "GN-"  
+  // defaults to "GN-"
   nl_organisationPrefix: "LS-",
 
   // class style can be automatically insertd in generated markdown tables
   // currently defaults to simple, but this may change
-  // options simple, data, <your css>    
+  // options simple, data, <your css>
   nl_markdownTableClass: "dkkvs",
 
   nl_markdownCodeClass: "code",
@@ -175,7 +175,7 @@ var respecConfig = {
     url: "https://www.logius.nl/standaarden",
   },
 
-  // If you need to include a one-off reference that isn't in the SpecRef database or 
+  // If you need to include a one-off reference that isn't in the SpecRef database or
   // if you need to override an existing reference with specific content, then you can use this configuration option.
   localBiblio: {
     NEN3610: {
