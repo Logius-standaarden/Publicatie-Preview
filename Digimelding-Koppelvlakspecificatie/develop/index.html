@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.2 Logius profile 20220401">
+<meta name="generator" content="ReSpec 32.1.2 Logius profile 20220405">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -144,7 +144,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "nl_addReleaseTagTitle": false,
   "nl_emailComments": "digikoppeling@logius.nl",
   "nl_github": {
-    "revision": "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie/commits/"
+    "revision": "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie/commits"
   },
   "nl_organisationName": "Logius",
   "nl_organisationPrefix": "LS-",
@@ -295,7 +295,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     }
   },
   "publishISODate": "2021-02-19T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 04 april 2022"
+  "generatedSubtitle": "Werkversie 08 april 2022"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
@@ -306,7 +306,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2021-02-19">04 april 2022</time>
+      <time class="dt-published" datetime="2021-02-19">08 april 2022</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -359,7 +359,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
 
   <section class="introductory"><h1>Documentbeheer</h1>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th>Datum</th>
@@ -425,7 +425,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </tbody></table>
 </section>
   <section class="introductory"><h1>Colofon</h1>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -451,7 +451,7 @@ document: Gemeente Amsterdam, Centric, Gemeente Den Haag, Gemeente
 Rotterdam, ICTU, Kamer van Koophandel, KING, Logius, PinkRoccade, Vicrea
 en de Waarderingskamer.</p>
 </section><section id="bronverwijzing-en-referentiedocumenten"><div class="header-wrapper"><h3 id="x2-2-bronverwijzing-en-referentiedocumenten"><bdi class="secno">2.2 </bdi>Bronverwijzing en referentiedocumenten</h3><a class="self-link" href="#bronverwijzing-en-referentiedocumenten" aria-label="Permalink for Section 2.2"></a></div>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th>Referentiedocument</th>
@@ -517,7 +517,7 @@ organisaties voor implementaties in de eigen terugmeldapplicatie.</p>
 services, voor zover deze relevant zijn voor de betreffende applicatie,
 worden ondersteund.</p>
 <p>Aanvullend geldt dat er een aantal implementatievarianten zijn.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th align="left">Implementatievariant</th>
@@ -564,7 +564,7 @@ authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
 specificatie.</p>
 <p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th align="left"><strong>Autorisatie</strong></th>
@@ -656,20 +656,14 @@ Digimelding Webservice)</p>
 elkaar verhouden en in welke volgorde de berichten worden gebruikt.</p>
 <p>Per bericht wordt aangegeven (indien relevant):</p>
 <ul>
-<li><p>berichtnaam;</p>
-</li>
-<li><p>trigger van het bericht;</p>
-</li>
-<li><p>verandering in terugmeldapplicatie/Digimelding Webservice/LV
-basisregistratie ten gevolge van het bericht;</p>
-</li>
-<li><p>lijst van objecten en velden in het bericht, en per veld:</p>
-<ul>
-<li><p>specificatie van de vulling van het veld,</p>
-</li>
-<li><p>toelichting, bijvoorbeeld met de gebruikersactie of configuratie
-die nodig is om de juiste vulling te krijgen.</p>
-</li>
+<li>berichtnaam;</li>
+<li>trigger van het bericht;</li>
+<li>verandering in terugmeldapplicatie/Digimelding Webservice/LV
+basisregistratie ten gevolge van het bericht;</li>
+<li>lijst van objecten en velden in het bericht, en per veld:<ul>
+<li>specificatie van de vulling van het veld,</li>
+<li>toelichting, bijvoorbeeld met de gebruikersactie of configuratie
+die nodig is om de juiste vulling te krijgen.</li>
 </ul>
 </li>
 </ul>
@@ -691,7 +685,7 @@ omvangrijk worden. Voor het overzicht wordt deze annotatie basis in de
 volgende secties met specifieke berichten samengevat tot één regel
 Annotatiebasis. Hieronder leggen we eenmalig uit welke elementen deze
 annotatiebasis bevat.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th align="left"><strong>Annotatiebasis</strong></th>
@@ -731,6 +725,56 @@ annotatiebasis bevat.</p>
 <td align="left">[0..1]</td>
 </tr>
 </tbody></table>
+<p><strong>Tabel Annotatiebasis</strong></p>
+<table class="simple">
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Betekenis</th>
+<th align="center">Relaties</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">@uuid</td>
+<td align="left">Unieke identificatie van de annotatie.</td>
+<td align="center">[1..1]</td>
+</tr>
+<tr>
+<td align="left">GeannoteerdDoor</td>
+<td align="left">Gegevens van diegene die de annotatie heeft toegevoegd.</td>
+<td align="center">[1..1]</td>
+</tr>
+<tr>
+<td align="left">GeannoteerdDoor . Oin</td>
+<td align="left">OIN van de terugmeldende organisatie.</td>
+<td align="center">[1..1]</td>
+</tr>
+<tr>
+<td align="left">GeannoteerdDoor . Vestiging</td>
+<td align="left">Vestigingsnummer van desbetreffende organisatie uit eHerkenning/SSOn Rijk (indien door de afnemer toegepast voor authenticatie).</td>
+<td align="center">[0..1]</td>
+</tr>
+<tr>
+<td align="left">GeannoteerdDoor . Persoonsaanduiding</td>
+<td align="left">Deze zal met webservices bijna altijd de waarde "anoniem" hebben. Er zijn twee uitzonderingen. De eerste is wanneer nadere afspraken gemaakt zijn met een basisregistratie over de invulling van dit veld. De tweede is dat, indien binnen de organisatie eHerkenning/SSOn Rijk gebruikt is voor autorisatie en authenticatie, persoonsaanduiding uit eHerkenning/SSOn Rijk dient te worden meegegeven.</td>
+<td align="center">[1..1]</td>
+</tr>
+<tr>
+<td align="left">GeannoteerdOp</td>
+<td align="left">Tijdstempel waarop de annotatie heeft plaatsgevonden.</td>
+<td align="center">[1..1]</td>
+</tr>
+<tr>
+<td align="left">Toelichting</td>
+<td align="left">Een toelichting bij de annotatie. In de huidige praktijk in gebruik voor root annotaties en status leaf annotaties voor overige leaf annotaties in de huidige praktijk altijd leeg.</td>
+<td align="center">[0..1]</td>
+</tr>
+<tr>
+<td align="left">Annotatieverwijzing</td>
+<td align="left">Verwijzing naar de root annotatie waar een leaf annotatie aan gerelateerd is. Dit wordt afhankelijk  van de relevantie opgenomen.</td>
+<td align="center">[0..1]</td>
+</tr>
+</tbody></table>
 </section><section id="annotatie-versturen"><div class="header-wrapper"><h3 id="x5-2-annotatie-versturen"><bdi class="secno">5.2 </bdi>Annotatie versturen</h3><a class="self-link" href="#annotatie-versturen" aria-label="Permalink for Section 5.2"></a></div>
 <p>De berichten beschreven in deze uitwisseling worden gebruikt om:</p>
 <ul>
@@ -741,7 +785,7 @@ versturen</li>
 Voorziening</li>
 </ul>
 <section id="algemeen"><div class="header-wrapper"><h4 id="x5-2-1-algemeen"><bdi class="secno">5.2.1 </bdi>Algemeen</h4><a class="self-link" href="#algemeen" aria-label="Permalink for Section 5.2.1"></a></div>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -774,7 +818,7 @@ Voorziening</li>
 <p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p>
 <p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p>
 </section><section id="inhoud-bericht-annotatie-toevoegenrequest"><div class="header-wrapper"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest</h4><a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></div>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -808,7 +852,7 @@ verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 <section id="annotatie-toevoegen-terugmelden"><div class="header-wrapper"><h5 id="x5-2-3-1-annotatie-toevoegen-terugmelden"><bdi class="secno">5.2.3.1 </bdi>Annotatie toevoegen (terugmelden)</h5><a class="self-link" href="#annotatie-toevoegen-terugmelden" aria-label="Permalink for Section 5.2.3.1"></a></div>
 <p>De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>AnnotatieBoom . Annotatie</strong></th>
@@ -982,7 +1026,7 @@ als volgt:</p>
 </tbody></table>
 </section><section id="annotatie-toevoegen-intrekken"><div class="header-wrapper"><h5 id="x5-2-3-2-annotatie-toevoegen-intrekken"><bdi class="secno">5.2.3.2 </bdi>Annotatie toevoegen (intrekken)</h5><a class="self-link" href="#annotatie-toevoegen-intrekken" aria-label="Permalink for Section 5.2.3.2"></a></div>
 <p>De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -1004,7 +1048,7 @@ als volgt:</p>
 </tbody></table>
 <p><strong>Annotatie toevoegen (statuswijziging)</strong>
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -1107,7 +1151,7 @@ intrekking is altijd een AnnotatieToevoegenResponse-bericht met daarin
 een tijdstempel. Het is een zogeheten functionele acknowledgement wat
 betekent dat de achterliggende (TMV-)applicatie het vraagbericht in
 goede orde ontvangen heeft.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype:</strong> AnnotatieToevoegenResponse</th>
@@ -1136,7 +1180,7 @@ goede orde ontvangen heeft.</p>
 verkrijgen over de door zijn organisatie gedane terugmeldingen en de
 huidige status van deze terugmeldingen.</p>
 <section id="algemeen-0"><div class="header-wrapper"><h4 id="x5-3-1-algemeen"><bdi class="secno">5.3.1 </bdi>Algemeen</h4><a class="self-link" href="#algemeen-0" aria-label="Permalink for Section 5.3.1"></a></div>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th align="left"></th>
@@ -1195,7 +1239,7 @@ wijziging. Tot slot kan er gefilterd worden op de status van
 terugmeldingen. Dit is enigszins bewerkelijk aangezien iedere
 basisregistratie zijn eigen statussen mag definiëren. In de
 berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype</strong>: StatusoverzichtRequest</th>
@@ -1271,7 +1315,7 @@ als reden meegegeven 'geenWaarde'. Een regulier antwoordbericht is in
 deze foutsituaties op zijn plaats omdat dit geen kritieke fouten zijn en
 het aan de afnemer is om te bepalen of hier actie op moet worden
 ondernomen.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype</strong>: StatusoverzichtResponse</th>
@@ -1335,7 +1379,7 @@ huidige praktijk gaat het altijd om een UUID van een root annotatie.
 Volgens het protocol kan ook een individuele leaf annotatie of een
 deelboom worden opgevraagd. Dit is nu in theorie mogelijk maar wordt in
 de praktijk niet toegepast en is niet getest.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype</strong>: DetailsTerugmeldingRequest</th>
@@ -1386,7 +1430,7 @@ annotatie kent een eigen instantie, zoals ook bij
 volgende soorten annotaties bevatten: Terugmelding, Annotatiestatus,
 Referentiekenmerk, Contactinformatie, Bijlageverwijzing,
 Planningsverwachting en BehandelendeBronhouder.</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype</strong>: DetailsTerugmeldingResponse</th>
@@ -1604,7 +1648,7 @@ Planningsverwachting en BehandelendeBronhouder.</p>
 te controleren of de berichtverwerking in zijn algemeenheid beschikbaar
 is.</p>
 <section id="algemeen-1"><div class="header-wrapper"><h4 id="x5-4-1-algemeen"><bdi class="secno">5.4.1 </bdi>Algemeen</h4><a class="self-link" href="#algemeen-1" aria-label="Permalink for Section 5.4.1"></a></div>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th></th>
@@ -1640,7 +1684,7 @@ is.</p>
 <p><figure id="fig-interactiediagram-echoverzoek-via-digimelding-webservice"><img src="images/image11.png" alt="Interactiediagram echoverzoek via Digimelding Webservice" title="Interactiediagram echoverzoek via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Interactiediagram echoverzoek via Digimelding Webservice</span></figcaption></figure></p>
 </section><section id="echorequest"><div class="header-wrapper"><h4 id="x5-4-2-echorequest"><bdi class="secno">5.4.2 </bdi>EchoRequest</h4><a class="self-link" href="#echorequest" aria-label="Permalink for Section 5.4.2"></a></div>
 <p>De structuur van het echoverzoek is als volgt:</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype: EchoRequest</strong></th>
@@ -1670,7 +1714,7 @@ is.</p>
 </tbody></table>
 </section><section id="echoresponse"><div class="header-wrapper"><h4 id="x5-4-3-echoresponse"><bdi class="secno">5.4.3 </bdi>EchoResponse</h4><a class="self-link" href="#echoresponse" aria-label="Permalink for Section 5.4.3"></a></div>
 <p>De structuur van het echo-antwoord is als volgt:</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Berichttype: EchoResponse</strong></th>
@@ -1738,25 +1782,16 @@ vanuit dat dit ook gebeurt voor de fouten die hier beschreven worden. De
 foutafhandeling dient in de terugmeldapplicatie plaats te vinden. Binnen
 de SOAP Fault wordt een aantal velden onderkend te weten:</p>
 <p>[^4]: Zie voorstel <a href="https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab">"foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"</a></p>
-<p>+---------------------------------------------------------+-----------+
-| <strong>Berichttype</strong>: DigimeldingSynchroonFault              |           |
-|                                                         |           |
-| <em>Synchrone foutafhandeling gaat middels een SOAP Fault</em> |           |
-+=========================================================+===========+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
+<p>|  |  |
+|---------------------------------------------------------|           |
+| <strong>Berichttype</strong>: DigimeldingSynchroonFault<br><em>Synchrone foutafhandeling gaat middels een SOAP Fault</em> |           |
 | faultcode                                               | [1..1]  |
 |                                                         |           |
 | <em>De plek waar de fout is opgetreden, één string         |           |
 | opgebouwd uit de elementen                              |           |
 | &lt;Defaultwaarde&gt;.&lt;Code&gt;.&lt;OmschrijvingKort&gt; :</em>      |           |
 |                                                         |           |
-| Defaultwaarde\                                          |           |
-| <em>Bevat één van de defaultwaarden VersionMismatch,       |           |
-| MustUnderstand, Client en Server.</em>[^6] <em>Voor            |           |
-| Digimeldingpraktijk zijn alleen Client- of              |           |
-| Server-waarden relevant om aan te geven wat de aard van |           |
-| de fout is.</em>                                            |           |
+| Defaultwaarde<br><em>Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.</em>[^6] <em>Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.</em> |           |
 |                                                         |           |
 | Code\                                                   |           |
 | <em>De specifieke foutcode die hoort bij de technische     |           |
@@ -1799,21 +1834,10 @@ de SOAP Fault wordt een aantal velden onderkend te weten:</p>
 | <em>De ontvanger is niet verplicht deze tekst over te      |           |
 | nemen.</em>                                                 |           |
 +---------------------------------------------------------+-----------+
-| faultactor                                              | [0..*] |
-|                                                         |           |
-| <em>Bevat een URI van de antwoordende service.</em>            |           |
-|                                                         |           |
-| <em>Vul de faultactor in met de URI van de bron van de     |           |
-| oorzaak, indien het SOAP-bericht langs een              |           |
-| tussenstation gaat. Bijvoorbeeld Digimelding            |           |
-| Webservice.</em>                                            |           |
+| faultactor<br><em>Bevat een URI van de antwoordende service.</em><br><em>Vul de faultactor in met de URI van de bron van de oorzaak, indien het SOAP-bericht langs een tussenstation gaat. Bijvoorbeeld Digimelding Webservice.</em>  | [0..*] |
 +---------------------------------------------------------+-----------+
-| faultdetail                                             | [0..*] |
-|                                                         |           |
-| <em>Volledig vrij veld om nadere toelichting op de fout te |           |
-| geven, kan gebruikt worden om bijv. achterliggende      |           |
-| applicatiefoutmeldingen mee te geven (xs:any).</em>         |           |
-+---------------------------------------------------------+-----------+</p>
+| faultdetail<br><em>Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).</em> | [0..*] |</p>
+<p>[^6]: Zie <a href="http://www.w3.org/TR/2000/NOTE-SOAP-20000508">http://www.w3.org/TR/2000/NOTE-SOAP-20000508</a> sectie 4.4.1 voor uitleg</p>
 <p>Voorbeeld:</p>
 <blockquote>
 <p>&lt;soap:Fault&gt;</p>
@@ -1839,7 +1863,7 @@ xmlns="<a href="http://webservices.digimelding.nl/dmks/cookiebox/">http://webser
 <p>Voor fouten op protocolniveau dienen de fouten van Digikoppeling gevolgd
 te worden. Voor generieke fouten in Digimelding zijn de volgende
 Digikoppeling-foutcodes van toepassing:</p>
-<table>
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Nr</strong></th>
@@ -1892,14 +1916,7 @@ afgebeeld.</p>
 <hr>
 <p>  van                      &nbsp;        &nbsp;        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           &nbsp;<br>  <em>Geen</em>                   &nbsp;        x        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           &nbsp;<br>  Gemeld                   &nbsp;        &nbsp;        x                x             x                        x                      &nbsp;           &nbsp;<br>  In behandeling           &nbsp;        &nbsp;        &nbsp;                x             &nbsp;                        &nbsp;                      x           x<br>  Ingetrokken              &nbsp;        &nbsp;        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           &nbsp;<br>  Onvoldoende informatie   &nbsp;        &nbsp;        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           &nbsp;<br>  Verkeerde Bronhouder     &nbsp;        x        &nbsp;                x             &nbsp;                        &nbsp;x                     &nbsp;           &nbsp;<br>  Ingepland                &nbsp;        &nbsp;        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           x<br>  Afgehandeld              &nbsp;        &nbsp;        &nbsp;                &nbsp;             &nbsp;                        &nbsp;                      &nbsp;           &nbsp;             </p>
 <p>  Eindstatus               &nbsp;<br>  overgang mogelijk        X                                                                                                                          </p>
-<p>[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde
-    berichten</p>
-<p>[^4]: Zie voorstel "foutafhandeling synchrone berichten" van de
-    "gemeenschappelijke afspraken berichtstandaarden"
-    <a href="https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab">https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab</a></p>
 <p>[^5]: Zie <a href="http://www.w3.org/TR/2000/NOTE-SOAP-20000508">http://www.w3.org/TR/2000/NOTE-SOAP-20000508</a> sectie 4.4.1
-    voor uitleg</p>
-<p>[^6]: Zie <a href="http://www.w3.org/TR/2000/NOTE-SOAP-20000508">http://www.w3.org/TR/2000/NOTE-SOAP-20000508</a> sectie 4.4.1
     voor uitleg</p>
 </section></section>
 
