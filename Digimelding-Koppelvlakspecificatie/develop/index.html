@@ -844,7 +844,7 @@ als volgt:</p>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>Terugmelding.Bronverwijzingen .Bronverwijzing.Uri</td>
+<td>Terugmelding.Bronverwijzingen. Bronverwijzing.Uri</td>
 <td>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</td>
 <td>[1..1]</td>
 </tr>
@@ -1024,20 +1024,19 @@ als volgt:</p>
 <table class="simple">
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th><strong>Annotatiestatus</strong></th>
+<th>Status van de terugmelding.</th>
+<th>[1..*]</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Annotatiestatus</strong><br><em>Status van de terugmelding.</em></td>
-<td>[1..*]</td>
-</tr>
-<tr>
-<td><strong>Annotatiestatus . Annotatiebasis</strong><br>Inclusief toelichting en annotatieverwijzing</td>
+<td><strong>Annotatiestatus.Annotatiebasis</strong></td>
+<td>Inclusief toelichting en annotatieverwijzing</td>
 <td></td>
 </tr>
 <tr>
-<td>Annotatiestatus . Status<br>Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk.</td>
+<td>Annotatiestatus.Status</td>
+<td>Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk.</td>
 <td>[0..1]</td>
 </tr>
 </tbody></table>
@@ -1046,92 +1045,109 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.</p>
 <table class="simple">
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th><strong>Annotatiestatus</strong></th>
+<th>Status van de terugmelding.</th>
+<th>[1..*]</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Annotatiestatus</strong><br><em>Status van de terugmelding.</em></td>
-<td>[1..*]</td>
-</tr>
-<tr>
-<td><strong>Annotatiestatus . Annotatiebasis</strong><br>Inclusief toelichting en annotatieverwijzing</td>
+<td><strong>Annotatiestatus.Annotatiebasis</strong></td>
+<td>Inclusief toelichting en annotatieverwijzing</td>
 <td></td>
 </tr>
 <tr>
-<td>Annotatiestatus . Status<br><em>Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)</em></td>
+<td>Annotatiestatus.Status</td>
+<td>Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)</td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Annotatiestatus . Statustype</td>
+<td>Annotatiestatus.Statustype</td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens.</em></td>
+<td><strong>Annotatie.Contactinformatie</strong></td>
+<td>Contactgegevens.</td>
 <td>[0..*]</td>
 </tr>
 <tr>
-<td>Contactinformatie . @ContactType<br><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em></td>
+<td>Contactinformatie.@ContactType</td>
+<td>Kan alleen de waarden 'Melder' of 'Behandelaar' hebben.</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td><strong>Contactinformatie . Annotatiebasis</strong></td>
+<td><strong>Contactinformatie.Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>Contactinformatie . Naam</td>
+<td>Contactinformatie.Naam</td>
+<td></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Telefoon</td>
+<td>Contactinformatie.Telefoon</td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Email</td>
+<td>Contactinformatie.Email</td>
+<td></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Afdeling</td>
+<td>Contactinformatie.Afdeling</td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Planningsverwachting</strong><br><em>Verwachte termijn voor behandeling</em></td>
+<td><strong>Annotatie.Planningsverwachting</strong></td>
+<td>Verwachte termijn voor behandeling.</td>
 <td>[0..*]</td>
 </tr>
 <tr>
-<td>Planningsverwachting . <strong>Annotatiebasis</strong></td>
+<td>Planningsverwachting.<strong>Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>Planningsverwachting . MijlpaalAanduiding<br><em>Beschrijving van de planningsverwachting.</em></td>
+<td>Planningsverwachting.MijlpaalAanduiding</td>
+<td>Beschrijving van de planningsverwachting.</td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Planningsverwachting . MijlpaalTijdstempel<br><em>Datum waarop de planning gereed is.</em></td>
+<td>Planningsverwachting.MijlpaalTijdstempel</td>
+<td>Datum waarop de planning gereed is.</td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder</em></td>
+<td><strong>Annotatie.BehandelendeBronhouder</strong></td>
+<td>Behandelende bronhouder</td>
 <td>[0 *]</td>
 </tr>
 <tr>
-<td>BehandelendeBronhouder . <strong>Annotatiebasis</strong></td>
+<td>BehandelendeBronhouder.<strong>Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>BehandelendeBronhouder . Bronhouder<br><em>De gewenste bronhouder (bij status "Verkeerde Bronhouder")</em></td>
+<td>BehandelendeBronhouder.Bronhouder</td>
+<td>De gewenste bronhouder (bij status "Verkeerde Bronhouder")</td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
