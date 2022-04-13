@@ -641,8 +641,8 @@ is volledig vrij door de afnemende organisatie in te vullen. Hiervan
 hoeft niets meegegeven te worden in DMKS-berichten.</p>
 <section id="protocollen"><div class="header-wrapper"><h4 id="x4-1-1-protocollen"><bdi class="secno">4.1.1 </bdi>Protocollen</h4><a class="self-link" href="#protocollen" aria-label="Permalink for Section 4.1.1"></a></div>
 <p>Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
-volgens het '2W-be'-profiel<sup>2<sup> met ondersteuning voor MTOM voor
-efficiënt transport van attachments.</sup></sup></p>
+volgens het '2W-be'-profiel<sup>2</sup> met ondersteuning voor MTOM voor
+efficiënt transport van attachments.</p>
 <p>Indien een basisregistratie verzoekt om een authenticatie van de
 terugmeldende organisatie wordt bij synchrone communicatie gebruikt
 gemaakt van WUS Profiel Digikoppeling 2W-be-S<sup>3</sup>.</p>
@@ -1171,22 +1171,27 @@ goede orde ontvangen heeft.</p>
 <tr>
 <th><strong>Berichttype:</strong> AnnotatieToevoegenResponse</th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Elementen/attributen</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>AnnotatieToevoegenResponse</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>AnnotatieToevoegenResponse . Tijdstempel<br><em>Tijd waarop antwoord verstuurd is.</em></td>
+<td>AnnotatieToevoegenResponse . Tijdstempel</td>
+<td><em>Tijd waarop antwoord verstuurd is.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>AnnotatieToevoegenResponse . AnnotatieVerwijzing<br><em>UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.</em></td>
+<td>AnnotatieToevoegenResponse . AnnotatieVerwijzing</td>
+<td><em>UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.</em></td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1259,58 +1264,72 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p>
 <tr>
 <th><strong>Berichttype</strong>: StatusoverzichtRequest</th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Elementen/attributen</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>OinVragendeOrganisatie&gt;br&gt;<em>OIN van de vragende organisatie.</em></td>
+<td>OinVragendeOrganisatie</td>
+<td><em>OIN van de vragende organisatie.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
+<td>OinBasisregistratie</td>
+<td>*Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
+<td>Registratie</td>
+<td>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td><strong>Filter</strong></td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.MeldingskenmerkenLijst<br><em>(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.</em></td>
+<td>Filter.MeldingskenmerkenLijst</td>
+<td><em>(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td>Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement</td>
+<td></td>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>Filter.VanafTijdstempelIndienen<br><em>Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.</em></td>
+<td>Filter.VanafTijdstempelIndienen</td>
+<td><em>Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.TotEnMetTijdstempelIndienen<br>  <em>Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.</em></td>
+<td>Filter.TotEnMetTijdstempelIndienen</td>
+<td><em>Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.</em></td>
+<td>Filter.VanafTijdstempelWijziging</td>
+<td><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.</em></td>
+<td>Filter.TotEnMetTijdstempelWijziging</td>
+<td><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.StatusTerugmelding<br><em>String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.</em></td>
+<td>Filter.StatusTerugmelding</td>
+<td><em>String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.Objectidentificatie<br><em>String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.</em></td>
+<td>Filter.Objectidentificatie</td>
+<td><em>String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.</em></td>
 <td>[0..1]</td>
 </tr>
 </tbody></table>
@@ -1338,46 +1357,57 @@ ondernomen.</p>
 <tr>
 <th><strong>Berichttype</strong>: StatusoverzichtResponse</th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Elementen/attributen</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>AnnotatieLijst</strong></td>
+<td></td>
 <td>[1..*]</td>
 </tr>
 <tr>
 <td>Annotatie</td>
+<td></td>
 <td>[0..*]</td>
 </tr>
 <tr>
-<td>Annotatie . Tijdstempel<br><em>Datum/tijd waarop de annotatie heeft plaatsgevonden</em></td>
+<td>Annotatie . Tijdstempel</td>
+<td><em>Datum/tijd waarop de annotatie heeft plaatsgevonden</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Annotatie . Uuid<br><em>Unieke verwijzing naar de root annotatie van een annotatieboom.</em></td>
+<td>Annotatie . Uuid</td>
+<td><em>Unieke verwijzing naar de root annotatie van een annotatieboom.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Annotatie . Meldingskenmerk<br><em>Eigen kenmerk terugmeldende organisatie.</em></td>
+<td>Annotatie . Meldingskenmerk</td>
+<td><em>Eigen kenmerk terugmeldende organisatie.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
 <td>Annotatie . Bronverwijzing</td>
+<td></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Annotatie . Bronverwijzing . Uri<br><em>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</em></td>
+<td>Annotatie . Bronverwijzing . Uri</td>
+<td><em>Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Annotatie . Bronverwijzing . Selectie<br><em>Object waarop is teruggemeld.</em></td>
+<td>Annotatie . Bronverwijzing . Selectie</td>
+<td><em>Object waarop is teruggemeld.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Annotatie . Annotatiestatus<br><em>Laatste status annotatie van de terugmelding.</em></td>
+<td>Annotatie . Annotatiestatus</td>
+<td><em>Laatste status annotatie van de terugmelding.</em></td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1402,26 +1432,32 @@ de praktijk niet toegepast en is niet getest.</p>
 <tr>
 <th><strong>Berichttype</strong>: DetailsTerugmeldingRequest</th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Elementen/attributen</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>OinVragendeOrganisatie<br><em>Identificatie d.m.v. OIN-vragende organisatie.</em></td>
+<td>OinVragendeOrganisatie</td>
+<td><em>Identificatie d.m.v. OIN-vragende organisatie.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
+<td>OinBasisregistratie</td>
+<td>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
+<td>Registratie</td>
+<td>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Uuid<br><em>UUID van root annotatie.</em></td>
+<td>Uuid</td>
+<td><em>UUID van root annotatie.</em></td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1453,210 +1489,237 @@ Planningsverwachting en BehandelendeBronhouder.</p>
 <tr>
 <th><strong>Berichttype</strong>: DetailsTerugmeldingResponse</th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Elementen/attributen</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>AnnotatieBoom</strong></td>
+<td><em>De container die de verzameling annotaties bevat die ofwel het gevraagde UUID als kenmerk hebben of daar middels een annotatieverwijzing naar verwijzen.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&gt; *De container die de verzameling annotaties bevat die</td>
-<td></td>
-</tr>
-<tr>
-<td>&gt; ofwel het gevraagde UUID als kenmerk hebben of daar</td>
-<td></td>
-</tr>
-<tr>
-<td>&gt; middels een annotatieverwijzing naar verwijzen.*</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Annotatie . Terugmelding</strong><br><em>De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)</em></td>
+<td><strong>Annotatie.Terugmelding</strong></td>
+<td><em>De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Terugmelding . <strong>Annotatiebasis</strong></td>
+<td>Terugmelding.<strong>Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>Terugmelding . Bronverwijzingen<br><em>Bronverwijzingen bestaande uit één of meerdere bronverwijzing(en)</em><br><em>Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.</em></td>
+<td>Terugmelding.Bronverwijzingen</td>
+<td><em>Bronverwijzingen bestaande uit één of meerdere bronverwijzing(en)</em><br><em>Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bronverwijzingen . Bronverwijzing<br><em>Bestaande uit een URI en een selectieverwijzing naar het basisregistratie element waarop wordt teruggemeld. Dit mogen er meerdere zijn, maar in de huidige praktijk is dit er altijd precies één.</em></td>
+<td>Bronverwijzingen.Bronverwijzing</td>
+<td><em>Bestaande uit een URI en een selectieverwijzing naar het basisregistratie element waarop wordt teruggemeld. Dit mogen er meerdere zijn, maar in de huidige praktijk is dit er altijd precies één.</em></td>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>Bronverwijzing.Uri<br><em>De URI die de combinatie van basisregistratie en sleutel (bijvoorbeeld BSN of HRN) uniek identificeert.</em></td>
+<td>Bronverwijzing.Uri</td>
+<td><em>De URI die de combinatie van basisregistratie en sleutel (bijvoorbeeld BSN of HRN) uniek identificeert.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bronverwijzing.Selectie<br>  <em>Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).</em></td>
+<td>Bronverwijzing.Selectie</td>
+<td><em>Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).</em></td>
 <td>[0..*]</td>
 </tr>
 <tr>
-<td>Terugmelding . Attributenset<br><em>De set van attributen die daadwerkelijk gewijzigd dienen te worden.</em></td>
+<td>Terugmelding.Attributenset</td>
+<td><em>De set van attributen die daadwerkelijk gewijzigd dienen te worden.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Attributenset . Attribuut<br><em>Eén of meerdere attributen die gewijzigd dienen te worden.</em></td>
+<td>Attributenset.Attribuut</td>
+<td><em>Eén of meerdere attributen die gewijzigd dienen te worden.</em></td>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>Attribuut . Uri<br>De unieke aanduiding van het attribuut</td>
+<td>Attribuut.Uri</td>
+<td>De unieke aanduiding van het attribuut</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Attribuut . BetwijfeldeWaarde<br><em>De bestaande waarde in de basisregistratie.</em></td>
+<td>Attribuut.BetwijfeldeWaarde</td>
+<td><em>De bestaande waarde in de basisregistratie.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Attribuut . VoorgesteldeWaarde<br><em>De voorgestelde nieuwe waarde.</em></td>
+<td>Attribuut.VoorgesteldeWaarde</td>
+<td><em>De voorgestelde nieuwe waarde.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Terugmelding . Peilmoment<br><em>De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.</em></td>
+<td>Terugmelding.Peilmoment</td>
+<td><em>De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Annotatiestatus</strong><br><em>Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.</em></td>
+<td><strong>Annotatie.Annotatiestatus</strong></td>
+<td><em>Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.</em></td>
 <td>[1..*]</td>
 </tr>
 <tr>
-<td>Annotatiestatus . <strong>Annotatiebasis</strong></td>
+<td>Annotatiestatus.<strong>Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties. Het is toegestaan om in de eigen catalogus afwijkende statussen op te  nemen)</td>
+<td>Annotatiestatus.Status</td>
+<td>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties. Het is toegestaan om in de eigen catalogus afwijkende statussen op te  nemen)</td>
 <td>[1..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Referentiekenmerk</strong><br><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em></td>
+<td><strong>Annotatie . Referentiekenmerk</strong></td>
+<td><em>Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).</em></td>
 <td>[1 *]</td>
 </tr>
 <tr>
 <td><strong>Referentiekenmerk.Annotatiebasis</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>Referentiekenmerk.Kenmerk<br><em>Eigen kenmerk terugmeldende organisatie.</em></td>
+<td>Referentiekenmerk.Kenmerk</td>
+<td><em>Eigen kenmerk terugmeldende organisatie.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Contactinformatie</strong><br><em>Contactgegevens.</em></td>
+<td><strong>Annotatie.Contactinformatie</strong></td>
+<td><em>Contactgegevens.</em></td>
 <td>[1 *]</td>
 </tr>
 <tr>
-<td>Contactinformatie . @ContactType<br><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em></td>
+<td>Contactinformatie.@ContactType</td>
+<td><em>kan alleen de waarden 'Melder' of 'Behandelaar' hebben</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td><strong>Contactinformatie . Annotatiebasis</strong></td>
+<td><strong>Contactinformatie.Annotatiebasis</strong></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>Contactinformatie . Naam</td>
+<td>Contactinformatie.Naam</td>
+<td></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Telefoon</td>
+<td>Contactinformatie.Telefoon</td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Email</td>
+<td>Contactinformatie.Email</td>
+<td></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Contactinformatie . Afdeling</td>
+<td>Contactinformatie.Afdeling</td>
+<td></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Bijlageverwijzing</strong><br><em>Metainformatie over bijlagen.</em><br><em>Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.</em></td>
+<td><strong>Annotatie . Bijlageverwijzing</strong></td>
+<td><em>Metainformatie over bijlagen.</em><br><em>Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.</em></td>
 <td>[0..*]</td>
 </tr>
 <tr>
 <td>Bijlageverwijzing . <strong>Annotatiebasis</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>Bijlageverwijzing . Bestandsnaam<br><em>De naam van het bestand.</em></td>
+<td>Bijlageverwijzing . Bestandsnaam</td>
+<td><em>De naam van het bestand.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bijlageverwijzing . MIMEType<br><em>Het MIME type van de bijlage.</em></td>
+<td>Bijlageverwijzing . MIMEType</td>
+<td><em>Het MIME type van de bijlage.</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.<sup>5</sup></td>
+<td>Bijlageverwijzing . BijlageData</td>
+<td>*Het bestand zelf in Base64-binary encoding.<sup>5</sup></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.</td>
+<td>Bijlageverwijzing . Beschrijving</td>
+<td>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.</td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . Planningsverwachting</strong><br><em>Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.</em></td>
+<td><strong>Annotatie . Planningsverwachting</strong></td>
+<td><em>Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.</em></td>
 <td>[0..*]</td>
 </tr>
 <tr>
 <td>Planningsverwachting . <strong>Annotatiebasis</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>Planningsverwachting . MijlpaalAanduiding<br><em>Beschrijving van de planningsverwachting.</em></td>
+<td>Planningsverwachting . MijlpaalAanduiding</td>
+<td><em>Beschrijving van de planningsverwachting.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Planningsverwachting . MijlpaalTijdstempel<br><em>Datum waarop de planning gereed is.</em></td>
+<td>Planningsverwachting . MijlpaalTijdstempel</td>
+<td><em>Datum waarop de planning gereed is.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Annotatie . BehandelendeBronhouder</strong><br><em>Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.</em></td>
+<td><strong>Annotatie . BehandelendeBronhouder</strong></td>
+<td><em>Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.</em></td>
 <td>[0 *]</td>
 </tr>
 <tr>
 <td>BehandelendeBronhouder . <strong>Annotatiebasis</strong></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
-<td>BehandelendeBronhouder . Bronhouder<br><em>De bronhouder die de terugmelding momenteel in behandeling heeft.</em></td>
+<td>BehandelendeBronhouder . Bronhouder</td>
+<td><em>De bronhouder die de terugmelding momenteel in behandeling heeft.</em></td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1710,26 +1773,27 @@ is.</p>
 <tr>
 <th><strong>Berichttype: EchoRequest</strong></th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>EchoRequest . OinBasisregistratie<br>*Het OIN van de basisregistratie waar het echoverzoek</td>
-<td></td>
-</tr>
-<tr>
-<td>naar toe moet*</td>
+<td>EchoRequest.OinBasisregistratie</td>
+<td><em>Het OIN van de basisregistratie waar het echoverzoek naar toe moet</em></td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>EchoRequest .OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
+<td>EchoRequest.OinBasisregistratie</td>
+<td>Het OIN van de houder van een landelijke voorziening van de basisregistratie</td>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>EchoRequest . Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
+<td>EchoRequest.Registratie</td>
+<td>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT).</td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>EchoRequest . Echo<br>De string die geëchood moet worden</td>
+<td>EchoRequest.Echo</td>
+<td>De string die geëchood moet worden</td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1740,10 +1804,12 @@ is.</p>
 <tr>
 <th><strong>Berichttype: EchoResponse</strong></th>
 <th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>EchoResponse . Echo<br>De teruggestuurde echo string</td>
+<td>EchoResponse.Echo</td>
+<td>De teruggestuurde echo string</td>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
@@ -1922,22 +1988,52 @@ Digikoppeling-foutcodes van toepassing:</p>
 </section></section>
   <section id="bijlagen"><div class="header-wrapper"><h2 id="x7-bijlagen"><bdi class="secno">7. </bdi>bijlagen</h2><a class="self-link" href="#bijlagen" aria-label="Permalink for Section 7."></a></div>
 <section id="bijlage-a-afkortingen-begrippen-en-symbolen-bijlage-a-afkortingen-begrippen-en-symbolen-list-paragraph"><div class="header-wrapper"><h3 id="x7-1-bijlage-a-afkortingen-begrippen-en-symbolen-bijlage-a-afkortingen-begrippen-en-symbolen-list-paragraph"><bdi class="secno">7.1 </bdi>Bijlage A: Afkortingen, begrippen en symbolen {#bijlage-a-afkortingen-begrippen-en-symbolen .list-paragraph}</h3><a class="self-link" href="#bijlage-a-afkortingen-begrippen-en-symbolen-bijlage-a-afkortingen-begrippen-en-symbolen-list-paragraph" aria-label="Permalink for Section 7.1"></a></div>
-<p>  <strong>Afkorting</strong>   <strong>Omschrijving</strong></p>
-<hr>
-<p>  BAG             Basisregistratie Adressen en Gebouwen
-  BRP             Basisregistratie Personen
-  GEMMA           Gemeentelijke modelarchitectuur
-  ICTU            ICT Uitvoeringsorganisatie
-  KING            Kwaliteitsinstituut Nederlandse Gemeenten
-  HR              Handelsregister
-  NUP             Nationaal Uitvoeringsprogramma
-  StUF            Standaarduitwisselingsformaat</p>
-<p>**<br>**</p>
+<table class="simple">
+<thead>
+<tr>
+<th><strong>Afkorting</strong></th>
+<th><strong>Omschrijving</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BAG</td>
+<td>Basisregistratie Adressen en Gebouwen</td>
+</tr>
+<tr>
+<td>BRP</td>
+<td>Basisregistratie Personen</td>
+</tr>
+<tr>
+<td>GEMMA</td>
+<td>Gemeentelijke modelarchitectuur</td>
+</tr>
+<tr>
+<td>ICTU</td>
+<td>ICT Uitvoeringsorganisatie</td>
+</tr>
+<tr>
+<td>KING</td>
+<td>Kwaliteitsinstituut Nederlandse Gemeenten</td>
+</tr>
+<tr>
+<td>HR</td>
+<td>Handelsregister</td>
+</tr>
+<tr>
+<td>NUP</td>
+<td>Nationaal Uitvoeringsprogramma</td>
+</tr>
+<tr>
+<td>StUF</td>
+<td>Standaarduitwisselingsformaat</td>
+</tr>
+</tbody></table>
 </section><section id="bijlage-b-geadviseerde-statussen-bijlage-b-geadviseerde-statussen-list-paragraph"><div class="header-wrapper"><h3 id="x7-2-bijlage-b-geadviseerde-statussen-bijlage-b-geadviseerde-statussen-list-paragraph"><bdi class="secno">7.2 </bdi>Bijlage B : Geadviseerde Statussen {#bijlage-b-geadviseerde-statussen .list-paragraph}</h3><a class="self-link" href="#bijlage-b-geadviseerde-statussen-bijlage-b-geadviseerde-statussen-list-paragraph" aria-label="Permalink for Section 7.2"></a></div>
 <p><em>Diagram</em></p>
 <p>Op een terugmelding kunnen verschillende statussen van toepassing zijn.
 In onderstaand figuur zijn de verschillende statussen en hun relatie
 afgebeeld.</p>
+<p><figure id="fig-digimelding-proces"><img src="images/digimelding.svg" alt="Digimelding proces" title="Digimelding proces"><figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Digimelding proces</span></figcaption></figure></p>
 <p><em>Definities</em></p>
 <p>  naar                     <em>geen</em>   Gemeld   In behandeling   Ingetrokken   Onvoldoende informatie   Verkeerde Bronhouder   Ingepland   Afgehandeld   </p>
 <hr>
