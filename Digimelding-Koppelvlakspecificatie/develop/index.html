@@ -106,6 +106,20 @@ dd{margin-left:0}
 </style>
 <meta name="description" content="">
 <style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
 var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
@@ -510,7 +524,7 @@ gebruikt. Vervolgens wordt dieper ingegaan op de functionaliteit die
 deze services moeten bieden.</p>
 <section id="referentiearchitectuur"><div class="header-wrapper"><h3 id="x3-1-referentiearchitectuur"><bdi class="secno">3.1 </bdi>Referentiearchitectuur</h3><a class="self-link" href="#referentiearchitectuur" aria-label="Permalink for Section 3.1"></a></div>
 <p>In deze specificatie wordt uitgegaan van een referentiearchitectuur.</p>
-<p><figure id="fig-de-referentiearchitectuur"><img src="images/image1.png" alt="De referentiearchitectuur" title="De referentiearchitectuur" height="537" width="925"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De referentiearchitectuur</span></figcaption></figure></p>
+<p><figure id="fig-de-referentiearchitectuur"><img src="images/image1.png" alt="De referentiearchitectuur" title="De referentiearchitectuur"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De referentiearchitectuur</span></figcaption></figure></p>
 <p>In <a href="#fig-de-referentiearchitectuur">bovenstaande figuur</a> is de referentie-applicatiearchitectuur weergegeven. Deze
 gaat uit van een generiek overheidsperspectief, waarbij wordt
 teruggemeld op meerdere basisregistraties en het dus handig is om
@@ -571,7 +585,7 @@ of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
 authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
 specificatie.</p>
-<p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding" height="225" width="1038"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p>
+<p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -787,7 +801,7 @@ Voorziening</li>
 </tr>
 </tbody></table>
 </section><section id="scenario-s-communicatie"><div class="header-wrapper"><h4 id="x5-2-2-scenario-s-communicatie"><bdi class="secno">5.2.2 </bdi>Scenario's Communicatie</h4><a class="self-link" href="#scenario-s-communicatie" aria-label="Permalink for Section 5.2.2"></a></div>
-<p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct" height="516" width="1234"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p>
+<p><figure id="fig-interactiediagram-terugmelden-intrekken-direct"><img src="images/image3.png" alt="Interactiediagram terugmelden/intrekken direct" title="Interactiediagram terugmelden/intrekken direct"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken direct</span></figcaption></figure></p>
 <p><figure id="fig-interactiediagram-terugmelden-intrekken-via-digimelding-webservice"><img src="images/image4.png" alt="Interactiediagram terugmelden/intrekken via Digimelding Webservice" title="Interactiediagram terugmelden/intrekken via Digimelding Webservice"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Interactiediagram terugmelden/intrekken via Digimelding Webservice</span></figcaption></figure></p>
 <p><figure id="fig-interactiediagram-status-wijzigen"><img src="images/image5.png" alt="Interactiediagram status wijzigen" title="Interactiediagram status wijzigen"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Interactiediagram status wijzigen</span></figcaption></figure></p>
 </section><section id="inhoud-bericht-annotatie-toevoegenrequest"><div class="header-wrapper"><h4 id="x5-2-3-inhoud-bericht-annotatie-toevoegenrequest"><bdi class="secno">5.2.3 </bdi>Inhoud bericht Annotatie ToevoegenRequest</h4><a class="self-link" href="#inhoud-bericht-annotatie-toevoegenrequest" aria-label="Permalink for Section 5.2.3"></a></div>
@@ -1968,20 +1982,18 @@ de SOAP Fault wordt een aantal velden onderkend te weten:</p>
 <p>Voorbeeld:</p>
 <aside class="example" id="example-foutcode"><div class="marker">
     <a class="self-link" href="#example-foutcode">Voorbeeld<bdi> 1</bdi></a><span class="example-title">: Foutcode</span>
-  </div><code>
-<soap:fault>
-  <faultcode>*soap:Server*</faultcode>
-  <faultstring>*Fout*</faultstring>
-  <detail>
-    **<digimeldingsynchroonfault** xmlns="\&quot;<http://webservices.digimelding.nl/dmks/cookiebox/">"&gt;
-    <faultcode>*001*</faultcode>
-    <faultstring>*Foutmelding* </faultstring>
-    <faultactor>*Actor*</faultactor>
-    <faultdetail>
-    ****
-  </faultdetail></digimeldingsynchroonfault**></detail>
-</soap:fault>
-</code></aside>
+  </div><pre aria-busy="false"><code class="hljs">\
+  \*soap:Server*\
+  \*Fout*\
+  \
+    **\"\&gt;
+    \*001*\
+    \*Foutmelding*\
+    \*Actor*\
+    \
+    **\**
+  \
+\</code></pre></aside>
 
 </section><section id="generieke-foutcodes-van-toepassing-op-digimelding"><div class="header-wrapper"><h3 id="x6-4-generieke-foutcodes-van-toepassing-op-digimelding"><bdi class="secno">6.4 </bdi>Generieke foutcodes van toepassing op Digimelding</h3><a class="self-link" href="#generieke-foutcodes-van-toepassing-op-digimelding" aria-label="Permalink for Section 6.4"></a></div>
 <p>Voor fouten op protocolniveau dienen de fouten van Digikoppeling gevolgd
