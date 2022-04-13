@@ -501,7 +501,7 @@ gebruikt. Vervolgens wordt dieper ingegaan op de functionaliteit die
 deze services moeten bieden.</p>
 <section id="referentiearchitectuur"><div class="header-wrapper"><h3 id="x3-1-referentiearchitectuur"><bdi class="secno">3.1 </bdi>Referentiearchitectuur</h3><a class="self-link" href="#referentiearchitectuur" aria-label="Permalink for Section 3.1"></a></div>
 <p>In deze specificatie wordt uitgegaan van een referentiearchitectuur.</p>
-<p><figure id="fig-de-referentiearchitectuur"><img src="images/image1.png" alt="De referentiearchitectuur" title="De referentiearchitectuur" height="537" width="925"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De referentiearchitectuur</span></figcaption></figure></p>
+<p><figure id="fig-de-referentiearchitectuur"><img src="images/image1.png" alt="De referentiearchitectuur" title="De referentiearchitectuur"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">De referentiearchitectuur</span></figcaption></figure></p>
 <p>In <a href="#fig-de-referentiearchitectuur">bovenstaande figuur</a> is de referentie-applicatiearchitectuur weergegeven. Deze
 gaat uit van een generiek overheidsperspectief, waarbij wordt
 teruggemeld op meerdere basisregistraties en het dus handig is om
@@ -562,7 +562,7 @@ of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
 authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
 specificatie.</p>
-<p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding" height="225" width="1038"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p>
+<p><figure id="fig-authenticatie-en-autorisatie-bij-digimelding"><img src="images/image2.png" alt="Authenticatie en autorisatie bij Digimelding" title="Authenticatie en autorisatie bij Digimelding"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Authenticatie en autorisatie bij Digimelding</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -641,14 +641,17 @@ is volledig vrij door de afnemende organisatie in te vullen. Hiervan
 hoeft niets meegegeven te worden in DMKS-berichten.</p>
 <section id="protocollen"><div class="header-wrapper"><h4 id="x4-1-1-protocollen"><bdi class="secno">4.1.1 </bdi>Protocollen</h4><a class="self-link" href="#protocollen" aria-label="Permalink for Section 4.1.1"></a></div>
 <p>Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
-volgens het '2W-be'-profiel[^2] met ondersteuning voor MTOM voor
-efficiënt transport van attachments.</p>
-<p>[^2]: Best Effort, beveiligd met tweezijdige TLS</p>
+volgens het '2W-be'-profiel<sup>2<sup> met ondersteuning voor MTOM voor
+efficiënt transport van attachments.</sup></sup></p>
 <p>Indien een basisregistratie verzoekt om een authenticatie van de
 terugmeldende organisatie wordt bij synchrone communicatie gebruikt
-gemaakt van WUS Profiel Digikoppeling 2W-be-S[^3].</p>
-<p>[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde berichten</p>
-</section></section></section>
+gemaakt van WUS Profiel Digikoppeling 2W-be-S<sup>3</sup>.</p>
+<p class="note">
+<sup>2</sup> Best Effort, beveiligd met tweezijdige TLS
+</p>
+<p class="note">
+<sup>3</sup> Best Effort, beveiligd met tweezijdige TLS en gesigneerde berichten
+</p></section></section></section>
   <section id="specificaties-services"><div class="header-wrapper"><h2 id="x5-specificaties-services"><bdi class="secno">5. </bdi>Specificaties Services</h2><a class="self-link" href="#specificaties-services" aria-label="Permalink for Section 5."></a></div>
 <p>Dit hoofdstuk beschrijft de berichten tussen terugmeldapplicatie,
 Digimelding Webservice en de LV van basisregistraties (gerouteerd via
@@ -1295,11 +1298,11 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^7].</em></td>
+<td>Filter.VanafTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
-<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^7].</em></td>
+<td>Filter.TotEnMetTijdstempelWijziging<br><em>Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.</em></td>
 <td>[0..1]</td>
 </tr>
 <tr>
@@ -1311,9 +1314,12 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.</p>
 <td>[0..1]</td>
 </tr>
 </tbody></table>
-<p>[^7]: <em>Het resultaat</em> betreft terugmeldingen (annotatiebomen) waarvoor
-geldt dat <strong>de laatste annotatie</strong> is toegevoegd tussen
-VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging</p>
+<p class="note">
+<sup>4</sup> *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
+geldt dat **de laatste annotatie** is toegevoegd tussen
+VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging
+</p>
+
 </section><section id="statusoverzichtresponse"><div class="header-wrapper"><h4 id="x5-3-3-statusoverzichtresponse"><bdi class="secno">5.3.3 </bdi>StatusoverzichtResponse</h4><a class="self-link" href="#statusoverzichtresponse" aria-label="Permalink for Section 5.3.3"></a></div>
 <p>Het statusoverzicht geeft een lijst met annotaties terug. Dit zijn in
 dit geval altijd 'root' annotaties waar een annotatieboom aan hangt. Dit
@@ -1610,7 +1616,7 @@ Planningsverwachting en BehandelendeBronhouder.</p>
 <td>[1..1]</td>
 </tr>
 <tr>
-<td>Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.[^2]</td>
+<td>Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.<sup>5</sup></td>
 <td>[1..1]</td>
 </tr>
 <tr>
@@ -1654,7 +1660,10 @@ Planningsverwachting en BehandelendeBronhouder.</p>
 <td>[1..1]</td>
 </tr>
 </tbody></table>
-<p>[^2]: Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten</p>
+<p class="note">
+<sup>5</sup> Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten
+</p>
+
 </section></section><section id="echo"><div class="header-wrapper"><h3 id="x5-4-echo"><bdi class="secno">5.4 </bdi>Echo</h3><a class="self-link" href="#echo" aria-label="Permalink for Section 5.4"></a></div>
 <p>De berichten beschreven in deze uitwisseling kunnen worden gebruikt om
 te controleren of de berichtverwerking in zijn algemeenheid beschikbaar
@@ -1788,12 +1797,15 @@ specifieke foutcode heeft dan mag deze in plaats van de
 Digikoppeling-foutcode verstuurd worden.</p>
 <p>Synchrone fouten voor Digikoppeling-WUS-berichten worden verstuurd als
 SOAP Fault zoals dit is voorgesteld voor de berichtenstandaard van het
-stelsel.[^4] SOAP Faults worden doorgaans door de Digikoppeling-adapter
+stelsel.<sup>6</sup> SOAP Faults worden doorgaans door de Digikoppeling-adapter
 doorgestuurd naar de achterliggende applicatie. Dit koppelvlak gaat er
 vanuit dat dit ook gebeurt voor de fouten die hier beschreven worden. De
 foutafhandeling dient in de terugmeldapplicatie plaats te vinden. Binnen
 de SOAP Fault wordt een aantal velden onderkend te weten:</p>
-<p>[^4]: Zie voorstel <a href="https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab">"foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"</a></p>
+<p class="note">
+<sup>6</sup> Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
+</p>
+
 <p>|  |  |
 |---------------------------------------------------------|           |
 | <strong>Berichttype</strong>: DigimeldingSynchroonFault<br><em>Synchrone foutafhandeling gaat middels een SOAP Fault</em> |           |
@@ -1803,7 +1815,7 @@ de SOAP Fault wordt een aantal velden onderkend te weten:</p>
 | opgebouwd uit de elementen                              |           |
 | &lt;Defaultwaarde&gt;.&lt;Code&gt;.&lt;OmschrijvingKort&gt; :</em>      |           |
 |                                                         |           |
-| Defaultwaarde<br><em>Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.</em>[^6] <em>Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.</em> |           |
+| Defaultwaarde<br><em>Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.</em><sup>7</sup> <em>Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.</em> |           |
 |                                                         |           |
 | Code\                                                   |           |
 | <em>De specifieke foutcode die hoort bij de technische     |           |
@@ -1849,7 +1861,10 @@ de SOAP Fault wordt een aantal velden onderkend te weten:</p>
 | faultactor<br><em>Bevat een URI van de antwoordende service.</em><br><em>Vul de faultactor in met de URI van de bron van de oorzaak, indien het SOAP-bericht langs een tussenstation gaat. Bijvoorbeeld Digimelding Webservice.</em>  | [0..*] |
 +---------------------------------------------------------+-----------+
 | faultdetail<br><em>Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).</em> | [0..*] |</p>
-<p>[^6]: Zie <a href="http://www.w3.org/TR/2000/NOTE-SOAP-20000508">http://www.w3.org/TR/2000/NOTE-SOAP-20000508</a> sectie 4.4.1 voor uitleg</p>
+<p class="note">
+<sup>7</sup> Zie <http: www.w3.org="" tr="" 2000="" note-soap-20000508=""> sectie 4.4.1 voor uitleg
+</http:></p>
+
 <p>Voorbeeld:</p>
 <blockquote>
 <p>&lt;soap:Fault&gt;</p>
