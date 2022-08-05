@@ -302,7 +302,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Architectuur 2.0.0</h1>
     
@@ -617,7 +617,7 @@ Uitgezonderd zijn: de uitwisseling van Geo-informatie (daarvoor bestaat NEN3610)
 </li>
 </ul>
 <p>Een intermediair zoals een sectoraal knooppunt of SAAS leverancier kan in opdracht van partijen inhoudelijke bewerkingen op berichten uitvoeren zoals de integratie, conversie en distributie van gegevens. Een dergelijke ondersteunende rol kan partijen ontzorgen bij de implementatie van standaarden, het beheer van gedeelde/gezamenlijke voorzieningen en de afstemming tussen partijen op het gebied van gegevensuitwisseling.</p>
-<p><figure id="fig-positionering-intermediair-sectoraal-knooppunt"><img src="media/DK_Positionering_intermediair_sectoraal_knppnt.png" alt="Positionering Intermediair/Sectoraal Knooppunt, de intermediair bevindt zich tussen dienstafnemers en dienstaanbieders" title="Positionering Intermediair/Sectoraal Knooppunt" height="267" width="650"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Positionering Intermediair/Sectoraal Knooppunt</span></figcaption></figure></p>
+<p><figure id="fig-positionering-intermediair-sectoraal-knooppunt"><img src="media/DK_Positionering_intermediair_sectoraal_knppnt.png" alt="Positionering Intermediair/Sectoraal Knooppunt, de intermediair bevindt zich tussen dienstafnemers en dienstaanbieders" title="Positionering Intermediair/Sectoraal Knooppunt"><figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Positionering Intermediair/Sectoraal Knooppunt</span></figcaption></figure></p>
 <p><sup><a name="f18" href="#dfn-18" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-18-1"><dfn id="dfn-18" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">18</dfn></a>: We beschouwen transparantie hier op de logistieke laag. Op technisch niveau is de intermediair een eindpunt omdat de TLS verbinding tussen twee servers moet worden opgezet.</sup></p>
 <p><sup><a name="f19" href="#dfn-19" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-19-1"><dfn id="dfn-19" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">19</dfn></a>: Bericht-niveau versleuteling wordt op applicatieniveau toegepast tussen de verzender en ontvanger; de berichtinhoud wordt versleuteld zodat de intermediair alleen de headers kan lezen.</sup></p>
 </section></section><section id="componenten-in-de-logistieke-digikoppeling-keten"><div class="header-wrapper"><h3 id="x4-3-componenten-in-de-logistieke-digikoppeling-keten"><bdi class="secno">4.3 </bdi>Componenten in de logistieke Digikoppeling-keten</h3><a class="self-link" href="#componenten-in-de-logistieke-digikoppeling-keten" aria-label="Permalink for Section 4.3"></a></div>
@@ -753,7 +753,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>In dit hoofdstuk beschrijven we de transactiepatronen in gegevensuitwisseling in algemen zin, met een suggestie welk Digikoppeling koppelvlakstandaard hier het best bij aansluit. Voor het opstellen van de volgende transactiepatronen is dankbaar gebruik gemaakt van de conceptversie van de <em>Edukoppeling Architectuur 2.0</em>.  </p>
 <section id="synchrone-bevraging"><div class="header-wrapper"><h3 id="x5-1-synchrone-bevraging"><bdi class="secno">5.1 </bdi>Synchrone bevraging</h3><a class="self-link" href="#synchrone-bevraging" aria-label="Permalink for Section 5.1"></a></div>
 <p>Bij een bevraging (vraag-antwoord) stuurt de service-requester een voorgedefinieerde vraag (request) aan de service-provider, die een antwoord (response) verstrekt. Het initiatief ligt bij de service-requester. Gaat er in de uitwisseling iets mis dan zal de service-requester na een bepaalde tijd de uitwisseling afbreken (time-out). Een synchrone bevraging is in de regel <em>idempotent</em>, een request kan opnieuw verstuurd worden zonder gevolgen. </p>
-<p><figure id="fig-synchroon-request"><img src="media/Synchroon_request.png" alt="Synchroon Request" title="Synchroon Request" height="281" width="326"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Synchroon Request</span></figcaption></figure></p>
+<p><figure id="fig-synchroon-request"><img src="media/Synchroon_request.png" alt="Synchroon Request" title="Synchroon Request"><figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Synchroon Request</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -798,7 +798,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Tabel 5.2: Synchrone Melding</p>
 </section><section id="asynchrone-melding-bevestiging"><div class="header-wrapper"><h3 id="x5-3-asynchrone-melding-bevestiging"><bdi class="secno">5.3 </bdi>Asynchrone Melding-bevestiging</h3><a class="self-link" href="#asynchrone-melding-bevestiging" aria-label="Permalink for Section 5.3"></a></div>
 <p>Bij een melding-bevestiging stuurt een service-requester informatie naar de service-provider en ontvangt synchroon een bevestiging dat een bericht is ontvangen. op een later moment kan de ontvanger een bericht sturen dat de melding is verwerkt  </p>
-<p><figure id="fig-asynchroon-request"><img src="media/Asynchroon_request.png" alt="Asynchroon Request" title="Asynchroon Request" height="531" width="429"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title">Asynchroon Request</span></figcaption></figure></p>
+<p><figure id="fig-asynchroon-request"><img src="media/Asynchroon_request.png" alt="Asynchroon Request" title="Asynchroon Request"><figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title">Asynchroon Request</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -836,14 +836,14 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </thead>
 <tbody><tr>
 <td>Digikoppeling Grote berichten</td>
-<td>Bij ‘grote berichten’ worden grotere bestanden uitgewisseld via een van de Digikoppelingkoppelvlak in combinatie met een (HTTPS-)download vanaf een beveiligde website. Grote berichten vormen een functionele uitbreiding op de Digikoppelvlakstandaarden voor de veilige bestandsoverdracht van berichten groter dan 20 MiB</td>
+<td>Bij ‘grote berichten’ worden grotere bestanden uitgewisseld via een van de Digikoppelingkoppelvlakken in combinatie met een (HTTPS-)download vanaf een beveiligde website. Grote berichten vormen een functionele uitbreiding op de Digikoppelvlakstandaarden voor de veilige bestandsoverdracht van berichten groter dan 20 MiB</td>
 <td>...</td>
 </tr>
 </tbody></table>
 <p>Tabel 5.4: Uitwisselen grote bestanden</p>
 </section><section id="uitwisseling-via-een-transparante-intermediair"><div class="header-wrapper"><h3 id="x5-5-uitwisseling-via-een-transparante-intermediair"><bdi class="secno">5.5 </bdi>Uitwisseling via een transparante intermediair</h3><a class="self-link" href="#uitwisseling-via-een-transparante-intermediair" aria-label="Permalink for Section 5.5"></a></div>
 <p>Een transparante keten is alleen mogelijk als zowel de service-aanbieder als de serviceafnemer hetzelfde protocol hanteren. De intermediair routeert berichten tussen de serviceaanbieder en de serviceafnemer waarbij het bericht intact blijft (alleen de header wordt gelezen). De uitwisseling verloopt op dezelfde manier als bij een bilaterale uitwisseling.</p>
-<p><figure id="fig-transparante-intermediair"><img src="media/transparante_intermediair.png" alt="Transparante Intermediair" title="Transparante Intermediair" height="463" width="720"><figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Transparante Intermediair</span></figcaption></figure></p>
+<p><figure id="fig-transparante-intermediair"><img src="media/transparante_intermediair.png" alt="Transparante Intermediair" title="Transparante Intermediair"><figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Transparante Intermediair</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -866,7 +866,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Tabel 5.5: Transparante intermediair</p>
 </section><section id="uitwisseling-via-een-niet-transparante-intermediair"><div class="header-wrapper"><h3 id="x5-6-uitwisseling-via-een-niet-transparante-intermediair"><bdi class="secno">5.6 </bdi>Uitwisseling via een niet-transparante intermediair</h3><a class="self-link" href="#uitwisseling-via-een-niet-transparante-intermediair" aria-label="Permalink for Section 5.6"></a></div>
 <p>Een transparante keten is alleen mogelijk als zowel de service-aanbieder als de serviceafnemer hetzelfde protocol hanteren. De intermediair routeert berichten tussen de serviceaanbieder en de serviceafnemer waarbij het bericht bewerkt moet worden voor verdere verzending. </p>
-<p><figure id="fig-niet-transparante-intermediair"><img src="media/niet_transparante_intermediair.png" alt="Niet-Transparante Intermediair" title="Niet-Transparante Intermediair" height="490" width="818"><figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Niet-Transparante Intermediair</span></figcaption></figure></p>
+<p><figure id="fig-niet-transparante-intermediair"><img src="media/niet_transparante_intermediair.png" alt="Niet-Transparante Intermediair" title="Niet-Transparante Intermediair"><figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Niet-Transparante Intermediair</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -891,7 +891,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
   <section id="digikoppeling-koppelvlakstandaarden-en-voorschriften"><div class="header-wrapper"><h2 id="x6-digikoppeling-koppelvlakstandaarden-en-voorschriften"><bdi class="secno">6. </bdi>Digikoppeling-koppelvlakstandaarden en voorschriften</h2><a class="self-link" href="#digikoppeling-koppelvlakstandaarden-en-voorschriften" aria-label="Permalink for Section 6."></a></div>
 <section id="overzicht"><div class="header-wrapper"><h3 id="x6-1-overzicht"><bdi class="secno">6.1 </bdi>Overzicht</h3><a class="self-link" href="#overzicht" aria-label="Permalink for Section 6.1"></a></div>
 <p>De Digikoppeling Architectuur legde in de eerdere versies grote nadruk op bevragingen en meldingen en legde een verband tussen deze interactiepatronen en de onderliggende standaarden, ('WUS voor bevragingen, ebMS voor meldingen en kennisgevingen'). Dit verband bleek in de praktijk niet altijd werkbaar of wenselijk. In 2020 is daarom besloten om de richtlijnen voor het toepassen van de Digikoppeling standaarden te wijzigen.</p>
-<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken" height="610" width="1840"><figcaption>Figuur <bdi class="figno">13</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
+<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken"><figcaption>Figuur <bdi class="figno">13</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
 <p>Digikoppeling kent vier koppelvlakstandaarden</p>
 <ul>
 <li><p>WUS voor synchrone uitwisseling van gestructeerde berichten;</p>
@@ -1157,7 +1157,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Tabel 7.1: Overdracht van verantwoordelijkheid</p>
 </section><section id="abonneren-op-wijzigingen-middels-notificaties"><div class="header-wrapper"><h4 id="x7-3-2-abonneren-op-wijzigingen-middels-notificaties"><bdi class="secno">7.3.2 </bdi>Abonneren op wijzigingen middels notificaties</h4><a class="self-link" href="#abonneren-op-wijzigingen-middels-notificaties" aria-label="Permalink for Section 7.3.2"></a></div>
 <p>Deze case is bedoeld voor ketens die authentieke informatie willen 'halen bij de bron' in plaats van het synchroniseren van registraties. Hiervoor is het essentieel dat organisaties worden genotificeerd bij wijzigingen.</p>
-<p><figure id="fig-notificatie-request"><img src="media/Notification_request.png" alt="Notificatie Request" title="Notificatie Request" height="443" width="385"><figcaption>Figuur <bdi class="figno">14</bdi> <span class="fig-title">Notificatie Request</span></figcaption></figure></p>
+<p><figure id="fig-notificatie-request"><img src="media/Notification_request.png" alt="Notificatie Request" title="Notificatie Request"><figcaption>Figuur <bdi class="figno">14</bdi> <span class="fig-title">Notificatie Request</span></figcaption></figure></p>
 <table class="simple">
 <thead>
 <tr>
@@ -1610,7 +1610,7 @@ Gegevensuitwisseling via Digikoppeling stelt wel enkele eisen aan het transport:
 </tbody></table>
 <p>Tabel 10.1: Digikoppeling-standaarden en gerelateerde documenten</p>
 <section id="digikoppeling-documentatie"><div class="header-wrapper"><h4 id="x10-1-1-digikoppeling-documentatie"><bdi class="secno">10.1.1 </bdi>Digikoppeling documentatie</h4><a class="self-link" href="#digikoppeling-documentatie" aria-label="Permalink for Section 10.1.1"></a></div>
-<p><figure id="fig-digikoppeling-documentatie"><img src="media/DKDocumentatieOverzicht.png" alt="Digikoppeling Documentatie" title="Digikoppeling Documentatie" height="620" width="900"><figcaption>Figuur <bdi class="figno">15</bdi> <span class="fig-title">Digikoppeling Documentatie</span></figcaption></figure></p>
+<p><figure id="fig-digikoppeling-documentatie"><img src="media/DKDocumentatieOverzicht.png" alt="Digikoppeling Documentatie" title="Digikoppeling Documentatie"><figcaption>Figuur <bdi class="figno">15</bdi> <span class="fig-title">Digikoppeling Documentatie</span></figcaption></figure></p>
 <p>Overige Digikoppeling documentatie</p>
 <table class="simple">
 <thead>
