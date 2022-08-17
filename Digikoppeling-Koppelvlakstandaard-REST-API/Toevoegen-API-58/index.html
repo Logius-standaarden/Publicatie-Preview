@@ -40,7 +40,7 @@ dfn{cursor:pointer}
     
 <link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
     
-<title>Digikoppeling Koppelvlakstandaard REST-API 1.0.0</title>
+<title>Digikoppeling Koppelvlakstandaard REST-API</title>
     
     
     
@@ -115,12 +115,12 @@ var[data-type]::after{content:attr(data-type);transform:translateX(-50%) transla
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "DEF",
+  "specStatus": "CV",
   "specType": "ST",
   "pubDomain": "dk",
   "shortName": "restapi",
   "publishDate": "2022-04-11",
-  "publishVersion": "1.0.0",
+  "publishVersion": "1.1.0",
   "addSectionLinks": true,
   "license": "cc-by-nd",
   "doJsonLd": true,
@@ -256,21 +256,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     }
   },
   "publishISODate": "2022-04-11T00:00:00.000Z",
-  "generatedSubtitle": "Vastgestelde versie 11 april 2022"
+  "generatedSubtitle": "Consultatieversie 11 april 2022"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-CV.css"></head>
   <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API 1.0.0</h1>
+  </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API</h1>
     
     <h2>
       Logius Standaard<br>
-      Vastgestelde versie
+      Consultatieversie
       <time class="dt-published" datetime="2022-04-11">11 april 2022</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/1.0.0">https://publicatie.centrumvoorstandaarden.nl/dk/restapi/1.0.0</a>
+              <a class="u-url status" href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-REST-API/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-REST-API/</a>
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">https://publicatie.centrumvoorstandaarden.nl/dk/restapi/</a>
             </dd>
@@ -311,14 +311,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <hr title="Separator for header">
   </div>
     
-    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is de definitieve versie van de  standaard. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.<p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">4.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel"><bdi class="secno">4.2 </bdi>Digikoppeling REST-API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.2.1 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.2.2.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.2.3 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.2.3.1 </bdi>Toelichting aanduidingen</a></li><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.2.3.2 </bdi>Regels</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-extensies"><bdi class="secno">4.3 </bdi>Afspraken API Design Rules extensies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">5. </bdi>BIJLAGE Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-in-de-context-van-http-rest"><bdi class="secno">5.1 </bdi>Signing in de context van HTTP Rest</a></li><li class="tocline"><a class="tocxref" href="#encryptie-in-de-context-van-http-rest"><bdi class="secno">5.2 </bdi>Encryptie in de context van HTTP Rest</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een door het Technisch Overleg goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar <a href="mailto:api@logius.nl">api@logius.nl</a>.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">4.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel"><bdi class="secno">4.2 </bdi>Digikoppeling REST-API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.2.1 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.2.2.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.2.3 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.2.3.1 </bdi>Toelichting aanduidingen</a></li><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.2.3.2 </bdi>Regels</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-extensies"><bdi class="secno">4.3 </bdi>Afspraken API Design Rules extensies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">5. </bdi>BIJLAGE Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-in-de-context-van-http-rest"><bdi class="secno">5.1 </bdi>Signing in de context van HTTP Rest</a></li><li class="tocline"><a class="tocxref" href="#encryptie-in-de-context-van-http-rest"><bdi class="secno">5.2 </bdi>Encryptie in de context van HTTP Rest</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
    <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
      
    </section>   
 	<section id="context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><div class="header-wrapper"><h2 id="x2-context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</h2><a class="self-link" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel" aria-label="Permalink for Section 2."></a></div>
 <p>Het Digikoppeling Rest API profiel is gericht op Machine-to-Machine (M2M) en Government-to-Government (G2G) interacties conform de algemene uitgangspunten van de Digikoppeling standaard en het toepassingsgebied van Digikoppeling op de Pas-toe-of-leg-uit lijst (PTLU) van het Forum Standaardisatie;</p>
 <p>Opzet Digikoppeling:</p>
-<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
+<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken" height="610" width="1840"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
 </section>
 	<section id="toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><div class="header-wrapper"><h2 id="x3-toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</h2><a class="self-link" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel" aria-label="Permalink for Section 3."></a></div>
 <p><figure id="fig-digikoppeling-voor-closed-data-g2g-uitwisseling"><img src="media/DK_closed_g2g.svg" alt="Digikoppeling voor Closed Data G2G Uitwisseling" title="Digikoppeling voor Closed Data G2G Uitwisseling"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Digikoppeling voor Closed Data G2G Uitwisseling</span></figcaption></figure></p>
