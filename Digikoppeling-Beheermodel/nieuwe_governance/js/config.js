@@ -76,7 +76,6 @@ var respecConfig = {
   // this can be simple or more elaborated
   authors: [{
     name: "Logius",
-    url: "https://logius.nl/standaarden",
     mailto: "digikoppeling@logius.nl",
   }
   ],
@@ -128,7 +127,7 @@ var respecConfig = {
   // nl_markdownSplitH1sections: true,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
-  // thi scan be configured below
+  // this can be configured below
   // if not set, the url's will be generated on the respecConfig.github automatically
   nl_github: {
     //issueBase: "https://github.com/Logius-standaarden/<repository>/issues",
@@ -143,13 +142,6 @@ var respecConfig = {
   // prefix for the names of company specific css, svg and ico prefixes
   // defaults to "GN-"
   nl_organisationPrefix: "LS-",
-
-  // class style can be automatically insertd in generated markdown tables
-  // currently defaults to simple, but this may change
-  // options simple, data, <your css>
-  nl_markdownTableClass: "dkkvs",
-
-  nl_markdownCodeClass: "code",
 
   // if nl_markdownEmbedImageInFigure is set to true images in markdown generated content will be surrounded with <figures> element
   // so that figures can be linked are be a part of table of figures
@@ -179,19 +171,26 @@ var respecConfig = {
   // if you need to override an existing reference with specific content, then you can use this configuration option.
   localBiblio: {
     NEN3610: {
-      href: "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      href: "https://www.nen.nl/nen-3610-2022-nl-296137",
       title:
         "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
       authors: [""],
-      date: "Maart 2011",
+      date: "1 juni 2022",
       publisher: "Nederlands Normalisatie-instituut",
     },
+    MIM: {
+      href: "https://docs.geostandaarden.nl/mim/mim/",
+      title: "Metamodel Informatie Modellering",
+      authors: [""],
+      date: "7 februari 2022",
+      publisher: "Geonovum",
+    },
     "Digikoppeling Architectuur": {
-      href: "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      href: "https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html",
       title:
         "Digikoppeling Architectuur",
-      authors: ["Logius Centrum voor standaarden"],
-      date: "december 2020",
+      authors: ["Logius Standaarden"],
+      date: "11 april 2022",
       publisher: "Logius",
     },
     "Digikoppeling Beveiligingsdocument": {
