@@ -264,7 +264,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Beheermodel</h1>
     
@@ -911,7 +911,7 @@ doorgevoerd en moeten worden goedgekeurd door het Technisch Overleg en,
 afhankelijk van de impact van een nieuwe release door een programmeringstafel.
 Een nieuwe release wordt bekrachtigd door het besluitvormend overleg.</p>
 <section id="wijzigingen"><div class="header-wrapper"><h4 id="x4-3-1-wijzigingen"><bdi class="secno">4.3.1 </bdi>Wijzigingen</h4><a class="self-link" href="#wijzigingen" aria-label="Permalink for Section 4.3.1"></a></div>
-<p><figure id="fig-behandeling-van-een-wijzigingsvoorstel-in-het-beheerproces"><img src="images/Beheerproces.png" alt="Behandeling van een wijzigingsvoorstel in het beheerproces" title="Behandeling van een wijzigingsvoorstel in het beheerproces" height="419" width="797"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Behandeling van een wijzigingsvoorstel in het beheerproces</span></figcaption></figure></p>
+<p><figure id="fig-behandeling-van-een-wijzigingsvoorstel-in-het-beheerproces"><img src="images/Beheerproces.png" alt="Behandeling van een wijzigingsvoorstel in het beheerproces" title="Behandeling van een wijzigingsvoorstel in het beheerproces"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Behandeling van een wijzigingsvoorstel in het beheerproces</span></figcaption></figure></p>
 <ol>
 <li>Acceptatie van een wijzigingsvoorstel.</li>
 <li>Labelen van een voorstel als groot/klein, aangeven van status.</li>
@@ -1329,9 +1329,11 @@ Het voordeel van deze manier van versioneren is dat het versienummer signaleert 
 <p>Per document wordt met <code>[documentnaam] X.Y.Z</code> de versie aangegeven.
 Met <code>X.Y.Z</code> wordt gerefereerd aan major (X) en minor (Y) releases en (Z) patches,
 dit wordt hieronder toegelicht.</p>
-<p>MAJOR wordt verhoogd als de nieuwe versie van de standaard zodanig wijzigt dat uitwerkingen (implementaties) volgens de vorige versie van de standaard niet meer voldoen aan de normen/eisen van de nieuwe versie van de standaard.
-MINOR wordt verhoogd bij wijzigingen waarbij uitwerkingen (implementaties) volgens de vorige versie van de standaard ook voldoen aan de normen/eisen van de nieuwe versie van de standaard.
-PATCH wordt verhoogd bij correcties.</p>
+<ul>
+<li>MAJOR wordt verhoogd als de nieuwe versie van de standaard zodanig wijzigt dat uitwerkingen (implementaties) volgens de vorige versie van de standaard niet meer voldoen aan de normen/eisen van de nieuwe versie van de standaard.</li>
+<li>MINOR wordt verhoogd bij wijzigingen waarbij uitwerkingen (implementaties) volgens de vorige versie van de standaard ook voldoen aan de normen/eisen van de nieuwe versie van de standaard.</li>
+<li>PATCH wordt verhoogd bij correcties.</li>
+</ul>
 <section id="patch-releases"><div class="header-wrapper"><h4 id="x9-1-1-patch-releases"><bdi class="secno">9.1.1 </bdi>Patch Releases</h4><a class="self-link" href="#patch-releases" aria-label="Permalink for Section 9.1.1"></a></div>
 <p>In een patchrelease worden wijzigingen doorgevoerd die de technische
 specificatie niet raken. Dit kunnen tekstuele wijzigingen zijn of
