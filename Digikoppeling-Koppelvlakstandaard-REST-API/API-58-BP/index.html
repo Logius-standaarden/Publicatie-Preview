@@ -106,6 +106,20 @@ dd{margin-left:0}
 }
 </style>
 <style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
 var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
@@ -258,7 +272,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "generatedSubtitle": "Consultatieversie 12 augustus 2022"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-CV.css"></head>
-  <body class="h-entry toc-inline"><div class="head">
+  <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API</h1>
     
@@ -317,7 +331,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	<section id="context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><div class="header-wrapper"><h2 id="x2-context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</h2><a class="self-link" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel" aria-label="Permalink for Section 2."></a></div>
 <p>Het Digikoppeling Rest API profiel is gericht op Machine-to-Machine (M2M) en Government-to-Government (G2G) interacties conform de algemene uitgangspunten van de Digikoppeling standaard en het toepassingsgebied van Digikoppeling op de Pas-toe-of-leg-uit lijst (PTLU) van het Forum Standaardisatie;</p>
 <p>Opzet Digikoppeling:</p>
-<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
+<p><figure id="fig-overzicht-digikoppeling-koppelvlakken"><img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" title="Overzicht Digikoppeling Koppelvlakken" height="610" width="1840"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption></figure></p>
 </section>
 	<section id="toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><div class="header-wrapper"><h2 id="x3-toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</h2><a class="self-link" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel" aria-label="Permalink for Section 3."></a></div>
 <p><figure id="fig-digikoppeling-voor-closed-data-g2g-uitwisseling"><img src="media/DK_closed_g2g.svg" alt="Digikoppeling voor Closed Data G2G Uitwisseling" title="Digikoppeling voor Closed Data G2G Uitwisseling"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Digikoppeling voor Closed Data G2G Uitwisseling</span></figcaption></figure></p>
@@ -651,12 +665,13 @@ Binnen dit DK REST-API profielprofiel zijn er alleen voorschriften m.b.t. het ve
 
 <p>(*) Wat betreft TLS zijn de Digikoppeling beveiligingsvoorschriften leidend , Zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling-beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling-Beveiligingsdocument</a></cite>]</p>
 <p>(**) Voor deze gevoelige informatie dient gebruik te worden gemaakt van de HTTP 'POST' method.  Een endpoint dient beschikbaar gesteld te worden om bevragingen via <em>HTTP method</em> <code>POST</code> te ondersteunen. Gevoelige query parameters worden in de <em>payload</em> geplaatst als <em>content type</em> <code>application/json</code>.</p>
-<p>voorbeeld : field1=value1&amp;field2=value2
-wordt via POST overgebracht als:
-{
-  "field1": "value1",
-  "field2": "value2"
-}</p>
+<p>Voorbeeld: <code>field1=value1&amp;field2=value2</code>
+wordt via POST overgebracht als:</p>
+<pre><code class="json hljs" aria-busy="false">{
+  <span class="hljs-attr">"field1"</span>: <span class="hljs-string">"value1"</span>,
+  <span class="hljs-attr">"field2"</span>: <span class="hljs-string">"value2"</span>
+}
+</code></pre>
 </section></section>
 	<section id="bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><div class="header-wrapper"><h2 id="x5-bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">5. </bdi>BIJLAGE Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</h2><a class="self-link" href="#bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api" aria-label="Permalink for Section 5."></a></div>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Noot</span></div><aside class="">Deze bijlage is informatief en geen normatief onderdeel van het profiel</aside></div>
