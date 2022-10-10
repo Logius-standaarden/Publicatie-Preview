@@ -241,7 +241,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Gebruik en Achtergrond Certificaten 1.6.2</h1>
     
@@ -388,7 +388,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </tbody></table>
 </section><section id="digikoppeling-standaarden"><div class="header-wrapper"><h3 id="x1-2-digikoppeling-standaarden"><bdi class="secno">1.2 </bdi>Digikoppeling standaarden</h3><a class="self-link" href="#digikoppeling-standaarden" aria-label="Permalink for Section 1.2"></a></div>
 <p>Dit document is een onderdeel van de Digikoppeling standaard.</p>
-<p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling" height="837" width="1327"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p>
+<p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p>
 <details>
     <summary> Tekstalternatief </summary>
 <ul>
@@ -741,7 +741,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <li>De geldigheidsduur van het certificaat is niet verstreken.</li>
 <li>Het certificaat is niet ingetrokken door de TSP.</li>
 </ul>
-<p><sup>22</sup>: Het stamcertificaat Staat der Nederlanden Root CA vindt u op <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a>. Ingetrokken TSP-certificaten vindt u <a href="https://crl.pkioverheid.nl/">https://crl.pkioverheid.nl/</a>.</p>
+<p><sup>22</sup>: Het stamcertificaat Staat der Nederlanden Root CA vindt u op <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a>. Ingetrokken TSP-certificaten vindt u op <a href="https://crl.pkioverheid.nl/">https://crl.pkioverheid.nl/</a>.</p>
 <p>Om na te gaan of het certificaat is ingetrokken (Engels: revoked) publiceren de TSP's een Certificate Revocation List (CRL). In deze lijst worden de serienummers van ingetrokken certificaten opgenomen. Het is daarom nodig dat de CRL op regelmatige basis geraadpleegd wordt (of indien beschikbaar het OCSP-alternatief). Aangezien er meerdere TSP's zijn aangewezen binnen het overheidsdomein zullen deze allemaal moeten worden geraadpleegd. PKIoverheid certificaten zijn onderdeel van een hiërarchie. Daarom moeten ook 'bovengelegen' CRL's worden geraadpleegd<sup>23</sup>.</p>
 <p><sup>23</sup>: Servers bieden standaard configuratieparameters voor een CRL. Niet altijd kan er naar meerdere CRL's verwezen worden. In dat geval kunnen automatische scripts helpen om meerdere CRL's samen te voegen.</p>
 <p>Bij het gebruik van een CRL dient men erop te letten dat ook een CRL een bepaalde geldigheidsduur heeft. Voor het verlopen van de CRL dient er een nieuwe opgehaald te zijn. Bij het verzuim hiervan en het laten verlopen van de geldigheidsduur van de CRL worden alle certificaten van de betreffende TSP als ongeldig beschouwd<sup>24</sup>. Hoewel een CRL bruikbaar blijft tot de next update, is het verstandig om deze minimaal elke vier uur te verversen<sup>25</sup>. Basisregistraties (en andere gegevenshouders) kunnen voor hun domein specifieke eisen stellen.</p>
