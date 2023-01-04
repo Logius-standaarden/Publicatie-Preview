@@ -425,7 +425,6 @@ uitvoeringsorganisatie en de besluitvorming door het bestuur.</p>
 <figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Organisatiestructuur</span></figcaption>
 </figure>
 
-
 <p>Het bestuur geeft opdracht aan een (not-for-profit)
 uitvoeringsorganisatie die verantwoordelijk is voor een groot deel van
 de beheertaken. Het bestuur verenigt de behoeften in dezen van zijn
@@ -680,11 +679,29 @@ het complete takenpakket, waardoor toch vele
 standaardisatiecommunities hebben besloten een eigen organisatie op te
 tuigen. Een deel van de taken wordt dan belegd bij de eigen
 organisatie, maar een deel van de taken kan ook belegd worden bij
-andere soorten organisaties. <a href="#fig-beleggen-van-ontwikkeltaken">Onderstaande
+andere soorten organisaties. <a href="#fig-beleggen-van-ontwikkeltaken" class="respec-offending-element" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document-2">Onderstaande
 figuur</a> noemt hier (andere)
 standaardisatieorganisaties, research-organisaties en
 brancheorganisaties.</p>
-<p><figure id="fig-beleggen-van-ontwikkeltaken"><img src="images/beleggen_ontwikkeltaken.png" alt="Beleggen van ontwikkeltaken" title="Beleggen van ontwikkeltaken"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van ontwikkeltaken</span></figcaption></figure></p>
+<figure id="beleggen beheertaken">
+
+<pre><code class="mermaid hljs" aria-busy="false">graph TD;
+  beheer(Beheer- en ontwikkeltaken);
+  subgraph not-for-profit;
+    standaard(Standaardisatie&lt;br&gt;organisaties);
+    research(Research&lt;br&gt;organisaties);
+    branch(Branch&lt;br&gt;organisaties);
+    eigen(Eigen&lt;br&gt;organisatie);
+  end;
+  subgraph for-profit;
+    commercieel(Commercieele&lt;br&gt;dienstverleners);
+  end;
+  beheer-- kunnen belegd worden bij --&gt;not-for-profit;
+  beheer-- kunnen belegd worden bij --&gt;for-profit;
+</code></pre>
+  <figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van beheer- en ontwikkeltaken</span></figcaption>
+</figure>
+
 <p>Het model maakt onderscheid tussen not-for-profit en profit
 organisaties. Dit onderscheid is relevant in het kader van openheid
 (<a href="#de-open-invulling-van-een-standaard-activiteit-community">zie sectie over
@@ -3370,7 +3387,7 @@ Belangrijke leerpunten zijn:</p>
   </li><li class="tofline">
     <a class="tocxref" href="#fig-voorbeeld-van-toewijzing-rollen-aan-stakeholders">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Voorbeeld van toewijzing rollen aan stakeholders</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-beleggen-van-ontwikkeltaken">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van ontwikkeltaken</span></a>
+    <a class="tocxref" href="#beleggen beheertaken">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van beheer- en ontwikkeltaken</span></a>
   </li><li class="tofline">
     <a class="tocxref" href="#fig-opbrengstenmodel">Figuur <bdi class="figno">4</bdi> <span class="fig-title">Opbrengstenmodel</span></a>
   </li><li class="tofline">
