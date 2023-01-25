@@ -1,10 +1,23 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.1.2 Logius profile 20220405">
+<meta name="generator" content="ReSpec 32.1.10">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
 .dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
 .dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
@@ -26,7 +39,7 @@ dfn{cursor:pointer}
   
   
   
-<title>API Design Rules (Nederlandse API Strategie IIa) 1.0</title>
+<title>API Design Rules (Nederlandse API Strategie IIa)</title>
   
   
 <link rel="stylesheet" type="text/css" href="./media/style.css">
@@ -132,12 +145,12 @@ var[data-type]::after{content:attr(data-type);transform:translateX(-50%) transla
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "DEF",
+  "specStatus": "WV",
   "specType": "ST",
   "pubDomain": "api",
   "shortName": "adr",
-  "publishDate": "2020-07-09",
-  "publishVersion": "1.0",
+  "publishDate": "2022-01-25",
+  "publishVersion": "1.1",
   "editors": [
     {
       "name": "Frank Terpstra",
@@ -148,6 +161,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "name": "Jan van Gelder",
       "company": "Geonovum",
       "companyURL": "https://www.geonovum.nl"
+    },
+    {
+      "name": "Alexnder Green",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl"
+    },
+    {
+      "name": "Martin van der Plas",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl"
     }
   ],
   "authors": [
@@ -200,24 +223,24 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "id": "semver"
     }
   },
-  "publishISODate": "2020-07-09T00:00:00.000Z",
-  "generatedSubtitle": "Definitive version 09 juli 2020"
+  "publishISODate": "2022-01-25T00:00:00.000Z",
+  "generatedSubtitle": "Draft 25 januari 2023"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-DEF.css"></head>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
 
 
 <body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">API Design Rules (Nederlandse API Strategie IIa) 1.0</h1>
+  </a> <h1 id="title" class="title">API Design Rules (Nederlandse API Strategie IIa)</h1>
     
     <h2>
       Logius Standard<br>
-      Definitive version
-      <time class="dt-published" datetime="2020-07-09">09 juli 2020</time>
+      Draft
+      <time class="dt-published" datetime="01/25/2022">25 januari 2023</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
-              <a class="u-url status" href="https://publicatie.centrumvoorstandaarden.nl/api/adr/1.0">https://publicatie.centrumvoorstandaarden.nl/api/adr/1.0</a>
+              <a class="u-url status" href="https://logius-standaarden.github.io/API-Design-Rules/">https://logius-standaarden.github.io/API-Design-Rules/</a>
             </dd><dt>Latest published version:</dt><dd>
               <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a>
             </dd>
@@ -232,6 +255,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <span class="p-name fn">Frank Terpstra</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
   </dd><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Jan van Gelder</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Alexnder Green</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
   </dd>
       
       <dt>Authors:</dt><dd class="editor p-author h-card vcard">
@@ -264,7 +291,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.
 <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr-beheer/">The Governance of this standard</a> is described in a <a href="https://github.com/Logius-standaarden/ADR-Beheermodel">separate repository</a> and published by Logius.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is the definitive version of the  standard. Edits resulting from consultations have been applied.<p>Het OBDO heeft op advies van het Forum Standaardisatie deze versie vastgesteld.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a></li></ol></li><li class="tocline"><a class="tocxref" href="#the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by het Technisch Overleg.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a></li></ol></li><li class="tocline"><a class="tocxref" href="#the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
   
   
   
@@ -288,31 +315,32 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </ul>
 </section></section>
   <section id="summary"><div class="header-wrapper"><h2 id="x2-summary"><bdi class="secno">2. </bdi>Summary</h2><a class="self-link" href="#summary" aria-label="Permalink for Section 2."></a></div>
-<aside class="note">
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><aside class="">
 Design rules have unique and permanent numbers. In the event of design rules being deprecated or restructured, they are removed from the list. Therefore, gaps in the sequence can occur. New design rules will always get a new and higher number.
-</aside>
+</aside></div>
 
 <section id="normative-design-rules"><div class="header-wrapper"><h3 id="x2-1-normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 2.1"></a></div>
+<p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considerd when designing and building the api. </p>
 <ul>
-<li><a href="#api-01">API-01</a>: Adhere to HTTP safety and idempotency semantics for operations</li>
-<li><a href="#api-02">API-02</a>: Do not maintain session state on the server</li>
-<li><a href="#api-03">API-03</a>: Only apply standard HTTP methods</li>
-<li><a href="#api-04">API-04</a>: Define interfaces in Dutch unless there is an official English glossary available</li>
-<li><a href="#api-05">API-05</a>: Use nouns to name resources</li>
-<li><a href="#api-06">API-06</a>: Use nested URIs for child resources</li>
-<li><a href="#api-10">API-10</a>: Model resource operations as a sub-resource or dedicated resource</li>
-<li><a href="#api-16">API-16</a>: Use OpenAPI Specification for documentation</li>
-<li><a href="#api-17">API-17</a>: Publish documentation in Dutch unless there is existing documentation in English</li>
-<li><a href="#api-18">API-18</a>: Include a deprecation schedule when publishing API changes</li>
-<li><a href="#api-19">API-19</a>: Schedule a fixed transition period for a new major API version</li>
-<li><a href="#api-20">API-20</a>: Include the major version number in the URI</li>
-<li><a href="#api-48">API-48</a>: Leave off trailing slashes from URIs</li>
-<li><a href="#api-51">API-51</a>: Publish OAS document at a standard location in JSON-format</li>
-<li><a href="#api-53">API-53</a>: Hide irrelevant implementation details</li>
-<li><a href="#api-54">API-54</a>: Use plural nouns to name collection resources</li>
-<li><a href="#api-55">API-55</a>: Publish a changelog for API changes between versions</li>
-<li><a href="#api-56">API-56</a>: Adhere to the Semantic Versioning model when releasing API changes</li>
-<li><a href="#api-57">API-57</a>: Return the full version number in a response header</li>
+<li><a href="#api-01">API-01</a>: Adhere to HTTP safety and idempotency semantics for operations - <em>Functional rule</em></li>
+<li><a href="#api-02">API-02</a>: Do not maintain session state on the server - <em>Functional rule</em></li>
+<li><a href="#api-03">API-03</a>: Only apply standard HTTP methods - <em>Technical rule</em></li>
+<li><a href="#api-04">API-04</a>: Define interfaces in Dutch unless there is an official English glossary available - <em>Functional rule</em></li>
+<li><a href="#api-05">API-05</a>: Use nouns to name resources - <em>Functional rule</em></li>
+<li><a href="#api-06">API-06</a>: Use nested URIs for child resources - <em>Functional rule</em></li>
+<li><a href="#api-10">API-10</a>: Model resource operations as a sub-resource or dedicated resource - <em>Functional rule</em></li>
+<li><a href="#api-16">API-16</a>: Use OpenAPI Specification for documentation - <em>Technical rule</em></li>
+<li><a href="#api-17">API-17</a>: Publish documentation in Dutch unless there is existing documentation in English - <em>Functional rule</em></li>
+<li><a href="#api-18">API-18</a>: Include a deprecation schedule when publishing API changes - <em>Functional rule</em></li>
+<li><a href="#api-19">API-19</a>: Schedule a fixed transition period for a new major API version - <em>Functional rule</em></li>
+<li><a href="#api-20">API-20</a>: Include the major version number in the URI - <em>Technical rule</em></li>
+<li><a href="#api-48">API-48</a>: Leave off trailing slashes from URIs - <em>Technical rule</em></li>
+<li><a href="#api-51">API-51</a>: Publish OAS document at a standard location in JSON-format - <em>Technical rule</em></li>
+<li><a href="#api-53">API-53</a>: Hide irrelevant implementation details - <em>Functional rule</em></li>
+<li><a href="#api-54">API-54</a>: Use plural nouns to name collection resources - <em>Functional rule</em></li>
+<li><a href="#api-55">API-55</a>: Publish a changelog for API changes between versions - <em>Functional rule</em></li>
+<li><a href="#api-56">API-56</a>: Adhere to the Semantic Versioning model when releasing API changes - <em>Technical rule</em></li>
+<li><a href="#api-57">API-57</a>: Return the full version number in a response header - <em>Technical rule</em></li>
 </ul>
 </section></section>
   <section id="the-design-rules"><div class="header-wrapper"><h2 id="x3-the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</h2><a class="self-link" href="#the-design-rules" aria-label="Permalink for Section 3."></a></div>
@@ -345,14 +373,23 @@ Design rules have unique and permanent numbers. In the event of design rules bei
    <dd>
    Adherance to this rule needs to be manually verified.
    </dd>
-   </dl>
+   <dt>Rule types</dt>
+   <dd>
+   This is a functional design rule and hence can't be tested automatically.
+   </dd>
+</dl>
 </div>
+
 
 <p>A resource describing a single thing is called a <a href="#dfn-singular-resource" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be grouped into collections, which are resources in their own right and can typically be paged, sorted and filtered. Most often all collection members have the same type, but this is not necessarily the case. A resource describing multiple things is called a <a href="#dfn-collection-resource" id="ref-for-dfn-collection-resource-1">collection resource</a>. Collection resources typically contain references to the underlying singular resources.</p>
 <div class="rule" id="api-54">
    <p class="rulelab"><b>API-54</b>: Use plural nouns to name collection resources</p>
    <dl>
       <dt>Statement</dt>
+      <dd>
+         A collection resource represents multiple things.
+      </dd>
+      <dt>Rationale</dt>
       <dd>
          The path segment describing the name of the collection resource must be written in the plural form.
          <div class="example">
@@ -372,13 +409,13 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
             <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/gebruikersprofiel</span></code></pre>
          </div>
       </dd>
-      <dt>Rationale</dt>
-      <dd>
-         A collection resource represents multiple things.
-      </dd>
       <dt>Implications</dt>
       <dd>
          Adherance to this rule needs to be manually verified.
+      </dd>
+         <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
       </dd>
    </dl>
 </div>
@@ -387,16 +424,20 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
    <dl>
       <dt>Statement</dt>
       <dd>
-         Resources and the underlying attributes should be defined in the Dutch language unless there is an official English glossary available. Publishing an API for an international audience might also be a reason to define interfaces in English.<p></p>
-         <p>Note that glossaries exist that define useful sets of attributes which should preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
-      </p></dd>
+         Resources and the underlying attributes should be defined in the Dutch language unless there is an official English glossary available.
+      </dd>
       <dt>Rationale</dt>
       <dd>
-         The exact meaning of concepts is often lost in translation.
+         The exact meaning of concepts is often lost in translation. Publishing an API for an international audience might also be a reason to define interfaces in English.
+         Note that glossaries exist that define useful sets of attributes which should preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
       </dd>
       <dt>Implications</dt>
       <dd>
          Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
       </dd>
    </dl>
 </div>
@@ -406,6 +447,10 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       <dt>Statement</dt>
       <dd>
          A URI must never contain a trailing slash. When requesting a resource including a trailing slash, this must result in a 404 (not found) error response and not a redirect. This enforces API consumers to use the correct URI.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         To avoid confusion and ambiguity, a URI must never contain a trailing slash. When requesting a resource including a trailing slash, this must result in a <code>404</code> (not found) error response and not a redirect. This enforces API consumers to use the correct URI.
          <div class="example">
             <p>URI without a trailing slash (correct):</p>
             <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/gebouwen</span></code></pre>
@@ -413,13 +458,13 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
             <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/gebouwen/</span></code></pre>
          </div>
       </dd>
-      <dt>Rationale</dt>
-      <dd>
-         To avoid confusion and ambiguity, a URI must never contain a trailing slash. When requesting a resource including a trailing slash, this must result in a <code>404</code> (not found) error response and not a redirect. This enforces API consumers to use the correct URI.
-      </dd>
       <dt>Implications</dt>
       <dd>
          This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_48.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
       </dd>
    </dl>
 </div>
@@ -446,8 +491,13 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
             <li>The API should offer client-friendly attribute names and values, while persisted data may contain abbreviated terms or serializations which might be cumbersome for consumption.</li>
          </ul>
       </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
    </dl>
 </div>
+
 
 </section><section id="http-methods"><div class="header-wrapper"><h3 id="x3-2-http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</h3><a class="self-link" href="#http-methods" aria-label="Permalink for Section 3.2"></a></div>
 <p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>].</p>
@@ -500,7 +550,11 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       </dd>
       <dt>Implications</dt>
       <dd>
-         Adherance to this rule needs to be manually verified.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_03.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
       </dd>
    </dl>
    <div class="example">The following table shows some examples of the use of standard HTTP methods:
@@ -540,7 +594,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       </tbody>
       </table>
    </div>
-   <p class="note">HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code> and <code>TRACE</code>. For the purpose of this design rule, these operations are left out of scope.</p>
+   <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code> and <code>TRACE</code>. For the purpose of this design rule, these operations are left out of scope.</p></div>
 </div>
 
 <div class="rule" id="api-01">
@@ -604,8 +658,13 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       <dd>
          Request methods are considered <i>safe</i> if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource. A request method is considered <i>idempotent</i> if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.
       </dd>
+            <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
    </dl>
 </div>
+
 
 </section><section id="statelessness"><div class="header-wrapper"><h3 id="x3-3-statelessness"><bdi class="secno">3.3 </bdi>Statelessness</h3><a class="self-link" href="#statelessness" aria-label="Permalink for Section 3.3"></a></div>
 <p>One of the key constraints of the REST architectural style is stateless communication between client and server. It means that every request from client to server must contain all of the information necessary to understand the request. The server cannot take advantage of any stored session context on the server as it didn’t memorize previous requests. Session state must therefore reside entirely on the client.</p>
@@ -614,7 +673,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
 <li><em>Session state</em>: information about the interactions of an end user with a particular client application within the same user session, such as the last page being viewed, the login state or form data in a multi-step registration process. Session state must reside entirely on the client (e.g. in the user's browser).</li>
 <li><em>Resource state</em>: information that is permanently stored on the server beyond the scope of a single user session, such as the user's profile, a product purchase or information about a building. Resource state is persisted on the server and must be exchanged between client and server (in both directions) using  representations as part of the request or response payload. This is actually where the term <em>REpresentational State Transfer (REST)</em> originates from.</li>
 </ul>
-<p class="note">It's a misconception that there should be no state at all. The stateless communication constraint should be seen from the server's point of view and states that the server should not be aware of any <em>session state</em>.</p>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">It's a misconception that there should be no state at all. The stateless communication constraint should be seen from the server's point of view and states that the server should not be aware of any <em>session state</em>.</p></div>
 
 <p>Stateless communication offers many advantages, including:</p>
 <ul>
@@ -638,16 +697,29 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       <dd>
          Adherance to this rule needs to be manually verified.
       </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
    </dl>
-   <p class="note">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p>
+   <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
+
 
 </section><section id="relationships"><div class="header-wrapper"><h3 id="x3-4-relationships"><bdi class="secno">3.4 </bdi>Relationships</h3><a class="self-link" href="#relationships" aria-label="Permalink for Section 3.4"></a></div>
 <p>Resources are often interconnected by relationships. Relationships can be modelled in different ways depending on the cardinality, semantics and more importantly, the use cases and access patterns the REST API needs to support.</p>
 <div class="rule" id="api-06">
   <p class="rulelab"><b>API-06</b>: Use nested URIs for child resources</p>
-  <p>When having a child resource which can only exist in the context of a parent resource, the URI should be nested. In that case, the child resource does not necessarily have a top-level collection resource. The best way to explain this design rule is by example.</p>
-  <div class="example">
+  <dl>
+      <dt>Statement</dt>
+      <dd>
+         When having a child resource which can only exist in the context of a parent resource, the URI should be nested.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         In this use case, the child resource does not necessarily have a top-level collection resource. The best way to explain this design rule is by example.
+      </dd>
+    <div class="example">
     <p>When modelling resources for a news platform including the ability for users to write comments, it might be a good strategy to model the <a href="#dfn-collection-resource" id="ref-for-dfn-collection-resource-2">collection resources</a> hierarchically:</p>
     <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/articles/123/comments</span></code></pre>
     <p>The platform might also offer a photo section, where the same commenting functionality is offered. In the same way as for articles, the corresponding sub-collection resource might be published at:</p>
@@ -661,85 +733,267 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
 https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code></pre>
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
-</div>
+  <dt>Implications</dt>
+      <dd>
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
+</dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
 <div class="rule" id="api-10">
   <p class="rulelab"><b>API-10</b>: Model resource operations as a sub-resource or dedicated resource</p>
-  <p>There are resource operations which might not seem to fit well in the CRUD interaction model. For example, approving of a submission or notifying a customer. Depending on the type of the operation, there are three possible approaches:</p>
-  <ol>
-    <li>Re-model the resource to incorporate extra fields supporting the particular operation. For example, an approval operation can be modelled in a boolean attribute <code>goedgekeurd</code> that can be modified by issuing a <code>PATCH</code> request against the resource. Drawback of this approach is that the resource does not contain any metadata about the operation (when and by whom was the approval given? Was the submission declined in an earlier stage?). Furthermore, this requires a fine-grained authorization model, since approval might require a specific role.</li>
-    <li>Treat the operation as a sub-resource. For example, model a sub-collection resource <code>/inzendingen/12/beoordelingen</code> and add an approval or declination by issuing a <code>POST</code> request. To be able to retrieve the review history (and to consistently adhere to the REST principles), also support the <code>GET</code> method for this resource. The <code>/inzendingen/12</code> resource might still provide a <code>goedgekeurd</code> boolean attribute (same as approach 1) which gets automatically updated on the background after adding a review. This attribute should however be read-only.</li>
-    <li>In exceptional cases, the approaches above still don't offer an appropriate solution. An example of such an operation is a global search across multiple resources. In this case, the creation of a dedicated resource, possibly nested under an existing resource, is the most obvious solution. Use the imperative mood of a verb, maybe even prefix it with a underscore to distinguish these resources from regular resources. For example: <code>/search</code> or <code>/_search</code>. Depending on the operation characteristics, <code>GET</code> and/or <code>POST</code> method may be supported for such a resource.</li>
-  </ol>
-  <p>In this design rule, approach 2 and 3 are preferred.</p>
+  <dl>
+      <dt>Statement</dt>
+      <dd>
+         Model resource operations as a sub-resource or dedicated resource.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         There are resource operations which might not seem to fit well in the CRUD interaction model. For example, approving of a submission or notifying a customer. Depending on the type of the operation, there are three possible approaches:
+      <ol>
+         <li>Re-model the resource to incorporate extra fields supporting the particular operation. For example, an approval operation can be modelled in a boolean attribute <code>goedgekeurd</code> that can be modified by issuing a <code>PATCH</code> request against the resource. Drawback of this approach is that the resource does not contain any metadata about the operation (when and by whom was the approval given? Was the submission declined in an earlier stage?). Furthermore, this requires a fine-grained authorization model, since approval might require a specific role.</li>
+         <li>Treat the operation as a sub-resource. For example, model a sub-collection resource <code>/inzendingen/12/beoordelingen</code> and add an approval or declination by issuing a <code>POST</code> request. To be able to retrieve the review history (and to consistently adhere to the REST principles), also support the <code>GET</code> method for this resource. The <code>/inzendingen/12</code> resource might still provide a <code>goedgekeurd</code> boolean attribute (same as approach 1) which gets automatically updated on the background after adding a review. This attribute should however be read-only.</li>
+         <li>In exceptional cases, the approaches above still don't offer an appropriate solution. An example of such an operation is a global search across multiple resources. In this case, the creation of a dedicated resource, possibly nested under an existing resource, is the most obvious solution. Use the imperative mood of a verb, maybe even prefix it with a underscore to distinguish these resources from regular resources. For example: <code>/search</code> or <code>/_search</code>. Depending on the operation characteristics, <code>GET</code> and/or <code>POST</code> method may be supported for such a resource.</li>
+      </ol>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         In this design rule, approach 2 and 3 are preferred.
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a functional design rule and hence can't be tested automatically.
+      </dd>
+   </dl>
+  
+  <p>
+  </p><p></p>
 </div>
 
 </section><section id="documentation"><div class="header-wrapper"><h3 id="x3-6-documentation"><bdi class="secno">3.6 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 3.6"></a></div>
 <p>An API is as good as the accompanying documentation. The documentation has to be easily findable, searchable and publicly accessible. Most developers will first read the documentation before they start implementing. Hiding the technical documentation in PDF documents and/or behind a login creates a barrier for both developers and search engines.</p>
 <div class="rule" id="api-16">
   <p class="rulelab"><b>API-16</b>: Use OpenAPI Specification for documentation</p>
-  <p>The OpenAPI Specification (OAS) [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapis" title="OpenAPI Specification">OPENAPIS</a></cite>] defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with a minimal amount of implementation logic.</p>
-  <p>API documentation must be provided in the form of an OpenAPI definition document which conforms to the OpenAPI Specification (from v3 onwards). As a result, a variety of tools can be used to render the documentation (e.g. Swagger UI or ReDoc) or automate tasks such as testing or code generation. The OAS document should provide clear descriptions and examples.</p>
+  <dl>
+      <dt>Statement</dt>
+      <dd>
+         API documentation must be provided in the form of an OpenAPI definition document which conforms to the OpenAPI Specification (from v3 onwards).
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         The OpenAPI Specification (OAS) [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapis" title="OpenAPI Specification">OPENAPIS</a></cite>] defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with a minimal amount of implementation logic.
+         API documentation must be provided in the form of an OpenAPI definition document which conforms to the OpenAPI Specification (from v3 onwards). As a result, a variety of tools can be used to render the documentation (e.g. Swagger UI or ReDoc) or automate tasks such as testing or code generation. The OAS document should provide clear descriptions and examples.
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_16.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
+      </dd>
+   </dl>
 </div>
 
 <div class="rule" id="api-17">
   <p class="rulelab"><b>API-17</b>: Publish documentation in Dutch unless there is existing documentation in English</p>
-  <p>In line with design rule <a href="#api-04">API-04</a>, the OAS document (e.g. descriptions and examples) should be written in Dutch. If relevant, you may refer to existing documentation written in English.</p>
+  <dl>
+      <dt>Statement</dt>
+      <dd>
+         You should write the OAS document in Dutch.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         In line with design rule <a href="#api-04">API-04</a>, the OAS document (e.g. descriptions and examples) should be written in Dutch. If relevant, you may refer to existing documentation written in English.
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
+   </dl>
 </div>
 
 <div class="rule" id="api-51">
   <p class="rulelab"><b>API-51</b>: Publish OAS document at a standard location in JSON-format</p>
-  <p>To make the OAS document easy to find and to facilitate self-discovering clients, there should be one standard location where the OAS document is available for download. Clients (such as Swagger UI or ReDoc) must be able to retrieve the document without having to authenticate. Furthermore, the CORS policy for this URI must allow external domains to read the documentation from a browser environment.</p>
-  <p>The standard location for the OAS document is a URI called <code>openapi.json</code> or <code>openapi.yaml</code> within the base path of the API. This can be convenient, because OAS document updates can easily  become part of the CI/CD process.</p>
-  <p>At least the JSON format must be supported. When having multiple (major) versions of an API, every API should provide its own OAS document(s).</p>
-  <div class="example">
-    <p>An API having base path <code>https://api.example.org/v1/</code> must publish the OAS document at:</p>
-    <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/openapi.json</span></code></pre>
-    <p>Optionally, the same OAS document may be provided in YAML format:</p>
-    <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/openapi.yaml</span></code></pre>
-  </div>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         To make the OAS document easy to find and to facilitate self-discovering clients, there should be one standard location where the OAS document is available for download.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p> Clients (such as Swagger UI or ReDoc) must be able to retrieve the document without having to authenticate. Furthermore, the CORS policy for this URI must allow external domains to read the documentation from a browser environment.</p>
+         <p>The standard location for the OAS document is a URI called <code>openapi.json</code> or <code>openapi.yaml</code> within the base path of the API. This can be convenient, because OAS document updates can easily  become part of the CI/CD process.</p>
+         <p>At least the JSON format must be supported. When having multiple (major) versions of an API, every API should provide its own OAS document(s).</p>
+         <div class="example">
+            <p>An API having base path <code>https://api.example.org/v1/</code> must publish the OAS document at:</p>
+            <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/openapi.json</span></code></pre>
+            <p>Optionally, the same OAS document may be provided in YAML format:</p>
+            <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/openapi.yaml</span></code></pre>
+         </div>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_51.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
+      </dd>
+   </dl>
 </div>
 
 </section><section id="versioning"><div class="header-wrapper"><h3 id="x3-7-versioning"><bdi class="secno">3.7 </bdi>Versioning</h3><a class="self-link" href="#versioning" aria-label="Permalink for Section 3.7"></a></div>
 <p>Changes in APIs are inevitable. APIs should therefore always be versioned, facilitating the transition between changes.</p>
-<div class="rule" id="api-56">
-  <p class="rulelab"><b>API-56</b>: Adhere to the Semantic Versioning model when releasing API changes</p>
-  <p>Version numbering must follow the Semantic Versioning [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] model to prevent breaking changes when releasing new API versions. Versions are formatted using the <code>major.minor.patch</code> template. When releasing a new version which contains backwards-incompatible changes, a new major version must be released. Minor and patch releases may only contain backwards compatible changes (e.g. the addition of an endpoint or an optional attribute).</p>
-</div>
-
-<div class="rule" id="api-20">
-  <p class="rulelab"><b>API-20</b>: Include the major version number in the URI</p>
-  <p>The URI of an API (base path) must include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the URI and may not have any impact on existing client implementations.</p>
-  <div class="example">
-    <p>An example of a base path for an API with current version 1.0.2:</p>
-    <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/</span></code></pre>
-  </div>
-</div>
-
-<div class="rule" id="api-57">
-  <p class="rulelab"><b>API-57</b>: Return the full version number in a response header</p>
-  <p>Since the URI only contains the major version, it's useful to provide the full version number in the response headers for every API call. This information could then be used for logging, debugging or auditing purposes. In cases where an intermediate networking component returns an error response (e.g. a reverse proxy enforcing access policies), the version number may be omitted.</p>
-  <p>The version number must be returned in an HTTP response header named <code>API-Version</code> (case-insensitive) and should not be prefixed.</p>
-  <div class="example">
-    <p>An example of an API version response header:</p>
-    <pre aria-busy="false"><code class="hljs">API-Version: 1.0.2</code></pre>
-  </div>
-</div>
-
-<div class="rule" id="api-55">
-  <p class="rulelab"><b>API-55</b>: Publish a changelog for API changes between versions</p>
-  <p>When releasing new (major, minor or patch) versions, all API changes must be documented properly in a publicly available changelog.</p>
-</div>
-
 <div class="rule" id="api-18">
   <p class="rulelab"><b>API-18</b>: Include a deprecation schedule when deprecating features or versions</p>
-  <p>Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule must be published. This document should be published on a public web page. Furthermore, active clients should be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         Implement well documented and timely communicated deprecation schedules.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule must be published. This document should be published on a public web page. Furthermore, active clients should be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a functional design rule and hence can't be tested automatically.
+      </dd>
+   </dl>
 </div>
 
 <div class="rule" id="api-19">
   <p class="rulelab"><b>API-19</b>: Schedule a fixed transition period for a new major API version</p>
-  <p>When releasing a new major API version, the old version must remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions may be published concurrently.</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         Old versions must remain available for a limited and fixed deprecation period.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         When releasing a new major API version, the old version must remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions may be published concurrently.
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a functional design rule and hence can't be tested automatically.
+      </dd>
+   </dl>
+</div>
+
+<div class="rule" id="api-20">
+  <p class="rulelab"><b>API-20</b>: Include the major version number in the URI</p>
+    <dl>
+      <dt>Statement</dt>
+      <dd>
+         The URI of an API must include the major version number.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         The URI of an API (base path) must include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the URI and may not have any impact on existing client implementations.
+      <div class="example">
+         <p>An example of a base path for an API with current version 1.0.2:</p>
+         <pre aria-busy="false"><code class="hljs javascript">https:<span class="hljs-comment">//api.example.org/v1/</span></code></pre>
+      </div>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_20.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
+      </dd>
+   </dl>
+</div>
+
+<div class="rule" id="api-55">
+  <p class="rulelab"><b>API-55</b>: Publish a changelog for API changes between versions</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         Publish a changelog.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p>When releasing new (major, minor or patch) versions, all API changes must be documented properly in a publicly available changelog.</p>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         Adherance to this rule needs to be manually verified.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+      This is a functional design rule and hence can't be tested automatically.
+      </dd>
+   </dl>
+
+</div>
+
+<div class="rule" id="api-56">
+  <p class="rulelab"><b>API-56</b>: Adhere to the Semantic Versioning model when releasing API changes</p>
+  <dl>
+      <dt>Statement</dt>
+      <dd>
+         Implement Semantic Versioning.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         Version numbering must follow the Semantic Versioning [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] model to prevent breaking changes when releasing new API versions. Versions are formatted using the <code>major.minor.patch</code> template. When releasing a new version which contains backwards-incompatible changes, a new major version must be released. Minor and patch releases may only contain backwards compatible changes (e.g. the addition of an endpoint or an optional attribute).
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_56.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
+      </dd>
+   </dl>
+</div>
+
+<div class="rule" id="api-57">
+  <p class="rulelab"><b>API-57</b>: Return the full version number in a response header</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         Return the API-Version header.
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p>Since the URI only contains the major version, it's useful to provide the full version number in the response headers for every API call. This information could then be used for logging, debugging or auditing purposes. In cases where an intermediate networking component returns an error response (e.g. a reverse proxy enforcing access policies), the version number may be omitted.</p>
+         <p>The version number must be returned in an HTTP response header named <code>API-Version</code> (case-insensitive) and should not be prefixed.</p>
+         <div class="example">
+            <p>An example of an API version response header:</p>
+            <pre aria-busy="false"><code class="hljs">API-Version: 1.0.2</code></pre>
+         </div>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code can be found <a href="https://github.com/VNG-Realisatie/api-test-platform-code/blob/master/src/vng/design_rules/tasks/dr_20200709/api_57.py">here</a>.
+      </dd>
+      <dt>Rule types</dt>
+      <dd>
+         This is a technical design rule and hence should be tested automatically.
+      </dd>
+   </dl>
 </div></section></section>
   <section id="glossary"><div class="header-wrapper"><h2 id="x4-glossary"><bdi class="secno">4. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 4."></a></div>
 <dl>
