@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.10">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 32.6.0">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -46,15 +46,15 @@ dfn{cursor:pointer}
 </style>
     
     
-<meta content="text/html; charset=utf-8" http-equiv="content-type">
-    
     
 <title>Digikoppeling Beheermodel</title>
     
     
-<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
     
-
+    
+<link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
+    
+  
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
@@ -74,8 +74,6 @@ a.bibref{text-decoration:none}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
 cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
@@ -125,86 +123,178 @@ dd{margin-left:0}
   release-nummering en de publicatie en informatievoorziening
   rond Digikoppeling.">
 <style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "WV",
-  "specType": "WA",
-  "pubDomain": "dk",
-  "shortName": "beheer",
-  "publishDate": "2022-06-01",
-  "publishVersion": "1.7",
-  "previousPublishVersion": "1.6",
-  "license": "cc-by-nd",
-  "doJsonLd": true,
-  "editors": [
-    {
-      "name": "Edwin Wisse",
-      "url": "https://logius.nl/standaarden",
-      "company": "Logius"
-    },
-    {
-      "name": "Peter Haasnoot",
-      "url": "https://logius.nl/standaarden",
-      "company": "Logius"
-    }
-  ],
-  "authors": [
-    {
-      "name": "Logius",
-      "mailto": "digikoppeling@logius.nl",
-      "url": "mailto:digikoppeling@logius.nl"
-    }
-  ],
-  "github": "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel",
-  "addSectionLinks": true,
-  "a11y": false,
-  "alternateFormats": [
-    {
-      "label": "pdf",
-      "uri": "Digikoppeling-Beheermodel.pdf"
-    }
-  ],
-  "nl_emailComments": "digikoppeling@logius.nl",
-  "nl_addReleaseTagTitle": true,
-  "nl_github": {
-    "revision": "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel"
-  },
   "nl_organisationName": "Logius",
-  "nl_organisationPrefix": "LS-",
-  "nl_markdownEmbedImageInFigure": true,
-  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
-  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
-  "nl_logo": {
-    "src": "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
-    "alt": "Logius",
-    "id": "Logius",
-    "height": 77,
-    "width": 44,
-    "url": "https://www.logius.nl/standaarden"
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/standaarden"
+    }
+  ],
+  "edDraftURI": [
+    "github"
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName"
+  ],
+  "thisVersion": [
+    "github"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc0",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "specTypeText": {
+    "en": {
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "specStatusText": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#32a852"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+    }
   },
   "localBiblio": {
-    "NEN3610": {
-      "href": "https://www.nen.nl/nen-3610-2022-nl-296137",
-      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+    "SemVer": {
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0",
       "authors": [
-        ""
+        "T. Preston-Werner"
       ],
-      "date": "1 juni 2022",
-      "publisher": "Nederlands Normalisatie-instituut"
-    },
-    "MIM": {
-      "href": "https://docs.geostandaarden.nl/mim/mim/",
-      "title": "Metamodel Informatie Modellering",
-      "authors": [
-        ""
-      ],
-      "date": "7 februari 2022",
-      "publisher": "Geonovum"
+      "date": "June 2013"
     },
     "Digikoppeling Architectuur": {
       "href": "https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html",
@@ -216,74 +306,68 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "Logius",
       "id": "digikoppeling architectuur"
     },
-    "Digikoppeling Beveiligingsdocument": {
-      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
-      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
-      "date": "2020",
-      "publisher": "Logius"
-    },
-    "Digikoppeling-Cert": {
-      "href": "http://www.logius.nl/digikoppeling",
-      "title": "Gebruik en achtergrond van Digikoppeling certificaten",
-      "publisher": "Logius"
-    },
-    "PKI Policy": {
-      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
-      "title": "Programma van Eisen (PKIoverheid)",
-      "publisher": "Logius"
-    },
-    "PKI CA": {
-      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
-      "title": "Toegetreden vertrouwensdienstverleners",
-      "publisher": "Logius"
-    },
-    "PKIoverheid Certificaten": {
-      "href": "https://cert.pkioverheid.nl/",
-      "title": "Pkioverheid certificaten",
-      "publisher": "Logius"
-    },
-    "X520": {
-      "href": "https://www.iso.org/standard/43796.html",
-      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6",
-      "publisher": "ISO"
-    },
     "Logius website": {
       "href": "https://logius.nl/digikoppeling",
       "title": "Logius Digikoppeling",
       "publisher": "Logius",
       "id": "logius website"
-    },
-    "Digikoppeling Compliance Voorziening": {
-      "href": "https://portaal.digikoppeling.nl",
-      "title": "Digikoppeling Compliance Voorziening",
-      "publisher": "Logius"
     }
   },
-  "publishISODate": "2022-06-01T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 02 maart 2023"
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "Digikoppeling-Beheermodel.pdf"
+    }
+  ],
+  "authors": [
+    {
+      "mailto": "digikoppeling@logius.nl",
+      "name": "Logius",
+      "url": "mailto:digikoppeling@logius.nl"
+    }
+  ],
+  "editors": [
+    {
+      "company": "Logius",
+      "name": "Edwin Wisse",
+      "url": "https://logius.nl/standaarden"
+    },
+    {
+      "company": "Logius",
+      "name": "Peter Haasnoot",
+      "url": "https://logius.nl/standaarden"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel",
+  "previousPublishVersion": "1.6",
+  "pubDomain": "dk",
+  "publishDate": "2022-06-01",
+  "publishVersion": "1.7",
+  "shortName": "beheer",
+  "specStatus": "WV",
+  "specType": "WA"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-WV.css"></head>
-
-<body class="h-entry toc-inline"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+  <body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Beheermodel</h1>
     
     <h2>
       Logius Werkafspraak<br>
       Werkversie
-      <time class="dt-published" datetime="06/01/2022">02 maart 2023</time>
+      <time class="dt-published" datetime="06/01/2022"></time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://logius-standaarden.github.io/Digikoppeling-Beheermodel/">https://logius-standaarden.github.io/Digikoppeling-Beheermodel/</a>
+              <a class="u-url status" href="https://github.com/logius-standaarden/digikoppeling-beheermodel/">https://github.com/logius-standaarden/digikoppeling-beheermodel/</a>
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/">https://publicatie.centrumvoorstandaarden.nl/dk/beheer/</a>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beheer">https://gitdocumentatie.logius.nl/publicatie/dk/beheer</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Beheermodel/">https://logius-standaarden.github.io/Digikoppeling-Beheermodel/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/digikoppeling-beheermodel/">https://github.com/logius-standaarden/digikoppeling-beheermodel/</a></dd>
       
       
       
-      <dt>Vorige versie</dt><dd><a href="https://publicatie.centrumvoorstandaarden.nl/dk/beheer/1.6/">https://publicatie.centrumvoorstandaarden.nl/dk/beheer/1.6/</a></dd>
+      <dt>Vorige versie</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.6">https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.6</a></dd>
       
       <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
@@ -307,13 +391,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </dl>
     
     
-    <p lang="en">
-          This document is also available in this non-normative format:
+    <p>
+          Dit document is ook beschikbaar in dit niet-normatieve formaat:
           <a rel="alternate" href="Digikoppeling-Beheermodel.pdf">pdf</a>
         </p>
-    <p class="copyright" lang="en">
-          This document is licensed under a
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+    <p class="copyright">
+          Dit document valt onder de volgende licentie: 
+          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
         </p>
     <hr title="Separator for header">
   </div>
@@ -327,7 +411,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   release-nummering en de publicatie en informatievoorziening
   rond Digikoppeling.</p>
 </section>
-    <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het Technisch Overleg goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bijlagen"><bdi class="secno">1.1.1 </bdi>Bijlagen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling"><bdi class="secno">1.2 </bdi>Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nut"><bdi class="secno">1.2.1 </bdi>Nut</a></li><li class="tocline"><a class="tocxref" href="#werking"><bdi class="secno">1.2.2 </bdi>Werking</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2.3 </bdi>Status</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bomos"><bdi class="secno">1.3 </bdi>BOMOS</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">2.2 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governancestructuur"><bdi class="secno">2.2.1 </bdi>Governancestructuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-digikoppeling-community"><bdi class="secno">2.2.1.1 </bdi>De Digikoppeling community</a></li><li class="tocline"><a class="tocxref" href="#technisch-overleg"><bdi class="secno">2.2.1.2 </bdi>Technisch Overleg</a></li><li class="tocline"><a class="tocxref" href="#tactisch-strategisch-overleg-de-programmeringstafel"><bdi class="secno">2.2.1.3 </bdi>Tactisch/strategisch overleg: de programmeringstafel</a></li><li class="tocline"><a class="tocxref" href="#het-besluitvormend-en-strategisch-overleg-de-programmeringsraad-gdi"><bdi class="secno">2.2.1.4 </bdi>Het besluitvormend en strategisch overleg: De Programmeringsraad GDI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuurraad"><bdi class="secno">2.2.2 </bdi>Architectuurraad</a></li><li class="tocline"><a class="tocxref" href="#besluitvorming"><bdi class="secno">2.2.3 </bdi>Besluitvorming</a></li><li class="tocline"><a class="tocxref" href="#deelname"><bdi class="secno">2.2.4 </bdi>Deelname</a></li></ol></li><li class="tocline"><a class="tocxref" href="#financiering"><bdi class="secno">2.3 </bdi>Financiering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">3.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">3.2 </bdi>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#internationale-europese-en-nationale-standaardisatiegemeenschap"><bdi class="secno">3.2.1 </bdi>Internationale, Europese en nationale standaardisatiegemeenschap</a></li><li class="tocline"><a class="tocxref" href="#samenwerking-met-andere-beheerorganisaties"><bdi class="secno">3.2.2 </bdi>Samenwerking met andere beheerorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#rechtenbeleid"><bdi class="secno">3.3 </bdi>Rechtenbeleid</a></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a></li><li class="tocline"><a class="tocxref" href="#adoptie-en-erkenning"><bdi class="secno">3.5 </bdi>Adoptie en erkenning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#initiatie"><bdi class="secno">4.1 </bdi>Initiatie</a></li><li class="tocline"><a class="tocxref" href="#wensen-en-eisen"><bdi class="secno">4.2 </bdi>Wensen en Eisen</a></li><li class="tocline"><a class="tocxref" href="#uitvoering-en-ontwikkeling-wijzigingsproces"><bdi class="secno">4.3 </bdi>Uitvoering en ontwikkeling (Wijzigingsproces)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wijzigingen"><bdi class="secno">4.3.1 </bdi>Wijzigingen</a></li><li class="tocline"><a class="tocxref" href="#patches"><bdi class="secno">4.3.2 </bdi>Patches</a></li><li class="tocline"><a class="tocxref" href="#releases"><bdi class="secno">4.3.3 </bdi>Releases</a></li><li class="tocline"><a class="tocxref" href="#impact-van-wijzigingen-en-versienummering"><bdi class="secno">4.3.4 </bdi>Impact van wijzigingen en versienummering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#status-van-de-standaard"><bdi class="secno">4.4 </bdi>Status van de standaard</a></li><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">4.5 </bdi>Documentatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatieondersteuning"><bdi class="secno">5. </bdi>Implementatieondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opleiding-en-advies"><bdi class="secno">5.1 </bdi>Opleiding en advies</a></li><li class="tocline"><a class="tocxref" href="#helpdesk"><bdi class="secno">5.2 </bdi>Helpdesk</a></li><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">5.3 </bdi>Validatie &amp; Certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">6.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">6.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhandeling"><bdi class="secno">6.3 </bdi>Klachtenafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-respec"><bdi class="secno">7. </bdi>Bijlage: Gebruik ReSpec</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#logius-profiel"><bdi class="secno">7.1 </bdi>Logius profiel</a></li><li class="tocline"><a class="tocxref" href="#literatuurverwijzingen"><bdi class="secno">7.2 </bdi>Literatuurverwijzingen</a></li><li class="tocline"><a class="tocxref" href="#links"><bdi class="secno">7.3 </bdi>Links</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-github-in-het-beheerproces"><bdi class="secno">8. </bdi>Bijlage: Gebruik GitHub in het beheerproces</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#publicatie-0"><bdi class="secno">8.1 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsvoorstellen"><bdi class="secno">8.2 </bdi>Wijzigingsvoorstellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#branches"><bdi class="secno">8.2.1 </bdi>Branches</a></li><li class="tocline"><a class="tocxref" href="#labels"><bdi class="secno">8.2.2 </bdi>Labels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#patches-0"><bdi class="secno">8.3 </bdi>Patches</a></li><li class="tocline"><a class="tocxref" href="#automatisering-en-scripts"><bdi class="secno">8.4 </bdi>Automatisering en scripts</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-versie-nummering-logius-standaarden"><bdi class="secno">9. </bdi>Bijlage: versie-nummering Logius standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioneringsmethodiek"><bdi class="secno">9.1 </bdi>Versioneringsmethodiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#patch-releases"><bdi class="secno">9.1.1 </bdi>Patch Releases</a></li><li class="tocline"><a class="tocxref" href="#minor-releases"><bdi class="secno">9.1.2 </bdi>Minor releases</a></li><li class="tocline"><a class="tocxref" href="#major-releases"><bdi class="secno">9.1.3 </bdi>Major Releases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toelichting-en-voorbeeld-regels"><bdi class="secno">9.2 </bdi>Toelichting en voorbeeld regels</a></li><li class="tocline"><a class="tocxref" href="#versie-overgangen"><bdi class="secno">9.3 </bdi>Versie overgangen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">10. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">11. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bijlagen"><bdi class="secno">1.1.1 </bdi>Bijlagen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling"><bdi class="secno">1.2 </bdi>Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nut"><bdi class="secno">1.2.1 </bdi>Nut</a></li><li class="tocline"><a class="tocxref" href="#werking"><bdi class="secno">1.2.2 </bdi>Werking</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2.3 </bdi>Status</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bomos"><bdi class="secno">1.3 </bdi>BOMOS</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">2.2 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governancestructuur"><bdi class="secno">2.2.1 </bdi>Governancestructuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-digikoppeling-community"><bdi class="secno">2.2.1.1 </bdi>De Digikoppeling community</a></li><li class="tocline"><a class="tocxref" href="#technisch-overleg"><bdi class="secno">2.2.1.2 </bdi>Technisch Overleg</a></li><li class="tocline"><a class="tocxref" href="#tactisch-strategisch-overleg-de-programmeringstafel"><bdi class="secno">2.2.1.3 </bdi>Tactisch/strategisch overleg: de programmeringstafel</a></li><li class="tocline"><a class="tocxref" href="#het-besluitvormend-en-strategisch-overleg-de-programmeringsraad-gdi"><bdi class="secno">2.2.1.4 </bdi>Het besluitvormend en strategisch overleg: De Programmeringsraad GDI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuurraad"><bdi class="secno">2.2.2 </bdi>Architectuurraad</a></li><li class="tocline"><a class="tocxref" href="#besluitvorming"><bdi class="secno">2.2.3 </bdi>Besluitvorming</a></li><li class="tocline"><a class="tocxref" href="#deelname"><bdi class="secno">2.2.4 </bdi>Deelname</a></li></ol></li><li class="tocline"><a class="tocxref" href="#financiering"><bdi class="secno">2.3 </bdi>Financiering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">3.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">3.2 </bdi>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#internationale-europese-en-nationale-standaardisatiegemeenschap"><bdi class="secno">3.2.1 </bdi>Internationale, Europese en nationale standaardisatiegemeenschap</a></li><li class="tocline"><a class="tocxref" href="#samenwerking-met-andere-beheerorganisaties"><bdi class="secno">3.2.2 </bdi>Samenwerking met andere beheerorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#rechtenbeleid"><bdi class="secno">3.3 </bdi>Rechtenbeleid</a></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a></li><li class="tocline"><a class="tocxref" href="#adoptie-en-erkenning"><bdi class="secno">3.5 </bdi>Adoptie en erkenning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#initiatie"><bdi class="secno">4.1 </bdi>Initiatie</a></li><li class="tocline"><a class="tocxref" href="#wensen-en-eisen"><bdi class="secno">4.2 </bdi>Wensen en Eisen</a></li><li class="tocline"><a class="tocxref" href="#uitvoering-en-ontwikkeling-wijzigingsproces"><bdi class="secno">4.3 </bdi>Uitvoering en ontwikkeling (Wijzigingsproces)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wijzigingen"><bdi class="secno">4.3.1 </bdi>Wijzigingen</a></li><li class="tocline"><a class="tocxref" href="#patches"><bdi class="secno">4.3.2 </bdi>Patches</a></li><li class="tocline"><a class="tocxref" href="#releases"><bdi class="secno">4.3.3 </bdi>Releases</a></li><li class="tocline"><a class="tocxref" href="#impact-van-wijzigingen-en-versienummering"><bdi class="secno">4.3.4 </bdi>Impact van wijzigingen en versienummering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#status-van-de-standaard"><bdi class="secno">4.4 </bdi>Status van de standaard</a></li><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">4.5 </bdi>Documentatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatieondersteuning"><bdi class="secno">5. </bdi>Implementatieondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opleiding-en-advies"><bdi class="secno">5.1 </bdi>Opleiding en advies</a></li><li class="tocline"><a class="tocxref" href="#helpdesk"><bdi class="secno">5.2 </bdi>Helpdesk</a></li><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">5.3 </bdi>Validatie &amp; Certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">6.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">6.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhandeling"><bdi class="secno">6.3 </bdi>Klachtenafhandeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-respec"><bdi class="secno">7. </bdi>Bijlage: Gebruik ReSpec</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#logius-profiel"><bdi class="secno">7.1 </bdi>Logius profiel</a></li><li class="tocline"><a class="tocxref" href="#literatuurverwijzingen"><bdi class="secno">7.2 </bdi>Literatuurverwijzingen</a></li><li class="tocline"><a class="tocxref" href="#links"><bdi class="secno">7.3 </bdi>Links</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-github-in-het-beheerproces"><bdi class="secno">8. </bdi>Bijlage: Gebruik GitHub in het beheerproces</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#publicatie-0"><bdi class="secno">8.1 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsvoorstellen"><bdi class="secno">8.2 </bdi>Wijzigingsvoorstellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#branches"><bdi class="secno">8.2.1 </bdi>Branches</a></li><li class="tocline"><a class="tocxref" href="#labels"><bdi class="secno">8.2.2 </bdi>Labels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#patches-0"><bdi class="secno">8.3 </bdi>Patches</a></li><li class="tocline"><a class="tocxref" href="#automatisering-en-scripts"><bdi class="secno">8.4 </bdi>Automatisering en scripts</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-versie-nummering-logius-standaarden"><bdi class="secno">9. </bdi>Bijlage: versie-nummering Logius standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioneringsmethodiek"><bdi class="secno">9.1 </bdi>Versioneringsmethodiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#patch-releases"><bdi class="secno">9.1.1 </bdi>Patch Releases</a></li><li class="tocline"><a class="tocxref" href="#minor-releases"><bdi class="secno">9.1.2 </bdi>Minor releases</a></li><li class="tocline"><a class="tocxref" href="#major-releases"><bdi class="secno">9.1.3 </bdi>Major Releases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toelichting-en-voorbeeld-regels"><bdi class="secno">9.2 </bdi>Toelichting en voorbeeld regels</a></li><li class="tocline"><a class="tocxref" href="#versie-overgangen"><bdi class="secno">9.3 </bdi>Versie overgangen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">10. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">11. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
     <section class="introductory"><h1>Documentbeheer</h1>
 <table class="simple">
 <thead>
@@ -430,7 +514,12 @@ gebaseerd op de principes uit de BOMOS standaard.</p>
 <section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-1-leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.1"></a></div>
 <p>De Digikoppeling standaarden zijn beschreven in een set van documenten.
 Deze set is als volgt opgebouwd:</p>
-<p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="images/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-opbouw-documentatie-digikoppeling">
+        <img src="images/DK_Specificatie_structuur.png" alt="Opbouw documentatie Digikoppeling">
+        <figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption>
+      </figure>
+    <p></p>
 <details>
     <summary>Tekstalternatief</summary>
 <ul>
@@ -558,7 +647,12 @@ Standaardisatie.</p>
 </section></section><section id="bomos"><div class="header-wrapper"><h3 id="x1-3-bomos"><bdi class="secno">1.3 </bdi>BOMOS</h3><a class="self-link" href="#bomos" aria-label="Permalink for Section 1.3"></a></div>
 <p>Het activiteitendiagram toont welke lagen het model onderscheidt en welke activiteiten daarbinnen onderscheiden worden. De lagen en de ondersteunende
 activiteiten worden elk in een hoofdstuk besproken.</p>
-<p><figure id="fig-bomos-activiteitendiagram"><img src="images/bomos_activiteiten.png" alt="BOMOS activiteitendiagram" title="BOMOS activiteitendiagram"><figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">BOMOS activiteitendiagram</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-bomos-activiteitendiagram">
+        <img src="images/bomos_activiteiten.png" alt="BOMOS activiteitendiagram">
+        <figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">BOMOS activiteitendiagram</span></figcaption>
+      </figure>
+    <p></p>
 <p>Voor meer details of BOMOS verwijzen we naar de documentatie: <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/">BOMOS, het fundament</a> en <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/">BOMOS, de verdieping</a></p>
 </section></section>
     <section id="strategie"><div class="header-wrapper"><h2 id="x2-strategie"><bdi class="secno">2. </bdi>Strategie</h2><a class="self-link" href="#strategie" aria-label="Permalink for Section 2."></a></div>
@@ -590,7 +684,12 @@ Generieke Digitale Infrastructuur (GDI). De GDI geeft richting aan het Meerjaren
 is een governance opgesteld waarin de stakeholders van Logius richting
 geven aan de ontwikkelingen bij Logius. Standaardenbeheer sluit aan op
 deze governance.</p>
-<p><figure id="fig-mido-governance"><img src="images/MIDOgovernance.png" alt="MIDO governance" title="MIDO governance"><figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">MIDO governance</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-mido-governance">
+        <img src="images/MIDOgovernance.png" alt="MIDO governance">
+        <figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">MIDO governance</span></figcaption>
+      </figure>
+    <p></p>
 <p>De MIDO governance kent vier <em>programmeringstafels</em> op de thema's <em>Gegevensuitwisseling</em>, <em>Infrastructuur</em>, <em>Interactie</em> en <em>Toegang</em>. Op de tafels wordt de ontwikkeling en prioritering van de door Logius beheerde stelsels, standaarden en diensten besproken met de stakeholders.</p>
 <section id="governancestructuur"><div class="header-wrapper"><h4 id="x2-2-1-governancestructuur"><bdi class="secno">2.2.1 </bdi>Governancestructuur</h4><a class="self-link" href="#governancestructuur" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>Digikoppeling sluit aan op de MIDO governance op tactisch en strategisch
@@ -628,7 +727,7 @@ de rol van tactisch overleg.
 <a href="https://github.com/Logius-standaarden/Overleg/tree/main/Programmeringstafels/Gegevensuitwisseling">Voor de programmeringstafel maakt Logius een deelagenda over standaarden</a>
 die deel uitmaakt van de agenda van het overleg.</p>
 </section><section id="het-besluitvormend-en-strategisch-overleg-de-programmeringsraad-gdi"><div class="header-wrapper"><h5 id="x2-2-1-4-het-besluitvormend-en-strategisch-overleg-de-programmeringsraad-gdi"><bdi class="secno">2.2.1.4 </bdi>Het besluitvormend en strategisch overleg: De Programmeringsraad GDI</h5><a class="self-link" href="#het-besluitvormend-en-strategisch-overleg-de-programmeringsraad-gdi" aria-label="Permalink for Section 2.2.1.4"></a></div>
-<p>De MIDO structuur biedt de mogelijkheid bieden om de
+<p>De MIDO structuur biedt de mogelijkheid om de
 Programmeringsraad GDI te laten besluiten over de standaarden.
 Wijzigingen worden indien nodig ter informatie aan het Overheidsbreed 
 Beleidsoverleg Digitale Overheid (OBDO) voorgelegd.</p>
@@ -658,7 +757,7 @@ besloten worden.</p>
 <tr>
 <td>Technisch Overleg (Operationeel, 4x per jaar)</td>
 <td>Inhoud - afstemmen</td>
-<td>1. Inhoudelijk ontwikkelen van standaard onderdelen en bijbehorende documentatie. <br>2. Voorbereiden van de release- planning. <br>. Prioriteiten stellen voor de ontwikkeling, roadmap van nieuwe releases van de standaarden.<br> 4. Goedkeuring van aanpassingen op de standaard.<br> 5. Advies aan programmeringstafel en -raad over wijzingsvoorstellen.</td>
+<td>1. Inhoudelijk ontwikkelen van standaard onderdelen en bijbehorende documentatie. <br>2. Voorbereiden van de release- planning. <br>3. Prioriteiten stellen voor de ontwikkeling, roadmap van nieuwe releases van de standaarden.<br> 4. Goedkeuring van aanpassingen op de standaard.<br> 5. Advies aan programmeringstafel en -raad over wijzingsvoorstellen.</td>
 <td>1. Analyseren, ontwerpen en uitwerken van specificaties. <br>2. Volgen en beïnvloeden van aanpalende standaarden. <br>3. Organiseren bijeenkomsten. <br>4. Opstellen en verspreiden notulen. <br>5. Beschikbaar stellen specificaties.</td>
 </tr>
 <tr>
@@ -675,7 +774,7 @@ besloten worden.</p>
 </tr>
 </tbody></table>
 </section></section><section id="architectuurraad"><div class="header-wrapper"><h4 id="x2-2-2-architectuurraad"><bdi class="secno">2.2.2 </bdi>Architectuurraad</h4><a class="self-link" href="#architectuurraad" aria-label="Permalink for Section 2.2.2"></a></div>
-<p>De architectuurraad GDI van de MIDO governance maakt geen deel uit van het
+<p>De Architectuurraad GDI van de MIDO governance maakt geen deel uit van het
 Digikoppeling beheerproces. Wel kan de beheerder advies vragen over een
 wijzigingsvoorstel. Dit kan gevraagd worden op eigen initiatief of op
 initiatief van het Technisch Overleg)</p>
@@ -743,7 +842,12 @@ de ontwikkeling, de implementatie en het gebruik van de
 Digikoppeling-standaard. Dit geldt dus ook voor het beheer en
 onderhoud ervan. In onderstaand schema zijn de belanghebbenden
 aangegeven.</p>
-<p><figure id="fig-belang-bij-digikoppeling"><img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling" title="Belang bij DIgikoppeling"><figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Belang bij DIgikoppeling</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-belang-bij-digikoppeling">
+        <img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling">
+        <figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Belang bij DIgikoppeling</span></figcaption>
+      </figure>
+    <p></p>
 <p>De Digikoppeling standaard wordt in stand gehouden en doorontwikkeld
 door participatie van de belanghebbenden. Ruwweg zijn drie rollen te
 onderkennen, de vraagkant, de aanbodkant en de ondersteuningskant:</p>
@@ -774,7 +878,7 @@ webservice standaarden.</p>
 <p>De NORA maakt geen deel uit van het in dit document beschreven
 beheer van de Digikoppeling-standaard, maar bevat wel belangrijke
 informatie over Digikoppeling en haar toepassing.</p>
-<p>De MIDO governance kent een <a href="#architectuurboard" class="respec-offending-element" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document">Architectuurboard</a>.
+<p>De MIDO governance kent een <a href="#architectuurboard">Architectuurboard</a>.
 Dit gremium kan om advies worden gevraagd over wijzigingsvoorstellen.</p>
 <p>De Digikoppeling architectuur is beschreven in een apart document [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling architectuur" title="Digikoppeling Architectuur">Digikoppeling Architectuur</a></cite>].</p>
 <section id="internationale-europese-en-nationale-standaardisatiegemeenschap"><div class="header-wrapper"><h4 id="x3-2-1-internationale-europese-en-nationale-standaardisatiegemeenschap"><bdi class="secno">3.2.1 </bdi>Internationale, Europese en nationale standaardisatiegemeenschap</h4><a class="self-link" href="#internationale-europese-en-nationale-standaardisatiegemeenschap" aria-label="Permalink for Section 3.2.1"></a></div>
@@ -828,7 +932,12 @@ met andere standaardenorganisaties binnen het BOMOS <em>Klankbordoverleg</em>.</
 </section></section><section id="rechtenbeleid"><div class="header-wrapper"><h3 id="x3-3-rechtenbeleid"><bdi class="secno">3.3 </bdi>Rechtenbeleid</h3><a class="self-link" href="#rechtenbeleid" aria-label="Permalink for Section 3.3"></a></div>
 <p>Dit werk is gelicenseerd onder een Creative Commons Naamsvermelding 3.0
 Unported licentie.</p>
-<p><figure id="fig-creative-commons-naamsvermelding-3-0-unported-licentie"><img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie" title="Creative Commons Naamsvermelding 3.0 Unported licentie"><figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Creative Commons Naamsvermelding 3.0 Unported licentie</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-creative-commons-naamsvermelding-3-0-unported-licentie">
+        <img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie">
+        <figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Creative Commons Naamsvermelding 3.0 Unported licentie</span></figcaption>
+      </figure>
+    <p></p>
 <p>Meer informatie over de precieze voorwaarden van deze licentie vindt u
 op de website van Creative Commons <a href="http://creativecommons.nl/">http://creativecommons.nl/</a> en
 specifiek voor deze licentie een samenvatting onder
@@ -909,7 +1018,12 @@ doorgevoerd en moeten worden goedgekeurd door het Technisch Overleg en,
 afhankelijk van de impact van een nieuwe release door een programmeringstafel.
 Een nieuwe release wordt bekrachtigd door het besluitvormend overleg.</p>
 <section id="wijzigingen"><div class="header-wrapper"><h4 id="x4-3-1-wijzigingen"><bdi class="secno">4.3.1 </bdi>Wijzigingen</h4><a class="self-link" href="#wijzigingen" aria-label="Permalink for Section 4.3.1"></a></div>
-<p><figure id="fig-behandeling-van-een-wijzigingsvoorstel-in-het-beheerproces"><img src="images/Beheerproces.png" alt="Behandeling van een wijzigingsvoorstel in het beheerproces" title="Behandeling van een wijzigingsvoorstel in het beheerproces"><figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Behandeling van een wijzigingsvoorstel in het beheerproces</span></figcaption></figure></p>
+<p>
+      </p><figure id="fig-behandeling-van-een-wijzigingsvoorstel-in-het-beheerproces">
+        <img src="images/Beheerproces.png" alt="Behandeling van een wijzigingsvoorstel in het beheerproces">
+        <figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Behandeling van een wijzigingsvoorstel in het beheerproces</span></figcaption>
+      </figure>
+    <p></p>
 <ol>
 <li>Acceptatie van een wijzigingsvoorstel.</li>
 <li>Labelen van een voorstel als groot/klein, aangeven van status.</li>
@@ -1142,7 +1256,6 @@ de indiener.</p>
 <p>De indiener van de klacht krijgt zo spoedig mogelijk en altijd terugkoppeling
 over de voortgang van en beslissing over zijn klacht.</p>
 </section></section>
-
     <section id="bijlage-gebruik-respec"><div class="header-wrapper"><h2 id="x7-bijlage-gebruik-respec"><bdi class="secno">7. </bdi>Bijlage: Gebruik ReSpec</h2><a class="self-link" href="#bijlage-gebruik-respec" aria-label="Permalink for Section 7."></a></div>
 <p>Voor publicatie van de standaarden die bij Logius en beheer zijn wordt
 gebruik gemaakt van ReSpec. ReSpec is een applicatie om technische
@@ -1337,21 +1450,8 @@ In het onderstaande voorbeeld zien wij een standaard van 1.0.0 naar 1.1.0 ontwik
 <p>De branch main is de huidig gepubliceerde versie en de branch develop is de werkversie. Dit wordt als documentstatus aangegeven. In de main branch staat dus een <em>vastgestelde versie</em>. Het uitwerken van een RFC gebeurt in een afsplitsing van de develop branch waarna het terug de develop branch invloeit. In het voorbeeld schema leidde RFC1 tot de eerste release candidate (rc) van versie 1.1.0 van de standaard. Wanneer de werkversie gereed en akkoord is als release stromen de wijzigingen naar de branch main. Na overgang van de develop branch naar de gepubliceerde main branch moet de status van het document worden aangepast in de main branch.</p>
 <p>Het kan voorkomen dat gewenst wordt vlug een kleine (niet inhoudelijke) aanpassing aan de gepubliceerde versie te maken. Om bijvoorbeeld een spelfout vlug te corrigeren kan deze aanpassing op main i.p.v. develop worden uitgevoerd. In het voorbeeld leidde een hotfix tot een release van versie 1.0.1 waarna de aanpassing naar de werkversie geduwd wordt.</p>
 </aside></section></section>
-
-    
-    
-    
-    
-
-    
-    
-    <section id="conformance"><div class="header-wrapper"><h2 id="x10-conformiteit"><bdi class="secno">10. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 10."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
-        
-    </section>
-
-    <section id="tof">
-        
-    <div class="header-wrapper"><h2 id="x11-lijst-met-figuren"><bdi class="secno">11. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 11."></a></div><ul class="tof">
+    <section id="conformance"><div class="header-wrapper"><h2 id="x10-conformiteit"><bdi class="secno">10. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 10."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
+    <section id="tof"><div class="header-wrapper"><h2 id="x11-lijst-met-figuren"><bdi class="secno">11. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 11."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-opbouw-documentatie-digikoppeling">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></a>
   </li><li class="tofline">
@@ -1368,27 +1468,9 @@ In het onderstaande voorbeeld zien wij een standaard van 1.0.0 naar 1.1.0 ontwik
     <a class="tocxref" href="#Gitflow">Figuur <bdi class="figno">7</bdi> <span class="fig-title">Gitflow</span></a>
   </li>
       </ul></section>
-
     
-
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-
-
-
-
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div>
-      <p>Referenties</p>
-      
-    <section id="normatieve-referenties">
+  
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-digikoppeling architectuur">[Digikoppeling Architectuur]</dt><dd>
       <a href="https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html"><cite>Digikoppeling Architectuur</cite></a>. Logius Standaarden.  Logius. 11 april 2022. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html">https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html</a>
@@ -1628,4 +1710,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel" style="background-color: #32a852;">Logius Werkafspraak - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
