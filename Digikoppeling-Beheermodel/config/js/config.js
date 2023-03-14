@@ -26,5 +26,5 @@ var respecConfig = {
   publishVersion: "1.7",
   shortName: "beheer",
   specStatus: "WV",
-  specType: "WA",
+  specType: "WA"
 };
