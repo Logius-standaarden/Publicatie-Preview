@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.6.0">
+<meta name="generator" content="ReSpec 32.7.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -29,9 +29,8 @@ dfn{cursor:pointer}
   
   
 <script>
-   respecConfig = {...organisationConfig, ...respecConfig}; if (respecConfig.specStatus.toUpperCase() == "WV") {respecConfig.thisVersion = respecConfig.edDraftURI;}
+   respecConfig = {...organisationConfig, ...respecConfig};
   </script>
-  
   
 <script>
    document.title = respecConfig.title
@@ -145,9 +144,6 @@ ul.index code{color:inherit}
       "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "edDraftURI": [
-    "github"
-  ],
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
@@ -210,50 +206,6 @@ ul.index code{color:inherit}
       "al": "Algemeen",
       "bd": "Beheerdocumentatie",
       "bp": "Best practice"
-    }
-  },
-  "specTypeText": {
-    "en": {
-      "no": "Norm",
-      "st": "Standard",
-      "im": "Information model",
-      "pr": "Guideline",
-      "hr": "Guide",
-      "wa": "Proposed recommendation",
-      "al": "General",
-      "bd": "Governance documentation",
-      "bp": "Best practice"
-    },
-    "nl": {
-      "no": "Norm",
-      "st": "Standaard",
-      "im": "Informatiemodel",
-      "pr": "Praktijkrichtlijn",
-      "hr": "Handreiking",
-      "wa": "Werkafspraak",
-      "al": "Algemeen",
-      "bd": "Beheerdocumentatie",
-      "bp": "Best practice"
-    }
-  },
-  "specStatusText": {
-    "en": {
-      "wv": "Draft",
-      "cv": "Recommendation",
-      "vv": "Proposed recommendation",
-      "def": "Definitive version",
-      "basis": "Document",
-      "eo": "Outdated version",
-      "tg": "Rescinded version"
-    },
-    "nl": {
-      "wv": "Werkversie",
-      "cv": "Consultatieversie",
-      "vv": "Versie ter vaststelling",
-      "def": "Vastgestelde versie",
-      "basis": "Document",
-      "eo": "Verouderde versie",
-      "tg": "Teruggetrokken versie"
     }
   },
   "sotdText": {
@@ -399,15 +351,6 @@ ul.index code{color:inherit}
       "publisher": "Logius",
       "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
     },
-    "Digikoppeling Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
-      "date": "december 2020",
-      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/snapshot.html",
-      "publisher": "Logius",
-      "title": "Digikoppeling Architectuur"
-    },
     "Digikoppeling Beheermodel": {
       "date": "Oktober 2017",
       "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
@@ -488,9 +431,6 @@ ul.index code{color:inherit}
       "title": "Digikoppeling REST API profiel"
     },
     "Digikoppeling-Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
       "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
       "publisher": "Logius",
       "title": "Digikoppeling Architectuur"
@@ -846,6 +786,15 @@ ul.index code{color:inherit}
       "href": "https://www.iso.org/standard/43796.html",
       "publisher": "ISO",
       "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
     }
   },
   "alternateFormats": [
@@ -895,7 +844,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="06/24/2022">16 maart 2023</time>
+      <time class="dt-published" datetime="2022-06-24">06 april 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -903,7 +852,7 @@ ul.index code{color:inherit}
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/cloudevents-nl-guidelines">https://gitdocumentatie.logius.nl/publicatie/notificatieservices/cloudevents-nl-guidelines</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/cloudevents-nl-guidelines/">https://github.com/logius-standaarden/cloudevents-nl-guidelines/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/">https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/</a></dd>
       
       
       
@@ -946,7 +895,6 @@ ul.index code{color:inherit}
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><h1>Abstract</h1>
 </section>
   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents"><bdi class="secno">1. </bdi>Guideline for the use of the HTTP Protocol Binding for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention"><bdi class="secno">1.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations"><bdi class="secno">1.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">1.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">1.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-json-event-format-for-cloudevents"><bdi class="secno">2. </bdi>Guideline for the use of the JSON Event Format for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-0"><bdi class="secno">2.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations-0"><bdi class="secno">2.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-0"><bdi class="secno">2.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-0"><bdi class="secno">2.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents"><bdi class="secno">3. </bdi>Guideline for the use of the Webhook pattern for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-1"><bdi class="secno">3.1 </bdi>Summary with points for attention</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#delivering-notifications"><bdi class="secno">3.1.1 </bdi>Delivering notifications</a></li><li class="tocline"><a class="tocxref" href="#authorization"><bdi class="secno">3.1.2 </bdi>Authorization</a></li><li class="tocline"><a class="tocxref" href="#abuse-protection"><bdi class="secno">3.1.3 </bdi>Abuse protection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#recommendations-1"><bdi class="secno">3.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-1"><bdi class="secno">3.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-1"><bdi class="secno">3.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li></ol></nav>
-  
   <section id="guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents"><div class="header-wrapper"><h2 id="x1-guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents"><bdi class="secno">1. </bdi>Guideline for the use of the HTTP Protocol Binding for CloudEvents</h2><a class="self-link" href="#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents" aria-label="Permalink for Section 1."></a></div>
 <p>The CloudEvent-NL message format can be used when using different formats and protocols and patterns. In order to be able to use the GOV-NL profile properly in practice, agreements must also be made when and in what way a certain format, protocol or pattern is used. </p>
 <p>The Serverless Working Group has described how the HTTP protocol can be used in a standardized way in combination with the CloudEvents message format: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a>. The specification defines how the elements defined in the CloudEvents specification are to be used in HTTP 1.1 requests and response messages.</p>
@@ -1061,7 +1009,6 @@ Content-Length: nnnn
 <li><a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents - Version 1.0.1</a></li>
 </ul>
 </section></section>
-  --&gt;
   <section id="guideline-for-the-use-of-the-json-event-format-for-cloudevents"><div class="header-wrapper"><h2 id="x2-guideline-for-the-use-of-the-json-event-format-for-cloudevents"><bdi class="secno">2. </bdi>Guideline for the use of the JSON Event Format for CloudEvents</h2><a class="self-link" href="#guideline-for-the-use-of-the-json-event-format-for-cloudevents" aria-label="Permalink for Section 2."></a></div>
 <p>The CloudEvent-NL message format can be used when using different formats and protocols and patterns. In order to be able to use the GOV-NL profile properly in practice, agreements must also be made when and in what way a certain format, protocol or pattern is used. </p>
 <p>The Serverless Working Group has described how the JavaScript Object Notation (JSON) Data Interchange Format can be used in a standardized way in combination with the CloudEvents message format: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents</a>.</p>
@@ -1141,7 +1088,6 @@ Content-Length: nnnn
 <li><a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents - Version 1.0.1</a></li>
 </ul>
 </section></section>
-  --&gt;
   <section id="guideline-for-the-use-of-the-webhook-pattern-for-cloudevents"><div class="header-wrapper"><h2 id="x3-guideline-for-the-use-of-the-webhook-pattern-for-cloudevents"><bdi class="secno">3. </bdi>Guideline for the use of the Webhook pattern for CloudEvents</h2><a class="self-link" href="#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents" aria-label="Permalink for Section 3."></a></div>
 <p>The CloudEvent-NL message format can be used when using different formats and protocols and patterns. In order to be able to use the GOV-NL profile properly in practice, agreements must also be made when and in what way a certain format, protocol or pattern is used. </p>
 <p>The Serverless Working Group has described how the Webhook pattern can be used in a standardized way in combination with the CloudEvents message format: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a>.</p>
