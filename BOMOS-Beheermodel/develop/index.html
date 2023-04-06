@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.6.0">
+<meta name="generator" content="ReSpec 32.7.1">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -41,7 +41,7 @@ dfn{cursor:pointer}
   
   
 <script>
-   respecConfig = {...organisationConfig, ...respecConfig}; if (respecConfig.specStatus.toUpperCase() == "WV") {respecConfig.thisVersion = respecConfig.edDraftURI;}
+   respecConfig = {...organisationConfig, ...respecConfig};
   </script>
   
 <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
@@ -123,9 +123,6 @@ dd{margin-left:0}
       "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "edDraftURI": [
-    "github"
-  ],
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
@@ -133,7 +130,12 @@ dd{margin-left:0}
     "shortName"
   ],
   "thisVersion": [
-    "github"
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
   ],
   "prevVersion": [
     "nl_organisationPublishURL",
@@ -183,50 +185,6 @@ dd{margin-left:0}
       "al": "Algemeen",
       "bd": "Beheerdocumentatie",
       "bp": "Best practice"
-    }
-  },
-  "specTypeText": {
-    "en": {
-      "no": "Norm",
-      "st": "Standard",
-      "im": "Information model",
-      "pr": "Guideline",
-      "hr": "Guide",
-      "wa": "Proposed recommendation",
-      "al": "General",
-      "bd": "Governance documentation",
-      "bp": "Best practice"
-    },
-    "nl": {
-      "no": "Norm",
-      "st": "Standaard",
-      "im": "Informatiemodel",
-      "pr": "Praktijkrichtlijn",
-      "hr": "Handreiking",
-      "wa": "Werkafspraak",
-      "al": "Algemeen",
-      "bd": "Beheerdocumentatie",
-      "bp": "Best practice"
-    }
-  },
-  "specStatusText": {
-    "en": {
-      "wv": "Draft",
-      "cv": "Recommendation",
-      "vv": "Proposed recommendation",
-      "def": "Definitive version",
-      "basis": "Document",
-      "eo": "Outdated version",
-      "tg": "Rescinded version"
-    },
-    "nl": {
-      "wv": "Werkversie",
-      "cv": "Consultatieversie",
-      "vv": "Versie ter vaststelling",
-      "def": "Vastgestelde versie",
-      "basis": "Document",
-      "eo": "Verouderde versie",
-      "tg": "Teruggetrokken versie"
     }
   },
   "sotdText": {
@@ -372,15 +330,6 @@ dd{margin-left:0}
       "publisher": "Logius",
       "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
     },
-    "Digikoppeling Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
-      "date": "december 2020",
-      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/snapshot.html",
-      "publisher": "Logius",
-      "title": "Digikoppeling Architectuur"
-    },
     "Digikoppeling Beheermodel": {
       "date": "Oktober 2017",
       "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
@@ -461,9 +410,6 @@ dd{margin-left:0}
       "title": "Digikoppeling REST API profiel"
     },
     "Digikoppeling-Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
       "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
       "publisher": "Logius",
       "title": "Digikoppeling Architectuur"
@@ -819,6 +765,15 @@ dd{margin-left:0}
       "href": "https://www.iso.org/standard/43796.html",
       "publisher": "ISO",
       "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
     }
   },
   "alternateFormats": [
@@ -858,22 +813,22 @@ dd{margin-left:0}
   "specType": "HR"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry informative"><div class="head">
+ <body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">BOMOS Beheermodel</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="06/01/2022"></time>
+      <time class="dt-published" datetime="2022-06-01">06 april 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://github.com/logius-standaarden/bomos-beheermodel/">https://github.com/logius-standaarden/bomos-beheermodel/</a>
+              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/0.5">https://gitdocumentatie.logius.nl/publicatie/bomos/beheer/0.5</a>
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/beheer">https://gitdocumentatie.logius.nl/publicatie/bomos/beheer</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/bomos-beheermodel/">https://github.com/logius-standaarden/bomos-beheermodel/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/BOMOS-Beheermodel/">https://logius-standaarden.github.io/BOMOS-Beheermodel/</a></dd>
       
       
       
@@ -1640,6 +1595,7 @@ In het onderstaande voorbeeld zien wij een standaard van 1.0.0 naar 1.1.0 ontwik
 <p>Het kan voorkomen dat gewenst wordt vlug een kleine (niet inhoudelijke) aanpassing aan de gepubliceerde versie te maken. Om bijvoorbeeld een spelfout vlug te corrigeren kan deze aanpassing op main i.p.v. develop worden uitgevoerd. In het voorbeeld leidde een hotfix tot een release van versie 1.0.1 waarna de aanpassing naar de werkversie geduwd wordt.</p>
 </aside></section></section>
  
+
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-rfc7763">[RFC7763]</dt><dd>
