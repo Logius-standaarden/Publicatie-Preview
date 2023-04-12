@@ -52,9 +52,8 @@ dfn{cursor:pointer}
   
   
 <script>
-   respecConfig = {...organisationConfig, ...respecConfig}; if (respecConfig.specStatus.toUpperCase() == "WV") {respecConfig.thisVersion = respecConfig.edDraftURI;}
+   respecConfig = {...organisationConfig, ...respecConfig};
   </script>
-  
   
 <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
   
@@ -143,9 +142,6 @@ dd{margin-left:0}
       "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "edDraftURI": [
-    "github"
-  ],
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
@@ -153,7 +149,12 @@ dd{margin-left:0}
     "shortName"
   ],
   "thisVersion": [
-    "github"
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
   ],
   "prevVersion": [
     "nl_organisationPublishURL",
@@ -348,15 +349,6 @@ dd{margin-left:0}
       "publisher": "Logius",
       "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance"
     },
-    "Digikoppeling Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
-      "date": "december 2020",
-      "href": "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/snapshot.html",
-      "publisher": "Logius",
-      "title": "Digikoppeling Architectuur"
-    },
     "Digikoppeling Beheermodel": {
       "date": "Oktober 2017",
       "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
@@ -437,9 +429,6 @@ dd{margin-left:0}
       "title": "Digikoppeling REST API profiel"
     },
     "Digikoppeling-Architectuur": {
-      "authors": [
-        "Logius Centrum voor standaarden"
-      ],
       "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
       "publisher": "Logius",
       "title": "Digikoppeling Architectuur",
@@ -850,15 +839,15 @@ dd{margin-left:0}
     <h2>
       Logius Werkafspraak<br>
       Werkversie
-      <time class="dt-published" datetime="2022-06-01">29 maart 2023</time>
+      <time class="dt-published" datetime="2022-06-01">12 april 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://github.com/logius-standaarden/digikoppeling-beheermodel/">https://github.com/logius-standaarden/digikoppeling-beheermodel/</a>
+              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.7">https://gitdocumentatie.logius.nl/publicatie/dk/beheer/1.7</a>
             </dd><dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beheer">https://gitdocumentatie.logius.nl/publicatie/dk/beheer</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/digikoppeling-beheermodel/">https://github.com/logius-standaarden/digikoppeling-beheermodel/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Beheermodel/">https://logius-standaarden.github.io/Digikoppeling-Beheermodel/</a></dd>
       
       
       
@@ -1306,7 +1295,7 @@ deze zeer kleine wijzigingen aangeduid als <em>patch releases</em>.</p>
 </section><section id="deelname"><div class="header-wrapper"><h4 id="x2-2-4-deelname"><bdi class="secno">2.2.4 </bdi>Deelname</h4><a class="self-link" href="#deelname" aria-label="Permalink for Section 2.2.4"></a></div>
 <p>Uitbreidingen en aanpassingen in de Digikoppeling standaard komen tot stand door
 participatie van de verschillende belanghebbenden. Belanghebbenden
-kunnen op vier manieren participeren aan het wijzigings- en
+kunnen op vijf manieren participeren aan het wijzigings- en
 besluitvormingsproces:</p>
 <ol>
 <li>Als lid van de Community. Omdat Digikoppeling open beheerd wordt
@@ -1328,6 +1317,7 @@ uitgenodigd.</li>
 </ol>
 </li>
 <li>Als lid van de Programmeringsraad GDI.</li>
+<li>Als lid van het OBDO.</li>
 </ol>
 <p>Personen/partijen die willen deelnemen aan het Technisch Overleg
 kunnen contact opnemen met Logius waarin zij aangeven wat hun belang is
@@ -1350,7 +1340,7 @@ onderhoud ervan. In onderstaand schema zijn de belanghebbenden
 aangegeven.</p>
 <p>
       </p><figure id="fig-belang-bij-digikoppeling">
-        <img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling" height="929" width="1451">
+        <img src="media/DK_belang_bij_digikoppeling.png" alt="Belang bij DIgikoppeling">
         <figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Belang bij DIgikoppeling</span></figcaption>
       </figure>
     <p></p>
@@ -1443,7 +1433,7 @@ met andere standaardenorganisaties binnen het BOMOS <em>Klankbordoverleg</em>.</
 Unported licentie.</p>
 <p>
       </p><figure id="fig-creative-commons-naamsvermelding-3-0-unported-licentie">
-        <img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie" height="36" width="101">
+        <img src="media/CC_Logo3.0.png" alt="Creative Commons Naamsvermelding 3.0 Unported licentie">
         <figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Creative Commons Naamsvermelding 3.0 Unported licentie</span></figcaption>
       </figure>
     <p></p>
@@ -1981,11 +1971,12 @@ In het onderstaande voorbeeld zien wij een standaard van 1.0.0 naar 1.1.0 ontwik
       </ul></section>
   
  
+
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div>
   <section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-digikoppeling-architectuur">[Digikoppeling-Architectuur]</dt><dd>
-      <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/"><cite>Digikoppeling Architectuur</cite></a>. Logius Centrum voor standaarden.  Logius. URL: <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/">https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/</a>
+      <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/"><cite>Digikoppeling Architectuur</cite></a>.  Logius. URL: <a href="https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/">https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/</a>
     </dd><dt id="bib-ebxml-msg">[EBXML-MSG]</dt><dd>
       <a href="https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf"><cite>OASIS ebXML Message Service Specification</cite></a>. Ian Jones; Brian Gibb; David Fischer. 1 April 2002. URL: <a href="https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf">https://www.oasis-open.org/committees/download.php/272/ebMS_v2_0.pdf</a>
     </dd><dt id="bib-rfc1945">[rfc1945]</dt><dd>
