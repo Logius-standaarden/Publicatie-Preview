@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.6.0">
+<meta name="generator" content="ReSpec 32.7.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -32,7 +32,7 @@ dfn{cursor:pointer}
   
   
 <script>
-   respecConfig = {...organisationConfig, ...respecConfig}; if (respecConfig.specStatus.toUpperCase() == "WV") {respecConfig.thisVersion = respecConfig.edDraftURI;}
+   respecConfig = {...organisationConfig, ...respecConfig};
   </script>
   
  
@@ -112,9 +112,6 @@ dd{margin-left:0}
       "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "edDraftURI": [
-    "github"
-  ],
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
@@ -179,50 +176,6 @@ dd{margin-left:0}
       "bp": "Best practice"
     }
   },
-  "specTypeText": {
-    "en": {
-      "no": "Norm",
-      "st": "Standard",
-      "im": "Information model",
-      "pr": "Guideline",
-      "hr": "Guide",
-      "wa": "Proposed recommendation",
-      "al": "General",
-      "bd": "Governance documentation",
-      "bp": "Best practice"
-    },
-    "nl": {
-      "no": "Norm",
-      "st": "Standaard",
-      "im": "Informatiemodel",
-      "pr": "Praktijkrichtlijn",
-      "hr": "Handreiking",
-      "wa": "Werkafspraak",
-      "al": "Algemeen",
-      "bd": "Beheerdocumentatie",
-      "bp": "Best practice"
-    }
-  },
-  "specStatusText": {
-    "en": {
-      "wv": "Draft",
-      "cv": "Recommendation",
-      "vv": "Proposed recommendation",
-      "def": "Definitive version",
-      "basis": "Document",
-      "eo": "Outdated version",
-      "tg": "Rescinded version"
-    },
-    "nl": {
-      "wv": "Werkversie",
-      "cv": "Consultatieversie",
-      "vv": "Versie ter vaststelling",
-      "def": "Vastgestelde versie",
-      "basis": "Document",
-      "eo": "Verouderde versie",
-      "tg": "Teruggetrokken versie"
-    }
-  },
   "sotdText": {
     "nl": {
       "sotd": "Status van dit document",
@@ -266,27 +219,566 @@ dd{margin-left:0}
     }
   },
   "localBiblio": {
-    "SemVer": {
-      "href": "https://semver.org",
-      "title": "Semantic Versioning 2.0.0",
+    "ADR": {
       "authors": [
-        "T. Preston-Werner"
+        "Jasper Roes",
+        "Joost Farla"
       ],
-      "date": "June 2013"
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)"
     },
-    "Digikoppeling Architectuur": {
-      "href": "https://logius-standaarden.github.io/Digikoppeling-Architectuur/snapshot.html",
-      "title": "Digikoppeling Architectuur",
+    "ADR-ext": {
       "authors": [
-        "Logius Standaarden"
+        "Jasper Roes",
+        "Linda van den Brink"
       ],
-      "date": "11 april 2022",
-      "publisher": "Logius"
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "API Design Rules": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "date": "Juli 2020",
+      "href": "https://publicatie.centrumvoorstandaarden.nl/api/adr/",
+      "publisher": "Logius",
+      "title": "API Design Rules (Nederlandse API Strategie IIa)",
+      "id": "api design rules"
+    },
+    "API Design Rules-Extensions": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer, R. Holz, P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+    },
+    "Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "PkIoverheid certificaten"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "Compliance": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "Digikoppeling Actuele Documentatie": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Overzicht Actuele Documentatie en Compliance",
+      "id": "digikoppeling actuele documentatie"
+    },
+    "Digikoppeling Beheermodel": {
+      "date": "Oktober 2017",
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "publisher": "Logius",
+      "title": "Beheermodel en releasebeleid Digikoppeling v1.5",
+      "id": "digikoppeling beheermodel"
+    },
+    "Digikoppeling Best Practices ebMS2": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2",
+      "id": "digikoppeling best practices ebms2"
+    },
+    "Digikoppeling Best Practices Grote Berichten": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten",
+      "id": "digikoppeling best practices grote berichten"
+    },
+    "Digikoppeling Best Practices WUS": {
+      "date": "2019",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS",
+      "id": "digikoppeling best practices wus"
+    },
+    "Digikoppeling Beveiligingsdocument": {
+      "date": "2021",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
+      "id": "digikoppeling beveiligingsdocument"
+    },
+    "Digikoppeling Compliance Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening",
+      "id": "digikoppeling compliance voorziening"
+    },
+    "Digikoppeling Gebruik Certificaten": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Digikoppeling Gebruik en achtergrond certificaten",
+      "id": "digikoppeling gebruik certificaten"
+    },
+    "Digikoppeling Identificatie-Authenticatie": {
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie",
+      "id": "digikoppeling identificatie-authenticatie"
+    },
+    "Digikoppeling Koppelvlakstandaard ebMS2": {
+      "date": "mei 2019",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2",
+      "id": "digikoppeling koppelvlakstandaard ebms2"
+    },
+    "Digikoppeling Koppelvlakstandaard Grote Berichten": {
+      "date": "september 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten",
+      "id": "digikoppeling koppelvlakstandaard grote berichten"
+    },
+    "Digikoppeling Koppelvlakstandaard REST API": {
+      "date": "februari 2021",
+      "href": "https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Restful API Profiel (Concept)",
+      "id": "digikoppeling koppelvlakstandaard rest api"
+    },
+    "Digikoppeling Koppelvlakstandaard WUS": {
+      "date": "oktober 2020",
+      "href": "https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2",
+      "id": "digikoppeling koppelvlakstandaard wus"
+    },
+    "Digikoppeling Logius website": {
+      "href": "https://logius.nl/diensten/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Digikoppeling REST API profiel": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling REST API profiel"
+    },
+    "Digikoppeling-Architectuur": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "Digikoppeling-Beveiligingsdocument": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "Digikoppeling-Cert": {
+      "href": "http://www.logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruik en achtergrond van Digikoppeling certificaten"
+    },
+    "Digikoppeling-Compliance-Voorziening": {
+      "href": "https://portaal.digikoppeling.nl",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "Digikoppeling-Identificatie-Authenticatie": {
+      "href": "https://publicatie.centrumvoorstandaarden.nl/dk/idauth",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebXML CPPA V 2.0": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "Eisen Pkioverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "Gebruiksvoorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "Logius": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
     },
     "Logius website": {
       "href": "https://logius.nl/digikoppeling",
-      "title": "Logius Digikoppeling",
-      "publisher": "Logius"
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "Logius-website": {
+      "href": "https://logius.nl/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius Digikoppeling"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging",
+      "id": "no-reliable-messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden",
+      "id": "pas-toe-of-leg-uit"
+    },
+    "PKCE": {
+      "authors": [
+        "N. Sakimura, J. Bradley, N. Agarwal"
+      ],
+      "date": "september 2015",
+      "href": "https://tools.ietf.org/html/rfc7636",
+      "publisher": "IETF",
+      "title": "Proof Key for Code Exchange by OAuth Public Clients"
+    },
+    "PKI CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKI PvE": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PoR-2022/PKIoverheid%20Programme%20of%20Requirements%20v4.10%20-%20Part%203j%20Certificate%20Policy%20for%20Server%20certificates%20in%20Server%202020%20%28EV%20G1%29%20Domain.pdf",
+      "publisher": "Logius",
+      "title": "Programma van Eisen Pkioverheid, deel 3j"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/toegetreden-vertrouwensdienstverleners",
+      "publisher": "Logius",
+      "title": "Toegetreden vertrouwensdienstverleners"
+    },
+    "PKI-Policy": {
+      "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
+      "publisher": "Logius",
+      "title": "Programma van Eisen (PKIoverheid)"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/diensten/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIoverheid Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "PKIoverheid-Certificaten": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Pkioverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "Voorbeelden": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Digikoppeling WUS voorbeelden (zip)"
+    },
+    "Voorwaarden Digikoppeling": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go",
+      "title": "Technical ADR Validation rule testset 0.1.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "December 2022"
     }
   },
   "alternateFormats": [
@@ -325,15 +817,16 @@ dd{margin-left:0}
     <h2>
       Logius Standaard<br>
       Vastgestelde versie
-      <time class="dt-published" datetime="08/12/2022"></time>
+      <time class="dt-published" datetime="2022-08-12">12 augustus 2022</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/2.1.0">https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/2.1.0</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/dk/architectuur">https://gitdocumentatie.logius.nl/publicatie/dk/architectuur</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://github.com/logius-standaarden/digikoppeling-architectuur/">https://github.com/logius-standaarden/digikoppeling-architectuur/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/Digikoppeling-Architectuur/">https://logius-standaarden.github.io/Digikoppeling-Architectuur/</a></dd>
       
       
       
@@ -381,7 +874,7 @@ dd{margin-left:0}
 <li>Toevoegen van een Digikoppeling REST API profiel, gebaseerd op de API Design Rules (uit de Nederlandse API Strategie)</li>
 <li>De Provider bepaalt welk koppelvlak - REST API, WUS of ebMS van toepassing is op de door haar geleverde dienst.</li>
 </ul>
-<p>*(‘Backwards compatibiliteit’ geldt niet voor de security eisen, zie hiervoor de actuele versie van [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Reference &quot;[Digikoppeling Beveiligingsdocument]&quot; not found." id="respec-offender-reference-digikoppeling-beveiligingsdocument-not-found">Digikoppeling Beveiligingsdocument</a></cite>])</p>
+<p>*(‘Backwards compatibiliteit’ geldt niet voor de security eisen, zie hiervoor de actuele versie van [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>])</p>
 </section>
   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#doel-van-dit-document-en-leeswijzer"><bdi class="secno">1. </bdi>Doel van dit document en leeswijzer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.2 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.3 </bdi>Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#verantwoording"><bdi class="secno">1.4 </bdi>Verantwoording</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-standaarden"><bdi class="secno">1.5 </bdi>Digikoppeling standaarden</a></li><li class="tocline"><a class="tocxref" href="#begrippen"><bdi class="secno">1.6 </bdi>Begrippen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wat-is-digikoppeling"><bdi class="secno">2. </bdi>Wat is Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-van-digikoppeling"><bdi class="secno">2.1 </bdi>Doel van Digikoppeling</a></li><li class="tocline"><a class="tocxref" href="#context-van-digikoppeling"><bdi class="secno">2.2 </bdi>Context van Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#open-en-closed-data"><bdi class="secno">2.2.1 </bdi>Open en Closed Data</a></li><li class="tocline"><a class="tocxref" href="#open-en-closed-diensten"><bdi class="secno">2.2.2 </bdi>Open en Closed Diensten</a></li><li class="tocline"><a class="tocxref" href="#open-en-closed-netwerken"><bdi class="secno">2.2.3 </bdi>Open en Closed Netwerken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wanneer-moet-digikoppeling-toegepast-worden"><bdi class="secno">2.3 </bdi>Wanneer moet Digikoppeling toegepast worden</a></li><li class="tocline"><a class="tocxref" href="#functioneel-toepassingsgebied"><bdi class="secno">2.4 </bdi>Functioneel toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#organisatorisch-werkingsgebied"><bdi class="secno">2.5 </bdi>Organisatorisch werkingsgebied</a></li><li class="tocline"><a class="tocxref" href="#van-uitwisseling-van-gestructureerde-berichten-naar-gestructureerde-gegevensuitwisseling"><bdi class="secno">2.6 </bdi>Van <em>'uitwisseling van gestructureerde berichten'</em> naar <em>'gestructureerde gegevensuitwisseling'</em></a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-voor-externe-uitwisseling"><bdi class="secno">2.7 </bdi>Digikoppeling voor externe uitwisseling</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-voor-closed-data-en-open-data-via-closed-diensten"><bdi class="secno">2.8 </bdi>Digikoppeling voor Closed Data en Open Data via Closed diensten</a></li><li class="tocline"><a class="tocxref" href="#wie-communiceert-met-wie"><bdi class="secno">2.9 </bdi>Wie communiceert met wie</a></li><li class="tocline"><a class="tocxref" href="#scope-van-digikoppeling"><bdi class="secno">2.10 </bdi>Scope van Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#grijs-gebied"><bdi class="secno">2.10.1 </bdi>Grijs gebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-architectuurprincipes"><bdi class="secno">3. </bdi>Digikoppeling-architectuurprincipes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#uitgangspunten"><bdi class="secno">3.1 </bdi>Uitgangspunten</a></li><li class="tocline"><a class="tocxref" href="#architectuurprincipes"><bdi class="secno">3.2 </bdi>Architectuurprincipes</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-digikoppeling-keten"><bdi class="secno">4. </bdi>De Digikoppeling-keten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digikoppeling-als-bouwsteen-van-de-digitale-overheid"><bdi class="secno">4.1 </bdi>Digikoppeling als bouwsteen van de Digitale Overheid</a></li><li class="tocline"><a class="tocxref" href="#opbouw-van-de-digikoppeling-keten"><bdi class="secno">4.2 </bdi>Opbouw van de Digikoppeling-keten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#partijen-en-rollen"><bdi class="secno">4.2.1 </bdi>Partijen en Rollen</a></li><li class="tocline"><a class="tocxref" href="#intermediairs"><bdi class="secno">4.2.2 </bdi>Intermediairs</a></li></ol></li><li class="tocline"><a class="tocxref" href="#componenten-in-de-logistieke-digikoppeling-keten"><bdi class="secno">4.3 </bdi>Componenten in de logistieke Digikoppeling-keten</a></li><li class="tocline"><a class="tocxref" href="#uitwisselingsvormen"><bdi class="secno">4.4 </bdi>Uitwisselingsvormen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#business-behoefte"><bdi class="secno">4.4.1 </bdi>Business-behoefte</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-aanbod"><bdi class="secno">4.4.2 </bdi>Digikoppeling-aanbod</a></li><li class="tocline"><a class="tocxref" href="#synchrone-uitwisseling"><bdi class="secno">4.4.3 </bdi>Synchrone uitwisseling</a></li><li class="tocline"><a class="tocxref" href="#notificaties"><bdi class="secno">4.4.4 </bdi>Notificaties</a></li><li class="tocline"><a class="tocxref" href="#asynchrone-uitwisseling"><bdi class="secno">4.4.5 </bdi>Asynchrone uitwisseling</a></li><li class="tocline"><a class="tocxref" href="#melding-transactie"><bdi class="secno">4.4.6 </bdi>Melding (Transactie)</a></li><li class="tocline"><a class="tocxref" href="#grote-berichten"><bdi class="secno">4.4.7 </bdi>Grote Berichten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geen-onderscheid-meer-in-gebruik-wus-en-ebms2-voor-bevragingen-en-transacties"><bdi class="secno">4.5 </bdi>Geen onderscheid meer in gebruik WUS en ebMS2 voor bevragingen en transacties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#transactiepatronen-in-digikoppeling"><bdi class="secno">5. </bdi>Transactiepatronen in Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#synchrone-bevraging"><bdi class="secno">5.1 </bdi>Synchrone bevraging</a></li><li class="tocline"><a class="tocxref" href="#synchrone-melding"><bdi class="secno">5.2 </bdi>Synchrone Melding</a></li><li class="tocline"><a class="tocxref" href="#asynchrone-melding-bevestiging"><bdi class="secno">5.3 </bdi>Asynchrone Melding-bevestiging</a></li><li class="tocline"><a class="tocxref" href="#uitwisselen-grote-bestanden"><bdi class="secno">5.4 </bdi>Uitwisselen grote bestanden</a></li><li class="tocline"><a class="tocxref" href="#uitwisseling-via-een-transparante-intermediair"><bdi class="secno">5.5 </bdi>Uitwisseling via een transparante intermediair</a></li><li class="tocline"><a class="tocxref" href="#uitwisseling-via-een-niet-transparante-intermediair"><bdi class="secno">5.6 </bdi>Uitwisseling via een niet-transparante intermediair</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-koppelvlakstandaarden-en-voorschriften"><bdi class="secno">6. </bdi>Digikoppeling-koppelvlakstandaarden en voorschriften</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overzicht"><bdi class="secno">6.1 </bdi>Overzicht</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-voorschriften"><bdi class="secno">6.2 </bdi>Digikoppeling-voorschriften</a></li><li class="tocline"><a class="tocxref" href="#rest-api-s"><bdi class="secno">6.3 </bdi>REST API's</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-voor-synchrone-requests"><bdi class="secno">6.3.1 </bdi>Digikoppeling REST API voor synchrone requests</a></li><li class="tocline"><a class="tocxref" href="#oas-openapi-specification"><bdi class="secno">6.3.2 </bdi>OAS: OpenAPI Specification</a></li></ol></li><li class="tocline"><a class="tocxref" href="#wus"><bdi class="secno">6.4 </bdi>WUS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wus-familie-van-standaarden"><bdi class="secno">6.4.1 </bdi>WUS familie van standaarden</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-wus-voor-synchrone-bevragingen"><bdi class="secno">6.4.2 </bdi>Digikoppeling WUS voor synchrone bevragingen</a></li><li class="tocline"><a class="tocxref" href="#wsdl-web-services-description-language"><bdi class="secno">6.4.3 </bdi>WSDL: Web Services Description Language</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ebms"><bdi class="secno">6.5 </bdi>ebMS</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ebms2-familie-van-standaarden"><bdi class="secno">6.5.1 </bdi>ebMS2 familie van standaarden</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-ebms2-voor-betrouwbare-asynchone-uitwisseling"><bdi class="secno">6.5.2 </bdi>Digikoppeling ebMS2 voor betrouwbare, asynchone uitwisseling</a></li><li class="tocline"><a class="tocxref" href="#cpa"><bdi class="secno">6.5.3 </bdi>CPA</a></li></ol></li><li class="tocline"><a class="tocxref" href="#grote-berichten-0"><bdi class="secno">6.6 </bdi>Grote berichten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werking-grote-berichten"><bdi class="secno">6.6.1 </bdi>Werking grote berichten</a></li><li class="tocline"><a class="tocxref" href="#standaarden-voor-grote-berichten"><bdi class="secno">6.6.2 </bdi>Standaarden voor grote berichten</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-use-cases"><bdi class="secno">7. </bdi>Overzicht Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hulpmiddel-voor-een-keuze-voor-een-digikoppeling-koppelvlak"><bdi class="secno">7.1 </bdi>Hulpmiddel voor een keuze voor een Digikoppeling Koppelvlak</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hoeveel-partijen-zijn-er-betrokken-bij-de-koppeling-en-wat-is-hun-rol"><bdi class="secno">7.1.1 </bdi>Hoeveel partijen zijn er betrokken bij de koppeling en wat is hun rol?</a></li><li class="tocline"><a class="tocxref" href="#wat-is-de-aard-van-de-gegevens-objecten-die-uitgewisseld-moeten-worden"><bdi class="secno">7.1.2 </bdi>Wat is de aard van de gegevens/objecten die uitgewisseld moeten worden?</a></li><li class="tocline"><a class="tocxref" href="#het-uitwisselen-van-relationele-bedrijfsgegevens-over-objecten-bedrijfsdocumenten"><bdi class="secno">7.1.3 </bdi>Het uitwisselen van relationele bedrijfsgegevens over objecten, ‘Bedrijfsdocumenten’</a></li><li class="tocline"><a class="tocxref" href="#raadplegen-of-muteren-van-een-bron"><bdi class="secno">7.1.4 </bdi>Raadplegen of muteren van een bron</a></li></ol></li><li class="tocline"><a class="tocxref" href="#andere-overwegingen-voor-een-keuze-van-een-koppelvlak"><bdi class="secno">7.2 </bdi>Andere overwegingen voor een keuze van een koppelvlak</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#capabiliteit-van-een-organisatie-bestaande-infrastructuur"><bdi class="secno">7.2.1 </bdi>Capabiliteit van een organisatie, bestaande infrastructuur</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-usecase"><bdi class="secno">7.3 </bdi>Overzicht Usecase</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overdracht-van-verantwoordelijkheid"><bdi class="secno">7.3.1 </bdi>Overdracht van verantwoordelijkheid</a></li><li class="tocline"><a class="tocxref" href="#abonneren-op-wijzigingen-middels-notificaties"><bdi class="secno">7.3.2 </bdi>Abonneren op wijzigingen middels notificaties</a></li><li class="tocline"><a class="tocxref" href="#end-to-end-security"><bdi class="secno">7.3.3 </bdi>End-to-End security</a></li><li class="tocline"><a class="tocxref" href="#betrouwbaar-berichtenverkeer-op-protocol-niveau-reliable-messaging"><bdi class="secno">7.3.4 </bdi>Betrouwbaar berichtenverkeer op protocol niveau (reliable messaging)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-voorzieningen"><bdi class="secno">8. </bdi>Digikoppeling-voorzieningen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">8.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#compliancevoorzieningen"><bdi class="secno">8.2 </bdi>Compliancevoorzieningen</a></li><li class="tocline"><a class="tocxref" href="#oin-register-centrale-oin-raadpleegvoorziening"><bdi class="secno">8.3 </bdi>OIN Register (Centrale OIN Raadpleegvoorziening)</a></li><li class="tocline"><a class="tocxref" href="#cpa-register"><bdi class="secno">8.4 </bdi>CPA Register</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-van-digikoppeling"><bdi class="secno">9. </bdi>Implementatie van Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#architectuuraspecten-van-de-aansluiting-op-digikoppeling"><bdi class="secno">9.1 </bdi>Architectuuraspecten van de aansluiting op Digikoppeling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afspraken-over-de-inhoud-en-interactie-van-de-uitwisseling"><bdi class="secno">9.1.1 </bdi>Afspraken over de inhoud en interactie van de uitwisseling</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-adapter"><bdi class="secno">9.1.2 </bdi>Digikoppeling-adapter</a></li><li class="tocline"><a class="tocxref" href="#selectie-van-profielen"><bdi class="secno">9.1.3 </bdi>Selectie van profielen</a></li><li class="tocline"><a class="tocxref" href="#servicebeschrijvingen"><bdi class="secno">9.1.4 </bdi>Servicebeschrijvingen</a></li><li class="tocline"><a class="tocxref" href="#gebruik-van-de-digikoppeling-voorzieningen"><bdi class="secno">9.1.5 </bdi>Gebruik van de Digikoppeling voorzieningen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#relatie-met-de-inhoudelijke-laag"><bdi class="secno">9.2 </bdi>Relatie met de inhoudelijke laag</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#waarom"><bdi class="secno">9.2.1 </bdi>Waarom</a></li><li class="tocline"><a class="tocxref" href="#informatiebeveiliging"><bdi class="secno">9.2.2 </bdi>Informatiebeveiliging</a></li><li class="tocline"><a class="tocxref" href="#bedrijfsprocessen"><bdi class="secno">9.2.3 </bdi>Bedrijfsprocessen</a></li><li class="tocline"><a class="tocxref" href="#applicatielaag"><bdi class="secno">9.2.4 </bdi>Applicatielaag</a></li><li class="tocline"><a class="tocxref" href="#berichtinhoud-en-semantiek"><bdi class="secno">9.2.5 </bdi>Berichtinhoud en semantiek</a></li><li class="tocline"><a class="tocxref" href="#karakterset-en-codering"><bdi class="secno">9.2.6 </bdi>Karakterset en codering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#relatie-met-de-transportlaag"><bdi class="secno">9.3 </bdi>Relatie met de transportlaag</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#randvoorwaarden-transport"><bdi class="secno">9.3.1 </bdi>Randvoorwaarden transport</a></li><li class="tocline"><a class="tocxref" href="#inleiding-transportlaag"><bdi class="secno">9.3.2 </bdi>Inleiding transportlaag</a></li><li class="tocline"><a class="tocxref" href="#transport-level-security-tls"><bdi class="secno">9.3.3 </bdi>Transport Level Security (TLS)</a></li><li class="tocline"><a class="tocxref" href="#netwerken"><bdi class="secno">9.3.4 </bdi>Netwerken</a></li><li class="tocline"><a class="tocxref" href="#diginetwerk"><bdi class="secno">9.3.5 </bdi>Diginetwerk</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-bronnen"><bdi class="secno">10. </bdi>Bijlage A: Bronnen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digikoppeling-standaarden-en-gerelateerde-documenten"><bdi class="secno">10.1 </bdi>Digikoppeling-standaarden en gerelateerde documenten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digikoppeling-documentatie"><bdi class="secno">10.1.1 </bdi>Digikoppeling documentatie</a></li><li class="tocline"><a class="tocxref" href="#overige-geraadpleegde-bronnen"><bdi class="secno">10.1.2 </bdi>Overige geraadpleegde bronnen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-begrippenlijst"><bdi class="secno">11. </bdi>Bijlage B: Begrippenlijst</a></li><li class="tocline"><a class="tocxref" href="#bijlage-c-nora-architectuurprincipes"><bdi class="secno">12. </bdi>Bijlage C: NORA Architectuurprincipes</a></li><li class="tocline"><a class="tocxref" href="#bijlage-d-niet-functionele-eisen"><bdi class="secno">13. </bdi>Bijlage D: Niet-functionele eisen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ontkoppeling-van-de-drie-lagen"><bdi class="secno">13.1 </bdi>Ontkoppeling van de drie lagen</a></li><li class="tocline"><a class="tocxref" href="#leveranciersonafhankelijkheid"><bdi class="secno">13.2 </bdi>Leveranciersonafhankelijkheid</a></li><li class="tocline"><a class="tocxref" href="#interoperabiliteit"><bdi class="secno">13.3 </bdi>Interoperabiliteit</a></li><li class="tocline"><a class="tocxref" href="#vindbaarheid-en-openbaarheid"><bdi class="secno">13.4 </bdi>Vindbaarheid en openbaarheid</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">14. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">15. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section id="doel-van-dit-document-en-leeswijzer"><div class="header-wrapper"><h2 id="x1-doel-van-dit-document-en-leeswijzer"><bdi class="secno">1. </bdi>Doel van dit document en leeswijzer</h2><a class="self-link" href="#doel-van-dit-document-en-leeswijzer" aria-label="Permalink for Section 1."></a></div>
@@ -493,7 +986,7 @@ De documentatie is als volgt opgebouwd:</p>
 
 
 <ul>
-<li><p>Alle groene documenten vallen onder het beheer zoals geformaliseerd in het [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling beheermodel" title="Reference &quot;[Digikoppeling Beheermodel]&quot; not found." id="respec-offender-reference-digikoppeling-beheermodel-not-found">Digikoppeling Beheermodel</a></cite>].</p>
+<li><p>Alle groene documenten vallen onder het beheer zoals geformaliseerd in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beheermodel" title="Beheermodel en releasebeleid Digikoppeling v1.5">Digikoppeling Beheermodel</a></cite>].</p>
 </li>
 <li><p>Een overzicht van alle Digikoppeling documentatie is opgenomen in <em>Bijlage A: Bronnen.</em></p>
 </li>
@@ -531,13 +1024,13 @@ De documentatie is als volgt opgebouwd:</p>
 <p>Digikoppeling moet worden toegepast bij digitale gegevensuitwisseling die plaatsvindt met voorzieningen die onderdeel zijn van de GDI, waaronder de basisregistraties, of die sector overstijgend is. De verplichting geldt voor gegevensuitwisseling tussen systemen waarbij er noodzaak is voor tweezijdige authenticatie. 
 Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN3610 is uitgesloten van het functioneel toepassingsgebied.</p>
 </blockquote>
-<p>bron: [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Reference &quot;[Pas-toe-of-leg-uit]&quot; not found." id="respec-offender-reference-pas-toe-of-leg-uit-not-found">Pas-toe-of-leg-uit</a></cite>]</p>
+<p>bron: [<cite><a class="bibref" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Lijst Verplichte standaarden">Pas-toe-of-leg-uit</a></cite>]</p>
 <p>Daarnaast benoemt het Forum de organisaties waarvoor de verplichting geldt. Dit wordt het <em>organisatorische werkingsgebied</em> genoemd. Het werkingsgebied is als volgt gedefinieerd:</p>
 </section><section id="organisatorisch-werkingsgebied"><div class="header-wrapper"><h3 id="x2-5-organisatorisch-werkingsgebied"><bdi class="secno">2.5 </bdi>Organisatorisch werkingsgebied</h3><a class="self-link" href="#organisatorisch-werkingsgebied" aria-label="Permalink for Section 2.5"></a></div>
 <blockquote>
 <p>Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen) en instellingen uit de (semi-) publieke sector.</p>
 </blockquote>
-<p>bron: [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Reference &quot;[Pas-toe-of-leg-uit]&quot; not found." id="respec-offender-reference-pas-toe-of-leg-uit-not-found-0">Pas-toe-of-leg-uit</a></cite>]</p>
+<p>bron: [<cite><a class="bibref" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Lijst Verplichte standaarden">Pas-toe-of-leg-uit</a></cite>]</p>
 </section><section id="van-uitwisseling-van-gestructureerde-berichten-naar-gestructureerde-gegevensuitwisseling"><div class="header-wrapper"><h3 id="x2-6-van-uitwisseling-van-gestructureerde-berichten-naar-gestructureerde-gegevensuitwisseling"><bdi class="secno">2.6 </bdi>Van <em>'uitwisseling van gestructureerde berichten'</em> naar <em>'gestructureerde gegevensuitwisseling'</em></h3><a class="self-link" href="#van-uitwisseling-van-gestructureerde-berichten-naar-gestructureerde-gegevensuitwisseling" aria-label="Permalink for Section 2.6"></a></div>
 <p>Digikoppeling heeft zich vanaf het begin van haar ontstaan gericht op het uitwisselen van berichten, en dan specifiek op de 'envelop' van een bericht en  niet op de inhoud. Iedere organisatie die Digikoppeling gebruikt kon daarmee de gegevensuitwisseling onafhankelijk van de inhoud inrichten.</p>
 <p>Met de toevoeging van het Digikoppeling REST API profiel komt de vergelijking met berichten in enveloppen in het gedrang. Envelop en bericht schuiven in elkaar; de metafoor van enveloppen en postverzending werkt niet meer in alle koppelvlakken van de standaard. Echter, het basisprincipe blijft bestaan: Digikoppeling bemoeit zich niet met de inhoud, Digikoppeling heeft <em>'Geen boodschap aan de boodschap'</em>. Het verschil wordt geïllustreerd in onderstaande afbeelding:</p>
@@ -549,7 +1042,7 @@ Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN
     <p></p>
 <div style="font-size:10pt;text-align:center;">bron: <a href="https://www.upwork.com/resources/soap-vs-rest-a-look-at-two-different-api-styles">https://www.upwork.com/resources/soap-vs-rest-a-look-at-two-different-api-styles</a></div>
 
-<p>Het Forum beschrijft dat Digikoppeling gaat over het uitwisselen van gestructureerde berichten. Voor het gebruik van REST API's moet het concept van <em>berichten</em> wel erg uitgerekt worden om in deze definitie te passen. Een synchrone JSON response kan als een bericht worden gezien, maar of ook de request die hieraan voorafging als een gestructureerd <em>bericht</em> kan worden gezien vergt enige creativiteit. De uitwisseling van gegevens via REST API's is daarentegen in ieder geval wel <em>gestructureerd</em>, alleen al omdat elke interactie via een  API volgens een protocol, of standaard verloopt, zoals http [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">rfc7230</a></cite>], https [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2818" title="HTTP Over TLS">rfc2818</a></cite>], OpenAPI Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">openapi</a></cite>] of de (API Design Rules) [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-api design rules" title="Reference &quot;[API Design Rules]&quot; not found." id="respec-offender-reference-api-design-rules-not-found">API Design Rules</a></cite>].</p>
+<p>Het Forum beschrijft dat Digikoppeling gaat over het uitwisselen van gestructureerde berichten. Voor het gebruik van REST API's moet het concept van <em>berichten</em> wel erg uitgerekt worden om in deze definitie te passen. Een synchrone JSON response kan als een bericht worden gezien, maar of ook de request die hieraan voorafging als een gestructureerd <em>bericht</em> kan worden gezien vergt enige creativiteit. De uitwisseling van gegevens via REST API's is daarentegen in ieder geval wel <em>gestructureerd</em>, alleen al omdat elke interactie via een  API volgens een protocol, of standaard verloopt, zoals http [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7230" title="Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing">rfc7230</a></cite>], https [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2818" title="HTTP Over TLS">rfc2818</a></cite>], OpenAPI Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">openapi</a></cite>] of de (API Design Rules) [<cite><a class="bibref" data-link-type="biblio" href="#bib-api design rules" title="API Design Rules (Nederlandse API Strategie IIa)">API Design Rules</a></cite>].</p>
 <p>Voor Digikoppeling verleggen we daarom de focus van berichtenverkeer naar het uitwisselen van gegevens. Vandaar dat we in het vervolg in dit document zullen spreken over gestructureerde <em>gegevensuitwisseling</em>, in plaats van gestructureerde berichtenuitwisseling.</p>
 
 
@@ -576,7 +1069,7 @@ Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN
       </figure>
     <p></p>
 </section><section id="wie-communiceert-met-wie"><div class="header-wrapper"><h3 id="x2-9-wie-communiceert-met-wie"><bdi class="secno">2.9 </bdi>Wie communiceert met wie</h3><a class="self-link" href="#wie-communiceert-met-wie" aria-label="Permalink for Section 2.9"></a></div>
-<p>Digikoppeling verplicht dat verzender en ontvanger elkaar kennen ([<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Reference &quot;[Pas-toe-of-leg-uit]&quot; not found." id="respec-offender-reference-pas-toe-of-leg-uit-not-found-1">Pas-toe-of-leg-uit</a></cite>] <em>zie Digikoppeling, paragraaf 'Overig/Waarvoor geldt de verplichting</em>). Digikoppeling gaat over communicatie tussen de overheden (G2G) en niet over uitwisseling met burgers (G2C). De communicatie tussen overheid en het bedrijfsleven (G2B) is niet gestandaardiseerd. </p>
+<p>Digikoppeling verplicht dat verzender en ontvanger elkaar kennen ([<cite><a class="bibref" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Lijst Verplichte standaarden">Pas-toe-of-leg-uit</a></cite>] <em>zie Digikoppeling, paragraaf 'Overig/Waarvoor geldt de verplichting</em>). Digikoppeling gaat over communicatie tussen de overheden (G2G) en niet over uitwisseling met burgers (G2C). De communicatie tussen overheid en het bedrijfsleven (G2B) is niet gestandaardiseerd. </p>
 <p>
       </p><figure id="fig-segmentering-van-de-communicatie">
         <img src="media/DK_segmentering.svg" alt="Diensten kunnen onderverdeeld worden in G2G, G2B en G2C" height="361" width="356">
@@ -683,7 +1176,7 @@ Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN
 <p>Een intermediair zoals een sectoraal knooppunt of SAAS leverancier kan in opdracht van partijen inhoudelijke bewerkingen op berichten uitvoeren zoals de integratie, conversie en distributie van gegevens. Een dergelijke ondersteunende rol kan partijen ontzorgen bij de implementatie van standaarden, het beheer van gedeelde/gezamenlijke voorzieningen en de afstemming tussen partijen op het gebied van gegevensuitwisseling.</p>
 <p>
       </p><figure id="fig-positionering-intermediair-sectoraal-knooppunt">
-        <img src="media/DK_Positionering_intermediair_sectoraal_knppnt.png" alt="Positionering Intermediair/Sectoraal Knooppunt, de intermediair bevindt zich tussen dienstafnemers en dienstaanbieders" height="267" width="650">
+        <img src="media/DK_Positionering_intermediair_sectoraal_knppnt.png" alt="Positionering Intermediair/Sectoraal Knooppunt, de intermediair bevindt zich tussen dienstafnemers en dienstaanbieders">
         <figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Positionering Intermediair/Sectoraal Knooppunt</span></figcaption>
       </figure>
     <p></p>
@@ -729,7 +1222,7 @@ Compliance Voorziening, het OIN register en het CPA register) vormen geen onderd
 <p>In meer detail zijn de componenten uitgewerkt in een referentiemodel voor gegvensuitwisseling. Hierin is de opsplitsing en samenhang weergegeven:
 
       </p><figure id="fig-referentiemodel-gegevensuitwisseling">
-        <img src="media/Referentiemodel_berichtuitwisseling.png" alt="Referentiemodel gegevensuitwisseling" height="388" width="884">
+        <img src="media/Referentiemodel_berichtuitwisseling.png" alt="Referentiemodel gegevensuitwisseling">
         <figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Referentiemodel gegevensuitwisseling</span></figcaption>
       </figure>
     <p></p>
@@ -812,7 +1305,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Digikoppeling Koppelvlakstandaard ebMS2 biedt specifieke ondersteuning voor asynchrone uitwisseling.</p>
 </section><section id="melding-transactie"><div class="header-wrapper"><h4 id="x4-4-6-melding-transactie"><bdi class="secno">4.4.6 </bdi>Melding (Transactie)</h4><a class="self-link" href="#melding-transactie" aria-label="Permalink for Section 4.4.6"></a></div>
 <p>Een melding is een enkelvoudig bericht waarop eventueel enige tijd later een retour-melding volgt. Het gebruikte protocol kan de betrouwbare ontvangst en de onweerlegbaarheid (non-repudiation) regelen van een bericht. Bij meldingen kan de betrouwbare aflevering van het bericht essentieel zijn. Als een partij het bericht niet direct kan aannemen, kan een protocol erin voorzien dat het bericht nogmaals wordt aangeboden. </p>
-<p>Naast het uitvoeren van een transactie met een betrouwbaar - <em>reliable</em> - protocol als ebMS2, is het ook mogelijk transacties op <em>business niveau</em> te borgen. Dubbel verzonden en ontvangen verzoeken - <em>duplicate requests</em> dienen dan door de business applicatie genegeerd te worden.  Een vaak geciteerde bron [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-no-reliable-messaging" title="Reference &quot;[no-Reliable-messaging]&quot; not found." id="respec-offender-reference-no-reliable-messaging-not-found">no-Reliable-messaging</a></cite>] stelt dat betrouwbare aflevering van berichten enkel op het niveau van de verwerkende business applicaties kan worden uitgevoerd. Een eis hiervoor is dat voor update requests <em>Idempotent</em> methoden worden gebruikt, meer hiervoor zie regel API-03 uit [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-api design rules" title="Reference &quot;[API Design Rules]&quot; not found." id="respec-offender-reference-api-design-rules-not-found-0">API DESIGN RULES</a></cite>].</p>
+<p>Naast het uitvoeren van een transactie met een betrouwbaar - <em>reliable</em> - protocol als ebMS2, is het ook mogelijk transacties op <em>business niveau</em> te borgen. Dubbel verzonden en ontvangen verzoeken - <em>duplicate requests</em> dienen dan door de business applicatie genegeerd te worden.  Een vaak geciteerde bron [<cite><a class="bibref" data-link-type="biblio" href="#bib-no-reliable-messaging" title="Nobody Needs Reliable Messaging">no-Reliable-messaging</a></cite>] stelt dat betrouwbare aflevering van berichten enkel op het niveau van de verwerkende business applicaties kan worden uitgevoerd. Een eis hiervoor is dat voor update requests <em>Idempotent</em> methoden worden gebruikt, meer hiervoor zie regel API-03 uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-api design rules" title="API Design Rules (Nederlandse API Strategie IIa)">API DESIGN RULES</a></cite>].</p>
 <p>Praktisch gezien resulteert dit meestal in een conversatie bestaande uit meerdere synchrone uitwisselingen. Conversaties zijn een vast onderdeel van het ebMS2 protocol maar kunnen ook op business niveau worden onderkend. Hiervoor worden attributen aan de synchrone uitwisseling toegevoegd waarmee zowel de provider als consumer - 'out-of-band' - de synchrone uitwisseling later kunnen correleren als 1 conversatie en op deze conversatie als geheel dan bijvoorbeeld compenserende handelingen kunnen verrichten.</p>
 </section><section id="grote-berichten"><div class="header-wrapper"><h4 id="x4-4-7-grote-berichten"><bdi class="secno">4.4.7 </bdi>Grote Berichten</h4><a class="self-link" href="#grote-berichten" aria-label="Permalink for Section 4.4.7"></a></div>
 <p>De situatie kan zich voordoen dat een bericht een omvang krijgt die niet meer efficiënt door de Digikoppeling-adapters verwerkt kan worden bijvoorbeeld vanwege de overhead bij eventuele hertransmissies. Ook kan het voorkomen dat er behoefte bestaat aan het sturen van aanvullende informatie naar systemen buiten de normale procesgang ('out-of-band'). In die gevallen zal dit grote bestand op een andere wijze uitgewisseld moeten worden: met de Digikoppeling Koppelvlakstandaard Grote Berichten.</p>
@@ -834,7 +1327,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Bij een bevraging (vraag-antwoord) stuurt de service-requester een voorgedefinieerde vraag (request) aan de service-provider, die een antwoord (response) verstrekt. Het initiatief ligt bij de service-requester. Gaat er in de uitwisseling iets mis dan zal de service-requester na een bepaalde tijd de uitwisseling afbreken (time-out). Een synchrone bevraging is in de regel <em>idempotent</em>, een request kan opnieuw verstuurd worden zonder gevolgen. </p>
 <p>
       </p><figure id="fig-synchroon-request">
-        <img src="media/Synchroon_request.png" alt="Synchroon Request" height="281" width="326">
+        <img src="media/Synchroon_request.png" alt="Synchroon Request">
         <figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title">Synchroon Request</span></figcaption>
       </figure>
     <p></p>
@@ -884,7 +1377,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Bij een melding-bevestiging stuurt een service-requester informatie naar de service-provider en ontvangt synchroon een bevestiging dat een bericht is ontvangen. op een later moment kan de ontvanger een bericht sturen dat de melding is verwerkt.  </p>
 <p>
       </p><figure id="fig-asynchroon-request">
-        <img src="media/Asynchroon_request.png" alt="Asynchroon Request" height="531" width="429">
+        <img src="media/Asynchroon_request.png" alt="Asynchroon Request">
         <figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Asynchroon Request</span></figcaption>
       </figure>
     <p></p>
@@ -934,7 +1427,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Een transparante keten is alleen mogelijk als zowel de service-aanbieder als de serviceafnemer hetzelfde protocol hanteren. De intermediair routeert berichten tussen de serviceaanbieder en de serviceafnemer waarbij het bericht intact blijft (alleen de header wordt gelezen). De uitwisseling verloopt op dezelfde manier als bij een bilaterale uitwisseling.</p>
 <p>
       </p><figure id="fig-transparante-intermediair">
-        <img src="media/transparante_intermediair.png" alt="Transparante Intermediair" height="463" width="720">
+        <img src="media/transparante_intermediair.png" alt="Transparante Intermediair">
         <figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Transparante Intermediair</span></figcaption>
       </figure>
     <p></p>
@@ -962,7 +1455,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Een transparante keten is alleen mogelijk als zowel de service-aanbieder als de serviceafnemer hetzelfde protocol hanteren. De intermediair routeert berichten tussen de serviceaanbieder en de serviceafnemer waarbij het bericht bewerkt moet worden voor verdere verzending. </p>
 <p>
       </p><figure id="fig-niet-transparante-intermediair">
-        <img src="media/niet_transparante_intermediair.png" alt="Niet-Transparante Intermediair" height="490" width="818">
+        <img src="media/niet_transparante_intermediair.png" alt="Niet-Transparante Intermediair">
         <figcaption>Figuur <bdi class="figno">13</bdi> <span class="fig-title">Niet-Transparante Intermediair</span></figcaption>
       </figure>
     <p></p>
@@ -992,7 +1485,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>De Digikoppeling Architectuur legde in de eerdere versies grote nadruk op bevragingen en meldingen en legde een verband tussen deze interactiepatronen en de onderliggende standaarden, ('WUS voor bevragingen, ebMS voor meldingen en kennisgevingen'). Dit verband bleek in de praktijk niet altijd werkbaar of wenselijk. In 2020 is daarom besloten om de richtlijnen voor het toepassen van de Digikoppeling standaarden te wijzigen.</p>
 <p>
       </p><figure id="fig-overzicht-digikoppeling-koppelvlakken">
-        <img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken" height="610" width="1840">
+        <img src="media/fig-structuurv2.png" alt="Overzicht Digikoppeling Koppelvlakken">
         <figcaption>Figuur <bdi class="figno">14</bdi> <span class="fig-title">Overzicht Digikoppeling Koppelvlakken</span></figcaption>
       </figure>
     <p></p>
@@ -1100,11 +1593,11 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </tbody></table>
 <p>Tabel 6.2: Digikoppeling-voorschriften</p>
 </section><section id="rest-api-s"><div class="header-wrapper"><h3 id="x6-3-rest-api-s"><bdi class="secno">6.3 </bdi>REST API's</h3><a class="self-link" href="#rest-api-s" aria-label="Permalink for Section 6.3"></a></div>
-<p>Het Digikoppeling REST API profiel [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found">Digikoppeling Koppelvlakstandaard REST API</a></cite>] is gebaseerd op de REST API Design Rules die in 2020 door het Kennisplatform API's zijn ontwikkeld.</p>
+<p>Het Digikoppeling REST API profiel [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Restful API Profiel (Concept)">Digikoppeling Koppelvlakstandaard REST API</a></cite>] is gebaseerd op de REST API Design Rules die in 2020 door het Kennisplatform API's zijn ontwikkeld.</p>
 <p>Een application programming interface (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. In de laatste 10 jaar heeft <em>REpresentational State Transfer</em> (REST) zich ontwikkeld tot een bepalend principe voor het realiseren van API's.</p>
 <p>De standaard REST API Design Rules geeft een verzameling basisregels voor structuur en naamgeving waarmee de overheid op een uniforme en eenduidige manier REST API's aanbiedt. Dit maakt het voor ontwikkelaars gemakkelijker om betrouwbare applicaties te ontwikkelen met API's van de overheid. REST API's kunnen worden gebruikt voor het laagdrempelig bevragen van resources maar ook voor het creëren en muteren van resources.</p>
 <section id="digikoppeling-rest-api-voor-synchrone-requests"><div class="header-wrapper"><h4 id="x6-3-1-digikoppeling-rest-api-voor-synchrone-requests"><bdi class="secno">6.3.1 </bdi>Digikoppeling REST API voor synchrone requests</h4><a class="self-link" href="#digikoppeling-rest-api-voor-synchrone-requests" aria-label="Permalink for Section 6.3.1"></a></div>
-<p>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found-0">Digikoppeling Koppelvlakstandaard REST API</a></cite>] biedt de volgende functionaliteiten:</p>
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Restful API Profiel (Concept)">Digikoppeling Koppelvlakstandaard REST API</a></cite>] biedt de volgende functionaliteiten:</p>
 <ul>
 <li>Vertrouwelijkheid</li>
 <li>Identificatie en authenticatie van partijen</li>
@@ -1113,15 +1606,15 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </ul>
 </section><section id="oas-openapi-specification"><div class="header-wrapper"><h4 id="x6-3-2-oas-openapi-specification"><bdi class="secno">6.3.2 </bdi>OAS: OpenAPI Specification</h4><a class="self-link" href="#oas-openapi-specification" aria-label="Permalink for Section 6.3.2"></a></div>
 <p>Een OpenAPI Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapi" title="OpenAPI Specification">openapi</a></cite>] beschrijft de eigenschappen van de data die een API als input accepteert en als output teruggeeft. OAS specificeert alleen welke attributen de API verwerkt en hun datatypen, niet welke implementatie er achter de API schuilgaat.</p>
-<p>Voor het beschrijven van DK-Rest API's is het gebruik van OAS verplicht. Op [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Reference &quot;[Pas-toe-of-leg-uit]&quot; not found." id="respec-offender-reference-pas-toe-of-leg-uit-not-found-2">Pas-toe-of-leg-uit</a></cite>] staat beschreven welke versie toegepast moet worden.</p>
+<p>Voor het beschrijven van DK-Rest API's is het gebruik van OAS verplicht. Op [<cite><a class="bibref" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Lijst Verplichte standaarden">Pas-toe-of-leg-uit</a></cite>] staat beschreven welke versie toegepast moet worden.</p>
 </section></section><section id="wus"><div class="header-wrapper"><h3 id="x6-4-wus"><bdi class="secno">6.4 </bdi>WUS</h3><a class="self-link" href="#wus" aria-label="Permalink for Section 6.4"></a></div>
 <section id="wus-familie-van-standaarden"><div class="header-wrapper"><h4 id="x6-4-1-wus-familie-van-standaarden"><bdi class="secno">6.4.1 </bdi>WUS familie van standaarden</h4><a class="self-link" href="#wus-familie-van-standaarden" aria-label="Permalink for Section 6.4.1"></a></div>
 <p>Digikoppeling maakt gebruik van een familie van standaarden die we binnen Digikoppeling de naam “WUS” geven. Deze familie van standaarden is gebaseerd op webservice standaarden uit de profielen van de OASIS “Web Services – Basic Reliable and Secure Profiles” Technical Committee (WS-BRSP)<sup><a href="#f27">27</a></sup>. De naam WUS staat voor WSDL, UDDI en SOAP, drie belangrijke deelstandaarden. Hoewel Digikoppeling geen gebruik van UDDI maakt is deze term inmiddels gebruikelijk.</p>
 <p>Kenmerkend voor de WUS-standaarden die voortkomen uit de Internet-wereld is de 1-op-n relatie tussen service aanbieder en meerdere service afnemers. Dit betekent b.v. dat een WUS service één WSDL heeft die door alle afnemers kan worden gebruikt.</p>
 <p><sup><a name="f27" href="#dfn-27" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-27-1"><dfn id="dfn-27" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">27</dfn></a>: Voorheen Web Services Interoperability (WS-I) organization</sup></p>
 </section><section id="digikoppeling-wus-voor-synchrone-bevragingen"><div class="header-wrapper"><h4 id="x6-4-2-digikoppeling-wus-voor-synchrone-bevragingen"><bdi class="secno">6.4.2 </bdi>Digikoppeling WUS voor synchrone bevragingen</h4><a class="self-link" href="#digikoppeling-wus-voor-synchrone-bevragingen" aria-label="Permalink for Section 6.4.2"></a></div>
-<p>De <em>Digikoppeling-koppelvlakstandaard WUS</em> [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Reference &quot;[Digikoppeling Koppelvlakstandaard WUS]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-wus-not-found">Digikoppeling Koppelvlakstandaard WUS</a></cite>] ondersteunt het uitvoeren van synchrone requests tussen geautomatiseerde informatiesystemen.</p>
-<p>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Reference &quot;[Digikoppeling Koppelvlakstandaard WUS]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-wus-not-found-0">Digikoppeling Koppelvlakstandaard WUS</a></cite>] biedt de volgende functionaliteiten: </p>
+<p>De <em>Digikoppeling-koppelvlakstandaard WUS</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Digikoppeling Koppelvlakstandaard ebMS2">Digikoppeling Koppelvlakstandaard WUS</a></cite>] ondersteunt het uitvoeren van synchrone requests tussen geautomatiseerde informatiesystemen.</p>
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Digikoppeling Koppelvlakstandaard ebMS2">Digikoppeling Koppelvlakstandaard WUS</a></cite>] biedt de volgende functionaliteiten: </p>
 <ul>
 <li>Identificatie en authenticatie van partijen</li>
 <li>Versleutelen van transport</li>
@@ -1140,7 +1633,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Digikoppeling maakt  gebruik van een familie van standaarden die we “ebMS2” noemen. Deze familie van standaarden is gebaseerd op web-service standaarden uit de profielen van de OASIS “ebXML Messaging Services“ Technical Committee (ebMS2).</p>
 <p>Kenmerkend voor de ebMS2-standaarden die voortkomen uit de EDIFACT-wereld is de 1-op-1 relatie tussen een beperkt aantal (vaak twee) partijen. Dit betekent dat twee partijen samen een CPA moeten afspreken, creëren en implementeren; de CPA is dus van zowel de serviceaanbieder als de serviceafnemer.</p>
 </section><section id="digikoppeling-ebms2-voor-betrouwbare-asynchone-uitwisseling"><div class="header-wrapper"><h4 id="x6-5-2-digikoppeling-ebms2-voor-betrouwbare-asynchone-uitwisseling"><bdi class="secno">6.5.2 </bdi>Digikoppeling ebMS2 voor betrouwbare, asynchone uitwisseling</h4><a class="self-link" href="#digikoppeling-ebms2-voor-betrouwbare-asynchone-uitwisseling" aria-label="Permalink for Section 6.5.2"></a></div>
-<p>De <em>Digikoppeling-koppelvlakstandaard ebMS2</em> [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard ebms2" title="Reference &quot;[Digikoppeling Koppelvlakstandaard ebMS2]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-ebms2-not-found">Digikoppeling Koppelvlakstandaard ebMS2</a></cite>] ondersteunt het uitvoeren van asynchrone berichten tussen geautomatiseerde informatiesystemen.</p>
+<p>De <em>Digikoppeling-koppelvlakstandaard ebMS2</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard ebms2" title="Digikoppeling Koppelvlakstandaard ebMS2">Digikoppeling Koppelvlakstandaard ebMS2</a></cite>] ondersteunt het uitvoeren van asynchrone berichten tussen geautomatiseerde informatiesystemen.</p>
 <p>Het protocol regelt de betrouwbare ontvangst van een bericht en eventueel de onweerlegbaarheid (non-repudiation) in de vorm van een ondertekende ontvangstbevestiging. Hoewel Digikoppeling-meldingen (op de logistieke laag) asynchroon zijn kan de business-laag wel synchroon werken als de verzender wacht op een retourmelding.`</p>
 <p>De Koppelvlakstandaard ebMS2 regelt de volgende functionaliteiten: :</p>
 <ul>
@@ -1178,9 +1671,9 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Een belangrijk voordeel hiervan is dat het grootste deel (het grote bestand zelf) de berichtenuitwisseling niet verstoort doordat het niet door de message-handler afgehandeld hoeft te worden (en deze bijvoorbeeld vertraagt). Maar ook is een voordeel dat de afhandeling van het grote deel op een ander moment in de tijd kan plaatsvinden en daardoor de procesgang van achterliggende informatiesystemen niet verstoord.</p>
 <p>De standaard doet geen uitspraak over gegevensstromen waarin kleine en grote berichten voorkomen. Bij implementatie van dergelijke gegevensstromen zal een organisatie moeten afwegen of kleine berichten anders of gelijk aan de ‘echte’ grote berichten verwerkt worden. In z’n algemeenheid zal een uniforme afhandeling eenduidiger en vooral ook eenvoudiger zijn; slechts in bijzondere gevallen zal dit niet volstaan.</p>
 </section><section id="standaarden-voor-grote-berichten"><div class="header-wrapper"><h4 id="x6-6-2-standaarden-voor-grote-berichten"><bdi class="secno">6.6.2 </bdi>Standaarden voor grote berichten</h4><a class="self-link" href="#standaarden-voor-grote-berichten" aria-label="Permalink for Section 6.6.2"></a></div>
-<p>De <em>Digikoppeling Koppelvlakstandaard Grote Berichten</em> [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Reference &quot;[Digikoppeling Koppelvlakstandaard Grote Berichten]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-grote-berichten-not-found">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>] maakt gebruik van WUS, ebMS2 of REST
+<p>De <em>Digikoppeling Koppelvlakstandaard Grote Berichten</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Digikoppeling Koppelvlakstandaard Grote Berichten">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>] maakt gebruik van WUS, ebMS2 of REST
  voor het verzenden van metadata. Voor ophalen van het grote bestand maakt de standaard gebruik van HTTPS-downloads. Daardoor zijn reliability en security gelijkwaardig aan de andere koppelvlakstandaarden. Ook is het gebruik van transparante intermediairs mogelijk.</p>
-<p>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Reference &quot;[Digikoppeling Koppelvlakstandaard Grote Berichten]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-grote-berichten-not-found-0">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>] regelt de volgende functionaliteiten, in aanvulling op WUS of ebMS2</p>
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Digikoppeling Koppelvlakstandaard Grote Berichten">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>] regelt de volgende functionaliteiten, in aanvulling op WUS of ebMS2</p>
 <ul>
 <li><p>Identificatie en authenticatie van partijen (OIN)</p>
 </li>
@@ -1391,7 +1884,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </li>
 </ul>
 <blockquote>
-<p>Informatie over de compliancevoorzieningen staat op [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Reference &quot;[Digikoppeling Compliance Voorziening]&quot; not found." id="respec-offender-reference-digikoppeling-compliance-voorziening-not-found">Digikoppeling Compliance Voorziening</a></cite>].</p>
+<p>Informatie over de compliancevoorzieningen staat op [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>].</p>
 </blockquote>
 <p><sup><a name="f28" href="#dfn-28" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-28-1"><dfn id="dfn-28" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">28</dfn></a>: <em>Digikoppeling Koppelvlakstandaard WUS</em></sup></p>
 </section><section id="oin-register-centrale-oin-raadpleegvoorziening"><div class="header-wrapper"><h3 id="x8-3-oin-register-centrale-oin-raadpleegvoorziening"><bdi class="secno">8.3 </bdi>OIN Register (Centrale OIN Raadpleegvoorziening)</h3><a class="self-link" href="#oin-register-centrale-oin-raadpleegvoorziening" aria-label="Permalink for Section 8.3"></a></div>
@@ -1676,51 +2169,51 @@ Organisaties die Diginetwerk willen gebruiken sluiten aan op een van de koppelne
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found-1">Digikoppeling Koppelvlakstandaard REST API</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Restful API Profiel (Concept)">Digikoppeling Koppelvlakstandaard REST API</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Reference &quot;[Digikoppeling Koppelvlakstandaard WUS]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-wus-not-found-1">Digikoppeling Koppelvlakstandaard WUS</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard wus" title="Digikoppeling Koppelvlakstandaard ebMS2">Digikoppeling Koppelvlakstandaard WUS</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard ebms2" title="Reference &quot;[Digikoppeling Koppelvlakstandaard ebMS2]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-ebms2-not-found-0">Digikoppeling Koppelvlakstandaard ebMS2</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard ebms2" title="Digikoppeling Koppelvlakstandaard ebMS2">Digikoppeling Koppelvlakstandaard ebMS2</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Reference &quot;[Digikoppeling Koppelvlakstandaard Grote Berichten]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-grote-berichten-not-found-1">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard grote berichten" title="Digikoppeling Koppelvlakstandaard Grote Berichten">Digikoppeling Koppelvlakstandaard Grote Berichten</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling beheermodel" title="Reference &quot;[Digikoppeling Beheermodel]&quot; not found." id="respec-offender-reference-digikoppeling-beheermodel-not-found-0">Digikoppeling Beheermodel</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beheermodel" title="Beheermodel en releasebeleid Digikoppeling v1.5">Digikoppeling Beheermodel</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Reference &quot;[Digikoppeling Beveiligingsdocument]&quot; not found." id="respec-offender-reference-digikoppeling-beveiligingsdocument-not-found-0">Digikoppeling Beveiligingsdocument</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling identificatie-authenticatie" title="Reference &quot;[Digikoppeling Identificatie-Authenticatie]&quot; not found." id="respec-offender-reference-digikoppeling-identificatie-authenticatie-not-found">Digikoppeling Identificatie-Authenticatie</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling identificatie-authenticatie" title="Digikoppeling Identificatie en Authenticatie">Digikoppeling Identificatie-Authenticatie</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling actuele documentatie" title="Reference &quot;[Digikoppeling Actuele Documentatie]&quot; not found." id="respec-offender-reference-digikoppeling-actuele-documentatie-not-found">Digikoppeling Actuele Documentatie</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling actuele documentatie" title="Digikoppeling Overzicht Actuele Documentatie en Compliance">Digikoppeling Actuele Documentatie</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling gebruik certificaten" title="Reference &quot;[Digikoppeling Gebruik Certificaten]&quot; not found." id="respec-offender-reference-digikoppeling-gebruik-certificaten-not-found">Digikoppeling Gebruik Certificaten</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling gebruik certificaten" title="Digikoppeling Gebruik en achtergrond certificaten">Digikoppeling Gebruik Certificaten</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling best practices wus" title="Reference &quot;[Digikoppeling Best Practices WUS]&quot; not found." id="respec-offender-reference-digikoppeling-best-practices-wus-not-found">Digikoppeling Best Practices WUS</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling best practices wus" title="Digikoppeling Best Practices WUS">Digikoppeling Best Practices WUS</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling best practices ebms2" title="Reference &quot;[Digikoppeling Best Practices ebMS2]&quot; not found." id="respec-offender-reference-digikoppeling-best-practices-ebms2-not-found">Digikoppeling Best Practices ebMS2</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling best practices ebms2" title="Digikoppeling Best Practices ebMS2">Digikoppeling Best Practices ebMS2</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling best practices grote berichten" title="Reference &quot;[Digikoppeling Best Practices Grote Berichten]&quot; not found." id="respec-offender-reference-digikoppeling-best-practices-grote-berichten-not-found">Digikoppeling Best Practices Grote Berichten</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling best practices grote berichten" title="Digikoppeling Best Practices Grote Berichten">Digikoppeling Best Practices Grote Berichten</a></cite>]</td>
 <td>Logius Centrum voor Standaarden</td>
 </tr>
 </tbody></table>
@@ -2730,45 +3223,46 @@ Standaardisatie: <a href="https://www.forumstandaardisatie.nl/open-standaarden/v
   </li>
       </ul></section>
  
+
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-digikoppeling actuele documentatie">[Digikoppeling Actuele Documentatie]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="http://www.logius.nl/digikoppeling"><cite>Digikoppeling Overzicht Actuele Documentatie en Compliance</cite></a>.  Logius. URL: <a href="http://www.logius.nl/digikoppeling">http://www.logius.nl/digikoppeling</a>
     </dd><dt id="bib-digikoppeling beheermodel">[Digikoppeling Beheermodel]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf"><cite>Beheermodel en releasebeleid Digikoppeling v1.5</cite></a>.  Logius. Oktober 2017. URL: <a href="https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf">https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf</a>
     </dd><dt id="bib-digikoppeling beveiligingsdocument">[Digikoppeling Beveiligingsdocument]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. 2021. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/</a>
     </dd><dt id="bib-digikoppeling identificatie-authenticatie">[Digikoppeling Identificatie-Authenticatie]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.logius.nl/diensten/digikoppeling/documentatie"><cite>Digikoppeling Identificatie en Authenticatie</cite></a>.  Logius. URL: <a href="https://www.logius.nl/diensten/digikoppeling/documentatie">https://www.logius.nl/diensten/digikoppeling/documentatie</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard ebms2">[Digikoppeling Koppelvlakstandaard ebMS2]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/"><cite>Digikoppeling Koppelvlakstandaard ebMS2</cite></a>.  Logius. mei 2019. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-ebMS2/</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard grote berichten">[Digikoppeling Koppelvlakstandaard Grote Berichten]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/"><cite>Digikoppeling Koppelvlakstandaard Grote Berichten</cite></a>.  Logius. september 2020. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard rest api">[Digikoppeling Koppelvlakstandaard REST API]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/"><cite>Digikoppeling Restful API Profiel (Concept)</cite></a>.  Logius. februari 2021. URL: <a href="https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/">https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard wus">[Digikoppeling Koppelvlakstandaard WUS]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/"><cite>Digikoppeling Koppelvlakstandaard ebMS2</cite></a>.  Logius. oktober 2020. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/</a>
     </dd><dt id="bib-openapi">[openapi]</dt><dd>
       <a href="https://www.openapis.org/"><cite>OpenAPI Specification</cite></a>. Darrell Miller; Jeremy Whitlock; Marsh Gardiner; Mike Ralphson; Ron Ratovsky; Uri Sarid; Tony Tam; Jason Harmon.  OpenAPI Initiative. URL: <a href="https://www.openapis.org/">https://www.openapis.org/</a>
     </dd><dt id="bib-pas-toe-of-leg-uit">[Pas-toe-of-leg-uit]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.forumstandaardisatie.nl/open-standaarden/verplicht"><cite>Lijst Verplichte standaarden</cite></a>.  Forum Standaardisatie. URL: <a href="https://www.forumstandaardisatie.nl/open-standaarden/verplicht">https://www.forumstandaardisatie.nl/open-standaarden/verplicht</a>
     </dd></dl>
   </section><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a></div>
     <dl class="bibliography"><dt id="bib-api design rules">[API Design Rules]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/"><cite>API Design Rules (Nederlandse API Strategie IIa)</cite></a>. Jasper Roes; Joost Farla.  Logius. Juli 2020. URL: <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a>
     </dd><dt id="bib-digikoppeling best practices ebms2">[Digikoppeling Best Practices ebMS2]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.logius.nl/diensten/digikoppeling/documentatie"><cite>Digikoppeling Best Practices ebMS2</cite></a>.  Logius. 2019. URL: <a href="https://www.logius.nl/diensten/digikoppeling/documentatie">https://www.logius.nl/diensten/digikoppeling/documentatie</a>
     </dd><dt id="bib-digikoppeling best practices grote berichten">[Digikoppeling Best Practices Grote Berichten]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.logius.nl/diensten/digikoppeling/documentatie"><cite>Digikoppeling Best Practices Grote Berichten</cite></a>.  Logius. 2019. URL: <a href="https://www.logius.nl/diensten/digikoppeling/documentatie">https://www.logius.nl/diensten/digikoppeling/documentatie</a>
     </dd><dt id="bib-digikoppeling best practices wus">[Digikoppeling Best Practices WUS]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.logius.nl/diensten/digikoppeling/documentatie"><cite>Digikoppeling Best Practices WUS</cite></a>.  Logius. 2019. URL: <a href="https://www.logius.nl/diensten/digikoppeling/documentatie">https://www.logius.nl/diensten/digikoppeling/documentatie</a>
     </dd><dt id="bib-digikoppeling compliance voorziening">[Digikoppeling Compliance Voorziening]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://portaal.digikoppeling.nl"><cite>Digikoppeling Compliance Voorziening</cite></a>.  Logius. URL: <a href="https://portaal.digikoppeling.nl">https://portaal.digikoppeling.nl</a>
     </dd><dt id="bib-digikoppeling gebruik certificaten">[Digikoppeling Gebruik Certificaten]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="http://www.logius.nl/digikoppeling"><cite>Digikoppeling Gebruik en achtergrond certificaten</cite></a>.  Logius. URL: <a href="http://www.logius.nl/digikoppeling">http://www.logius.nl/digikoppeling</a>
     </dd><dt id="bib-no-reliable-messaging">[no-Reliable-messaging]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://www.infoq.com/articles/no-reliable-messaging/"><cite>Nobody Needs Reliable Messaging</cite></a>. Marc de Graauw.  infoQ. June 18, 2010. URL: <a href="https://www.infoq.com/articles/no-reliable-messaging/">https://www.infoq.com/articles/no-reliable-messaging/</a>
     </dd><dt id="bib-rfc2818">[rfc2818]</dt><dd>
       <a href="https://httpwg.org/specs/rfc2818.html"><cite>HTTP Over TLS</cite></a>. E. Rescorla.  IETF. May 2000. Informational. URL: <a href="https://httpwg.org/specs/rfc2818.html">https://httpwg.org/specs/rfc2818.html</a>
     </dd><dt id="bib-rfc7230">[rfc7230]</dt><dd>
