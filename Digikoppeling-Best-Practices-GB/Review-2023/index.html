@@ -815,20 +815,20 @@ dd{margin-left:0}
   "previousPublishVersion": "3.1.1",
   "pubDomain": "dk",
   "publishDate": "2023-05-16",
-  "publishVersion": "3.2",
+  "publishVersion": "3.2.0",
   "shortName": "bpgb",
   "specStatus": "WV",
   "specType": "BP"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Best Practices Grote Berichten</h1>
     
     <h2>
       Logius Best practice<br>
       Werkversie
-      <time class="dt-published" datetime="2023-05-16">23 mei 2023</time>
+      <time class="dt-published" datetime="2023-05-16">26 mei 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1075,7 +1075,7 @@ dd{margin-left:0}
 Digikoppeling gaat over logistiek, dus over de envelop en niet over de inhoud. De hele set info die tezamen nodig is voor een complete generieke
 Digikoppeling koppelvlakdefinitie (Raamwerk Specificatie genoemd) bestaat uit:</p>
 <ul>
-<li>interfacedefinitie (voorbeeld)listing van HTTP eb SOAP headers, en</li>
+<li>interfacedefinitie (voorbeeld)listing van HTTP en SOAP headers, en</li>
 <li>semantische informatie over velden en hun specifieke inhoud.</li>
 </ul>
 </section></section><section id="opbouw-van-dit-document"><div class="header-wrapper"><h3 id="x1-5-opbouw-van-dit-document"><bdi class="secno">1.5 </bdi>Opbouw van dit document</h3><a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.5"></a></div>
@@ -1109,7 +1109,7 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
 <section id="pull-principe"><div class="header-wrapper"><h4 id="x2-2-1-pull-principe"><bdi class="secno">2.2.1 </bdi>Pull principe</h4><a class="self-link" href="#pull-principe" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>Er is bij grote berichten sprake van pull, wanneer een groot bestand door de ontvangende partij wordt opgehaald. Voorafgaand aan deze actie dient altijd een meta-bericht verstuurd te worden door de verzender. Dit kan met behulp van het REST-API, WUS of ebMS profiel.</p>
 <section id="ebms2"><div class="header-wrapper"><h5 id="x2-2-1-1-ebms2"><bdi class="secno">2.2.1.1 </bdi>EbMS2</h5><a class="self-link" href="#ebms2" aria-label="Permalink for Section 2.2.1.1"></a></div>
-<p>Bij het Melden van grote hoeveelheden informatie kan van ebMS2 gebruik gemaakt te worden. Met ebMS2 kan de ontvangst van de metadata gegarandeerd worden.</p>
+<p>Bij het Melden van grote hoeveelheden informatie kan van ebMS2 gebruik gemaakt worden. Met ebMS2 kan de ontvangst van de metadata gegarandeerd worden.</p>
 <p>De volgende aanpak is hierbij gebruikelijk:</p>
 <ul>
 <li><p>De verzender stelt een groot bestand samen voor de overdracht.</p>
@@ -1417,7 +1417,7 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
 <section id="oin-en-certificaten"><div class="header-wrapper"><h4 id="x2-5-1-oin-en-certificaten"><bdi class="secno">2.5.1 </bdi>OIN en certificaten</h4><a class="self-link" href="#oin-en-certificaten" aria-label="Permalink for Section 2.5.1"></a></div>
 <p>Ten behoeve van Digikoppeling grote berichten dient gebruik gemaakt te worden van OIN gerelateerde certificaten. Alleen verbindingen waarbij zowel de client als de server over een geldig certificaat beschikken zijn toegestaan (TLS). De gebruikte certificaten mogen dezelfde certificaten zijn die al ten behoeve van de REST-API / ebMS2 / WUS geïnstalleerd zijn, maar dit hoeft niet het geval te zijn (zolang het OIN maar overeenkomt).</p>
 <section id="client-zijde"><div class="header-wrapper"><h5 id="x2-5-1-1-client-zijde"><bdi class="secno">2.5.1.1 </bdi>Client-zijde</h5><a class="self-link" href="#client-zijde" aria-label="Permalink for Section 2.5.1.1"></a></div>
-<p>Strik genomen moeten zowel de server als de client controleren op correct OIN gebruik. Dit houdt in dat het OIN uit het certificaat dient overeen te komen met de OIN uit het bericht. In praktijk zal dit voor de client echter niet altijd noodzakelijk zijn. Ook bij het profiel wordt deze controle niet strikt uitgevoerd en bovendien kun je je afvragen waarom de http-client het OIN van de server moet controleren als net daarvoor metadata met een url is ontvangen van een communicatie-partner waarvan het OIN bij de ontvangst van deze meta-data al gecontroleerd is. Bovendien controleert een TLS-client automatisch of het domein van de server overeenkomt met het certificaat.</p>
+<p>Strikt genomen moeten zowel de server als de client controleren op correct OIN gebruik. Dit houdt in dat het OIN uit het certificaat dient overeen te komen met het OIN uit het bericht. In praktijk zal dit voor de client echter niet altijd noodzakelijk zijn. Ook bij het profiel wordt deze controle niet strikt uitgevoerd en bovendien kun je je afvragen waarom de http-client het OIN van de server moet controleren als net daarvoor metadata met een url is ontvangen van een communicatie-partner waarvan het OIN bij de ontvangst van deze meta-data al gecontroleerd is. Bovendien controleert een TLS-client automatisch of het domein van de server overeenkomt met het certificaat.</p>
 <p>Controle van het OIN uit het certificaat van de (bestands)server aan de client-zijde is daarom vaak niet nodig.</p>
 </section><section id="server-zijde"><div class="header-wrapper"><h5 id="x2-5-1-2-server-zijde"><bdi class="secno">2.5.1.2 </bdi>Server-zijde</h5><a class="self-link" href="#server-zijde" aria-label="Permalink for Section 2.5.1.2"></a></div>
 <p>Controle van het OIN in het client-certificaat is voor vertrouwelijke (niet-openbare) gegevensbestanden noodzakelijk. Hiervoor zijn onder andere de volgende implementaties mogelijk:</p>
@@ -1531,7 +1531,7 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
 <p>Bij de definitiestudie naar Digikoppeling Grote Berichten zijn een aantal use cases onderkend die bij de uitwerking van de standaard als referentie hebben gediend. Deze use-cases zijn bij toepassing van de standaard nuttig als inspiratiebron voor vormgeving van uitwisselingspatronen.</p>
 <p>Dit hoofdstuk beschrijft deze use-cases en geeft aan hoe deze gerealiseerd kunnen worden. Daarbij maakt de uitwerking duidelijk of gegevens via REST-API, ebMS2, WUS en/of als groot bericht verstuurd worden. Beschrijving van de use-cases is generiek; specifieke implementaties kunnen variëren maar zullen vaak deze generieke patronen als basis hebben.</p>
 <section id="download"><div class="header-wrapper"><h3 id="x3-1-download"><bdi class="secno">3.1 </bdi>Download</h3><a class="self-link" href="#download" aria-label="Permalink for Section 3.1"></a></div>
-<p>In deze use case is benodigde gegevens set al beschikbaar in een download-server bij de service provider. De client dient echter nog de beschikking te krijgen over een verwijzing naar de gewenste gegevens set. Daartoe worden de volgende processtappen doorlopen:</p>
+<p>In deze use case is een benodigde gegevensset al beschikbaar in een download-server bij de service provider. De client dient echter nog de beschikking te krijgen over een verwijzing naar de gewenste gegevensset. Daartoe worden de volgende processtappen doorlopen:</p>
 <p>
       </p><figure id="fig-use-case-download">
         <img src="media/use_case_download.svg" alt="Use case 'Download'">
@@ -1539,9 +1539,9 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
       </figure>
     <p></p>
 <ol>
-<li>De service requester / client bevraagt (REST-API, WUS of ebMS2 request) de service provider met kenmerkende criteria voor de gezochte gegevens set. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel teveel mogelijkheden oplevert.</li>
+<li>De service requester / client bevraagt (REST-API, WUS of ebMS2 request) de service provider met kenmerkende criteria voor de gezochte gegevensset. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel te veel mogelijkheden oplevert.</li>
 <li>De service provider levert een verwijzing naar de gezochte gegevens set in de vorm van Meta-data (WUS-response of ebMS2).</li>
-<li>De service requester haalt de gewenste gegevens set op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</li>
+<li>De service requester haalt de gewenste gegevensset op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</li>
 </ol>
 </section><section id="selectie"><div class="header-wrapper"><h3 id="x3-2-selectie"><bdi class="secno">3.2 </bdi>Selectie</h3><a class="self-link" href="#selectie" aria-label="Permalink for Section 3.2"></a></div>
 <p>In deze use case vraagt een service requester een gegevensselectie van een service provider. Daartoe worden de volgende processtappen doorlopen:</p>
@@ -1552,10 +1552,10 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
       </figure>
     <p></p>
 <ol>
-<li>De service requester bevraagt (ebMS2-request of eventueel REST-API of WUS) de service provider met kenmerkende criteria voor de gezochte gegevens set. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel teveel mogelijkheden oplevert.</li>
+<li>De service requester bevraagt (ebMS2-request of eventueel REST-API of WUS) de service provider met kenmerkende criteria voor de gezochte gegevensset. Eventueel kan deze bevraging in enkele tussenstappen verlopen als deze initieel te veel mogelijkheden oplevert.</li>
 <li>De service provider maakt de gewenste gegevens set aan en zet deze klaar in een Groot Bestand.</li>
 <li>Zodra het Grote Bestand gereed is, Meldt de service provider dit aan de eerdere service requester met een verwijzing naar de gezochte gegevens set in de vorm van Meta-data (ebMS2).</li>
-<li>De service requester haalt de gewenste gegevens set op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</li>
+<li>De service requester haalt de gewenste gegevensset op (Groot Bericht) en krijgt deze op grond van autorisatie (OIN).</li>
 </ol>
 <p>Merk op dat deze use case vrijwel gelijk is aan “Download”. Alleen stap 2 'aanmaken selectie' is aanvullend. Vanwege de benodigde tijd van dit aanmaken kan gereedmelding niet via een WUS-response plaatsvinden en zal altijd ebMS2 toegepast moeten worden. Als het 'aanmaken van de selectie binnen de time-out van het WUS-request kan plaatsvinden ontstaat als vanzelf het “Download” pattern.</p>
 </section><section id="verzending-pull"><div class="header-wrapper"><h3 id="x3-3-verzending-pull"><bdi class="secno">3.3 </bdi>Verzending (pull)</h3><a class="self-link" href="#verzending-pull" aria-label="Permalink for Section 3.3"></a></div>
@@ -1583,10 +1583,10 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
         <figcaption><a class="self-link" href="#fig-use-case-push">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">Use case 'Push'</span></figcaption>
       </figure>
     <p></p>
-<p>Op enig moment is er een gebeurtenis waardoor de service provider besluit tot verzenden van gegevens. Voorbeelden van triggers zijn: tijd, bericht ontvangst of wijziging van gegevensobjecten.</p>
+<p>Op enig moment is er een gebeurtenis waardoor de service provider besluit tot verzenden van gegevens. Voorbeelden van triggers zijn: tijd, berichtontvangst of wijziging van gegevensobjecten.</p>
 <ol>
 <li>De service requester stuurt een 'upload verzoek' naar de service provider. In deze melding is in ieder geval de Meta-data van het Grote Bestand opgenomen, maar kan bijvoorbeeld ook informatie over de aard en beoogde afhandeling van het Grote Bestand zijn opgenomen.</li>
-<li>De service provider stuurt een 'upload response' met instructies over de upload lokatie (UUID).</li>
+<li>De service provider stuurt een 'upload response' met instructies over de uploadlocatie (UUID).</li>
 <li>De service requester upload de gegevens set (Groot Bericht) en krijgt toegang op grond van autorisatie (OIN).</li>
 </ol>
 <blockquote>
@@ -1601,7 +1601,7 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
       </figure>
     <p></p>
 <ol>
-<li>Op enig moment is er een gebeurtenis waardoor de service provider besluit tot distributie van gegevens. Voorbeelden van triggers zijn: tijd, bericht ontvangst of wijziging van gegevensobjecten.</li>
+<li>Op enig moment is er een gebeurtenis waardoor de service provider besluit tot distributie van gegevens. Voorbeelden van triggers zijn: tijd, berichtontvangst of wijziging van gegevensobjecten.</li>
 <li>Als gegevens niet beschikbaar zijn in de vorm van een Groot Bestand zal dit aangemaakt worden (bijvoorbeeld door samenstelling vanuit een database).</li>
 <li>De service provider stuurt een Melding (ebMS2) naar de Afnemers die deze gegevens (bijvoorbeeld op basis van een abonnement) behoren te ontvangen. In deze Melding is in ieder geval de Meta-data van het Grote Bestand opgenomen, maar kan bijvoorbeeld ook informatie over de aard en beoogde afhandeling van het Grote Bestand zijn opgenomen. Alle Afnemers ontvangen dezelfde Meta-data.</li>
 <li>Afnemers halen de gegevens op (Groot Bericht) en krijgen deze verstrekt op grond van autorisatie (OIN).</li>
@@ -1616,8 +1616,8 @@ In die gevallen zal dit “grote bericht” op een andere wijze verstuurd moeten
       </figure>
     <p></p>
 <ol>
-<li>Op enig moment is er een gebeurtenis waardoor de service requester besluit tot verzenden van gegevens. Voorbeelden van triggers zijn: tijd, bericht ontvangst of wijziging van gegevensobjecten.</li>
-<li>Als de gegevens set nog niet beschikbaar is in de vorm van een Groot Bestand zal dit aangemaakt worden (bijvoorbeeld door samenstelling vanuit een database)</li>
+<li>Op enig moment is er een gebeurtenis waardoor de service requester besluit tot verzenden van gegevens. Voorbeelden van triggers zijn: tijd, berichtontvangst of wijziging van gegevensobjecten.</li>
+<li>Als de gegevensset nog niet beschikbaar is in de vorm van een Groot Bestand zal dit aangemaakt worden (bijvoorbeeld door samenstelling vanuit een database)</li>
 <li>De service requester maakt gebruik van een HTTP POST operatie om de metadata van de gegevens set aan de service provider (Digipoort) te sturen. De service requester krijgt hiervoor authorisatie op grond van het HRN in het PKIO certificaat.</li>
 <li>De service requester upload de gegevens set (Groot Bericht) eventueel gebruikt hij in de upload de unieke referentie die is teruggegeven bij het creeren van de resource met de HTTP POST.</li>
 <li>De service requester maakt gebruik van een HTTP GET operatie om de status van de upload op te vragen bij de gecreeerde resource.</li>
