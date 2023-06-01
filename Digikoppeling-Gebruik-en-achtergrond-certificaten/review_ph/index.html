@@ -151,7 +151,7 @@ dd{margin-left:0}
   ],
   "useLogo": true,
   "useLabel": true,
-  "license": "cc0",
+  "license": "cc-by",
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -218,19 +218,19 @@ dd{margin-left:0}
       "name": "Creative Commons 0 Public Domain Dedication",
       "short": "CC0",
       "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
     },
     "cc-by": {
       "name": "Creative Commons Attribution 4.0 International Public License",
       "short": "CC-BY",
       "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
     },
     "cc-by-nd": {
       "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
       "short": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
     }
   },
   "localBiblio": {
@@ -819,7 +819,7 @@ dd{margin-left:0}
   "specType": "BP"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Gebruik en Achtergrond Certificaten 1.6.2</h1>
     
@@ -869,7 +869,7 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -928,8 +928,7 @@ dd{margin-left:0}
 </section>
   <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
 <section id="doel-en-doelgroep"><div class="header-wrapper"><h3 id="x1-1-doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</h3><a class="self-link" href="#doel-en-doelgroep" aria-label="Permalink for Section 1.1"></a></div>
-<p>Dit document beschrijft de wijze waarop, binnen de context van</p>
-<p>Digikoppeling, met certificaten wordt omgegaan. Inhoudelijk voorziet het in de detaillering van de architectuur voor identificatie, authenticatie en autorisatie. Bovendien geeft het uitleg over de gebruikelijke werkwijze bij het toepassen van certificaten. Meer informatie over certificaten is te vinden op de website: <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a>.</p>
+<p>Dit document beschrijft de wijze waarop, binnen de context van Digikoppeling, met certificaten wordt omgegaan. Inhoudelijk voorziet het in de detaillering van de architectuur voor identificatie, authenticatie en autorisatie. Bovendien geeft het uitleg over de gebruikelijke werkwijze bij het toepassen van certificaten. Meer informatie over certificaten is te vinden op de website: <a href="https://cert.pkioverheid.nl/">https://cert.pkioverheid.nl/</a>.</p>
 <p>Onderstaande tabel geeft de doelgroep van dit document weer.</p>
 <table class="simple">
 <thead>
@@ -1028,7 +1027,7 @@ dd{margin-left:0}
 </section><section id="achtergrond"><div class="header-wrapper"><h3 id="x1-3-achtergrond"><bdi class="secno">1.3 </bdi>Achtergrond</h3><a class="self-link" href="#achtergrond" aria-label="Permalink for Section 1.3"></a></div>
 <p>Een belangrijk aspect voor beveiliging van Digikoppeling is de juiste identificatie, authenticatie en autorisatie van organisaties. Voor Digikoppeling is daarbij gekozen om certificaten toe te passen die voldoen aan de eisen van PKIoverheid<sup>1</sup>. Het juist toepassen van deze certificaten is essentieel voor een goede beveiliging. Helaas is dit toepassen ook complex. Digikoppeling heeft daarom aanvullend aan de door PKIoverheid gestelde eisen een aantal afspraken gemaakt die enerzijds de beveiliging conform PKIoverheid garanderen en anderzijds de complexiteit beheersbaar maken<sup>2</sup>. De praktische toepassing van deze afspraken is uitgewerkt in dit document. Het bevat daarvoor:</p>
 <p><sup>1</sup>: Zie <a href="http://www.logius.nl/pkioverheid">http://www.logius.nl/pkioverheid</a></p>
-<p><sup>2</sup>: Zie het document “Digikoppeling Identificatie en Authenticatie”</p>
+<p><sup>2</sup>: Zie het document <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">Digikoppeling Identificatie en Authenticatie</a></p>
 <ul>
 <li><p>een uitwerking van de consequenties van deze authenticatie-afspraken;</p>
 </li>
@@ -1056,27 +1055,27 @@ dd{margin-left:0}
 </section><section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-5-leeswijzer"><bdi class="secno">1.5 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.5"></a></div>
 <p>Dit document is opgebouwd volgens een karakteristiek proces dat organisaties bij invoering van Digikoppeling doorlopen:</p>
 <ul>
-<li><p>Uitleg over PKIoverheid (hoofdstuk 2)</p>
+<li><p><a href="#achtergrond-pkioverheid-certificaten">Uitleg over PKIoverheid</a></p>
 </li>
-<li><p>Ontwerpen van de aansluiting op Digikoppeling met een Digikoppeling adapter (hoofdstuk 3).</p>
+<li><p><a href="#ontwerp-aspecten-digikoppeling-adapter">Ontwerpen van de aansluiting op Digikoppeling met een Digikoppeling adapter</a></p>
 </li>
-<li><p>Bestellen van een certificaat (hoofdstuk 4).</p>
+<li><p><a href="#bestellen-certificaat">Bestellen van een certificaat</a></p>
 </li>
-<li><p>Ontvangst en installatie van het certificaat (hoofdstuk 5).</p>
+<li><p><a href="#installatie-certificaat">Ontvangst en installatie van het certificaat</a></p>
 </li>
-<li><p>Distributie van het certificaat (hoofdstuk 6).</p>
+<li><p><a href="#distributie-en-cpa-creatie">Distributie van het certificaat</a></p>
 </li>
-<li><p>Gebruik van het certificaat (hoofdstuk 7).</p>
+<li><p><a href="#gebruiksaspecten">Gebruik van het certificaat</a></p>
 </li>
 </ul>
 <p>De volgende hoofdstukken gaan hier per processtap op in. Elk hoofdstuk begint met de opsomming van een aantal vragen die duidelijk maken op welke informatiebehoefte het hoofdstuk antwoord geeft. Daarna volgt belangrijke achtergrondinformatie. Het hoofdstuk sluit af met een beschrijving van de benodigde activiteiten voor deze proces stap.</p>
 <p>In bijlagen is de volgende aanvullende informatie opgenomen:</p>
 <ul>
-<li><p>Informatie over bestandsformaten waarin sleutels en/of certificaten uitgewisseld kunnen worden (Bijlage 1).</p>
+<li><p><a href="#bijlage-1-bestandsformaten-voor-certificaten">Informatie over bestandsformaten waarin sleutels en/of certificaten uitgewisseld kunnen worden</a></p>
 </li>
-<li><p>Richtlijnen voor een veilig wachtwoord (Bijlage 2)</p>
+<li><p><a href="#bijlage-2-richtlijnen-voor-een-veilig-password">Richtlijnen voor een veilig wachtwoord</a></p>
 </li>
-<li><p>Gegevens die in een certificaat opgenomen kunnen worden opgenomen (Bijlage 3)</p>
+<li><p><a href="#bijlage-3-basisattributen-in-certificaat">Gegevens die in een certificaat opgenomen kunnen worden opgenomen</a></p>
 </li>
 </ul>
 </section><section id="referenties"><div class="header-wrapper"><h3 id="x1-6-referenties"><bdi class="secno">1.6 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 1.6"></a></div>
@@ -1127,7 +1126,7 @@ dd{margin-left:0}
 <li>TSP certificaat;</li>
 <li>Eindgebruikercertificaat.</li>
 </ul>
-<p>Het Staat der Nederlanden G3 stamcertificaat, wordt vanaf 1-1-2021 niet langer gebruikt, in plaats daarvan wordt voor machine to machine verkeer (en dus ook voor Digikoppeling) gebruik gemaakt van het Staat der Nederlanden Private Root CA G1 stamcertificaat.
+<p>Voor machine to machine verkeer (en dus ook voor Digikoppeling) wordt gebruik gemaakt van het Staat der Nederlanden Private Root CA G1 stamcertificaat.
 (Voor webauthenticatie wordt vanaf 1-1-2021 gebruik gemaakt van het stamcertificaat Staat der Nederlanden EV Root CA, Dit stamcertificaat wordt niet gebruikt voor Digikoppeling<sup>6</sup>)</p>
 <p>Het Public Root G3 en de Private Root G1 Stamcertificaten maken gebruik van SHA-256.</p>
 <p><sup>6</sup>:Zie de Digikoppeling Beveiligingsvoorschriften en richtlijnen voor de specifieke eisen en evt. uitzonderingen.</p>
