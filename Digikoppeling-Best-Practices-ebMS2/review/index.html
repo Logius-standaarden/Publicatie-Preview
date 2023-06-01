@@ -1271,7 +1271,7 @@ Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de ident
 
 <p>In een losstaande transactie heeft het ConversationId dus niet zoveel toegevoegde waarde. Die toegevoegde waarde onstaat pas op het moment dat meerdere transacties door middel van het overkoepelende ConversationId met elkaar verbonden worden.</p>
 </section></section></section>
-  <section data-include="ch03_CPA Gebruik en Kenmerken.md" data-include-format="markdown" data-include-id="include-5344387614286552" class="respec-offending-element" title="`data-include` failed: `ch03_CPA Gebruik en Kenmerken.md` (Cannot read properties of undefined (reading 'search')
+  <section data-include="ch03_CPA Gebruik en Kenmerken.md" data-include-format="markdown" data-include-id="include-38415516894807467" class="respec-offending-element" title="`data-include` failed: `ch03_CPA Gebruik en Kenmerken.md` (Cannot read properties of undefined (reading 'search')
 Please report this to https://github.com/markedjs/marked.)." id="respec-offender-data-include-failed-ch03_cpa-gebruik-en-kenmerken-md-cannot-read-properties-of-undefined-reading-search-please-report-this-to-https-github-com-markedjs-marked">
   </section>
   <section id="het-gebruik-van-berichtvolgordelijkheid"><div class="header-wrapper"><h2 id="x3-het-gebruik-van-berichtvolgordelijkheid"><bdi class="secno">3. </bdi>Het gebruik van berichtvolgordelijkheid</h2><a class="self-link" href="#het-gebruik-van-berichtvolgordelijkheid" aria-label="Permalink for Section 3."></a></div>
@@ -1380,7 +1380,7 @@ MessageOrder module MUST only be used in conjunction with the ebXML Reliable Mes
       </figure>
     <p></p>
 <p><em>Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.</em></p>
-<p>The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains in internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  </p>
+<p>The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains an internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  </p>
 </aside>
 
 <p>De oplossingsrichtingen voor berichten waarvoor een volgnummer van belang is wordt hieronder globaal beschreven. Er wordt uitgegaan van een 'push' mechanisme: de ontvangende applicatie wordt dus actief doordat de ebMS adapter een functie van de applicatie aanroept voor het afleveren van een bericht (bijvoorbeeld met behulp van een web service of JMS queue). Dit in tegenstelling tot een 'pull' mechanisme waarbij het initiatief bij de applicatie ligt om te bepalen of er een nieuw bericht is ontvangen.</p>
