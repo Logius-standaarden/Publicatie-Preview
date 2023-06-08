@@ -835,14 +835,14 @@ dd{margin-left:0}
   "specType": "BP"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry informative toc-inline"><div class="head">
+ <body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Best Practices ebMS2</h1>
     
     <h2>
       Logius Best practice<br>
       Werkversie
-      <time class="dt-published" datetime="2023-05-31">01 juni 2023</time>
+      <time class="dt-published" datetime="2023-05-31">08 juni 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1075,7 +1075,7 @@ dd{margin-left:0}
 <p>De uitwisseling tussen partijen is in drie lagen opgedeeld:</p>
 <ol>
 <li><p>Inhoud (gegevens): deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken <br>
-Digikoppeling houdt zich niet met de inhoud bezig, <strong>'heeft geen boodschap aan de boodschap'</strong>.</p>
+Digikoppeling houdt zich niet met de inhoud bezig, '<em>heeft geen boodschap aan de boodschap</em>'.</p>
 </li>
 <li><p>Logistiek (processen): op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP/TLS), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is laag van Digikoppeling.</p>
 </li>
@@ -1086,10 +1086,10 @@ Digikoppeling houdt zich niet met de inhoud bezig, <strong>'heeft geen boodschap
 <p>Digikoppeling richt zich uitsluitend op de logistieke laag.</p>
 </blockquote>
 </section></section><section id="opbouw-van-dit-document"><div class="header-wrapper"><h3 id="x1-4-opbouw-van-dit-document"><bdi class="secno">1.4 </bdi>Opbouw van dit document</h3><a class="self-link" href="#opbouw-van-dit-document" aria-label="Permalink for Section 1.4"></a></div>
-<p>Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</p>
-<p>Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.</p>
-<p>Hoofdstuk 3 gaat in op de kenmerken van een CPA.</p>
-<p>Hoofdstuk 4 gaat over bericht volgordelijkheid.</p>
+<p><a href="#inleiding">Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.</a></p>
+<p><a href="#werkwijze-aanbevelingen-best-practices">Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.</a></p>
+<p><a href="#cpa-gebruik-en-kenmerken">Hoofdstuk 3 gaat in op de kenmerken van een CPA.</a></p>
+<p><a href="#het-gebruik-van-berichtvolgordelijkheid">Hoofdstuk 4 gaat over bericht volgordelijkheid.</a></p>
 <blockquote>
 <p>Begrippen en afkortingen worden toegelicht in het document [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling-architectuur" title="Digikoppeling Architectuur">Digikoppeling-Architectuur</a></cite>].<br>Dit document is onderdeel van de Digikoppeling standaard.</p>
 </blockquote>
@@ -1271,7 +1271,7 @@ Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de ident
 
 <p>In een losstaande transactie heeft het ConversationId dus niet zoveel toegevoegde waarde. Die toegevoegde waarde onstaat pas op het moment dat meerdere transacties door middel van het overkoepelende ConversationId met elkaar verbonden worden.</p>
 </section></section></section>
-  <section data-include="ch03_CPA Gebruik en Kenmerken.md" data-include-format="markdown" data-include-id="include-38415516894807467" class="respec-offending-element" title="`data-include` failed: `ch03_CPA Gebruik en Kenmerken.md` (Cannot read properties of undefined (reading 'search')
+  <section data-include="ch03_CPA Gebruik en Kenmerken.md" data-include-format="markdown" data-include-id="include-44120198982125025" class="respec-offending-element" title="`data-include` failed: `ch03_CPA Gebruik en Kenmerken.md` (Cannot read properties of undefined (reading 'search')
 Please report this to https://github.com/markedjs/marked.)." id="respec-offender-data-include-failed-ch03_cpa-gebruik-en-kenmerken-md-cannot-read-properties-of-undefined-reading-search-please-report-this-to-https-github-com-markedjs-marked">
   </section>
   <section id="het-gebruik-van-berichtvolgordelijkheid"><div class="header-wrapper"><h2 id="x3-het-gebruik-van-berichtvolgordelijkheid"><bdi class="secno">3. </bdi>Het gebruik van berichtvolgordelijkheid</h2><a class="self-link" href="#het-gebruik-van-berichtvolgordelijkheid" aria-label="Permalink for Section 3."></a></div>
