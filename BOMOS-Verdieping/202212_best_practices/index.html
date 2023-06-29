@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.7.1">
+<meta name="generator" content="ReSpec 34.1.1">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -105,9 +105,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
 :is(h4,h5,h6)+a.self-link::before{color:#000}
@@ -163,7 +162,7 @@ dd{margin-left:0}
   ],
   "useLogo": true,
   "useLabel": true,
-  "license": "cc0",
+  "license": "cc-by",
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -223,26 +222,26 @@ dd{margin-left:0}
   },
   "labelColor": {
     "def": "#154273",
-    "wv": "#32a852"
+    "wv": "#39870c"
   },
   "licenses": {
     "cc0": {
       "name": "Creative Commons 0 Public Domain Dedication",
       "short": "CC0",
       "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
     },
     "cc-by": {
       "name": "Creative Commons Attribution 4.0 International Public License",
       "short": "CC-BY",
       "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
     },
     "cc-by-nd": {
       "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
       "short": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
     }
   },
   "localBiblio": {
@@ -371,8 +370,8 @@ dd{margin-left:0}
       "title": "Digikoppeling Best Practices WUS"
     },
     "Digikoppeling Beveiligingsdocument": {
-      "date": "2020",
-      "href": "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
+      "date": "2021",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
       "publisher": "Logius",
       "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
     },
@@ -478,6 +477,15 @@ dd{margin-left:0}
       "publisher": "Oasis",
       "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
     },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
     "Eisen Pkioverheid": {
       "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
       "publisher": "Logius",
@@ -497,6 +505,15 @@ dd{margin-left:0}
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
       "publisher": "Logius",
       "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "Geospatial Module": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "23 mei 2021",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design rules Module: Geospatial"
     },
     "HEART.OAuth2": {
       "authors": [
@@ -841,19 +858,20 @@ dd{margin-left:0}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2022-06-07">25 april 2023</time>
+      <time class="dt-published" datetime="2022-06-07">29 juni 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/3.0.0">https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/3.0.0</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a class="u-url status" href="https://logius-standaarden.github.io/BOMOS-Verdieping/">https://logius-standaarden.github.io/BOMOS-Verdieping/</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping">https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping</a>
             </dd>
       <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/">https://logius-standaarden.github.io/BOMOS-Verdieping/</a></dd>
       
       
       
-      <dt>Vorige versie</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/2i">https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/2i</a></dd>
+      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/2i">https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/2i</a></dd>
       
       <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
@@ -885,18 +903,19 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
-   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>BOMOS Deel 2: De Verdieping, geeft zoals de titel al zegt een verdieping
+
+     <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>BOMOS Deel 2: De Verdieping, geeft zoals de titel al zegt een verdieping
   van de onderwerpen uit het Beheer- en Ontwikkelmodel zoals in BOMOS Deel 1
   is geïntroduceerd. De verdieping is gebaseerd op vele ervaringen,
   best practices uit zowel de standaardisatiewereld en daarbuiten.
  </p>
 </section>
-   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.1 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.2 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.3 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-ontwikkel-en-beheerorganisatie-activiteit-governance"><bdi class="secno">2.1 </bdi>De ontwikkel- en beheerorganisatie (Activiteit Governance)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#organisatiestructuur"><bdi class="secno">2.1.1 </bdi>Organisatiestructuur</a></li><li class="tocline"><a class="tocxref" href="#rollen-en-activiteiten"><bdi class="secno">2.1.2 </bdi>Rollen en activiteiten.</a></li><li class="tocline"><a class="tocxref" href="#beheertaken-uitvoering"><bdi class="secno">2.1.3 </bdi>Beheertaken uitvoering</a></li><li class="tocline"><a class="tocxref" href="#de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1.5 </bdi>Visie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-kosten-en-de-opbrengsten-activiteit-financien"><bdi class="secno">2.2 </bdi>De kosten en de opbrengsten (Activiteit: Financiën)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-baten-van-standaardisatie-generiek"><bdi class="secno">2.2.1 </bdi>De baten van standaardisatie generiek</a></li><li class="tocline"><a class="tocxref" href="#kosten-en-opbrengsten"><bdi class="secno">2.2.2 </bdi>Kosten en opbrengsten</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#geschiktheid-van-opbrengsten-bronnen"><bdi class="secno">2.2.3 </bdi>Geschiktheid van opbrengsten bronnen</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kostenbesparingen-bij-standaardisatie"><bdi class="secno">2.2.4 </bdi>Kostenbesparingen bij standaardisatie</a></li><li class="tocline"><a class="tocxref" href="#de-business-case"><bdi class="secno">2.2.5 </bdi>De business case</a></li><li class="tocline"><a class="tocxref" href="#het-opstellen-van-een-business-case"><bdi class="secno">2.2.6 </bdi>Het opstellen van een business case</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-open-invulling-van-een-standaard-activiteit-community"><bdi class="secno">3.1 </bdi>De open invulling van een standaard (Activiteit Community)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#krechmer-s-open-standaarden-model-10-requirements"><bdi class="secno">3.1.1 </bdi>Krechmer's open standaarden model: '10 requirements'</a></li><li class="tocline"><a class="tocxref" href="#concrete-tips-voor-openheid"><bdi class="secno">3.1.2 </bdi>Concrete tips voor openheid</a></li><li class="tocline"><a class="tocxref" href="#het-toetsbaar-maken-van-het-model"><bdi class="secno">3.1.3 </bdi>Het toetsbaar maken van het model</a></li><li class="tocline"><a class="tocxref" href="#open-invulling-met-open-source-software"><bdi class="secno">3.1.4 </bdi>Open invulling met Open Source Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#samenhang-met-andere-standaarden-activiteit-architectuur"><bdi class="secno">3.2 </bdi>Samenhang met andere standaarden (Activiteit Architectuur)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-gelaagdheid-van-standaarden"><bdi class="secno">3.2.1 </bdi>De gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-internationale-standaarden"><bdi class="secno">3.2.2 </bdi>De relatie met internationale standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-van-gelaagdheid-van-standaarden"><bdi class="secno">3.2.3 </bdi>Voorbeelden van gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#sector-overstijgende-interoperabiliteit-verzuiling"><bdi class="secno">3.2.4 </bdi>Sector overstijgende interoperabiliteit: Verzuiling</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-formele-standaarden"><bdi class="secno">3.2.5 </bdi>De relatie met formele standaarden</a></li><li class="tocline"><a class="tocxref" href="#strategieen-voor-omgang-met-lokalisatie-profielen"><bdi class="secno">3.2.6 </bdi>Strategieën voor omgang met lokalisatie profielen</a></li><li class="tocline"><a class="tocxref" href="#de-linked-data-standaarden-voor-semantisch-modelleren"><bdi class="secno">3.2.7 </bdi>De Linked Data standaarden voor semantisch modelleren</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stimuleren-van-het-gebruik-van-standaarden-activiteit-adoptie-erkenning"><bdi class="secno">3.3 </bdi>Stimuleren van het gebruik van standaarden (Activiteit Adoptie &amp; Erkenning)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#succesfactoren-voor-adoptie-van-een-standaard"><bdi class="secno">3.3.1 </bdi>Succesfactoren voor adoptie van een standaard</a></li><li class="tocline"><a class="tocxref" href="#kiezen-van-de-juiste-middelen"><bdi class="secno">3.3.2 </bdi>Kiezen van de juiste middelen</a></li><li class="tocline"><a class="tocxref" href="#stappenplan"><bdi class="secno">3.3.3 </bdi>Stappenplan</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#plugfest"><bdi class="secno">3.3.4 </bdi>Plugfest</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#factoren-voor-adoptie"><bdi class="secno">3.3.5 </bdi>Factoren voor adoptie</a></li><li class="tocline"><a class="tocxref" href="#adoptie-binnen-gebruikersorganisaties"><bdi class="secno">3.3.6 </bdi>Adoptie binnen gebruikersorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#kwaliteit-van-standaarden"><bdi class="secno">3.4.1 </bdi>Kwaliteit van standaarden</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteit-van-implementaties"><bdi class="secno">3.4.2 </bdi>Kwaliteit van implementaties</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzamelen-van-wensen-en-eisen"><bdi class="secno">4.1.1 </bdi>Verzamelen van wensen en eisen</a></li><li class="tocline"><a class="tocxref" href="#voorbereiden-veranderingsvoorstellen"><bdi class="secno">4.1.2 </bdi>Voorbereiden veranderingsvoorstellen</a></li><li class="tocline"><a class="tocxref" href="#beoordeling-en-besluitvorming"><bdi class="secno">4.1.3 </bdi>Beoordeling en besluitvorming</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#werkgroepen-en-stakeholders"><bdi class="secno">4.1.4 </bdi>Werkgroepen en stakeholders</a></li><li class="tocline"><a class="tocxref" href="#overgang-naar-nieuwe-versie"><bdi class="secno">4.1.5 </bdi>Overgang naar nieuwe versie</a></li><li class="tocline"><a class="tocxref" href="#vaste-cyclus"><bdi class="secno">4.1.6 </bdi>Vaste cyclus</a></li><li class="tocline"><a class="tocxref" href="#relatie-met-andere-standaarden"><bdi class="secno">4.1.7 </bdi>Relatie met andere standaarden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeelden-uit-de-operationele-praktijk"><bdi class="secno">4.2 </bdi>Voorbeelden uit de operationele praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pressure-cooker-een-standaard-in-een-week-in-de-afvalbranche"><bdi class="secno">4.2.1 </bdi>Pressure Cooker – een standaard in een week in de afvalbranche</a></li><li class="tocline"><a class="tocxref" href="#documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">4.2.2 </bdi>Documentatie (en Publicatie) met Git en Respec</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li></ol></nav>
-   <section class="introductory"><h1>Documentbeheer</h1>
+     <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.1 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.2 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.3 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-ontwikkel-en-beheerorganisatie-activiteit-governance"><bdi class="secno">2.1 </bdi>De ontwikkel- en beheerorganisatie (Activiteit Governance)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#organisatiestructuur"><bdi class="secno">2.1.1 </bdi>Organisatiestructuur</a></li><li class="tocline"><a class="tocxref" href="#rollen-en-activiteiten"><bdi class="secno">2.1.2 </bdi>Rollen en activiteiten.</a></li><li class="tocline"><a class="tocxref" href="#beheertaken-uitvoering"><bdi class="secno">2.1.3 </bdi>Beheertaken uitvoering</a></li><li class="tocline"><a class="tocxref" href="#de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1.5 </bdi>Visie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-kosten-en-de-opbrengsten-activiteit-financien"><bdi class="secno">2.2 </bdi>De kosten en de opbrengsten (Activiteit: Financiën)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-baten-van-standaardisatie-generiek"><bdi class="secno">2.2.1 </bdi>De baten van standaardisatie generiek</a></li><li class="tocline"><a class="tocxref" href="#kosten-en-opbrengsten"><bdi class="secno">2.2.2 </bdi>Kosten en opbrengsten</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#geschiktheid-van-opbrengsten-bronnen"><bdi class="secno">2.2.3 </bdi>Geschiktheid van opbrengsten bronnen</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kostenbesparingen-bij-standaardisatie"><bdi class="secno">2.2.4 </bdi>Kostenbesparingen bij standaardisatie</a></li><li class="tocline"><a class="tocxref" href="#de-business-case"><bdi class="secno">2.2.5 </bdi>De business case</a></li><li class="tocline"><a class="tocxref" href="#het-opstellen-van-een-business-case"><bdi class="secno">2.2.6 </bdi>Het opstellen van een business case</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-open-invulling-van-een-standaard-activiteit-community"><bdi class="secno">3.1 </bdi>De open invulling van een standaard (Activiteit Community)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#krechmer-s-open-standaarden-model-10-requirements"><bdi class="secno">3.1.1 </bdi>Krechmer's open standaarden model: '10 requirements'</a></li><li class="tocline"><a class="tocxref" href="#concrete-tips-voor-openheid"><bdi class="secno">3.1.2 </bdi>Concrete tips voor openheid</a></li><li class="tocline"><a class="tocxref" href="#het-toetsbaar-maken-van-het-model"><bdi class="secno">3.1.3 </bdi>Het toetsbaar maken van het model</a></li><li class="tocline"><a class="tocxref" href="#open-invulling-met-open-source-software"><bdi class="secno">3.1.4 </bdi>Open invulling met Open Source Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#samenhang-met-andere-standaarden-activiteit-architectuur"><bdi class="secno">3.2 </bdi>Samenhang met andere standaarden (Activiteit Architectuur)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-gelaagdheid-van-standaarden"><bdi class="secno">3.2.1 </bdi>De gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-internationale-standaarden"><bdi class="secno">3.2.2 </bdi>De relatie met internationale standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-van-gelaagdheid-van-standaarden"><bdi class="secno">3.2.3 </bdi>Voorbeelden van gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#sector-overstijgende-interoperabiliteit-verzuiling"><bdi class="secno">3.2.4 </bdi>Sector overstijgende interoperabiliteit: Verzuiling</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-formele-standaarden"><bdi class="secno">3.2.5 </bdi>De relatie met formele standaarden</a></li><li class="tocline"><a class="tocxref" href="#strategieen-voor-omgang-met-lokalisatie-profielen"><bdi class="secno">3.2.6 </bdi>Strategieën voor omgang met lokalisatie profielen</a></li><li class="tocline"><a class="tocxref" href="#de-linked-data-standaarden-voor-semantisch-modelleren"><bdi class="secno">3.2.7 </bdi>De Linked Data standaarden voor semantisch modelleren</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stimuleren-van-het-gebruik-van-standaarden-activiteit-adoptie-erkenning"><bdi class="secno">3.3 </bdi>Stimuleren van het gebruik van standaarden (Activiteit Adoptie &amp; Erkenning)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#succesfactoren-voor-adoptie-van-een-standaard"><bdi class="secno">3.3.1 </bdi>Succesfactoren voor adoptie van een standaard</a></li><li class="tocline"><a class="tocxref" href="#kiezen-van-de-juiste-middelen"><bdi class="secno">3.3.2 </bdi>Kiezen van de juiste middelen</a></li><li class="tocline"><a class="tocxref" href="#stappenplan"><bdi class="secno">3.3.3 </bdi>Stappenplan</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#plugfest"><bdi class="secno">3.3.4 </bdi>Plugfest</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#factoren-voor-adoptie"><bdi class="secno">3.3.5 </bdi>Factoren voor adoptie</a></li><li class="tocline"><a class="tocxref" href="#adoptie-binnen-gebruikersorganisaties"><bdi class="secno">3.3.6 </bdi>Adoptie binnen gebruikersorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#kwaliteit-van-standaarden"><bdi class="secno">3.4.1 </bdi>Kwaliteit van standaarden</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteit-van-implementaties"><bdi class="secno">3.4.2 </bdi>Kwaliteit van implementaties</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzamelen-van-wensen-en-eisen"><bdi class="secno">4.1.1 </bdi>Verzamelen van wensen en eisen</a></li><li class="tocline"><a class="tocxref" href="#voorbereiden-veranderingsvoorstellen"><bdi class="secno">4.1.2 </bdi>Voorbereiden veranderingsvoorstellen</a></li><li class="tocline"><a class="tocxref" href="#beoordeling-en-besluitvorming"><bdi class="secno">4.1.3 </bdi>Beoordeling en besluitvorming</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#werkgroepen-en-stakeholders"><bdi class="secno">4.1.4 </bdi>Werkgroepen en stakeholders</a></li><li class="tocline"><a class="tocxref" href="#overgang-naar-nieuwe-versie"><bdi class="secno">4.1.5 </bdi>Overgang naar nieuwe versie</a></li><li class="tocline"><a class="tocxref" href="#vaste-cyclus"><bdi class="secno">4.1.6 </bdi>Vaste cyclus</a></li><li class="tocline"><a class="tocxref" href="#relatie-met-andere-standaarden"><bdi class="secno">4.1.7 </bdi>Relatie met andere standaarden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeelden-uit-de-operationele-praktijk"><bdi class="secno">4.2 </bdi>Voorbeelden uit de operationele praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pressure-cooker-een-standaard-in-een-week-in-de-afvalbranche"><bdi class="secno">4.2.1 </bdi>Pressure Cooker – een standaard in een week in de afvalbranche</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a></li><li class="tocline"><a class="tocxref" href="#bijlage-de-praktijk"><bdi class="secno">7. </bdi>Bijlage: de Praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">7.1 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#edustandaard-governance"><bdi class="secno">7.1.1 </bdi>Edustandaard governance</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#logius-standaarden-governance"><bdi class="secno">7.1.2 </bdi>Logius standaarden governance</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel-gereedschap-voor-standaardenbeheer"><bdi class="secno">7.2 </bdi>Operationeel: Gereedschap voor standaardenbeheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">7.2.1 </bdi>Documentatie (en Publicatie) met Git en Respec</a></li><li class="tocline"><a class="tocxref" href="#git-en-git-platforms"><bdi class="secno">7.2.2 </bdi>Git en Git platforms</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsverzoeken"><bdi class="secno">7.2.3 </bdi>Wijzigingsverzoeken</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li></ol></nav>
+     <section class="introductory" id="documentbeheer"><div class="header-wrapper"><h2 id="documentbeheer-0">Documentbeheer</h2><a class="self-link" href="#documentbeheer" aria-label="Permalink for this Section"></a></div>
 <table class="dkkvs">
 <thead>
 <tr>
@@ -920,7 +939,7 @@ dd{margin-left:0}
 </tr>
 </tbody></table>
 </section>
-   <section class="introductory"><h1>Colofon</h1>
+     <section class="introductory" id="colofon"><div class="header-wrapper"><h2 id="colofon-0">Colofon</h2><a class="self-link" href="#colofon" aria-label="Permalink for this Section"></a></div>
 <table class="dkkvs">
 <thead>
 <tr>
@@ -934,7 +953,8 @@ dd{margin-left:0}
 </tr>
 </tbody></table>
 </section>
-   <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
+
+     <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
 <p>In de BOMOS Verdieping worden de componenten van BOMOS behandeld. Naast de
 lagen operationeel, tactisch en strategisch worden implementatie ondersteuning
 en communicatie besproken.</p>
@@ -961,8 +981,8 @@ gebruikt als gemeenschappelijke taal in de standaardisatiewereld.</p>
 </section><section id="structuur-bomos"><div class="header-wrapper"><h3 id="x1-2-structuur-bomos"><bdi class="secno">1.2 </bdi>Structuur BOMOS</h3><a class="self-link" href="#structuur-bomos" aria-label="Permalink for Section 1.2"></a></div>
 <p>BOMOS bestaat uit:</p>
 <ul>
-<li>BOMOS Deel 1: Het Fundament (dit document)</li>
-<li><a href="https://logius-standaarden.github.io/BOMOS-Verdieping">BOMOS Deel 2: De Verdieping</a></li>
+<li><a href="https://logius-standaarden.github.io/BOMOS-Fundament">BOMOS Deel 1: Het Fundament</a></li>
+<li>BOMOS Deel 2: De Verdieping (dit document)</li>
 <li>BOMOS Aanvullende modules: <a href="https://logius-standaarden.github.io/BOMOS-LinkedData">Linked Data</a> en <a href="https://logius-standaarden.github.io/BOMOS-Stelsels">Stelsels</a></li>
 </ul>
 <p>De kern van BOMOS is het <a href="https://logius-standaarden.github.io/BOMOS-Fundament">Fundament</a>. Dat bestaat uit een basis
@@ -980,8 +1000,7 @@ een wat andere context, kunnen helpen. We noemen dit de BOMOS
 Aanvullende Modules, ook wel een Body of Knowledge genoemd, welke
 dynamisch zullen zijn in de tijd.</p>
 <p>Als we het hebben over BOMOS, dan bedoelen we daarmee de basis zoals
-in <a href="https://logius-standaarden.github.io/BOMOS-Fundament">Deel 1</a> en <a href="https://logius-standaarden.github.io/BOMOS-Verdieping">Deel
-2</a>
+in <a href="https://logius-standaarden.github.io/BOMOS-Fundament">Deel 1</a> en Deel 2
 beschreven. De aanvullende modules zijn wel duidelijk met BOMOS
 verbonden, maar hebben een eigen governance wat kan resulteren in een
 eigen naam, eigen doelgroep, eigen beheer, etc. In het
@@ -1005,7 +1024,7 @@ kunnen helpen bij implementaties van open standaarden. Ook vindt u
 hier varianten op BOMOS. Deze implementatieprofielen maken BOMOS
 toepasbaar op meer dan (semantische) standaarden alleen.</p>
 </section></section>
-   <section id="strategie"><div class="header-wrapper"><h2 id="x2-strategie"><bdi class="secno">2. </bdi>Strategie</h2><a class="self-link" href="#strategie" aria-label="Permalink for Section 2."></a></div>
+     <section id="strategie"><div class="header-wrapper"><h2 id="x2-strategie"><bdi class="secno">2. </bdi>Strategie</h2><a class="self-link" href="#strategie" aria-label="Permalink for Section 2."></a></div>
 <p>In deze sectie worden onderwerpen verdiept die gerelateerd zijn aan
 strategische onderwerpen uit het Beheer- en Ontwikkelmodel.</p>
 <section id="de-ontwikkel-en-beheerorganisatie-activiteit-governance"><div class="header-wrapper"><h3 id="x2-1-de-ontwikkel-en-beheerorganisatie-activiteit-governance"><bdi class="secno">2.1 </bdi>De ontwikkel- en beheerorganisatie (Activiteit Governance)</h3><a class="self-link" href="#de-ontwikkel-en-beheerorganisatie-activiteit-governance" aria-label="Permalink for Section 2.1"></a></div>
@@ -1023,8 +1042,8 @@ scheiding tussen inhoudelijke activiteiten in de
 uitvoeringsorganisatie en de besluitvorming door het bestuur.</p>
 <p>
       </p><figure id="fig-organisatiestructuur">
-        <img src="images/organisatiestructuur.png" alt="Organisatiestructuur" height="446" width="880">
-        <figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Organisatiestructuur</span></figcaption>
+        <img src="images/organisatiestructuur.png" alt="Organisatiestructuur">
+        <figcaption><a class="self-link" href="#fig-organisatiestructuur">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Organisatiestructuur</span></figcaption>
       </figure>
     <p></p>
 <p>Het bestuur geeft opdracht aan een (not-for-profit)
@@ -1285,8 +1304,8 @@ gecreerd in de wereld van deze zorg standaard. (bron voorbeeld: NEN
 7522-2021)</p>
 <p>
       </p><figure id="fig-voorbeeld-van-toewijzing-rollen-aan-stakeholders">
-        <img src="images/nenactiviteiten3.png" alt="Voorbeeld van toewijzing rollen aan stakeholders" height="412" width="605">
-        <figcaption>Figuur <bdi class="figno">2</bdi> <span class="fig-title">Voorbeeld van toewijzing rollen aan stakeholders</span></figcaption>
+        <img src="images/nenactiviteiten3.png" alt="Voorbeeld van toewijzing rollen aan stakeholders">
+        <figcaption><a class="self-link" href="#fig-voorbeeld-van-toewijzing-rollen-aan-stakeholders">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Voorbeeld van toewijzing rollen aan stakeholders</span></figcaption>
       </figure>
     <p></p>
 </aside></div>
@@ -1308,8 +1327,8 @@ standaardisatieorganisaties, research-organisaties en
 brancheorganisaties.</p>
 <p>
       </p><figure id="fig-beleggen-van-ontwikkeltaken">
-        <img src="images/beleggen_ontwikkeltaken.png" alt="Beleggen van ontwikkeltaken" height="564" width="989">
-        <figcaption>Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van ontwikkeltaken</span></figcaption>
+        <img src="images/beleggen_ontwikkeltaken.png" alt="Beleggen van ontwikkeltaken">
+        <figcaption><a class="self-link" href="#fig-beleggen-van-ontwikkeltaken">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">Beleggen van ontwikkeltaken</span></figcaption>
       </figure>
     <p></p>
 <p>Het model maakt onderscheid tussen not-for-profit en profit
@@ -1419,18 +1438,18 @@ paragraaf over het uitbesteden van taken.</p>
 <aside class="example" id="example-edustandaard"><div class="marker">
     <a class="self-link" href="#example-edustandaard">Voorbeeld<bdi> 2</bdi></a><span class="example-title">: Edustandaard</span>
   </div>"
-Edustandaard is een platform waar alle publieke en private partijen binnen het onderwijsveld bij elkaar komen om afspraken te maken. Deze afspraken gaan bijvoorbeeld over het vindbaar maken van digitaal leermateriaal, of over het overbrengen van leerlinggegevens van het ene systeem naar het andere. Edustandaard ondersteunt publieke en private ketenpartijen in het onderwijs met standaarden en referentiearchitecturen om de informatiestromen in de onderwijsketens zo effectief mogelijk in te richten. Edustandaard beheert diverse standaarden en biedt overzicht en inzicht in de werking van (keten)processen. Ook wordt advies gegeven aan ketenpartijen in alle onderwijssectoren, van primair tot hoger onderwijs. 
+Edustandaard is een platform waar alle publieke en private partijen binnen
+het onderwijsveld bij elkaar komen om afspraken te maken. Deze afspraken 
+gaan bijvoorbeeld over het vindbaar maken van digitaal leermateriaal, of 
+over het overbrengen van leerlinggegevens van het ene systeem naar het andere. 
+Edustandaard ondersteunt publieke en private ketenpartijen in het onderwijs 
+met standaarden en referentiearchitecturen om de informatiestromen in de 
+onderwijsketens zo effectief mogelijk in te richten. Edustandaard beheert 
+diverse standaarden en biedt overzicht en inzicht in de werking van 
+(keten)processen. Ook wordt advies gegeven aan ketenpartijen in alle 
+onderwijssectoren, van primair tot hoger onderwijs. 
 
-<p>Edustandaard Standaardisatieraad
-De Edustandaard Standaardisatieraad vormt het bestuurlijke orgaan waarin besluitvorming plaatsvindt over vraagstukken rondom de governance en in beheer name of uitfasering van standaarden (afspraken). De raad bestaat uit bestuurders van de publieke en private brancheorganisaties in het onderwijs (primair tot en met hoger onderwijs). Het initiatief tot het ontwikkelen van een nieuwe afspraak of aanpassen van een bestaande afspraak ligt in het algemeen in het toepassingsdomein, maar uiteraard kan ook overheidsbrede wetgeving hiertoe aanleiding geven. Daarnaast heeft hij een belangrijke rol in het erkennen en adopteren van de afspraken in het veld. De Standaardisatieraad wordt door de Architectuurraad geadviseerd over standaarden en hun onderlinge samenhang. Via <a href="http://www.edustandaard.nl">www.edustandaard.nl</a> wordt overzicht geboden van alle afspraken die in het onderwijs worden beheerd.
-Meer info: <a href="https://www.edustandaard.nl/standaardisatieraad/">https://www.edustandaard.nl/standaardisatieraad/</a> </p>
-<p>Edustandaard Architectuurraad
-De Edustandaard Architectuurraad vormt het inhoudelijke adviesorgaan over ketenarchitectuur en standaarden (afspraken) op basis van de ROSA Ketenreferentiearchitectuur. De Architectuurraad vormt tevens het inhoudelijke beheer over de ROSA en het bevordert samenhang tussen de referentiearchitecturen in het onderwijs. Middels het instrument ROSA-architectuurscan wordt in kaart gebracht hoe nieuwe standaarden (afspraken), voorzieningen en andere ketenuitwisselingen zich verhouden tot de referentiearchitectuur voor ketenuitwisselingen. ROSA vormt dus ook het kader (de meetlat) waarlangs nieuwe architecturale ontwikkelingen worden getoetst middel de ROSA-architectuurscan.
-Meer info: <a href="https://www.edustandaard.nl/architectuurraad/">https://www.edustandaard.nl/architectuurraad/</a> </p>
-<p>Edustandaard Expertgroepen
-Edustandaard is een netwerkorganisatie die samenwerkt met ketenpartijen in het onderwijs, zoals Kennisnet, SURF, het ministerie van OCW, de Dienst Uitvoering Onderwijs, onderwijsinstellingen, uitgevers en leveranciers van software voor het onderwijs. Die samenwerking krijgt gestalte door verschillende expertgroepen met elk een andere rol. Edustandaard volgt hierbij de globale organisatiestructuur van BOMOS. Er zijn vier soorten expertgroepen binnen Edustandaard: adviesorgaan, bestuur, uitvoeringsorganisatie en werkgroep.
-In een Edustandaard werkgroep vindt de ontwikkeling, het beheer en de ondersteuning van het gebruik van afspraken (standaarden) plaats. Er zijn meer dan 15 Edustandaard werkgroepen actief. Er zijn ook werkgroepen die zich richten op specifieke onderdelen van de ROSA, zoals de werkgroep Toegang). Edustandaard kent 2 adviesorganen, namelijk de Architectuurraad en het QA-team (QA = quality assurance). De Architectuurraad is het inhoudelijke adviesorgaan over ketenarchitectuur en standaarden (afspraken) op basis van de ROSA; het QA-team adviseert over de backlog en de roadmap van de ROSA. Bureau Edustandaard vormt de uitvoeringsorganisatie, daaronder valt ook het ROSA Beheerteam.
-Meer info: <a href="https://www.edustandaard.nl/standaard_werkgroepen/">https://www.edustandaard.nl/standaard_werkgroepen/</a> </p>
+<p><a href="#Edustandaard-governance">De governance van de Edustandaard is beschreven in de bijlage</a>.</p>
 </aside>
 
 </section><section id="de-organisatievorm"><div class="header-wrapper"><h4 id="x2-1-4-de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</h4><a class="self-link" href="#de-organisatievorm" aria-label="Permalink for Section 2.1.4"></a></div>
@@ -1953,8 +1972,8 @@ donatie. Vooral structurele donaties zijn een prettige
 financieringsvorm. Dit leidt tot het volgende model:</p>
 <p>
       </p><figure id="fig-opbrengstenmodel">
-        <img src="images/opbrengstenmodel.png" alt="Opbrengstenmodel" height="452" width="626">
-        <figcaption>Figuur <bdi class="figno">4</bdi> <span class="fig-title">Opbrengstenmodel</span></figcaption>
+        <img src="images/opbrengstenmodel.png" alt="Opbrengstenmodel">
+        <figcaption><a class="self-link" href="#fig-opbrengstenmodel">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">Opbrengstenmodel</span></figcaption>
       </figure>
     <p></p>
 <p>Overigens zijn de kosten van het beheren van een standaard ook niet
@@ -2144,8 +2163,8 @@ situatie naar de toekomstscenario's duidelijk zijn.</p>
 <p>Het figuur geeft dit weer voor de primaire stakeholder de juwelier in dit voorbeeld. Uiteraard is het bij de implementatie de bedoeling om ervoor te zorgen dat zoveel mogelijk partijen in toekomstscenario 1 of 2 terecht komen en de standaard gaan gebruiken.</p>
 <p>
       </p><figure id="fig-scenarios-juweliersbranche">
-        <img src="images/scenarios-juweliers.png" alt="Scenarios juweliersbranche" height="362" width="496">
-        <figcaption>Figuur <bdi class="figno">5</bdi> <span class="fig-title">Scenarios juweliersbranche</span></figcaption>
+        <img src="images/scenarios-juweliers.png" alt="Scenarios juweliersbranche">
+        <figcaption><a class="self-link" href="#fig-scenarios-juweliersbranche">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">Scenarios juweliersbranche</span></figcaption>
       </figure>
     <p></p>
 </section><section id="stap-2-bepaal-de-kosten-en-baten-in-de-keten-op-basis-van-het-raamwerk"><div class="header-wrapper"><h5 id="x2-2-6-2-stap-2-bepaal-de-kosten-en-baten-in-de-keten-op-basis-van-het-raamwerk"><bdi class="secno">2.2.6.2 </bdi>Stap 2 - Bepaal de kosten en baten in de keten op basis van het raamwerk.</h5><a class="self-link" href="#stap-2-bepaal-de-kosten-en-baten-in-de-keten-op-basis-van-het-raamwerk" aria-label="Permalink for Section 2.2.6.2"></a></div>
@@ -2157,8 +2176,8 @@ model uit de juweliersbranche, en deze vervolgens aan te passen waar
 nodig. Het model uit de juweliersbranche is hieronder weergegeven.</p>
 <p>
       </p><figure id="fig-batenmodel-juweliersbranche">
-        <img src="images/model-juweliers.png" alt="Batenmodel juweliersbranche" height="385" width="474">
-        <figcaption>Figuur <bdi class="figno">6</bdi> <span class="fig-title">Batenmodel juweliersbranche</span></figcaption>
+        <img src="images/model-juweliers.png" alt="Batenmodel juweliersbranche">
+        <figcaption><a class="self-link" href="#fig-batenmodel-juweliersbranche">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">Batenmodel juweliersbranche</span></figcaption>
       </figure>
     <p></p>
 </section><section id="stap-3-verdeel-de-kosten-en-baten-naar-verschillende-stakeholders"><div class="header-wrapper"><h5 id="x2-2-6-3-stap-3-verdeel-de-kosten-en-baten-naar-verschillende-stakeholders"><bdi class="secno">2.2.6.3 </bdi>Stap 3- Verdeel de kosten en baten naar verschillende stakeholders.</h5><a class="self-link" href="#stap-3-verdeel-de-kosten-en-baten-naar-verschillende-stakeholders" aria-label="Permalink for Section 2.2.6.3"></a></div>
@@ -2173,7 +2192,7 @@ zonder blind te focussen op de getallen. Uiteraard kan na stap 3 een
 poging gedaan worden om de geïdentificeerde kosten en baten uit te
 gaan drukken in geld.</p>
 </section></section></section></section>
-   <section id="tactiek"><div class="header-wrapper"><h2 id="x3-tactiek"><bdi class="secno">3. </bdi>Tactiek</h2><a class="self-link" href="#tactiek" aria-label="Permalink for Section 3."></a></div>
+     <section id="tactiek"><div class="header-wrapper"><h2 id="x3-tactiek"><bdi class="secno">3. </bdi>Tactiek</h2><a class="self-link" href="#tactiek" aria-label="Permalink for Section 3."></a></div>
 <p>In deze sectie worden onderwerpen verdiept die gerelateerd zijn aan tactische onderwerpen uit het Beheer- en Ontwikkelmodel.</p>
 <section id="de-open-invulling-van-een-standaard-activiteit-community"><div class="header-wrapper"><h3 id="x3-1-de-open-invulling-van-een-standaard-activiteit-community"><bdi class="secno">3.1 </bdi>De open invulling van een standaard (Activiteit Community)</h3><a class="self-link" href="#de-open-invulling-van-een-standaard-activiteit-community" aria-label="Permalink for Section 3.1"></a></div>
 <p>Openheid is een belangrijk aspect van een duurzame standaard. Maar wat
@@ -2783,8 +2802,8 @@ zien; tussen haakjes staan engiszins verouderde voorbeelden van
 standaarden waarmee dit kan worden ingevuld.</p>
 <p>
       </p><figure id="fig-de-gelaagdheid-van-standaarden">
-        <img src="images/gelaagdheid_van_standaarden.png" alt="alt_text" height="414" width="609">
-        <figcaption>Figuur <bdi class="figno">7</bdi> <span class="fig-title">De gelaagdheid van standaarden</span></figcaption>
+        <img src="images/gelaagdheid_van_standaarden.png" alt="alt_text">
+        <figcaption><a class="self-link" href="#fig-de-gelaagdheid-van-standaarden">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">De gelaagdheid van standaarden</span></figcaption>
       </figure>
     <p></p>
 <p>Voor technische interoperabiliteit moeten er keuzes gemaakt worden,
@@ -2829,6 +2848,20 @@ namelijk in zogenoemde industrieconsortia zoals W3C en OASIS. Wanneer
 we naar semantische standaarden kijken, gaat het echter nog een stap
 verder aangezien die grotendeels door een eigen organisatie ontwikkeld
 worden.</p>
+<aside class="example" id="example-semantische-internationale-harmonisatie-van-aquo"><div class="marker">
+    <a class="self-link" href="#example-semantische-internationale-harmonisatie-van-aquo">Voorbeeld<bdi> 6</bdi></a><span class="example-title">: Semantische internationale harmonisatie van Aquo</span>
+  </div>
+   Voor het beheer van de Noordzee zijn internationaal uitwisselbare gegevens 
+   over zeewater noodzakelijk. De Aquo-standaard was alleen geschikt voor 
+   het Nederlands continentaal plat. Dat is maar een stukje van de Noordzee. 
+   Maar om (beleids-) vraagstukken over de hele Noordzee aan te pakken, moet 
+   Nederlandse beheerders data uitwisselen met bijvoorbeeld Engelse databeheerders. 
+   Daarvoor is een internationale standaard nodig. In de 1e fase zijn is het 
+   Informatiehuis Water met een consortium van relevante partijen een woordenboek 
+   aan het samenstellen. Dat is een tabel met enerzijds de Nederlandse Aquo-term 
+   en anderzijds de Engelse SeaDataNet/EMODnet-term.
+</aside>
+
 <p>De praktijk laat zien dat alleen een onderscheid tussen horizontale en
 verticale standaarden te beperkt is. Internationale verticale
 standaarden hebben vaak nog een specifieke invulling nodig om
@@ -2856,6 +2889,18 @@ worden! Overigens wil het niet zeggen dat alle vier de classificaties
 voor een bepaald toepassingsdomein moeten voorkomen. In de praktijk
 kan elke willekeurige combinatie voorkomen, afhankelijk van de
 situatie.</p>
+<aside class="example" id="example-ogc-observations-measurements-als-basis-voor-im-metingen"><div class="marker">
+    <a class="self-link" href="#example-ogc-observations-measurements-als-basis-voor-im-metingen">Voorbeeld<bdi> 7</bdi></a><span class="example-title">: OGC Observations &amp; measurements als basis voor IM Metingen</span>
+  </div>
+   IM Metingen is een standaard die door de bodembeheerders en waterbeheerders gezamenlijk 
+   is opgesteld om gegevensuitwisseling over de verschillende vakgebieden heen mogelijk te 
+   maken. Maar er is bij het ontwerp al rekening gehouden met internationale gegevensuitwisseling. 
+   IM Metingen is gebaseerd op de internationale standaard OpenGIS® Observations and Measurements 
+   (O&amp;M). Observations and Measurements is een standaard voor het beschrijven van observaties en 
+   metingen. Deze observaties en metingen zijn weer gekoppeld aan een locatie. Met O&amp;M is het 
+   mogelijk om observaties en metingen in een internationaal model te modelleren en uit te wisselen.
+</aside>
+
 <p>Tijdens de adoptiefase is nog wel eens een gehoorde opmerking dat men
 alleen de internationale standaard wil adopteren in plaats van de
 nationale. De argumentatie is meestal dat men wereldwijd zaken doet,
@@ -2872,22 +2917,28 @@ bijvoorbeeld een internationale verticale standaard in combinatie met
 een nationaal toepassingsprofiel, dat voor beide een andere naam wordt
 gehanteerd om verwarring in de praktijk voorkomen.</p>
 </section><section id="voorbeelden-van-gelaagdheid-van-standaarden"><div class="header-wrapper"><h4 id="x3-2-3-voorbeelden-van-gelaagdheid-van-standaarden"><bdi class="secno">3.2.3 </bdi>Voorbeelden van gelaagdheid van standaarden</h4><a class="self-link" href="#voorbeelden-van-gelaagdheid-van-standaarden" aria-label="Permalink for Section 3.2.3"></a></div>
-<p>XBRL is een voorbeeld van een internationale verticale standaard (in
+<p>Tot slot, ook binnen de standaarden zelf kan weer gelaagdheid
+ontstaan, op verschillende manieren. Tussen verticalen sector modellen
+en horizontale standaarden, en daarnaast worden ook andere
+(bv. technische) standaarden vaak samen toegevoegd om een totaal
+oplossing te bieden voor interoperabiliteit.</p>
+<aside class="example" id="example-xbrl"><div class="marker">
+    <a class="self-link" href="#example-xbrl">Voorbeeld<bdi> 8</bdi></a><span class="example-title">: XBRL</span>
+  </div>
+XBRL is een voorbeeld van een internationale verticale standaard (in
 de financiële sector) waarvoor nationale taxonomieën zijn opgesteld,
-bijvoorbeeld de US GAAP of in Nederland door het SBR programma.</p>
+bijvoorbeeld de US GAAP of in Nederland door het SBR programma.
+
 <p>In het kader van e-factureren heeft de Nederlandse overheid gekozen
 voor een internationale horizontale standaard (UBL), en heeft men
 vervolgens zelf een factuurmodel ontwikkeld om de vrijheidsgraden te
 beperken. Dus ook hier is er sprake van een nationaal
 toepassingsprofiel om uiteindelijk interoperabiliteit te kunnen
 bereiken.</p>
-<p>Tot slot, ook binnen de standaarden zelf kan weer gelaagdheid
-ontstaan, op verschillende manieren. Tussen verticalen sector modellen
-en horizontale standaarden, en daarnaast worden ook andere
-(bv. technische) standaarden vaak samen toegevoegd om een totaal
-oplossing te bieden voor interoperabiliteit.</p>
+</aside>
+
 <aside class="example" id="example-metamodel-voor-informatiemodellering"><div class="marker">
-    <a class="self-link" href="#example-metamodel-voor-informatiemodellering">Voorbeeld<bdi> 6</bdi></a><span class="example-title">: Metamodel voor Informatiemodellering</span>
+    <a class="self-link" href="#example-metamodel-voor-informatiemodellering">Voorbeeld<bdi> 9</bdi></a><span class="example-title">: Metamodel voor Informatiemodellering</span>
   </div>
 Om alle informatiemodellen in Nederland nog beter op elkaar aan te 
 laten sluiten is een metamodel ontwikkeld voor informatiemodellering 
@@ -3022,8 +3073,8 @@ kunnen bereiken.</p>
 </ul>
 <p>
       </p><figure id="fig-adoptiepaden-van-een-standaard">
-        <img src="images/adoptiepaden_standaard.png" alt="alt_text" height="624" width="736">
-        <figcaption>Figuur <bdi class="figno">8</bdi> <span class="fig-title">Adoptiepaden van een standaard</span></figcaption>
+        <img src="images/adoptiepaden_standaard.png" alt="alt_text">
+        <figcaption><a class="self-link" href="#fig-adoptiepaden-van-een-standaard">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Adoptiepaden van een standaard</span></figcaption>
       </figure>
     <p></p>
 <p>De strategieën:</p>
@@ -3078,7 +3129,7 @@ de Linked Data standaarden aan de open standaarden criteria, en een
 aantal zijn dan ook opgenomen op de pas-toe of leg-uit lijst van de
 Nederlandse Overheid.</p>
 <aside class="example" id="example-floricode-en-de-uitzendbranche"><div class="marker">
-    <a class="self-link" href="#example-floricode-en-de-uitzendbranche">Voorbeeld<bdi> 7</bdi></a><span class="example-title">: Floricode en de uitzendbranche</span>
+    <a class="self-link" href="#example-floricode-en-de-uitzendbranche">Voorbeeld<bdi> 10</bdi></a><span class="example-title">: Floricode en de uitzendbranche</span>
   </div>
 Bij Floricode zien we door de jaren heen verschuivingen in aandacht 
 op basis van architectuurkeuzes. Zo is de aandacht van traditionele 
@@ -3224,8 +3275,8 @@ doorgaans tot een juridisch middel. Zonder dwang zal een organisatie
 waarschijnlijk niet overgaan tot adoptie van de standaard.</p>
 <p>
       </p><figure id="fig-adoptiekeuzes">
-        <img src="images/adoptiekeuzes.png" alt="alt_text" height="289" width="439">
-        <figcaption>Figuur <bdi class="figno">9</bdi> <span class="fig-title">Adoptiekeuzes</span></figcaption>
+        <img src="images/adoptiekeuzes.png" alt="alt_text">
+        <figcaption><a class="self-link" href="#fig-adoptiekeuzes">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">Adoptiekeuzes</span></figcaption>
       </figure>
     <p></p>
 </section></section><section id="plugfest"><div class="header-wrapper"><h4 id="x3-3-4-plugfest"><bdi class="secno">3.3.4 </bdi>Plugfest</h4><a class="self-link" href="#plugfest" aria-label="Permalink for Section 3.3.4"></a></div>
@@ -3376,7 +3427,7 @@ ontwikkeld, en niet binnen grote standaardisatieorganisaties. Dit kan
 impact hebben op de kwaliteit; op zijn minst zal de kwaliteit daardoor
 sterk verschillen per semantische standaard.</p>
 <aside class="example" id="example-floricode"><div class="marker">
-    <a class="self-link" href="#example-floricode">Voorbeeld<bdi> 8</bdi></a><span class="example-title">: Floricode</span>
+    <a class="self-link" href="#example-floricode">Voorbeeld<bdi> 11</bdi></a><span class="example-title">: Floricode</span>
   </div>
 [Floricode](https://www.floricode.com/) heeft dit kwaliteitsinstrument 
 toegepast om 1 van hun standaarden in de praktijk naar een hoger 
@@ -3402,14 +3453,14 @@ verbetering in kwaliteit van hun standaarden zal bijdragen aan betere
 interoperabiliteit.</p>
 <p>
       </p><figure id="fig-resultaten-van-een-gebruikersonderzoek-naar-het-standaardisatieproces">
-        <img src="images/kwaliteit01.png" alt="Resultaten van een gebruikersonderzoek naar het standaardisatieproces" height="303" width="546">
-        <figcaption>Figuur <bdi class="figno">10</bdi> <span class="fig-title">Resultaten van een gebruikersonderzoek naar het standaardisatieproces</span></figcaption>
+        <img src="images/kwaliteit01.png" alt="Resultaten van een gebruikersonderzoek naar het standaardisatieproces">
+        <figcaption><a class="self-link" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-het-standaardisatieproces">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">Resultaten van een gebruikersonderzoek naar het standaardisatieproces</span></figcaption>
       </figure>
     <p></p>
 <p>
       </p><figure id="fig-resultaten-van-een-gebruikersonderzoek-naar-kwaliteit-van-standaarden">
-        <img src="images/kwaliteit02.png" alt="Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden" height="374" width="552">
-        <figcaption>Figuur <bdi class="figno">11</bdi> <span class="fig-title">Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden</span></figcaption>
+        <img src="images/kwaliteit02.png" alt="Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden">
+        <figcaption><a class="self-link" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-kwaliteit-van-standaarden">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden</span></figcaption>
       </figure>
     <p></p>
 </section><section id="wat-moet-er-dan-gebeuren"><div class="header-wrapper"><h5 id="x3-4-1-2-wat-moet-er-dan-gebeuren"><bdi class="secno">3.4.1.2 </bdi>Wat moet er dan gebeuren?</h5><a class="self-link" href="#wat-moet-er-dan-gebeuren" aria-label="Permalink for Section 3.4.1.2"></a></div>
@@ -3490,8 +3541,8 @@ worden en zal de relatie tussen standaarden en interoperabiliteit
 versterken.</p>
 <p>
       </p><figure id="fig-kwaliteitsinstrumenten">
-        <img src="images/kwaliteitsinstrumenten.png" alt="Kwaliteitsinstrumenten" height="367" width="688">
-        <figcaption>Figuur <bdi class="figno">12</bdi> <span class="fig-title">Kwaliteitsinstrumenten</span></figcaption>
+        <img src="images/kwaliteitsinstrumenten.png" alt="Kwaliteitsinstrumenten">
+        <figcaption><a class="self-link" href="#fig-kwaliteitsinstrumenten">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Kwaliteitsinstrumenten</span></figcaption>
       </figure>
     <p></p>
 <p>Het kwaliteitsmodel is een startpunt om te gebruiken om de kwaliteit
@@ -3699,7 +3750,7 @@ dergelijks. Nu JSON dominant als uitwisselingsformaat defacto
 standaard is geworden kan validatie plaatsvinden door middel van SHACL
 validatiergels.</p>
 <aside class="example" id="example-validatie-van-gwsw"><div class="marker">
-    <a class="self-link" href="#example-validatie-van-gwsw">Voorbeeld<bdi> 9</bdi></a><span class="example-title">: Validatie van GWSW</span>
+    <a class="self-link" href="#example-validatie-van-gwsw">Voorbeeld<bdi> 12</bdi></a><span class="example-title">: Validatie van GWSW</span>
   </div>
 De kwaliteit van gemeentelijke data op het gebied van stedelijk water 
 en de daarvoor benodigde infrastructuur is een belangrijk aandachtpunt 
@@ -3792,11 +3843,11 @@ worden om interoperabiliteit in de keten te testen.</p>
 
 <p>De meeste beheerorganisaties bieden hulpmiddelen voor het valideren van het gebruik van standaarden, zoals:</p>
 <ul>
-<li><p>Geonovum:<br><a href="http://validatie.geostandaarden.nl/">http://validatie.geostandaarden.nl</a></p>
+<li><p>Geonovum:<br><a href="http://validatie.geostandaarden.nl/">Validatie services van Geonovum</a></p>
 </li>
-<li><p>Kennisnet:<br><a href="https://testvoorziening.edustandaard.nl/">https://testvoorziening.edustandaard.nl/</a></p>
+<li><p>Kennisnet:<br><a href="https://testvoorziening.edustandaard.nl/">Edustandaard Testvoorziening</a></p>
 </li>
-<li><p>SETU:<br><a href="https://setu.semantic-treehouse.nl/#/ext/eValidator">https://setu.semantic-treehouse.nl/#/ext/eValidator</a><br>(alleen toegankelijk voor deelnemers in SETU).</p>
+<li><p>SETU:<br><a href="https://setu.semantic-treehouse.nl/#/ext/eValidator">SETU Support tool</a><br>(alleen toegankelijk voor deelnemers in SETU).</p>
 </li>
 </ul>
 <p>Overigens is de techniek die validatie van semantische standaarden mogelijk maakt zeer generiek.</p>
@@ -3911,7 +3962,7 @@ de standaard.</p>
 certificering overwogen hebben, maar tot op heden wordt certificering
 weinig toegepast.</p>
 </section></section></section></section>
-   <section id="operationeel"><div class="header-wrapper"><h2 id="x4-operationeel"><bdi class="secno">4. </bdi>Operationeel</h2><a class="self-link" href="#operationeel" aria-label="Permalink for Section 4."></a></div>
+     <section id="operationeel"><div class="header-wrapper"><h2 id="x4-operationeel"><bdi class="secno">4. </bdi>Operationeel</h2><a class="self-link" href="#operationeel" aria-label="Permalink for Section 4."></a></div>
 <p>In deze sectie worden onderwerpen verdiept die gerelateerd zijn aan strategische onderwerpen uit het Beheer- en Ontwikkelmodel.</p>
 <section id="proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><div class="header-wrapper"><h3 id="x4-1-proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</h3><a class="self-link" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel" aria-label="Permalink for Section 4.1"></a></div>
 <p>De primaire standaardisatieactiviteit is het operationele proces: Op welke manier komt de uiteindelijke standaard nu tot stand?</p>
@@ -4085,19 +4136,156 @@ weinig toegepast.</p>
 <p>De leerpunten:
 Belangrijke leerpunten zijn:</p>
 <ul>
-<li>Een pressure cooker is een prima middel om efficiënt een standaard te ontwikkelen. De kwaliteit moet zich nog bewijzen, maar de indruk is ontstaan dat de werkgroep bepalend is in de kwaliteit van de standaard.</li>
-<li>Duidelijke scope; wat in standaardisatie-kringen bekend staat als “scope-creep” (verschuivende scope)  ligt sterker op de loer in een pressure cooker.</li>
-<li>Niet te lang en te veel willen: Meer ervaringen zijn nodig om het optimum aan lengte en inhoud te kunnen bepalen, maar er is zeker sprake dat er een optimum is; op een gegeven moment is de magie uitgewerkt.</li>
+<li>Een pressure cooker is een prima middel om efficiënt een standaard te ontwikkelen. 
+De kwaliteit moet zich nog bewijzen, maar de indruk is ontstaan dat de werkgroep bepalend 
+is in de kwaliteit van de standaard.</li>
+<li>Duidelijke scope; wat in standaardisatie-kringen bekend staat als “scope-creep” 
+(verschuivende scope)  ligt sterker op de loer in een pressure cooker.</li>
+<li>Niet te lang en te veel willen: Meer ervaringen zijn nodig om het optimum aan lengte 
+en inhoud te kunnen bepalen, maar er is zeker sprake dat er een optimum is; op een 
+gegeven moment is de magie uitgewerkt.</li>
 </ul>
 <p>Het gebruik van de pressure cooker wordt in standaardisatie-land nog niet veel gebruikt, hoewel het idee wel afkomstig is van internationale standaardisatie-bijeenkomsten waarin de werkgroepleden zich ook soms ook een aantal dagen buigen over een standaard. Met een ‘pressure cooker’ kan hiermee de lengte van het standaardisatie-proces flink worden bekort. Daarnaast kan de ontwikkeling van standaarden hierdoor ook efficiënter – en dus: goedkoper - worden, en dat is natuurlijk mooi meegenomen.</p>
-</section><section id="documentatie-en-publicatie-met-git-en-respec"><div class="header-wrapper"><h4 id="x4-2-2-documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">4.2.2 </bdi>Documentatie (en Publicatie) met Git en Respec</h4><a class="self-link" href="#documentatie-en-publicatie-met-git-en-respec" aria-label="Permalink for Section 4.2.2"></a></div>
-<p>Er is een breder keuze aan digitale applicaties die gebruikt kunnen worden voor standaarden beheer, al zijn ze hier niet altijd voor bedoeld. Samenwerkingsapplicaties voor documentbeheer of softwareontwikkeling kunnen worden toegepast om beheerders en betrokkenen toegang te geven tot documentatie of zelfs om gebruikers de documentatie bij te laten werken.</p>
-<p>Een voorbeeld is het gebruik van Git en Respec voor het operationeel beheer. Git is een applicatie voor wijzigingsbeheer bij softwareontwikkeling. Iedere wijziging wordt opgeslagen in een database nadat het door de auteur voorzien is van commentaar. Hierdoor kunnen versies van verschillende tijdstippen vergeleken worden en kan de verantwoording nagelezen worden. Daarnaast is er ondersteuning voor parallellopende versies waardoor er bijvoorbeeld gewerkt kan worden aan een ingrijpende wijziging zonder dat onderhoud aan de huidige werkversie verstoord wordt. Er is een aantal webomgevingen voor samenwerking aan code die gebruik maken van git zoals <a href="https://github.com">Github</a>, <a href="https://gitlab.com">Gitlab</a> en <a href="https://gitea.io">Gitea</a>. Een gebruiker kan ook zelf op basis van de beschikbare Git open source software een Git omgeving maken en daarmee onafhankelijk blijven van de grote Git platforms. De Git platforms zoals Github en Gitlab bieden hostingopties en een webinterface voor het doorvoeren en inzien van wijzigingen naast ondersteuning voor lokaal geïnstalleerde git-applicaties.</p>
-<p>Respec is een applicatie om bestanden om te zetten in documentatie die online gepubliceerd kan worden. Het beheer van specificaties verloopt steeds vaker via een automatisch proces. Waar het in het verleden nog gebruikelijk was om losse documenten te delen binnen werkgroepen, stappen steeds meer beheerorganisaties over naar (git) repositories om teksten in te beheren. Hoewel deze omgevingen van oorsprong bedoeld zijn om programma code in te beheren, zijn deze ook goed bruikbaar voor het beheer van ‘leesbare’ tekst. Door gebruik van een responsive layout kan de documentatie onafhankelijk van schermgrootte leesbaar getoond worden. Respec maakt automatisch een inhoudsopgave waarmee een gebruiker snel door de documentatie kan browsen. Respec is specifiek bedoeld voor technische documentatie en het sluit goed aan bij applicaties voor softwareontwikkeling zoals Git.</p>
-<section id="git-en-git-platforms"><div class="header-wrapper"><h5 id="x4-2-2-1-git-en-git-platforms"><bdi class="secno">4.2.2.1 </bdi>Git en Git platforms</h5><a class="self-link" href="#git-en-git-platforms" aria-label="Permalink for Section 4.2.2.1"></a></div>
-<p>Door gebruik te maken van dezelfde gereedschappen als voor het beheer van programmacode kan het beheerproces automatisch ondersteund worden. Documentatie wordt ondergebracht in een online <em>repository</em>. Een repository is meer dan een archief voor code. Binnen Git platforms zoals Github en Gitlab kunnen issues ingediend worden door gebruikers, zijn projectmanagementtools beschikbaar en kunnen automatische acties op een repository uitgevoerd worden. Het is ook mogelijk om automatische controles uit te voeren op de code in een repository, bijvoorbeeld op basis van toegankelijkheid of op ontbrekende verwijzingen.</p>
-<aside class="example" id="example-10"><div class="marker">
-    <a class="self-link" href="#example-10">Voorbeeld<bdi> 10</bdi></a>
+</section></section></section>
+     <section id="implementatie-ondersteuning"><div class="header-wrapper"><h2 id="x5-implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</h2><a class="self-link" href="#implementatie-ondersteuning" aria-label="Permalink for Section 5."></a></div>
+<p>Het eerste begin van elke standaard is lastig. Mede door het bekende fenomeen van netwerk-effecten zullen velen de kat uit de boom kijken, en wachten met implementaties. Dit is lastig te doorbreken, maar implementatie-ondersteuning kan hierbij doorslaggevend zijn.  </p>
+<p>Daarnaast zijn de eerste implementaties vaak ook de eerste serieuze testcase voor de standaarden. Informatie over deze implementaties is dan ook weer waardevolle input in het beheerproces van een standaard. Dat is een reden te meer om implementatie-ondersteuning aan te bieden.<br>Ook zullen de eerste implementaties niet altijd even goed zijn. Ook kan de implementatie-last behoorlijk hoog zijn, en te allen tijde dient voorkomen te worden dat de standaard te boek komt te staan als lastig en duur om te implementeren.  </p>
+<p>Implementatie-ondersteuning is dan ook een prima middel om (eerste) implementaties van de grond te krijgen, de kosten voor de implementators relatief te beperken en de kwaliteit van de implementaties te verhogen. Daarnaast is het ook wederkerig; het is voor de standaardisatie-organisatie een unieke kans om input te vergaren over de kwaliteit van de standaard, en/of er verbeterpunten te adresseren zijn.  </p>
+<p>Dat er implementatie-ondersteuning moet zijn is vaak snel duidelijk, maar de invulling is wel lastiger. Met name omdat er een balans gevonden moet worden wat de beheer-organisatie invult, en wat overgelaten wordt aan consultancy door commerciële ondernemingen. Als beheerorganisatie is het ongewenst om te concurreren.  </p>
+<p>Een helpdesk functionaliteit is minimaal voor een beheerorganisatie. Overigens zien we steeds meer dat ook de community ingezet kan worden als helpdesk. Neem bijvoorbeeld het Geoforum (<a href="https://geoforum.nl/">https://geoforum.nl/</a>) waar ook vragen gesteld kunnen worden over de geo-standaarden.</p>
+<p>Met het bieden van opleidingen kom je als beheerorganisatie al sneller in het vaarwater van anderen. Toch kan het in een beginstadium wel essentieel zijn om het aan te bieden, vooral ook om de kwaliteit van de implementaties te verhogen, en implementaties laagdrempeliger maken.</p>
+<p>Daarvoor kan het ook helpen om bijvoorbeeld open source modules te ontwikkelen. Daarmee ontstaan er meer implementatie-opties, meer vrijheid, en mogelijk eenvoudiger implementaties. Leveranciers worden hiermee ook voor het blok gezet, en als beheerorganisatie kom je nu direct in het vaarwater van leveranciers. Deze zullen niet allemaal gelukkig hiervan worden, terwijl ze hard nodig zijn voor een succesvolle adoptie van de standaard. Module-ontwikkeling is dan ook een activiteit die zeer zorgvuldig aangepakt moet worden, en pas in het vizier moet komen als er een probleem rond implementaties is ontstaan.</p>
+<p>Laag drempeliger is het om pilots te organiseren. Door als beheerorganisatie de pilots in de promotionele spotlights te zetten kan er een drive bij de betrokken stakeholders ontstaan. Het geeft immers ook een innovatieve uitstraling. Pilots passen vooral bij nieuwe (versies) van standaarden, en kunnen maar beperkt gedaan worden.</p>
+<p>In eerder deel is al uitgebreid stilgestaan bij het onderwerp certificatie. Vooral een lichtere vorm van certificatie, validatie is een goede vorm van implementatie-ondersteuning. In een begin fase is het verstanding om de validatie resultaten niet te publiceren, daarmee is het puur een middel voor leveranciers om de implementaties te beproeven en te verbeteren. Een goede zaak. In een later stadium kan er meer openheid gecreëerd worden, en ook een vorm van naming &amp; shaming: welke leverancier haalt goede resultaten tijdens de validatie en welke niet? Daarmee schuift het ook al automatisch op richting certificatie.</p>
+<p>Met validatie wordt je als beheer-organisatie ook scheidsrechter; met name als er meningsverschillen ontstaan over het correct gebruik van de standaard. Enerzijds is dat prima, anderzijds kom je daarmee als beheerorganisatie tussen de partijen te staan, terwijl er boven of naast staan gewenster is.</p>
+</section>
+     <section id="communicatie"><div class="header-wrapper"><h2 id="x6-communicatie"><bdi class="secno">6. </bdi>Communicatie</h2><a class="self-link" href="#communicatie" aria-label="Permalink for Section 6."></a></div>
+<p>Een standaard is een product, met alle facetten die daarbij horen. Zo heeft een product een naam, en een standaard dan ook. Meestal is het een afkorting waar men later spijt van krijgt. Bijvoorbeeld doordat de technologie onderdeel is van de naam, zoals bij alle standaardisatie-organisaties met XML in de naam, bijvoorbeeld HR-XML Consortium. Deze organisaties moeten zich hernoemen als de techniek zich evolueert. (HR-XML heet nu HR Open Standards.) Dit is te voorkomen, maar lastiger is het te voorkomen dat de naam vaak een afspiegeling is van de scope van de standaard zodat de naam ook herkenbaar is in de praktijk. Echter de scope van de standaard zal ook gedurende de jaren gaan wijzigen, waardoor de naam de lading niet meer dekt. Een naam die een brede scope dekt is daarom de verstandige keuze.</p>
+<p>Een andere overweging bij de keuze van de naam is uitermate praktisch: Is de domeinnaam behorende bij de naam van de standaard nog vrij? Dit is in de praktijk vaak een blokkade.</p>
+<p>Daarbij is ook de uitstraling van de naam zeer verschillend; Floricom heeft waarschijnlijk voor de meesten een frissere uitstraling dan Stosag. Deze uitstraling moet uiteraard passen bij de gewenste uitstraling; bijvoorbeeld een betrouwbare doch saaiere naam past over het algemeen prima bij de gewenste uitstraling van een standaard. De uitstraling, of ook wel branding genoemd, zal voor een standaard vaak kernwaardes bevatten zoals betrouwbaar, maar ook innovatief. Bij een goede branding zullen andere organisaties zich graag willen verbinden, en bijvoorbeeld ook aan logo-vermelding gaan doen. Een positief teken.</p>
+<p>Naast de keuze voor een naam is promotie een belangrijk onderdeel van communicatie. Dat geldt zeker bij nieuwe standaarden. Immers een nieuw product wordt ook niet automatisch door de consument gevonden, maar heeft vaak een marketingcampagne nodig om bekendheid te creëren. Hetzelfde geldt voor de standaard, waarbij nagedacht moet worden wie de doelgroep is: de primaire stakeholders, of juist software leveranciers die de standaard moeten implementeren? En richt je de promotie op de developers/techneuten, of op de projectleider/management laag? Het één hoeft het andere niet uit te sluiten, maar verschillende groepen vereisen verschillende benaderingen. Richting business ligt de aandacht meer  op de business voordelen, efficiency, nieuwe marktkansen. Richting de techneuten meer op de technische inbedding/architectuur, software componenten, validatie, etc.</p>
+<p>Samenhangend met de promotie is ook het bouwen van een community. De waarde van een goede mailinglist is niet te onderschatten. Zo is de gemeenschap van gebruikers van de standaard direct te bereiken. Ook een specifieke LinkedIn groep is waardevol. Het gaat erom de doelgroep rechtstreeks op eigen initiatief te kunnen benaderen. Uiteraard moet het geheel wel in overeenstemming zijn met de AVG, wat vooral in de praktijk betekent dat explciet gevraagd moet worden voor toestemming voor het verzenden van e-mails, inclusief de reden van contact.</p>
+<p>Een ander belangrijk onderdeel van communicatie is de publicatie-aanpak. Het is niet meer van deze tijd om alleen PDF documenten te publiceren, dus elke standaard zou nu ook online-documentatie moeten hebben (al dan niet na inlog). We verwachten nu een online web omgeving, die er goed uitziet, en eenvoudig is in gebruik. Dezelfde online omgeving kan ongetwijfeld ook gebruikt worden voor het ontwikkelproces van de standaard. Online publiceren biedt voordelen op het gebied van het bieden van implementatie-ondersteuning, bijvoorbeeld implementatie-voorbeelden kunnen direct gelinkt (en getoond) worden aan een stukje tekst uit de online-publicatie. Maar ingrijpender ook impact op het standaardisatie-proces. Bijvoorbeeld versie-management wordt nu mogelijk op delen van het document, in plaats van dat versies van standaard altijd betrekking moeten hebben op het gehele document.</p>
+<p>Goede voorbeelden zijn:</p>
+<table class="dkkvs">
+<thead>
+<tr>
+<th align="left">Standaard</th>
+<th align="left">Publicatiewijze</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">SETU</td>
+<td align="left">Semantic Treehouse (webapplicatie)</td>
+</tr>
+<tr>
+<td align="left">Het Metamodel voor informatiemodellering (MIM)</td>
+<td align="left">Respec (Javascript library voor W3C-stijl HTML)</td>
+</tr>
+<tr>
+<td align="left">API Design Rules</td>
+<td align="left">Respec (Javascript library voor W3C-stijl HTML)</td>
+</tr>
+</tbody></table>
+<p>Een tip: omdat de standaard web presence moet hebben, is het relatief eenvoudig om ook een <em>nieuwspagina</em> op de website te hebben. Met de beste intenties zie je vaak in het begin nieuwsitems ontstaan, die op een gegeven moment opdrogen. Het ziet er dan vaak knullig uit dat het laatste nieuwsitem op de site een jaar oud is, wat zijn weerklank heeft op de uitstraling van de standaard. Doe geen nieuwsitems, tenzij je hebt ingeregeld dat de stroom berichten niet op afzienbare tijd gaat opdrogen.</p>
+<p>Tot slot: Het is goed om een meldpunt voor klachten ingeregeld te hebben. Hoe goed je het ook denkt te doen als beheerorganisatie, er kan ontevredenheid bij personen ontstaan. Uiteindelijk word je er als beheer-organisatie alleen maar beter van als deze ontevredenheid expliciet kenbaar gemaakt kan worden; dan heb je ook mogelijkheden om er op te acteren. Ontevredenheid die blijft sluimeren en onderwater speelt is veel lastiger om op te acteren. Veelal zijn de beheerorganisaties klein, maar voorkomen moet worden dat klachten over de beheerder bij de beheerder ingediend moet worden. Beter is om een stuurgroeplid aan te wijzen, en om de juiste contactpersoon voor klachtindiening via de website kenbaar te maken. Bijvoorkeur een onafhankelijk lid.</p>
+</section>
+
+     <section id="bijlage-de-praktijk"><div class="header-wrapper"><h2 id="x7-bijlage-de-praktijk"><bdi class="secno">7. </bdi>Bijlage: de Praktijk</h2><a class="self-link" href="#bijlage-de-praktijk" aria-label="Permalink for Section 7."></a></div>
+<section id="governance"><div class="header-wrapper"><h3 id="x7-1-governance"><bdi class="secno">7.1 </bdi>Governance</h3><a class="self-link" href="#governance" aria-label="Permalink for Section 7.1"></a></div>
+<section id="edustandaard-governance"><div class="header-wrapper"><h4 id="x7-1-1-edustandaard-governance"><bdi class="secno">7.1.1 </bdi>Edustandaard governance</h4><a class="self-link" href="#edustandaard-governance" aria-label="Permalink for Section 7.1.1"></a></div>
+<section id="edustandaard-standaardisatieraad"><div class="header-wrapper"><h5 id="x7-1-1-1-edustandaard-standaardisatieraad"><bdi class="secno">7.1.1.1 </bdi>Edustandaard Standaardisatieraad</h5><a class="self-link" href="#edustandaard-standaardisatieraad" aria-label="Permalink for Section 7.1.1.1"></a></div>
+<p>De Edustandaard Standaardisatieraad vormt het bestuurlijke orgaan waarin besluitvorming plaatsvindt over vraagstukken rondom de governance en in beheer name of uitfasering van standaarden (afspraken). De raad bestaat uit bestuurders van de publieke en private brancheorganisaties in het onderwijs (primair tot en met hoger onderwijs). Het initiatief tot het ontwikkelen van een nieuwe afspraak of aanpassen van een bestaande afspraak ligt in het algemeen in het toepassingsdomein, maar uiteraard kan ook overheidsbrede wetgeving hiertoe aanleiding geven. Daarnaast heeft hij een belangrijke rol in het erkennen en adopteren van de afspraken in het veld. De Standaardisatieraad wordt door de Architectuurraad geadviseerd over standaarden en hun onderlinge samenhang. Via <a href="http://www.edustandaard.nl">www.edustandaard.nl</a> wordt overzicht geboden van alle afspraken die in het onderwijs worden beheerd.</p>
+<p>Meer info: <a href="https://www.edustandaard.nl/standaardisatieraad/">Standaardisatieraad</a></p>
+</section><section id="edustandaard-architectuurraad"><div class="header-wrapper"><h5 id="x7-1-1-2-edustandaard-architectuurraad"><bdi class="secno">7.1.1.2 </bdi>Edustandaard Architectuurraad</h5><a class="self-link" href="#edustandaard-architectuurraad" aria-label="Permalink for Section 7.1.1.2"></a></div>
+<p>De Edustandaard Architectuurraad vormt het inhoudelijke adviesorgaan over ketenarchitectuur en standaarden (afspraken) op basis van de ROSA Ketenreferentiearchitectuur. De Architectuurraad vormt tevens het inhoudelijke beheer over de ROSA en het bevordert samenhang tussen de referentiearchitecturen in het onderwijs. Middels het instrument ROSA-architectuurscan wordt in kaart gebracht hoe nieuwe standaarden (afspraken), voorzieningen en andere ketenuitwisselingen zich verhouden tot de referentiearchitectuur voor ketenuitwisselingen. ROSA vormt dus ook het kader (de meetlat) waarlangs nieuwe architecturale ontwikkelingen worden getoetst middel de ROSA-architectuurscan.</p>
+<p>Meer info: <a href="https://www.edustandaard.nl/architectuurraad/">Architectuurraad</a></p>
+</section><section id="edustandaard-expertgroepen"><div class="header-wrapper"><h5 id="x7-1-1-3-edustandaard-expertgroepen"><bdi class="secno">7.1.1.3 </bdi>Edustandaard Expertgroepen</h5><a class="self-link" href="#edustandaard-expertgroepen" aria-label="Permalink for Section 7.1.1.3"></a></div>
+<p>Edustandaard is een netwerkorganisatie die samenwerkt met ketenpartijen in het onderwijs, zoals Kennisnet, SURF, het ministerie van OCW, de Dienst Uitvoering Onderwijs, onderwijsinstellingen, uitgevers en leveranciers van software voor het onderwijs. Die samenwerking krijgt gestalte door verschillende expertgroepen met elk een andere rol. Edustandaard volgt hierbij de globale organisatiestructuur van BOMOS. Er zijn vier soorten expertgroepen binnen Edustandaard: adviesorgaan, bestuur, uitvoeringsorganisatie en werkgroep.</p>
+<p>In een Edustandaard werkgroep vindt de ontwikkeling, het beheer en de ondersteuning van het gebruik van afspraken (standaarden) plaats. Er zijn meer dan 15 Edustandaard werkgroepen actief. Er zijn ook werkgroepen die zich richten op specifieke onderdelen van de ROSA, zoals de werkgroep Toegang). Edustandaard kent 2 adviesorganen, namelijk de Architectuurraad en het QA-team (QA = quality assurance). De Architectuurraad is het inhoudelijke adviesorgaan over ketenarchitectuur en standaarden (afspraken) op basis van de ROSA; het QA-team adviseert over de backlog en de roadmap van de ROSA. Bureau Edustandaard vormt de uitvoeringsorganisatie, daaronder valt ook het ROSA Beheerteam.</p>
+<p>Meer info: <a href="https://www.edustandaard.nl/standaard_werkgroepen/">Werkgroepen</a></p>
+</section></section><section id="logius-standaarden-governance"><div class="header-wrapper"><h4 id="x7-1-2-logius-standaarden-governance"><bdi class="secno">7.1.2 </bdi>Logius standaarden governance</h4><a class="self-link" href="#logius-standaarden-governance" aria-label="Permalink for Section 7.1.2"></a></div>
+<p>Logius heeft de governance van het beheer van haar standaarden aangesloten op de 
+governance van de Generieke Data Infrastructuur (GDI) van de Nederlandse overheid.</p>
+<section id="de-programmeringsraad-gdi"><div class="header-wrapper"><h5 id="x7-1-2-1-de-programmeringsraad-gdi"><bdi class="secno">7.1.2.1 </bdi>De Programmeringsraad GDI</h5><a class="self-link" href="#de-programmeringsraad-gdi" aria-label="Permalink for Section 7.1.2.1"></a></div>
+<p>In de MIDO structuur heeft de Programmeringsraad GDI een rol in het strategisch 
+beheer van standaarden.</p>
+<p>Het strategisch overleg keurt voorstellen tot wijziging goed op basis van 
+adviezen van het technisch overleg, het tactisch overleg en het advies van de
+beheerorganisatie. Daarnaast keurt het strategisch overleg de door de 
+stakeholders voorgestelde richting goed die aan de beheerorganisatie voorgelegd
+wordt. Bijvoorbeeld een voorstel tot ingrijpende wijziging zoals het overgaan
+naar een nieuwe (onderliggende) standaard kan in het strategisch overleg
+goedgekeurd worden.</p>
+<p>De beheerorganisatie werkt goedgekeurde voorstellen uit en neemt deze op in 
+een vast te stellen nieuwe versie.</p>
+</section><section id="programmeringstafels"><div class="header-wrapper"><h5 id="x7-1-2-2-programmeringstafels"><bdi class="secno">7.1.2.2 </bdi>Programmeringstafels</h5><a class="self-link" href="#programmeringstafels" aria-label="Permalink for Section 7.1.2.2"></a></div>
+<p>Dit overleg is verantwoordelijk voor het vaststellen van de
+doorontwikkel-roadmap, het vaststellen van major/minor releases van de
+standaard en dient als het voorportaal van het
+strategisch/besluitvormende gremium: de Programmeringsraad GDI.</p>
+<p>Binnen de MIDO structuur hebben de Programmeringstafels de rol van tactisch overleg. 
+Afhankelijk van het thema is die de Programmeringstafel Gegevensuitwisseling,
+Infrastructuur of Interactie.
+<a href="https://github.com/Logius-standaarden/Overleg/tree/main/Programmeringstafels/Gegevensuitwisseling">Voor de programmeringstafel maakt Logius een deelagenda over standaarden</a>
+die deel kan uitmaken van de agenda van het overleg.</p>
+</section><section id="het-technische-overleg"><div class="header-wrapper"><h5 id="x7-1-2-3-het-technische-overleg"><bdi class="secno">7.1.2.3 </bdi>Het Technische Overleg</h5><a class="self-link" href="#het-technische-overleg" aria-label="Permalink for Section 7.1.2.3"></a></div>
+<p>Het Technisch Overleg (TO) is een periodieke bijeenkomst  waarbij de
+vragen en doorontwikkelwensen m.b.t. de standaard worden doorgenomen,
+geprioriteerd en worden uitgewerkt. Daarnaast wordt door de leden de
+releaseplanning en de roadmap opgesteld. Deelname aan het Technisch Overleg
+is vrij voor eenieder die een belang heeft bij de standaard
+(overheid, wetenschap en markt).</p>
+<p>De agenda en stukken van het Technisch overleg zijn openbaar. De Technische Overleggen vallen niet binnen de 
+GDI overlegstructuur maar maken wel deel uit van de governance 
+van de standaarden.</p>
+</section></section></section><section id="operationeel-gereedschap-voor-standaardenbeheer"><div class="header-wrapper"><h3 id="x7-2-operationeel-gereedschap-voor-standaardenbeheer"><bdi class="secno">7.2 </bdi>Operationeel: Gereedschap voor standaardenbeheer</h3><a class="self-link" href="#operationeel-gereedschap-voor-standaardenbeheer" aria-label="Permalink for Section 7.2"></a></div>
+<p>Voor de implementatie en ondersteuning van het beheerproces is (digitale) gereedschap 
+nodig. Wijzigingsvoorstellen moeten kunnen worden ingediend (bijvoorbeeld online)
+en gedocumenteerd. Documentatie moet (open) worden gepubliceerd, vragen en verzoeken 
+van stakeholders moeten behandeld en beantwoord en agenda's voor overleggen moeten 
+worden opgesteld. </p>
+<section id="documentatie-en-publicatie-met-git-en-respec"><div class="header-wrapper"><h4 id="x7-2-1-documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">7.2.1 </bdi>Documentatie (en Publicatie) met Git en Respec</h4><a class="self-link" href="#documentatie-en-publicatie-met-git-en-respec" aria-label="Permalink for Section 7.2.1"></a></div>
+<p>Er is een breder keuze aan digitale applicaties die gebruikt kunnen 
+worden voor standaarden beheer, al zijn ze hier niet altijd voor bedoeld. 
+Samenwerkingsapplicaties voor documentbeheer of softwareontwikkeling kunnen 
+worden toegepast om beheerders en betrokkenen toegang te geven tot documentatie 
+of zelfs om gebruikers de documentatie bij te laten werken.</p>
+<p>Een voorbeeld is het gebruik van Git en Respec voor het operationeel beheer. 
+Git is een applicatie voor wijzigingsbeheer bij softwareontwikkeling. Iedere 
+wijziging wordt opgeslagen in een database nadat het door de auteur voorzien is 
+van commentaar. Hierdoor kunnen versies van verschillende tijdstippen vergeleken 
+worden en kan de verantwoording nagelezen worden. Daarnaast is er ondersteuning 
+voor parallellopende versies waardoor er bijvoorbeeld gewerkt kan worden aan een ingrijpende wijziging zonder dat onderhoud aan de huidige werkversie verstoord 
+wordt. Er is een aantal webomgevingen voor samenwerking aan code die gebruik maken 
+van git zoals <a href="https://github.com">Github</a>, <a href="https://gitlab.com">Gitlab</a> en 
+<a href="https://gitea.io">Gitea</a>. Een gebruiker kan ook zelf op basis van de beschikbare 
+Git open source software een Git omgeving maken en daarmee onafhankelijk blijven 
+van de grote Git platforms. De Git platforms zoals Github en Gitlab bieden 
+hostingopties en een webinterface voor het doorvoeren en inzien van wijzigingen 
+naast ondersteuning voor lokaal geïnstalleerde git-applicaties.</p>
+<p>Respec is een applicatie om bestanden om te zetten in documentatie die online 
+gepubliceerd kan worden. Het beheer van specificaties verloopt steeds vaker via 
+een automatisch proces. Waar het in het verleden nog gebruikelijk was om losse 
+documenten te delen binnen werkgroepen, stappen steeds meer beheerorganisaties 
+over naar (git) repositories om teksten in te beheren. Hoewel deze omgevingen 
+van oorsprong bedoeld zijn om programma code in te beheren, zijn deze ook goed 
+bruikbaar voor het beheer van ‘leesbare’ tekst. Door gebruik van een responsive 
+layout kan de documentatie onafhankelijk van schermgrootte leesbaar getoond worden. 
+Respec maakt automatisch een inhoudsopgave waarmee een gebruiker snel door de 
+documentatie kan browsen. Respec is specifiek bedoeld voor technische documentatie 
+en het sluit goed aan bij applicaties voor softwareontwikkeling zoals Git.</p>
+</section><section id="git-en-git-platforms"><div class="header-wrapper"><h4 id="x7-2-2-git-en-git-platforms"><bdi class="secno">7.2.2 </bdi>Git en Git platforms</h4><a class="self-link" href="#git-en-git-platforms" aria-label="Permalink for Section 7.2.2"></a></div>
+<p>Door gebruik te maken van dezelfde gereedschappen als voor het beheer van 
+programmacode kan het beheerproces automatisch ondersteund worden. 
+Documentatie wordt ondergebracht in een online <em>repository</em>. Een repository is 
+meer dan een archief voor code. Binnen Git platforms zoals Github en Gitlab 
+kunnen issues ingediend worden door gebruikers, zijn projectmanagementtools 
+beschikbaar en kunnen automatische acties op een repository uitgevoerd worden. 
+Het is ook mogelijk om automatische controles uit te voeren op de code in een 
+repository, bijvoorbeeld op basis van toegankelijkheid of op ontbrekende verwijzingen.</p>
+<aside class="example" id="example-13"><div class="marker">
+    <a class="self-link" href="#example-13">Voorbeeld<bdi> 13</bdi></a>
   </div>
 <b>Het hele proces via git bij Logius</b>
 
@@ -4130,82 +4318,56 @@ Participatie van gebruikers is zo niet beperkt tot de overleggen maar
 kan gedurende het hele proces.</p>
 </aside>
 
-</section><section id="wijzigingsverzoeken"><div class="header-wrapper"><h5 id="x4-2-2-2-wijzigingsverzoeken"><bdi class="secno">4.2.2.2 </bdi>Wijzigingsverzoeken</h5><a class="self-link" href="#wijzigingsverzoeken" aria-label="Permalink for Section 4.2.2.2"></a></div>
-<p>In een Git platform zoals Github kunnen ook verzoeken tot wijzigingen (genaamd <em>issues</em> in git) ingediend worden, die dan weer tot wijziging in de code kunnen leiden. Issues kunnen in principe door iedere gebruiker worden ingediend. Een wijzigingsverzoek wordt verwerkt door de beheerder van de repository. Een issue kan worden toegewezen aan een ontwikkelaar en worden door de beheerder geagendeerd voor overleggen door ze te labelen. Door een <em>issue</em> een label <em>Technische overleg</em> te geven kan gefilterd worden op alle issues die relevant zijn voor dat overleg. Daarnaast worden wijzigingsvoorstellen gelabeld met scope (klein of groot) en wat voor wijziging het betreft (correctie, documentatie, wijziging etc.).</p>
-<p>Omdat de wijzigingen op de documentatie bijgehouden wordt met git kunnen deze gerelateerd worden aan het wijzigingsvoorstel waar ze bij horen. Hierdoor bevatten de issues een overzicht van alle wijzigingen die daaruit voortkomen.</p>
-<p>Binnen Github kunnen de lijsten met lopende wijzigingen bestemd voor een specifiek overleg automatisch gegenereerd worden. Vooral wanneer een beheerder een groot aantal repositories in beheer heeft is het handig de wijzigingsvoorstellen met zo'n automatisch proces overzichtelijk te houden.</p>
-</section></section></section></section>
-   <section id="implementatie-ondersteuning"><div class="header-wrapper"><h2 id="x5-implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</h2><a class="self-link" href="#implementatie-ondersteuning" aria-label="Permalink for Section 5."></a></div>
-<p>Het eerste begin van elke standaard is lastig. Mede door het bekende fenomeen van netwerk-effecten zullen velen de kat uit de boom kijken, en wachten met implementaties. Dit is lastig te doorbreken, maar implementatie-ondersteuning kan hierbij doorslaggevend zijn.  </p>
-<p>Daarnaast zijn de eerste implementaties vaak ook de eerste serieuze testcase voor de standaarden. Informatie over deze implementaties is dan ook weer waardevolle input in het beheerproces van een standaard. Dat is een reden te meer om implementatie-ondersteuning aan te bieden.<br>Ook zullen de eerste implementaties niet altijd even goed zijn. Ook kan de implementatie-last behoorlijk hoog zijn, en te allen tijde dient voorkomen te worden dat de standaard te boek komt te staan als lastig en duur om te implementeren.  </p>
-<p>Implementatie-ondersteuning is dan ook een prima middel om (eerste) implementaties van de grond te krijgen, de kosten voor de implementators relatief te beperken en de kwaliteit van de implementaties te verhogen. Daarnaast is het ook wederkerig; het is voor de standaardisatie-organisatie een unieke kans om input te vergaren over de kwaliteit van de standaard, en/of er verbeterpunten te adresseren zijn.  </p>
-<p>Dat er implementatie-ondersteuning moet zijn is vaak snel duidelijk, maar de invulling is wel lastiger. Met name omdat er een balans gevonden moet worden wat de beheer-organisatie invult, en wat overgelaten wordt aan consultancy door commerciële ondernemingen. Als beheerorganisatie is het ongewenst om te concurreren.  </p>
-<p>Een helpdesk functionaliteit is minimaal voor een beheerorganisatie. Overigens zien we steeds meer dat ook de community ingezet kan worden als helpdesk. Neem bijvoorbeeld het Geoforum (<a href="https://geoforum.nl/">https://geoforum.nl/</a>) waar ook vragen gesteld kunnen worden over de geo-standaarden.</p>
-<p>Met het bieden van opleidingen kom je als beheerorganisatie al sneller in het vaarwater van anderen. Toch kan het in een beginstadium wel essentieel zijn om het aan te bieden, vooral ook om de kwaliteit van de implementaties te verhogen, en implementaties laagdrempeliger maken.</p>
-<p>Daarvoor kan het ook helpen om bijvoorbeeld open source modules te ontwikkelen. Daarmee ontstaan er meer implementatie-opties, meer vrijheid, en mogelijk eenvoudiger implementaties. Leveranciers worden hiermee ook voor het blok gezet, en als beheerorganisatie kom je nu direct in het vaarwater van leveranciers. Deze zullen niet allemaal gelukkig hiervan worden, terwijl ze hard nodig zijn voor een succesvolle adoptie van de standaard. Module-ontwikkeling is dan ook een activiteit die zeer zorgvuldig aangepakt moet worden, en pas in het vizier moet komen als er een probleem rond implementaties is ontstaan.</p>
-<p>Laag drempeliger is het om pilots te organiseren. Door als beheerorganisatie de pilots in de promotionele spotlights te zetten kan er een drive bij de betrokken stakeholders ontstaan. Het geeft immers ook een innovatieve uitstraling. Pilots passen vooral bij nieuwe (versies) van standaarden, en kunnen maar beperkt gedaan worden.</p>
-<p>In eerder deel is al uitgebreid stilgestaan bij het onderwerp certificatie. Vooral een lichtere vorm van certificatie, validatie is een goede vorm van implementatie-ondersteuning. In een begin fase is het verstanding om de validatie resultaten niet te publiceren, daarmee is het puur een middel voor leveranciers om de implementaties te beproeven en te verbeteren. Een goede zaak. In een later stadium kan er meer openheid gecreëerd worden, en ook een vorm van naming &amp; shaming: welke leverancier haalt goede resultaten tijdens de validatie en welke niet? Daarmee schuift het ook al automatisch op richting certificatie.</p>
-<p>Met validatie wordt je als beheer-organisatie ook scheidsrechter; met name als er meningsverschillen ontstaan over het correct gebruik van de standaard. Enerzijds is dat prima, anderzijds kom je daarmee als beheerorganisatie tussen de partijen te staan, terwijl er boven of naast staan gewenster is.</p>
-</section>
-   <section id="communicatie"><div class="header-wrapper"><h2 id="x6-communicatie"><bdi class="secno">6. </bdi>Communicatie</h2><a class="self-link" href="#communicatie" aria-label="Permalink for Section 6."></a></div>
-<p>Een standaard is een product, met alle facetten die daarbij horen. Zo heeft een product een naam, en een standaard dan ook. Meestal is het een afkorting waar men later spijt van krijgt. Bijvoorbeeld doordat de technologie onderdeel is van de naam, zoals bij alle standaardisatie-organisaties met XML in de naam, bijvoorbeeld HR-XML Consortium. Deze organisaties moeten zich hernoemen als de techniek zich evolueert. (HR-XML heet nu HR Open Standards.) Dit is te voorkomen, maar lastiger is het te voorkomen dat de naam vaak een afspiegeling is van de scope van de standaard zodat de naam ook herkenbaar is in de praktijk. Echter de scope van de standaard zal ook gedurende de jaren gaan wijzigen, waardoor de naam de lading niet meer dekt. Een naam die een brede scope dekt is daarom de verstandige keuze.</p>
-<p>Een andere overweging bij de keuze van de naam is uitermate praktisch: Is de domeinnaam behorende bij de naam van de standaard nog vrij? Dit is in de praktijk vaak een blokkade.</p>
-<p>Daarbij is ook de uitstraling van de naam zeer verschillend; Floricom heeft waarschijnlijk voor de meesten een frissere uitstraling dan Stosag. Deze uitstraling moet uiteraard passen bij de gewenste uitstraling; bijvoorbeeld een betrouwbare doch saaiere naam past over het algemeen prima bij de gewenste uitstraling van een standaard. De uitstraling, of ook wel branding genoemd, zal voor een standaard vaak kernwaardes bevatten zoals betrouwbaar, maar ook innovatief. Bij een goede branding zullen andere organisaties zich graag willen verbinden, en bijvoorbeeld ook aan logo-vermelding gaan doen. Een positief teken.</p>
-<p>Naast de keuze voor een naam is promotie een belangrijk onderdeel van communicatie. Dat geldt zeker bij nieuwe standaarden. Immers een nieuw product wordt ook niet automatisch door de consument gevonden, maar heeft vaak een marketingcampagne nodig om bekendheid te creëren. Hetzelfde geldt voor de standaard, waarbij nagedacht moet worden wie de doelgroep is: de primaire stakeholders, of juist software leveranciers die de standaard moeten implementeren? En richt je de promotie op de developers/techneuten, of op de projectleider/management laag? Het één hoeft het andere niet uit te sluiten, maar verschillende groepen vereisen verschillende benaderingen. Richting business ligt de aandacht meer  op de business voordelen, efficiency, nieuwe marktkansen. Richting de techneuten meer op de technische inbedding/architectuur, software componenten, validatie, etc.</p>
-<p>Samenhangend met de promotie is ook het bouwen van een community. De waarde van een goede mailinglist is niet te onderschatten. Zo is de gemeenschap van gebruikers van de standaard direct te bereiken. Ook een specifieke LinkedIn groep is waardevol. Het gaat erom de doelgroep rechtstreeks op eigen initiatief te kunnen benaderen. Uiteraard moet het geheel wel in overeenstemming zijn met de AVG, wat vooral in de praktijk betekent dat explciet gevraagd moet worden voor toestemming voor het verzenden van e-mails, inclusief de reden van contact.</p>
-<p>Een ander belangrijk onderdeel van communicatie is de publicatie-aanpak. Het is niet meer van deze tijd om alleen PDF documenten te publiceren, dus elke standaard zou nu ook online-documentatie moeten hebben (al dan niet na inlog). We verwachten nu een online web omgeving, die er goed uitziet, en eenvoudig is in gebruik. Dezelfde online omgeving kan ongetwijfeld ook gebruikt worden voor het ontwikkelproces van de standaard. Online publiceren biedt voordelen op het gebied van het bieden van implementatie-ondersteuning, bijvoorbeeld implementatie-voorbeelden kunnen direct gelinkt (en getoond) worden aan een stukje tekst uit de online-publicatie. Maar ingrijpender ook impact op het standaardisatie-proces. Bijvoorbeeld versie-management wordt nu mogelijk op delen van het document, in plaats van dat versies van standaard altijd betrekking moeten hebben op het gehele document.</p>
-<p>Goede voorbeelden zijn:</p>
-<table class="dkkvs">
-<thead>
-<tr>
-<th align="left">Standaard</th>
-<th align="left">Publicatiewijze</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">SETU</td>
-<td align="left">Semantic Treehouse (webapplicatie)</td>
-</tr>
-<tr>
-<td align="left">Het Metamodel voor informatiemodellering (MIM)</td>
-<td align="left">Respec (Javascript library voor W3C-stijl HTML)</td>
-</tr>
-<tr>
-<td align="left">API Design Rules</td>
-<td align="left">Respec (Javascript library voor W3C-stijl HTML)</td>
-</tr>
-</tbody></table>
-<p>Een tip: omdat de standaard web presence moet hebben, is het relatief eenvoudig om ook een <em>nieuwspagina</em> op de website te hebben. Met de beste intenties zie je vaak in het begin nieuwsitems ontstaan, die op een gegeven moment opdrogen. Het ziet er dan vaak knullig uit dat het laatste nieuwsitem op de site een jaar oud is, wat zijn weerklank heeft op de uitstraling van de standaard. Doe geen nieuwsitems, tenzij je hebt ingeregeld dat de stroom berichten niet op afzienbare tijd gaat opdrogen.</p>
-<p>Tot slot: Het is goed om een meldpunt voor klachten ingeregeld te hebben. Hoe goed je het ook denkt te doen als beheerorganisatie, er kan ontevredenheid bij personen ontstaan. Uiteindelijk word je er als beheer-organisatie alleen maar beter van als deze ontevredenheid expliciet kenbaar gemaakt kan worden; dan heb je ook mogelijkheden om er op te acteren. Ontevredenheid die blijft sluimeren en onderwater speelt is veel lastiger om op te acteren. Veelal zijn de beheerorganisaties klein, maar voorkomen moet worden dat klachten over de beheerder bij de beheerder ingediend moet worden. Beter is om een stuurgroeplid aan te wijzen, en om de juiste contactpersoon voor klachtindiening via de website kenbaar te maken. Bijvoorkeur een onafhankelijk lid.</p>
-</section>
-   <section id="tof">
-   <div class="header-wrapper"><h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 7."></a></div><ul class="tof">
+</section><section id="wijzigingsverzoeken"><div class="header-wrapper"><h4 id="x7-2-3-wijzigingsverzoeken"><bdi class="secno">7.2.3 </bdi>Wijzigingsverzoeken</h4><a class="self-link" href="#wijzigingsverzoeken" aria-label="Permalink for Section 7.2.3"></a></div>
+<p>In een Git platform zoals Github kunnen ook verzoeken tot wijzigingen 
+(genaamd <em>issues</em> in git) ingediend worden, die dan weer tot wijziging 
+in de code kunnen leiden. Issues kunnen in principe door iedere gebruiker 
+worden ingediend. Een wijzigingsverzoek wordt verwerkt door de beheerder 
+van de repository. Een issue kan worden toegewezen aan een ontwikkelaar 
+en worden door de beheerder geagendeerd voor overleggen door ze te labelen. 
+Door een <em>issue</em> een label <em>Technische overleg</em> te geven kan gefilterd 
+worden op alle issues die relevant zijn voor dat overleg. Daarnaast worden
+wijzigingsvoorstellen gelabeld met scope (klein of groot) en wat voor 
+wijziging het betreft (correctie, documentatie, wijziging etc.).</p>
+<p>Omdat de wijzigingen op de documentatie bijgehouden wordt met git kunnen 
+deze gerelateerd worden aan het wijzigingsvoorstel waar ze bij horen. 
+Hierdoor bevatten de issues een overzicht van alle wijzigingen die 
+daaruit voortkomen.</p>
+<p>Binnen Github kunnen de lijsten met lopende wijzigingen bestemd voor een 
+specifiek overleg automatisch gegenereerd worden. Vooral wanneer een beheerder 
+een groot aantal repositories in beheer heeft is het handig de 
+wijzigingsvoorstellen met zo'n automatisch proces overzichtelijk te houden.</p>
+</section></section></section>
+
+     
+     <section id="tof"><div class="header-wrapper"><h2 id="x8-lijst-met-figuren"><bdi class="secno">8. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 8."></a></div><ul class="tof">
         <li class="tofline">
-    <a class="tocxref" href="#fig-organisatiestructuur">Figuur <bdi class="figno">1</bdi> <span class="fig-title">Organisatiestructuur</span></a>
+    <a class="tocxref" href="#fig-organisatiestructuur"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Organisatiestructuur</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-voorbeeld-van-toewijzing-rollen-aan-stakeholders">Figuur <bdi class="figno">2</bdi> <span class="fig-title">Voorbeeld van toewijzing rollen aan stakeholders</span></a>
+    <a class="tocxref" href="#fig-voorbeeld-van-toewijzing-rollen-aan-stakeholders"><span class="self-link">Figuur <bdi class="figno">2</bdi></span> <span class="fig-title">Voorbeeld van toewijzing rollen aan stakeholders</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-beleggen-van-ontwikkeltaken">Figuur <bdi class="figno">3</bdi> <span class="fig-title">Beleggen van ontwikkeltaken</span></a>
+    <a class="tocxref" href="#fig-beleggen-van-ontwikkeltaken"><span class="self-link">Figuur <bdi class="figno">3</bdi></span> <span class="fig-title">Beleggen van ontwikkeltaken</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-opbrengstenmodel">Figuur <bdi class="figno">4</bdi> <span class="fig-title">Opbrengstenmodel</span></a>
+    <a class="tocxref" href="#fig-opbrengstenmodel"><span class="self-link">Figuur <bdi class="figno">4</bdi></span> <span class="fig-title">Opbrengstenmodel</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-scenarios-juweliersbranche">Figuur <bdi class="figno">5</bdi> <span class="fig-title">Scenarios juweliersbranche</span></a>
+    <a class="tocxref" href="#fig-scenarios-juweliersbranche"><span class="self-link">Figuur <bdi class="figno">5</bdi></span> <span class="fig-title">Scenarios juweliersbranche</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-batenmodel-juweliersbranche">Figuur <bdi class="figno">6</bdi> <span class="fig-title">Batenmodel juweliersbranche</span></a>
+    <a class="tocxref" href="#fig-batenmodel-juweliersbranche"><span class="self-link">Figuur <bdi class="figno">6</bdi></span> <span class="fig-title">Batenmodel juweliersbranche</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-gelaagdheid-van-standaarden">Figuur <bdi class="figno">7</bdi> <span class="fig-title">De gelaagdheid van standaarden</span></a>
+    <a class="tocxref" href="#fig-de-gelaagdheid-van-standaarden"><span class="self-link">Figuur <bdi class="figno">7</bdi></span> <span class="fig-title">De gelaagdheid van standaarden</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-adoptiepaden-van-een-standaard">Figuur <bdi class="figno">8</bdi> <span class="fig-title">Adoptiepaden van een standaard</span></a>
+    <a class="tocxref" href="#fig-adoptiepaden-van-een-standaard"><span class="self-link">Figuur <bdi class="figno">8</bdi></span> <span class="fig-title">Adoptiepaden van een standaard</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-adoptiekeuzes">Figuur <bdi class="figno">9</bdi> <span class="fig-title">Adoptiekeuzes</span></a>
+    <a class="tocxref" href="#fig-adoptiekeuzes"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">Adoptiekeuzes</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-het-standaardisatieproces">Figuur <bdi class="figno">10</bdi> <span class="fig-title">Resultaten van een gebruikersonderzoek naar het standaardisatieproces</span></a>
+    <a class="tocxref" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-het-standaardisatieproces"><span class="self-link">Figuur <bdi class="figno">10</bdi></span> <span class="fig-title">Resultaten van een gebruikersonderzoek naar het standaardisatieproces</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-kwaliteit-van-standaarden">Figuur <bdi class="figno">11</bdi> <span class="fig-title">Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden</span></a>
+    <a class="tocxref" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-kwaliteit-van-standaarden"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title">Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-kwaliteitsinstrumenten">Figuur <bdi class="figno">12</bdi> <span class="fig-title">Kwaliteitsinstrumenten</span></a>
+    <a class="tocxref" href="#fig-kwaliteitsinstrumenten"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">Kwaliteitsinstrumenten</span></a>
   </li>
       </ul></section>
+
   
  
 <p role="navigation" id="back-to-top">
@@ -4432,4 +4594,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel" style="background-color: #32a852;">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel" style="background-color: #39870c;">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
