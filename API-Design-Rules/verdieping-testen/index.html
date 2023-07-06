@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.1">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -110,9 +110,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
 :is(h4,h5,h6)+a.self-link::before{color:#000}
@@ -122,6 +121,9 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
 </style>
 <meta name="description" content="This document contains a normative standard for designing APIs in the Dutch Public Sector.The Governance of this standard is described in a separate repository and published by Logius.This document is part of the Nederlandse API Strategie, which consists of three distinct documents.">
 <style>
@@ -139,7 +141,19 @@ dd{margin-left:0}
 .hljs-link{text-decoration:underline}
 </style>
 <style>
-.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Logius",
@@ -179,7 +193,7 @@ dd{margin-left:0}
   ],
   "useLogo": true,
   "useLabel": true,
-  "license": "cc0",
+  "license": "cc-by",
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -239,26 +253,26 @@ dd{margin-left:0}
   },
   "labelColor": {
     "def": "#154273",
-    "wv": "#32a852"
+    "wv": "#39870c"
   },
   "licenses": {
     "cc0": {
       "name": "Creative Commons 0 Public Domain Dedication",
       "short": "CC0",
       "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
     },
     "cc-by": {
       "name": "Creative Commons Attribution 4.0 International Public License",
       "short": "CC-BY",
       "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
     },
     "cc-by-nd": {
       "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
       "short": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
-      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
     }
   },
   "localBiblio": {
@@ -494,6 +508,15 @@ dd{margin-left:0}
       "publisher": "Oasis",
       "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
     },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
     "Eisen Pkioverheid": {
       "href": "https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen",
       "publisher": "Logius",
@@ -508,11 +531,40 @@ dd{margin-left:0}
       "publisher": "Forum Standaardisatie",
       "title": "Expertadvies CloudEvents 1.0"
     },
+    "folmer2011": {
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
     "Gebruiksvoorwaarden Digikoppeling": {
       "date": "1 januari 2021",
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
       "publisher": "Logius",
       "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "Geospatial Module": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "23 mei 2021",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design rules Module: Geospatial"
     },
     "HEART.OAuth2": {
       "authors": [
@@ -862,14 +914,14 @@ dd{margin-left:0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry informative"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">API Design Rules (Nederlandse API Strategie IIa)</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2022-01-25">11 mei 2023</time>
+      <time class="dt-published" datetime="2022-01-25">July 06, 2023</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -918,13 +970,13 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           This document is licensed under 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot">Creative Commons 0 Public Domain Dedication</a>.
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.<br><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr-beheer/">The Governance of this standard</a> is described in a <a href="https://github.com/Logius-standaarden/ADR-Beheermodel">separate repository</a> and published by Logius.<br>This document is part of the <em>Nederlandse API Strategie</em>, which consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">three distinct documents</a>.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</a></li><li class="tocline"><a class="tocxref" href="#list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</a></li><li class="tocline"><a class="tocxref" href="#list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
   
   
   
@@ -942,29 +994,29 @@ dd{margin-left:0}
 <table class="simple">
 <thead>
 <tr>
-<th align="left">Part</th>
-<th align="left">Description</th>
-<th align="left">Status</th>
-<th align="left">Link</th>
+<th>Part</th>
+<th>Description</th>
+<th>Status</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">I</td>
-<td align="left">General description of the API Strategy</td>
-<td align="left">Informative</td>
-<td align="left"><a href="https://docs.geostandaarden.nl/api/API-Strategie/">https://docs.geostandaarden.nl/api/API-Strategie/</a></td>
+<td>I</td>
+<td>General description of the API Strategy</td>
+<td>Informative</td>
+<td><a href="https://docs.geostandaarden.nl/api/API-Strategie/">https://docs.geostandaarden.nl/api/API-Strategie/</a></td>
 </tr>
 <tr>
-<td align="left">IIa</td>
-<td align="left">Standard for designing APIs</td>
-<td align="left">Normative</td>
-<td align="left"><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a></td>
+<td>IIa</td>
+<td>Standard for designing APIs</td>
+<td>Normative</td>
+<td><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a></td>
 </tr>
 <tr>
-<td align="left">IIb</td>
-<td align="left">Extension on the Standard for designing APIs</td>
-<td align="left">Informative</td>
-<td align="left"><a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/">https://docs.geostandaarden.nl/api/API-Strategie-ext/</a></td>
+<td>IIb</td>
+<td>Extension on the Standard for designing APIs</td>
+<td>Informative</td>
+<td><a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/">https://docs.geostandaarden.nl/api/API-Strategie-ext/</a></td>
 </tr>
 </tbody></table>
 <p>Before reading this document it is advised to gain knowledge of the three documents, in particular <a href="https://docs.geostandaarden.nl/api/API-Strategie/#architectuur">the architecture section of part I</a>.</p>
@@ -1010,7 +1062,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
   <section id="the-design-rules"><div class="header-wrapper"><h2 id="x3-the-design-rules"><bdi class="secno">3. </bdi>The Design Rules</h2><a class="self-link" href="#the-design-rules" aria-label="Permalink for Section 3."></a></div>
 <section id="resources"><div class="header-wrapper"><h3 id="x3-1-resources"><bdi class="secno">3.1 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 3.1"></a></div>
 <p>The REST architectural style is centered around the concept of a <a href="#dfn-resource" id="ref-for-dfn-resource-1">resource</a>. A resource is the key abstraction of information, where every piece of information is named by assigning a globally unique <a href="#dfn-uri" id="ref-for-dfn-uri-1">URI</a> (Uniform Resource Identifier). Resources describe <em>things</em>, which can vary between physical objects (e.g. a building or a person) and more abstract concepts (e.g. a permit or an event).</p>
-<p><a name="api-05" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn"></a></p>
+<p><span id="api-05"></span></p>
 <div class="rule" id="/core/naming-resources">
    <p class="rulelab"><b>/core/naming-resources</b>: Use nouns to name resources</p>
    <dl>
@@ -1046,7 +1098,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 </div>
 
 <p>A resource describing a single thing is called a <a href="#dfn-singular-resource" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be grouped into collections, which are resources in their own right and can typically be paged, sorted and filtered. Most often all collection members have the same type, but this is not necessarily the case. A resource describing multiple things is called a <a href="#dfn-collection-resource" id="ref-for-dfn-collection-resource-1">collection resource</a>. Collection resources typically contain references to the underlying singular resources.</p>
-<p><a name="api-54" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-0"></a></p>
+<p><span id="api-54"></span></p>
 <div class="rule" id="/core/naming-collections">
    <p class="rulelab"><b>/core/naming-collections</b>: Use plural nouns to name collection resources</p>
    <dl>
@@ -1085,7 +1137,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
    </dl>
 </div>
 
-<p><a name="api-04" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-1"></a></p>
+<p><span id="api-04"></span></p>
 <div class="rule" id="/core/interface-language">
    <p class="rulelab"><b>/core/interface-language</b>: Define interfaces in Dutch unless there is an official English glossary available</p>
    <dl>
@@ -1109,7 +1161,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
    </dl>
 </div>
 
-<p><a name="api-48" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-2"></a></p>
+<p><span id="api-48"></span></p>
 <div class="rule" id="/core/no-trailing-slash">
    <p class="rulelab"><b>/core/no-trailing-slash</b>: Leave off trailing slashes from URIs</p>
    <dl>
@@ -1147,7 +1199,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
    </dl>
 </div>
 
-<p><a name="api-53" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-3"></a></p>
+<p><span id="api-53"></span></p>
 <div class="rule" id="/core/hide-implementation">
    <p class="rulelab"><b>/core/hide-implementation</b>: Hide irrelevant implementation details</p>
    <dl>
@@ -1180,7 +1232,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
 
 </section><section id="http-methods"><div class="header-wrapper"><h3 id="x3-2-http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</h3><a class="self-link" href="#http-methods" aria-label="Permalink for Section 3.2"></a></div>
 <p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>].</p>
-<p><a name="api-03" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-4"></a></p>
+<p><span id="api-03"></span></p>
 <div class="rule" id="/core/http-methods">
    <p class="rulelab"><b>/core/http-methods</b>: Only apply standard HTTP methods</p>
    <dl>
@@ -1269,22 +1321,41 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       </tbody>
       </table>
    </div>
-    <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] and the later introduced <code>PATCH</code> method specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5789" title="PATCH Method for HTTP">rfc5789</a></cite>] offer a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code> and <code>TRACE</code>. For the purpose of this design rule, these operations are left out of scope.</p></div>
-        <dt>How to test</dt>
+    <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] and the later introduced <code>PATCH</code> method specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5789" title="PATCH Method for HTTP">rfc5789</a></cite>] offer a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
+    The OpenAPI Specification 3.x <a href="https://spec.openapis.org/oas/v3.0.3#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
+  According to <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.1">RFC 7231 4.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
+  In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
+  If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5">RFC 7231 6.5.5</a>.</p></div>
+      <dt>How to test</dt>
+      <p>Test case 1:</p>
       <dd>
          <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisets to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
-            <li> Step 2: Try non standard methods on the base url mentioned in the OAS file. The server <em class="rfc2119">MUST</em> not respond to non-standard methods.</li>
+            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
+            <li> Step 2: Send an HTTP GET or HEAD request to any of the endpoints mentioned in the OAS file. The server <em class="rfc2119">MUST</em> respond with a HTTP status code other than <code>405 Method Not Allowed</code>.</li>
+        </ul>
+      </dd>
+      <p>Test case 2:</p>
+      <dd>
+         <ul>
+            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable, and paths are defined.</li>
+            <li> Step 2: Send a request to the API with an optional HTTP method that is supported by the API. The server <em class="rfc2119">MUST</em> respond with an HTTP status code other than <code>405 Method Not Allowed</code>.</li>
+      </ul>
+      </dd>
+     <p>Test case 3:</p>
+      <dd>
+         <ul>
+            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable, and paths are defined.</li>
+            <li> Step 2: Send a request to the API with an optional HTTP method that is not supported by the API. The server <em class="rfc2119">MUST</em> respond with an HTTP status code <code>405 Method Not Allowed</code>. The response <em class="rfc2119">MUST</em> contain an <code>Allow</code> header with a list of supported methods for the target resource.</li>
       </ul>
       </dd>
       <dt>Rule types</dt>
       <dd>
          This is a technical design rule and hence should be tested automatically.
-      </dd>
+      </dd>      
    </dl>
 </div>
 
-<p><a name="api-01" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-5"></a></p>
+<p><span id="api-01"></span></p>
 <div class="rule" id="/core/http-safety">
    <p class="rulelab"><b>/core/http-safety</b>: Adhere to HTTP safety and idempotency semantics for operations</p>
    <dl>
@@ -1370,7 +1441,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
 <li><em>Observability</em> is improved since every request can be monitored or analyzed in isolation without having to incorporate session context from other requests</li>
 <li><em>Reliability</em> is improved because it eases the task of recovering from partial failures since the server doesn't have to maintain, update or communicate session state. One failing request does not influence other requests (depending on the nature of the failure of course).</li>
 </ul>
-<p><a name="api-02" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-6"></a></p>
+<p><span id="api-02"></span></p>
 <div class="rule" id="/core/stateless">
    <p class="rulelab"><b>/core/stateless</b>: Do not maintain session state on the server</p>
    <dl>
@@ -1396,7 +1467,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
 
 </section><section id="relationships"><div class="header-wrapper"><h3 id="x3-4-relationships"><bdi class="secno">3.4 </bdi>Relationships</h3><a class="self-link" href="#relationships" aria-label="Permalink for Section 3.4"></a></div>
 <p>Resources are often interconnected by relationships. Relationships can be modelled in different ways depending on the cardinality, semantics and more importantly, the use cases and access patterns the REST API needs to support.</p>
-<p><a name="api-06" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-7"></a></p>
+<p><span id="api-06"></span></p>
 <div class="rule" id="/core/nested-child">
   <p class="rulelab"><b>/core/nested-child</b>: Use nested URIs for child resources</p>
   <dl>
@@ -1433,7 +1504,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
 </dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
-<p><a name="api-10" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-8"></a></p>
+<p><span id="api-10"></span></p>
 <div class="rule" id="/core/resource-operations">
   <p class="rulelab"><b>/core/resource-operations</b>: Model resource operations as a sub-resource or dedicated resource</p>
   <dl>
@@ -1467,7 +1538,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
 
 </section><section id="documentation"><div class="header-wrapper"><h3 id="x3-6-documentation"><bdi class="secno">3.6 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 3.6"></a></div>
 <p>An API is as good as the accompanying documentation. The documentation has to be easily findable, searchable and publicly accessible. Most developers will first read the documentation before they start implementing. Hiding the technical documentation in PDF documents and/or behind a login creates a barrier for both developers and search engines.</p>
-<p><a name="api-16" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-9"></a></p>
+<p><span id="api-16"></span></p>
 <div class="rule" id="/core/doc-openapi">
   <p class="rulelab"><b>/core/doc-openapi</b>: Use OpenAPI Specification for documentation</p>
   <dl>
@@ -1499,7 +1570,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-17" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-10"></a></p>
+<p><span id="api-17"></span></p>
 <div class="rule" id="/core/doc-language">
   <p class="rulelab"><b>/core/doc-language</b>: Publish documentation in Dutch unless there is existing documentation in English</p>
   <dl>
@@ -1522,7 +1593,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-51" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-11"></a></p>
+<p><span id="api-51"></span></p>
 <div class="rule" id="/core/publish-openapi">
   <p class="rulelab"><b>/core/publish-openapi</b>: Publish OAS document at a standard location in JSON-format</p>
    <dl>
@@ -1564,7 +1635,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
 
 </section><section id="versioning"><div class="header-wrapper"><h3 id="x3-7-versioning"><bdi class="secno">3.7 </bdi>Versioning</h3><a class="self-link" href="#versioning" aria-label="Permalink for Section 3.7"></a></div>
 <p>Changes in APIs are inevitable. APIs should therefore always be versioned, facilitating the transition between changes.</p>
-<p><a name="api-18" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-12"></a></p>
+<p><span id="api-18"></span></p>
 <div class="rule" id="/core/deprecation-schedule">
   <p class="rulelab"><b>/core/deprecation-schedule</b>: Include a deprecation schedule when deprecating features or versions</p>
    <dl>
@@ -1587,7 +1658,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-19" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-13"></a></p>
+<p><span id="api-19"></span></p>
 <div class="rule" id="/core/transition-period">
   <p class="rulelab"><b>/core/transition-period</b>: Schedule a fixed transition period for a new major API version</p>
    <dl>
@@ -1610,7 +1681,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-20" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-14"></a></p>
+<p><span id="api-20"></span></p>
 <div class="rule" id="/core/uri-version">
   <p class="rulelab"><b>/core/uri-version</b>: Include the major version number in the URI</p>
     <dl>
@@ -1651,7 +1722,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-55" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-15"></a></p>
+<p><span id="api-55"></span></p>
 <div class="rule" id="/core/changelog">
   <p class="rulelab"><b>/core/changelog</b>: Publish a changelog for API changes between versions</p>
    <dl>
@@ -1674,7 +1745,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-56" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-16"></a></p>
+<p><span id="api-56"></span></p>
 <div class="rule" id="/core/semver">
   <p class="rulelab"><b>/core/semver</b>: Adhere to the Semantic Versioning model when releasing API changes</p>
   <dl>
@@ -1705,7 +1776,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
    </dl>
 </div>
 
-<p><a name="api-57" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-17"></a></p>
+<p><span id="api-57"></span></p>
 <div class="rule" id="/core/version-header">
   <p class="rulelab"><b>/core/version-header</b>: Return the full version number in a response header</p>
    <dl>
@@ -1766,22 +1837,30 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
     <p>A URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">rfc3986</a></cite>] (Uniform Resource Identifier) is a globally unique identifier for a resource.</p>
   </dd>
 </dl></section>
+  
  
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informative-references">
-    <div class="header-wrapper"><h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
+    <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
       <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go"><cite>Technical ADR Validation rule testset 0.1.0</cite></a>. H. Stijns.  Geonovum. December 2022. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go">https://gitlab.com/commonground/don/adr-validator/-/blob/v0.1.0/pkg/adr/rules.go</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
       <a href="https://www.openapis.org/"><cite>OpenAPI Specification</cite></a>. Darrell Miller; Jeremy Whitlock; Marsh Gardiner; Mike Ralphson; Ron Ratovsky; Uri Sarid; Tony Tam; Jason Harmon.  OpenAPI Initiative. URL: <a href="https://www.openapis.org/">https://www.openapis.org/</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc3986">[rfc3986]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
-    </dd><dt id="bib-rfc5789">[rfc5789]</dt><dd>
-      <a href="https://httpwg.org/specs/rfc5789.html"><cite>PATCH Method for HTTP</cite></a>. L. Dusseault; J. Snell.  IETF. March 2010. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc5789.html">https://httpwg.org/specs/rfc5789.html</a>
     </dd><dt id="bib-rfc7231">[rfc7231]</dt><dd>
       <a href="https://httpwg.org/specs/rfc7231.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7231.html">https://httpwg.org/specs/rfc7231.html</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
     </dd><dt id="bib-semver">[SemVer]</dt><dd>
       <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
+    </dd></dl>
+  </section><section id="informative-references">
+    <div class="header-wrapper"><h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.2"></a></div>
+    <dl class="bibliography"><dt id="bib-rfc5789">[rfc5789]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc5789.html"><cite>PATCH Method for HTTP</cite></a>. L. Dusseault; J. Snell.  IETF. March 2010. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc5789.html">https://httpwg.org/specs/rfc5789.html</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
@@ -2061,4 +2140,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel" style="background-color: #32a852;">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
