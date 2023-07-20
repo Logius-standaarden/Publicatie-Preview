@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.1">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -122,6 +122,9 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
+</style>
 <meta name="description" content="This document contains a normative standard for designing APIs in the Dutch Public Sector.The Governance of this standard is described in a separate repository and published by Logius.This document is part of the Nederlandse API Strategie, which consists of three distinct documents.">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
@@ -138,7 +141,19 @@ dd{margin-left:0}
 .hljs-link{text-decoration:underline}
 </style>
 <style>
-.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Logius",
@@ -516,6 +531,26 @@ dd{margin-left:0}
       "publisher": "Forum Standaardisatie",
       "title": "Expertadvies CloudEvents 1.0"
     },
+    "folmer2011": {
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
     "Gebruiksvoorwaarden Digikoppeling": {
       "date": "1 januari 2021",
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
@@ -888,7 +923,7 @@ dd{margin-left:0}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2022-01-25">June 28, 2023</time>
+      <time class="dt-published" datetime="2022-01-25">July 20, 2023</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -937,7 +972,7 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           This document is licensed under 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -1699,7 +1734,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
 </div>
 
 </section><section id="geospatial"><div class="header-wrapper"><h3 id="x3-8-geospatial"><bdi class="secno">3.8 </bdi>Geospatial</h3><a class="self-link" href="#geospatial" aria-label="Permalink for Section 3.8"></a></div>
-<p>Geospatial content is becomming more common in every modern API. APIs containing <a data-link-type="dfn|abstract-op" href="#dfn-ogc" class="internalDFN" id="ref-for-dfn-ogc-1">OGC</a> compliant features should therefore be compliant with geospatial specific rules.</p>
+<p>Geospatial content is becoming more common in every modern API. APIs containing <a data-link-type="dfn|abstract-op" href="#dfn-ogc" class="internalDFN" id="ref-for-dfn-ogc-1">OGC</a> compliant features should therefore be compliant with geospatial specific rules.</p>
 <div class="rule" id="/core/geo">
   <p class="rulelab"><b>/core/geo</b>: Use the GEO module for geospatial content</p>
    <dl>
@@ -1752,7 +1787,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
     <dfn id="dfn-ogc" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">OGC</dfn>
   </dt>
   <dd>
-    <a href="https://www.ogc.org/">OGC</a> is a consortium of experts committed to improving access to geospatial, or location information.
+    The <a href="https://www.ogc.org/">Open Geospatial Consortium</a> (OGC) is a consortium of experts committed to improving access to geospatial, or location information.
   </dd>
 </dl></section>
   
@@ -2082,4 +2117,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel" style="background-color: #39870c;">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
