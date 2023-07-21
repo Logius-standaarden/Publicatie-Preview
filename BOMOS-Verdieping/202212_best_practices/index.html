@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.1">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -49,6 +49,7 @@ dfn{cursor:pointer}
   
 <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
   
+  
 <title>BOMOS Deel 2: de verdieping</title>
   
   
@@ -59,6 +60,7 @@ dfn{cursor:pointer}
   
   
 <link <="" head="" href="./media/style.css" rel="stylesheet" type="text/css">
+
   
 <style id="respec-mainstyle">
 @keyframes pop{
@@ -117,12 +119,49 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
+</style>
 <meta name="description" content="BOMOS Deel 2: De Verdieping, geeft zoals de titel al zegt een verdieping
   van de onderwerpen uit het Beheer- en Ontwikkelmodel zoals in BOMOS Deel 1
   is geïntroduceerd. De verdieping is gebaseerd op vele ervaringen,
   best practices uit zowel de standaardisatiewereld en daarbuiten.">
 <style>
-.sidelabel{position:fixed;-webkit-transform-origin:top right;right:100%;top:0;-webkit-transform:rotate(-90deg);padding:4px 50px 4px 10px;color:#fff;white-space:nowrap;z-index:1}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
+</style>
+<script type="text/javascript">
+   /* Any custom mermaid.js scripts will go here. */
+  </script>
+<style>
+
+  /* Any custom mermaid.js scripts will go here. */
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Logius",
@@ -500,6 +539,28 @@ dd{margin-left:0}
       "publisher": "Forum Standaardisatie",
       "title": "Expertadvies CloudEvents 1.0"
     },
+    "folmer2011": {
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV",
+      "id": "folmer2011"
+    },
+    "folmer2012": {
+      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente",
+      "id": "folmer2012"
+    },
     "Gebruiksvoorwaarden Digikoppeling": {
       "date": "1 januari 2021",
       "href": "https://www.logius.nl/diensten/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
@@ -845,11 +906,14 @@ dd{margin-left:0}
   "previousMaturity": "DEF",
   "previousPublishVersion": "2i",
   "pubDomain": "bomos",
-  "publishDate": "2022-06-07",
+  "publishDate": "2023-06-29",
   "publishVersion": "3.0.0",
   "shortName": "verdieping",
   "specStatus": "WV",
-  "specType": "HR"
+  "specType": "HR",
+  "postProcess": [
+    null
+  ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head><body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
@@ -858,7 +922,7 @@ dd{margin-left:0}
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2022-06-07">29 juni 2023</time>
+      <time class="dt-published" datetime="2023-06-29">21 juli 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -903,7 +967,7 @@ dd{margin-left:0}
         </p>
     <p class="copyright">
           Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img style="float: left; padding-right: 5px;" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -914,7 +978,7 @@ dd{margin-left:0}
   best practices uit zowel de standaardisatiewereld en daarbuiten.
  </p>
 </section>
-     <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.1 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.2 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.3 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-ontwikkel-en-beheerorganisatie-activiteit-governance"><bdi class="secno">2.1 </bdi>De ontwikkel- en beheerorganisatie (Activiteit Governance)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#organisatiestructuur"><bdi class="secno">2.1.1 </bdi>Organisatiestructuur</a></li><li class="tocline"><a class="tocxref" href="#rollen-en-activiteiten"><bdi class="secno">2.1.2 </bdi>Rollen en activiteiten.</a></li><li class="tocline"><a class="tocxref" href="#beheertaken-uitvoering"><bdi class="secno">2.1.3 </bdi>Beheertaken uitvoering</a></li><li class="tocline"><a class="tocxref" href="#de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1.5 </bdi>Visie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-kosten-en-de-opbrengsten-activiteit-financien"><bdi class="secno">2.2 </bdi>De kosten en de opbrengsten (Activiteit: Financiën)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-baten-van-standaardisatie-generiek"><bdi class="secno">2.2.1 </bdi>De baten van standaardisatie generiek</a></li><li class="tocline"><a class="tocxref" href="#kosten-en-opbrengsten"><bdi class="secno">2.2.2 </bdi>Kosten en opbrengsten</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#geschiktheid-van-opbrengsten-bronnen"><bdi class="secno">2.2.3 </bdi>Geschiktheid van opbrengsten bronnen</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kostenbesparingen-bij-standaardisatie"><bdi class="secno">2.2.4 </bdi>Kostenbesparingen bij standaardisatie</a></li><li class="tocline"><a class="tocxref" href="#de-business-case"><bdi class="secno">2.2.5 </bdi>De business case</a></li><li class="tocline"><a class="tocxref" href="#het-opstellen-van-een-business-case"><bdi class="secno">2.2.6 </bdi>Het opstellen van een business case</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-open-invulling-van-een-standaard-activiteit-community"><bdi class="secno">3.1 </bdi>De open invulling van een standaard (Activiteit Community)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#krechmer-s-open-standaarden-model-10-requirements"><bdi class="secno">3.1.1 </bdi>Krechmer's open standaarden model: '10 requirements'</a></li><li class="tocline"><a class="tocxref" href="#concrete-tips-voor-openheid"><bdi class="secno">3.1.2 </bdi>Concrete tips voor openheid</a></li><li class="tocline"><a class="tocxref" href="#het-toetsbaar-maken-van-het-model"><bdi class="secno">3.1.3 </bdi>Het toetsbaar maken van het model</a></li><li class="tocline"><a class="tocxref" href="#open-invulling-met-open-source-software"><bdi class="secno">3.1.4 </bdi>Open invulling met Open Source Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#samenhang-met-andere-standaarden-activiteit-architectuur"><bdi class="secno">3.2 </bdi>Samenhang met andere standaarden (Activiteit Architectuur)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-gelaagdheid-van-standaarden"><bdi class="secno">3.2.1 </bdi>De gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-internationale-standaarden"><bdi class="secno">3.2.2 </bdi>De relatie met internationale standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-van-gelaagdheid-van-standaarden"><bdi class="secno">3.2.3 </bdi>Voorbeelden van gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#sector-overstijgende-interoperabiliteit-verzuiling"><bdi class="secno">3.2.4 </bdi>Sector overstijgende interoperabiliteit: Verzuiling</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-formele-standaarden"><bdi class="secno">3.2.5 </bdi>De relatie met formele standaarden</a></li><li class="tocline"><a class="tocxref" href="#strategieen-voor-omgang-met-lokalisatie-profielen"><bdi class="secno">3.2.6 </bdi>Strategieën voor omgang met lokalisatie profielen</a></li><li class="tocline"><a class="tocxref" href="#de-linked-data-standaarden-voor-semantisch-modelleren"><bdi class="secno">3.2.7 </bdi>De Linked Data standaarden voor semantisch modelleren</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stimuleren-van-het-gebruik-van-standaarden-activiteit-adoptie-erkenning"><bdi class="secno">3.3 </bdi>Stimuleren van het gebruik van standaarden (Activiteit Adoptie &amp; Erkenning)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#succesfactoren-voor-adoptie-van-een-standaard"><bdi class="secno">3.3.1 </bdi>Succesfactoren voor adoptie van een standaard</a></li><li class="tocline"><a class="tocxref" href="#kiezen-van-de-juiste-middelen"><bdi class="secno">3.3.2 </bdi>Kiezen van de juiste middelen</a></li><li class="tocline"><a class="tocxref" href="#stappenplan"><bdi class="secno">3.3.3 </bdi>Stappenplan</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#plugfest"><bdi class="secno">3.3.4 </bdi>Plugfest</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#factoren-voor-adoptie"><bdi class="secno">3.3.5 </bdi>Factoren voor adoptie</a></li><li class="tocline"><a class="tocxref" href="#adoptie-binnen-gebruikersorganisaties"><bdi class="secno">3.3.6 </bdi>Adoptie binnen gebruikersorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#kwaliteit-van-standaarden"><bdi class="secno">3.4.1 </bdi>Kwaliteit van standaarden</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteit-van-implementaties"><bdi class="secno">3.4.2 </bdi>Kwaliteit van implementaties</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzamelen-van-wensen-en-eisen"><bdi class="secno">4.1.1 </bdi>Verzamelen van wensen en eisen</a></li><li class="tocline"><a class="tocxref" href="#voorbereiden-veranderingsvoorstellen"><bdi class="secno">4.1.2 </bdi>Voorbereiden veranderingsvoorstellen</a></li><li class="tocline"><a class="tocxref" href="#beoordeling-en-besluitvorming"><bdi class="secno">4.1.3 </bdi>Beoordeling en besluitvorming</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#werkgroepen-en-stakeholders"><bdi class="secno">4.1.4 </bdi>Werkgroepen en stakeholders</a></li><li class="tocline"><a class="tocxref" href="#overgang-naar-nieuwe-versie"><bdi class="secno">4.1.5 </bdi>Overgang naar nieuwe versie</a></li><li class="tocline"><a class="tocxref" href="#vaste-cyclus"><bdi class="secno">4.1.6 </bdi>Vaste cyclus</a></li><li class="tocline"><a class="tocxref" href="#relatie-met-andere-standaarden"><bdi class="secno">4.1.7 </bdi>Relatie met andere standaarden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeelden-uit-de-operationele-praktijk"><bdi class="secno">4.2 </bdi>Voorbeelden uit de operationele praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pressure-cooker-een-standaard-in-een-week-in-de-afvalbranche"><bdi class="secno">4.2.1 </bdi>Pressure Cooker – een standaard in een week in de afvalbranche</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a></li><li class="tocline"><a class="tocxref" href="#bijlage-de-praktijk"><bdi class="secno">7. </bdi>Bijlage: de Praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">7.1 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#edustandaard-governance"><bdi class="secno">7.1.1 </bdi>Edustandaard governance</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#logius-standaarden-governance"><bdi class="secno">7.1.2 </bdi>Logius standaarden governance</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel-gereedschap-voor-standaardenbeheer"><bdi class="secno">7.2 </bdi>Operationeel: Gereedschap voor standaardenbeheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">7.2.1 </bdi>Documentatie (en Publicatie) met Git en Respec</a></li><li class="tocline"><a class="tocxref" href="#git-en-git-platforms"><bdi class="secno">7.2.2 </bdi>Git en Git platforms</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsverzoeken"><bdi class="secno">7.2.3 </bdi>Wijzigingsverzoeken</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li></ol></nav>
+     <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.1 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.2 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.3 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">2. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-ontwikkel-en-beheerorganisatie-activiteit-governance"><bdi class="secno">2.1 </bdi>De ontwikkel- en beheerorganisatie (Activiteit Governance)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#organisatiestructuur"><bdi class="secno">2.1.1 </bdi>Organisatiestructuur</a></li><li class="tocline"><a class="tocxref" href="#rollen-en-activiteiten"><bdi class="secno">2.1.2 </bdi>Rollen en activiteiten.</a></li><li class="tocline"><a class="tocxref" href="#beheertaken-uitvoering"><bdi class="secno">2.1.3 </bdi>Beheertaken uitvoering</a></li><li class="tocline"><a class="tocxref" href="#de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">2.1.5 </bdi>Visie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-kosten-en-de-opbrengsten-activiteit-financien"><bdi class="secno">2.2 </bdi>De kosten en de opbrengsten (Activiteit: Financiën)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-baten-van-standaardisatie-generiek"><bdi class="secno">2.2.1 </bdi>De baten van standaardisatie generiek</a></li><li class="tocline"><a class="tocxref" href="#kosten-en-opbrengsten"><bdi class="secno">2.2.2 </bdi>Kosten en opbrengsten</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#geschiktheid-van-opbrengsten-bronnen"><bdi class="secno">2.2.3 </bdi>Geschiktheid van opbrengsten bronnen</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kostenbesparingen-bij-standaardisatie"><bdi class="secno">2.2.4 </bdi>Kostenbesparingen bij standaardisatie</a></li><li class="tocline"><a class="tocxref" href="#de-business-case"><bdi class="secno">2.2.5 </bdi>De business case</a></li><li class="tocline"><a class="tocxref" href="#het-opstellen-van-een-business-case"><bdi class="secno">2.2.6 </bdi>Het opstellen van een business case</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tactiek"><bdi class="secno">3. </bdi>Tactiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-open-invulling-van-een-standaard-activiteit-community"><bdi class="secno">3.1 </bdi>De open invulling van een standaard (Activiteit Community)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#krechmer-s-open-standaarden-model-10-requirements"><bdi class="secno">3.1.1 </bdi>Krechmer's open standaarden model: '10 requirements'</a></li><li class="tocline"><a class="tocxref" href="#concrete-tips-voor-openheid"><bdi class="secno">3.1.2 </bdi>Concrete tips voor openheid</a></li><li class="tocline"><a class="tocxref" href="#het-toetsbaar-maken-van-het-model"><bdi class="secno">3.1.3 </bdi>Het toetsbaar maken van het model</a></li><li class="tocline"><a class="tocxref" href="#open-invulling-met-open-source-software"><bdi class="secno">3.1.4 </bdi>Open invulling met Open Source Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#samenhang-met-andere-standaarden-activiteit-architectuur"><bdi class="secno">3.2 </bdi>Samenhang met andere standaarden (Activiteit Architectuur)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-gelaagdheid-van-standaarden"><bdi class="secno">3.2.1 </bdi>De gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-internationale-standaarden"><bdi class="secno">3.2.2 </bdi>De relatie met internationale standaarden</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden-van-gelaagdheid-van-standaarden"><bdi class="secno">3.2.3 </bdi>Voorbeelden van gelaagdheid van standaarden</a></li><li class="tocline"><a class="tocxref" href="#sector-overstijgende-interoperabiliteit-verzuiling"><bdi class="secno">3.2.4 </bdi>Sector overstijgende interoperabiliteit: Verzuiling</a></li><li class="tocline"><a class="tocxref" href="#de-relatie-met-formele-standaarden"><bdi class="secno">3.2.5 </bdi>De relatie met formele standaarden</a></li><li class="tocline"><a class="tocxref" href="#strategieen-voor-omgang-met-lokalisatie-profielen"><bdi class="secno">3.2.6 </bdi>Strategieën voor omgang met lokalisatie profielen</a></li><li class="tocline"><a class="tocxref" href="#de-linked-data-standaarden-voor-semantisch-modelleren"><bdi class="secno">3.2.7 </bdi>De Linked Data standaarden voor semantisch modelleren</a></li></ol></li><li class="tocline"><a class="tocxref" href="#stimuleren-van-het-gebruik-van-standaarden-activiteit-adoptie-erkenning"><bdi class="secno">3.3 </bdi>Stimuleren van het gebruik van standaarden (Activiteit Adoptie &amp; Erkenning)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#succesfactoren-voor-adoptie-van-een-standaard"><bdi class="secno">3.3.1 </bdi>Succesfactoren voor adoptie van een standaard</a></li><li class="tocline"><a class="tocxref" href="#kiezen-van-de-juiste-middelen"><bdi class="secno">3.3.2 </bdi>Kiezen van de juiste middelen</a></li><li class="tocline"><a class="tocxref" href="#stappenplan"><bdi class="secno">3.3.3 </bdi>Stappenplan</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#plugfest"><bdi class="secno">3.3.4 </bdi>Plugfest</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#factoren-voor-adoptie"><bdi class="secno">3.3.5 </bdi>Factoren voor adoptie</a></li><li class="tocline"><a class="tocxref" href="#adoptie-binnen-gebruikersorganisaties"><bdi class="secno">3.3.6 </bdi>Adoptie binnen gebruikersorganisaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">3.4 </bdi>Kwaliteitsbeleid en benchmarking</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#kwaliteit-van-standaarden"><bdi class="secno">3.4.1 </bdi>Kwaliteit van standaarden</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#kwaliteit-van-implementaties"><bdi class="secno">3.4.2 </bdi>Kwaliteit van implementaties</a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">4. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verzamelen-van-wensen-en-eisen"><bdi class="secno">4.1.1 </bdi>Verzamelen van wensen en eisen</a></li><li class="tocline"><a class="tocxref" href="#voorbereiden-veranderingsvoorstellen"><bdi class="secno">4.1.2 </bdi>Voorbereiden veranderingsvoorstellen</a></li><li class="tocline"><a class="tocxref" href="#beoordeling-en-besluitvorming"><bdi class="secno">4.1.3 </bdi>Beoordeling en besluitvorming</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#werkgroepen-en-stakeholders"><bdi class="secno">4.1.4 </bdi>Werkgroepen en stakeholders</a></li><li class="tocline"><a class="tocxref" href="#overgang-naar-nieuwe-versie"><bdi class="secno">4.1.5 </bdi>Overgang naar nieuwe versie</a></li><li class="tocline"><a class="tocxref" href="#vaste-cyclus"><bdi class="secno">4.1.6 </bdi>Vaste cyclus</a></li><li class="tocline"><a class="tocxref" href="#relatie-met-andere-standaarden"><bdi class="secno">4.1.7 </bdi>Relatie met andere standaarden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeelden-uit-de-operationele-praktijk"><bdi class="secno">4.2 </bdi>Voorbeelden uit de operationele praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pressure-cooker-een-standaard-in-een-week-in-de-afvalbranche"><bdi class="secno">4.2.1 </bdi>Pressure Cooker – een standaard in een week in de afvalbranche</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">5. </bdi>Implementatie Ondersteuning</a></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">6. </bdi>Communicatie</a></li><li class="tocline"><a class="tocxref" href="#bijlage-de-praktijk"><bdi class="secno">7. </bdi>Bijlage: de Praktijk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">7.1 </bdi>Governance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#edustandaard-governance"><bdi class="secno">7.1.1 </bdi>Edustandaard governance</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#imbor-governance"><bdi class="secno">7.1.2 </bdi>IMBOR governance</a></li><li class="tocline"><a class="tocxref" href="#logius-standaarden-governance"><bdi class="secno">7.1.3 </bdi>Logius standaarden governance</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel-gereedschap-voor-standaardenbeheer"><bdi class="secno">7.2 </bdi>Operationeel: Gereedschap voor standaardenbeheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie-en-publicatie-met-git-en-respec"><bdi class="secno">7.2.1 </bdi>Documentatie (en Publicatie) met Git en Respec</a></li><li class="tocline"><a class="tocxref" href="#git-en-git-platforms"><bdi class="secno">7.2.2 </bdi>Git en Git platforms</a></li><li class="tocline"><a class="tocxref" href="#wijzigingsverzoeken"><bdi class="secno">7.2.3 </bdi>Wijzigingsverzoeken</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
      <section class="introductory" id="documentbeheer"><div class="header-wrapper"><h2 id="documentbeheer-0">Documentbeheer</h2><a class="self-link" href="#documentbeheer" aria-label="Permalink for this Section"></a></div>
 <table class="dkkvs">
 <thead>
@@ -1004,7 +1068,7 @@ in <a href="https://logius-standaarden.github.io/BOMOS-Fundament">Deel 1</a> en 
 beschreven. De aanvullende modules zijn wel duidelijk met BOMOS
 verbonden, maar hebben een eigen governance wat kan resulteren in een
 eigen naam, eigen doelgroep, eigen beheer, etc. In het
-<a href="#het-beheer-en-ontwikkelmodel-onderwerpen-voor-ontwikkeling-en-beheer">beheerproces van BOMOS</a>
+<a href="https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/#het-beheer-en-ontwikkelmodel-onderwerpen-voor-ontwikkeling-en-beheer">beheerproces van BOMOS</a>
 wordt ook beschreven welke eisen er gesteld worden voordat
 iets opgenomen wordt als BOMOS aanvullende module.</p>
 <p> De eerste twee aanvullende modules zijn:
@@ -1140,6 +1204,25 @@ rekent. In de praktijk zullen bij complexere standaarden bepaalde
 categorieën werkgroepen (bijv. 'gegevens') weer onderverdeeld worden
 in werkgroepen per probleemdomein (bijv. 'facturatie'), waarmee een
 combinatie van beide indelingen wordt gerealiseerd.</p>
+<aside class="example" id="example-setu-organisatiestructuur"><div class="marker">
+    <a class="self-link" href="#example-setu-organisatiestructuur">Voorbeeld<bdi> 2</bdi></a><span class="example-title">: SETU organisatiestructuur</span>
+  </div>
+Bij de SETU is de organisatiestructuur als volgt: Het bestuur bestaat 
+uit vertegenwoordigers van uitzendondernemingen. Zij houden vier keer 
+per jaar een bestuursvergadering. In de bestuursvergaderingen rapporteert 
+de uitvoeringsorganisatie, momenteel werknemers van TNO en de ABU, over de 
+voortgang van de werkzaamheden voor de SETU. Alle werkzaamheden staan vermeld 
+in het jaarplan dat voorafgaand aan ieder kalenderjaar wordt vastgesteld, 
+inclusief bijbehorende begroting. Onder deze werkzaamheden valt onder andere 
+het organiseren van de werkgroepen. Aan werkgroepen mogen zowel vertegenwoordigers 
+van uitzendondernemingen, inleners en leveranciers deelnemen. Actuele werkgroepen 
+zijn de werkgroep Planningsgegevens, die de SETU Standard for Planning &amp; Scheduling 
+ontwikkelt, en de werkgroep Trends &amp; ontwikkelingen, waarin veranderingen en 
+behoeftes in de sector worden geïdentificeerd die (mogelijk) impact hebben op 
+digitalisering en data-uitwisseling.&nbsp;Bij SETU is geen sprake van een 
+leveranciersgroep en adviesorgaan.&nbsp;
+</aside>
+
 <p>Bijzondere aandacht verdienen de leveranciers. Dit is regelmatig een
 heet hangijzer bij non-profit beheerorganisaties. Voor het welslagen
 van een standaard (zonder juiste implementatie geen werkende
@@ -1174,6 +1257,63 @@ geschetste mogelijkheden zijn er nog vele alternatieven, zowel
 eenvoudiger als complexer. Welke structuur ook gekozen wordt, bij
 voorkeur worden de verslagen van de verschillende gremia openbaar ter
 beschikking gesteld.</p>
+<aside class="Example" title="IMBOR beheerorganisatie">
+Het Informatiemodel Beheer Openbare Ruimte (IMBOR) is ontstaan vanuit 
+de behoefte van de beheerders en assetmanagers van overheden, zoals: 
+gemeenten, provincies en waterschappen om uniforme benamingen te gebruiken 
+voor beheergegevens van de objecten in de openbare ruimte. Met het IMBOR 
+wil CROW het werkveld beheer openbare ruimte een standaard ontologie bieden 
+om de dataregistratie van gegevens voor het beheer van de openbare ruimte 
+te uniformeren en verbeteren als basis voor een beter assetmanagement.
+
+<p>CROW is de ontwikkelaar en beheerder van het Informatie Model Beheer 
+Openbare ruimte (IMBOR). Het IMBOR is ontwikkeld onder begeleiding van 
+een Projectgroep IMBOR, een IMBOR Klankbordgroep softwareleveranciers en 
+een groot aantal inhoudelijke werkgroepen per vakgebied. </p>
+<p>In de beheerorganisatie van het IMBOR zijn vertegenwoordigd:</p>
+<ul>
+<li>beheerders en assetmanagers bij lagere overheden,</li>
+<li>softwareleveranciers die hen ondersteunen met beheerdatabases/beheerpakketten 
+en assetmanagementapplicaties en dashboards,</li>
+<li>vakinhoudelijk experts die voor specifieke vakgebieden kennis hebben van de 
+informatie die nodig is voor het beheer van de openbare ruimte, </li>
+<li>samenwerkingspartners van gerelateerde standaarden,</li>
+<li>belanghebbenden en financiers van het IMBOR.</li>
+</ul>
+<p>CROW heeft de beheerorganisatie van het IMBOR daarom opgebouwd uit de volgende groepen:</p>
+<ul>
+<li>Stuurgroep IMBOR: Besluit op strategisch niveau over de aanvullingen en 
+wijzigingen van het IMBOR en adviseert CROW over het beheer en de doorontwikkeling van het IMBOR.</li>
+<li>Klankbordgroep softwareleveranciers: adviseert CROW over de toepasbaarheid van 
+het IMBOR voor beheerdatabases/beheerpakketten, assetmanagementapplicaties en dashboards, 
+en bevordert de implementatie door het IMBOR via hun software toepasbaar te maken bij 
+eindgebruikers.</li>
+<li>Diverse vakinhoudelijke expertgroepen: per vakgebied een groep deskundigen die 
+adviseert welke informatie bij objecten moet worden opgeslagen.</li>
+<li>Gebruikerscomité: adviseert CROW over de toepasbaarheid van het IMBOR door 
+eindgebruikers, en bevordert de implementatie door  mee te werken aan de communicatie 
+over de voordelen en praktijkervaringen. </li>
+<li>Gebruikerscommunity: de grote groep van gebruikers van IMBOR die regelmatig 
+worden geïnformeerd over het IMBOR en via de GitHub en bij tervisieleggingen 
+de gelegenheid krijgen om opmerkingen, suggesties en commentaar te geven.</li>
+</ul>
+<p>De beheerorganisatie wordt vanuit CROW ondersteund door een IMBOR-team met 
+medewerkers die kennis hebben van openbare ruimte, BIM en data- en 
+informatiemanagement. De technisch experts in het IMBOR-team adviseren de 
+productmanager IMBOR over technische wijzigingen in het informatiemodel en 
+de ondersteunende techniek. Het IMBOR-team wordt aangestuurd door de 
+productmanager IMBOR. </p>
+<p>De productmanager IMBOR wordt aangesteld door CROW. De productmanager vervult 
+een centrale rol in het beheer van IMBOR door samen met de beheerorganisatie IMBOR:</p>
+<ol>
+<li>Een open besluitvorming te faciliteren waarin alle belangen kunnen worden ingebracht;  </li>
+<li>Een zorgvuldig en transparantie beheerproces te waarborgen door o.a. bijbehorende 
+documentatie volgens common creative licentie open beschikbaar te stellen (CC BY 4.0 Intl); </li>
+<li>Voldoende contacten te onderhouden met gebruikers om de inbreng van wensen en 
+behoeften waarborgen; </li>
+<li>Het gebruik van de standaard te ondersteunen door o.a. aan te sturen dat vragen 
+van gebruikers via de helpdesk beantwoord worden. </li></ol></aside>
+
 </section><section id="rollen-en-activiteiten"><div class="header-wrapper"><h4 id="x2-1-2-rollen-en-activiteiten"><bdi class="secno">2.1.2 </bdi>Rollen en activiteiten.</h4><a class="self-link" href="#rollen-en-activiteiten" aria-label="Permalink for Section 2.1.2"></a></div>
 <p>In <a href="https://logius-standaarden.github.io/BOMOS-Fundament/index.html#activiteiten-en-rollen">deel 1 zijn de rollen voor het ontwikkel- en beheerproces gedefinieerd</a>,
 en zijn ze gekoppeld aan de hoofdactiviteiten van BOMOS. Omgekeerd
@@ -1436,7 +1576,7 @@ domein standaardisatie organisatie worden opgepakt en andere taken
 door ander type organisaties, conform de beschrijving in deze
 paragraaf over het uitbesteden van taken.</p>
 <aside class="example" id="example-edustandaard"><div class="marker">
-    <a class="self-link" href="#example-edustandaard">Voorbeeld<bdi> 2</bdi></a><span class="example-title">: Edustandaard</span>
+    <a class="self-link" href="#example-edustandaard">Voorbeeld<bdi> 3</bdi></a><span class="example-title">: Edustandaard</span>
   </div>"
 Edustandaard is een platform waar alle publieke en private partijen binnen
 het onderwijsveld bij elkaar komen om afspraken te maken. Deze afspraken 
@@ -1449,7 +1589,7 @@ diverse standaarden en biedt overzicht en inzicht in de werking van
 (keten)processen. Ook wordt advies gegeven aan ketenpartijen in alle 
 onderwijssectoren, van primair tot hoger onderwijs. 
 
-<p><a href="#Edustandaard-governance">De governance van de Edustandaard is beschreven in de bijlage</a>.</p>
+<p><a href="#edustandaard-governance">De governance van de Edustandaard is beschreven in de bijlage</a>.</p>
 </aside>
 
 </section><section id="de-organisatievorm"><div class="header-wrapper"><h4 id="x2-1-4-de-organisatievorm"><bdi class="secno">2.1.4 </bdi>De organisatievorm</h4><a class="self-link" href="#de-organisatievorm" aria-label="Permalink for Section 2.1.4"></a></div>
@@ -1477,7 +1617,7 @@ de hand liggen, te weten:</p>
   wel donateurs hebben, maar die hebben geen zeggenschap. Een
   stichting kan ook vrijwilligers hebben.</p>
 <aside class="example" id="example-stichting-rioned"><div class="marker">
-    <a class="self-link" href="#example-stichting-rioned">Voorbeeld<bdi> 3</bdi></a><span class="example-title">: Stichting RIONED</span>
+    <a class="self-link" href="#example-stichting-rioned">Voorbeeld<bdi> 4</bdi></a><span class="example-title">: Stichting RIONED</span>
   </div>
 De standaard Gegevenswoordenboek Stedelijk Water wordt verder ontwikkeld, 
 maar is ook in beheer en wordt operationeel gebruikt. Transparantie en 
@@ -1549,7 +1689,7 @@ vrijblijvendheid van de deelnemers in standaarden is zeker een serieus
 aandachtspunt in het kader van een duurzaam toegepaste standaard.</p>
 <p class="comment" style="color:red">
 </p><aside class="example" id="example-het-ccvd-datastandaarden"><div class="marker">
-    <a class="self-link" href="#example-het-ccvd-datastandaarden">Voorbeeld<bdi> 4</bdi></a><span class="example-title">: Het CCvD Datastandaarden</span>
+    <a class="self-link" href="#example-het-ccvd-datastandaarden">Voorbeeld<bdi> 5</bdi></a><span class="example-title">: Het CCvD Datastandaarden</span>
   </div>
 Besluitvorming over wijzigingen op een standaard of over de strategie 
 voor een standaard zal over het algemeen bij de beheerorganisatie liggen. 
@@ -1585,7 +1725,7 @@ proces.  </p>
 
 <p class="comment" style="color:red">
 </p><aside class="example" id="example-template-voor-beheerdocument-en-rekenmodel-van-geonovum"><div class="marker">
-    <a class="self-link" href="#example-template-voor-beheerdocument-en-rekenmodel-van-geonovum">Voorbeeld<bdi> 5</bdi></a><span class="example-title">: Template voor beheerdocument en rekenmodel van Geonovum</span>
+    <a class="self-link" href="#example-template-voor-beheerdocument-en-rekenmodel-van-geonovum">Voorbeeld<bdi> 6</bdi></a><span class="example-title">: Template voor beheerdocument en rekenmodel van Geonovum</span>
   </div>
 
 <p>Om opdrachtgevers meer inzicht te geven in de activiteiten in het
@@ -1599,7 +1739,7 @@ het specifieke beheerdocument het overzicht van meer- en minderwerk
 uitgaand van het generieke beheerdocument.</p>
 <p>Om de kosten van beheer optimaal inzichtelijk te maken, heeft Geonovum
 op basis van het generieke en het specifieke beheermodel, onlangs ook
-een <a href="_HIER_LINK_NAAR_HET_REKENMODEL">BOMOS rekenmodel</a> ontwikkeld. Op basis van een reeds bekende en
+een <a href="https://www.geonovum.nl/over-geonovum/actueel/transparantie-in-ontwikkeling-en-beheer-standaarden">BOMOS rekenmodel</a> ontwikkeld. Op basis van een reeds bekende en
 beheerde standaard is de benodigde basis inzet berekend. Deze basis
 gebruiken we vervolgens om een gerichte inschatting te kunnen maken
 van meer- en minderwerk zoals beschreven in het specifieke
@@ -1656,45 +1796,45 @@ policy):</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left">Positive effects</th>
-<th align="left">Negative effects</th>
+<th></th>
+<th>Positive effects</th>
+<th>Negative effects</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Compatability / interface</td>
-<td align="left">Network externalities</td>
-<td align="left">Monopoly</td>
+<td>Compatability / interface</td>
+<td>Network externalities</td>
+<td>Monopoly</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Avoiding Lock-ins</td>
-<td align="left"></td>
+<td></td>
+<td>Avoiding Lock-ins</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Increased variety of systems products</td>
-<td align="left"></td>
+<td></td>
+<td>Increased variety of systems products</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">Variety reduction</td>
-<td align="left">Economies of scale</td>
-<td align="left">Reduced choice</td>
+<td>Variety reduction</td>
+<td>Economies of scale</td>
+<td>Reduced choice</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Building focus and critical mass</td>
-<td align="left">Market concentration</td>
+<td></td>
+<td>Building focus and critical mass</td>
+<td>Market concentration</td>
 </tr>
 <tr>
-<td align="left">Information standards</td>
-<td align="left">Facilitates trade</td>
-<td align="left">Regulatory capture</td>
+<td>Information standards</td>
+<td>Facilitates trade</td>
+<td>Regulatory capture</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Reduced transaction costs</td>
-<td align="left"></td>
+<td></td>
+<td>Reduced transaction costs</td>
+<td></td>
 </tr>
 </tbody></table>
 <p>Voor semantische (domein) standaarden zijn met name relevant:</p>
@@ -1711,45 +1851,45 @@ opbrengsten van het beheer van standaarden. De balans vat deze samen.</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="left">Debet</th>
-<th align="left">Credit</th>
+<th>Debet</th>
+<th>Credit</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Ontwikkelkosten</td>
-<td align="left">Structureel begroting</td>
+<td>Ontwikkelkosten</td>
+<td>Structureel begroting</td>
 </tr>
 <tr>
-<td align="left">Beheerkosten</td>
-<td align="left">Projectfinanciering</td>
+<td>Beheerkosten</td>
+<td>Projectfinanciering</td>
 </tr>
 <tr>
-<td align="left">Communicatie</td>
-<td align="left">Lidmaatschapsgelden</td>
+<td>Communicatie</td>
+<td>Lidmaatschapsgelden</td>
 </tr>
 <tr>
-<td align="left">Lidmaatschapskosten (+reiskosten)</td>
-<td align="left">Subsidie</td>
+<td>Lidmaatschapskosten (+reiskosten)</td>
+<td>Subsidie</td>
 </tr>
 <tr>
-<td align="left">Bedrijfsvoering (accountant)</td>
-<td align="left">Dienstverlening</td>
+<td>Bedrijfsvoering (accountant)</td>
+<td>Dienstverlening</td>
 </tr>
 <tr>
-<td align="left">Huisvesting</td>
-<td align="left">Licenties</td>
+<td>Huisvesting</td>
+<td>Licenties</td>
 </tr>
 <tr>
-<td align="left">Goodwill</td>
-<td align="left"></td>
+<td>Goodwill</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">Tooling (Licenties)</td>
-<td align="left"></td>
+<td>Tooling (Licenties)</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">Financieringskosten</td>
-<td align="left"></td>
+<td>Financieringskosten</td>
+<td></td>
 </tr>
 </tbody></table>
 <section id="debet"><div class="header-wrapper"><h5 id="x2-2-2-1-debet"><bdi class="secno">2.2.2.1 </bdi>Debet</h5><a class="self-link" href="#debet" aria-label="Permalink for Section 2.2.2.1"></a></div>
@@ -2025,37 +2165,37 @@ een aantal suggesties weer om standaardisatie efficiënt in te vullen:</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="left">Onderdeel in standaardisatie proces:</th>
-<th align="left">Efficiënter te maken door:</th>
+<th>Onderdeel in standaardisatie proces:</th>
+<th>Efficiënter te maken door:</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Formeren handvest</td>
-<td align="left">Een specifiek en gedetailleerd handvest wat strak bepaald wat in/uit scope van het standaardisatie initiatief is.</td>
+<td>Formeren handvest</td>
+<td>Een specifiek en gedetailleerd handvest wat strak bepaald wat in/uit scope van het standaardisatie initiatief is.</td>
 </tr>
 <tr>
-<td align="left">Opzetten ontwikkel en beheerprocessen</td>
-<td align="left">Hergebruik van beschrijvingen (bv. gebruik van procedure document van andere standaardisatieorganisaties)</td>
+<td>Opzetten ontwikkel en beheerprocessen</td>
+<td>Hergebruik van beschrijvingen (bv. gebruik van procedure document van andere standaardisatieorganisaties)</td>
 </tr>
 <tr>
-<td align="left">Inrichting beheerorganisatie</td>
-<td align="left">Hergebruik van (validatie) tools, maar ook tools om standaarden te maken</td>
+<td>Inrichting beheerorganisatie</td>
+<td>Hergebruik van (validatie) tools, maar ook tools om standaarden te maken</td>
 </tr>
 <tr>
-<td align="left">Voorbereiding</td>
-<td align="left">Optimale en strakke planning met verdeling van de werkzaamheden. Ook duidelijke wensen en eisen aan de oplossing definiëren om “scope creep” te voorkomen. (“scope creep” is het fenomeen dat tijdens het ontwikkelproces de scope van de standaard geleidelijk verschuift.) Daarnaast al in een vroeg stadium de bronnen (andere standaarden) die potentieel hergebruikt kunnen worden identificeren.</td>
+<td>Voorbereiding</td>
+<td>Optimale en strakke planning met verdeling van de werkzaamheden. Ook duidelijke wensen en eisen aan de oplossing definiëren om “scope creep” te voorkomen. (“scope creep” is het fenomeen dat tijdens het ontwikkelproces de scope van de standaard geleidelijk verschuift.) Daarnaast al in een vroeg stadium de bronnen (andere standaarden) die potentieel hergebruikt kunnen worden identificeren.</td>
 </tr>
 <tr>
-<td align="left">Ontwikkelproces</td>
-<td align="left">Innovatieve ontwikkelaanpakken voor standaarden (bv. gebruik van een pressure cooker), maar ook tools zoals een wiki om gezamenlijk aan te werken.</td>
+<td>Ontwikkelproces</td>
+<td>Innovatieve ontwikkelaanpakken voor standaarden (bv. gebruik van een pressure cooker), maar ook tools zoals een wiki om gezamenlijk aan te werken.</td>
 </tr>
 <tr>
-<td align="left">Review van de standaard</td>
-<td align="left">Efficiënt review proces en gebruik van templates voor het verzamelen van opmerkingen.</td>
+<td>Review van de standaard</td>
+<td>Efficiënt review proces en gebruik van templates voor het verzamelen van opmerkingen.</td>
 </tr>
 <tr>
-<td align="left">Vaststellen van de standaard</td>
-<td align="left">Online tools voor het stemmen.</td>
+<td>Vaststellen van de standaard</td>
+<td>Online tools voor het stemmen.</td>
 </tr>
 </tbody></table>
 <p>Besparingen door middel van innovatieve aanpakken in het
@@ -2132,7 +2272,7 @@ nauwelijks positief te krijgen. Daarom zullen er altijd een zeer lange
 tijd ook nog oude standaarden (bijv. EDI) in gebruik zien, omdat er
 geen positieve business case voor de nieuwe/andere standaard is,
 zolang er geen interoperabiliteitsprobleem is. Eén van wereldwijd
-meest succesvolle standaard, RosettaNet (<a href="http://www.rosettanet.org">www.rosettanet.org</a>),
+meest succesvolle standaard, <a href="https://www.gs1us.org/resources/rosettanet">RosettaNet</a>,
 illustreert dit ook: ondanks dat deze standaard al jaren een XML
 versie heeft ontwikkeld is er nauwelijks migratie vanuit de oude EDI
 versie, en lang een lage adoptie van de XML versie heeft gehad.</p>
@@ -2218,82 +2358,82 @@ interessant, zoals het model ook laat zien:</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="center"></th>
-<th align="left">Eisen</th>
-<th align="center">Ontwikkelaar</th>
-<th align="center">Implementator</th>
-<th align="center">Gebruiker</th>
+<th></th>
+<th>Eisen</th>
+<th>Ontwikkelaar</th>
+<th>Implementator</th>
+<th>Gebruiker</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">1</td>
-<td align="left">Open meeting</td>
-<td align="center">X</td>
-<td align="center"></td>
-<td align="center"></td>
+<td>1</td>
+<td>Open meeting</td>
+<td>X</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">Consensus</td>
-<td align="center">X</td>
-<td align="center"></td>
-<td align="center"></td>
+<td>2</td>
+<td>Consensus</td>
+<td>X</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="left">Due process</td>
-<td align="center">X</td>
-<td align="center"></td>
-<td align="center"></td>
+<td>3</td>
+<td>Due process</td>
+<td>X</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="left">One world</td>
-<td align="center">X</td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>4</td>
+<td>One world</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="left">Open IPR</td>
-<td align="center">X</td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>5</td>
+<td>Open IPR</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="left">Open change</td>
-<td align="center">X</td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>6</td>
+<td>Open change</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="left">Open documents</td>
-<td align="center"></td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>7</td>
+<td>Open documents</td>
+<td></td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="left">Open interface</td>
-<td align="center"></td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>8</td>
+<td>Open interface</td>
+<td></td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="left">Open access</td>
-<td align="center"></td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td>9</td>
+<td>Open access</td>
+<td></td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="left">Ongoing support</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">X</td>
+<td>10</td>
+<td>Ongoing support</td>
+<td></td>
+<td></td>
+<td>X</td>
 </tr>
 </tbody></table>
 <p>Deze 10 criteria voor open standaarden betekenen het volgende voor de beheerorganisatie:</p>
@@ -2461,293 +2601,293 @@ open manier in te vullen.</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="center"></th>
-<th align="left">Principe</th>
-<th align="left">Criteria</th>
-<th align="center"></th>
-<th align="left">Variable</th>
-<th align="left">Toelichting</th>
-<th align="center">Score</th>
+<th></th>
+<th>Principe</th>
+<th>Criteria</th>
+<th></th>
+<th>Variable</th>
+<th>Toelichting</th>
+<th>Score</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">1</td>
-<td align="left">Open meeting</td>
-<td align="left">Iedereen kan partiperen in het standaardisatieproces</td>
-<td align="center">1</td>
-<td align="left">Toegangsprijs</td>
-<td align="left">Is er een toegangsprijs voor standaardisatiebijeenkomsten? Is dat betaalbaar voor de verschillende deelnemers? Gratis (2 punten), Betaalbaar, laag of gediversifieerd tarief (1 punt) of kostbaar (0 punten)</td>
-<td align="center">0/1/2</td>
+<td>1</td>
+<td>Open meeting</td>
+<td>Iedereen kan partiperen in het standaardisatieproces</td>
+<td>1</td>
+<td>Toegangsprijs</td>
+<td>Is er een toegangsprijs voor standaardisatiebijeenkomsten? Is dat betaalbaar voor de verschillende deelnemers? Gratis (2 punten), Betaalbaar, laag of gediversifieerd tarief (1 punt) of kostbaar (0 punten)</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Bereikbare vergaderlocaties</td>
-<td align="left">Vergaderlocaties worden zodanig gekozen dat reiskosten voor iedereen geminimaliseerd zijn</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Bereikbare vergaderlocaties</td>
+<td>Vergaderlocaties worden zodanig gekozen dat reiskosten voor iedereen geminimaliseerd zijn</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Open voor iedereen</td>
-<td align="left">Elke organisatie of persoon kan in principe participeren in de ontwikkeling van de standaard</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Open voor iedereen</td>
+<td>Elke organisatie of persoon kan in principe participeren in de ontwikkeling van de standaard</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">4</td>
-<td align="left">Open kalender</td>
-<td align="left">Is de vergaderagenda  online beschikbaar en actueel? Ruim van tevoren?</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>Open kalender</td>
+<td>Is de vergaderagenda  online beschikbaar en actueel? Ruim van tevoren?</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">Consensus</td>
-<td align="left">De basis van een standaard is consensus</td>
-<td align="center">1</td>
-<td align="left">Open proces</td>
-<td align="left">The proces van standaardisatie is openbaar zodat er voor iedereen duidelijk is hoe zken besloten zijn</td>
-<td align="center">0/1/2</td>
+<td>2</td>
+<td>Consensus</td>
+<td>De basis van een standaard is consensus</td>
+<td>1</td>
+<td>Open proces</td>
+<td>The proces van standaardisatie is openbaar zodat er voor iedereen duidelijk is hoe zken besloten zijn</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Procedure bij geen consensus</td>
-<td align="left">Er is een procedure voor het geval geen consensus bereikt kan worden</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Procedure bij geen consensus</td>
+<td>Er is een procedure voor het geval geen consensus bereikt kan worden</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Gelijke stem</td>
-<td align="left">Alle stakeholders hebben in de besluitvorming een even grote stem. Dit voorkomt de aanwezigheid van dominante stakeholders.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Gelijke stem</td>
+<td>Alle stakeholders hebben in de besluitvorming een even grote stem. Dit voorkomt de aanwezigheid van dominante stakeholders.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">4</td>
-<td align="left">Externe review</td>
-<td align="left">De resultaten van de standaardisatie-bijeenkomsten worden gepubliceerd waardoor externe organisaties en personen de mogelijkheid hebben om resultaten te reviewen. Dit ook omm kwaliteit te verhogen.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>Externe review</td>
+<td>De resultaten van de standaardisatie-bijeenkomsten worden gepubliceerd waardoor externe organisaties en personen de mogelijkheid hebben om resultaten te reviewen. Dit ook omm kwaliteit te verhogen.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="left">Eerlijk standaardisatieproces</td>
-<td align="left">Vastgelegde procedures om gedurende het standaardisatieproces consensus te garanderen</td>
-<td align="center">1</td>
-<td align="left">Open agenda</td>
-<td align="left">Voor elke stakeholder is het mogelijk om agendapunten aan te leveren</td>
-<td align="center">0/1/2</td>
+<td>3</td>
+<td>Eerlijk standaardisatieproces</td>
+<td>Vastgelegde procedures om gedurende het standaardisatieproces consensus te garanderen</td>
+<td>1</td>
+<td>Open agenda</td>
+<td>Voor elke stakeholder is het mogelijk om agendapunten aan te leveren</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Procesmanagement</td>
-<td align="left">Is er sprake van een reglement waarin de procedures en protocollen van het standaardisatieproces zijn vastgelegd (manier van stemmen, beroepsmogelijkheden etc.)</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Procesmanagement</td>
+<td>Is er sprake van een reglement waarin de procedures en protocollen van het standaardisatieproces zijn vastgelegd (manier van stemmen, beroepsmogelijkheden etc.)</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Onafhankelijke voorzitter</td>
-<td align="left">Worden de standaardisatiebijeenkomsten door een onafhankelijk persoon voorgezeten zodat de belangen van alle stakeholders de juiste aandacht krijgen?</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Onafhankelijke voorzitter</td>
+<td>Worden de standaardisatiebijeenkomsten door een onafhankelijk persoon voorgezeten zodat de belangen van alle stakeholders de juiste aandacht krijgen?</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">4</td>
-<td align="left">Mogelijkheid tot beroep</td>
-<td align="left">Wanneer men ontevreden is over de besluitvorming in een standaardisatiebijeenkomst is er de mogelijkheid om een klacht in te dienen bij een hoger orgaan? Dit orgaan bekijkt de situatie en heeft de bevoegdheid om in te grijpen</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>Mogelijkheid tot beroep</td>
+<td>Wanneer men ontevreden is over de besluitvorming in een standaardisatiebijeenkomst is er de mogelijkheid om een klacht in te dienen bij een hoger orgaan? Dit orgaan bekijkt de situatie en heeft de bevoegdheid om in te grijpen</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="left">Open IPR</td>
-<td align="left">Intellectuele eigendomsrechten m.b.t. standaard zijn zo open mogelijk</td>
-<td align="center">1</td>
-<td align="left">Rechten gepubliceerd</td>
-<td align="left">De manier waarop juridische zaken rondom de standaard zijn geregeld dient openbaar te zijn</td>
-<td align="center">0/1/2</td>
+<td>4</td>
+<td>Open IPR</td>
+<td>Intellectuele eigendomsrechten m.b.t. standaard zijn zo open mogelijk</td>
+<td>1</td>
+<td>Rechten gepubliceerd</td>
+<td>De manier waarop juridische zaken rondom de standaard zijn geregeld dient openbaar te zijn</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Juridische belemmeringen</td>
-<td align="left">Hoe minder juridische belemmeringenvoor het gebruik van de standaard, hoe opener de standaard is</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Juridische belemmeringen</td>
+<td>Hoe minder juridische belemmeringenvoor het gebruik van de standaard, hoe opener de standaard is</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Wederzijdse licenties</td>
-<td align="left">Op aanpassingenvan de standaard rusten automatisch dezelfde licenties als op het origineel, zodat aangepaste standaarden niet voorzien kunnen worden van allerlei juridische belemmeringen</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Wederzijdse licenties</td>
+<td>Op aanpassingenvan de standaard rusten automatisch dezelfde licenties als op het origineel, zodat aangepaste standaarden niet voorzien kunnen worden van allerlei juridische belemmeringen</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="left">One world</td>
-<td align="left">De standaard kan voor hetzelfde doel wereldwijd gebruikt worden</td>
-<td align="center">1</td>
-<td align="left">Harmonisatie</td>
-<td align="left">In hoeverre sluit de standaard aan op gerelateerde standaarden?</td>
-<td align="center">0/1/2</td>
+<td>5</td>
+<td>One world</td>
+<td>De standaard kan voor hetzelfde doel wereldwijd gebruikt worden</td>
+<td>1</td>
+<td>Harmonisatie</td>
+<td>In hoeverre sluit de standaard aan op gerelateerde standaarden?</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Lokatie onafhankelijkheid</td>
-<td align="left">In hoeverre bevat de standaard elementen die uniek zijn voor een specifieke geografische lokatie? Een open standaard dient zo min mogelijk van dit soort elementen te bevatten zodat de toepasbaarheid groter wordt</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Lokatie onafhankelijkheid</td>
+<td>In hoeverre bevat de standaard elementen die uniek zijn voor een specifieke geografische lokatie? Een open standaard dient zo min mogelijk van dit soort elementen te bevatten zodat de toepasbaarheid groter wordt</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="left">Open documenten</td>
-<td align="left">Documenten m.b.t. de standaard zijn openbaar</td>
-<td align="center">1</td>
-<td align="left">Open concepten</td>
-<td align="left">De concept-documenten met betrekking tot de standaard zijn openbaar</td>
-<td align="center">0/1/2</td>
+<td>6</td>
+<td>Open documenten</td>
+<td>Documenten m.b.t. de standaard zijn openbaar</td>
+<td>1</td>
+<td>Open concepten</td>
+<td>De concept-documenten met betrekking tot de standaard zijn openbaar</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Open specificaties</td>
-<td align="left">De specificaties van de standaard zijn openbaar.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Open specificaties</td>
+<td>De specificaties van de standaard zijn openbaar.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Open notulen</td>
-<td align="left">De notulen van bijeenkomsten zijn openbaar.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Open notulen</td>
+<td>De notulen van bijeenkomsten zijn openbaar.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">4</td>
-<td align="left">Open procedures</td>
-<td align="left">De procedures (zoals Concensus en Eerlijk standaardisatieproces) zijn openbaar.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>Open procedures</td>
+<td>De procedures (zoals Concensus en Eerlijk standaardisatieproces) zijn openbaar.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">5</td>
-<td align="left">Open distributie</td>
-<td align="left">Het distribueren van de hierboven beschreven documenten staat iedereen vrij.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>5</td>
+<td>Open distributie</td>
+<td>Het distribueren van de hierboven beschreven documenten staat iedereen vrij.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="left">Open interface</td>
-<td align="left">Compatibiliteit en conformiteit leiden tot interoperabiliteit.</td>
-<td align="center">1</td>
-<td align="left">Compatibiliteit</td>
-<td align="left">Verschillende versies van de standaard zijn – voor zover mogelijk - compatibel met elkaar, d.w.z. verschillende versies zijn op basaal niveau interoperabel.</td>
-<td align="center">0/1/2</td>
+<td>7</td>
+<td>Open interface</td>
+<td>Compatibiliteit en conformiteit leiden tot interoperabiliteit.</td>
+<td>1</td>
+<td>Compatibiliteit</td>
+<td>Verschillende versies van de standaard zijn – voor zover mogelijk - compatibel met elkaar, d.w.z. verschillende versies zijn op basaal niveau interoperabel.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Implementaties conform specificatie</td>
-<td align="left">De standaard beschrijft expliciet wat conformiteit aan de standaard betekent en aan welke criteria voldaan moeten worden. Zodat transparant kan worden welke implementaties conform de standaard zijn. Betekent twee implementaties conform de standaard ook interoperabiliteit?</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Implementaties conform specificatie</td>
+<td>De standaard beschrijft expliciet wat conformiteit aan de standaard betekent en aan welke criteria voldaan moeten worden. Zodat transparant kan worden welke implementaties conform de standaard zijn. Betekent twee implementaties conform de standaard ook interoperabiliteit?</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="left">Open access</td>
-<td align="left">Er zijn methodes om conformiteit te testen en te certificeren.</td>
-<td align="center">1</td>
-<td align="left">Validatie testen</td>
-<td align="left">Er kan getest worden of een standaard daadwerkelijk op een juiste manier is geïmplementeerd. Een laagdrempelige testmogelijkheid.</td>
-<td align="center">0/1/2</td>
+<td>8</td>
+<td>Open access</td>
+<td>Er zijn methodes om conformiteit te testen en te certificeren.</td>
+<td>1</td>
+<td>Validatie testen</td>
+<td>Er kan getest worden of een standaard daadwerkelijk op een juiste manier is geïmplementeerd. Een laagdrempelige testmogelijkheid.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Conformiteit valideren</td>
-<td align="left">Een toets kan plaats vinden op conformiteit, waarbij validatie een onderdeel vormt. Het resultaat wordt vastgelegd in een document.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Conformiteit valideren</td>
+<td>Een toets kan plaats vinden op conformiteit, waarbij validatie een onderdeel vormt. Het resultaat wordt vastgelegd in een document.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">3</td>
-<td align="left">Conformiteit certificatie</td>
-<td align="left">Een toets die plaats vindt op basis van conformiditeitsregels, waarbij het resultaat openbaar gepubliceerd wordt en kan leiden tot een certificaat.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>Conformiteit certificatie</td>
+<td>Een toets die plaats vindt op basis van conformiditeitsregels, waarbij het resultaat openbaar gepubliceerd wordt en kan leiden tot een certificaat.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">4</td>
-<td align="left">Disability support</td>
-<td align="left">De standaard houdt rekening met mensen die een handicap hebben, en voldoet aan richtlijnen hiervoor.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>Disability support</td>
+<td>De standaard houdt rekening met mensen die een handicap hebben, en voldoet aan richtlijnen hiervoor.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="left">On-going support</td>
-<td align="left">De standaard wordt ondersteund totdat er geen gebruikers meer zijn</td>
-<td align="center">1</td>
-<td align="left">Ondersteuning gedurende de hele levenscyclus van de standaard.</td>
-<td align="left">Gedurende de levenscyclus van de standaard (van begin tot eind) is er ondersteuning voor gebruikers vanuit de standaardisatieorganisatie. Met name ook aan het einde van de cyclus wanneer er wellicht nog maar een klein aantal gebruikers is en de neiging om geen ondersteuning te bieden groot is.</td>
-<td align="center">0/1/2</td>
+<td>9</td>
+<td>On-going support</td>
+<td>De standaard wordt ondersteund totdat er geen gebruikers meer zijn</td>
+<td>1</td>
+<td>Ondersteuning gedurende de hele levenscyclus van de standaard.</td>
+<td>Gedurende de levenscyclus van de standaard (van begin tot eind) is er ondersteuning voor gebruikers vanuit de standaardisatieorganisatie. Met name ook aan het einde van de cyclus wanneer er wellicht nog maar een klein aantal gebruikers is en de neiging om geen ondersteuning te bieden groot is.</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="left">Open change</td>
-<td align="left">Wijzigingen in de standaard op basis van openheid</td>
-<td align="center">1</td>
-<td align="left">Uitbrengen nieuwe versie</td>
-<td align="left">Wie bepaalt wanneer aan een nieuwe versie van een standaard gewerkt gaat worden, en wanneer deze uitgebracht gaat worden? Ook hiervoor geldt consensus</td>
-<td align="center">0/1/2</td>
+<td>10</td>
+<td>Open change</td>
+<td>Wijzigingen in de standaard op basis van openheid</td>
+<td>1</td>
+<td>Uitbrengen nieuwe versie</td>
+<td>Wie bepaalt wanneer aan een nieuwe versie van een standaard gewerkt gaat worden, en wanneer deze uitgebracht gaat worden? Ook hiervoor geldt consensus</td>
+<td>0/1/2</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="center">2</td>
-<td align="left">Inbrengen wijzigingsverzoeken</td>
-<td align="left">Wie kunnen er wijzigingsverzoeken indienen, en worden die eerlijk (op basis van een vastgestelde procedure) behandeld? Hiervoor zouden geen partijen uitgesloten moeten worden.</td>
-<td align="center">0/1/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>Inbrengen wijzigingsverzoeken</td>
+<td>Wie kunnen er wijzigingsverzoeken indienen, en worden die eerlijk (op basis van een vastgestelde procedure) behandeld? Hiervoor zouden geen partijen uitgesloten moeten worden.</td>
+<td>0/1/2</td>
 </tr>
 </tbody></table>
 <p>Het Forum Standaardisatie toetst standaarden op onder meer openheid
@@ -2823,6 +2963,26 @@ worden. Ook al is dit niet domeinspecifiek wordt dit nu vaak per
 domein ingevuld, vooral om gebruikers een complete
 interoperabiliteitsoplossing te kunnen bieden in combinatie met de
 semantische standaarden.</p>
+<aside class="example" id="example-gelaagdheid-bij-standaardisatie-van-e-facturatie"><div class="marker">
+    <a class="self-link" href="#example-gelaagdheid-bij-standaardisatie-van-e-facturatie">Voorbeeld<bdi> 7</bdi></a><span class="example-title">: Gelaagdheid bij standaardisatie van e-facturatie</span>
+  </div>
+Bij het Standaardisatie Platform E-facturatie (STPE) zie je de gelaagdheid van 
+standaarden goed terug. Daar heeft men te maken met de EN 16931: een Europese 
+standaard dat een semantisch model voor de kernfactuur beschrijft 
+(Common Semantics). Dit model is uitgedrukt in twee Horizontal Languages: 
+UBL en UN/CEFACT Cross Industry Invoice (CII). Beide van deze talen bouwen 
+op XML als Common Syntax. De EN 16931 doet geen uitspraken over hoe de Technical 
+Interoperability ingericht dienen te worden. 
+
+<p>Op het semantisch vlak eindigt de gelaagdheid niet met de Europese kernfactuur. 
+In Nederland heeft men een nationaal profiel op de EN 16931 gespecificeerd om 
+het gebruik van de norm in Nederland te bevordereren: de NL-CIUS (Core Invoice 
+Usage Specifcation). Er zijn zelfs brancheverenigingen die de NLCIUS weer verder 
+specificeren. Zo is de SETU Invoice een laag bovenop de NLCIUS met een aantal 
+inperkingen en instructies om het gebruik van de factuurnorm in het uitzenddomein 
+te bevorderen.</p>
+</aside>
+
 <p>Tot slot is de keuze voor de technische standaard JSON tegenwoordig
 voor de hand liggend. In het verleden was XML, en daarvoor EDI de
 aangewezen technologie. Deze wordt nog veel gebruikt in bestaande
@@ -2849,7 +3009,7 @@ we naar semantische standaarden kijken, gaat het echter nog een stap
 verder aangezien die grotendeels door een eigen organisatie ontwikkeld
 worden.</p>
 <aside class="example" id="example-semantische-internationale-harmonisatie-van-aquo"><div class="marker">
-    <a class="self-link" href="#example-semantische-internationale-harmonisatie-van-aquo">Voorbeeld<bdi> 6</bdi></a><span class="example-title">: Semantische internationale harmonisatie van Aquo</span>
+    <a class="self-link" href="#example-semantische-internationale-harmonisatie-van-aquo">Voorbeeld<bdi> 8</bdi></a><span class="example-title">: Semantische internationale harmonisatie van Aquo</span>
   </div>
    Voor het beheer van de Noordzee zijn internationaal uitwisselbare gegevens 
    over zeewater noodzakelijk. De Aquo-standaard was alleen geschikt voor 
@@ -2890,7 +3050,7 @@ voor een bepaald toepassingsdomein moeten voorkomen. In de praktijk
 kan elke willekeurige combinatie voorkomen, afhankelijk van de
 situatie.</p>
 <aside class="example" id="example-ogc-observations-measurements-als-basis-voor-im-metingen"><div class="marker">
-    <a class="self-link" href="#example-ogc-observations-measurements-als-basis-voor-im-metingen">Voorbeeld<bdi> 7</bdi></a><span class="example-title">: OGC Observations &amp; measurements als basis voor IM Metingen</span>
+    <a class="self-link" href="#example-ogc-observations-measurements-als-basis-voor-im-metingen">Voorbeeld<bdi> 9</bdi></a><span class="example-title">: OGC Observations &amp; measurements als basis voor IM Metingen</span>
   </div>
    IM Metingen is een standaard die door de bodembeheerders en waterbeheerders gezamenlijk 
    is opgesteld om gegevensuitwisseling over de verschillende vakgebieden heen mogelijk te 
@@ -2923,7 +3083,7 @@ en horizontale standaarden, en daarnaast worden ook andere
 (bv. technische) standaarden vaak samen toegevoegd om een totaal
 oplossing te bieden voor interoperabiliteit.</p>
 <aside class="example" id="example-xbrl"><div class="marker">
-    <a class="self-link" href="#example-xbrl">Voorbeeld<bdi> 8</bdi></a><span class="example-title">: XBRL</span>
+    <a class="self-link" href="#example-xbrl">Voorbeeld<bdi> 10</bdi></a><span class="example-title">: XBRL</span>
   </div>
 XBRL is een voorbeeld van een internationale verticale standaard (in
 de financiële sector) waarvoor nationale taxonomieën zijn opgesteld,
@@ -2938,7 +3098,7 @@ bereiken.</p>
 </aside>
 
 <aside class="example" id="example-metamodel-voor-informatiemodellering"><div class="marker">
-    <a class="self-link" href="#example-metamodel-voor-informatiemodellering">Voorbeeld<bdi> 9</bdi></a><span class="example-title">: Metamodel voor Informatiemodellering</span>
+    <a class="self-link" href="#example-metamodel-voor-informatiemodellering">Voorbeeld<bdi> 11</bdi></a><span class="example-title">: Metamodel voor Informatiemodellering</span>
   </div>
 Om alle informatiemodellen in Nederland nog beter op elkaar aan te 
 laten sluiten is een metamodel ontwikkeld voor informatiemodellering 
@@ -3073,7 +3233,7 @@ kunnen bereiken.</p>
 </ul>
 <p>
       </p><figure id="fig-adoptiepaden-van-een-standaard">
-        <img src="images/adoptiepaden_standaard.png" alt="alt_text">
+        <img src="images/adoptiepaden_standaard.png" alt="Adoptiepaden van een standaard">
         <figcaption><a class="self-link" href="#fig-adoptiepaden-van-een-standaard">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Adoptiepaden van een standaard</span></figcaption>
       </figure>
     <p></p>
@@ -3081,29 +3241,29 @@ kunnen bereiken.</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="left">Strategie</th>
-<th align="left">Kenmerken</th>
+<th>Strategie</th>
+<th>Kenmerken</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Local Re-Use</td>
-<td align="left">We hergebruiken de internationale standaard, maar passen het aan naar de behoeftes en creeren een nieuwe standaard</td>
+<td>Local Re-Use</td>
+<td>We hergebruiken de internationale standaard, maar passen het aan naar de behoeftes en creeren een nieuwe standaard</td>
 </tr>
 <tr>
-<td align="left">Local Profiling</td>
-<td align="left">Een profiel (dat niet voldoet aan de internationale standaard) bovenop de internationale standaard, waarin alle aanpassingen verwerkt zijn.</td>
+<td>Local Profiling</td>
+<td>Een profiel (dat niet voldoet aan de internationale standaard) bovenop de internationale standaard, waarin alle aanpassingen verwerkt zijn.</td>
 </tr>
 <tr>
-<td align="left">Compliant &amp; Temporary Local Profiling</td>
-<td align="left">Een profiel waarin in principe alleen toegestane uitbreidingen in worden opgenomen, maar daarnaast tijdelijke oplossingen bevat van zaken die internationaal zijn ingebracht, maar die een tijdelijke oplossing rechtvaardigen. Deze tijdelijke oplossingen voldoen niet aan de internationale standaard.</td>
+<td>Compliant &amp; Temporary Local Profiling</td>
+<td>Een profiel waarin in principe alleen toegestane uitbreidingen in worden opgenomen, maar daarnaast tijdelijke oplossingen bevat van zaken die internationaal zijn ingebracht, maar die een tijdelijke oplossing rechtvaardigen. Deze tijdelijke oplossingen voldoen niet aan de internationale standaard.</td>
 </tr>
 <tr>
-<td align="left">Compliant Profiling</td>
-<td align="left">Alleen uitbreidingen in een profiel die voldoet aan internationale standaarden.</td>
+<td>Compliant Profiling</td>
+<td>Alleen uitbreidingen in een profiel die voldoet aan internationale standaarden.</td>
 </tr>
 <tr>
-<td align="left">Comply</td>
-<td align="left">100% overname van internationale standaard zonder aanpassingen of uitbreidingen.</td>
+<td>Comply</td>
+<td>100% overname van internationale standaard zonder aanpassingen of uitbreidingen.</td>
 </tr>
 </tbody></table>
 <p>Met name om interoperabiliteit internationaal mogelijk te maken is het verstandig om zoveel mogelijk in lijn te blijven met de internationale standaarden en een strategie te kiezen aan de rechterkant van het figuur, waar mogelijk compliant profiling. Echter dat vergt afstemming met de internationale standaard, waaraan kosten verbonden zijn, ondermeer door het bezoeken van de internationale standaardisatie bijeenkomsten. Een noodzakelijkheid om interoperabiliteit in internationale context na te streven.</p>
@@ -3129,7 +3289,7 @@ de Linked Data standaarden aan de open standaarden criteria, en een
 aantal zijn dan ook opgenomen op de pas-toe of leg-uit lijst van de
 Nederlandse Overheid.</p>
 <aside class="example" id="example-floricode-en-de-uitzendbranche"><div class="marker">
-    <a class="self-link" href="#example-floricode-en-de-uitzendbranche">Voorbeeld<bdi> 10</bdi></a><span class="example-title">: Floricode en de uitzendbranche</span>
+    <a class="self-link" href="#example-floricode-en-de-uitzendbranche">Voorbeeld<bdi> 12</bdi></a><span class="example-title">: Floricode en de uitzendbranche</span>
   </div>
 Bij Floricode zien we door de jaren heen verschuivingen in aandacht 
 op basis van architectuurkeuzes. Zo is de aandacht van traditionele 
@@ -3427,7 +3587,7 @@ ontwikkeld, en niet binnen grote standaardisatieorganisaties. Dit kan
 impact hebben op de kwaliteit; op zijn minst zal de kwaliteit daardoor
 sterk verschillen per semantische standaard.</p>
 <aside class="example" id="example-floricode"><div class="marker">
-    <a class="self-link" href="#example-floricode">Voorbeeld<bdi> 11</bdi></a><span class="example-title">: Floricode</span>
+    <a class="self-link" href="#example-floricode">Voorbeeld<bdi> 13</bdi></a><span class="example-title">: Floricode</span>
   </div>
 [Floricode](https://www.floricode.com/) heeft dit kwaliteitsinstrument 
 toegepast om 1 van hun standaarden in de praktijk naar een hoger 
@@ -3498,80 +3658,342 @@ standaarden opgenomen om alle deelnemers in werkgroepen tegemoet te
 komen. Het resultaat is een te complexe standaard die in de praktijk
 slecht implementeerbaar is en leidt tot niet interoperabele
 implementaties die allemaal wel voldoen aan de standaard.</p>
-</section><section id="een-kwaliteitsinstrument"><div class="header-wrapper"><h5 id="x3-4-1-3-een-kwaliteitsinstrument"><bdi class="secno">3.4.1.3 </bdi>Een kwaliteitsinstrument</h5><a class="self-link" href="#een-kwaliteitsinstrument" aria-label="Permalink for Section 3.4.1.3"></a></div>
-<p>Hoe ziet zo’n instrument waarmee we de kwaliteit van een standaard
-inzichtelijk kunnen maken eruit? Om een kwaliteitsinstrument te
-ontwikkelen is veel kennis nodig: wat is een kwalitatief goede
-standaard? Welke kwaliteitsaspecten zijn van invloed, en hoe zijn die
-te meten? Maar ook over het onderwerp zelf: wat is een semantische
-standaard? Uit welke componenten bestaat een semantische standaard?
-Want daar zal de kwaliteitsthermometer in gestoken moeten worden. Het
-is noodzakelijk te weten hoe de kwaliteitsthermometer eruit kan zien,
-maar ook waar we hem in kunnen steken.</p>
-<p>Deze eerste versie is gebaseerd op voornamelijk het domein van
-software-engineering, waar kwaliteit al jaren onder de aandacht
-is. Dat heeft geleid tot meerdere ISO-standaarden (met name ISO 9126)
-die de kwaliteit van software beschrijven. Op basis hiervan is het in
-<a href="#fig-kwaliteitsinstrumenten">onderstaande figuur</a> weergegeven
-kwaliteitsmodel voor semantische standaarden gedestilleerd en getoetst
-met experts. Een uitgebreider en gevalideerd kwaliteitsmodel is ook
-beschikbaar als wetenschappelijk document (Proefschrift: Folmer, Erwin
-(2012), Quality of Semantic Standards).</p>
-<p>De hoofdcategorieën zijn:</p>
-<p><strong>Effectiviteit:</strong> de mate waarin de standaard in de specifieke situatie de functies biedt en implementeert die expliciet of impliciet vereist zijn.<br><strong>Betrouwbaarheid:</strong> de mate waarin een standaard een op een gespecificeerd niveau blijft presteren onder specifieke condities zoals foutieve implementaties of verschillen in implementaties tussen partijen.<br><strong>Bruikbaarheid:</strong> de mate waarin een standaard begrepen, geleerd en gebruikt/ toegepast kan worden door gebruikers in de specifieke situatie.<br><strong>Portabiliteit:</strong> de mate waarin een standaard de mogelijkheid heeft om in verschillende omgevingen ingezet te worden.<br><strong>Onderhoudbaarheid:</strong> de mate waarin een standaard eenvoudig aangepast kan worden aan een veranderende situatie.<br><strong>Adoptiegraad</strong>: de mate waarin de standaard is geaccepteerd door verschillende partijen.<br><strong>Openheid:</strong> de mate waarin de standaard voldoet aan openheidscriteria op het gebied van intellectueel eigendom en (onderhouds en beheer)processen.</p>
-<p>Het kwaliteitsmodel in het figuur laat niet de volledig uitwerking
-voor elk kwaliteitsattribuut zien. Ter illustratie: het
-kwaliteitsattribuut Volwassenheid (onder Betrouwbaarheid) bevat
-meerdere attributen, zoals bijvoorbeeld Stabiliteit. Deze attributen
-kunnen weer meerdere metrieken bevatten, en daarnaast wordt vastgelegd
-hoe de waarde van de metriek bijdraagt aan de uiteindelijke waarde
-voor het attribuut. Een eenvoudig voorbeeld: het attribuut Stabiliteit
-heeft als metriek de hoeveelheid releases van een standaard in de
-afgelopen vijf jaar. Een potentiële meting van één release (in vijf
-jaar) kan door middel van het scoringsmechanisme leiden tot de waarde
-'zeer stabiel' voor het attribuut Stabiliteit.</p>
+</section><section id="het-kwaliteitsinstrument"><div class="header-wrapper"><h5 id="x3-4-1-3-het-kwaliteitsinstrument"><bdi class="secno">3.4.1.3 </bdi>Het kwaliteitsinstrument</h5><a class="self-link" href="#het-kwaliteitsinstrument" aria-label="Permalink for Section 3.4.1.3"></a></div>
+<p>Hoe ziet zo’n instrument waarmee we de kwaliteit van een standaard 
+inzichtelijk kunnen maken eruit? Een kwaliteitsinstrument voor standaarden 
+is een complex onderwerp; dan moeten we ook weten; wat is een kwalitatief 
+goede standaard? Welke kwaliteitsaspecten zijn van invloed, en hoe zijn 
+die te meten? Maar ook over het onderwerp zelf: wat is een semantische 
+standaard? Uit welke componenten bestaat een semantische standaard? 
+Want daar zal de kwaliteitsthermometer in gestoken moeten worden. 
+Het is noodzakelijk te weten hoe de kwaliteitsthermometer eruit kan 
+zien, maar ook waar we hem in kunnen steken.</p>
+<p>Het kwaliteitsmodel dat we in BOMOS aanreiken, is gebaseerd op het 
+promotieonderzoek van Erwin Folmer. Het is specifiek gericht op 
+semantische standaarden, maar leunt sterk op kwaliteits-onderzoek en 
+standaarden op het gebied van software ontwikkeling; een domein waar 
+veel kwaliteitsonderzoek heeft plaatsgevonden. Het kwaliteitsmodel is 
+gevalideerd met experts en in verschillende situaties gebruikt.</p>
+<p>Het kwaliteitsmodel zoals hier gepresenteerd is niet het volledige 
+kwaliteitsmodel. Het volledige kwaliteitsmodel gaat nog een laag dieper 
+met kwaliteitsconcepten, en geeft ook suggesties voor het uitvoeren van 
+metingen, tot aan een procesmodel voor het gebruik van dit kwaliteitsmodel 
+zodat het inzetbaar als instrument is.  Het volledige kwaliteitsmodel 
+(en instrument) is onderdeel van het proefschrift <cite><a data-matched-text="[[[folmer2012]]]" href="https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf">Quality of Semantic Standards</a></cite>.</p>
+<figure id="kwaliteitmodel">
+
+<pre><svg id="diagram-1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="345.84375" style="max-width: 617.078125px;" viewBox="0 0 617.078125 345.84375"><style>
+#diagram-1 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-1 .error-icon{fill:#552222;}#diagram-1 .error-text{fill:#552222;stroke:#552222;}#diagram-1 .edge-thickness-normal{stroke-width:2px;}#diagram-1 .edge-thickness-thick{stroke-width:3.5px;}#diagram-1 .edge-pattern-solid{stroke-dasharray:0;}#diagram-1 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-1 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-1 .marker{fill:#333333;stroke:#333333;}#diagram-1 .marker.cross{stroke:#333333;}#diagram-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#diagram-1 .cluster-label text{fill:#333;}#diagram-1 .cluster-label span{color:#333;}#diagram-1 .label text,#diagram-1 span{fill:#333;color:#333;}#diagram-1 .node rect,#diagram-1 .node circle,#diagram-1 .node ellipse,#diagram-1 .node polygon,#diagram-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#diagram-1 .node .label{text-align:center;}#diagram-1 .node.clickable{cursor:pointer;}#diagram-1 .arrowheadPath{fill:#333333;}#diagram-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#diagram-1 .flowchart-link{stroke:#333333;fill:none;}#diagram-1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#diagram-1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#diagram-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#diagram-1 .cluster text{fill:#333;}#diagram-1 .cluster span{color:#333;}#diagram-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#diagram-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
+</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-kwaliteit LE-product" id="L-kwaliteit-product" style="opacity: 1;"><path class="path" d="M194.21775265957447,52L176.18666888297875,56.166666666666664C158.15558510638297,60.333333333333336,122.09341755319149,68.66666666666667,104.06233377659574,77C86.03125,85.33333333333333,86.03125,93.66666666666667,86.03125,97.83333333333333L86.03125,102" marker-end="url(#arrowhead16)" style="fill:none"></path><defs><marker id="arrowhead16" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-kwaliteit LE-proces" id="L-kwaliteit-proces" style="opacity: 1;"><path class="path" d="M289.421875,52L289.421875,56.166666666666664C289.421875,60.333333333333336,289.421875,68.66666666666667,289.421875,77C289.421875,85.33333333333333,289.421875,93.66666666666667,289.421875,97.83333333333333L289.421875,102" marker-end="url(#arrowhead17)" style="fill:none"></path><defs><marker id="arrowhead17" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-kwaliteit LE-praktijk" id="L-kwaliteit-praktijk" style="opacity: 1;"><path class="path" d="M393.5744680851064,52L413.30033798758865,56.166666666666664C433.02620789007096,60.333333333333336,472.4779476950355,68.66666666666667,492.2038175975177,77C511.9296875,85.33333333333333,511.9296875,93.66666666666667,511.9296875,97.83333333333333L511.9296875,102" marker-end="url(#arrowhead18)" style="fill:none"></path><defs><marker id="arrowhead18" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-product LE-standaard" id="L-product-standaard" style="opacity: 1;"><path class="path" d="M86.03125,146L86.03125,150.16666666666666C86.03125,154.33333333333334,86.03125,162.66666666666666,86.03125,173.36979166666666C86.03125,184.07291666666666,86.03125,197.14583333333334,86.03125,203.68229166666666L86.03125,210.21875" marker-end="url(#arrowhead19)" style="fill:none"></path><defs><marker id="arrowhead19" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-proces LE-organisatie" id="L-proces-organisatie" style="opacity: 1;"><path class="path" d="M289.421875,146L289.421875,150.16666666666666C289.421875,154.33333333333334,289.421875,162.66666666666666,289.421875,172.03645833333334C289.421875,181.40625,289.421875,191.8125,289.421875,197.015625L289.421875,202.21875" marker-end="url(#arrowhead20)" style="fill:none"></path><defs><marker id="arrowhead20" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-praktijk LE-implementatie" id="L-praktijk-implementatie" style="opacity: 1;"><path class="path" d="M511.9296875,146L511.9296875,150.16666666666666C511.9296875,154.33333333333334,511.9296875,162.66666666666666,511.9296875,171C511.9296875,179.33333333333334,511.9296875,187.66666666666666,511.9296875,191.83333333333334L511.9296875,196" marker-end="url(#arrowhead21)" style="fill:none"></path><defs><marker id="arrowhead21" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-product" class="edgeLabel L-LS-kwaliteit' L-LE-product"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-proces" class="edgeLabel L-LS-kwaliteit' L-LE-proces"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-praktijk" class="edgeLabel L-LS-kwaliteit' L-LE-praktijk"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-product-standaard" class="edgeLabel L-LS-product' L-LE-standaard"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-proces-organisatie" class="edgeLabel L-LS-proces' L-LE-organisatie"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-praktijk-implementatie" class="edgeLabel L-LS-praktijk' L-LE-implementatie"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-kwaliteit-19" transform="translate(289.421875,30)" style="opacity: 1;"><rect rx="5" ry="5" x="-165.640625" y="-22" width="331.28125" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-155.640625,-12)"><foreignObject width="311.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Kwaliteitsmodel van semantische standaard</div></foreignObject></g></g></g><g class="node default" id="flowchart-product-20" transform="translate(86.03125,124)" style="opacity: 1;"><rect rx="5" ry="5" x="-78.03125" y="-22" width="156.0625" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-68.03125,-12)"><foreignObject width="136.0625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A. Product kwaliteit</div></foreignObject></g></g></g><g class="node default" id="flowchart-proces-21" transform="translate(289.421875,124)" style="opacity: 1;"><rect rx="5" ry="5" x="-75.359375" y="-22" width="150.71875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65.359375,-12)"><foreignObject width="130.71875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B. Proces kwaliteit</div></foreignObject></g></g></g><g class="node default" id="flowchart-praktijk-22" transform="translate(511.9296875,124)" style="opacity: 1;"><rect rx="5" ry="5" x="-97.1484375" y="-22" width="194.296875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-87.1484375,-12)"><foreignObject width="174.296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C. Kwaliteit in de praktijk</div></foreignObject></g></g></g><g class="node default" id="flowchart-standaard-23" transform="translate(86.03125,266.921875)" style="opacity: 1;"><circle x="-56.703125" y="-46" r="56.703125" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-46.703125,-36)"><foreignObject width="93.40625" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Maatregel in<br>inhoud,<br><i>de standaard</i></div></foreignObject></g></g></g><g class="node default" id="flowchart-organisatie-24" transform="translate(289.421875,266.921875)" style="opacity: 1;"><circle x="-64.703125" y="-58" r="64.703125" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-54.703125,-48)"><foreignObject width="109.40625" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Maatregel in<br>ontwikkeling en<br>onderhoud,<br><i>de organisatie</i></div></foreignObject></g></g></g><g class="node default" id="flowchart-implementatie-25" transform="translate(511.9296875,266.921875)" style="opacity: 1;"><circle x="-70.921875" y="-46" r="70.921875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-60.921875,-36)"><foreignObject width="121.84375" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Maatregel in<br>toepassing,<br><i>de implementatie</i></div></foreignObject></g></g></g></g></g></g></svg></pre>
+  <figcaption><a class="self-link" href="#kwaliteitmodel">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Het kwaliteitmodel</span></figcaption>
+</figure>
+
+<p>Het kwaliteitsmodel maakt een belangrijk onderscheid tussen productkwaliteit, 
+proceskwaliteit en kwaliteit in gebruik. Productkwaliteit gaat over de 
+producten/deliverables van het standaardisatieproces, en kan dan ook gemeten 
+worden in de inhoud van die producten, met name het standaard specificatie 
+document, maar bijvoorbeeld ook technische afgeleiden. Het is de intrinsieke 
+kwaliteit van de standaard.  Proceskwaliteit gaat allereerst over de 
+totstandkoming van de standaard, en vervolgens over het beheerproces. 
+Proceskwaliteit meet je in de beheerorganisatie van de standaard 
+(veelal SDO (Standard Development Organization) of SSO (Standard Setting 
+Organization) genoemd.  Tot slot is het belangrijk te weten of de standard 
+wel in de praktijk een implementeerbare en werkbare oplossing is, dat is 
+onderdeel van kwaliteit in gebruik.</p>
+<p>Deze driedelige structuur maakt de inzet van het model flexibel. Het is 
+niet nodig het gehele model in te zetten, maar op basis van de vraag kan 
+het relevante deel in het model gekozen worden. De volgende typische 
+vragen zijn te beantwoorden met het respectievelijk genoemde deel van 
+het kwaliteitsmodel:</p>
+<ol>
+<li>Wat is de intrinsieke kwaliteit van de standaard? – Onderdeel A.</li>
+<li>Wat is de implementeerbaarheid van de standaard? – Onderdeel A en B.</li>
+<li>Wat is de duurzaamheid (toekomstvastheid) van de standaard? – Onderdeel B en A (deels).</li>
+<li>Zou ik de standaard moeten selecteren? – Onderdeel C (voornamelijk).</li>
+<li>Is de standaard een goede oplossing voor het interoperabiliteitsprobleem? – Alle onderdelen.</li>
+</ol>
+<p><strong>A. Productkwaliteit</strong></p>
+<p>Als we specifieker naar productkwaliteit gaan kijken, dan kunnen we in 
+meer detail de volgende vragen mee beantwoorden:</p>
+<ol>
+<li>Is de afgedekte functionaliteit van de standaard toepasselijk? – Heeft het de capaciteit om het interoperabiliteitsprobleem op te lossen?</li>
+<li>Is de standaard stabiel? – Kan het geïmplementeerd en gebruikt worden zonder barrières?</li>
+<li>Is de standaard duurzaam? – Is de standaard klaar voor de toekomst?</li>
+</ol>
+<p>In onderstaande tabel zijn de eerste twee (van drie) decompositie lagen van 
+productkwaliteit opgenomen, inclusief definities en toelichting. Het geeft al 
+veel handvaten om de kwaliteit van een standaard mee onder de loep te nemen.</p>
+<table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Measurable Concept</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Remarks</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A. Product Quality</strong></td>
+<td>The total attributes of a standard that determine its ability to satisfy stated and implied needs when used under specified conditions.</td>
+<td>This includes both internal and external quality in ISO terms.</td>
+</tr>
+<tr>
+<td><strong>A1. Functionality</strong></td>
+<td>The capability of the standard to provide functions which meet stated and implied needs when the standard is used under specified conditions.</td>
+<td>The specification fulfills the functional needs of the intended job.</td>
+</tr>
+<tr>
+<td><strong>A1.1 Completeness</strong></td>
+<td>The extent to which a standard is of sufficient breadth, depth, and scope for the task at hand.</td>
+<td>This includes other terms like relevancy and suitability, and is the functional view on the content of the specification. The task at hand is aimed at solving an interoperability problem.</td>
+</tr>
+<tr>
+<td><strong>A1.2 Accuracy</strong></td>
+<td>The capability of the standard to provide true data with the needed degree of precision.</td>
+<td>The level of needed specificity and precision in both semantic meaning and technical syntax. (This does not cover, but relates to, the quality of the content: consistency (A1.3))</td>
+</tr>
+<tr>
+<td><strong>A1.3 Consistency</strong></td>
+<td>The extent of consistency in using the same values (vocabulary control) and elements to convey similar concepts and meaning in a standard.</td>
+<td>The degree of coherence and freedom of contradiction within the standard (ISO 25012). The quality of the content of the different models.</td>
+</tr>
+<tr>
+<td><strong>A1.4 Compliancy</strong></td>
+<td>The capability of the standard to adhere to other standards, conventions or regulations in laws, but also to define what compliancy implies for this standard.</td>
+<td>The compliancy when other standards are implemented, and how the conformance to this standard can be assured.</td>
+</tr>
+<tr>
+<td><strong>A2. Usability</strong></td>
+<td>The capability of the standard has to be understood, learnt, used and attractive to the user, when used under specified conditions.</td>
+<td>Also contains terms like implementability and readability, and is needed so as to estimate the efforts required for implementation.</td>
+</tr>
+<tr>
+<td><strong>A2.1 Understandability</strong></td>
+<td>The capability of the standard to enable the user to understand the standard for usage for particular tasks and conditions of use.</td>
+<td>To enable it to be read and interpreted by users.</td>
+</tr>
+<tr>
+<td><strong>A2.2. Testability</strong></td>
+<td>The capability of the standard to be validated.</td>
+<td>Intended to avoid faulty implementations.</td>
+</tr>
+<tr>
+<td><strong>A2.3 Openness</strong></td>
+<td>The implementation of open characteristics within the standard.</td>
+<td>Includes "open specification".</td>
+</tr>
+<tr>
+<td><strong>A2.4 Complexity</strong></td>
+<td>The complexity of the technical solution proposed by the standard.</td>
+<td>The complexity of the technical representation of the standard.</td>
+</tr>
+<tr>
+<td><strong>A3. Durability</strong></td>
+<td>The capability of the standard to have a long lasting life cycle; Connecting to current situations and future proofs.</td>
+<td>Includes concepts like changeability and flexibility.</td>
+</tr>
+<tr>
+<td><strong>A3.1 Adaptability</strong></td>
+<td>The capability of the standard to be adapted for different specified environments without applying actions or means other than those provided for this purpose for the considered standard.</td>
+<td>Includes customizability.</td>
+</tr>
+<tr>
+<td><strong>A3.2 Maintainability</strong></td>
+<td>The capability of the standard to be modified in an efficient manner.</td>
+<td>Modifications may include corrections, improvements or adaptation to changes in the environment, requirements or functional specifications. This also covers <strong>re-usability, replaceability and co-existence.</strong></td>
+</tr>
+<tr>
+<td><strong>A3.3 Advancedness</strong></td>
+<td>The state of the art notion of the standard, in relation to current practice and future innovation.</td>
+<td>Advancedness in relation to the outside environment in stakeholder organizations. Currentness: Fits the timeframe.</td>
+</tr>
+</tbody></table>
+<p><strong>B. Proceskwaliteit</strong></p>
+<p>De meer gedetailleerde vragen die gerelateerd zijn aan proceskwaliteit zijn:</p>
+<ol>
+<li>Is het Ontwikkel en Beheerproces professioneel georganiseerd? </li>
+<li>Hoe wordt de standaard aangeboden aan de buitenwereld?</li>
+<li>Hoe passend is de organisatie structuur bij de standaard?</li>
+</ol>
+<p>In de volgende tabel zijn de eerste twee (van drie) decompositie lagen van 
+proceskwaliteit opgenomen, inclusief definities en toelichting.</p>
+<table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Measurable Concept</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Remarks/Synonyms/Direction for measures</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>B. Process Quality</strong></td>
+<td>The quality of the sequence of interdependent and linked procedures that resulted in the standard.</td>
+<td>Organizational quality.</td>
+</tr>
+<tr>
+<td><strong>B1. Development &amp; Maintenance</strong></td>
+<td>The professionalism of how the standard development and the maintenance are organized.</td>
+<td>This concept is based on BOMOS. <cite><a data-matched-text="[[[folmer2011]]]" href="undefined">Management and Development Model for Open Standards (BOMOS) version 2</a></cite></td>
+</tr>
+<tr>
+<td><strong>B1.1 D&amp;M Process</strong></td>
+<td>The capability of the D&amp;M process to suit a standardization environment.</td>
+<td>The D&amp;M should guide developers in achieving quality.</td>
+</tr>
+<tr>
+<td><strong>B1.2 Versioning</strong></td>
+<td>The capability of the standard to have versioning in place that combines stability and the possibility to make changes.</td>
+<td>Explicit version management is required to raise the appropriate expectations.</td>
+</tr>
+<tr>
+<td><strong>B2. Communication</strong></td>
+<td>The totality of communication activities related to the standard.</td>
+<td>The presentation of the standard to the outside world.</td>
+</tr>
+<tr>
+<td><strong>B2.1 Support</strong></td>
+<td>The availability of knowledgeable support.</td>
+<td>Support aimed at helping stakeholders with (the choice of) implementing the standard.</td>
+</tr>
+<tr>
+<td><strong>B2.2 Adoption Strategy</strong></td>
+<td>The availability of a promotion strategy to strive for successful adoption in practice.</td>
+<td>Adoption will not go automatically but needs to be striven for.</td>
+</tr>
+<tr>
+<td><strong>B3. Organization</strong></td>
+<td>The capability of the organizational structure to effectively set standards.</td>
+<td>Perhaps there is a network of organizations involved.</td>
+</tr>
+<tr>
+<td><strong>B3.1 Governance</strong></td>
+<td>The organization of decision making within the governance.</td>
+<td>Relates to the openness of the standard.</td>
+</tr>
+<tr>
+<td><strong>B3.2 Fitness</strong></td>
+<td>The suitability of the development organization for the job.</td>
+<td>The capability of the organization to support the standard appropriately.</td>
+</tr>
+<tr>
+<td><strong>B3.3 Financial</strong></td>
+<td>The capabilities to be financially neutral and stable for years to come.</td>
+<td>Relates to the openness of the standard, and the adoption potential.</td>
+</tr>
+</tbody></table>
+<p><strong>C. Kwaliteit in gebruik</strong></p>
+<p>Het specificatie document van de standaard kan een top kwaliteit hebben 
+(productkwaliteit), de standaardisatie organisatie professioneel ingericht 
+(proceskwaliteit), en toch kan de standaard in de praktijk niet het gewenste 
+resultaat opleveren. Dat is wat het onderdeel kwaliteit in gebruik inzichtelijk 
+wil maken. </p>
+<p>Kwaliteit in gebruik wordt gemeten in de omgeving/context van de standaard: 
+wordt het gebruikt, of heeft het die potentie, door de stakeholders. 
+De twee meest prominente vragen:</p>
+<ol>
+<li>Is de standaard geaccepteerd as oplossing in de praktijk?</li>
+<li>Leidt het gebruik van de standaard ook tot interoperabiliteit in de praktijk?</li>
+</ol>
+<p>Ook hier zijn in onderstaande tabel de eerste twee (van drie) decompositie 
+lagen van kwaliteit in gebruik opgenomen, inclusief definities en toelichting. </p>
+<table class="dkkvs">
+<thead>
+<tr>
+<th><strong>Measurable Concept</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Remarks/Synonyms</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>C. Quality in Practice</strong></td>
+<td>The extent to which a standard can be used by specified users to meet their needs to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use. (ISO 14598)</td>
+<td>Quality in use.</td>
+</tr>
+<tr>
+<td><strong>C1. Acceptance</strong></td>
+<td>The adoption of the standard within the domain.</td>
+<td>Adoption/acceptance in practice.</td>
+</tr>
+<tr>
+<td><strong>C1.1 Solution Providers</strong></td>
+<td>The extent to which solutions providers have adopted the standard.</td>
+<td>Solution providers provide products and service that are used by the end users. The adoption by solution providers is a multiplier for adoption.</td>
+</tr>
+<tr>
+<td><strong>C1.2 End Users</strong></td>
+<td>The extent to which the end users have adopted the standard.</td>
+<td>The actual use of the standard.</td>
+</tr>
+<tr>
+<td><strong>C1.3 Recognition</strong></td>
+<td>The extent to which the standards receive external recognition.</td>
+<td>The credibility.</td>
+</tr>
+<tr>
+<td><strong>C2. Interoperability</strong></td>
+<td>The ability of two or more systems or components to exchange information and to use the information that has been exchanged. (Legner &amp; Lebreton, 2007)</td>
+<td>The capability of the standard to achieve meaningful communication between systems.</td>
+</tr>
+<tr>
+<td><strong>C2.1 Maturity</strong></td>
+<td>The capability of the standard to be a stable and proven solution.</td>
+<td>A mature standard will positively influence interoperability.</td>
+</tr>
+<tr>
+<td><strong>C2.2 Correctness</strong></td>
+<td>Extent to which an implementation of a standard satisfies its specifications and fulfills the user's mission objectives. (McCall et al., 1977)</td>
+<td>Also called "Free of Error".</td>
+</tr>
+<tr>
+<td><strong>C2.3 Cost &amp; Benefits</strong></td>
+<td>The extent to which the benefits cover the costs of standardization.</td>
+<td>Although not necessary for all stakeholders, the total use of the standard should have a positive business case.</td>
+</tr>
+</tbody></table>
 </section><section id="het-kwaliteitsinstrument-gebruiken"><div class="header-wrapper"><h5 id="x3-4-1-4-het-kwaliteitsinstrument-gebruiken"><bdi class="secno">3.4.1.4 </bdi>Het kwaliteitsinstrument gebruiken</h5><a class="self-link" href="#het-kwaliteitsinstrument-gebruiken" aria-label="Permalink for Section 3.4.1.4"></a></div>
-<p>De relatie tussen interoperabiliteit en standaarden is die van
-doel-middel. Zonder het kwaliteitsaspect in ogenschouw te nemen worden
-standaarden te veel gezien als heilige graal. De standaard wordt het
-doel, in plaats van een middel om op een effectieve en efficiënte
-manier interoperabiliteit te bereiken. Een aandachtsverschuiving naar
-de kwaliteit van standaarden voorkomt dat standaarden een doel op zich
-worden en zal de relatie tussen standaarden en interoperabiliteit
-versterken.</p>
-<p>
-      </p><figure id="fig-kwaliteitsinstrumenten">
-        <img src="images/kwaliteitsinstrumenten.png" alt="Kwaliteitsinstrumenten">
-        <figcaption><a class="self-link" href="#fig-kwaliteitsinstrumenten">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Kwaliteitsinstrumenten</span></figcaption>
-      </figure>
-    <p></p>
-<p>Het kwaliteitsmodel is een startpunt om te gebruiken om de kwaliteit
-van een standaard te bekijken. Bij de ontwikkeling wordt ook gekeken
-naar de kosten van een kwaliteitsmeting, waarbij vooral de uren
-relevant en kostbaar zijn. Uitgangspunt is dat de kwaliteitsmeting in
-slechts een paar uur uitgevoerd kan worden, zodat de kosten beperkt
-zijn en opbrengst dan ook al snel de kosten zal overtreffen. Het is
-met name geschikt voor de standaardisatie-ontwikkelaar zelf die de
-eigen standaard goed kent en het model als denkkader kan gebruiken om
-de eigen standaard mee te analyseren.</p>
-<p> De belangrijkste vraag is wat het gebruik van het
- kwaliteitsinstrument voor standaarden oplevert. Kort samengevat:</p>
+<p>De relatie tussen interoperabiliteit en standaarden is die van doel-middel. 
+Zonder het kwaliteitsaspect in ogenschouw te nemen worden standaarden te veel 
+gezien als heilige graal. De standaard wordt het doel, in plaats van een middel 
+om op een effectieve en efficiënte manier interoperabiliteit te bereiken. 
+Een aandachtsverschuiving naar de kwaliteit van standaarden voorkomt dat 
+standaarden een doel op zich worden en zal de relatie tussen standaarden en 
+interoperabiliteit versterken.</p>
+<p>Dit kwaliteitsmodel, in onderstaand figuur samengevat kan daarvoor een bruikbaar 
+hulpmiddel zijn. Bij toepassing is het sterk aan te raden om het complete 
+instrument te bestuderen <cite><a data-matched-text="[[[folmer2012]]]" href="https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf">Quality of Semantic Standards</a></cite>, en zelfs te overwegen om een maatwerk 
+instrument te maken door slechts een selectie uit het kwaliteitsmodel mee te nemen. </p>
+<pre><svg id="diagram-2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-width: 870.3984375px;" viewBox="0 0 870.3984375 556"><style>
+#diagram-2 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-2 .error-icon{fill:#552222;}#diagram-2 .error-text{fill:#552222;stroke:#552222;}#diagram-2 .edge-thickness-normal{stroke-width:2px;}#diagram-2 .edge-thickness-thick{stroke-width:3.5px;}#diagram-2 .edge-pattern-solid{stroke-dasharray:0;}#diagram-2 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-2 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-2 .marker{fill:#333333;stroke:#333333;}#diagram-2 .marker.cross{stroke:#333333;}#diagram-2 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-2 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#diagram-2 .cluster-label text{fill:#333;}#diagram-2 .cluster-label span{color:#333;}#diagram-2 .label text,#diagram-2 span{fill:#333;color:#333;}#diagram-2 .node rect,#diagram-2 .node circle,#diagram-2 .node ellipse,#diagram-2 .node polygon,#diagram-2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#diagram-2 .node .label{text-align:center;}#diagram-2 .node.clickable{cursor:pointer;}#diagram-2 .arrowheadPath{fill:#333333;}#diagram-2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#diagram-2 .flowchart-link{stroke:#333333;fill:none;}#diagram-2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#diagram-2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#diagram-2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#diagram-2 .cluster text{fill:#333;}#diagram-2 .cluster span{color:#333;}#diagram-2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#diagram-2 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
+</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-kwaliteit LE-product" id="L-kwaliteit-product" style="opacity: 1;"><path class="path" d="M427.25,72.03191227811378L387.7395833333333,80.85992689842816C348.2291666666667,89.68794151874253,269.2083333333333,107.34397075937126,229.69791666666666,120.3386520463523C190.1875,133.33333333333334,190.1875,141.66666666666666,190.1875,145.83333333333334L190.1875,150" marker-end="url(#arrowhead64)" style="fill:none"></path><defs><marker id="arrowhead64" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-kwaliteit LE-proces" id="L-kwaliteit-proces" style="opacity: 1;"><path class="path" d="M507.953125,100L507.953125,104.16666666666667C507.953125,108.33333333333333,507.953125,116.66666666666667,507.953125,125C507.953125,133.33333333333334,507.953125,141.66666666666666,507.953125,145.83333333333334L507.953125,150" marker-end="url(#arrowhead65)" style="fill:none"></path><defs><marker id="arrowhead65" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-kwaliteit LE-praktijk" id="L-kwaliteit-praktijk" style="opacity: 1;"><path class="path" d="M588.65625,76.44930441835908L617.7454427083334,84.54108701529923C646.8346354166666,92.63286961223939,705.0130208333334,108.81643480611969,734.1022135416666,121.07488406972652C763.19140625,133.33333333333334,763.19140625,141.66666666666666,763.19140625,145.83333333333334L763.19140625,150" marker-end="url(#arrowhead66)" style="fill:none"></path><defs><marker id="arrowhead66" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-product LE-functionaliteit" id="L-product-functionaliteit" style="opacity: 1;"><path class="path" d="M142.8359375,209.72654676258992L132.62890625,215.27212230215824C122.421875,220.8176978417266,102.0078125,231.9088489208633,91.80078125,243.6210911270983C81.59375,255.33333333333334,81.59375,267.6666666666667,81.59375,273.8333333333333L81.59375,280" marker-end="url(#arrowhead67)" style="fill:none"></path><defs><marker id="arrowhead67" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-product LE-bruikbaarheid" id="L-product-bruikbaarheid" style="opacity: 1;"><path class="path" d="M190.1875,218L190.1875,222.16666666666666C190.1875,226.33333333333334,190.1875,234.66666666666666,190.1875,248.66666666666666C190.1875,262.6666666666667,190.1875,282.3333333333333,190.1875,302C190.1875,321.6666666666667,190.1875,341.3333333333333,190.1875,357.3333333333333C190.1875,373.3333333333333,190.1875,385.6666666666667,190.1875,391.8333333333333L190.1875,398" marker-end="url(#arrowhead68)" style="fill:none"></path><defs><marker id="arrowhead68" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-product LE-duurzaamheid" id="L-product-duurzaamheid" style="opacity: 1;"><path class="path" d="M237.5390625,209.72654676258992L247.74609375,215.27212230215824C257.953125,220.8176978417266,278.3671875,231.9088489208633,288.57421875,247.28775779376497C298.78125,262.6666666666667,298.78125,282.3333333333333,298.78125,302C298.78125,321.6666666666667,298.78125,341.3333333333333,298.78125,361C298.78125,380.6666666666667,298.78125,400.3333333333333,298.78125,420C298.78125,439.6666666666667,298.78125,459.3333333333333,298.78125,473.3333333333333C298.78125,487.3333333333333,298.78125,495.6666666666667,298.78125,499.8333333333333L298.78125,504" marker-end="url(#arrowhead69)" style="fill:none"></path><defs><marker id="arrowhead69" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-proces LE-ontwikkeling" id="L-proces-ontwikkeling" style="opacity: 1;"><path class="path" d="M463.2734375,209.20512437439308L453.2890625,214.83760364532756C443.3046875,220.47008291626207,423.3359375,231.73504145813104,413.3515625,241.53418739573218C403.3671875,251.33333333333334,403.3671875,259.6666666666667,403.3671875,263.8333333333333L403.3671875,268" marker-end="url(#arrowhead70)" style="fill:none"></path><defs><marker id="arrowhead70" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-proces LE-communicatie" id="L-proces-communicatie" style="opacity: 1;"><path class="path" d="M507.953125,218L507.953125,222.16666666666666C507.953125,226.33333333333334,507.953125,234.66666666666666,507.953125,248.66666666666666C507.953125,262.6666666666667,507.953125,282.3333333333333,507.953125,302C507.953125,321.6666666666667,507.953125,341.3333333333333,507.953125,357.3333333333333C507.953125,373.3333333333333,507.953125,385.6666666666667,507.953125,391.8333333333333L507.953125,398" marker-end="url(#arrowhead71)" style="fill:none"></path><defs><marker id="arrowhead71" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-proces LE-organisatie" id="L-proces-organisatie" style="opacity: 1;"><path class="path" d="M552.6328125,207.88652130822595L563.5794270833334,213.73876775685494C574.5260416666666,219.59101420548396,596.4192708333334,231.295507102742,607.3658854166666,246.9810868847043C618.3125,262.6666666666667,618.3125,282.3333333333333,618.3125,302C618.3125,321.6666666666667,618.3125,341.3333333333333,618.3125,361C618.3125,380.6666666666667,618.3125,400.3333333333333,618.3125,420C618.3125,439.6666666666667,618.3125,459.3333333333333,618.3125,473.3333333333333C618.3125,487.3333333333333,618.3125,495.6666666666667,618.3125,499.8333333333333L618.3125,504" marker-end="url(#arrowhead72)" style="fill:none"></path><defs><marker id="arrowhead72" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-praktijk LE-acceptatie" id="L-praktijk-acceptatie" style="opacity: 1;"><path class="path" d="M735.3615598516949,218L731.9510394597459,222.16666666666666C728.5405190677966,226.33333333333334,721.7194782838983,234.66666666666666,718.3089578919493,245C714.8984375,255.33333333333334,714.8984375,267.6666666666667,714.8984375,273.8333333333333L714.8984375,280" marker-end="url(#arrowhead73)" style="fill:none"></path><defs><marker id="arrowhead73" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-praktijk LE-interoperabiliteit" id="L-praktijk-interoperabiliteit" style="opacity: 1;"><path class="path" d="M791.0212526483051,218L794.4317730402541,222.16666666666666C797.8422934322034,226.33333333333334,804.6633342161017,234.66666666666666,808.0738546080507,248.66666666666666C811.484375,262.6666666666667,811.484375,282.3333333333333,811.484375,302C811.484375,321.6666666666667,811.484375,341.3333333333333,811.484375,355.3333333333333C811.484375,369.3333333333333,811.484375,377.6666666666667,811.484375,381.8333333333333L811.484375,386" marker-end="url(#arrowhead74)" style="fill:none"></path><defs><marker id="arrowhead74" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-product" class="edgeLabel L-LS-kwaliteit' L-LE-product"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-proces" class="edgeLabel L-LS-kwaliteit' L-LE-proces"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-kwaliteit-praktijk" class="edgeLabel L-LS-kwaliteit' L-LE-praktijk"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-product-functionaliteit" class="edgeLabel L-LS-product' L-LE-functionaliteit"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-product-bruikbaarheid" class="edgeLabel L-LS-product' L-LE-bruikbaarheid"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-product-duurzaamheid" class="edgeLabel L-LS-product' L-LE-duurzaamheid"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-proces-ontwikkeling" class="edgeLabel L-LS-proces' L-LE-ontwikkeling"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-proces-communicatie" class="edgeLabel L-LS-proces' L-LE-communicatie"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-proces-organisatie" class="edgeLabel L-LS-proces' L-LE-organisatie"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-praktijk-acceptatie" class="edgeLabel L-LS-praktijk' L-LE-acceptatie"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-praktijk-interoperabiliteit" class="edgeLabel L-LS-praktijk' L-LE-interoperabiliteit"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-kwaliteit-72" transform="translate(507.953125,54)" style="opacity: 1;"><rect rx="5" ry="5" x="-80.703125" y="-46" width="161.40625" height="92" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-70.703125,-36)"><foreignObject width="141.40625" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Kwaliteitsmodel van<br>semantische<br>standaard</div></foreignObject></g></g></g><g class="node default" id="flowchart-product-73" transform="translate(190.1875,184)" style="opacity: 1;"><rect rx="5" ry="5" x="-47.3515625" y="-34" width="94.703125" height="68" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.3515625,-24)"><foreignObject width="74.703125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A. Product<br>kwaliteit</div></foreignObject></g></g></g><g class="node default" id="flowchart-proces-74" transform="translate(507.953125,184)" style="opacity: 1;"><rect rx="5" ry="5" x="-44.6796875" y="-34" width="89.359375" height="68" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-34.6796875,-24)"><foreignObject width="69.359375" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B. Proces<br>kwaliteit</div></foreignObject></g></g></g><g class="node default" id="flowchart-praktijk-75" transform="translate(763.19140625,184)" style="opacity: 1;"><rect rx="5" ry="5" x="-58.4609375" y="-34" width="116.921875" height="68" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48.4609375,-24)"><foreignObject width="96.921875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C. Kwaliteit in<br>de praktijk</div></foreignObject></g></g></g><g class="node default" id="flowchart-functionaliteit-76" transform="translate(81.59375,302)" style="opacity: 1;"><rect rx="5" ry="5" x="-73.59375" y="-22" width="147.1875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.59375,-12)"><foreignObject width="127.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A1. Functionaliteit</div></foreignObject></g></g></g><g class="node default" id="flowchart-bruikbaarheid-77" transform="translate(190.1875,420)" style="opacity: 1;"><rect rx="5" ry="5" x="-73.59375" y="-22" width="147.1875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.59375,-12)"><foreignObject width="127.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A2. Bruikbaarheid</div></foreignObject></g></g></g><g class="node default" id="flowchart-duurzaamheid-78" transform="translate(298.78125,526)" style="opacity: 1;"><rect rx="5" ry="5" x="-76.2578125" y="-22" width="152.515625" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-66.2578125,-12)"><foreignObject width="132.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A3. Duurzaamheid</div></foreignObject></g></g></g><g class="node default" id="flowchart-ontwikkeling-79" transform="translate(403.3671875,302)" style="opacity: 1;"><rect rx="5" ry="5" x="-69.5859375" y="-34" width="139.171875" height="68" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-59.5859375,-24)"><foreignObject width="119.171875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B1. Ontwikkeling<br>&amp; onderhoud</div></foreignObject></g></g></g><g class="node default" id="flowchart-communicatie-80" transform="translate(507.953125,420)" style="opacity: 1;"><rect rx="5" ry="5" x="-75.359375" y="-22" width="150.71875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65.359375,-12)"><foreignObject width="130.71875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B2. Communicatie</div></foreignObject></g></g></g><g class="node default" id="flowchart-organisatie-81" transform="translate(618.3125,526)" style="opacity: 1;"><rect rx="5" ry="5" x="-65.140625" y="-22" width="130.28125" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-55.140625,-12)"><foreignObject width="110.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B3. Organisatie</div></foreignObject></g></g></g><g class="node default" id="flowchart-acceptatie-82" transform="translate(714.8984375,302)" style="opacity: 1;"><rect rx="5" ry="5" x="-61.5859375" y="-22" width="123.171875" height="44" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.5859375,-12)"><foreignObject width="103.171875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C1. Acceptatie</div></foreignObject></g></g></g><g class="node default" id="flowchart-interoperabiliteit-83" transform="translate(811.484375,420)" style="opacity: 1;"><rect rx="5" ry="5" x="-50.9140625" y="-34" width="101.828125" height="68" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-40.9140625,-24)"><foreignObject width="81.828125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C2. Inter-<br>operabiliteit</div></foreignObject></g></g></g></g></g></g></svg></pre>
+
+<figure id="samenvatting_kwaliteitmodel">
+  <figcaption><a class="self-link" href="#samenvatting_kwaliteitmodel">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Samenvatting van het kwaliteitsmodel op een hoog abstractieniveau</span></figcaption>
+</figure>
+
+<p>Het kwaliteitsmodel is een startpunt om te gebruiken om de kwaliteit van een standaard 
+te bekijken. Maar het moet wel kosteneffectief worden ingezet. In veel gevallen is het 
+gewenst dat een kwaliteitsmeting in enkele uren uitgevoerd kan worden. In dat geval 
+zijn de kosten vrij beperkt, en zullen de opbrengsten de kosten al snel overtreffen. </p>
+<p>Inzet van het kwaliteitsmodel kan ook heel geschikt zijn als zelf-evaluatie door de 
+standaardisatie-ontwikkelaar die de eigen standaard goed kent en het model als 
+denkkader kan gebruiken om de eigen standaard mee te analyseren. Immers het kwaliteitsmodel 
+is niet bedoeld om goed/fout aan te geven, maar puur bedoelt om mogelijke verbeteringen 
+te identificeren.</p>
+<p>Wat zou het gebruik van het kwaliteitsinstrument voor standaarden kunnen opleveren. Kort samengevat:</p>
 <ul>
-<li>een model om naar de standaard te kijken: een frisse blik / inzicht in wat van invloed is op de kwaliteit van een standaard.</li>
-<li>ideeën voor verbetering van de standaard.</li>
-<li>ideeën voor aanpassingen in het standaardisatieproces.</li>
+<li>   een model om naar de standaard te kijken: een frisse blik / inzicht in wat van invloed is 
+ op de kwaliteit van een standaard.</li>
+<li>   ideeën voor verbetering van de standaard.</li>
+<li>   ideeën voor aanpassingen in het standaardisatieproces.</li>
 </ul>
-<p>Het helpt de standaardisatieontwikkelaar om met een frisse blik naar
-de standaard te kijken en daarbij een gevoel te krijgen hoe de
-kwaliteit te beïnvloeden is. Gedurende het gebruik zal de
-standaardisatieontwikkelaar ideeën ontwikkelen hoe de standaard te
-verbeteren is of mogelijkheden zien om het standaardisatieproces te
-veranderen om een hogere kwaliteit te bereiken.</p>
-<p>In ultieme vorm is het kwaliteitsinstrument een meetinstrument (zoals
-een thermometer) voor standaarden, dat wil zeggen een compleet
-gereedschap inclusief 'tool' en 'gebruikshandleiding'. Maar ook alleen
-het kwaliteitsmodel, met een stevig fundament, kan als 'bril' worden
-gebruikt om standaarden in de praktijk mee te toetsen.</p>
+<p>Het helpt de standaardisatieontwikkelaar om met een frisse blik naar de standaard te 
+kijken en daarbij een gevoel te krijgen hoe de kwaliteit te beïnvloeden is. Gedurende 
+het gebruik zal de standaardisatieontwikkelaar ideeën ontwikkelen hoe de standaard te 
+verbeteren is of mogelijkheden zien om het standaardisatieproces te veranderen om een 
+hogere kwaliteit te bereiken.</p>
+<p>In de complete vorm is het kwaliteitsinstrument een meetinstrument (zoals een 
+thermometer) voor standaarden, dat wil zeggen een compleet gereedschap inclusief 
+'tool' en 'gebruikshandleiding'. Maar ook alleen het kwaliteitsmodel, met een stevig 
+fundament, kan als 'bril' worden gebruikt om standaarden in de praktijk mee te toetsen.</p>
 </section></section><section id="kwaliteit-van-implementaties"><div class="header-wrapper"><h4 id="x3-4-2-kwaliteit-van-implementaties"><bdi class="secno">3.4.2 </bdi>Kwaliteit van implementaties</h4><a class="self-link" href="#kwaliteit-van-implementaties" aria-label="Permalink for Section 3.4.2"></a></div>
 <p>De kwaliteit van de standaard kan nog zo goed zijn, als de kwaliteit
 van de implementaties achterblijft wordt er ook geen
@@ -3750,7 +4172,7 @@ dergelijks. Nu JSON dominant als uitwisselingsformaat defacto
 standaard is geworden kan validatie plaatsvinden door middel van SHACL
 validatiergels.</p>
 <aside class="example" id="example-validatie-van-gwsw"><div class="marker">
-    <a class="self-link" href="#example-validatie-van-gwsw">Voorbeeld<bdi> 12</bdi></a><span class="example-title">: Validatie van GWSW</span>
+    <a class="self-link" href="#example-validatie-van-gwsw">Voorbeeld<bdi> 14</bdi></a><span class="example-title">: Validatie van GWSW</span>
   </div>
 De kwaliteit van gemeentelijke data op het gebied van stedelijk water 
 en de daarvoor benodigde infrastructuur is een belangrijk aandachtpunt 
@@ -3862,85 +4284,85 @@ concepten voor gebruikt kunnen worden.</p>
 <table class="dkkvs">
 <thead>
 <tr>
-<th align="left">Middel</th>
-<th align="left">Wanneer geschikt</th>
-<th align="left">Risico/Inspanning/Opbrengst</th>
+<th>Middel</th>
+<th>Wanneer geschikt</th>
+<th>Risico/Inspanning/Opbrengst</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Certificeren</td>
-<td align="left">De markt moet gaan bewegen.</td>
-<td align="left">Risico: Hoog</td>
+<td>Certificeren</td>
+<td>De markt moet gaan bewegen.</td>
+<td>Risico: Hoog</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Ervaring is opgedaan met validatie.</td>
-<td align="left">Inspanning: Hoog</td>
+<td></td>
+<td>Ervaring is opgedaan met validatie.</td>
+<td>Inspanning: Hoog</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Partijen zijn die compliancy claimen, maar het mogelijkerwijs niet zijn.</td>
-<td align="left">Opbrengst: Continu</td>
+<td></td>
+<td>Partijen zijn die compliancy claimen, maar het mogelijkerwijs niet zijn.</td>
+<td>Opbrengst: Continu</td>
 </tr>
 <tr>
-<td align="left">Plugfest (adoptie-doelstelling)</td>
-<td align="left">Als adoptie redelijk gaat, maar nog een paar partijen achterblijven.</td>
-<td align="left">Risico: Middel</td>
+<td>Plugfest (adoptie-doelstelling)</td>
+<td>Als adoptie redelijk gaat, maar nog een paar partijen achterblijven.</td>
+<td>Risico: Middel</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Bij een relatief nieuwe standaard.</td>
-<td align="left">Inspanning: Middel</td>
+<td></td>
+<td>Bij een relatief nieuwe standaard.</td>
+<td>Inspanning: Middel</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Opbrengst: Eenmalig</td>
+<td></td>
+<td></td>
+<td>Opbrengst: Eenmalig</td>
 </tr>
 <tr>
-<td align="left">Validatie-service / Helpdesk</td>
-<td align="left">De markt continu wil ondersteunen.</td>
-<td align="left">Risico: Laag</td>
+<td>Validatie-service / Helpdesk</td>
+<td>De markt continu wil ondersteunen.</td>
+<td>Risico: Laag</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">De kwaliteit van de implementaties wilt gaan verhogen.</td>
-<td align="left">Inspanning: Middel</td>
+<td></td>
+<td>De kwaliteit van de implementaties wilt gaan verhogen.</td>
+<td>Inspanning: Middel</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Opbrengst: Continu</td>
+<td></td>
+<td></td>
+<td>Opbrengst: Continu</td>
 </tr>
 <tr>
-<td align="left">Plugfest (interoperabiliteit-doelstelling)</td>
-<td align="left">De markt wil ondersteunen.</td>
-<td align="left">Risico: Laag</td>
+<td>Plugfest (interoperabiliteit-doelstelling)</td>
+<td>De markt wil ondersteunen.</td>
+<td>Risico: Laag</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Een beeld krijgen of de standaard in de praktijk voldoet en hoe die gebruikt wordt.</td>
-<td align="left">Inspanning: Middel</td>
+<td></td>
+<td>Een beeld krijgen of de standaard in de praktijk voldoet en hoe die gebruikt wordt.</td>
+<td>Inspanning: Middel</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">Opbrengst: Eenmalig</td>
+<td></td>
+<td></td>
+<td>Opbrengst: Eenmalig</td>
 </tr>
 <tr>
-<td align="left">Pilot ondersteuning</td>
-<td align="left">Eerste oefeningen met de standaard.</td>
-<td align="left">Risico: Laag</td>
+<td>Pilot ondersteuning</td>
+<td>Eerste oefeningen met de standaard.</td>
+<td>Risico: Laag</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Nog mogelijkheden zijn om de standaard aan te passen.</td>
-<td align="left">Inspanning: Laag</td>
+<td></td>
+<td>Nog mogelijkheden zijn om de standaard aan te passen.</td>
+<td>Inspanning: Laag</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">Belangrijk project, als voorloper voor andere projecten.</td>
-<td align="left">Opbrengst: Eenmalig</td>
+<td></td>
+<td>Belangrijk project, als voorloper voor andere projecten.</td>
+<td>Opbrengst: Eenmalig</td>
 </tr>
 </tbody></table>
 </section><section id="de-praktijk"><div class="header-wrapper"><h5 id="x3-4-2-8-de-praktijk"><bdi class="secno">3.4.2.8 </bdi>De praktijk</h5><a class="self-link" href="#de-praktijk" aria-label="Permalink for Section 3.4.2.8"></a></div>
@@ -3961,7 +4383,32 @@ de standaard.</p>
 <p>Daardoor zijn er meerdere semantische standaardisatieorganisaties die
 certificering overwogen hebben, maar tot op heden wordt certificering
 weinig toegepast.</p>
-</section></section></section></section>
+<aside class="Example" title="Validatie en Certificatie bij Ketenstandaard Bouw">
+Een ondersteunende service die bijdraagt aan het correct implementeren 
+van een berichtenstandaard, data service of andere vorm van data API is 
+bieden van een validatieomgeving voor eindgebruikers en software ontwikkelaars. 
+Een dergelijke validator biedt de mogelijkheid om per versie van een 
+berichtstandaard een automatische validatie te configureren. Voor een 
+XML-implementatie gaat dat om een check op de XML-syntax, een check op 
+het XML-schema (XSD) en controle van de set van validatieregels uitgedrukt in 
+schematron. Software ontwikkelaars kunnen grotendeels zelf uit de voeten met 
+het gebruik van de validator en op technisch vlak hoeft de standaarden-organisatie 
+alleen nog vragen te beantwoorden in probleemgevallen of bij onduidelijkheden. 
+Dat is van meerwaarde voor de gebruiker én scheelt de beheerorganisatie tijd. 
+Ook fungeert een geautomatiseerde validatie als scheidsrechter wanneer partijen 
+verschil van mening hebben over interpretatie van de standaard.
+
+<p>Dat validatie in dienst kan staan voor certificatie laat Ketenstandaard zien. 
+Deze stichting in de bouw- en installatiebranche beheert standaarden voor alle 
+fasen van het bouwproces. Zij maken daarbij gebruik van Semantic Treehouse, 
+de op BOMOS gebaseerde beheeromgeving ontwikkeld door TNO. Ketenstandaard biedt 
+via deze omgeving een validatietool aan haar gebruikers waarmee zij kunnen laten 
+zien dat hun berichten aan de standaard voldoen. In dat geval wordt het bedrijf 
+waar die gebruiker actief is opgenomen in een certificatenoverzicht op 
+datakwaliteit.nu, en kan de gebruiker een certificaat-label downloaden om te 
+plaatsen op de bedrijfswebsite. Zo kunnen leveranciers en klanten van elkaar 
+zien met wie er op een gestandaardiseerde manier data is te delen. </p>
+</aside></section></section></section></section>
      <section id="operationeel"><div class="header-wrapper"><h2 id="x4-operationeel"><bdi class="secno">4. </bdi>Operationeel</h2><a class="self-link" href="#operationeel" aria-label="Permalink for Section 4."></a></div>
 <p>In deze sectie worden onderwerpen verdiept die gerelateerd zijn aan strategische onderwerpen uit het Beheer- en Ontwikkelmodel.</p>
 <section id="proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><div class="header-wrapper"><h3 id="x4-1-proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel"><bdi class="secno">4.1 </bdi>Proces voor de ontwikkeling en het beheer van een standaard (Hoofdactiviteit: Operationeel)</h3><a class="self-link" href="#proces-voor-de-ontwikkeling-en-het-beheer-van-een-standaard-hoofdactiviteit-operationeel" aria-label="Permalink for Section 4.1"></a></div>
@@ -4204,10 +4651,12 @@ gegeven moment is de magie uitgewerkt.</li>
 <p>Edustandaard is een netwerkorganisatie die samenwerkt met ketenpartijen in het onderwijs, zoals Kennisnet, SURF, het ministerie van OCW, de Dienst Uitvoering Onderwijs, onderwijsinstellingen, uitgevers en leveranciers van software voor het onderwijs. Die samenwerking krijgt gestalte door verschillende expertgroepen met elk een andere rol. Edustandaard volgt hierbij de globale organisatiestructuur van BOMOS. Er zijn vier soorten expertgroepen binnen Edustandaard: adviesorgaan, bestuur, uitvoeringsorganisatie en werkgroep.</p>
 <p>In een Edustandaard werkgroep vindt de ontwikkeling, het beheer en de ondersteuning van het gebruik van afspraken (standaarden) plaats. Er zijn meer dan 15 Edustandaard werkgroepen actief. Er zijn ook werkgroepen die zich richten op specifieke onderdelen van de ROSA, zoals de werkgroep Toegang). Edustandaard kent 2 adviesorganen, namelijk de Architectuurraad en het QA-team (QA = quality assurance). De Architectuurraad is het inhoudelijke adviesorgaan over ketenarchitectuur en standaarden (afspraken) op basis van de ROSA; het QA-team adviseert over de backlog en de roadmap van de ROSA. Bureau Edustandaard vormt de uitvoeringsorganisatie, daaronder valt ook het ROSA Beheerteam.</p>
 <p>Meer info: <a href="https://www.edustandaard.nl/standaard_werkgroepen/">Werkgroepen</a></p>
-</section></section><section id="logius-standaarden-governance"><div class="header-wrapper"><h4 id="x7-1-2-logius-standaarden-governance"><bdi class="secno">7.1.2 </bdi>Logius standaarden governance</h4><a class="self-link" href="#logius-standaarden-governance" aria-label="Permalink for Section 7.1.2"></a></div>
+</section></section><section id="imbor-governance"><div class="header-wrapper"><h4 id="x7-1-2-imbor-governance"><bdi class="secno">7.1.2 </bdi>IMBOR governance</h4><a class="self-link" href="#imbor-governance" aria-label="Permalink for Section 7.1.2"></a></div>
+<p><em>Betere plek voor lange stuk over IMBOR?</em></p>
+</section><section id="logius-standaarden-governance"><div class="header-wrapper"><h4 id="x7-1-3-logius-standaarden-governance"><bdi class="secno">7.1.3 </bdi>Logius standaarden governance</h4><a class="self-link" href="#logius-standaarden-governance" aria-label="Permalink for Section 7.1.3"></a></div>
 <p>Logius heeft de governance van het beheer van haar standaarden aangesloten op de 
 governance van de Generieke Data Infrastructuur (GDI) van de Nederlandse overheid.</p>
-<section id="de-programmeringsraad-gdi"><div class="header-wrapper"><h5 id="x7-1-2-1-de-programmeringsraad-gdi"><bdi class="secno">7.1.2.1 </bdi>De Programmeringsraad GDI</h5><a class="self-link" href="#de-programmeringsraad-gdi" aria-label="Permalink for Section 7.1.2.1"></a></div>
+<section id="de-programmeringsraad-gdi"><div class="header-wrapper"><h5 id="x7-1-3-1-de-programmeringsraad-gdi"><bdi class="secno">7.1.3.1 </bdi>De Programmeringsraad GDI</h5><a class="self-link" href="#de-programmeringsraad-gdi" aria-label="Permalink for Section 7.1.3.1"></a></div>
 <p>In de MIDO structuur heeft de Programmeringsraad GDI een rol in het strategisch 
 beheer van standaarden.</p>
 <p>Het strategisch overleg keurt voorstellen tot wijziging goed op basis van 
@@ -4219,7 +4668,7 @@ naar een nieuwe (onderliggende) standaard kan in het strategisch overleg
 goedgekeurd worden.</p>
 <p>De beheerorganisatie werkt goedgekeurde voorstellen uit en neemt deze op in 
 een vast te stellen nieuwe versie.</p>
-</section><section id="programmeringstafels"><div class="header-wrapper"><h5 id="x7-1-2-2-programmeringstafels"><bdi class="secno">7.1.2.2 </bdi>Programmeringstafels</h5><a class="self-link" href="#programmeringstafels" aria-label="Permalink for Section 7.1.2.2"></a></div>
+</section><section id="programmeringstafels"><div class="header-wrapper"><h5 id="x7-1-3-2-programmeringstafels"><bdi class="secno">7.1.3.2 </bdi>Programmeringstafels</h5><a class="self-link" href="#programmeringstafels" aria-label="Permalink for Section 7.1.3.2"></a></div>
 <p>Dit overleg is verantwoordelijk voor het vaststellen van de
 doorontwikkel-roadmap, het vaststellen van major/minor releases van de
 standaard en dient als het voorportaal van het
@@ -4229,7 +4678,7 @@ Afhankelijk van het thema is die de Programmeringstafel Gegevensuitwisseling,
 Infrastructuur of Interactie.
 <a href="https://github.com/Logius-standaarden/Overleg/tree/main/Programmeringstafels/Gegevensuitwisseling">Voor de programmeringstafel maakt Logius een deelagenda over standaarden</a>
 die deel kan uitmaken van de agenda van het overleg.</p>
-</section><section id="het-technische-overleg"><div class="header-wrapper"><h5 id="x7-1-2-3-het-technische-overleg"><bdi class="secno">7.1.2.3 </bdi>Het Technische Overleg</h5><a class="self-link" href="#het-technische-overleg" aria-label="Permalink for Section 7.1.2.3"></a></div>
+</section><section id="het-technische-overleg"><div class="header-wrapper"><h5 id="x7-1-3-3-het-technische-overleg"><bdi class="secno">7.1.3.3 </bdi>Het Technische Overleg</h5><a class="self-link" href="#het-technische-overleg" aria-label="Permalink for Section 7.1.3.3"></a></div>
 <p>Het Technisch Overleg (TO) is een periodieke bijeenkomst  waarbij de
 vragen en doorontwikkelwensen m.b.t. de standaard worden doorgenomen,
 geprioriteerd en worden uitgewerkt. Daarnaast wordt door de leden de
@@ -4284,8 +4733,8 @@ kunnen issues ingediend worden door gebruikers, zijn projectmanagementtools
 beschikbaar en kunnen automatische acties op een repository uitgevoerd worden. 
 Het is ook mogelijk om automatische controles uit te voeren op de code in een 
 repository, bijvoorbeeld op basis van toegankelijkheid of op ontbrekende verwijzingen.</p>
-<aside class="example" id="example-13"><div class="marker">
-    <a class="self-link" href="#example-13">Voorbeeld<bdi> 13</bdi></a>
+<aside class="example" id="example-15"><div class="marker">
+    <a class="self-link" href="#example-15">Voorbeeld<bdi> 15</bdi></a>
   </div>
 <b>Het hele proces via git bij Logius</b>
 
@@ -4294,7 +4743,7 @@ repository, bijvoorbeeld op basis van toegankelijkheid of op ontbrekende verwijz
 kan <em>git</em> gebruikt worden als een kanaal om gebruikers 
 wijzigingsvoorstellen in te laten dienen. Maar het kan ook goed 
 toegepast worden in de stappen daarna, tot en met besluitvorming toe. 
-Bij Logius wordt <a href="https://www.githubcom/">github</a> gebruikt in het hele 
+Bij Logius wordt <a href="https://www.github.com/">github</a> gebruikt in het hele 
 operationele proces. </p>
 <p>Allereerst wordt alle documentatie gepubliceerd via github (zie <a href="#documentatie-en-publicatie-met-git-en-respec">hierboven</a>. Gebruikers 
 kunnen bij een document over een standaard een vraag of idee of een 
@@ -4364,13 +4813,22 @@ wijzigingsvoorstellen met zo'n automatisch proces overzichtelijk te houden.</p>
   </li><li class="tofline">
     <a class="tocxref" href="#fig-resultaten-van-een-gebruikersonderzoek-naar-kwaliteit-van-standaarden"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title">Resultaten van een gebruikersonderzoek naar kwaliteit van standaarden</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-kwaliteitsinstrumenten"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">Kwaliteitsinstrumenten</span></a>
+    <a class="tocxref" href="#kwaliteitmodel"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">Het kwaliteitmodel</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#samenvatting_kwaliteitmodel"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">Samenvatting van het kwaliteitsmodel op een hoog abstractieniveau</span></a>
   </li>
       </ul></section>
 
   
  
-<p role="navigation" id="back-to-top">
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
+    <dl class="bibliography"><dt id="bib-folmer2011">[folmer2011]</dt><dd>
+      <cite>Management and Development Model for Open Standards (BOMOS) version 2</cite>. ErwinFolmer; Matthijs Punter.  Programmabureau NOiV. 2011. 
+    </dd><dt id="bib-folmer2012">[folmer2012]</dt><dd>
+      <a href="https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf"><cite>Quality of Semantic Standards</cite></a>. Erwin Folmer.  Universiteit Twente. 2012. URL: <a href="https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf">https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
@@ -4594,4 +5052,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel" style="background-color: #39870c;">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
