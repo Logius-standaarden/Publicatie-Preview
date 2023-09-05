@@ -916,7 +916,7 @@ img.license{float:left;padding-right:5px}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">API Design Rules (Nederlandse API Strategie IIa)</h1>
     
@@ -1189,7 +1189,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L213">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L213">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1561,7 +1561,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L119">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L119">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1623,7 +1623,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L282">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L282">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1634,7 +1634,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          <ul>
             <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisets to be tested. These include that an OAS file (openapi.json) is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
             <li> Step 2: The openapi.yaml <em class="rfc2119">MAY</em> be available. If available it <em class="rfc2119">MUST</em> contain yaml, be readable and parsable.</li>
-            <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> describe the same API as the openapi.json.</li>
+            <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Specification as the openapi.json.</li>
             <li> Step 4: The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
          </ul>
       </dd>
@@ -1713,7 +1713,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L165">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L165">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1767,7 +1767,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L354">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L354">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1803,7 +1803,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go#L393">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.3.0/pkg/adr/rules.go#L393">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
@@ -1813,7 +1813,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       <dd>
          <ul>
             <li> Step 1: A request to the base url <em class="rfc2119">MUST</em> give a response and include the header "API-Version".</li>
-            <li> Step 2: The response of the header <em class="rfc2119">MUST</em> have a valid Semantic Versioning number.</li>
+            <li> Step 2: The value of the header "API-Version" <em class="rfc2119">MUST</em> have a valid Semantic Versioning number.</li>
          </ul>
       </dd>
    </dl>
