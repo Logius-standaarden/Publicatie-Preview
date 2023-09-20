@@ -1022,9 +1022,9 @@ img.license{float:left;padding-right:5px}
 </tr>
 </tbody></table>
 <p>Before reading this document it is advised to gain knowledge of the three documents, in particular <a href="https://docs.geostandaarden.nl/api/API-Strategie/#architectuur">the architecture section of part I</a>.</p>
-<p>An overview of all current documents is available in this Dutch infographic:</p>
+<p>An actual overview of all current documents is available in this Dutch infographic:</p>
 <figure id="fig-nl-api-strategie-infographic">
-  <object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml"></object>
+  <object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml" id="infographic"></object>
   <figcaption><a class="self-link" href="#fig-nl-api-strategie-infographic">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">NL API Strategie Infographic</span></figcaption>
 </figure>
 
@@ -1543,7 +1543,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
 <p>As described in <a href="#extensions">the Extensions paragraph</a> the NL API Strategy is composed of a set of modules that are extensions on <a href="#the-core-set-of-design-rules">the Core set of Design Rules</a>. The modules are optional or conditional. Optional modules can be found in the infographic. All conditional modules are referenced in this document and the 'conditional usage' is formalized as a unique design rule.</p>
 <p><span id="api-tls"></span></p>
 <div class="rule" id="/core/conditional/transport-security">
-  <p class="rulelab"><b>/core/conditional/transport-security</b>: Apply transport security conform the module</p>
+  <p class="rulelab"><b>/core/conditional/transport-security</b>: Apply the transport security module</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1551,7 +1551,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Rationale</dt>
       <dd>
-         The transport security module as described and published on <a href="https://github.com/Geonovum/KP-APIs">Github</a> formalizes three rules to apply to APIs:
+         The transport security module as described and published on <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/">Github</a> formalizes three rules to apply to APIs:
          <ol>
          <li>Secure connections using TLS</li>
          <li>No sensitive information in URIs</li>
@@ -1561,7 +1561,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </dd>
       <dt>Implications</dt>
       <dd>
-         Adherence to this rule needs to be manually verified. Some rules of the module COULD be tested automatically and will be shown on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of these technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
+         Adherence to this rule needs to be manually verified. Some rules of the module COULD be tested automatically and will be shown on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/main/pkg/adr/rules.go">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.1.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>Rule types</dt>
       <dd>
