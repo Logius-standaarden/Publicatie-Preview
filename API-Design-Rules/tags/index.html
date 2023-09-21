@@ -920,7 +920,7 @@ img.license{float:left;padding-right:5px}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov API Design Rules 2.0.0-rc.1</h1>
     
@@ -1094,7 +1094,7 @@ In addition to this (normative) document, separate modules are being written to 
    Resources describe objects not actions.
    </dd>
    <dt>Implications</dt>
-   <dd id="implications">Adherance to this rule needs to be manually</dd>
+   <dd>Adherance to this rule needs to be manually</dd>
 </dl>
 </div>
 
@@ -1128,7 +1128,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
          </div>
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1146,7 +1146,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
          Note that glossaries exist that define useful sets of attributes which should preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1427,7 +1427,7 @@ https:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01
          To achieve full decoupling between client and server, and to benefit from the advantages mentioned above, no session state must reside on the server. Session state must therefore reside entirely on the client.
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
    <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
@@ -1461,7 +1461,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
   <dt>Implications</dt>
-  <dd id="implications">Adherance to this rule needs to be manually</dd>
+  <dd>Adherance to this rule needs to be manually</dd>
 </dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
@@ -1483,7 +1483,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
       </ol>
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl> 
 </div>
 
@@ -1561,7 +1561,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          In line with design rule <a href="#/core/interface-language">/core/interface-language</a>, the OAS document (e.g. descriptions and examples) should be written in Dutch. If relevant, you may refer to existing documentation written in English.
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1616,7 +1616,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule must be published. This document should be published on a public web page. Furthermore, active clients should be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1633,7 +1633,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          When releasing a new major API version, the old version must remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions may be published concurrently.
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1687,7 +1687,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          <p>When releasing new (major, minor or patch) versions, all API changes must be documented properly in a publicly available changelog.</p>
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div>
 
@@ -1764,7 +1764,7 @@ https:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code>
          <p>The [<cite><a class="bibref" data-link-type="biblio" href="#bib-geospatial module" title="API Design rules Module: Geospatial">Geospatial Module</a></cite>] rules <em class="rfc2119">MUST</em> be applied for the structuring of geospatial payloads and for functions in APIs to handle geospatial data in line with <a href="https://ogcapi.ogc.org/features/">the Open Geospatial Consortium (OGC) API Features.</a></p>
       </dd>
       <dt>Implications</dt>
-      <dd id="implications">Adherance to this rule needs to be manually</dd>
+      <dd>Adherance to this rule needs to be manually</dd>
    </dl>
 </div></section></section>
   <section id="glossary"><div class="header-wrapper"><h2 id="x4-glossary"><bdi class="secno">4. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 4."></a></div>
