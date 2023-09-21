@@ -1,1 +1,0 @@
-ln -s /home/jdg/dev/Digikoppeling/bpebms/ /home/jdg/dev/pub-cvs-tilaa/webroot/dk/bpebms
