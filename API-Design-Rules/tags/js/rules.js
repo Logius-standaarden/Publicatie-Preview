@@ -37,5 +37,10 @@ $(window).bind('load', function() {
             target.append("<li>" + val + "</li>");
         });
     }
-	window.setTimeout(rules, 100);
+
+    if ($(".rule").length > 0) {
+        rules();
+    } else {
+        window.setTimeout(rules, 500);
+    }
 });
