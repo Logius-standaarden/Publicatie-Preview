@@ -49,10 +49,6 @@ dfn{cursor:pointer}
   
 <title>Digikoppeling Beheermodel</title>
   
-<script type="module">
-   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  </script>
-  
   
   
 <script>
@@ -203,8 +199,8 @@ img.license{float:left;padding-right:5px}
   "localizationStrings": {
     "en": {
       "wv": "Draft",
-      "cv": "Recommendation",
-      "vv": "Proposed recommendation",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
       "def": "Definitive version",
       "basis": "Document",
       "eo": "Outdated version",
@@ -243,7 +239,7 @@ img.license{float:left;padding-right:5px}
       "sotd": "Status van dit document",
       "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
       "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
-      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
       "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
       "basis": "Dit is een document zonder officiële status."
     },
@@ -251,14 +247,16 @@ img.license{float:left;padding-right:5px}
       "sotd": "Status of This Document",
       "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
       "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
-      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
       "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
       "basis": "This document has no official standing."
     }
   },
   "labelColor": {
     "def": "#154273",
-    "wv": "#39870c"
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
   },
   "licenses": {
     "cc0": {
@@ -812,6 +810,15 @@ img.license{float:left;padding-right:5px}
       "href": "https://semver.org",
       "title": "Semantic Versioning 2.0.0"
     },
+    "Transport Security Module": {
+      "authors": [
+        ""
+      ],
+      "date": "27 september 2023",
+      "href": "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",
+      "publisher": "Kennisplatform API's",
+      "title": "Transport Security Module"
+    },
     "UMMR10": {
       "authors": [
         ""
@@ -902,14 +909,14 @@ img.license{float:left;padding-right:5px}
   "specType": "WA"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Beheermodel</h1>
     
     <h2>
       Logius Werkafspraak<br>
       Werkversie
-      <time class="dt-published" datetime="2022-06-01">07 september 2023</time>
+      <time class="dt-published" datetime="2022-06-01">12 oktober 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -956,6 +963,13 @@ img.license{float:left;padding-right:5px}
         </p>
     <hr title="Separator for header">
   </div>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false });
+        setTimeout(function () {
+            mermaid.run();
+        }, 1000);
+    </script>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft het beheermodel voor de
   Digikoppeling-standaarden. Het geeft alle belanghebbenden
   inzicht in het releasebeleid, in de wijze waarop het beheer
@@ -1410,7 +1424,39 @@ de ontwikkeling, de implementatie en het gebruik van de
 Digikoppeling-standaard. Dit geldt dus ook voor het beheer en
 onderhoud ervan. In onderstaand schema zijn de belanghebbenden
 aangegeven.</p>
-<pre><code class="mermaid" data-processed="true"><div id="dmermaid-1694071367304" style="font-family: &quot;trebuchet ms&quot;, verdana, arial, sans-serif;"><svg id="mermaid-1694071367304" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g></svg></div></code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">mindmap
+  root)Belang bij&lt;br&gt;Digikoppeling(
+    {{Vraag}}
+      (Sectorregiseurs)
+        VNG
+        DUO
+        BKWI
+      (Gebruikers)
+        Indivduele overheden
+        Sectoren
+        Bronhouders van basisregistraties
+      (eOverheids projecten)
+        MijnOverheid
+        eHerkenning
+        eID
+    {{Ondersteuning}}
+      (Expertise)
+        Adviesbureaus
+        ICT–experts
+      (Beheer en onderhoud)
+        Domeinexpert
+        Logius
+    {{Aanbod}}
+      (Standaardisatie organisaties)
+        OASIS
+        W3C
+        NIST
+        Forum Standaardisatie
+        Europese Commissie
+      (Leveranciers)
+        Diensten
+        Producten
+</code></pre>
 <figure id="fig-belang-bij-digikoppeling">
 <figcaption><a class="self-link" href="#fig-belang-bij-digikoppeling">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">Belang bij Digikoppeling</span></figcaption>
 </figure>
