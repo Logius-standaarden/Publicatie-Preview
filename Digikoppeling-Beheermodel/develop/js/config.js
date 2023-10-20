@@ -20,10 +20,11 @@ var respecConfig = {
       }
     ],
   github: "https://github.com/Logius-standaarden/Digikoppeling-Beheermodel",
-  previousPublishVersion: "1.6",
+  previousPublishVersion: "1.7",
+  previousPublishDate: "2022-06-01",
   pubDomain: "dk",
-  publishDate: "2022-06-01",
-  publishVersion: "1.7",
+  publishDate: "2023-09-23",
+  publishVersion: "1.8",
   shortName: "beheer",
   specStatus: "WV",
   specType: "WA"
