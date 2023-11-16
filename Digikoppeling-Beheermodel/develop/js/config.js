@@ -26,6 +26,6 @@ var respecConfig = {
   publishDate: "2023-09-23",
   publishVersion: "1.8",
   shortName: "beheer",
-  specStatus: "WV",
+  specStatus: "DEF",
   specType: "WA"
 };
