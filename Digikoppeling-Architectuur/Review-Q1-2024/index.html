@@ -292,10 +292,10 @@ img.license{float:left;padding-right:5px}
       "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
     },
     "Beheermodel": {
-      "date": "Oktober 2017",
-      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Standaarden/Digikoppeling-Beheermodel.pdf",
+      "date": "September 2023",
+      "href": "https://logius-standaarden.github.io/publicatie/dk/beheer/",
       "publisher": "Logius",
-      "title": "Beheermodel en releasebeleid Digikoppeling v1.5"
+      "title": "Beheermodel en releasebeleid Digikoppeling"
     },
     "Beveiligingsdocument": {
       "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
@@ -316,8 +316,8 @@ img.license{float:left;padding-right:5px}
       "publisher": "@@@",
       "title": "CloudEvents - Version 1.0.1"
     },
-    "Compliance": {
-      "href": "https://portaal.digikoppeling.nl",
+    "DK-CV": {
+      "href": "https://gitlab.com/logius/digikoppeling-compliance",
       "publisher": "Logius",
       "title": "Digikoppeling Compliance Voorziening"
     },
@@ -372,12 +372,6 @@ img.license{float:left;padding-right:5px}
       "title": "Digikoppeling Beveiligingsstandaarden en voorschriften",
       "id": "digikoppeling beveiligingsdocument"
     },
-    "Digikoppeling Compliance Voorziening": {
-      "href": "https://portaal.digikoppeling.nl",
-      "publisher": "Logius",
-      "title": "Digikoppeling Compliance Voorziening",
-      "id": "digikoppeling compliance voorziening"
-    },
     "Digikoppeling Gebruik Certificaten": {
       "href": "http://www.logius.nl/digikoppeling",
       "publisher": "Logius",
@@ -411,6 +405,12 @@ img.license{float:left;padding-right:5px}
       "title": "Digikoppeling Koppelvlakstandaard ebMS2",
       "id": "digikoppeling koppelvlakstandaard wus"
     },
+    "Digikoppeling Koppelvlakstandaard REST API": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard REST-API",
+      "id": "digikoppeling koppelvlakstandaard rest api"
+    },
     "Digikoppeling Logius website": {
       "href": "https://logius.nl/diensten/digikoppeling/documentatie",
       "publisher": "Logius",
@@ -435,11 +435,6 @@ img.license{float:left;padding-right:5px}
       "href": "http://www.logius.nl/digikoppeling",
       "publisher": "Logius",
       "title": "Gebruik en achtergrond van Digikoppeling certificaten"
-    },
-    "Digikoppeling-Compliance-Voorziening": {
-      "href": "https://portaal.digikoppeling.nl",
-      "publisher": "Logius",
-      "title": "Digikoppeling Compliance Voorziening"
     },
     "Digikoppeling-Identificatie-Authenticatie": {
       "href": "https://gitdocumentatie.logius.nl/publicatie/dk/idauth",
@@ -888,7 +883,7 @@ img.license{float:left;padding-right:5px}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-01-16">16 januari 2024</time>
+      <time class="dt-published" datetime="2024-01-16">17 januari 2024</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1213,7 +1208,7 @@ Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN
 </ol>
 </section></section>
   <section id="de-digikoppeling-keten"><div class="header-wrapper"><h2 id="x4-de-digikoppeling-keten"><bdi class="secno">4. </bdi>De Digikoppeling-keten</h2><a class="self-link" href="#de-digikoppeling-keten" aria-label="Permalink for Section 4."></a></div>
-<p>Dit hoofdstuk beschrijft Digikoppeling als bouwsteen van de Digitale Overheid. De keten van alle Digikoppeling-gerelateerde componenten die gegevensuitwisseling voor de Digitale Overheid invullen duiden we in dit document aan als de de Digikoppeling-keten. In dit hoofdstuk worden de vormen van gegevensuitwisseling op procesniveau beschreven.</p>
+<p>Dit hoofdstuk beschrijft Digikoppeling als bouwsteen van de Digitale Overheid. De keten van alle Digikoppeling-gerelateerde componenten die gegevensuitwisseling voor de Digitale Overheid invullen duiden we in dit document aan als de Digikoppeling-keten. In dit hoofdstuk worden de vormen van gegevensuitwisseling op procesniveau beschreven.</p>
 <section id="digikoppeling-als-bouwsteen-van-de-digitale-overheid"><div class="header-wrapper"><h3 id="x4-1-digikoppeling-als-bouwsteen-van-de-digitale-overheid"><bdi class="secno">4.1 </bdi>Digikoppeling als bouwsteen van de Digitale Overheid</h3><a class="self-link" href="#digikoppeling-als-bouwsteen-van-de-digitale-overheid" aria-label="Permalink for Section 4.1"></a></div>
 <p>De Nederlandse overheid werkt aan betere dienstverlening aan burgers en bedrijven met een basisinfrastructuur voor de Digitale Overheid die is gebaseerd op services zoals beschreven in de Nederlandse Overheids Referentie Architectuur (NORA). Een reden voor het gebruik van services is dat ze herbruikbaar en daardoor efficiënt zijn.</p>
 <p>De basisinfrastructuur bestaat uit bouwstenen voor de dienstverlening aan burgers, aan bedrijven en de inrichting van de informatiehuishouding van de overheid zelf. De bouwstenen beslaan drie pijlers:</p>
@@ -1311,7 +1306,7 @@ Geautomatiseerde gegevensuitwisseling tussen informatiesystemen op basis van NEN
 </tbody></table>
 <p>Tabel 4.1: Componenten van de Digikoppeling-keten</p>
 <p>N.B.: De Digikoppeling centrale voorzieningen (Het Digikoppeling portaal met de Compliance Voorziening, het OIN register en het CPA register) vormen geen onderdeel van de Digikoppeling-keten maar ondersteunen tijdens de ontwikkel-, beheer en testfasen en bij uitgifte en raadplegen van OIN's.</p>
-<p>In meer detail zijn de Gateway en Adapter componenten uitgewerkt in een referentiemodel voor gegvensuitwisseling. Hierin is de opsplitsing en samenhang weergegeven op basis van Archimate application en technology layer concepts:
+<p>In meer detail zijn de Gateway en Adapter componenten uitgewerkt in een referentiemodel voor gegevensuitwisseling. Hierin is de opsplitsing en samenhang weergegeven op basis van Archimate application en technology layer concepts:
 
       </p><figure id="fig-referentiemodel-gegevensuitwisseling">
         <img src="media/Referentiemodel_berichtuitwisseling.png" alt="Referentiemodel gegevensuitwisseling">
@@ -1377,13 +1372,13 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <li>uitwisseling van grote data bestanden en hun metadata</li>
 </ul>
 <section id="synchrone-uitwisseling"><div class="header-wrapper"><h4 id="x4-4-1-synchrone-uitwisseling"><bdi class="secno">4.4.1 </bdi>Synchrone uitwisseling</h4><a class="self-link" href="#synchrone-uitwisseling" aria-label="Permalink for Section 4.4.1"></a></div>
-<p>Bij synchrone request-response voor bevraging en bewerking van objecten <em>data-providers</em> bieden providers databronnen - of resources-  die <em>data-consumers</em> kunnen bevragen en bewerken. Een provider vermeldt locatie van en randvoorwaarden voor toegang van de databron en via gestructureerde benadering kan een consumer de resource bevragen of zelfs bewerken.</p>
+<p>Bij synchrone request-response voor bevraging en bewerking van objecten bieden <em>data-providers</em> databronnen - of resources-  die <em>data-consumers</em> kunnen bevragen en bewerken. Een provider vermeldt locatie van en randvoorwaarden voor toegang van de databron en via gestructureerde benadering kan een consumer de resource bevragen of zelfs bewerken.</p>
 <p>Bij een synchrone request-response met gestructureerde berichtuitwisseling stuurt de service-requester een voorgedefinieerde vraag (request) aan de service-provider, die een antwoord (response) verstrekt. Het initiatief ligt bij de service-requester. Gaat er in de uitwisseling iets mis dan zal de service-requester na een bepaalde tijd de uitwisseling afbreken (time-out).</p>
 <p>Digikoppeling biedt twee mogelijkheden voor synchrone uitwisseling aan: bij synchrone uitwisseling wacht het vragende informatiesysteem (de requestor) op een antwoord. Dit wachten heeft een beperkte duur (time-out). Als een (tijdig) antwoord uitblijft moet de vrager besluiten of hij de vraag opnieuw stelt of niet. De snelheid van afleveren is hier vaak belangrijker dan de betrouwbaarheid. De requestor kan bij REST API's ook de intentie hebben om een POST of PATCH uit te voeren, in dat geval wil de vragen ook graag gelijk een antwoord of het overdragen van de data is gelukt omdat eventuele vervolgacties hiervan weer afhankelijk zijn.</p>
 <p>Synchrone uitwisseling kan worden ingericht op basis van de Digikoppeling-koppelvlakstandaard WUS en het Digikoppeling REST API profiel.</p>
 </section><section id="asynchrone-uitwisseling"><div class="header-wrapper"><h4 id="x4-4-2-asynchrone-uitwisseling"><bdi class="secno">4.4.2 </bdi>Asynchrone uitwisseling</h4><a class="self-link" href="#asynchrone-uitwisseling" aria-label="Permalink for Section 4.4.2"></a></div>
 <p>Bij een asynchrone request-response verstuurt de service-requester een bericht naar de ontvangende partij (ontvanger) en wacht op een (technische) ontvangstbevestiging. De verzendende (business) applicatie vertrouwt er op dat het bericht (betrouwbaar) afgeleverd wordt. De (business)applicatie zal niet wachten op het antwoord: deze applicatie zal het eventuele 'antwoordbericht' als event of signaal op een ander moment ontvangen en moeten correleren aan het oorspronkelijke vraag bericht.</p>
-<p>Een asynchroon verzoek is een enkelvoudig bericht waarop eventueel enige tijd later een retour signaal volgt. Het gebruikte protocol regelt de betrouwbare ontvangst. Bij asynchrone uitwisseling is de betrouwbare aflevering van het bericht essentieel. Als een partij het bericht niet direct kan aannemen, voorzien de protocollen erin dat het bericht nogmaals wordt aangeboden. In algemene zin bestaat Asynchrone uitwisseling uit meervoudige synchrone uitwisseling die vanuit meedere zijde wordt geïnitieerd.</p>
+<p>Een asynchroon verzoek is een enkelvoudig bericht waarop eventueel enige tijd later een retour signaal volgt. Het gebruikte protocol regelt de betrouwbare ontvangst. Bij asynchrone uitwisseling is de betrouwbare aflevering van het bericht essentieel. Als een partij het bericht niet direct kan aannemen, voorzien de protocollen erin dat het bericht nogmaals wordt aangeboden. In algemene zin bestaat Asynchrone uitwisseling uit meervoudige synchrone uitwisseling die vanuit meerdere zijden wordt geïnitieerd.</p>
 <p>Digikoppeling Koppelvlakstandaard ebMS2 biedt specifieke ondersteuning voor asynchrone uitwisseling. Ook eDelivery biedt specifieke ondersteuning hiervoor.</p>
 </section><section id="melding-transactie"><div class="header-wrapper"><h4 id="x4-4-3-melding-transactie"><bdi class="secno">4.4.3 </bdi>Melding (Transactie)</h4><a class="self-link" href="#melding-transactie" aria-label="Permalink for Section 4.4.3"></a></div>
 <p>Een melding is een enkelvoudig bericht waarop eventueel enige tijd later een retour-melding volgt. Het gebruikte protocol kan de betrouwbare ontvangst en de onweerlegbaarheid (non-repudiation) regelen van een bericht. Bij meldingen kan de betrouwbare aflevering van het bericht essentieel zijn. Als een partij het bericht niet direct kan aannemen, kan een protocol erin voorzien dat het bericht nogmaals wordt aangeboden.</p>
@@ -1677,11 +1672,11 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </tbody></table>
 <p>Tabel 6.2: Digikoppeling-voorschriften</p>
 </section><section id="rest-api-s"><div class="header-wrapper"><h3 id="x6-3-rest-api-s"><bdi class="secno">6.3 </bdi>REST API's</h3><a class="self-link" href="#rest-api-s" aria-label="Permalink for Section 6.3"></a></div>
-<p>Het Digikoppeling REST API profiel [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found">Digikoppeling Koppelvlakstandaard REST API</a></cite>] is gebaseerd op de REST API Design Rules die in 2020 door het Kennisplatform API's zijn ontwikkeld.</p>
+<p>Het Digikoppeling REST API profiel [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Koppelvlakstandaard REST-API">Digikoppeling Koppelvlakstandaard REST API</a></cite>] is gebaseerd op de REST API Design Rules die in 2020 door het Kennisplatform API's zijn ontwikkeld.</p>
 <p>Een application programming interface (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. In de laatste 10 jaar heeft <em>REpresentational State Transfer</em> (REST) zich ontwikkeld tot een bepalend principe voor het realiseren van API's.</p>
 <p>De standaard REST API Design Rules geeft een verzameling basisregels voor structuur en naamgeving waarmee de overheid op een uniforme en eenduidige manier REST API's aanbiedt. Dit maakt het voor ontwikkelaars gemakkelijker om betrouwbare applicaties te ontwikkelen met API's van de overheid. REST API's kunnen worden gebruikt voor het laagdrempelig bevragen van resources maar ook voor het creëren en muteren van resources.</p>
 <section id="digikoppeling-rest-api-voor-synchrone-requests"><div class="header-wrapper"><h4 id="x6-3-1-digikoppeling-rest-api-voor-synchrone-requests"><bdi class="secno">6.3.1 </bdi>Digikoppeling REST API voor synchrone requests</h4><a class="self-link" href="#digikoppeling-rest-api-voor-synchrone-requests" aria-label="Permalink for Section 6.3.1"></a></div>
-<p>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found-0">Digikoppeling Koppelvlakstandaard REST API</a></cite>] biedt de volgende functionaliteiten:</p>
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Koppelvlakstandaard REST-API">Digikoppeling Koppelvlakstandaard REST API</a></cite>] biedt de volgende functionaliteiten:</p>
 <ul>
 <li>Vertrouwelijkheid</li>
 <li>Identificatie en authenticatie van partijen</li>
@@ -1968,7 +1963,7 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 </li>
 </ul>
 <blockquote>
-<p>Informatie over de compliancevoorzieningen staat op [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Digikoppeling Compliance Voorziening">Digikoppeling Compliance Voorziening</a></cite>].</p>
+<p>Informatie over de compliancevoorzieningen staat op [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling compliance voorziening" title="Reference &quot;[Digikoppeling Compliance Voorziening]&quot; not found." id="respec-offender-reference-digikoppeling-compliance-voorziening-not-found">Digikoppeling Compliance Voorziening</a></cite>].</p>
 </blockquote>
 <p><sup><a name="f28" href="#dfn-28" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-28-1"><dfn id="dfn-28" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">28</dfn></a>: <em>Digikoppeling Koppelvlakstandaard WUS</em></sup></p>
 </section><section id="oin-register-centrale-oin-raadpleegvoorziening"><div class="header-wrapper"><h3 id="x8-3-oin-register-centrale-oin-raadpleegvoorziening"><bdi class="secno">8.3 </bdi>OIN Register (Centrale OIN Raadpleegvoorziening)</h3><a class="self-link" href="#oin-register-centrale-oin-raadpleegvoorziening" aria-label="Permalink for Section 8.3"></a></div>
@@ -2254,7 +2249,7 @@ Organisaties die Diginetwerk willen gebruiken sluiten aan op een van de koppelne
 <td>Logius</td>
 </tr>
 <tr>
-<td>[<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Reference &quot;[Digikoppeling Koppelvlakstandaard REST API]&quot; not found." id="respec-offender-reference-digikoppeling-koppelvlakstandaard-rest-api-not-found-1">Digikoppeling Koppelvlakstandaard REST API</a></cite>]</td>
+<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling koppelvlakstandaard rest api" title="Digikoppeling Koppelvlakstandaard REST-API">Digikoppeling Koppelvlakstandaard REST API</a></cite>]</td>
 <td>Logius</td>
 </tr>
 <tr>
@@ -3250,7 +3245,7 @@ Standaardisatie: <a href="https://www.forumstandaardisatie.nl/open-standaarden/v
     </dd><dt id="bib-digikoppeling koppelvlakstandaard grote berichten">[Digikoppeling Koppelvlakstandaard Grote Berichten]</dt><dd>
       <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/"><cite>Digikoppeling Koppelvlakstandaard Grote Berichten</cite></a>.  Logius. september 2020. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-GB/</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard rest api">[Digikoppeling Koppelvlakstandaard REST API]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+      <a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/"><cite>Digikoppeling Koppelvlakstandaard REST-API</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/">https://gitdocumentatie.logius.nl/publicatie/dk/restapi/</a>
     </dd><dt id="bib-digikoppeling koppelvlakstandaard wus">[Digikoppeling Koppelvlakstandaard WUS]</dt><dd>
       <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/"><cite>Digikoppeling Koppelvlakstandaard ebMS2</cite></a>.  Logius. oktober 2020. URL: <a href="https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/">https://logius-standaarden.github.io/Digikoppeling-Koppelvlakstandaard-WUS/</a>
     </dd><dt id="bib-openapi">[openapi]</dt><dd>
@@ -3269,7 +3264,7 @@ Standaardisatie: <a href="https://www.forumstandaardisatie.nl/open-standaarden/v
     </dd><dt id="bib-digikoppeling best practices wus">[Digikoppeling Best Practices WUS]</dt><dd>
       <a href="https://www.logius.nl/diensten/digikoppeling/documentatie"><cite>Digikoppeling Best Practices WUS</cite></a>.  Logius. 2019. URL: <a href="https://www.logius.nl/diensten/digikoppeling/documentatie">https://www.logius.nl/diensten/digikoppeling/documentatie</a>
     </dd><dt id="bib-digikoppeling compliance voorziening">[Digikoppeling Compliance Voorziening]</dt><dd>
-      <a href="https://portaal.digikoppeling.nl"><cite>Digikoppeling Compliance Voorziening</cite></a>.  Logius. URL: <a href="https://portaal.digikoppeling.nl">https://portaal.digikoppeling.nl</a>
+      <em class="respec-offending-element">Reference not found.</em>
     </dd><dt id="bib-digikoppeling gebruik certificaten">[Digikoppeling Gebruik Certificaten]</dt><dd>
       <a href="http://www.logius.nl/digikoppeling"><cite>Digikoppeling Gebruik en achtergrond certificaten</cite></a>.  Logius. URL: <a href="http://www.logius.nl/digikoppeling">http://www.logius.nl/digikoppeling</a>
     </dd><dt id="bib-no-reliable-messaging">[no-Reliable-messaging]</dt><dd>
