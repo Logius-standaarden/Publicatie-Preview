@@ -784,12 +784,10 @@ ul.index code{color:inherit}
     }
   ],
   "github": "https://github.com/Logius-standaarden/OIN-Stelsel",
-  "nl_markdownCodeClass": "code",
-  "nl_markdownTableClass": "dkkvs",
   "previousPublishVersion": "2.0.3",
   "previousPublishDate": "2020-03-31",
   "pubDomain": "dk",
-  "publishDate": "2023-11-30",
+  "publishDate": "2024-01-19",
   "publishVersion": "2.1.0",
   "shortName": "oin",
   "specStatus": "DEF",
@@ -803,7 +801,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Handreiking<br>
       Vastgestelde versie
-      <time class="dt-published" datetime="2023-11-30">30 november 2023</time>
+      <time class="dt-published" datetime="2024-01-19">19 januari 2024</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -874,7 +872,7 @@ ul.index code{color:inherit}
 <section id="het-oin-stelsel"><div class="header-wrapper"><h3 id="x1-1-het-oin-stelsel"><bdi class="secno">1.1 </bdi>Het OIN stelsel</h3><a class="self-link" href="#het-oin-stelsel" aria-label="Permalink for Section 1.1"></a></div>
 <p>In dit document beschrijven we het doel en de werking van het OIN Stelsel. Het OIN is gestart als een noodzakelijk onderdeel van de Digikoppeling Standaard en is inmiddels een veel gebruikt identificatienummer binnen en maar ook buíten Digikoppeling. De regels van uitgifte en gebruik van het OIN staan beschreven in de <em>Voorwaarden Digikoppeling</em> en de <em>Gebruiksvoorwaarden Digikoppeling</em>. Daarnaast geeft Logius OINs en SubOINs uit en slaat de informatie hiervan op in het OIN register en ontsluit die met de <em><a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-1">COR</a></em>, de Centrale OIN Raadpleegvoorziening. Dit geheel van regels en uitvoering noemen we het <em>OIN stelsel</em>.</p>
 </section><section id="waarom-dit-document"><div class="header-wrapper"><h3 id="x1-2-waarom-dit-document"><bdi class="secno">1.2 </bdi>Waarom dit document</h3><a class="self-link" href="#waarom-dit-document" aria-label="Permalink for Section 1.2"></a></div>
-<p>De <code class="code">Voorwaarden Digikoppeling</code> en de <code class="code">Digikoppeling Gebruiksvoorwaarden</code> hebben een juridisch karakter en beantwoorden waarschijnlijk niet elke vraag van gebruikers van een OIN. In dit document proberen we daarom de werking van het OIN stelsel met al haar facetten nader te beschrijven in de hoop die vragen te beantwoorden.</p>
+<p>De <code>Voorwaarden Digikoppeling</code> en de <code>Digikoppeling Gebruiksvoorwaarden</code> hebben een juridisch karakter en beantwoorden waarschijnlijk niet elke vraag van gebruikers van een OIN. In dit document proberen we daarom de werking van het OIN stelsel met al haar facetten nader te beschrijven in de hoop die vragen te beantwoorden.</p>
 </section><section id="aanleiding-voor-een-nieuwe-versie-van-dit-document"><div class="header-wrapper"><h3 id="x1-3-aanleiding-voor-een-nieuwe-versie-van-dit-document"><bdi class="secno">1.3 </bdi>Aanleiding voor een nieuwe versie van dit document</h3><a class="self-link" href="#aanleiding-voor-een-nieuwe-versie-van-dit-document" aria-label="Permalink for Section 1.3"></a></div>
 <p>Dit document is een update op een versie die Logius in 2016 heeft uitgebracht. De aanleiding was toen een inventarisatie van een aantal inmiddels ontstane knelpunten met voorstellen voor de wijzigingen van de regels voor gebruik en uitgifte van OIN’s en SubOINs. Het document stond aan de basis voor de wijzigingen die in 2017 zijn doorgevoerd.</p>
 <p>In 2020 heeft Logius de OIN regels opnieuw op punten aangepast. Dit gaf meteen de gelegenheid om het document bij te werken en in lijn te brengen met zowel de wijzigingen uit 2017 en de inmiddels vastgestelde wijzigingen van 2020.</p>
@@ -936,7 +934,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
 </ul>
 </section></section><section id="leeswijzer"><div class="header-wrapper"><h3 id="x1-6-leeswijzer"><bdi class="secno">1.6 </bdi>Leeswijzer</h3><a class="self-link" href="#leeswijzer" aria-label="Permalink for Section 1.6"></a></div>
 <p>De structuur van dit document is gebaseerd op de TOGAF standaard - TOGAF staat voor The Open Group Architecture Framework- .</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Hoofdstuk</th>
@@ -995,7 +993,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
 <li><p>Routering</p>
 </li>
 </ul>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Functie</strong></th>
@@ -1348,7 +1346,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
   <section id="data-architectuur"><div class="header-wrapper"><h2 id="x6-data-architectuur"><bdi class="secno">6. </bdi>Data Architectuur</h2><a class="self-link" href="#data-architectuur" aria-label="Permalink for Section 6."></a></div>
 <section id="samenstelling-oin"><div class="header-wrapper"><h3 id="x6-1-samenstelling-oin"><bdi class="secno">6.1 </bdi>Samenstelling OIN</h3><a class="self-link" href="#samenstelling-oin" aria-label="Permalink for Section 6.1"></a></div>
 <p>De lengte van het <a data-link-type="dfn|abstract-op" href="#dfn-oin" class="internalDFN" id="ref-for-dfn-oin-62">OIN</a> is 20 posities, omdat dit wordt opgenomen in het <em>subject serial number</em> veld van het PKIoverheid certificaat. Het <a data-link-type="dfn|abstract-op" href="#dfn-oin" class="internalDFN" id="ref-for-dfn-oin-63">OIN</a> is opgebouwd uit de volgende elementen:</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Element</strong></th>
@@ -1374,7 +1372,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
 </tbody></table>
 </section><section id="prefix-tabel"><div class="header-wrapper"><h3 id="x6-2-prefix-tabel"><bdi class="secno">6.2 </bdi>Prefix tabel</h3><a class="self-link" href="#prefix-tabel" aria-label="Permalink for Section 6.2"></a></div>
 <p>Een aangesloten overheidsregister krijgt een prefix (per uniek nummer) als het register wordt toegevoegd aan het OIN-stelsel. Dit wordt ook een OIN register genoemd. De prefix tabel wordt als aparte lijst beheerd door de beheerder van het OIN-stelsel en wordt gepubliceerd op de website.</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Prefix</strong></th>
@@ -1445,7 +1443,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
 </section><section id="suboin-een-betekenisloos-nummer"><div class="header-wrapper"><h3 id="x6-4-suboin-een-betekenisloos-nummer"><bdi class="secno">6.4 </bdi>SubOIN: een betekenisloos nummer</h3><a class="self-link" href="#suboin-een-betekenisloos-nummer" aria-label="Permalink for Section 6.4"></a></div>
 <p>Een <a data-link-type="dfn|abstract-op" href="#dfn-suboins" class="internalDFN" id="ref-for-dfn-suboins-39">SubOIN</a> is een <em>betekenisloos</em> nummer dat wordt gegeneerd tijdens de registratie. Betekenisloos houdt in dat het nummer zelf geen aanwijsbare relatie heeft met het OIN van de <a data-link-type="dfn|abstract-op" href="#dfn-suboin-beheerders" class="internalDFN" id="ref-for-dfn-suboin-beheerders-13">SubOIN-beheerder</a>. De relatie is alleen te raadplegen via de <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-80">COR</a> API. Een <a data-link-type="dfn|abstract-op" href="#dfn-suboins" class="internalDFN" id="ref-for-dfn-suboins-40">SubOIN</a> is een <a data-link-type="dfn|abstract-op" href="#dfn-oin" class="internalDFN" id="ref-for-dfn-oin-68">OIN</a> voor entiteiten zonder rechtspersoonlijkheid, zoals een organisatie die niet is ingeschreven in het Handelsregister, een organisatie-onderdeel of een voorziening. Het nummer van een organisatie dat voorkomt in een aangesloten register wordt ook beschouwd als een <a data-link-type="dfn|abstract-op" href="#dfn-oin" class="internalDFN" id="ref-for-dfn-oin-69">OIN</a>.</p>
 <p>Het prefix verwijst naar het OIN-register.</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th><strong>Element</strong></th>
@@ -1498,13 +1496,13 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
       </figure>
     <p></p>
 </section><section id="cor-api"><div class="header-wrapper"><h4 id="x6-5-2-cor-api"><bdi class="secno">6.5.2 </bdi><a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-87">COR</a> API</h4><a class="self-link" href="#cor-api" aria-label="Permalink for Section 6.5.2"></a></div>
-<p>Hieronder een voorbeeld van een REST-API call naar de <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-88">COR</a> API. In het voorbeeld wordt het OIN van de <code class="code">Digilevering Integrator</code> opgevraagd, dit is een voorziening van Logius. Naast het OIN van de Digilevering Integrator, wordt ook een HAL referentie naar de SubOIN-Houder (in dit geval Logius) geretourneerd. Het gebruik van de API staat verder beschreven op de <a href="https://oinregister.logius.nl/documenten/api-documentatie">COR API website</a>.</p>
+<p>Hieronder een voorbeeld van een REST-API call naar de <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-88">COR</a> API. In het voorbeeld wordt het OIN van de <code>Digilevering Integrator</code> opgevraagd, dit is een voorziening van Logius. Naast het OIN van de Digilevering Integrator, wordt ook een HAL referentie naar de SubOIN-Houder (in dit geval Logius) geretourneerd. Het gebruik van de API staat verder beschreven op de <a href="https://oinregister.logius.nl/documenten/api-documentatie">COR API website</a>.</p>
 <aside class="example" id="example-1"><div class="marker">
     <a class="self-link" href="#example-1">Voorbeeld<bdi> 1</bdi></a>
   </div>
 Voorbeeldaanroep van de COR API:
 
-<pre><code class="code hljs" aria-busy="false">https://portaal.digikoppeling.nl/registers/api/v1/organisaties?naam=Digilevering Integrator
+<pre><code aria-busy="false" class="hljs javascript">https:<span class="hljs-comment">//portaal.digikoppeling.nl/registers/api/v1/organisaties?naam=Digilevering Integrator</span>
 </code></pre>
 </aside>
  
@@ -1513,7 +1511,7 @@ Voorbeeldaanroep van de COR API:
   </div>
 Voorbeeldresultaat van de COR API:
 
-<pre><code class="JSON code hljs json" aria-busy="false">{
+<pre><code class="JSON hljs json" aria-busy="false">{
     <span class="hljs-attr">"_links"</span>: {
         <span class="hljs-attr">"self"</span>: {
             <span class="hljs-attr">"href"</span>: <span class="hljs-string">"https://portaal.digikoppeling.nl/registers/api/v1/organisaties?naam=Digilevering Integrator"</span>,
@@ -1558,7 +1556,7 @@ Voorbeeldresultaat van de COR API:
         <figcaption><a class="self-link" href="#fig-architectuurschets-van-de-cor-en-de-door-haar-gebruikte-bronnen">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">Architectuurschets van de <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-91">COR</a> en de door haar gebruikte bronnen</span></figcaption>
       </figure>
     <p></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th><strong>#</strong></th>
@@ -1640,7 +1638,7 @@ Voorbeeldresultaat van de COR API:
 </tbody></table>
 </section></section>
   <section class="appendix" id="begrippen"><div class="header-wrapper"><h2 id="a-begrippen"><bdi class="secno">A. </bdi>Begrippen</h2><a class="self-link" href="#begrippen" aria-label="Permalink for Appendix A."></a></div>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>begrip</th>
@@ -1734,7 +1732,7 @@ Voorbeeldresultaat van de COR API:
 </tbody></table>
 </section>
   <section class="appendix" id="nuttige-links"><div class="header-wrapper"><h2 id="b-nuttige-links"><bdi class="secno">B. </bdi>Nuttige links</h2><a class="self-link" href="#nuttige-links" aria-label="Permalink for Appendix B."></a></div>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Documentatie</th>
@@ -1756,7 +1754,7 @@ Voorbeeldresultaat van de COR API:
 </tbody></table>
 <br>
 
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Voorziening</th>
@@ -1785,7 +1783,7 @@ Voorbeeldresultaat van de COR API:
 
 <section id="inleiding-1"><div class="header-wrapper"><h3 id="c-1-inleiding"><bdi class="secno">C.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-1" aria-label="Permalink for Appendix C.1"></a></div>
 <p>Dit hoofdstuk beschrijft Invulling (Sub)OIN en Organisatienaam, en –onderdeel/voorziening/samenwerking in velden van het PKIO certificaat, zie <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://www.logius.nl/domeinen/toegang/pkioverheid/aansluiten-als-tsp/programma-van-eisen">Programma van Eisen (PKIoverheid)</a></cite> deel 3g.</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Field/Attribute</th>
@@ -1816,7 +1814,7 @@ Voorbeeldresultaat van de COR API:
 <p>*<span style="font-size:smaller">C=Criteria: V=Compulsory, O=Optional</span></p>
 <section id="voorbeelden-van-invulling"><div class="header-wrapper"><h4 id="c-1-1-voorbeelden-van-invulling"><bdi class="secno">C.1.1 </bdi>Voorbeelden van invulling</h4><a class="self-link" href="#voorbeelden-van-invulling" aria-label="Permalink for Appendix C.1.1"></a></div>
 <p>In onderstaande voorbeelden wordt uitgegaan van de volgende (werkelijke) combinaties OIN + Organisatienaam</p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Organisatie</th>
@@ -1851,7 +1849,7 @@ Voorbeeldresultaat van de COR API:
   </div>
 
 <p><strong>HoofdOIN</strong></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Subject.OrganizationName</th>
@@ -1866,7 +1864,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p><strong>SubOIN (organisatieonderdeel)</strong></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Subject.OrganizationName</th>
@@ -1881,7 +1879,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p><strong>SubOIN (voorziening van een organisatie)</strong></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Subject.OrganizationName</th>
@@ -1896,7 +1894,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p><strong>SubOIN (samenwerking(niet in <a data-link-type="dfn|abstract-op" href="#dfn-hr" class="internalDFN" id="ref-for-dfn-hr-1">HR</a>) van meerdere organisaties,  met één verantwoordelijke partij)</strong></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Subject.OrganizationName</th>
@@ -1911,7 +1909,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p><strong>SubOIN (Buitenlandse bank, geen <a data-link-type="dfn|abstract-op" href="#dfn-hr" class="internalDFN" id="ref-for-dfn-hr-2">HR</a> registratie)</strong></p>
-<table class="dkkvs">
+<table class="simple">
 <thead>
 <tr>
 <th>Subject.OrganizationName</th>
