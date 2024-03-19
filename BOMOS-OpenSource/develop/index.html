@@ -3,6 +3,15 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 34.1.4">
 <style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
@@ -30,7 +39,7 @@ dfn{cursor:pointer}
   
   
 <script>document.title = respecConfig.title</script>
-<title>BOMOS voor open source</title>
+<title>BOMOSS open source</title>
   
 <title>BOMOSS, BOMOS voor open source</title>
   
@@ -681,7 +690,7 @@ img.license{float:left;padding-right:5px}
   "shortName": "opensource",
   "publishDate": "2023-01-31",
   "publishVersion": "0.0.1",
-  "title": "BOMOS voor open source",
+  "title": "BOMOSS open source",
   "content": {
     "ch01": "informative",
     "ch02": "",
@@ -713,7 +722,7 @@ img.license{float:left;padding-right:5px}
 
 <body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">BOMOS voor open source</h1>
+  </a> <h1 id="title" class="title">BOMOSS open source</h1>
     
     <h2>
       Logius Handreiking<br>
@@ -766,7 +775,7 @@ img.license{float:left;padding-right:5px}
 
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Samenvattend...</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding">Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#open-standaarden-en-open-source">Open standaarden en open source</a></li><li class="tocline"><a class="tocxref" href="#europees-perspectief">Europees perspectief</a></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">1. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">1.1 </bdi>Governance</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">1.2 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#financien"><bdi class="secno">1.3 </bdi>Financiën</a></li></ol></li><li class="tocline"><a class="tocxref" href="#taktiek"><bdi class="secno">2. </bdi>Taktiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">2.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2.2 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#rechtenbeleid"><bdi class="secno">2.3 </bdi>Rechtenbeleid</a></li><li class="tocline"><a class="tocxref" href="#adoptie-erkenning"><bdi class="secno">2.4 </bdi>Adoptie &amp; erkenning</a></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">2.5 </bdi>Kwaliteitsbeleid en benchmarking</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">3. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#initiatie"><bdi class="secno">3.1 </bdi>Initiatie</a></li><li class="tocline"><a class="tocxref" href="#wensen-eisen"><bdi class="secno">3.2 </bdi>Wensen &amp; eisen</a></li><li class="tocline"><a class="tocxref" href="#ontwikkeling"><bdi class="secno">3.3 </bdi>Ontwikkeling</a></li><li class="tocline"><a class="tocxref" href="#uitvoering"><bdi class="secno">3.4 </bdi>Uitvoering</a></li><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">3.5 </bdi>Documentatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">4. </bdi>Implementatie ondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opleiding"><bdi class="secno">4.1 </bdi>Opleiding</a></li><li class="tocline"><a class="tocxref" href="#helpdesk"><bdi class="secno">4.2 </bdi>Helpdesk</a></li><li class="tocline"><a class="tocxref" href="#module-ontwikkeling"><bdi class="secno">4.3 </bdi>Module ontwikkeling</a></li><li class="tocline"><a class="tocxref" href="#pilot"><bdi class="secno">4.4 </bdi>Pilot</a></li><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">4.5 </bdi>Validatie &amp; certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">5. </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">5.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">5.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhendeling"><bdi class="secno">5.3 </bdi>Klachtenafhendeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kader-en-omgeving"><bdi class="secno">6. </bdi>Kader en omgeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#licenties-en-licentiekeuze"><bdi class="secno">6.1 </bdi>Licenties en licentiekeuze</a></li><li class="tocline"><a class="tocxref" href="#standard-for-public-code"><bdi class="secno">6.2 </bdi>Standard for public code</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding">Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-bomos-activiteiten">De BOMOS activiteiten</a></li><li class="tocline"><a class="tocxref" href="#open-standaarden-en-open-source">Open standaarden en open source</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#europees-perspectief">Europees perspectief</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#strategie"><bdi class="secno">1. </bdi>Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#governance"><bdi class="secno">1.1 </bdi>Governance</a></li><li class="tocline"><a class="tocxref" href="#visie"><bdi class="secno">1.2 </bdi>Visie</a></li><li class="tocline"><a class="tocxref" href="#financien"><bdi class="secno">1.3 </bdi>Financiën</a></li></ol></li><li class="tocline"><a class="tocxref" href="#taktiek"><bdi class="secno">2. </bdi>Taktiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#community"><bdi class="secno">2.1 </bdi>Community</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2.2 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#rechtenbeleid"><bdi class="secno">2.3 </bdi>Rechtenbeleid</a></li><li class="tocline"><a class="tocxref" href="#adoptie-erkenning"><bdi class="secno">2.4 </bdi>Adoptie &amp; erkenning</a></li><li class="tocline"><a class="tocxref" href="#kwaliteitsbeleid-en-benchmarking"><bdi class="secno">2.5 </bdi>Kwaliteitsbeleid en benchmarking</a></li></ol></li><li class="tocline"><a class="tocxref" href="#operationeel"><bdi class="secno">3. </bdi>Operationeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#initiatie"><bdi class="secno">3.1 </bdi>Initiatie</a></li><li class="tocline"><a class="tocxref" href="#wensen-eisen"><bdi class="secno">3.2 </bdi>Wensen &amp; eisen</a></li><li class="tocline"><a class="tocxref" href="#ontwikkeling"><bdi class="secno">3.3 </bdi>Ontwikkeling</a></li><li class="tocline"><a class="tocxref" href="#uitvoering"><bdi class="secno">3.4 </bdi>Uitvoering</a></li><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">3.5 </bdi>Documentatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implementatie-ondersteuning"><bdi class="secno">4. </bdi>Implementatie ondersteuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opleiding"><bdi class="secno">4.1 </bdi>Opleiding</a></li><li class="tocline"><a class="tocxref" href="#helpdesk"><bdi class="secno">4.2 </bdi>Helpdesk</a></li><li class="tocline"><a class="tocxref" href="#module-ontwikkeling"><bdi class="secno">4.3 </bdi>Module ontwikkeling</a></li><li class="tocline"><a class="tocxref" href="#pilot"><bdi class="secno">4.4 </bdi>Pilot</a></li><li class="tocline"><a class="tocxref" href="#validatie-certificatie"><bdi class="secno">4.5 </bdi>Validatie &amp; certificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie"><bdi class="secno">5. </bdi>Communicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#promotie"><bdi class="secno">5.1 </bdi>Promotie</a></li><li class="tocline"><a class="tocxref" href="#publicatie"><bdi class="secno">5.2 </bdi>Publicatie</a></li><li class="tocline"><a class="tocxref" href="#klachtenafhendeling"><bdi class="secno">5.3 </bdi>Klachtenafhendeling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#kader-en-omgeving"><bdi class="secno">6. </bdi>Kader en omgeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#licenties-en-licentiekeuze"><bdi class="secno">6.1 </bdi>Licenties en licentiekeuze</a></li><li class="tocline"><a class="tocxref" href="#standard-for-public-code"><bdi class="secno">6.2 </bdi>Standard for public code</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section class="introductory"><table class="simple">
 <thead>
 <tr>
@@ -807,7 +816,19 @@ Met het toenemende belang van netwerkdiensten is ook open source steeds
 belangrijker geworden.</p>
 <p>Om de module te onderscheiden van BOMOS voor standaarden noemen we het <em>BOMOSS</em>,
 het Beheer- en Ontwikkelmodel voor Open Source Software.</p>
-<section id="open-standaarden-en-open-source"><div class="header-wrapper"><h3 id="open-standaarden-en-open-source-0">Open standaarden en open source</h3><a class="self-link" href="#open-standaarden-en-open-source" aria-label="Permalink for this Section"></a></div>
+<section id="de-bomos-activiteiten"><div class="header-wrapper"><h3 id="de-bomos-activiteiten-0">De BOMOS activiteiten</h3><a class="self-link" href="#de-bomos-activiteiten" aria-label="Permalink for this Section"></a></div>
+<p>BOMOS kent een aantal activiteiten die delen van het standaardenbeheerproces invullen. 
+Deze activiteiten worden ook in BOMOSS aangehouden hoewel ze net allemaal even relevant
+zijn voor het beheerproces van open source code.</p>
+<p>
+      </p><figure id="fig-bomos-activiteitendiagram">
+        <img src="images/BOMOS-15_Bomos-activiteiten-blanco.png" alt="BOMOS Activiteitendiagram">
+        <figcaption><a class="self-link" href="#fig-bomos-activiteitendiagram">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">BOMOS Activiteitendiagram</span></figcaption>
+      </figure>
+    <p></p>
+<p>Activiteiten als <em>community</em>, <em>financiën</em> en <em>rechtenbeleid</em> zijn in het byzonder relevant 
+voor open source code. Deze activiteiten krijgen dan ook extra aandacht in BOMOSS.</p>
+</section><section id="open-standaarden-en-open-source"><div class="header-wrapper"><h3 id="open-standaarden-en-open-source-0">Open standaarden en open source</h3><a class="self-link" href="#open-standaarden-en-open-source" aria-label="Permalink for this Section"></a></div>
 <p>Open standaarden hebben hun plek binnen de overheid voor een belangrijk deel te danken aan het actieplan 
 <a href="https://www.digitaleoverheid.nl/document/actieplan-nederland-open-in-verbinding/">Nederland open in verbinding</a> 
 uit 2007. De open verbinding die het actieplan nastreefde moest niet allen met standaarden bereikt worden 
@@ -819,7 +840,7 @@ het beheer van afsprakenstelsels.</p>
 <p>Open source als principe voor de digitale overheid is teruggekeerd op de agenda. Uit studies [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-krechmer2002" title="Reference &quot;[Krechmer2002]&quot; not found." id="respec-offender-reference-krechmer2002-not-found">Krechmer2002</a></cite>] 
 komen overeenkomsten naar voren tussen het beheer van open standaarden en open source code. 
 Uit die studies komen adviezen hoe open source en open standaarden elkaar kunnen versterken.</p>
-</section><section id="europees-perspectief"><div class="header-wrapper"><h3 id="europees-perspectief-0">Europees perspectief</h3><a class="self-link" href="#europees-perspectief" aria-label="Permalink for this Section"></a></div>
+<section id="europees-perspectief"><div class="header-wrapper"><h4 id="europees-perspectief-0">Europees perspectief</h4><a class="self-link" href="#europees-perspectief" aria-label="Permalink for this Section"></a></div>
 <p>De EU heeft een onderzoek laten uitvoeren naar de overeenkomsten en de mogelijkheden tot wederzijdse 
 versterking van open source en standaarden ontwikkeling [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-jrc117836" title="Reference &quot;[JRC117836]&quot; not found." id="respec-offender-reference-jrc117836-not-found">JRC117836</a></cite>]. De scope van de studie is de 
 EU als organisatie, niet van de lidstaten. Er wordt uitgegaan van standaardenbeheerorganisaties op 
@@ -845,7 +866,7 @@ ook vrij beschikbaar te maken.. Een aantal is ook relevant in deze context van d
 <li>Aan beleidsmakers: SDOs and OSS engage in a healthy competition from the process perspective. We recommend the European Commission to create a level playing field between SDOs and OSS communities to foster innovation. This requires creating exchanges between the evolutionary selection process in OSS communities and the formalization within SDOs, but also may add additional obligations, like working with multi-stakeholder platforms or adherence to minimal standards for governance norms.</li>
 </ul>
 <p>Samenvattend: een wisselwerking tussen beheerorganisaties voor standaarden en open source kan voro verbetering zorgen van beiden en zorgen voor een beter aansluiting van de beheerprocessen door aansluiting bij multi-stakeholder platforms. Die aansluiting kan ook gerealiseerd worden door toepassing van BOMOS principes en activiteiten.</p>
-</section></section>
+</section></section></section>
 
   <section id="strategie"><div class="header-wrapper"><h2 id="x1-strategie"><bdi class="secno">1. </bdi>Strategie</h2><a class="self-link" href="#strategie" aria-label="Permalink for Section 1."></a></div>
 <section id="governance"><div class="header-wrapper"><h3 id="x1-1-governance"><bdi class="secno">1.1 </bdi>Governance</h3><a class="self-link" href="#governance" aria-label="Permalink for Section 1.1"></a></div>
@@ -854,6 +875,12 @@ ook vrij beschikbaar te maken.. Een aantal is ook relevant in deze context van d
 </section></section>
   <section id="taktiek"><div class="header-wrapper"><h2 id="x2-taktiek"><bdi class="secno">2. </bdi>Taktiek</h2><a class="self-link" href="#taktiek" aria-label="Permalink for Section 2."></a></div>
 <section id="community"><div class="header-wrapper"><h3 id="x2-1-community"><bdi class="secno">2.1 </bdi>Community</h3><a class="self-link" href="#community" aria-label="Permalink for Section 2.1"></a></div>
+<aside class="example" id="example-osdbk"><div class="marker">
+    <a class="self-link" href="#example-osdbk">Voorbeeld<bdi> 1</bdi></a><span class="example-title">: OSDBK</span>
+  </div>
+Hier komt een voorbeeld vanuit OSDBK.
+</aside>
+
 </section><section id="architectuur"><div class="header-wrapper"><h3 id="x2-2-architectuur"><bdi class="secno">2.2 </bdi>Architectuur</h3><a class="self-link" href="#architectuur" aria-label="Permalink for Section 2.2"></a></div>
 </section><section id="rechtenbeleid"><div class="header-wrapper"><h3 id="x2-3-rechtenbeleid"><bdi class="secno">2.3 </bdi>Rechtenbeleid</h3><a class="self-link" href="#rechtenbeleid" aria-label="Permalink for Section 2.3"></a></div>
 </section><section id="adoptie-erkenning"><div class="header-wrapper"><h3 id="x2-4-adoptie-erkenning"><bdi class="secno">2.4 </bdi>Adoptie &amp; erkenning</h3><a class="self-link" href="#adoptie-erkenning" aria-label="Permalink for Section 2.4"></a></div>
@@ -889,7 +916,11 @@ niet in deze handreiking besproken. </p>
 </section></section>
 
   
-  <section id="tof"></section>
+  <section id="tof"><div class="header-wrapper"><h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 7."></a></div><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-bomos-activiteitendiagram"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">BOMOS Activiteitendiagram</span></a>
+  </li>
+      </ul></section>
 
 
 
