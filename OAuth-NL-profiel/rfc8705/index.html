@@ -534,7 +534,7 @@ img.license{float:left;padding-right:5px}
     of the OpenID Foundation.
       This does not indicate an endorsement by the OpenID Foundation. In as far as the iGov-profile is incorporated
       in this document, the
-    <a href="https://openid.net/intellectual-property/copyright-license/">
+    <a href="https://openid.net/intellectual-property/contribution-license-agreement/">
      OpenID Copyright License
     </a>
     applies.
@@ -734,7 +734,7 @@ This profile is based upon the international government assurance profile for OA
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
-In addition to <code>private_key_jwt</code>, the client authentication method <code>tls_client_auth</code> [rfc8705] may also be used.
+In addition to <code>private_key_jwt</code>, the client authentication method <code>tls_client_auth</code> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">rfc8705</a></cite>] may also be used.
 </aside>
 
 
@@ -760,7 +760,7 @@ In addition to <code>private_key_jwt</code>, the client authentication method <c
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
-One of the client authentication methods <code>private_key_jwt</code> or <code>tls_client_auth</code> [rfc8705] <em class="rfc2119">MUST</em> be used.
+One of the client authentication methods <code>private_key_jwt</code> or <code>tls_client_auth</code> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">rfc8705</a></cite>] <em class="rfc2119">MUST</em> be used.
 </aside>
 
 
@@ -891,7 +891,7 @@ Host: idp-p.example.com</code></pre>
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
-In addition to <code>private_key_jwt</code>, the client authentication method <code>tls_client_auth</code> [rfc8705] may also be used.
+In addition to <code>private_key_jwt</code>, the client authentication method <code>tls_client_auth</code> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">rfc8705</a></cite>] may also be used.
 </aside>
 
 
@@ -1644,7 +1644,7 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 <b>iGov-NL : Additional content</b><br>  
 
 <p>Proof of possession can be implemented using various methods. An example of such an implementation is using TLS with mutual authentication, where the client is using a PKIoverheid certificate. The authorized party (<code>azp</code>) can then be verified with the client certificate to match the authorized party.
-As an alternative, the authorization server can include a <code>cnf</code> parameter in the JWT by the authorization server, see [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7800" title="Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs)">rfc7800</a></cite>]. The key referenced in <code>cnf</code> can be validated using a form of client authentication, e.g. using an <code>private_key_jwt</code> or <code>tls_client_auth</code>[rfc8705].</p>
+As an alternative, the authorization server can include a <code>cnf</code> parameter in the JWT by the authorization server, see [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7800" title="Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs)">rfc7800</a></cite>]. The key referenced in <code>cnf</code> can be validated using a form of client authentication, e.g. using an <code>private_key_jwt</code> or <code>tls_client_auth</code>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">rfc8705</a></cite>].</p>
 </aside>
 </section></section>
   <section id="security-considerations"><div class="header-wrapper"><h2 id="x6-security-considerations"><bdi class="secno">6. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 6."></a></div>
@@ -1723,6 +1723,8 @@ As an alternative, the authorization server can include a <code>cnf</code> param
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
     </dd><dt id="bib-rfc8414">[rfc8414]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8414"><cite>OAuth 2.0 Authorization Server Metadata</cite></a>. M. Jones; N. Sakimura; J. Bradley.  IETF. June 2018. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8414">https://www.rfc-editor.org/rfc/rfc8414</a>
+    </dd><dt id="bib-rfc8705">[rfc8705]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8705"><cite>OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens</cite></a>. B. Campbell; J. Bradley; N. Sakimura; T. Lodderstedt.  IETF. February 2020. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8705">https://www.rfc-editor.org/rfc/rfc8705</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
