@@ -777,8 +777,8 @@ This profile is based upon the international government assurance profile for OA
 <b>iGov-NL : Additional content</b><br>  
 
 <p>Public clients <em class="rfc2119">MUST</em> apply PKCE, as per RFC7636.
-As <code>code_verifier</code> the S256 method <em class="rfc2119">MUST</em> be applied.
-Effectively this means that Browser based and Native Client <em class="rfc2119">MUST</em> include a cryptographic random <code>code_challenge</code> of at least 128 bits of entropy and the <code>code_challenge_method</code> with the value <code>S256</code>.</p>
+As <code>code_challenge</code> the S256 method <em class="rfc2119">MUST</em> be applied.
+Effectively this means that Browser based and Native Client <em class="rfc2119">MUST</em> include a cryptographic random <code>code_verifier</code> of at least 128 bits of entropy and the <code>code_challenge_method</code> with the value <code>S256</code>.</p>
 <p>Request fields:</p>
 <dl>
 <dt>client_id</dt>
