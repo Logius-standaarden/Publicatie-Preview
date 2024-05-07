@@ -182,7 +182,8 @@ img.license{float:left;padding-right:5px}
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
-    "shortName"
+    "shortName",
+    "/"
   ],
   "thisVersion": [
     "nl_organisationPublishURL",
@@ -190,7 +191,8 @@ img.license{float:left;padding-right:5px}
     "/",
     "shortName",
     "/",
-    "publishVersion"
+    "publishVersion",
+    "/"
   ],
   "prevVersion": [
     "nl_organisationPublishURL",
@@ -198,7 +200,8 @@ img.license{float:left;padding-right:5px}
     "/",
     "shortName",
     "/",
-    "previousPublishVersion"
+    "previousPublishVersion",
+    "/"
   ],
   "useLogo": true,
   "useLabel": true,
@@ -460,20 +463,20 @@ img.license{float:left;padding-right:5px}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2022-06-17">April 29, 2024</time>
+      <time class="dt-published" datetime="2022-06-17">May 07, 2024</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
               <a class="u-url status" href="https://logius-standaarden.github.io/OAuth-NL-profiel/">https://logius-standaarden.github.io/OAuth-NL-profiel/</a>
             </dd>
       <dt>Latest published version:</dt><dd>
-              <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth">https://gitdocumentatie.logius.nl/publicatie/api/oauth</a>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">https://gitdocumentatie.logius.nl/publicatie/api/oauth/</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/OAuth-NL-profiel/">https://logius-standaarden.github.io/OAuth-NL-profiel/</a></dd>
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0">https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/">https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/</a></dd>
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
@@ -776,9 +779,9 @@ This profile is based upon the international government assurance profile for OA
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
 
-<p>Native clients <em class="rfc2119">MUST</em> apply PKCE, as per RFC7636.
-As <code>code_verifier</code> the S256 method <em class="rfc2119">MUST</em> be applied.
-Effectively this means that a Native Client <em class="rfc2119">MUST</em> include a cryptographic random <code>code_challenge</code> of at least 128 bits of entropy and the <code>code_challenge_method</code> with the value <code>S256</code>.</p>
+<p>Public clients <em class="rfc2119">MUST</em> apply PKCE, as per RFC7636.
+As <code>code_challenge</code> the S256 method <em class="rfc2119">MUST</em> be applied.
+Effectively this means that browser based and native clients <em class="rfc2119">MUST</em> include a cryptographic random <code>code_verifier</code> of at least 128 bits of entropy and the <code>code_challenge_method</code> with the value <code>S256</code>.</p>
 <p>Request fields:</p>
 <dl>
 <dt>client_id</dt>
@@ -1532,9 +1535,14 @@ The following is an example response:
 <p>Scopes define individual pieces of authority that can be requested by clients, granted by resource owners, and enforced by protected resources. Specific scope values will be highly dependent on the specific types of resources being protected in a given interface. OpenID Connect, for example, defines scope values to enable access to different attributes of user profiles.</p>
 <p>Authorization servers <em class="rfc2119">SHOULD</em> define and document default scope values that will be used if an authorization request does not specify a requested set of scopes.</p>
 <p>To facilitate general use across a wide variety of protected resources, authorization servers <em class="rfc2119">SHOULD</em> allow for the use of arbitrary scope values at runtime, such as allowing clients or protected resources to use arbitrary scope strings upon registration. Authorization servers <em class="rfc2119">MAY</em> restrict certain scopes from use by dynamically registered systems or public clients.</p>
-
+ 
 <section id="claims-for-authorization-outside-of-delegation-scenarios"><div class="header-wrapper"><h4 id="x3-5-1-claims-for-authorization-outside-of-delegation-scenarios"><bdi class="secno">3.5.1 </bdi>Claims for Authorization Outside of Delegation Scenarios</h4><a class="self-link" href="#claims-for-authorization-outside-of-delegation-scenarios" aria-label="Permalink for Section 3.5.1"></a></div>
+
+<aside class=" addition">
+<b>iGov-NL : Additional content</b><br>
+
 <p>If there is a need to include resource owner memberships in roles and groups that are relevant to the resource being accessed, entitlements assigned to the resource owner for the targeted resource that the authorization server knows about. The authorization server <em class="rfc2119">SHOULD</em> include such attributes as claims in a JWT access token as defined in section 2.2.3.1 of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9068" title="JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens">rfc9068</a></cite>].</p>
+</aside>
 </section></section></section>
   <section id="protected-resource-profile"><div class="header-wrapper"><h2 id="x4-protected-resource-profile"><bdi class="secno">4. </bdi>Protected Resource Profile</h2><a class="self-link" href="#protected-resource-profile" aria-label="Permalink for Section 4."></a></div>
 
