@@ -420,16 +420,16 @@ In order to meet the complete security objectives, every implementer <em class="
 </section><section id="transport-security-0"><div class="header-wrapper"><h3 id="x2-2-transport-security"><bdi class="secno">2.2 </bdi>Transport security</h3><a class="self-link" href="#transport-security-0" aria-label="Permalink for Section 2.2"></a></div>
 <p>One should secure all APIs assuming they can be accessed from any location on the internet. Information <em class="rfc2119">MUST</em> be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">required by law</a>. One <em class="rfc2119">SHOULD</em> follow <a href="https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1">the latest NCSC guidelines for TLS</a></p>
 <p><span id="api-11"></span></p>
-<div class="rule" id="/transport/TLS">
-  <p class="rulelab"><strong>/transport/TLS</strong>: Secure connections using TLS</p>
+<div class="rule" id="/transport/tls">
+  <p class="rulelab"><strong>/transport/tls</strong>: Secure connections using TLS</p>
   <p>Secure connections using TLS following the latest NCSC guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-ncsc.tls" title="ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)">NCSC.TLS</a></cite>].</p>
   <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
 <p>Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and <em class="rfc2119">MUST NOT</em> contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.</p>
 <p><span id="api-58"></span></p>
-<div class="rule" id="/transport/no-sensitive-URIs">
-  <p class="rulelab"><strong>/transport/no-sensitive-URIs</strong>: No sensitive information in URIs</p>
+<div class="rule" id="/transport/no-sensitive-uris">
+  <p class="rulelab"><strong>/transport/no-sensitive-uris</strong>: No sensitive information in URIs</p>
   <p>Do not put any sensitive information in URIs</p>
   <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server.</p>
 </div>
@@ -521,8 +521,8 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.</p>
 </section><section id="cors-policy"><div class="header-wrapper"><h4 id="x2-3-2-cors-policy"><bdi class="secno">2.3.2 </bdi>CORS-policy</h4><a class="self-link" href="#cors-policy" aria-label="Permalink for Section 2.3.2"></a></div>
 <p><span id="api-50"></span></p>
-<div class="rule" id="/transport/CORS">
-  <p class="rulelab"><strong>/transport/CORS</strong>: Use CORS to control access</p>
+<div class="rule" id="/transport/cors">
+  <p class="rulelab"><strong>/transport/cors</strong>: Use CORS to control access</p>
   <p>Use CORS to restrict access from other domains (if applicable).</p>
 </div>
 
