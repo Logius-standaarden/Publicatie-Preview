@@ -109,6 +109,8 @@ dd{margin-left:0}
 <style id="respec-nlgov">
 img.license{float:left;padding-right:5px}
 </style>
+<meta name="description" content="Dit document beschrijft de functionele specificaties voor de Digikoppeling Koppelvlakstandaard REST-API.
+Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-API's gegevens willen uitwisselen via Digikoppeling.">
 <style>
 
   .sidelabel {
@@ -752,7 +754,7 @@ img.license{float:left;padding-right:5px}
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API</h1>
     
@@ -806,7 +808,10 @@ img.license{float:left;padding-right:5px}
         </p>
     <hr title="Separator for header">
   </div>
-  
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft de functionele specificaties voor de Digikoppeling Koppelvlakstandaard REST-API.
+Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-API's gegevens willen uitwisselen via Digikoppeling.</p>
+<p>Het Digikoppeling REST-API profiel is gebaseerd op de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite> zoals ontwikkeld door het Kennisplatform API's en in beheer gebracht bij Logius.</p>
+</section>
   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.3 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.4 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.4.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.4.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.5.1 </bdi>Regels</a></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.5.2.1 </bdi>Toelichting aanduidingen</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">A. </bdi>Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-in-de-context-van-http-rest"><bdi class="secno">A.1 </bdi>Signing in de context van HTTP Rest</a></li><li class="tocline"><a class="tocxref" href="#encryptie-in-de-context-van-http-rest"><bdi class="secno">A.2 </bdi>Encryptie in de context van HTTP Rest</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
    
@@ -930,29 +935,98 @@ Binnen dit DK REST-API profielprofiel zijn er alleen voorschriften m.b.t. het ve
 </section></section><section id="api-design-rules"><div class="header-wrapper"><h3 id="x4-5-api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</h3><a class="self-link" href="#api-design-rules" aria-label="Permalink for Section 4.5"></a></div>
 <section id="regels"><div class="header-wrapper"><h4 id="x4-5-1-regels"><bdi class="secno">4.5.1 </bdi>Regels</h4><a class="self-link" href="#regels" aria-label="Permalink for Section 4.5.1"></a></div>
 <p>Het Digikoppeling REST-API profiel conformeert zich volledig aan het normatieve deel van de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite>. Het is verplicht te voldoen aan alle (normatieve) eisen van de REST-API Design Rules:</p>
-<ul>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li>
-<li><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/transport-security">/core/transport-security</a>: Apply the transport security module</li>
-</ul>
+<table class="simple">
+<thead>
+<tr>
+<th>Regelnaam</th>
+<th>Principe</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/naming-resources">/core/naming-resources</a></td>
+<td>Use nouns to name resources</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/naming-collections">/core/naming-collections</a></td>
+<td>Use plural nouns to name collection resources</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/interface-language">/core/interface-language</a></td>
+<td>Define interfaces in Dutch unless there is an official English glossary available</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/hide-implementation">/core/hide-implementation</a></td>
+<td>Hide irrelevant implementation details</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/http-safety">/core/http-safety</a></td>
+<td>Adhere to HTTP safety and idempotency semantics for operations</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/stateless">/core/stateless</a></td>
+<td>Do not maintain session state on the server</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/nested-child">/core/nested-child</a></td>
+<td>Use nested URIs for child resources</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/resource-operations">/core/resource-operations</a></td>
+<td>Model resource operations as a sub-resource or dedicated resource</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/doc-language">/core/doc-language</a></td>
+<td>Publish documentation in Dutch unless there is existing documentation in English</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/deprecation-schedule">/core/deprecation-schedule</a></td>
+<td>Include a deprecation schedule when deprecating features or versions</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/transition-period">/core/transition-period</a></td>
+<td>Schedule a fixed transition period for a new major API version</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/changelog">/core/changelog</a></td>
+<td>Publish a changelog for API changes between versions</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/geospatial">/core/geospatial</a></td>
+<td>Apply the geospatial module for geospatial data</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/no-trailing-slash">/core/no-trailing-slash</a></td>
+<td>Leave off trailing slashes from URIs</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/http-methods">/core/http-methods</a></td>
+<td>Only apply standard HTTP methods</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/doc-openapi">/core/doc-openapi</a></td>
+<td>Use OpenAPI Specification for documentation</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/publish-openapi">/core/publish-openapi</a></td>
+<td>Publish OAS document at a standard location in JSON-format</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/uri-version">/core/uri-version</a></td>
+<td>Include the major version number in the URI</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/semver">/core/semver</a></td>
+<td>Adhere to the Semantic Versioning model when releasing API changes</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/version-header">/core/version-header</a></td>
+<td>Return the full version number in a response header</td>
+</tr>
+<tr>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#/core/transport-security">/core/transport-security</a></td>
+<td>Apply the transport security module</td>
+</tr>
+</tbody></table>
 </section><section id="afspraken-api-design-rules-modules"><div class="header-wrapper"><h4 id="x4-5-2-afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</h4><a class="self-link" href="#afspraken-api-design-rules-modules" aria-label="Permalink for Section 4.5.2"></a></div>
 <p>Extensies op de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite> zijn geschreven in modules. Hieronder wordt aangegeven welke regels uit de API Design Rules modules in dit profiel verplicht zijn of worden aanbevolen.</p>
 <table class="simple">
