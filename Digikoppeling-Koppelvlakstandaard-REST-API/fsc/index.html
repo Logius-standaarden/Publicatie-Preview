@@ -611,7 +611,8 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
     "PKIO-PvE": {
       "href": "https://por.pkioverheid.nl/",
       "publisher": "Logius",
-      "title": "Certificate Policy/Programme of Requirements PKIoverheid"
+      "title": "Certificate Policy/Programme of Requirements PKIoverheid",
+      "id": "pkio-pve"
     },
     "PKI-CA": {
       "href": "https://www.logius.nl/domeinen/toegang/aansluiten-als-trust-service-provider",
@@ -926,7 +927,7 @@ Daarnaast is de standaard Federated Service Connectivity (FSC) ontwikkeld die vo
 <p>Het Digikoppeling REST API profiel maakt gebruikt van de FSC standaard.</p>
 </section><section id="koppelvlak-generiek"><div class="header-wrapper"><h4 id="x4-2-2-koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</h4><a class="self-link" href="#koppelvlak-generiek" aria-label="Permalink for Section 4.2.2"></a></div>
 <section id="vertrouwelijkheid"><div class="header-wrapper"><h5 id="x4-2-2-1-vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</h5><a class="self-link" href="#vertrouwelijkheid" aria-label="Permalink for Section 4.2.2.1"></a></div>
-<p>De Digikoppeling Beveiligingsstandaarden en voorschriften gaan specifiek in op het verplichte gebruik van PKIO certificaten [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-pki-policy" title="Reference &quot;[PKI-Policy]&quot; not found." id="respec-offender-reference-pki-policy-not-found">PKI-Policy</a></cite>] .</p>
+<p>De Digikoppeling Beveiligingsstandaarden en voorschriften gaan specifiek in op het verplichte gebruik van PKIO certificaten [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>].</p>
 <ul>
 <li>Zie <cite><a data-matched-text="[[[DK-beveiliging]]]" href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">Digikoppeling Beveiligingsstandaarden en voorschriften</a></cite></li>
 </ul>
@@ -968,12 +969,12 @@ Binnen dit Digikoppeling REST API profiel zijn er alleen voorschriften m.b.t. he
 </section><section id="tls"><div class="header-wrapper"><h5 id="x4-2-3-3-tls"><bdi class="secno">4.2.3.3 </bdi>TLS</h5><a class="self-link" href="#tls" aria-label="Permalink for Section 4.2.3.3"></a></div>
 <p>De Digikoppeling Beveilingsstandaarden en voorschriften veplichten het gebruik van 2-zijdig TLS met minimaal TLS versie 1.2, FSC verscherpt deze eis door de ciphersuites die geen perfect forward secrecy ondersteunen niet toe te laten.</p>
 <ul>
-<li>Zie [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling-beveiligingsdocument" title="Reference &quot;[Digikoppeling-Beveiligingsdocument]&quot; not found." id="respec-offender-reference-digikoppeling-beveiligingsdocument-not-found">Digikoppeling-Beveiligingsdocument</a></cite>]</li>
+<li>Zie <cite><a data-matched-text="[[[DK-beveiliging]]]" href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">Digikoppeling Beveiligingsstandaarden en voorschriften</a></cite></li>
 </ul>
 </section><section id="netwerk-poorten"><div class="header-wrapper"><h5 id="x4-2-3-4-netwerk-poorten"><bdi class="secno">4.2.3.4 </bdi>Netwerk-poorten</h5><a class="self-link" href="#netwerk-poorten" aria-label="Permalink for Section 4.2.3.4"></a></div>
 <p>De Digikoppeling Beveiligingsstandaarden en voorschriften verplichten het gebruik van de netwerkpoort 443 voor data verkeer. FSC voegt daar het gebruik van port 8443 voor managementverkeer aan toe. E.g. toegang aanvragen voor een API. </p>
 <ul>
-<li>Zie [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-digikoppeling-beveiligingsdocument" title="Reference &quot;[Digikoppeling-Beveiligingsdocument]&quot; not found." id="respec-offender-reference-digikoppeling-beveiligingsdocument-not-found-0">Digikoppeling-Beveiligingsdocument</a></cite>]</li>
+<li>Zie <cite><a data-matched-text="[[[DK-beveiliging]]]" href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">Digikoppeling Beveiligingsstandaarden en voorschriften</a></cite></li>
 </ul>
 </section><section id="contracten"><div class="header-wrapper"><h5 id="x4-2-3-5-contracten"><bdi class="secno">4.2.3.5 </bdi>Contracten</h5><a class="self-link" href="#contracten" aria-label="Permalink for Section 4.2.3.5"></a></div>
 <p>FSC gebruikt Contracten om afspraken tussen Peers vast te leggen. Een Contract kan één of meerdere Grants bevatten. Een Grant beschrijft welke interactie er mogelijk is tussen de Peers.
@@ -1261,14 +1262,12 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/"><cite>API Design Rules (Nederlandse API Strategie IIa)</cite></a>. Jasper Roes; Joost Farla.  Logius. Juli 2020. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a>
     </dd><dt id="bib-adr-ext">[ADR-ext]</dt><dd>
       <a href="https://docs.geostandaarden.nl/api/API-Strategie-ext"><cite>API Designrules Extensions (Nederlandse API Strategie IIb)</cite></a>. Jasper Roes; Linda van den Brink.  Geonovum/Kennisplatform APi's. Januari 2020. URL: <a href="https://docs.geostandaarden.nl/api/API-Strategie-ext">https://docs.geostandaarden.nl/api/API-Strategie-ext</a>
-    </dd><dt id="bib-digikoppeling-beveiligingsdocument">[Digikoppeling-Beveiligingsdocument]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
     </dd><dt id="bib-dk-beveiliging">[DK-beveiliging]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/</a>
     </dd><dt id="bib-dk-idauth">[DK-IDAuth]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/"><cite>Digikoppeling Identificatie en Authenticatie</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">https://gitdocumentatie.logius.nl/publicatie/dk/idauth/</a>
-    </dd><dt id="bib-pki-policy">[PKI-Policy]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
+    </dd><dt id="bib-pkio-pve">[PKIO-PvE]</dt><dd>
+      <a href="https://por.pkioverheid.nl/"><cite>Certificate Policy/Programme of Requirements PKIoverheid</cite></a>.  Logius. URL: <a href="https://por.pkioverheid.nl/">https://por.pkioverheid.nl/</a>
     </dd><dt id="bib-rfc7516">[rfc7516]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7516"><cite>JSON Web Encryption (JWE)</cite></a>. M. Jones; J. Hildebrand.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7516">https://www.rfc-editor.org/rfc/rfc7516</a>
     </dd></dl>
