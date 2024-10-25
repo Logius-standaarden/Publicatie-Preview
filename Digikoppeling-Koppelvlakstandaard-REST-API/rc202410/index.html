@@ -746,28 +746,26 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
   ],
   "github": "https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API",
   "nl_emailcomments": "digikoppeling@logius.nl",
-  "previousPublishVersion": "1.1.0",
+  "previousPublishVersion": "1.1.1",
   "pubDomain": "dk",
-  "publishDate": "2022-11-14",
-  "publishVersion": "1.1.1",
+  "publishDate": "2024-09-19",
+  "publishVersion": "",
   "shortName": "restapi",
-  "specStatus": "VV",
+  "specStatus": "CV",
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API</h1>
     
     <h2>
       Logius Standaard<br>
-      Versie ter vaststelling
-      <time class="dt-published" datetime="2022-11-14">14 november 2022</time>
+      Consultatieversie
+      <time class="dt-published" datetime="2024-09-19">19 september 2024</time>
     </h2>
     <dl>
-      <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.1/">https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.1/</a>
-            </dd>
+      
       <dt>Laatst gepubliceerde versie:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/">https://gitdocumentatie.logius.nl/publicatie/dk/restapi/</a>
             </dd>
@@ -775,7 +773,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
       
       
       
-      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.0/">https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.0/</a></dd>
+      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.1/">https://gitdocumentatie.logius.nl/publicatie/dk/restapi/1.1.1/</a></dd>
       
       <dt>Redacteur:</dt>
       <dd class="editor p-author h-card vcard">
@@ -813,7 +811,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
 Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-API's gegevens willen uitwisselen via Digikoppeling.</p>
 <p>Het Digikoppeling REST-API profiel is gebaseerd op de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite> zoals ontwikkeld door het Kennisplatform API's en in beheer gebracht bij Logius.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.3 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.4 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.4.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.4.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.5.1 </bdi>Regels</a></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</a></li><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.5.3 </bdi>Toelichting aanduidingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signing-encryptie-in-http-rest-context"><bdi class="secno">4.6 </bdi>Signing &amp; Encryptie (in HTTP REST Context)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing"><bdi class="secno">4.6.1 </bdi>Signing</a></li><li class="tocline"><a class="tocxref" href="#encryptie"><bdi class="secno">4.6.2 </bdi>Encryptie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.3 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.4 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.4.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.4.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.5.1 </bdi>Regels</a></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</a></li><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.5.3 </bdi>Toelichting aanduidingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signing-encryptie-in-http-rest-context"><bdi class="secno">4.6 </bdi>Signing &amp; Encryptie (in HTTP REST Context)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing"><bdi class="secno">4.6.1 </bdi>Signing</a></li><li class="tocline"><a class="tocxref" href="#encryptie"><bdi class="secno">4.6.2 </bdi>Encryptie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
    
   </section>
@@ -1359,4 +1357,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Standaard - Versie ter vaststelling</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standaard - Consultatieversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
