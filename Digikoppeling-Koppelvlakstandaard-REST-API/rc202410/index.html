@@ -31,6 +31,7 @@ dfn{cursor:pointer}
   
   
   
+  
 <script>
    respecConfig = {...organisationConfig, ...respecConfig};
   </script>
@@ -102,6 +103,11 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
 .hljs-strong{font-weight:700}
 .hljs-link{text-decoration:underline}
 </style>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-771" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/771.js"></script>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-35" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/35.js"></script>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-269" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/269.js"></script>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-955" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/955.js"></script>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-893" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/893.js"></script>
 <style>
 
   .sidelabel {
@@ -1138,7 +1144,7 @@ verzonden.</p>
 <p>Bij HTTP verkeer wordt voor authenticatie, integriteits bescherming (en bescherming van de vertrouwelijkheid) TLS (Transport Level Security) breed toegepast. In Digikoppeling wordt specifiek 2-zijdig TLS toegepast. Echter TLS beschermt alleen via één TLS-verbinding en het pad tussen de client en de server kan bestaan ​​uit meerdere onafhankelijke TLS-verbindingen (bijvoorbeeld als de applicatie wordt gehost achter een TLS-beëindigende gateway of als de client zich achter een TLS Inspection-apparaat bevindt). In dergelijke gevallen kan TLS geen end-to-end berichtintegriteit of authenticiteit tussen de client en de server garanderen.</p>
 <p>HTTP Message signing kan dit geval gebruikt worden om end-to-end bescherming tegen manipulatie te realiseren voor het volledige pad Client naar Server;</p>
 <p>HTTP Payload encryptie kan dit geval gebruikt worden om end-to-end vertrouwelijkheid te realiseren voor het volledige pad Client naar Server;</p>
-<pre><code class="mermaid hljs" aria-busy="false">  graph LR;
+<pre><code class="mermaid hljs" aria-busy="false" data-processed="true">  graph LR;
       Client--&gt;Proxy;
       Proxy--&gt;API_Gateway
       API_Gateway--&gt;Server
