@@ -31,7 +31,6 @@ dfn{cursor:pointer}
   
   
   
-  
 <script>
    respecConfig = {...organisationConfig, ...respecConfig};
   </script>
@@ -103,11 +102,6 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
 .hljs-strong{font-weight:700}
 .hljs-link{text-decoration:underline}
 </style>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-771" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/771.js"></script>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-35" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/35.js"></script>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-269" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/269.js"></script>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-955" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/955.js"></script>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-893" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.1.0/dist/893.js"></script>
 <style>
 
   .sidelabel {
@@ -779,7 +773,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API</h1>
     
@@ -835,7 +829,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
 Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-API's gegevens willen uitwisselen via Digikoppeling.</p>
 <p>Het Digikoppeling REST-API profiel is gebaseerd op de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite> zoals ontwikkeld door het Kennisplatform API's en in beheer gebracht bij Logius.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.3 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.4 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.4.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.4.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.5.1 </bdi>Regels</a></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</a></li><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.5.3 </bdi>Toelichting aanduidingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signing-encryptie-in-http-rest-context"><bdi class="secno">4.6 </bdi>Signing &amp; Encryptie (in HTTP REST Context)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing"><bdi class="secno">4.6.1 </bdi>Signing</a></li><li class="tocline"><a class="tocxref" href="#encryptie"><bdi class="secno">4.6.2 </bdi>Encryptie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#http-message-signing-encryptie-in-het-digikoppeling-rest-api-profiel"><bdi class="secno">A. </bdi>HTTP Message Signing &amp; Encryptie in het Digikoppeling REST API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">A.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#wanneer-is-http-message-signing-encryptie-te-gebruiken"><bdi class="secno">A.2 </bdi>Wanneer is HTTP Message Signing/Encryptie te gebruiken</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-restful-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling Restful API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.3 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.4 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.4.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.4.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.5 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.5.1 </bdi>Regels</a></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-modules"><bdi class="secno">4.5.2 </bdi>Afspraken API Design Rules modules</a></li><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.5.3 </bdi>Toelichting aanduidingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signing-encryptie-in-http-rest-context"><bdi class="secno">4.6 </bdi>Signing &amp; Encryptie (in HTTP REST Context)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing"><bdi class="secno">4.6.1 </bdi>Signing</a></li><li class="tocline"><a class="tocxref" href="#encryptie"><bdi class="secno">4.6.2 </bdi>Encryptie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
    
   </section>
@@ -1137,30 +1131,20 @@ Binnen dit DK REST-API profielprofiel zijn er alleen voorschriften m.b.t. het ve
 <p>Encryptie van HTTP request/response kan gebruikt worden om de vertrouwelijkheid van gegevens te beschermen.</p>
 <p>Indien encryptie van HTTP request/response wordt toegepast is het Verplicht om dit te doen volgens de regels van de ADR Module <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/">ADR-HTTP Payload encryption</a></p>
 </section></section></section>
-  <section class="appendix" id="http-message-signing-encryptie-in-het-digikoppeling-rest-api-profiel"><div class="header-wrapper"><h2 id="a-http-message-signing-encryptie-in-het-digikoppeling-rest-api-profiel"><bdi class="secno">A. </bdi>HTTP Message Signing &amp; Encryptie in het Digikoppeling REST API profiel</h2><a class="self-link" href="#http-message-signing-encryptie-in-het-digikoppeling-rest-api-profiel" aria-label="Permalink for Appendix A."></a></div>
-<section id="inleiding"><div class="header-wrapper"><h3 id="a-1-inleiding"><bdi class="secno">A.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding" aria-label="Permalink for Appendix A.1"></a></div>
-<p>Door een HTTP-Request/Response te voorzien van een digitale handtekening kan identiteit van de afzender worden gecontroleerd en het HTTP verkeer beschermd worden tegen manipulatie van buitenaf, ook kan met de digitale handtekening onweerlegbaarheid worden gerealiseerd in de zin dat de ontvanger niet kan ontkennen het bericht te hebben ontvangen en de verzender niet kan ontkennen het bericht te hebben
-verzonden.</p>
-<p>Bij HTTP verkeer wordt voor authenticatie, integriteits bescherming (en bescherming van de vertrouwelijkheid) TLS (Transport Level Security) breed toegepast. In Digikoppeling wordt specifiek 2-zijdig TLS toegepast. Echter TLS beschermt alleen via één TLS-verbinding en het pad tussen de client en de server kan bestaan ​​uit meerdere onafhankelijke TLS-verbindingen (bijvoorbeeld als de applicatie wordt gehost achter een TLS-beëindigende gateway of als de client zich achter een TLS Inspection-apparaat bevindt). In dergelijke gevallen kan TLS geen end-to-end berichtintegriteit of authenticiteit tussen de client en de server garanderen.</p>
-<p>HTTP Message signing kan dit geval gebruikt worden om end-to-end bescherming tegen manipulatie te realiseren voor het volledige pad Client naar Server;</p>
-<p>HTTP Payload encryptie kan dit geval gebruikt worden om end-to-end vertrouwelijkheid te realiseren voor het volledige pad Client naar Server;</p>
-<pre><code class="mermaid hljs" aria-busy="false" data-processed="true">  graph LR;
-      Client--&gt;Proxy;
-      Proxy--&gt;API_Gateway
-      API_Gateway--&gt;Server
-</code></pre>
-</section><section id="wanneer-is-http-message-signing-encryptie-te-gebruiken"><div class="header-wrapper"><h3 id="a-2-wanneer-is-http-message-signing-encryptie-te-gebruiken"><bdi class="secno">A.2 </bdi>Wanneer is HTTP Message Signing/Encryptie te gebruiken</h3><a class="self-link" href="#wanneer-is-http-message-signing-encryptie-te-gebruiken" aria-label="Permalink for Appendix A.2"></a></div>
-<p>Wanneer Client en Server middels 2-zijdig TLS verbonden zijn over 1 connectie (bijvoorbeeld  direct of als de gateway d.m.v. 'pass-through' verkeer doorgeeft aan de Server) dan is er al sprake van end-to-end bescherming van het verkeer en is voor bescherming HTTP Message Signing niet nodig. (Voor vastlegging van audit logs of om rekening te houden met toekomstige infrastuktuur wijzigingen die end-to-end 2-zijdig TLS onderbreken zou signing ook in dit geval bruikbaar kunnen zijn ).</p>
-<p>Wanneer de 2-zijdig TLS connectie bij de Gateway wordt beindigd en de gateway het verkeer ontsleuteld en doorstuurd naar de server is er geen end-to-end beveiliging via TLS. In dit geval kan met behulp van HTTP Message Signing wel end-to-end bescherming geboden worden.
-De Client kan HTTP header informatie zoals bv de HTTP Operatie (GET/POST/DELETE/etc) en het resource pad samen met de body van het bericht voorzien van een handtekening, De Gateway kan deze ondertekening doorsturen naar de Server en de Server kan dmv de handtekening afzender en integriteit van het bericht controleren en vaststellen.</p>
-<blockquote>
-<p>NB Of HTTP Signing en Encryptie nodig/wenselijk zijn is afhankelijk van de opzet van de infrastruktuur en het gewenste beschermingsniveau. Signing , en ook Encryptie toepassen zorgt voor meer comlexiteit in de uitwisselingen. Ook zijn Signing en Encryptie relatief zware operaties die ook beslag op resources opleveren dus het is belangrijk om dit alleen toe te passen in use cases waar  HTTP Signing en Encryptie toegevoegde waarde hebben</p>
-</blockquote>
-</section></section>
+  <section class="appendix">
+
+
+<meta charset="utf-8">
+<title>Error</title>
+
+
+<pre aria-busy="false"><code class="hljs">Cannot GET /Toelichting_Signing.md</code></pre>
+
+</section>
  
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normatieve-referenties">
-    <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr">[ADR]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/"><cite>API Design Rules (Nederlandse API Strategie IIa)</cite></a>. Jasper Roes; Joost Farla.  Logius. Juli 2020. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a>
     </dd><dt id="bib-dk-beveiliging">[DK-beveiliging]</dt><dd>
@@ -1171,7 +1155,7 @@ De Client kan HTTP header informatie zoals bv de HTTP Operatie (GET/POST/DELETE/
       <a href="https://por.pkioverheid.nl/"><cite>Certificate Policy/Programme of Requirements PKIoverheid</cite></a>.  Logius. URL: <a href="https://por.pkioverheid.nl/">https://por.pkioverheid.nl/</a>
     </dd></dl>
   </section><section id="informatieve-referenties">
-    <div class="header-wrapper"><h3 id="b-2-informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.2"></a></div>
+    <div class="header-wrapper"><h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a></div>
     <dl class="bibliography"><dt id="bib-rfc2119">[rfc2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd></dl>
