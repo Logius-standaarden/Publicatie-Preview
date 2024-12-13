@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 34.1.4">
+<meta name="generator" content="ReSpec 35.1.1">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -9,7 +9,7 @@
 span.warning{padding:.1em .5em .15em}
 .issue.closed span.issue-number{text-decoration:line-through}
 .issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
 .warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
 li.task-list-item{list-style:none}
 input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
@@ -17,13 +17,13 @@ input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
 </style>
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
 .dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
 .dfn-panel>div{display:flex}
 .dfn-panel a.self-link{font-weight:700;margin-right:auto}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
@@ -55,8 +55,6 @@ dfn{cursor:pointer}
 25%{transform:scale(1.25,1.25);opacity:.75}
 100%{transform:scale(1,1)}
 }
-:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
-dfn{font-weight:700}
 a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
 a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
 a.bibref{text-decoration:none}
@@ -70,20 +68,8 @@ a.bibref{text-decoration:none}
 cite .bibref{font-style:normal}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
 #issue-summary>ul{column-count:2}
 #issue-summary li{list-style:none;display:inline-block}
 details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
@@ -280,6 +266,12 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius"
     },
+    "AVG": {
+      "date": "27 april 2016",
+      "href": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679",
+      "publisher": "Verordening (EU) 2016/679 van het Europees Parlement",
+      "title": "Algemene Verordening Gegevensbescherming"
+    },
     "BCP195": {
       "authors": [
         "Y. Sheffer",
@@ -319,6 +311,16 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
       "publisher": "Logius",
       "title": "Digikoppeling Compliance Voorziening"
     },
+    "DK-Portaal": {
+      "href": "https://oinregister.logius.nl/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Portaal"
+    },
+    "DK-WUS-voorbeeld": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Set voorbeeldberichten (zip)"
+    },
     "Deployment Guide 1.1": {
       "authors": [
         "Pete Wenzel",
@@ -332,7 +334,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
     "DK": {
       "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling",
       "publisher": "Logius",
-      "title": "Digikoppeling"
+      "title": "Logius | Digikoppeling"
     },
     "DK-Doc": {
       "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie",
@@ -404,6 +406,18 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
       "href": "https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/",
       "publisher": "Logius",
       "title": "Wat is Digikoppeling?"
+    },
+    "BOMOSFundament": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, het fundament"
+    },
+    "BOMOSVerdieping": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, de verdieping"
     },
     "ebCPP": {
       "authors": [
@@ -748,10 +762,10 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
   "nl_emailcomments": "digikoppeling@logius.nl",
   "previousPublishVersion": "1.1.0",
   "pubDomain": "dk",
-  "publishDate": "2024-06-12",
+  "publishDate": "2024-11-20",
   "publishVersion": "1.1.1",
   "shortName": "restapi",
-  "specStatus": "CV",
+  "specStatus": "VV",
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
@@ -761,8 +775,8 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
     
     <h2>
       Logius Standaard<br>
-      Consultatieversie
-      <time class="dt-published" datetime="2024-06-12">12 juni 2024</time>
+      Versie ter vaststelling
+      <time class="dt-published" datetime="2024-11-20">20 november 2024</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -813,7 +827,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
 Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-API's gegevens willen uitwisselen via Digikoppeling.</p>
 <p>Het Digikoppeling REST-API profiel is gebaseerd op de <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite> zoals ontwikkeld door het Kennisplatform API's en in beheer gebracht bij Logius.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling REST API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">4.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel-0"><bdi class="secno">4.2 </bdi>Digikoppeling REST API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.2.1 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.2.2.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#federated-service-connectivity-standaard-fsc"><bdi class="secno">4.2.3 </bdi>Federated Service Connectivity Standaard (FSC)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid-0"><bdi class="secno">4.2.3.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie-0"><bdi class="secno">4.2.3.2 </bdi>Identificatie &amp; Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#tls"><bdi class="secno">4.2.3.3 </bdi>TLS</a></li><li class="tocline"><a class="tocxref" href="#netwerk-poorten"><bdi class="secno">4.2.3.4 </bdi>Netwerk-poorten</a></li><li class="tocline"><a class="tocxref" href="#contracten"><bdi class="secno">4.2.3.5 </bdi>Contracten</a></li><li class="tocline"><a class="tocxref" href="#retry-mechanisme-voor-versturen-van-contracten-en-hantekeningen"><bdi class="secno">4.2.3.6 </bdi>Retry-mechanisme voor versturen van Contracten en hantekeningen</a></li><li class="tocline"><a class="tocxref" href="#logging"><bdi class="secno">4.2.3.7 </bdi>Logging</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.2.4 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.2.4.1 </bdi>Toelichting aanduidingen</a></li><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.2.4.2 </bdi>Regels</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-extensies"><bdi class="secno">4.3 </bdi>Afspraken API Design Rules extensies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">5. </bdi>BIJLAGE Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-in-de-context-van-http-rest"><bdi class="secno">5.1 </bdi>Signing in de context van HTTP Rest</a></li><li class="tocline"><a class="tocxref" href="#encryptie-in-de-context-van-http-rest"><bdi class="secno">5.2 </bdi>Encryptie in de context van HTTP Rest</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#context-voor-ontwikkeling-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">2. </bdi>Context voor ontwikkeling van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#toelichting-bij-de-scope-van-het-digikoppeling-rest-api-profiel"><bdi class="secno">3. </bdi>Toelichting bij de scope van het Digikoppeling REST API profiel</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel"><bdi class="secno">4. </bdi>Digikoppeling REST API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">4.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">4.1.1 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">4.1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#digikoppeling-rest-api-profiel-0"><bdi class="secno">4.2 </bdi>Digikoppeling REST API profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algemeen"><bdi class="secno">4.2.1 </bdi>Algemeen</a></li><li class="tocline"><a class="tocxref" href="#koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><bdi class="secno">4.2.2.2 </bdi>Identificatie &amp; Authenticatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#federated-service-connectivity-standaard-fsc"><bdi class="secno">4.2.3 </bdi>Federated Service Connectivity Standaard (FSC)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid-0"><bdi class="secno">4.2.3.1 </bdi>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie-0"><bdi class="secno">4.2.3.2 </bdi>Identificatie &amp; Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#tls"><bdi class="secno">4.2.3.3 </bdi>TLS</a></li><li class="tocline"><a class="tocxref" href="#netwerk-poorten"><bdi class="secno">4.2.3.4 </bdi>Netwerk-poorten</a></li><li class="tocline"><a class="tocxref" href="#contracten"><bdi class="secno">4.2.3.5 </bdi>Contracten</a></li><li class="tocline"><a class="tocxref" href="#retry-mechanisme-voor-versturen-van-contracten-en-hantekeningen"><bdi class="secno">4.2.3.6 </bdi>Retry-mechanisme voor versturen van Contracten en hantekeningen</a></li><li class="tocline"><a class="tocxref" href="#logging"><bdi class="secno">4.2.3.7 </bdi>Logging</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-design-rules"><bdi class="secno">4.2.4 </bdi>API Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#toelichting-aanduidingen"><bdi class="secno">4.2.4.1 </bdi>Toelichting aanduidingen</a></li><li class="tocline"><a class="tocxref" href="#regels"><bdi class="secno">4.2.4.2 </bdi>Regels</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afspraken-api-design-rules-extensies"><bdi class="secno">4.3 </bdi>Afspraken API Design Rules extensies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-gebruik-van-signing-encryptie-in-de-context-van-http-rest-api"><bdi class="secno">5. </bdi>BIJLAGE Gebruik van Signing &amp; Encryptie in de context van HTTP / Rest API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-in-de-context-van-http-rest"><bdi class="secno">5.1 </bdi>Signing in de context van HTTP Rest</a></li><li class="tocline"><a class="tocxref" href="#encryptie-in-de-context-van-http-rest"><bdi class="secno">5.2 </bdi>Encryptie in de context van HTTP Rest</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
    
   </section>
@@ -849,7 +863,7 @@ Buiten scope van het profiel zijn:</p>
 </ul>
 <p>Het Digikoppeling REST API profiel is wat betreft functionele toepassing vergelijkbaar met het Digikoppeling WUS profiel.
 De client van de dienstafnemer die gebruik maakt van het Digikoppeling REST API profiel is in deze context een systeem (applicatie) en geen internetbrowser.</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th>Invulling Digikoppeling</th>
@@ -924,7 +938,7 @@ Daarnaast is de standaard Federated Service Connectivity (FSC) ontwikkeld die vo
 <section id="algemeen"><div class="header-wrapper"><h4 id="x4-2-1-algemeen"><bdi class="secno">4.2.1 </bdi>Algemeen</h4><a class="self-link" href="#algemeen" aria-label="Permalink for Section 4.2.1"></a></div>
 <p>Het Digikoppeling REST API profiel is o.a. gebaseerd op de REST-API Design Rules standaard zoals ontwikkeld door het Kennisplatform API's en in beheer gebracht bij Logius Stelsels &amp; Standaarden: [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr" title="API Design Rules (Nederlandse API Strategie IIa)">ADR</a></cite>]</p>
 <p>Het Digikoppeling REST API profiel conformeert zich volledig aan het normatieve deel van de REST-API Design Rules.</p>
-<p>Het Digikoppeling REST API profiel maakt gebruikt van de FSC standaard.</p>
+<p>Het Digikoppeling REST API profiel maakt gebruik van de FSC-standaard.</p>
 </section><section id="koppelvlak-generiek"><div class="header-wrapper"><h4 id="x4-2-2-koppelvlak-generiek"><bdi class="secno">4.2.2 </bdi>Koppelvlak Generiek</h4><a class="self-link" href="#koppelvlak-generiek" aria-label="Permalink for Section 4.2.2"></a></div>
 <section id="vertrouwelijkheid"><div class="header-wrapper"><h5 id="x4-2-2-1-vertrouwelijkheid"><bdi class="secno">4.2.2.1 </bdi>Vertrouwelijkheid</h5><a class="self-link" href="#vertrouwelijkheid" aria-label="Permalink for Section 4.2.2.1"></a></div>
 <p>De Digikoppeling Beveiligingsstandaarden en voorschriften gaan specifiek in op het verplichte gebruik van PKIO certificaten [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>].</p>
@@ -937,9 +951,9 @@ Daarnaast is de standaard Federated Service Connectivity (FSC) ontwikkeld die vo
 <li>Zie <cite><a data-matched-text="[[[DK-IDAuth]]]" href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">Digikoppeling Identificatie en Authenticatie</a></cite></li>
 </ul>
 </section></section><section id="federated-service-connectivity-standaard-fsc"><div class="header-wrapper"><h4 id="x4-2-3-federated-service-connectivity-standaard-fsc"><bdi class="secno">4.2.3 </bdi>Federated Service Connectivity Standaard (FSC)</h4><a class="self-link" href="#federated-service-connectivity-standaard-fsc" aria-label="Permalink for Section 4.2.3"></a></div>
-<p>Gebruik van de FSC standaard binnen het Digikoppeling REST API profiel is aanbevolen.</p>
+<p>Gebruik van de FSC standaard binnen het Digikoppeling REST API profiel is verplicht.</p>
 <p>De FSC standaard bestaat uit een Core component en een extensie genaamd Logging.
-Wanneer FSC wordt gebruikt is het verplicht Core en Logging beide te gebruiken.</p>
+Het is verplicht Core en Logging beide te gebruiken.</p>
 <p>FSC beschrijft het volgende:</p>
 <ol>
 <li>Hoe de identiteit van een organisatie wordt bepaald en vertrouwd.</li>
@@ -950,8 +964,8 @@ Wanneer FSC wordt gebruikt is het verplicht Core en Logging beide te gebruiken.<
 <li>Hoe een intermediar namens een organisatie een API kan consumeren en/of publiceren.</li>
 </ol>
 <p>Het Digikoppeling REST API profiel geeft invulling aan keuzes die gemaakt moeten worden bij het gebruik van FSC. 
-In het Digikoppeling REST API profiel wordt er vanuit gegaan dat de lezer bekent is met de standaard FSC. Er worden namelijk termen gebruikt uit deze standaard.</p>
-<p>De bovengenoemde functionaliteit is vastgelegd in FSC Core en de extensies Logging en Delegation. Core beschrijft het koppelen met API's, Logging hoe logregels wgeggeschreven moeten worden en Delegation hoe een intermediar namens een organisatie een API kan consumeren en/of publiceren.  </p>
+In het Digikoppeling REST API profiel wordt er vanuit gegaan dat de lezer bekend is met de standaard FSC. Er worden namelijk termen gebruikt uit deze standaard.</p>
+<p>De bovengenoemde functionaliteit is vastgelegd in FSC Core en de extensies Logging en Delegation. Core beschrijft het koppelen met API's, Logging hoe logregels weggeschreven moeten worden en Delegation hoe een intermediar namens een organisatie een API kan consumeren en/of publiceren.  </p>
 <ol>
 <li><a href="https://commonground.gitlab.io/standards/fsc/core/draft-fsc-core-00.html">Core</a> </li>
 <li><a href="https://commonground.gitlab.io/standards/fsc/logging/draft-fsc-logging-00.html">Logging</a></li>
@@ -994,7 +1008,7 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
 </section></section><section id="api-design-rules"><div class="header-wrapper"><h4 id="x4-2-4-api-design-rules"><bdi class="secno">4.2.4 </bdi>API Design Rules</h4><a class="self-link" href="#api-design-rules" aria-label="Permalink for Section 4.2.4"></a></div>
 <section id="toelichting-aanduidingen"><div class="header-wrapper"><h5 id="x4-2-4-1-toelichting-aanduidingen"><bdi class="secno">4.2.4.1 </bdi>Toelichting aanduidingen</h5><a class="self-link" href="#toelichting-aanduidingen" aria-label="Permalink for Section 4.2.4.1"></a></div>
 <p> Voorschriften zijn aangeduid met 'Verplicht', 'Aanbevolen' en 'Niet van Toepassing' waarvoor de volgende definities gelden:</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th>Categorie</th>
@@ -1025,7 +1039,7 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
 <p>(Indeling gebaseerd op [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">rfc2119</a></cite>])</p>
 </section><section id="regels"><div class="header-wrapper"><h5 id="x4-2-4-2-regels"><bdi class="secno">4.2.4.2 </bdi>Regels</h5><a class="self-link" href="#regels" aria-label="Permalink for Section 4.2.4.2"></a></div>
 <p>Het Digikoppeling REST API profiel conformeert zich volledig aan het normatieve deel van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr" title="API Design Rules (Nederlandse API Strategie IIa)">ADR</a></cite>].</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th>Categorie</th>
@@ -1043,7 +1057,7 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
 </tbody></table>
 <p>In onderstaande tabel worden de normatieve eisen van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr" title="API Design Rules (Nederlandse API Strategie IIa)">ADR</a></cite>] weergegeven:</p>
 <p>Normatieve eisen van de REST API Design Rules</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th>Categorie</th>
@@ -1170,7 +1184,7 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
 </section></section></section><section id="afspraken-api-design-rules-extensies"><div class="header-wrapper"><h3 id="x4-3-afspraken-api-design-rules-extensies"><bdi class="secno">4.3 </bdi>Afspraken API Design Rules extensies</h3><a class="self-link" href="#afspraken-api-design-rules-extensies" aria-label="Permalink for Section 4.3"></a></div>
 <p>De ADR extensie onderderdelen van dit profiel zijn gebaseerd op: [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-ext" title="API Designrules Extensions (Nederlandse API Strategie IIb)">ADR-ext</a></cite>].</p>
 <p>Hieronder wordt aangegeven welke regels uit de API Design Rules extensies in dit profiel verplicht zijn of worden aanbevolen.</p>
-<table class="simple">
+<table>
 <thead>
 <tr>
 <th>Categorie</th>
@@ -1500,4 +1514,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Standaard - Consultatieversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standaard - Versie ter vaststelling</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
