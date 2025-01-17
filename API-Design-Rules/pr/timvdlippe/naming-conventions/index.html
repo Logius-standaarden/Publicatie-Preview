@@ -811,7 +811,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
@@ -1025,7 +1025,7 @@ In addition to this (normative) document, separate modules are being written to 
 <ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/no-abbreviations-in-resources">/core/no-abbreviations-in-resources</a>: Do not use abbreviations (except standarized) in a resource name</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
 
 </section><section id="list-of-technical-rules"><div class="header-wrapper"><h4 id="x2-1-2-list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</h4><a class="self-link" href="#list-of-technical-rules" aria-label="Permalink for Section 2.1.2"></a></div>
-<ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/only-word-characters">/core/only-word-characters</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport-security">/core/transport-security</a>: Apply the transport security module</li></ul></section></section></section>
+<ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport-security">/core/transport-security</a>: Apply the transport security module</li></ul></section></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x3-the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 3."></a></div>
 <section id="resources"><div class="header-wrapper"><h3 id="x3-1-resources"><bdi class="secno">3.1 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 3.1"></a></div>
 <p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is the key abstraction of information, where every piece of information is named by assigning a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a> (Uniform Resource Identifier). Resources describe <em>things</em>, which can vary between physical objects (e.g. a building or a person) and more abstract concepts (e.g. a permit or an event).</p>
@@ -1124,9 +1124,7 @@ In addition to this (normative) document, separate modules are being written to 
          </div>
       </dd>
       <dt>Implications</dt>
-      <dd>
-         Adherence to this rule needs to be manually verified.
-      Adherence to this rule needs to be manually verified.</dd>
+      <dd>Adherence to this rule needs to be manually verified.</dd>
    </dl>
 </div>
 
@@ -1177,8 +1175,8 @@ In addition to this (normative) document, separate modules are being written to 
    </dl>
 </div>
 
-<div class="rule" id="/core/only-word-characters" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-   <p class="rulelab"><a href="#/core/only-word-characters">/core/only-word-characters</a>: Use kebab-case in path segments</p>
+<div class="rule" id="/core/path-segments-kebab-case" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+   <p class="rulelab"><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</p>
    <dl>
       <dt>Statement</dt>
       <dd>
