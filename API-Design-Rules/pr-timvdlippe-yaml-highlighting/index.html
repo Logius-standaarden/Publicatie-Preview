@@ -811,7 +811,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
@@ -1558,7 +1558,7 @@ In addition to this (normative) document, separate modules are being written to 
          <p>An example of a base path for an API with current version 1.0.2:</p>
          <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/</span></code></pre>
          <pre aria-busy="false"><code class="hljs css">version: <span class="hljs-string">'1.0.2'</span></code></pre>
-         <pre><code class="language-yaml hljs" aria-busy="false">servers:
+         <pre><code class="yaml hljs" aria-busy="false">servers:
    - description: test environment  
    url: https://api.test.example.org/v1/  
    - description: production environment  
