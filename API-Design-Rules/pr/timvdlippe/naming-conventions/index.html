@@ -811,14 +811,14 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">January 17, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">January 20, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1108,12 +1108,12 @@ In addition to this (normative) document, separate modules are being written to 
             <p>URI avoiding abbreviations (correct):</p>
             <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen/19/coordinates</span></code></pre>
          </div>
-         <p>The exception to this rule are abbreviations solely related to the API itself or the organisation. In the example below, the Kadaster API includes the abbrevation <code>BAG</code> which is a standardized definition for "Basisregistratie Adressen en Gebouwen" used in all Kadaster contexts.
+         <p>The exception to this rule are abbreviations solely related to the API itself or the organisation. When you exempt an abbreviation from this rule, there <em class="rfc2119">MUST</em> be a glossary entry in the API documentation. The glossary entry <em class="rfc2119">SHOULD</em> link to an external definition of the abbreviation. In the example below, the Kadaster API includes the abbrevation <code>BAG</code> which is a standardized definition for "Basisregistratie Adressen en Gebouwen" used in all Kadaster contexts.
          </p><div class="example">
             <p>URI including standardized abbreviations (correct):</p>
             <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.bag.kadaster.nl/contractloos/v2/bag</span></code></pre>
          </div>
-         <p>This rule does not apply to variables used in API documentation. Authors are advised to avoid abbreviations in documentation (examples) to improve understanding to readers unfamiliar with the context. The abbreviation <code>Id</code> <em class="rfc2119">MAY</em> be used instead of <code>Identificatie</code> or <code>IdentificatieNummer</code>
+         <p>This rule does not apply to variables used in API documentation. Authors <em class="rfc2119">MAY</em> avoid abbreviations in documentation (examples) to improve understanding to readers unfamiliar with the context. The abbreviation <code>Id</code> <em class="rfc2119">MAY</em> be used instead of <code>Identificatie</code> or <code>IdentificatieNummer</code>
          </p><div class="example">
             <p>Documentation including a URI with abbreviations in variable (discouraged):</p>
             <pre aria-busy="false"><code class="hljs css">https://api.example.org/v1/gebouwen/{gbId}</code></pre>
