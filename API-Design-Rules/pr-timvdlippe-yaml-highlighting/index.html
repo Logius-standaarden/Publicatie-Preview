@@ -818,7 +818,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">January 20, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">January 21, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1482,7 +1482,7 @@ In addition to this (normative) document, separate modules are being written to 
          <p>The standard location for the OAS document is a URI called <code>openapi.json</code> or <code>openapi.yaml</code> within the base path of the API. This can be convenient, because OAS document updates can easily  become part of the CI/CD process.</p>
          <p>At least the JSON format <em class="rfc2119">MUST</em> be supported. When having multiple (major) versions of an API, every API <em class="rfc2119">SHOULD</em> provide its own OAS document(s).</p>
          <div class="example">
-            <p>An API having base path <code>https://api.example.org/v1/</code> <em class="rfc2119">MUST</em> publish the OAS document at:</p>
+            <p>An API having base path <code>https://api.example.org/v1</code> <em class="rfc2119">MUST</em> publish the OAS document at:</p>
             <pre class="nohighlight">https://api.example.org/v1/openapi.json</pre>
             <p>Optionally, the same OAS document <em class="rfc2119">MAY</em> be provided in YAML format:</p>
             <pre class="nohighlight">https://api.example.org/v1/openapi.yaml</pre>
@@ -1553,13 +1553,13 @@ In addition to this (normative) document, separate modules are being written to 
          The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
       <div class="example">
          <p>An example of a base path for an API with current version 1.0.2:</p>
-         <pre class="nohighlight">https://api.example.org/v1/</pre>
+         <pre class="nohighlight">https://api.example.org/v1</pre>
          <pre class="nohighlight">version: '1.0.2'</pre>
          <pre><code class="yaml hljs" aria-busy="false">servers:
    - description: test environment  
-   url: https://api.test.example.org/v1/  
+   url: https://api.test.example.org/v1/ 
    - description: production environment  
-   url: https://api.example.org/v1/</code></pre>
+   url: https://api.example.org/v1</code></pre>
       </div>
       </dd>
       <dt>Implications</dt>
