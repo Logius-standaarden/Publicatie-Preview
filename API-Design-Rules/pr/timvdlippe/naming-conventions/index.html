@@ -1187,7 +1187,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p>Some web servers and frameworks do not handle case sensitivity or special characters of URI's well. The use of kebab-case path segments ensures compatibility with a broad range of systems. It is a more common implementation choice for path segments than camelCase or snake_case.
+         <p>Some web servers and frameworks do not handle case sensitivity or special characters of URI's well. The use of kebab-case path segments ensures compatibility with a broad range of systems. It is a more common implementation choice for path segments than camelCase or snake_case. Information (such as names of objects) require special characters, they can be part of the request body instead of encoded in the URI.
          </p><div class="example">
             <p>URI path segment using kebab-case (correct):</p>
             <pre class="nohighlight">https://api.example.org/v1/organisatie-codes</pre>
@@ -1227,7 +1227,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>Statement</dt>
       <dd>
          <div>
-            <p>Query keys <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-5">URI</a> <em class="rfc2119">MUST</em> only contain letters, digits in camelCase. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
+            <p>Query keys in a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-5">URI</a> <em class="rfc2119">MUST</em> only contain letters, digits in camelCase. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
          </p></div>
       </dd>
       <dt>Rationale</dt>
