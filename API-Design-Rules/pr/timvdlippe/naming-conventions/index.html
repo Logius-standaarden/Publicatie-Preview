@@ -818,7 +818,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">January 20, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">January 21, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1104,23 +1104,23 @@ In addition to this (normative) document, separate modules are being written to 
          <p>Abbreviations can have multiple definitions depending on the context. Improve understanding by not using these abbreviations.
          </p><div class="example">
             <p>URI including abbreviations (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen/19/coords</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/19/coords</pre>
             <p>URI avoiding abbreviations (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen/19/coordinates</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/19/coordinates</pre>
          </div>
          <p>The exception to this rule are abbreviations solely related to the API itself or the organisation. When you exempt an abbreviation from this rule, there <em class="rfc2119">MUST</em> be a glossary entry in the API documentation. The glossary entry <em class="rfc2119">SHOULD</em> link to an external definition of the abbreviation. In the example below, the Kadaster API includes the abbrevation <code>BAG</code> which is a standardized definition for "Basisregistratie Adressen en Gebouwen" used in all Kadaster contexts.
          </p><div class="example">
             <p>URI including standardized abbreviations (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.bag.kadaster.nl/contractloos/v2/bag</span></code></pre>
+            <pre class="nohighlight">https://api.bag.kadaster.nl/contractloos/v2/bag</pre>
          </div>
          <p>This rule does not apply to variables used in API documentation. Authors <em class="rfc2119">MAY</em> avoid abbreviations in documentation (examples) to improve understanding to readers unfamiliar with the context. The abbreviation <code>Id</code> <em class="rfc2119">MAY</em> be used instead of <code>Identificatie</code> or <code>IdentificatieNummer</code>
          </p><div class="example">
             <p>Documentation including a URI with abbreviations in variable (discouraged):</p>
-            <pre aria-busy="false"><code class="hljs css">https://api.example.org/v1/gebouwen/{gbId}</code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/{gbId}</pre>
             <p>Documentation including a URI without abbreviations in variable (advised):</p>
-            <pre aria-busy="false"><code class="hljs css">https://api.example.org/v1/gebouwen/{gebouwId}</code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/{gebouwId}</pre>
             <p>Documentation including a URI with standardized abbreviations in variable (advised):</p>
-            <pre aria-busy="false"><code class="hljs css">https://api.bag.kadaster.nl/contractloos/v2/bag/{bagId}</code></pre>
+            <pre class="nohighlight">https://api.bag.kadaster.nl/contractloos/v2/bag/{bagId}</pre>
          </div>
       </dd>
       <dt>Implications</dt>
@@ -1190,21 +1190,21 @@ In addition to this (normative) document, separate modules are being written to 
          <p>Some web servers and frameworks do not handle case sensitivity or special characters of URI's well. The use of kebab-case path segments ensures compatibility with a broad range of systems. It is a more common implementation choice for path segments than camelCase or snake_case.
          </p><div class="example">
             <p>URI path segment using kebab-case (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/organisatie-codes</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/organisatie-codes</pre>
             <p>URI path segment not using hyphens to delineate words (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/organisatie_codes</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/organisatie_codes</pre>
             <p>URI path segment ending with a hyphen (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/organisatie-</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/organisatie-</pre>
             <p>URI path segment starting with a hyphen (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/-organisatie</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/-organisatie</pre>
             <p>URI path segment using normalized diacritics (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/scenes</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/scenes</pre>
             <p>URI path segment using diacritics (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/scènes</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/scènes</pre>
             <p>URI path segment omitting special characters (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/schemas</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/schemas</pre>
             <p>URI path segment using special characters (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/schema's</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/schema's</pre>
          </div>
       </dd>
       <dt>Implications</dt>
@@ -1235,9 +1235,9 @@ In addition to this (normative) document, separate modules are being written to 
          <p>Query keys are often converted to JSON object keys, where camelCase is the naming convention to avoid compatibility issues with JavaScript when deserializing objects.
          </p><div class="example">
             <p>URI query key using camelCase (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen?typeGebouw=woning</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen?typeGebouw=woning</pre>
             <p>URI query key not using camelCase (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen?type-gebouw=woning</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen?type-gebouw=woning</pre>
          </div>
       </dd>
       <dt>Implications</dt>
