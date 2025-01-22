@@ -39,7 +39,7 @@ dfn{cursor:pointer}
   
   
   
-<title>NLGov REST API Design Rules 2.0.0</title>
+<title>NLGov REST API Design Rules</title>
   
   
 <link href="./media/style.css" rel="stylesheet" type="text/css">
@@ -101,7 +101,9 @@ dd{margin-left:0}
 <style id="respec-nlgov">
 img.license{float:left;padding-right:5px}
 </style>
-<meta name="description" content="This document contains a normative standard for designing APIs in the Dutch Public Sector.The Governance of this standard is described in a separate repository and published by Logius.This document is part of the Nederlandse API Strategie, which consists of a set of documents.">
+<meta name="description" content="This document contains a normative standard for designing APIs in the Dutch Public Sector.
+The Governance of this standard is described by the API-Standaarden beheermodel in a separate repository and published by Logius.
+This document is part of the Nederlandse API Strategie, which consists of a set of documents.">
 <style>
 .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
 @media (prefers-color-scheme:dark){
@@ -132,7 +134,7 @@ img.license{float:left;padding-right:5px}
     color: white;
     white-space: nowrap;
     z-index: 1;
-    background-color: #154273;
+    background-color: #39870c;
   }
 </style>
 <script id="initialUserConfig" type="application/json">{
@@ -476,6 +478,7 @@ img.license{float:left;padding-right:5px}
       "title": "Expertadvies CloudEvents 1.0"
     },
     "folmer2011": {
+      "href": "https://research.utwente.nl/en/publications/management-and-development-model-for-open-standards-bomos-version",
       "title": "Management and Development Model for Open Standards (BOMOS) version 2",
       "keywords": "IR-76837",
       "authors": [
@@ -487,7 +490,7 @@ img.license{float:left;padding-right:5px}
       "publisher": "Programmabureau NOiV"
     },
     "folmer2012": {
-      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "href": "https://research.utwente.nl/en/publications/quality-of-semantic-standards",
       "title": "Quality of Semantic Standards",
       "authors": [
         "Erwin Folmer"
@@ -797,29 +800,29 @@ img.license{float:left;padding-right:5px}
   ],
   "github": "https://github.com/Logius-standaarden/API-Design-Rules",
   "pubDomain": "api",
-  "publishDate": "2024-03-07",
-  "publishVersion": "2.0.0",
-  "previousPublishDate": "2020-07-09",
-  "previousPublishVersion": "1.0",
+  "publishDate": "2025-01-07",
+  "publishVersion": "2.0.1",
+  "previousPublishDate": "2024-03-07",
+  "previousPublishVersion": "2.0.0",
   "shortName": "adr",
-  "specStatus": "def",
+  "specStatus": "WV",
   "specType": "ST",
   "pluralize": true
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">NLGov REST API Design Rules 2.0.0</h1>
+  </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
-      Definitive version
-      <time class="dt-published" datetime="2024-03-07">March 07, 2024</time>
+      Draft
+      <time class="dt-published" datetime="2025-01-07">January 22, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
-              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/</a>
+              <a class="u-url status" href="https://logius-standaarden.github.io/API-Design-Rules/">https://logius-standaarden.github.io/API-Design-Rules/</a>
             </dd>
       <dt>Latest published version:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a>
@@ -828,7 +831,7 @@ img.license{float:left;padding-right:5px}
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0/">https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0/</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/</a></dd>
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
@@ -868,17 +871,19 @@ img.license{float:left;padding-right:5px}
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.<br><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr-beheer/">The Governance of this standard</a> is described in a <a href="https://github.com/Logius-standaarden/ADR-Beheermodel">separate repository</a> and published by Logius.<br>This document is part of the <em>Nederlandse API Strategie</em>, which consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">a set of documents</a>.</p>
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.
+<a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/">The Governance of this standard</a> is described by the API-Standaarden beheermodel in a <a href="https://github.com/Logius-standaarden/API-Standaarden-Beheermodel/">separate repository</a> and published by Logius.
+This document is part of the <em>Nederlandse API Strategie</em>, which consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">a set of documents</a>.</p>
 </section>
   <section id="conformance" class="notoc"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, and <em class="rfc2119">SHOULD</em> in this document
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, and <em class="rfc2119">SHOULD</em> in this document
         are to be interpreted as described in
         <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
         when, and only when, they appear in all capitals, as shown here.
       </p>
   </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is the definitive version of this document. Edits resulting from consultations have been applied.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</a></li><li class="tocline"><a class="tocxref" href="#list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">3.8 </bdi>Transport Security</a></li><li class="tocline"><a class="tocxref" href="#geospatial"><bdi class="secno">3.9 </bdi>Geospatial</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</a></li><li class="tocline"><a class="tocxref" href="#list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">3.1 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">3.3 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.4 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">3.5 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">3.6 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">3.7 </bdi>Versioning</a></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">3.8 </bdi>Transport Security</a></li><li class="tocline"><a class="tocxref" href="#geospatial"><bdi class="secno">3.9 </bdi>Geospatial</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">4. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
   <div><table>
 <thead>
 <tr>
@@ -939,7 +944,7 @@ img.license{float:left;padding-right:5px}
 <tr>
 <td><a href="https://www.forumstandaardisatie.nl/open-standaarden/rest-api-design-rules">Forum Standaardisatie</a></td>
 <td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0">2.0.0</a></td>
-<td>intake pending</td>
+<td>intake started</td>
 <td>18-04-2024</td>
 </tr>
 <tr>
@@ -952,7 +957,7 @@ img.license{float:left;padding-right:5px}
 <td><a href="https://www.forumstandaardisatie.nl/open-standaarden/rest-api-design-rules">Forum Standaardisatie</a></td>
 <td>2.0.1</td>
 <td>definitive version / approved by Forum Standaardisatie</td>
-<td>tbd</td>
+<td><a href="https://www.forumstandaardisatie.nl/open-standaarden/in-behandeling">Currently in progress</a></td>
 </tr>
 </tbody></table>
 </div>
@@ -1079,19 +1084,17 @@ In addition to this (normative) document, separate modules are being written to 
          The path segment describing the name of the collection resource <em class="rfc2119">MUST</em> be written in the plural form.
          <div class="example">
             <p>Example collection resources, describing a list of things:</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen</span>
-<span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/vergunningen</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen<br>https://api.example.org/v1/vergunningen</pre>
          </div>
          <p>Singular resources contained within a collection resource are generally named by appending a path segment for the identification of each individual resource.</p>
          <div class="example">
             <p>Example singular resource, contained within a collection resource:</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen/3b9710c4-6614-467a-ab82-36822cf48db1</span>
-<span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/vergunningen/d285e05c-6b01-45c3-92d8-5e19a946b66f</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/3b9710c4-6614-467a-ab82-36822cf48db1<br>https://api.example.org/v1/vergunningen/d285e05c-6b01-45c3-92d8-5e19a946b66f</pre>
          </div>
          <p>Singular resources that stand on their own, i.e. which are not contained within a collection resource, <em class="rfc2119">MUST</em> be named with a path segment that is written in the singular form.</p>
          <div class="example">
             <p>Example singular resource describing the profile of the currently authenticated user:</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebruikersprofiel</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebruikersprofiel</pre>
          </div>
       </dd>
       <dt>Implications</dt>
@@ -1130,23 +1133,18 @@ In addition to this (normative) document, separate modules are being written to 
          Leaving off trailing slashes, and not implementing a redirect, enforces API consumers to use the correct URI. This avoids confusion and ambiguity.
          <div class="example">
             <p>URI without a trailing slash (correct):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen</pre>
             <p>URI with a trailing slash (incorrect):</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/gebouwen/</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/gebouwen/</pre>
          </div>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L203">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>      
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+      </dd>
       <dt>How to test</dt>
       <dd>
-         <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisets to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
-            <li> Step 2: Check if paths are present in the OpenAPI Specification.</li>
-            <li> Step 3: Loop all paths and check if it ends with a forward slash (<code>/</code>).</li>
-            <li> Step 4: Check all paths with a get request and without parameters. They <em class="rfc2119">SHOULD</em> resolve in HTTP 404.</li>
-         </ul>
+         Loop all resource paths in the OpenAPI Description and check that no resources paths end with a forward slash (<code>/</code>).
       </dd>
    </dl>
 </div>
@@ -1230,7 +1228,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L60">here</a>. The specific testscripts are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific testscripts are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
    <div class="example">The following table shows some examples of the use of standard HTTP methods:
       <table>
@@ -1275,27 +1273,9 @@ In addition to this (normative) document, separate modules are being written to 
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
   If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5">RFC 7231 6.5.5</a>.</p></div>
       <dt>How to test</dt>
-      <p>Test case 1:</p>
       <dd>
-         <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
-            <li> Step 2: Send an HTTP GET or HEAD request to any of the endpoints with a definition of a GET operation mentioned in the OAS file. The server <em class="rfc2119">MUST</em> respond with a HTTP status code other than <code>405 Method Not Allowed</code>.</li>
-        </ul>
+         The OpenAPI Description <em class="rfc2119">MUST NOT</em> include non standard HTTP methods for retrieving or manipulating resources.
       </dd>
-      <p>Test case 2:</p>
-      <dd>
-         <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable, and paths are defined.</li>
-            <li> Step 2: Send a request to the API with an optional HTTP method that is supported by the API. The server <em class="rfc2119">MUST</em> respond with an HTTP status code other than <code>405 Method Not Allowed</code>.</li>
-      </ul>
-      </dd>
-     <p>Test case 3:</p>
-      <dd>
-         <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisites to be tested. These include that an OAS file is publicly available, parsable, all $refs are resolvable, and paths are defined.</li>
-            <li> Step 2: Send a request to the API with an optional HTTP method that is not supported by the API. The server <em class="rfc2119">MUST</em> respond with an HTTP status code <code>405 Method Not Allowed</code>. The response <em class="rfc2119">MUST</em> contain an <code>Allow</code> header with a list of supported methods for the target resource.</li>
-      </ul>
-      </dd>   
    </dl>
 </div>
 
@@ -1415,16 +1395,15 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
     <div class="example">
     <p>When modelling resources for a news platform including the ability for users to write comments, it might be a good strategy to model the <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-2">collection resources</a> hierarchically:</p>
-    <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/articles/123/comments</span></code></pre>
+    <pre class="nohighlight">https://api.example.org/v1/articles/123/comments</pre>
     <p>The platform might also offer a photo section, where the same commenting functionality is offered. In the same way as for articles, the corresponding sub-collection resource might be published at:</p>
-    <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/photos/456/comments</span></code></pre>
+    <pre class="nohighlight">https://api.example.org/v1/photos/456/comments</pre>
     <p>These nested sub-collection resources can be used to post a new comment (<code>POST</code> method) and to retrieve a list of comments (<code>GET</code> method) belonging to the parent resource, i.e. the article or photo. An important consideration is that these comments could never have existed without the existence of the parent resource.</p>
     <p>From the consumer's perspective, this approach makes logical sense, because the most obvious use case is to show comments below the parent article or photo (e.g. on the same web page) including the possibility to paginate through the comments. The process of posting a comment is separate from the process of publishing a new article. Another client use case might also be to show a global <em>latest comments</em> section in the sidebar. For this use case, an additional resource could be provided:</p>
-    <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/comments</span></code></pre>
+    <pre class="nohighlight">https://api.example.org/v1/comments</pre>
     <p>If this would have not been a meaningful use case, this resource should not exist at all. Because it doesn't make sense to post a new comment from a global context, this resource would be read-only (only <code>GET</code> method is supported) and may possibly provide a more compact representation than the parent-specific sub-collections.</p>
     <p>The <a data-link-type="dfn|abstract-op" href="#dfn-singular-resource" class="internalDFN" id="ref-for-dfn-singular-resource-2">singular resources</a> for comments, referenced from all 3 collections, could still be modelled on a higher level to avoid deep nesting of URIs (which might increase complexity or problems due to the URI length):</p>
-    <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/comments/123</span>
-<span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/comments/456</span></code></pre>
+    <pre class="nohighlight">https://api.example.org/v1/comments/123<br>https://api.example.org/v1/comments/456</pre>
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
   <dt>Implications</dt>
@@ -1471,7 +1450,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L123">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1515,22 +1494,22 @@ In addition to this (normative) document, separate modules are being written to 
          <p>The standard location for the OAS document is a URI called <code>openapi.json</code> or <code>openapi.yaml</code> within the base path of the API. This can be convenient, because OAS document updates can easily  become part of the CI/CD process.</p>
          <p>At least the JSON format <em class="rfc2119">MUST</em> be supported. When having multiple (major) versions of an API, every API <em class="rfc2119">SHOULD</em> provide its own OAS document(s).</p>
          <div class="example">
-            <p>An API having base path <code>https://api.example.org/v1/</code> <em class="rfc2119">MUST</em> publish the OAS document at:</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/openapi.json</span></code></pre>
+            <p>An API having base path <code>https://api.example.org/v1</code> <em class="rfc2119">MUST</em> publish the OAS document at:</p>
+            <pre class="nohighlight">https://api.example.org/v1/openapi.json</pre>
             <p>Optionally, the same OAS document <em class="rfc2119">MAY</em> be provided in YAML format:</p>
-            <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/openapi.yaml</span></code></pre>
+            <pre class="nohighlight">https://api.example.org/v1/openapi.yaml</pre>
          </div>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L257">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
          <ul>
             <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisets to be tested. These include that an OAS file (openapi.json) is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
             <li> Step 2: The openapi.yaml <em class="rfc2119">MAY</em> be available. If available it <em class="rfc2119">MUST</em> contain yaml, be readable and parsable.</li>
-            <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Specification as the openapi.json.</li>
+            <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Description as the openapi.json.</li>
             <li> Step 4: The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
          </ul>
       </dd>
@@ -1586,24 +1565,24 @@ In addition to this (normative) document, separate modules are being written to 
          The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
       <div class="example">
          <p>An example of a base path for an API with current version 1.0.2:</p>
-         <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/</span></code></pre>
-         <pre aria-busy="false"><code class="hljs css">version: <span class="hljs-string">'1.0.2'</span></code></pre>
-         <pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">servers</span>:
-                  - <span class="hljs-attr">description</span>: test environment  
-                  <span class="hljs-attr">url</span>: <span class="hljs-attr">https</span>:<span class="hljs-comment">//api.test.example.org/v1/  </span>
-                  - <span class="hljs-attr">description</span>: production environment  
-                  <span class="hljs-attr">url</span>: <span class="hljs-attr">https</span>:<span class="hljs-comment">//api.example.org/v1/</span></code></pre>
+         <pre class="nohighlight">https://api.example.org/v1</pre>
+         <pre class="nohighlight">version: '1.0.2'</pre>
+         <pre><code class="yaml hljs" aria-busy="false">servers:
+   - description: test environment
+   url: https://api.test.example.org/v1
+   - description: production environment
+   url: https://api.example.org/v1</code></pre>
       </div>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L164">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
          <ul>
             <li> Step 1: The base path <em class="rfc2119">MUST</em> contain a version number.</li>
-            <li> Step 2: Each url of the server object of the OpenAPI Specification <em class="rfc2119">MUST</em> include a version number.</li>
+            <li> Step 2: Each url of the server object of the OpenAPI Description <em class="rfc2119">MUST</em> include a version number.</li>
             <li> Step 3: The version in the OAS file <em class="rfc2119">MUST</em> be the same as the version in the base path.</li>
          </ul>
       </dd>
@@ -1641,16 +1620,12 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L322">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
-         <ul>
-            <li> Step 1: The API <em class="rfc2119">MUST</em> meet the prerequisets to be tested. These include that an OAS file (openapi.json) is publicly available, parsable, all $refs are resolvable and paths are defined.</li>
-            <li> Step 2: In the open api specification the info and version object <em class="rfc2119">MUST</em> be available.</li>
-            <li> Step 3: The version <em class="rfc2119">MUST</em> comply with Semantic Versioning.</li>
-         </ul>
-      </dd> 
+         The "API-Version" response header <em class="rfc2119">MUST</em> comply with Semantic Versioning.
+      </dd>
    </dl>
 </div>
 
@@ -1668,19 +1643,16 @@ In addition to this (normative) document, separate modules are being written to 
          <p>The version number <em class="rfc2119">MUST</em> be returned in an HTTP response header named <code>API-Version</code> (case-insensitive) and <em class="rfc2119">SHOULD</em> not be prefixed.</p>
          <div class="example">
             <p>An example of an API version response header:</p>
-            <pre aria-busy="false"><code class="hljs http"><span class="hljs-attribute">API-Version</span><span class="hljs-punctuation">: </span>1.0.2</code></pre>
+            <pre class="nohighlight">API-Version: 1.0.2</pre>
          </div>
       </dd>
       <dt>Implications</dt>
       <dd>
-         This rule is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The source code of the technical test can be found <a href="https://gitlab.com/commonground/don/adr-validator/-/blob/v0.5.0/pkg/rulesets/core/rules.go#L354">here</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
-         <ul>
-            <li> Step 1: A request to the base url <em class="rfc2119">MUST</em> give a response and include the header "API-Version".</li>
-            <li> Step 2: The value of the header "API-Version" <em class="rfc2119">MUST</em> have a valid Semantic Versioning number.</li>
-         </ul>
+         A response <em class="rfc2119">MUST</em> include the header "API-Version".
       </dd>
    </dl>
 </div>
@@ -2088,4 +2060,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Standard - Definitive version</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
