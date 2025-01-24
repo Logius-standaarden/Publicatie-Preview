@@ -1047,10 +1047,10 @@ In addition to this (normative) document, separate modules are being written to 
 <section id="normative-design-rules"><div class="header-wrapper"><h3 id="x2-1-normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 2.1"></a></div>
 <p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considerd when designing and building the api.</p>
 <section id="list-of-functional-rules"><div class="header-wrapper"><h4 id="x2-1-1-list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</h4><a class="self-link" href="#list-of-functional-rules" aria-label="Permalink for Section 2.1.1"></a></div>
-<ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
+<ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
 
 </section><section id="list-of-technical-rules"><div class="header-wrapper"><h4 id="x2-1-2-list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</h4><a class="self-link" href="#list-of-technical-rules" aria-label="Permalink for Section 2.1.2"></a></div>
-<ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul></section></section></section>
+<ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul></section></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x3-the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 3."></a></div>
 <section id="resources"><div class="header-wrapper"><h3 id="x3-1-resources"><bdi class="secno">3.1 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 3.1"></a></div>
 <p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is the key abstraction of information, where every piece of information is named by assigning a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a> (Uniform Resource Identifier). Resources describe <em>things</em>, which can vary between physical objects (e.g. a building or a person) and more abstract concepts (e.g. a permit or an event).</p>
@@ -1704,7 +1704,7 @@ Effectively, only security standards directly applicable to interactions are dis
 </div>
 
 <p><span id="api-58"></span></p>
-<div class="rule" id="/core/transport/no-sensitive-uris" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+<div class="rule" id="/core/transport/no-sensitive-uris" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
   <p class="rulelab"><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</p>
    <dl>
       <dt>Statement</dt>
@@ -1756,58 +1756,70 @@ Note that different usage patterns may be applicable in contexts with system-to-
       <dd>
          <p>There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers <em class="rfc2119">SHOULD</em> be included in all API responses:
          </p><table>
-            <tbody><tr>
-               <td>Header</td>
-               <td>Rationale</td>
-            </tr>
-            <tr>
-               <td><code>Cache-Control: no-store</code></td>
-               <td>Prevent sensitive information from being cached.</td>
-            </tr>
-            <tr>
-               <td><code>Content-Security-Policy: frame-ancestors 'none'</code></td>
-               <td>To protect against drag-and-drop style clickjacking attacks.</td>
-            </tr>
-            <tr>
-               <td><code>Content-Type</code></td>
-               <td>To specify the content type of the response. This <em class="rfc2119">SHOULD</em> be <code>application/json</code> for JSON responses.</td>
-            </tr>
-            <tr>
-               <td><code>Strict-Transport-Security</code></td>
-               <td>To require connections over HTTPS and to protect against spoofed certificates.</td>
-            </tr>
-            <tr>
-               <td><code>X-Content-Type-Options: nosniff</code></td>
-               <td>To prevent browsers from performing MIME sniffing, and inappropriately interpreting responses as HTML.</td>
-            </tr>
-            <tr>
-               <td><code>X-Frame-Options: DENY</code></td>
-               <td>To protect against drag-and-drop style clickjacking attacks.</td>
-            </tr>
-            <tr>
-               <td><code>Access-Control-Allow-Origin</code></td>
-               <td>To relax the 'same origin' policy and allow cross-origin access. See CORS-policy below</td>
-            </tr>
-         </tbody></table>
+            <thead>
+               <tr>
+                  <th scope="col">Header</th>
+                  <th scope="col">Rationale</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Header</td>
+                  <td>Rationale</td>
+               </tr>
+               <tr>
+                  <td><code>Cache-Control: no-store</code></td>
+                  <td>Prevent sensitive information from being cached.</td>
+               </tr>
+               <tr>
+                  <td><code>Content-Security-Policy: frame-ancestors 'none'</code></td>
+                  <td>To protect against drag-and-drop style clickjacking attacks.</td>
+               </tr>
+               <tr>
+                  <td><code>Content-Type</code></td>
+                  <td>To specify the content type of the response. This <em class="rfc2119">SHOULD</em> be <code>application/json</code> for JSON responses.</td>
+               </tr>
+               <tr>
+                  <td><code>Strict-Transport-Security</code></td>
+                  <td>To require connections over HTTPS and to protect against spoofed certificates.</td>
+               </tr>
+               <tr>
+                  <td><code>X-Content-Type-Options: nosniff</code></td>
+                  <td>To prevent browsers from performing MIME sniffing, and inappropriately interpreting responses as HTML.</td>
+               </tr>
+               <tr>
+                  <td><code>X-Frame-Options: DENY</code></td>
+                  <td>To protect against drag-and-drop style clickjacking attacks.</td>
+               </tr>
+               <tr>
+                  <td><code>Access-Control-Allow-Origin</code></td>
+                  <td>To relax the 'same origin' policy and allow cross-origin access. See CORS-policy below</td>
+               </tr>
+            </tbody>
+         </table>
          <p>The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is <em class="rfc2119">RECOMMENDED</em> to include them as part of a defense-in-depth approach.
          </p><table>
-            <tbody><tr>
-               <td>Header</td>
-               <td>Rationale</td>
-            </tr>
-            <tr>
-               <td><code>Content-Security-Policy: default-src 'none'</code></td>
-               <td>The majority of CSP functionality only affects pages rendered as HTML.</td>
-            </tr>
-            <tr>
-               <td><code>Feature-Policy: 'none'</code></td>
-               <td>Feature policies only affect pages rendered as HTML.</td>
-            </tr>
-            <tr>
-               <td><code>Referrer-Policy: no-referrer</code></td>
-               <td>Non-HTML responses <em class="rfc2119">SHOULD</em> not trigger additional requests.</td>
-            </tr>
-         </tbody></table>
+            <thead>
+               <tr>
+                  <th scope="col">Header</th>
+                  <th scope="col">Rationale</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><code>Content-Security-Policy: default-src 'none'</code></td>
+                  <td>The majority of CSP functionality only affects pages rendered as HTML.</td>
+               </tr>
+               <tr>
+                  <td><code>Feature-Policy: 'none'</code></td>
+                  <td>Feature policies only affect pages rendered as HTML.</td>
+               </tr>
+               <tr>
+                  <td><code>Referrer-Policy: no-referrer</code></td>
+                  <td>Non-HTML responses <em class="rfc2119">SHOULD</em> not trigger additional requests.</td>
+               </tr>
+            </tbody>
+         </table>
          <p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply Subresource Integrity [SRI](https://www.w3.org/TR/SRI/). When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
       </p></dd>
       <dt>Implications</dt>
