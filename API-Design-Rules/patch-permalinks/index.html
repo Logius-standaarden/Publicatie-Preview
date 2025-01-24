@@ -756,6 +756,32 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       ],
       "publisher": "Association of Computing Machinery (ACM)",
       "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
     }
   },
   "alternateFormats": [
@@ -811,14 +837,14 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">January 22, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">January 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1000,7 +1026,7 @@ This document is part of the <em>Nederlandse API Strategie</em>, which consists 
 </tr>
 <tr>
 <td>Normative</td>
-<td><a href="https://spec.openapis.org/oas/v3.0.1.html">Open API Specification (OAS 3.0.1)</a></td>
+<td><a href="https://spec.openapis.org/oas/v3.0.1.html">Open API Specification (OAS 3.0)</a></td>
 </tr>
 <tr>
 <td>Normative</td>
@@ -1268,7 +1294,7 @@ In addition to this (normative) document, separate modules are being written to 
       </table>
    </div>
     <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] and the later introduced <code>PATCH</code> method specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5789" title="PATCH Method for HTTP">rfc5789</a></cite>] offer a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
-    The OpenAPI Specification 3.x <a href="https://spec.openapis.org/oas/v3.0.3#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
+    The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
   According to <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.1">RFC 7231 4.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
   If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5">RFC 7231 6.5.5</a>.</p></div>
