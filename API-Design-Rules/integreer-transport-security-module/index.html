@@ -590,7 +590,8 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "date": "Jan 2021",
       "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
       "publisher": "NCSC",
-      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1",
+      "id": "ncsc 2021"
     },
     "NEN3610": {
       "authors": [
@@ -785,8 +786,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "authors": [
         "NCSC"
       ],
-      "date": "Januari 2021",
-      "id": "ncsc.tls"
+      "date": "Januari 2021"
     }
   },
   "alternateFormats": [
@@ -849,7 +849,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">January 24, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">January 27, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1033,10 +1033,6 @@ This document is part of the <em>Nederlandse API Strategie</em>, which consists 
 <td>Normative module</td>
 <td><a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/">GEO module</a></td>
 </tr>
-<tr>
-<td>Normative module</td>
-<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/">Transport Security module</a></td>
-</tr>
 </tbody></table>
 <p>Before reading this document it is advised to gain knowledge of the informative documents, in particular the <a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/">Architecture</a>.</p>
 <p>An overview of all current documents is available in this Dutch infographic:</p>
@@ -1196,7 +1192,7 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 </section><section id="http-methods"><div class="header-wrapper"><h3 id="x3-2-http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</h3><a class="self-link" href="#http-methods" aria-label="Permalink for Section 3.2"></a></div>
-<p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>].</p>
+<p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>].</p>
 <p><span id="api-03"></span></p>
 <div class="rule" id="/core/http-methods" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
    <p class="rulelab"><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</p>
@@ -1286,11 +1282,11 @@ In addition to this (normative) document, separate modules are being written to 
       </tbody>
       </table>
    </div>
-    <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] and the later introduced <code>PATCH</code> method specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5789" title="PATCH Method for HTTP">rfc5789</a></cite>] offer a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
+    <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] and the later introduced <code>PATCH</code> method specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5789" title="PATCH Method for HTTP">rfc5789</a></cite>] offer a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
     The OpenAPI Specification 3.x <a href="https://spec.openapis.org/oas/v3.0.3#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
-  According to <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.1">RFC 7231 4.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
+  According to <a href="https://datatracker.ietf.org/doc/html/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
-  If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5">RFC 7231 6.5.5</a>.</p></div>
+  If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://datatracker.ietf.org/doc/html/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.</p></div>
       <dt>How to test</dt>
       <dd>
          The OpenAPI Description <em class="rfc2119">MUST NOT</em> include non standard HTTP methods for retrieving or manipulating resources.
@@ -1354,7 +1350,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Rationale</dt>
       <dd>
-         The HTTP protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] specifies whether an HTTP method <em class="rfc2119">SHOULD</em> be considered safe and/or idempotent. These characteristics are important for clients and middleware applications, because they <em class="rfc2119">SHOULD</em> be taken into account when implementing caching and fault tolerance strategies.
+         The HTTP protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] specifies whether an HTTP method <em class="rfc2119">SHOULD</em> be considered safe and/or idempotent. These characteristics are important for clients and middleware applications, because they <em class="rfc2119">SHOULD</em> be taken into account when implementing caching and fault tolerance strategies.
       </dd>
       <dt>Implications</dt>
       <dd>
@@ -1368,7 +1364,7 @@ In addition to this (normative) document, separate modules are being written to 
    <dl>
       <dt>Statement</dt>
       <dd>
-         Always use the semantically appropriate HTTP <a href="https://tools.ietf.org/html/rfc7231#section-6">status code</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7231" title="Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">rfc7231</a></cite>] for the response.
+         Always use the semantically appropriate HTTP <a href="https://datatracker.ietf.org/doc/html/rfc9110#name-status-codes">status code</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] for the response.
       </dd>
       <dt>Rationale</dt>
       <dd>
@@ -1707,7 +1703,7 @@ Effectively, only security standards directly applicable to interactions are dis
       <dt>Statement</dt>
       <dd>
          <p>One should secure all APIs assuming they can be accessed from any location on the internet. Information <em class="rfc2119">MUST</em> be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">required by law</a>.
-         </p><p>One <em class="rfc2119">SHOULD</em> follow the latest NCSC guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-ncsc.tls" title="ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)">NCSC.TLS</a></cite>]
+         </p><p>One <em class="rfc2119">MUST</em> follow the latest NCSC guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-ncsc 2021" title="ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1">NCSC 2021</a></cite>]
       </p></dd>
       <dt>Rationale</dt>
       <dd>
@@ -1719,7 +1715,7 @@ Effectively, only security standards directly applicable to interactions are dis
       </dd>
       <dt>How to test</dt>
       <dd>
-         <p>The usage of TLS is machine testable. The test is designed for maximum automation. To test, adherence to NCSC recommendations should be tested. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient recommendations are supported and testing that phase out and insufficient recommendations are not. A manual exception to the automated test results can be made when phase out recommendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  
+         <p>The usage of TLS is machine testable. Follow the latest NCSC guidelines on what is required to test. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient recommendations are supported and testing that phase out and insufficient recommendations are not. A manual exception to the automated test results can be made when phase out recommendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  
       </p></dd>
    </dl>
 </div>
@@ -1761,7 +1757,7 @@ The groups are:</p>
 <p>This section contains elements that apply to the generic classes of clients listed above.
 Although not every client implementation has a need for all the specifications referenced below, a client agnostic API <em class="rfc2119">SHOULD</em> provide these to facilitate any client to implement relevant security controls.</p>
 <p>Most specifications referenced in this section are applicable to the first three classes of clients listed above.
-Security considerations for native applications are provided in <a href="https://tools.ietf.org/html/rfc8252">OAUth2 for Native Apps</a>, much of which can help non-OAuth2 based implementations as well.
+Security considerations for native applications are provided in OAUth2 for Native Apps <cite><a data-matched-text="[[[rfc8252]]]" href="https://www.rfc-editor.org/rfc/rfc8252">OAuth 2.0 for Native Apps</a></cite>, much of which can help non-OAuth2 based implementations as well.
 For browser-based applications a subsection is included with additional details and information.
 System-to-system (sometimes called machine-to-machine) may have a need for the listed specifications as well.
 Note that different usage patterns may be applicable in contexts with system-to-system clients, see above under Client Authentication.</p>
@@ -1847,7 +1843,7 @@ For outbound filtering, the main concern is leaking of information.</p>
                </tr>
             </tbody>
          </table>
-         <p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply Subresource Integrity <a href="https://www.w3.org/TR/SRI/">SRI</a>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
+         <p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply Subresource Integrity <cite><a data-matched-text="[[[SRI]]]" href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></cite>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
       </p></dd>
       <dt>Implications</dt>
       <dd>
@@ -1976,20 +1972,24 @@ This avoids XXE-attack vectors for example.</li>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/"><cite>API Design Rules Module: Geospatial</cite></a>. L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker.  Geonovum. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/</a>
     </dd><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
       <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets"><cite>Technical ADR Validation rule testset 0.5.0</cite></a>. H. Stijns.  Geonovum. November 2023. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets">https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets</a>
-    </dd><dt id="bib-ncsc.tls">[NCSC.TLS]</dt><dd>
-      <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)</cite></a>. NCSC. Januari 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
+    </dd><dt id="bib-ncsc 2021">[NCSC 2021]</dt><dd>
+      <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1</cite></a>.  NCSC. Jan 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
       <a href="https://www.openapis.org/"><cite>OpenAPI Specification</cite></a>. Darrell Miller; Jason Harmon; Jeremy Whitlock; Marsh Gardiner; Mike Ralphson; Ron Ratovsky; Tony Tam; Uri Sarid.  OpenAPI Initiative. URL: <a href="https://www.openapis.org/">https://www.openapis.org/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc3986">[rfc3986]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
-    </dd><dt id="bib-rfc7231">[rfc7231]</dt><dd>
-      <a href="https://httpwg.org/specs/rfc7231.html"><cite>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</cite></a>. R. Fielding, Ed.; J. Reschke, Ed..  IETF. June 2014. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc7231.html">https://httpwg.org/specs/rfc7231.html</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd><dt id="bib-rfc8252">[rfc8252]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8252"><cite>OAuth 2.0 for Native Apps</cite></a>. W. Denniss; J. Bradley.  IETF. October 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8252">https://www.rfc-editor.org/rfc/rfc8252</a>
+    </dd><dt id="bib-rfc9110">[rfc9110]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed..  IETF. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
     </dd><dt id="bib-semver">[SemVer]</dt><dd>
       <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
+    </dd><dt id="bib-sri">[SRI]</dt><dd>
+      <a href="https://www.w3.org/TR/SRI/"><cite>Subresource Integrity</cite></a>. Devdatta Akhawe; Frederik Braun; Francois Marier; Joel Weinberger.  W3C. 23 June 2016. W3C Recommendation. URL: <a href="https://www.w3.org/TR/SRI/">https://www.w3.org/TR/SRI/</a>
     </dd></dl>
   </section><section id="informative-references">
     <div class="header-wrapper"><h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.2"></a></div>
