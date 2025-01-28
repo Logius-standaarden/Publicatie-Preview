@@ -732,6 +732,34 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
       ],
       "publisher": "Association of Computing Machinery (ACM)",
       "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius",
+      "id": "fsc-core"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius",
+      "id": "fsc-logging"
     }
   },
   "alternateFormats": [
@@ -770,7 +798,7 @@ Het document is bestemd voor architecten en ontwikkelaars die op basis van REST-
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Koppelvlakstandaard REST-API 2.0.0</h1>
     
@@ -952,8 +980,8 @@ Daarnaast is de standaard Federated Service Connectivity (FSC) ontwikkeld die vo
 <li>Zie <cite><a data-matched-text="[[[DK-IDAuth]]]" href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">Digikoppeling Identificatie en Authenticatie</a></cite></li>
 </ul>
 </section></section><section id="federated-service-connectivity-standaard-fsc"><div class="header-wrapper"><h4 id="x4-2-3-federated-service-connectivity-standaard-fsc"><bdi class="secno">4.2.3 </bdi>Federated Service Connectivity Standaard (FSC)</h4><a class="self-link" href="#federated-service-connectivity-standaard-fsc" aria-label="Permalink for Section 4.2.3"></a></div>
-<p>Gebruik van de FSC standaard binnen het Digikoppeling REST API profiel is verplicht  <sup><a href="#f1">1</a></sup>,  <sup><a href="#f2">2</a></sup> </p>
-<p>De FSC standaard bestaat uit een Core component en een extensie genaamd Logging.
+<p>Gebruik van de <a href="https://fsc-standaard.nl/">FSC-standaard</a> binnen het Digikoppeling REST API profiel is verplicht  <sup><a href="#f1">1</a></sup>,  <sup><a href="#f2">2</a></sup> </p>
+<p>De FSC standaard bestaat uit het hoofddocument [<cite><a class="bibref" data-link-type="biblio" href="#bib-fsc-core" title="FSC - Core">FSC-Core</a></cite>] en een extensie genaamd [<cite><a class="bibref" data-link-type="biblio" href="#bib-fsc-logging" title="FSC - Logging">FSC-Logging</a></cite>].
 Het is verplicht Core en Logging beide te gebruiken.</p>
 <p><a name="f1" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn"></a><sup>1</sup>: <em>De verplichting valt onder het pas-toe-of-leg-uit beginsel van het Forum Standaardisatie zoals dat geldt voor de Digikoppeling REST-API Koppelvlakstandaard.</em></p>
 <p><a name="f2" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-0"></a><sup>2</sup>: <em>Voor bestaande implementaties is het toegestaan tot 1/1/2027 gebruik te maken van versie 1.1 van de Digikoppeling REST-API Koppelvlakstandaard.</em></p>
@@ -969,10 +997,10 @@ Het is verplicht Core en Logging beide te gebruiken.</p>
 <p>Het Digikoppeling REST API profiel geeft invulling aan keuzes die gemaakt moeten worden bij het gebruik van FSC. 
 In het Digikoppeling REST API profiel wordt er vanuit gegaan dat de lezer bekend is met de standaard FSC. Er worden namelijk termen gebruikt uit deze standaard.</p>
 <p>De bovengenoemde functionaliteit is vastgelegd in FSC Core en de extensies Logging en Delegation. Core beschrijft het koppelen met API's, Logging hoe logregels weggeschreven moeten worden en Delegation hoe een intermediar namens een organisatie een API kan consumeren en/of publiceren.  </p>
-<ol>
-<li><a href="https://commonground.gitlab.io/standards/fsc/core/draft-fsc-core-00.html">Core</a> </li>
-<li><a href="https://commonground.gitlab.io/standards/fsc/logging/draft-fsc-logging-00.html">Logging</a></li>
-</ol>
+<ul>
+<li>[<cite><a class="bibref" data-link-type="biblio" href="#bib-fsc-core" title="FSC - Core">FSC-Core</a></cite>]</li>
+<li>[<cite><a class="bibref" data-link-type="biblio" href="#bib-fsc-logging" title="FSC - Logging">FSC-Logging</a></cite>]</li>
+</ul>
 <section id="vertrouwelijkheid-0"><div class="header-wrapper"><h5 id="x4-2-3-1-vertrouwelijkheid"><bdi class="secno">4.2.3.1 </bdi>Vertrouwelijkheid</h5><a class="self-link" href="#vertrouwelijkheid-0" aria-label="Permalink for Section 4.2.3.1"></a></div>
 <p>FSC spreekt over een Trust Anchor die door een Group moet worden gekozen. De Trust Anchor is binnen de context van X.509 certificaten de certificate authority (CA) waaruit het vertrouwen wordt afgeleid.
 De Trust Anchor voor de FSC Group moet daarom de PKIO Private Root zijn.</p>
@@ -1283,6 +1311,10 @@ Het Digikoppeling REST API profiel verplicht het gebruik van een UUID V7 als Tra
       <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/"><cite>Digikoppeling Beveiligingsstandaarden en voorschriften</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/">https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/</a>
     </dd><dt id="bib-dk-idauth">[DK-IDAuth]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/"><cite>Digikoppeling Identificatie en Authenticatie</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/dk/idauth/">https://gitdocumentatie.logius.nl/publicatie/dk/idauth/</a>
+    </dd><dt id="bib-fsc-core">[FSC-Core]</dt><dd>
+      <a href="https://gitdocumentatie.logius.nl/publicatie/fsc/core/"><cite>FSC - Core</cite></a>. Eelco Hotting; Ronald Koster; Henk van Maanen; Niels Dequeker; Edward van Gelderen; Pim Gaemers.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/fsc/core/">https://gitdocumentatie.logius.nl/publicatie/fsc/core/</a>
+    </dd><dt id="bib-fsc-logging">[FSC-Logging]</dt><dd>
+      <a href="https://gitdocumentatie.logius.nl/publicatie/fsc/logging/"><cite>FSC - Logging</cite></a>. Eelco Hotting; Ronald Koster; Henk van Maanen; Niels Dequeker; Edward van Gelderen; Pim Gaemers.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/fsc/logging/">https://gitdocumentatie.logius.nl/publicatie/fsc/logging/</a>
     </dd><dt id="bib-pkio-pve">[PKIO-PvE]</dt><dd>
       <a href="https://por.pkioverheid.nl/"><cite>Certificate Policy/Programme of Requirements PKIoverheid</cite></a>.  Logius. URL: <a href="https://por.pkioverheid.nl/">https://por.pkioverheid.nl/</a>
     </dd><dt id="bib-rfc7516">[rfc7516]</dt><dd>
