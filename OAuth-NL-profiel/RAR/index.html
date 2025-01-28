@@ -1675,7 +1675,7 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
-DPoP, or Demonstrating Proof of Possession (see: [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9449" title="OAuth 2.0 Demonstrating Proof of Possession (DPoP)">RFC9449</a></cite>]), is an extension that describes a technique to cryptographically bind access tokens to a particular client when they are issued.   
+<cite><a data-matched-text="[[[RFC9449]]]" href="https://www.rfc-editor.org/rfc/rfc9449">OAuth 2.0 Demonstrating Proof of Possession (DPoP)</a></cite>, is an extension that describes a technique to cryptographically bind access tokens to a particular client when they are issued.   
 </aside>
 
 
@@ -1699,7 +1699,7 @@ Another implementation of PoP is using TLS with mutual authentication, where the
 <b>iGov-NL : Additional content</b><br>  
 
 <div class="header-wrapper"><h2 id="rich-authorization-requests">Rich Authorization Requests</h2><a class="self-link" href="#rich-authorization-requests" aria-label="Permalink for this Section"></a></div>
-<p><cite><a data-matched-text="[[[RFC9396]]]" href="https://www.rfc-editor.org/rfc/rfc9396">OAuth 2.0 Rich Authorization Requests</a></cite> is an extension that provides a way for clients to request and obtain fine-grained authorization from resource owners such as end users during the Authorization Code Flow.
+<p><cite><a data-matched-text="[[[RFC9396]]]" href="https://www.rfc-editor.org/rfc/rfc9396">OAuth 2.0 Rich Authorization Requests</a></cite>, is an extension that provides a way for clients to request and obtain fine-grained authorization from resource owners such as end users during the Authorization Code Flow.
 In traditional OAuth flows, clients typically request access to a set of scopes from a Resource Server. The Resource Owner then grants access to the resources to the client. However, this approach does not allow for granular control over the access granted to a client and can lead to over-provisioning of access, which poses various security risks. With RAR, clients can pass an <code>authorization_details</code> claim to request specific permissions for each individual resource they want to access. It also allows for the Resource Server to implement specific business logic to deal with special types of requests. Think of one-time payments or step-up multi-factor authentication.</p>
 <p>According to the RFC, <code>authorization_details</code> requires just one field, <code>type</code> which determines the allowable contents of the <code>authorization_details</code>. The value is unique for the described API in the context of the Authorization Server. 
 The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <code>identifier</code> and <code>privileges</code> as common fields in the <code>authorization_details</code> parameter.</p>
