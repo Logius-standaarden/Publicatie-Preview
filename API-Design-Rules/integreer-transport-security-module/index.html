@@ -590,7 +590,8 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "date": "Jan 2021",
       "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
       "publisher": "NCSC",
-      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1",
+      "id": "ncsc 2021"
     },
     "NEN3610": {
       "authors": [
@@ -678,8 +679,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "date": "March 07, 2024",
       "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/",
       "publisher": "Kennisplatform API's",
-      "title": "API Design Rules Module: Transport Security",
-      "id": "adr-ts"
+      "title": "API Design Rules Module: Transport Security"
     },
     "UMMR10": {
       "authors": [
@@ -1685,15 +1685,15 @@ In addition to this (normative) document, separate modules are being written to 
          </div>
       </dd>
       <dt>Implications</dt>
-  <dl>
-    <dt>Statement</dt>
-    <dd>
-      The <cite><a data-matched-text="[[[ADR-TS]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/">API Design Rules Module: Transport Security</a></cite> version 1.0.x <em class="rfc2119">MUST</em> be applied.
-    </dd>
-    <dt>Rationale</dt>
-    <dd>
-   </dd></dl>
-</dl></div>
+      <dd>
+         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         A response <em class="rfc2119">MUST</em> include the header "API-Version".
+      </dd>
+   </dl>
+</div>
 
 </section><section id="transport-security"><div class="header-wrapper"><h3 id="x3-8-transport-security"><bdi class="secno">3.8 </bdi>Transport Security</h3><a class="self-link" href="#transport-security" aria-label="Permalink for Section 3.8"></a></div>
 <p>This section describes security principles, concepts and technologies to apply when working with APIs.
@@ -1709,22 +1709,22 @@ Effectively, only security standards directly applicable to interactions are dis
   <dl>
     <dt>Statement</dt>
     <dd>
-       The <cite><a data-matched-text="[[[ADR-GEO]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">API Design Rules Module: Geospatial</a></cite> version 1.0.x <em class="rfc2119">MUST</em> be applied when providing geospatial data or functionality.
-    </dd>
+      <p>One should secure all APIs assuming they can be accessed from any location on the internet. Information <em class="rfc2119">MUST</em> be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is <a href="https://wetten.overheid.nl/BWBR0048156/2023-07-01">required by law</a>.
+      </p><p>One <em class="rfc2119">MUST</em> follow the latest NCSC guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-ncsc 2021" title="ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1">NCSC 2021</a></cite>]
+    </p></dd>
     <dt>Rationale</dt>
     <dd>
-      </dd><dd>
-         <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.
-      </p></dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
-      <dt>How to test</dt>
-      <dd>
-         <p>The usage of TLS is machine testable. Follow the latest NCSC guidelines on what is required to test. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient recommendations are supported and testing that phase out and insufficient recommendations are not. A manual exception to the automated test results can be made when phase out recommendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  
-      </p></dd>
-   </dl>
+        <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.
+    </p></dd>
+    <dt>Implications</dt>
+    <dd>
+        This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+        <p>The usage of TLS is machine testable. Follow the latest NCSC guidelines on what is required to test. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient recommendations are supported and testing that phase out and insufficient recommendations are not. A manual exception to the automated test results can be made when phase out recommendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  
+    </p></dd>
+  </dl>
 </div>
 
 <p><span id="api-58"></span></p>
@@ -1923,7 +1923,7 @@ This avoids XXE-attack vectors for example.</li>
   <dl>
     <dt>Statement</dt>
     <dd>
-       The <cite><a data-matched-text="[[[ADR-GEO]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">API Design Rules Module: Geospatial</a></cite> <em class="rfc2119">MUST</em> be applied when providing geospatial data or functionality.
+       The <cite><a data-matched-text="[[[ADR-GEO]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">API Design Rules Module: Geospatial</a></cite> version 1.0.x <em class="rfc2119">MUST</em> be applied when providing geospatial data or functionality.
     </dd>
     <dt>Rationale</dt>
     <dd>
@@ -1977,10 +1977,10 @@ This avoids XXE-attack vectors for example.</li>
     <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr-geo">[ADR-GEO]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/"><cite>API Design Rules Module: Geospatial</cite></a>. L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker.  Geonovum. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/</a>
-    </dd><dt id="bib-adr-ts">[ADR-TS]</dt><dd>
-      <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/"><cite>API Design Rules Module: Transport Security</cite></a>. .  Kennisplatform API's. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/">https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/</a>
     </dd><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
       <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets"><cite>Technical ADR Validation rule testset 0.5.0</cite></a>. H. Stijns.  Geonovum. November 2023. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets">https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets</a>
+    </dd><dt id="bib-ncsc 2021">[NCSC 2021]</dt><dd>
+      <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1</cite></a>.  NCSC. Jan 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
       <a href="https://www.openapis.org/"><cite>OpenAPI Specification</cite></a>. Darrell Miller; Jason Harmon; Jeremy Whitlock; Marsh Gardiner; Mike Ralphson; Ron Ratovsky; Tony Tam; Uri Sarid.  OpenAPI Initiative. URL: <a href="https://www.openapis.org/">https://www.openapis.org/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
