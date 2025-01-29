@@ -377,27 +377,27 @@ img.license{float:left;padding-right:5px}
 </tr>
 <tr>
 <td>Normative</td>
-<td><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">API Design Rules (ADR)</a></td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0/">API Design Rules (ADR v2.0)</a></td>
 </tr>
 <tr>
 <td>Normative</td>
-<td><a href="https://forumstandaardisatie.nl/open-standaarden/openapi-specification">Open API Specification (OAS)</a></td>
+<td><a href="https://spec.openapis.org/oas/v3.0.1.html">Open API Specification (OAS 3.0)</a></td>
 </tr>
 <tr>
 <td>Normative</td>
-<td><a href="https://publicatie.centrumvoorstandaarden.nl/api/oauth/">NL GOV OAuth profiel</a></td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">NL GOV OAuth profiel</a></td>
 </tr>
 <tr>
 <td>Normative</td>
-<td><a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">Digikoppeling REST API koppelvlak specificatie</a></td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/">Digikoppeling REST API koppelvlak specificatie</a></td>
 </tr>
 <tr>
 <td>Normative module</td>
-<td><a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/">GEO module</a></td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/1.0.2/">GEO module v1.0</a></td>
 </tr>
 <tr>
 <td>Normative module</td>
-<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/">Transport Security module</a></td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/1.0.2/">Transport Security module v1.0</a></td>
 </tr>
 </tbody></table>
 <p>Before reading this document it is advised to gain knowledge of the informative documents, in particular the <a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/">Architecture</a>.</p>
@@ -448,7 +448,7 @@ Sensitive information URIS is not machine testable and therfor not part of autom
 </ol>
 <p>This section contains elements that apply to the generic classes of clients listed above. Although not every client implementation has a need for all the specifications referenced below, a client agnostic API <em class="rfc2119">SHOULD</em> provide these to facilitate any client to implement relevant security controls.</p>
 <p>Most specifications referenced in this section are applicable to the first three classes of clients listed above.
-Security considerations for native applications are provided in OAUth2 for Native Apps <cite><a data-matched-text="[[[rfc8252]]]" href="https://www.rfc-editor.org/rfc/rfc8252">OAuth 2.0 for Native Apps</a></cite>, much of which can help non-OAuth2 based implementations as well.
+Security considerations for native applications are provided in <cite><a data-matched-text="[[[rfc8252]]]" href="https://www.rfc-editor.org/rfc/rfc8252">OAuth 2.0 for Native Apps</a></cite>, much of which can help non-OAuth2 based implementations as well.
 For browser-based applications a subsection is included with additional details and information.
 System-to-system (sometimes called machine-to-machine) may have a need for the listed specifications as well. Note that different usage patterns may be applicable in contexts with system-to-system clients, see above under Client Authentication.</p>
 <section id="security-headers"><div class="header-wrapper"><h4 id="x2-3-1-security-headers"><bdi class="secno">2.3.1 </bdi>Security Headers</h4><a class="self-link" href="#security-headers" aria-label="Permalink for Section 2.3.1"></a></div>
@@ -515,7 +515,7 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 <td>Non-HTML responses <em class="rfc2119">SHOULD</em> not trigger additional requests.</td>
 </tr>
 </tbody></table>
-<p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply Subresource Integrity <cite><a data-matched-text="[[[SRI]]]" href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></cite>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.</p>
+<p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply <cite><a data-matched-text="[[[SRI]]]" href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></cite>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.</p>
 <p><strong>How to test</strong>
 The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.</p>
 </section><section id="cors-policy"><div class="header-wrapper"><h4 id="x2-3-2-cors-policy"><bdi class="secno">2.3.2 </bdi>CORS-policy</h4><a class="self-link" href="#cors-policy" aria-label="Permalink for Section 2.3.2"></a></div>
@@ -556,7 +556,7 @@ As with the (draft) <a href="https://tools.ietf.org/html/draft-ietf-oauth-browse
 <li>Ensure sending intended content type headers in your response matching your body content e.g. <code>application/json</code> and not <code>application/javascript</code>.</li>
 </ul>
 </section><section id="http-return-code"><div class="header-wrapper"><h4 id="x2-3-6-http-return-code"><bdi class="secno">2.3.6 </bdi>HTTP Return Code</h4><a class="self-link" href="#http-return-code" aria-label="Permalink for Section 2.3.6"></a></div>
-<p>HTTP defines status codes. When designing a REST API, don't just use <code>200</code> for success or <code>404</code> for error. Always use the semantically appropriate <a href="https://datatracker.ietf.org/doc/html/rfc9110#name-status-codes">status code</a> <cite><a data-matched-text="[[[rfc9110]]]" href="https://httpwg.org/specs/rfc9110.html">HTTP Semantics</a></cite> for the response.</p>
+<p>HTTP defines status codes. When designing a REST API, don't just use <code>200</code> for success or <code>404</code> for error. Always use the semantically appropriate <a href="https://www.rfc-editor.org/rfc/rfc9110#name-status-codes">status code</a> <cite><a data-matched-text="[[[rfc9110]]]" href="https://httpwg.org/specs/rfc9110.html">HTTP Semantics</a></cite> for the response.</p>
 </section><section id="http-header-filtering"><div class="header-wrapper"><h4 id="x2-3-7-http-header-filtering"><bdi class="secno">2.3.7 </bdi>HTTP header filtering</h4><a class="self-link" href="#http-header-filtering" aria-label="Permalink for Section 2.3.7"></a></div>
 <p>Realizations may rely on internal usage of HTTP-Headers. Information for processing requests and responses can be passed between components, that can have security implications.
 For instance, this is commonly practices between a reverse proxy or TLS-offloader and an application server. Additional HTTP headers are used in such example to pass an original IP-address or client certificate.</p>
