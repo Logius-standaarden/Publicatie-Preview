@@ -895,7 +895,7 @@ The algorithm ensures that the content hash is unique for a specific Contract co
 <li>Encode the bytes of the hash using Base64 URL encoding with all trailing '=' characters omitted and without the inclusion of any line breaks, whitespace, or other additional characters.</li>
 <li>Convert the value of <code>contract.content.algorithm</code> to an int32 and surround it with dollar signs (<code>$</code>). When using the <code>SHA3-512</code> algorithm this would result in <code>$1$</code>. 
 To convert the hash algorithm to an integer see the <a href="#type_mapping_hash_algorithm">type mapping</a></li>
-<li>Add <code>1$</code> as suffix to the string created in step 13. This is the enum <code>HASH_TYPE_CONTRACT</code> as defined in the field <code>.components.schemas.HashType</code> of <a href="manager.yaml">the OpenAPI Specification</a> as int32. If the string created in step 13 is <code>$1$</code>, the result should now be <code>$1$1$</code></li>
+<li>Add <code>1$</code> as suffix to the string created in step 13. This is the enum <code>HASH_TYPE_CONTRACT</code> as defined in the field <code>.components.schemas.HashType</code> of the <a href="manager.yaml">OpenAPI Specification</a> as int32. If the string created in step 13 is <code>$1$</code>, the result should now be <code>$1$1$</code></li>
 <li>Add the Base64 generated in step 12 as suffix to the string generated in step 14.</li>
 </ol>
 <section id="data-types"><div class="header-wrapper"><h5 id="data_types"><bdi class="secno">3.2.3.1 </bdi>Data types</h5><a class="self-link" href="#data_types" aria-label="Permalink for Section 3.2.3.1"></a></div><ul>
@@ -910,7 +910,7 @@ The Grant hash can be created by executing the following steps:</p>
 <li>Create a byte array named <code>grantBytes</code></li>
 <li>Convert <code>contract.content.group_id</code> to bytes and append the bytes to <code>grantBytes</code>.</li>
 <li>Convert <code>contract.content.iv</code> to bytes and append the bytes to <code>grantBytes</code>.</li>
-<li>Convert the value of each field of the Grant to bytes and append the bytes to the <code>grantBytes</code> in the same order as the fields are defined in <a href="manager.yaml">the OpenAPI Specification</a>
+<li>Convert the value of each field of the Grant to bytes and append the bytes to the <code>grantBytes</code> in the same order as the fields are defined in the <a href="manager.yaml">OpenAPI Specification</a>
 To convert the Grant type to an integer see the <a href="#type_mapping_grant">type mapping</a> </li>
 <li>Hash the <code>grantBytes</code> using the hash algorithm described in <code>contract.content.algorithm</code></li>
 <li>Encode the bytes of the hash using Base64 URL encoding with all trailing '=' characters omitted and without the inclusion of any line breaks, whitespace, or other additional characters.</li>
