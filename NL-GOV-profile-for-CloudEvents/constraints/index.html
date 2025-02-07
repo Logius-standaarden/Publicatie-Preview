@@ -1298,27 +1298,28 @@ organization which defines the semantics of this event type.</li>
 <p>Constraints:</p>
 <ul>
 <li><em class="rfc2119">MUST</em> be <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation">Reverse domain name notation</a></li>
-<li><em class="rfc2119">MAY</em> be specified by adding as a suffix (for example: nl.brp.verhuizing.binnengemeentelijk)</li>
-<li>Producers <em class="rfc2119">MUST</em> facilitate consumers to request the exact meaning.</li>
+<li><em class="rfc2119">MAY</em> be further specified by adding a suffix (for example: nl.brp.verhuizing.binnengemeentelijk)</li>
+<li>Producers <em class="rfc2119">MUST</em> facilitate consumers to request additional information on the type and adequatly explain the exact meaning.</li>
 <li><em class="rfc2119">SHOULD</em> stay the same when a CloudEvent's data changes in a backwardly-compatible way.</li>
 <li><em class="rfc2119">SHOULD</em> change when a CloudEvent's data changes in a backwardly-incompatible way.</li>
 <li>The producer <em class="rfc2119">SHOULD</em> produce both the old event and the new event for some time (potentially forever) in order to
  avoid disrupting consumers.</li>
 <li>The producer decides if versioning is used.</li>
-<li>If versioning is used <a href="https://semver.org/">semantic versioning</a> <em class="rfc2119">SHOULD</em> be used; a prefix of 'v' <em class="rfc2119">SHOULD</em> be 
-used to indicate it is a version number (e.g. 'v1.2.3')</li>
+<li>If versioning is used, the type attribute <em class="rfc2119">MUST</em> only include a single version numebr, prefixed by the letter <code>v</code></li>
 <li>In descending order of preference one <em class="rfc2119">SHOULD</em> use the name of a:<ul>
 <li>data source (for example: 'nl.brp.persoon-verhuisd)</li>
 <li>domain (for example: nl.natuurlijke-personen.persoon-verhuisd); for domain designation plural <em class="rfc2119">MUST</em> be used.</li>
 <li>law or rule (for example: nl.amsterdam.erfpacht.overdracht)</li>
 </ul>
 </li>
-<li>Names of organizations <em class="rfc2119">SHOULD NOT</em> be used (because they are not durable).
-Examples:</li>
+<li>Names of organizations <em class="rfc2119">SHOULD NOT</em> be used (because they are not time invariant).
+Examples:<ul>
 <li>nl.vng.zgw.zaken.status.create or nl.overheid.zaken.zaakstatus-gewijzigd (context is relevant when defining type)</li>
 <li>nl.brp.huwelijk-voltrokken or nl.brp.persoon-gehuwd (be specific because exact meaning can differ)</li>
 <li>nl.vng.zgw.zaak-toegevoegd-aan-document or nl.vng.zgw.document-toegevoegd-aan-zaak (perspective is relevant) </li>
-<li>nl.brp.huwelijk-voltrokken.v0.1.0 (for initial development, anything may change)</li></ul></aside>
+<li>nl.brp.huwelijk-voltrokken.v0.1.0 (for initial development, anything may change)</li></ul></li></ul></aside>
+
+
 
 </section></section><section id="optional-attributes"><div class="header-wrapper"><h3 id="x4-4-optional-attributes"><bdi class="secno">4.4 </bdi><em class="rfc2119">OPTIONAL</em> Attributes</h3><a class="self-link" href="#optional-attributes" aria-label="Permalink for Section 4.4"></a></div>
 <p>The following attributes are <em class="rfc2119">OPTIONAL</em> to appear in CloudEvents. See the
@@ -1364,9 +1365,9 @@ set explicitly to the implied <code>datacontenttype</code> of the source.</p>
 <section id="cloudevents-nl"><div class="header-wrapper"><h5 id="x4-4-1-1-cloudevents-nl"><bdi class="secno">4.4.1.1 </bdi>CloudEvents-NL</h5><a class="self-link" href="#cloudevents-nl" aria-label="Permalink for Section 4.4.1.1"></a></div>
 <p>Constraints:</p>
 <ul>
-<li>JSON-format <em class="rfc2119">SHOULD</em> be used (The <a href="https://docs.geostandaarden.nl/api/API-Strategie/">Nederlandse API Strategie</a> knows API-Design Rules Extensions in development. Part of this is the intention to
+<li>JSON-format <em class="rfc2119">SHOULD</em> be used (see <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (Nederlandse API Strategie IIa)</a></cite>. Part of this is the intention to
 name JSON as the primary representation format for APIs. Because APIs play an 
-important role in communicating events (eg when using the webhook pattern) the JSON format is 
+important role in communicating events (e.g., when using the webhook pattern) the JSON format is 
 preferred to use for payload data).</li>
 </ul>
 </section></section><section id="dataschema"><div class="header-wrapper"><h4 id="x4-4-2-dataschema"><bdi class="secno">4.4.2 </bdi>dataschema</h4><a class="self-link" href="#dataschema" aria-label="Permalink for Section 4.4.2"></a></div>
