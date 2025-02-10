@@ -835,7 +835,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">06 februari 2025</time>
+      <time class="dt-published" datetime="2024-12-13">10 februari 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1314,19 +1314,24 @@ De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-
 Hieruit kan dus worden opgemaakt welke specifieke categorien van data zijn verwerkt, maar kan er niet worden herleid wat de waarde van de data is tijdens het loggen.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerking" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn"><code>Verwerking</code></a> betrof het BSN, Kenteken en APK gekeurd.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-7"><code>Dataverwerking</code></a> betrof het BSN, Kenteken en APK gekeurd.
 Omdat de overige categorien niet werden gebruikt, zijn die ook niet gelogd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-3"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN, Kenteken, APK gekeurd, verwerkingsactiviteit ID &lt;&lt;UUID&gt;&gt;"</p>
 </section><section id="niveau-3-concrete-data"><div class="header-wrapper"><h4 id="x6-1-3-niveau-3-concrete-data"><bdi class="secno">6.1.3 </bdi>Niveau 3: concrete data</h4><a class="self-link" href="#niveau-3-concrete-data" aria-label="Permalink for Section 6.1.3"></a></div>
 <p>Op het hoogste niveau wordt alle data in de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-4"><code>Logregel</code></a> gezet.
 Dit betekent dat alle relevante categorien uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-6"><code>Register</code></a> met bijbehorende concrete data worden gelogd.
-Op dit niveau kan de gehele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerking" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-0"><code>Verwerking</code></a> worden gereconstrueerd.</p>
+Op dit niveau kan de gehele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-8"><code>Dataverwerking</code></a> worden gereconstrueerd.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerking" class="respec-offending-element" title="Linking error: not matching `<dfn>`" id="respec-offender-linking-error-not-matching-dfn-1"><code>Verwerking</code></a> bevat de BSN, Kenteken en APK gekeurd met specifieke data.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-5"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN 1234, Kenteken 1-ABC-23, APK gekeurd: ja"</p>
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-9"><code>Dataverwerking</code></a> bevat de BSN, Kenteken en APK gekeurd met specifieke data.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-5"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN 1234, Kenteken 1-ABC-23, APK gekeurd: ja, verwerkingsactiviteit ID &lt;&lt;UUID&gt;&gt;"</p>
 </section></section><section id="implicaties-van-niveaus"><div class="header-wrapper"><h3 id="x6-2-implicaties-van-niveaus"><bdi class="secno">6.2 </bdi>Implicaties van niveaus</h3><a class="self-link" href="#implicaties-van-niveaus" aria-label="Permalink for Section 6.2"></a></div>
-<p>TODO</p>
+<p>Hoe hoger het niveau, hoe bruikbaarder de data is die uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-3"><code>Logboek</code></a> kan worden opgemaakt.
+Echter, de consequenties van een hoger niveau brengen ook lastigere vraagstukken met zich mee omtrent schaalbaarheid en technische haalbaarheid.
+Als voor elke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-10"><code>Dataverwerking</code></a> alle informatie wordt gelogd, dan kan dat problemen opleveren voor de hoeveelheid data en ook of het doenlijk is om de data te verwijderen als de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-3"><code>Betrokkene</code></a> daar om vraagt.</p>
+<p>Tegelijkertijd is het laagste niveau van logging niet per definitie voldoende om aan de [AVG] te voldoen.
+Dit hangt af van de situatie en de wettelijke bepalingen die verbonden zijn aan een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-11"><code>Dataverwerking</code></a>.
+Daarom is het van belang dat bij elke dataverwerking er wordt gekeken welk niveau van toepassing is, in plaats van een niveau voor alle dataverwerkingen te bepalen.</p>
 </section></section>
 
 
@@ -1435,6 +1440,8 @@ De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-
       <ul>
     <li>
       <a href="#ref-for-dfn-betrokkenen-1" title="§ 3.3.1 Extensies">§ 3.3.1 Extensies</a> <a href="#ref-for-dfn-betrokkenen-2" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-betrokkenen-3" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-dataverwerkingen" aria-label="Links in this document to definition: Dataverwerking">
@@ -1451,6 +1458,12 @@ De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-
       <a href="#ref-for-dfn-dataverwerkingen-5" title="§ 3.3 Algemene werking van de standaard">§ 3.3 Algemene werking van de standaard</a> 
     </li><li>
       <a href="#ref-for-dfn-dataverwerkingen-6" title="§ 5.2.2 Interface">§ 5.2.2 Interface</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-7" title="§ 6.1.2 Niveau 2: kolomverwijzing">§ 6.1.2 Niveau 2: kolomverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-8" title="§ 6.1.3 Niveau 3: concrete data">§ 6.1.3 Niveau 3: concrete data</a> <a href="#ref-for-dfn-dataverwerkingen-9" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-10" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> <a href="#ref-for-dfn-dataverwerkingen-11" title="Reference 2">(2)</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-inzage" aria-label="Links in this document to definition: Inzage">
@@ -1475,6 +1488,8 @@ De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-
       <a href="#ref-for-dfn-logboeken-1" title="§ 4.1 Context">§ 4.1 Context</a> 
     </li><li>
       <a href="#ref-for-dfn-logboeken-2" title="§ 4.2.2 Logboek">§ 4.2.2 Logboek</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logboeken-3" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-logregel" aria-label="Links in this document to definition: Logregel">
