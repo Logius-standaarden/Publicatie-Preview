@@ -40,6 +40,6 @@ let respecConfig = {
   ],
 
   xref: {
-    url: new URL('js/xrefs.json', window.location)
+    url: './js/xrefs.json',
   },
 };
