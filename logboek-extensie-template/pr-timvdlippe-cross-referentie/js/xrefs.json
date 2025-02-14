@@ -1,11 +1,11 @@
 {
     "results": [
       {
-        "id": "ab7db5bcda5172f65990774c08b2d5623d0ca4d9",
+        "id": "1",
         "query": {
           "term": "Betrokkene",
           "types": ["_CONCEPT_"],
-          "id": "ab7db5bcda5172f65990774c08b2d5623d0ca4d9"
+          "id": "1"
         },
         "result": [
           {
@@ -17,11 +17,11 @@
         ]
       },
       {
-        "id": "ab7db5bcda5172f65990774c08b2d5623d0ca4d9",
+        "id": "2",
         "query": {
           "term": "Logboek",
           "types": ["_CONCEPT_"],
-          "id": "ab7db5bcda5172f65990774c08b2d5623d0ca4d9"
+          "id": "2"
         },
         "result": [
           {
