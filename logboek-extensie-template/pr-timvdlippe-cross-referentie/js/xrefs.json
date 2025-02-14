@@ -3,7 +3,7 @@
       {
         "id": "1",
         "query": {
-          "term": "Betrokkene",
+          "term": "betrokkene",
           "types": ["_CONCEPT_"],
           "id": "1"
         },
@@ -19,7 +19,7 @@
       {
         "id": "2",
         "query": {
-          "term": "Logboek",
+          "term": "logboek",
           "types": ["_CONCEPT_"],
           "id": "2"
         },
