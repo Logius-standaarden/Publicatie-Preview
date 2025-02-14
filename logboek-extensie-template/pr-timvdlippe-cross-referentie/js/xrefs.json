@@ -9,7 +9,7 @@
         },
         "result": [
           {
-            "shortname": "betrokkene",
+            "shortname": "local-1",
             "type": "dfn",
             "normative": true,
             "uri": "https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-betrokkenen"
@@ -25,7 +25,7 @@
         },
         "result": [
           {
-            "shortname": "logboek",
+            "shortname": "local-2",
             "type": "dfn",
             "normative": true,
             "uri": "https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-logboeken"
