@@ -141,7 +141,7 @@ img.license{float:left;padding-right:5px}
       "id": "Logius",
       "height": 77,
       "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
     }
   ],
   "latestVersion": [
@@ -442,14 +442,14 @@ img.license{float:left;padding-right:5px}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  
- <body class="h-entry"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+ <body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NL GOV Assurance profile for OAuth 2.0</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">February 14, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">February 18, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1661,7 +1661,15 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 </section><section id="connections-with-authorization-servers"><div class="header-wrapper"><h3 id="x4-3-connections-with-authorization-servers"><bdi class="secno">4.3 </bdi>Connections with Authorization Servers</h3><a class="self-link" href="#connections-with-authorization-servers" aria-label="Permalink for Section 4.3"></a></div>
 <p>Protected resources <em class="rfc2119">MUST</em> interpret access tokens using either JWT, token introspection, or a combination of the two.</p>
-<p>The protected resource <em class="rfc2119">MUST</em> check the <samp>aud</samp> (audience) claim, if it exists in the token, to ensure that it includes the protected resource's identifier. The protected resource <em class="rfc2119">MUST</em> ensure that the rights associated with the token are sufficient to grant access to the resource. For example, this can be accomplished by querying the scopes and acr associated with the token from the authorization server's token introspection endpoint. In case these (optional) attributes are already provided within the token, no introspection is needed. For further details we encourage to read the <a data-matched-text="[[[OpenID.NLGov]]]" class="respec-offending-element" title="Couldn't find a match for &quot;OpenID.NLGov&quot;" id="respec-offender-couldn-t-find-a-match-for-openid-nlgov">[[[OpenID.NLGov]]]</a> specification.</p>
+<p>The protected resource <em class="rfc2119">MUST</em> check the <samp>aud</samp> (audience) claim, if it exists in the token, to ensure that it includes the protected resource's identifier. The protected resource <em class="rfc2119">MUST</em> ensure that the rights associated with the token are sufficient to grant access to the resource. For example, this can be accomplished by querying the scopes and acr associated with the token from the authorization server's token introspection endpoint.</p>
+
+<aside class=" addition">
+<b>iGov-NL : Additional content</b><br>  
+
+<p>In case these (optional) attributes are already provided within the token, no introspection is needed. For further details we encourage to read the <a data-matched-text="[[[NLGOV.OpenID]]]" class="respec-offending-element" title="Couldn't find a match for &quot;NLGOV.OpenID&quot;" id="respec-offender-couldn-t-find-a-match-for-nlgov-openid">[[[NLGOV.OpenID]]]</a> specification.</p>
+</aside>
+
+
 <p>A protected resource <em class="rfc2119">MUST</em> limit which authorization servers it will accept valid tokens from. A resource server <em class="rfc2119">MAY</em> accomplish this using a whitelist of trusted servers, a dynamic policy engine, or other means.</p>
 </section></section>
   <section id="advanced-oauth-security-options"><div class="header-wrapper"><h2 id="x5-advanced-oauth-security-options"><bdi class="secno">5. </bdi>Advanced OAuth Security Options</h2><a class="self-link" href="#advanced-oauth-security-options" aria-label="Permalink for Section 5."></a></div>
@@ -1729,12 +1737,12 @@ Another implementation of PoP is using TLS with mutual authentication, where the
       <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html"><cite>International Government Assurance Profile (iGov) for OAuth 2.0</cite></a>. J. Richer, M. Varley, P. Grassi.  OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html">https://openid.net/specs/openid-igov-oauth2-1_0-03.html</a>
     </dd><dt id="bib-jws.jwe.algs">[JWS.JWE.Algs]</dt><dd>
       <a href="https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms"><cite>IANA JSON Web Signatures and Encryption Algorithms registry</cite></a>. Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner.  IANA. URL: <a href="https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms">https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms</a>
+    </dd><dt id="bib-nlgov.openid">[NLGOV.OpenID]</dt><dd>
+      <em class="respec-offending-element">Reference not found.</em>
     </dd><dt id="bib-openid.core">[OpenID.Core]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-core-1_0.html"><cite>OpenID Connect Core 1.0</cite></a>. N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore.  OpenID foundation. November 8, 2014. URL: <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>
     </dd><dt id="bib-openid.discovery">[OpenID.Discovery]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-discovery-1_0.html"><cite>OpenID Connect Discovery 1.0</cite></a>. N. Sakimura, J. Bradley, M. Jones, E. Jay.  OpenID foundation. November 8, 2014. URL: <a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>
-    </dd><dt id="bib-openid.nlgov">[OpenID.NLGov]</dt><dd>
-      <em class="respec-offending-element">Reference not found.</em>
     </dd><dt id="bib-rfc2119">[rfc2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc4122">[rfc4122]</dt><dd>
