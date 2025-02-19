@@ -712,7 +712,8 @@ Therefore it sends an Authorization Request to the Authorization Server's Author
 It does so by redirecting / initiating the user-agent with the Authorization Request to the Authorization Endpoint.
 The Authorization request holds further details, as specified in this profile.</p>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span><span class="issue-label">: Extra security consideration</span></div><aside class="">
-<p>When the Authorization Server supports Pushed Authorization Requests (PAR), the client may first use PAR (or is required to use it, see <code>require_pushed_authorization_requests</code> in [Authorization Server Metadata](https://datatracker.ietf.org/doc/html/rfc9126#name-authorization-server-metada)). The client can initiate the flow by pushing a POST request with the parameters to the <code>pushed_authorization_request_endpoint</code>. The Authorization Server responds to the client with a <code>request_uri</code> containing a reference. The client will then use this <code>request_uri</code> as the redirect.</p>
+
+<p>When the Authorization Server supports <cite><a data-matched-text="[[[rfc9126]]]" href="https://www.rfc-editor.org/rfc/rfc9126">OAuth 2.0 Pushed Authorization Requests</a></cite> (PAR), the client may first use PAR (or is required to use it, see <code>require_pushed_authorization_requests</code> in <a href="https://datatracker.ietf.org/doc/html/rfc9126#name-authorization-server-metada">Authorization Server Metadata</a>). The client can initiate the flow by pushing a POST request with the parameters to the <code>pushed_authorization_request_endpoint</code>. The Authorization Server responds to the client with a <code>request_uri</code> containing a reference. The client will then use this <code>request_uri</code> as the redirect.</p>
 </aside></div>
 
 </section><section id="step-2-authorization-request"><div class="header-wrapper"><h4 id="step-2-authorization-request-0">Step 2. Authorization Request</h4><a class="self-link" href="#step-2-authorization-request" aria-label="Permalink for this Section"></a></div>
@@ -918,8 +919,9 @@ Host: idp-p.example.com</code></pre>
 </aside>
 
 <aside class="addition">
-<b>iGov-NL : Additional content</b><br>  
-<p>When the Authorization Server supports Pushed Authorization Requests (PAR), the client may first use PAR (or is required to use it, see <code>require_pushed_authorization_requests</code> in [Authorization Server Metadata](https://datatracker.ietf.org/doc/html/rfc9126#name-authorization-server-metada)). The client can initiate the flow by pushing a POST request with the parameters to the <code>pushed_authorization_request_endpoint</code>. The Authorization Server responds to the client with a <code>request_uri</code> containing a reference. The client will then use this <code>request_uri</code> as the redirect.</p>
+<b>iGov-NL : Additional content</b><br>
+
+<p>When the Authorization Server supports <cite><a data-matched-text="[[[rfc9126]]]" href="https://www.rfc-editor.org/rfc/rfc9126">OAuth 2.0 Pushed Authorization Requests</a></cite> (PAR), the client may first use PAR (or is required to use it, see <code>require_pushed_authorization_requests</code> in <a href="https://datatracker.ietf.org/doc/html/rfc9126#name-authorization-server-metada">Authorization Server Metadata</a>). The client can initiate the flow by pushing a POST request with the parameters to the <code>pushed_authorization_request_endpoint</code>. The Authorization Server responds to the client with a <code>request_uri</code> containing a reference. The client will then use this <code>request_uri</code> as the redirect.</p>
 </aside>
 
 
@@ -1691,8 +1693,12 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 
 <p>The preceding portions of this OAuth profile provide a level of security adequate for a wide range of use cases, while still maintaining relative ease of implementation and usability for developers, system administrators, and end users. The following are some additional security measures that can be employed for use cases where elevated risks justify the use of additional controls at the expense of implementation effort and usability. This section also addresses future security capabilities, currently in the early draft stages, being added to the OAuth standard suite.</p>
+
 <section id="pushed-authorization-requests-par"><div class="header-wrapper"><h3 id="x5-1-pushed-authorization-requests-par"><bdi class="secno">5.1 </bdi>Pushed Authorization Requests (PAR)</h3><a class="self-link" href="#pushed-authorization-requests-par" aria-label="Permalink for Section 5.1"></a></div>
-<p>Traditionally, OAuth 2.0 authorization requests are sent via front-channel communication (e.g., browser redirects), which exposes sensitive parameters to potential tampering or interception. PAR addresses these vulnerabilities by allowing clients to push authorization requests directly to the authorization server over a secure back-channel. Below are some of the issues it alleviates:</p>
+<aside class="addition">
+<b>iGov-NL : Additional content</b><br>
+
+<p>Traditionally, OAuth 2.0 authorization requests are sent via front-channel communication (e.g., browser redirects), which exposes sensitive parameters to potential tampering or interception. PAR [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9126" title="OAuth 2.0 Pushed Authorization Requests">rfc9126</a></cite>] addresses these vulnerabilities by allowing clients to push authorization requests directly to the authorization server over a secure back-channel. Below are some of the issues it alleviates:</p>
 <ul>
 <li><strong>Lack of Integrity and Authenticity:</strong>
 Authorization request parameters sent as URI query parameters are vulnerable to tampering. Attackers can modify values like scope or redirect_uri, potentially altering the context of transactions or access permissions. Such sensitive data in front-channel requests can be intercepted or phished, compromising client credentials or authorization codes. Attackers can exploit the request_uri parameter by injecting malicious URIs, leading to unauthorized access or token leakage.</li>
@@ -1704,6 +1710,9 @@ Large authorization requests with fine-grained permissions can exceed URL size l
 Traditional flows delay client authentication until after user interaction, making it harder to detect and reject illegitimate requests early.</li>
 </ul>
 <p>To combat this PAR allows clients to push authorization requests directly to the authorization server over a secure back-channel (HTTPS), effectively preventing tampering. For higher security, PAR can be combined with JWT-based Request Objects for cryptographic signing and optional encryption. Furthermore, by moving sensitive data from the front-channel (user agent) to the back-channel, PAR ensures that request parameters are not exposed to the browser or third parties, mitigating leakage risks.  Also, PAR enables the authorization server to authenticate the client before any user interaction, allowing early detection and rejection of illegitimate requests, such as spoofing or tampering attempts.</p>
+</aside>
+
+
 
 </section><section id="proof-of-possession-tokens-pop"><div class="header-wrapper"><h3 id="x5-2-proof-of-possession-tokens-pop"><bdi class="secno">5.2 </bdi>Proof of Possession Tokens (PoP)</h3><a class="self-link" href="#proof-of-possession-tokens-pop" aria-label="Permalink for Section 5.2"></a></div>
 <p><del>OAuth proof of possession tokens are currently defined in a set of drafts under active development in the Internet Engineering Task Force (IETF) OAuth Working Group.</del><br>While a bearer token can be used by anyone in possession of the token, a proof of possession token is bound to a particular symmetric or asymmetric key issued to, or already possessed by, the client. The association of the key to the token is also communicated to the protected resource.<br><del>a variety of mechanisms for doing this are outlined in the draft [OAuth 2.0 Proof-of-Possession (PoP) Security Architecture] [<cite><a class="bibref" data-link-type="biblio" href="#bib-i-d.ietf-oauth-pop-architecture" title="OAuth 2.0 Proof-of-Possession (PoP) Security Architecture">I-D.ietf-oauth-pop-architecture</a></cite>] .</del><br>When the client presents the token to the protected resource, it is also required to demonstrate possession of the corresponding key <del>(e.g., by creating a cryptographic hash or signature of the request)</del>.</p>
@@ -1813,6 +1822,8 @@ Another implementation of PoP is using TLS with mutual authentication, where the
       <a href="https://www.rfc-editor.org/rfc/rfc8705"><cite>OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens</cite></a>. B. Campbell; J. Bradley; N. Sakimura; T. Lodderstedt.  IETF. February 2020. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8705">https://www.rfc-editor.org/rfc/rfc8705</a>
     </dd><dt id="bib-rfc9068">[rfc9068]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc9068"><cite>JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens</cite></a>. V. Bertocci.  IETF. October 2021. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9068">https://www.rfc-editor.org/rfc/rfc9068</a>
+    </dd><dt id="bib-rfc9126">[rfc9126]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc9126"><cite>OAuth 2.0 Pushed Authorization Requests</cite></a>. T. Lodderstedt; B. Campbell; N. Sakimura; D. Tonge; F. Skokan.  IETF. September 2021. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9126">https://www.rfc-editor.org/rfc/rfc9126</a>
     </dd><dt id="bib-rfc9449">[RFC9449]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc9449"><cite>OAuth 2.0 Demonstrating Proof of Possession (DPoP)</cite></a>. D. Fett; B. Campbell; J. Bradley; T. Lodderstedt; M. Jones; D. Waite.  IETF. September 2023. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9449">https://www.rfc-editor.org/rfc/rfc9449</a>
     </dd></dl>
