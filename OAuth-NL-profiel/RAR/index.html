@@ -1590,7 +1590,7 @@ The following is an example response:
 <b>iGov-NL : Additional content</b><br>
 
 <p>If there is a need to include resource owner memberships in roles and groups that are relevant to the resource being accessed, entitlements assigned to the resource owner for the targeted resource that the authorization server knows about. The authorization server <em class="rfc2119">SHOULD</em> include such attributes as claims in a JWT access token as defined in section 2.2.3.1 of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9068" title="JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens">rfc9068</a></cite>].</p>
-<p>In cases where the default scopes provided by Authorization Server are not descriptive enough, one can make use of the <code>authorization_details</code> claim (see [[#rich-authorization-requests]] ) which provide extra details and thus greater flexibility for the Resource Server to handle the request.</p>
+<p>In cases where the default scopes provided by Authorization Server are not descriptive enough, one can make use of the <code>authorization_details</code> claim (see <a href="#rich-authorization-requests" data-matched-text="[[[#rich-authorization-requests]]]" class="sec-ref"><bdi class="secno">5.2 </bdi>Rich Authorization Requests</a>) which provide extra details and thus greater flexibility for the Resource Server to handle the request.</p>
 </aside>
 </section></section></section>
   <section id="protected-resource-profile"><div class="header-wrapper"><h2 id="x4-protected-resource-profile"><bdi class="secno">4. </bdi>Protected Resource Profile</h2><a class="self-link" href="#protected-resource-profile" aria-label="Permalink for Section 4."></a></div>
@@ -1700,9 +1700,9 @@ Another implementation of PoP is using TLS with mutual authentication, where the
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
 
-<p><cite><a data-matched-text="[[[RFC9396]]]" href="https://www.rfc-editor.org/rfc/rfc9396">OAuth 2.0 Rich Authorization Requests</a></cite>, is an extension that provides a way for clients to request and obtain fine-grained authorization from resource owners such as end users during the Authorization Code Flow.
+<p><cite><a data-matched-text="[[[RFC9396]]]" href="https://www.rfc-editor.org/rfc/rfc9396">OAuth 2.0 Rich Authorization Requests</a></cite> is an extension that provides a way for clients to request and obtain fine-grained authorization from resource owners such as end users during the Authorization Code Flow.
 In traditional OAuth flows, clients typically request access to a set of scopes from a Resource Server. The Resource Owner then grants access to the resources to the client. However, this approach does not allow for granular control over the access granted to a client and can lead to over-provisioning of access, which poses various security risks. With RAR, clients can pass an <code>authorization_details</code> claim to request specific permissions for each individual resource they want to access. It also allows for the Resource Server to implement specific business logic to deal with special types of requests. Think of one-time payments or step-up multi-factor authentication.</p>
-<p>According to the RFC, <code>authorization_details</code> requires just one field, <code>type</code> which determines the allowable contents of the <code>authorization_details</code>. The value is unique for the described API in the context of the Authorization Server. 
+<p>According to the RFC, <code>authorization_details</code> requires just one field, <code>type</code>, which determines the allowable contents of the <code>authorization_details</code>. The value is unique for the described API in the context of the Authorization Server. 
 The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <code>identifier</code> and <code>privileges</code> as common fields in the <code>authorization_details</code> parameter.</p>
 </aside>
 </section></section>
