@@ -350,6 +350,16 @@ img.license{float:left;padding-right:5px}
       "publisher": "IETF",
       "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant",
       "id": "ietf-oauth-v2-1-10-refresh-token-grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile",
+      "id": "openid.fapi2.0"
     }
   },
   "authors": [
@@ -462,7 +472,7 @@ img.license{float:left;padding-right:5px}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">February 19, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">February 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1698,7 +1708,7 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 <aside class="addition">
 <b>iGov-NL : Additional content</b><br>
 
-<p>Traditionally, OAuth 2.0 authorization requests are sent via front-channel communication (e.g., browser redirects), which exposes sensitive parameters to potential tampering or interception. PAR [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9126" title="OAuth 2.0 Pushed Authorization Requests">rfc9126</a></cite>] addresses these vulnerabilities by allowing clients to push authorization requests directly to the authorization server over a secure back-channel. Below are some of the issues it alleviates:</p>
+<p>Traditionally, OAuth 2.0 authorization requests are sent via front-channel communication (e.g., browser redirects), which exposes sensitive parameters to potential tampering or interception. PAR [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9126" title="OAuth 2.0 Pushed Authorization Requests">rfc9126</a></cite>] addresses these vulnerabilities by allowing clients to push authorization requests directly to the authorization server over a secure back-channel. <cite><a data-matched-text="[[[OpenID.FAPI2.0]]]" href="https://openid.net/specs/fapi-security-profile-2_0-final.html">FAPI 2.0 Security Profile</a></cite> also includes this feature as of version 2.0 . Below are some of the issues it alleviates:</p>
 <ul>
 <li><strong>Lack of Integrity and Authenticity:</strong>
 Authorization request parameters sent as URI query parameters are vulnerable to tampering. Attackers can modify values like scope or redirect_uri, potentially altering the context of transactions or access permissions. Such sensitive data in front-channel requests can be intercepted or phished, compromising client credentials or authorization codes. Attackers can exploit the request_uri parameter by injecting malicious URIs, leading to unauthorized access or token leakage.</li>
@@ -1778,6 +1788,8 @@ Another implementation of PoP is using TLS with mutual authentication, where the
       <a href="https://openid.net/specs/openid-connect-core-1_0.html"><cite>OpenID Connect Core 1.0</cite></a>. N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore.  OpenID foundation. November 8, 2014. URL: <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>
     </dd><dt id="bib-openid.discovery">[OpenID.Discovery]</dt><dd>
       <a href="https://openid.net/specs/openid-connect-discovery-1_0.html"><cite>OpenID Connect Discovery 1.0</cite></a>. N. Sakimura, J. Bradley, M. Jones, E. Jay.  OpenID foundation. November 8, 2014. URL: <a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>
+    </dd><dt id="bib-openid.fapi2.0">[OpenID.FAPI2.0]</dt><dd>
+      <a href="https://openid.net/specs/fapi-security-profile-2_0-final.html"><cite>FAPI 2.0 Security Profile</cite></a>. D. Fett, D. Tonge, J. Heenan.  OpenID foundation. February 22 2025. URL: <a href="https://openid.net/specs/fapi-security-profile-2_0-final.html">https://openid.net/specs/fapi-security-profile-2_0-final.html</a>
     </dd><dt id="bib-rfc2119">[rfc2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc4122">[rfc4122]</dt><dd>
