@@ -677,8 +677,8 @@ Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio"
 <li><p>"Claim Name", "Claim Value", and "<abbr title="JavaScript Object Notation, a lightweight data-exchange format often used with REST APIs">JSON</abbr> Web Token (<abbr title="JSON Web Token">JWT</abbr>)" defined by '<abbr title="JavaScript Object Notation, a lightweight data-exchange format often used with REST APIs">JSON</abbr> Web Token (<abbr title="JSON Web Token">JWT</abbr>)' [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>];</p>
 </li>
 <li><p>the terms defined by 'OpenID Connect Core 1.0' [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>];</p>
-<div title="NLGov alteration" class="nlgov">
-</div></li>
+<p title="NLGov alteration" class="nlgov">
+</p></li>
 <li><p>"Introspection Endpoint" defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7662" title="OAuth 2.0 Token Introspection">RFC7662</a></cite>];</p>
 </li>
 <li><p>"Revocation Endpoint" defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7009" title="OAuth 2.0 Token Revocation">RFC7009</a></cite>];</p>
@@ -695,13 +695,13 @@ Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio"
 <li>"Representation", "Representation Relationship", "<abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr>".</li>
 </ul>
 <p>Definitions for these terms as well as their abbreviations used throughout this specification are listed in the <a href="#glossary" data-matched-text="[[[#glossary]]]" class="sec-ref"><bdi class="secno">A. </bdi>Glossary</a>.</p>
-
+<p></p>
 
 </section><section id="conformance-0"><div class="header-wrapper"><h3 id="x1-3-conformance"><bdi class="secno">1.3 </bdi>Conformance</h3><a class="self-link" href="#conformance-0" aria-label="Permalink for Section 1.3"></a></div>
-<div title="NLGov alteration" class="nlgov">
+<p title="NLGov alteration" class="nlgov">
 As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 
-<p>This profile is based upon the 'International Government Assurance Profile (iGov) for OpenID Connect 1.0' [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.igov" title="International Government Assurance Profile (iGov) for OpenID Connect 1.0">OpenID.iGov</a></cite>] as published by the <a href="https://openid.net/foundation/">OpenID Foundation</a>. It should be considered a fork of this profile, as the iGov profile is geared more towards a United States context and this NL GOV profile towards a Dutch context with European Union regulations applicable.</p>
+</p><p>This profile is based upon the 'International Government Assurance Profile (iGov) for OpenID Connect 1.0' [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.igov" title="International Government Assurance Profile (iGov) for OpenID Connect 1.0">OpenID.iGov</a></cite>] as published by the <a href="https://openid.net/foundation/">OpenID Foundation</a>. It should be considered a fork of this profile, as the iGov profile is geared more towards a United States context and this NL GOV profile towards a Dutch context with European Union regulations applicable.</p>
 <p>This specification defines requirements for the following components:</p>
 <ul>
 <li>OpenID Connect 1.0 Relying Parties (also known as OpenID Clients, or <abbr title="Relying Party">RP</abbr>)</li>
@@ -715,7 +715,7 @@ As well as sections marked as non-normative, all authoring guidelines, diagrams,
 <p>An NL GOV-compliant OpenID Connect Identity Provider <em class="rfc2119">MUST</em> support all features as described in this specification. A general-purpose Identity Provider <em class="rfc2119">MAY</em> support additional features for use with non-NL GOV Clients.</p>
 <p>An NL GOV-compliant OpenID Connect Identity Provider <em class="rfc2119">MAY</em> also provide NL GOV-compliant OAuth 2.0 Authorization Server functionality. In such cases, the Authorization Server <em class="rfc2119">MUST</em> fully implement the NL GOV Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-oauth2.nlgov" title="NL GOV Assurance profile for OAuth 2.0">OAuth2.NLGov</a></cite>]. If an NL GOV-compliant OpenID Connect Identity Provider does not provide NL GOV-compliant OAuth 2.0 Authorization Server services, all features related to interaction between the Authorization Server and protected resource are <em class="rfc2119">OPTIONAL</em>.</p>
 <p>An NL GOV-compliant OpenID Connect Client <em class="rfc2119">MUST</em> support all required functionality described in this specification. A general-purpose Client library <em class="rfc2119">MAY</em> support additional features for use with non-NL GOV OpenID Connect Identity Providers.</p>
-</div></section></section>
+<p></p></section></section>
   <section id="use-case-context"><div class="header-wrapper"><h2 id="x2-use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</h2><a class="self-link" href="#use-case-context" aria-label="Permalink for Section 2."></a></div>
 <p>This profile supports several Use Cases or partial aspects thereof. Design choices within this profile have been made with these Use Cases under consideration.</p>
 <p>The generic Use Case is an End-User with the intention to consume an online service of a Service Provider. As the service requires authentication, this triggers the authentication process.</p>
