@@ -36,7 +36,7 @@ dfn{cursor:pointer}
   
   
 <script>document.title = respecConfig.title</script>
-<title>OpenID NLGov 1.0.1</title>
+<title>OpenID NLGov</title>
   
 <title>OpenID NLGov</title>
   
@@ -133,7 +133,7 @@ about an End-User.">
     color: white;
     white-space: nowrap;
     z-index: 1;
-    background-color: #154273;
+    background-color: #39870c;
   }
 </style>
 <script id="initialUserConfig" type="application/json">{
@@ -288,12 +288,12 @@ about an End-User.">
       "id": "eidas.saml"
     },
     "LO.GBA": {
-      "href": "https://www.rvig.nl/logisch-ontwerp-brp ",
+      "href": "https://www.rvig.nl/lo-brp",
       "title": " Logisch ontwerp BRP",
       "authors": [
         ""
       ],
-      "date": "July 2023",
+      "date": "1 april, 2025",
       "publisher": "RvIG",
       "id": "lo.gba"
     },
@@ -531,7 +531,7 @@ about an End-User.">
       "publisher": "UN/CEFACT"
     }
   },
-  "specStatus": "DEF",
+  "specStatus": "WV",
   "specType": "ST",
   "pubDomain": "api",
   "shortName": "oidc",
@@ -541,16 +541,6 @@ about an End-User.">
   "previousPublishDate": "2021-02-18",
   "previousMaturity": "WV",
   "title": "OpenID NLGov",
-  "content": {
-    "Introduction": "",
-    "UseCase": "",
-    "Flow": "",
-    "ClientProfile": "",
-    "ProviderProfile": "",
-    "UserInfo": "",
-    "Considerations": "",
-    "Appendix": "informative"
-  },
   "editors": [
     {
       "name": "Remco Schaar",
@@ -612,16 +602,16 @@ about an End-User.">
 
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">OpenID NLGov 1.0.1</h1>
+  </a> <h1 id="title" class="title">OpenID NLGov</h1>
     
     <h2>
       Logius Standard<br>
-      Definitive version
-      <time class="dt-published" datetime="2023-09-18">September 18, 2023</time>
+      Draft
+      <time class="dt-published" datetime="2023-09-18">February 28, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
-              <a class="u-url status" href="https://gitdocumentatie.logius.nl/publicatie/api/oidc/1.0.1/">https://gitdocumentatie.logius.nl/publicatie/api/oidc/1.0.1/</a>
+              <a class="u-url status" href="https://logius-standaarden.github.io/OIDC-NLGOV/">https://logius-standaarden.github.io/OIDC-NLGOV/</a>
             </dd>
       <dt>Latest published version:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/api/oidc/">https://gitdocumentatie.logius.nl/publicatie/api/oidc/</a>
@@ -686,7 +676,8 @@ service domains in The Netherlands.</p>
 <p>This profile builds on top of, and inherits all properties of, the NL GOV
 Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-oauth2.nlgov" title="NL GOV Assurance profile for OAuth 2.0">OAuth2.NLGov</a></cite>].</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is the definitive version of this document. Edits resulting from consultations have been applied.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements-notation-and-conventions"><bdi class="secno">1.1 </bdi>Requirements Notation and Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.2 </bdi>Terminology</a></li><li class="tocline"><a class="tocxref" href="#conformance-0"><bdi class="secno">1.3 </bdi>Conformance</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#representation"><bdi class="secno">2.1 </bdi>Representation</a></li><li class="tocline"><a class="tocxref" href="#misc"><bdi class="secno">2.2 </bdi>Misc</a></li></ol></li><li class="tocline"><a class="tocxref" href="#flow"><bdi class="secno">3. </bdi>Flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorization-code-flow"><bdi class="secno">3.1 </bdi>Authorization Code Flow</a></li></ol></li><li class="tocline"><a class="tocxref" href="#openid-client-profile"><bdi class="secno">4. </bdi>OpenID Client profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-types"><bdi class="secno">4.1 </bdi>Client Types</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#web-applications"><bdi class="secno">4.1.1 </bdi>Web Applications</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">4.1.2 </bdi>Browser-based Applications</a></li><li class="tocline"><a class="tocxref" href="#native-and-hybrid-applications"><bdi class="secno">4.1.3 </bdi>Native and Hybrid Applications</a></li></ol></li><li class="tocline"><a class="tocxref" href="#authorization-endpoint"><bdi class="secno">4.2 </bdi>Authorization Endpoint</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-request"><bdi class="secno">4.2.1 </bdi>Authentication Request</a></li><li class="tocline"><a class="tocxref" href="#request-objects"><bdi class="secno">4.2.2 </bdi>Request Objects</a></li><li class="tocline"><a class="tocxref" href="#authentication-response-validation"><bdi class="secno">4.2.3 </bdi>Authentication Response Validation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#token-endpoint"><bdi class="secno">4.3 </bdi>Token Endpoint</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-authentication"><bdi class="secno">4.3.1 </bdi>Client Authentication</a></li><li class="tocline"><a class="tocxref" href="#token-request"><bdi class="secno">4.3.2 </bdi>Token Request</a></li><li class="tocline"><a class="tocxref" href="#token-response-validation"><bdi class="secno">4.3.3 </bdi>Token Response Validation</a></li><li class="tocline"><a class="tocxref" href="#id-tokens"><bdi class="secno">4.3.4 </bdi>ID Tokens</a></li></ol></li><li class="tocline"><a class="tocxref" href="#discovery"><bdi class="secno">4.4 </bdi>Discovery</a></li><li class="tocline"><a class="tocxref" href="#registration"><bdi class="secno">4.5 </bdi>Registration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#openid-provider-profile"><bdi class="secno">5. </bdi>OpenID Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorization-endpoint-of-the-provider-profile"><bdi class="secno">5.1 </bdi>Authorization Endpoint of the Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#request-objects-of-the-provider-profile"><bdi class="secno">5.1.1 </bdi>Request Objects of the Provider profile</a></li></ol></li><li class="tocline"><a class="tocxref" href="#token-endpoint-of-the-provider-profile"><bdi class="secno">5.2 </bdi>Token Endpoint of the Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#token-request-validation"><bdi class="secno">5.2.1 </bdi>Token Request Validation</a></li><li class="tocline"><a class="tocxref" href="#id-tokens-of-the-provider-profile"><bdi class="secno">5.2.2 </bdi>ID Tokens of the Provider profile</a></li><li class="tocline"><a class="tocxref" href="#pairwise-identifiers"><bdi class="secno">5.2.3 </bdi>Pairwise Identifiers</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships"><bdi class="secno">5.2.4 </bdi>Representation Relationships</a></li><li class="tocline"><a class="tocxref" href="#authentication-context"><bdi class="secno">5.2.5 </bdi>Authentication Context</a></li><li class="tocline"><a class="tocxref" href="#vectors-of-trust"><bdi class="secno">5.2.6 </bdi>Vectors of Trust</a></li><li class="tocline"><a class="tocxref" href="#access-tokens"><bdi class="secno">5.2.7 </bdi>Access Tokens</a></li><li class="tocline"><a class="tocxref" href="#refresh-tokens"><bdi class="secno">5.2.8 </bdi>Refresh Tokens</a></li></ol></li><li class="tocline"><a class="tocxref" href="#userinfo-endpoint"><bdi class="secno">5.3 </bdi>UserInfo Endpoint</a></li><li class="tocline"><a class="tocxref" href="#discovery-0"><bdi class="secno">5.4 </bdi>Discovery</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#discovery-endpoint"><bdi class="secno">5.4.1 </bdi>Discovery endpoint</a></li><li class="tocline"><a class="tocxref" href="#discovery-document"><bdi class="secno">5.4.2 </bdi>Discovery document</a></li><li class="tocline"><a class="tocxref" href="#caching"><bdi class="secno">5.4.3 </bdi>Caching</a></li><li class="tocline"><a class="tocxref" href="#public-keys"><bdi class="secno">5.4.4 </bdi>Public keys</a></li></ol></li><li class="tocline"><a class="tocxref" href="#dynamic-registration"><bdi class="secno">5.5 </bdi>Dynamic Registration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-info"><bdi class="secno">6. </bdi>User Info</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#claim-interoperability"><bdi class="secno">6.1 </bdi>Claim Interoperability</a></li><li class="tocline"><a class="tocxref" href="#claims-supported"><bdi class="secno">6.2 </bdi>Claims Supported</a></li><li class="tocline"><a class="tocxref" href="#scope-profiles"><bdi class="secno">6.3 </bdi>Scope Profiles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identity-assurance-on-eidas-level"><bdi class="secno">6.3.1 </bdi>Identity assurance on <abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr> level</a></li></ol></li><li class="tocline"><a class="tocxref" href="#claims-request"><bdi class="secno">6.4 </bdi>Claims Request</a></li><li class="tocline"><a class="tocxref" href="#claims-response"><bdi class="secno">6.5 </bdi>Claims Response</a></li><li class="tocline"><a class="tocxref" href="#claims-metadata"><bdi class="secno">6.6 </bdi>Claims Metadata</a></li></ol></li><li class="tocline"><a class="tocxref" href="#considerations"><bdi class="secno">7. </bdi>Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">7.1 </bdi>Privacy considerations</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">7.2 </bdi>Security considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">7.2.1 </bdi>Algorithms</a></li></ol></li><li class="tocline"><a class="tocxref" href="#future-updates"><bdi class="secno">7.3 </bdi>Future updates</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-intermediation"><bdi class="secno">7.3.1 </bdi>Service Intermediation</a></li><li class="tocline"><a class="tocxref" href="#federations"><bdi class="secno">7.3.2 </bdi>Federations</a></li><li class="tocline"><a class="tocxref" href="#other-features"><bdi class="secno">7.3.3 </bdi>Other features</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">8. </bdi>Glossary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#notices"><bdi class="secno">8.1 </bdi>Notices</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">8.2 </bdi>Acknowledgements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">9. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">10. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Terms defined by this specification</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Terms defined by reference</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav><section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements-notation-and-conventions"><bdi class="secno">1.1 </bdi>Requirements Notation and Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.2 </bdi>Terminology</a></li><li class="tocline"><a class="tocxref" href="#conformance-0"><bdi class="secno">1.3 </bdi>Conformance</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#representation"><bdi class="secno">2.1 </bdi>Representation</a></li><li class="tocline"><a class="tocxref" href="#misc"><bdi class="secno">2.2 </bdi>Misc</a></li></ol></li><li class="tocline"><a class="tocxref" href="#flow"><bdi class="secno">3. </bdi>Flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorization-code-flow"><bdi class="secno">3.1 </bdi>Authorization Code Flow</a></li></ol></li><li class="tocline"><a class="tocxref" href="#openid-client-profile"><bdi class="secno">4. </bdi>OpenID Client profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-types"><bdi class="secno">4.1 </bdi>Client Types</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#web-applications"><bdi class="secno">4.1.1 </bdi>Web Applications</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">4.1.2 </bdi>Browser-based Applications</a></li><li class="tocline"><a class="tocxref" href="#native-and-hybrid-applications"><bdi class="secno">4.1.3 </bdi>Native and Hybrid Applications</a></li></ol></li><li class="tocline"><a class="tocxref" href="#authorization-endpoint"><bdi class="secno">4.2 </bdi>Authorization Endpoint</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-request"><bdi class="secno">4.2.1 </bdi>Authentication Request</a></li><li class="tocline"><a class="tocxref" href="#request-objects"><bdi class="secno">4.2.2 </bdi>Request Objects</a></li><li class="tocline"><a class="tocxref" href="#authentication-response-validation"><bdi class="secno">4.2.3 </bdi>Authentication Response Validation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#token-endpoint"><bdi class="secno">4.3 </bdi>Token Endpoint</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-authentication"><bdi class="secno">4.3.1 </bdi>Client Authentication</a></li><li class="tocline"><a class="tocxref" href="#token-request"><bdi class="secno">4.3.2 </bdi>Token Request</a></li><li class="tocline"><a class="tocxref" href="#token-response-validation"><bdi class="secno">4.3.3 </bdi>Token Response Validation</a></li><li class="tocline"><a class="tocxref" href="#id-tokens"><bdi class="secno">4.3.4 </bdi>ID Tokens</a></li></ol></li><li class="tocline"><a class="tocxref" href="#discovery"><bdi class="secno">4.4 </bdi>Discovery</a></li><li class="tocline"><a class="tocxref" href="#registration"><bdi class="secno">4.5 </bdi>Registration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#openid-provider-profile"><bdi class="secno">5. </bdi>OpenID Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorization-endpoint-of-the-provider-profile"><bdi class="secno">5.1 </bdi>Authorization Endpoint of the Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#request-objects-of-the-provider-profile"><bdi class="secno">5.1.1 </bdi>Request Objects of the Provider profile</a></li></ol></li><li class="tocline"><a class="tocxref" href="#token-endpoint-of-the-provider-profile"><bdi class="secno">5.2 </bdi>Token Endpoint of the Provider profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#token-request-validation"><bdi class="secno">5.2.1 </bdi>Token Request Validation</a></li><li class="tocline"><a class="tocxref" href="#id-tokens-of-the-provider-profile"><bdi class="secno">5.2.2 </bdi>ID Tokens of the Provider profile</a></li><li class="tocline"><a class="tocxref" href="#pairwise-identifiers"><bdi class="secno">5.2.3 </bdi>Pairwise Identifiers</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships"><bdi class="secno">5.2.4 </bdi>Representation Relationships</a></li><li class="tocline"><a class="tocxref" href="#authentication-context"><bdi class="secno">5.2.5 </bdi>Authentication Context</a></li><li class="tocline"><a class="tocxref" href="#vectors-of-trust"><bdi class="secno">5.2.6 </bdi>Vectors of Trust</a></li><li class="tocline"><a class="tocxref" href="#access-tokens"><bdi class="secno">5.2.7 </bdi>Access Tokens</a></li><li class="tocline"><a class="tocxref" href="#refresh-tokens"><bdi class="secno">5.2.8 </bdi>Refresh Tokens</a></li></ol></li><li class="tocline"><a class="tocxref" href="#userinfo-endpoint"><bdi class="secno">5.3 </bdi>UserInfo Endpoint</a></li><li class="tocline"><a class="tocxref" href="#discovery-0"><bdi class="secno">5.4 </bdi>Discovery</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#discovery-endpoint"><bdi class="secno">5.4.1 </bdi>Discovery endpoint</a></li><li class="tocline"><a class="tocxref" href="#discovery-document"><bdi class="secno">5.4.2 </bdi>Discovery document</a></li><li class="tocline"><a class="tocxref" href="#caching"><bdi class="secno">5.4.3 </bdi>Caching</a></li><li class="tocline"><a class="tocxref" href="#public-keys"><bdi class="secno">5.4.4 </bdi>Public keys</a></li></ol></li><li class="tocline"><a class="tocxref" href="#dynamic-registration"><bdi class="secno">5.5 </bdi>Dynamic Registration</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-info"><bdi class="secno">6. </bdi>User Info</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#claim-interoperability"><bdi class="secno">6.1 </bdi>Claim Interoperability</a></li><li class="tocline"><a class="tocxref" href="#claims-supported"><bdi class="secno">6.2 </bdi>Claims Supported</a></li><li class="tocline"><a class="tocxref" href="#scope-profiles"><bdi class="secno">6.3 </bdi>Scope Profiles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identity-assurance-on-eidas-level"><bdi class="secno">6.3.1 </bdi>Identity assurance on <abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr> level</a></li></ol></li><li class="tocline"><a class="tocxref" href="#claims-request"><bdi class="secno">6.4 </bdi>Claims Request</a></li><li class="tocline"><a class="tocxref" href="#claims-response"><bdi class="secno">6.5 </bdi>Claims Response</a></li><li class="tocline"><a class="tocxref" href="#claims-metadata"><bdi class="secno">6.6 </bdi>Claims Metadata</a></li></ol></li><li class="tocline"><a class="tocxref" href="#considerations"><bdi class="secno">7. </bdi>Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">7.1 </bdi>Privacy considerations</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">7.2 </bdi>Security considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">7.2.1 </bdi>Algorithms</a></li></ol></li><li class="tocline"><a class="tocxref" href="#future-updates"><bdi class="secno">7.3 </bdi>Future updates</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-intermediation"><bdi class="secno">7.3.1 </bdi>Service Intermediation</a></li><li class="tocline"><a class="tocxref" href="#federations"><bdi class="secno">7.3.2 </bdi>Federations</a></li><li class="tocline"><a class="tocxref" href="#other-features"><bdi class="secno">7.3.3 </bdi>Other features</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">A. </bdi>Glossary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#notices"><bdi class="secno">A.1 </bdi>Notices</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">A.2 </bdi>Acknowledgements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Terms defined by this specification</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Terms defined by reference</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">E.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">E.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 <p>Government regulations for permitting users (citizens and non-citizens) online access to government resources vary greatly from country to country. There is a strong desire to leverage federated authentication and identity services for public access to government resources online to enable the development of safe and innovative applications for e-government services, increase overall account security, reduce cost, and provide reliable identity assurances from established and trusted sources when applicable.</p>
 <p>OpenID Connect is a protocol enabling such federated identity and authentication protocol. OpenID Connect supports a variety of Use Cases and offers a range of features and (security) options. This specification aims to define an OpenID Connect profile that provides Dutch governments with a foundation for securing federated access to public services online when applying OpenID Connect.</p>
 <section id="requirements-notation-and-conventions"><div class="header-wrapper"><h3 id="x1-1-requirements-notation-and-conventions"><bdi class="secno">1.1 </bdi>Requirements Notation and Conventions</h3><a class="self-link" href="#requirements-notation-and-conventions" aria-label="Permalink for Section 1.1"></a></div>
@@ -728,7 +719,8 @@ Assurance profile for OAuth 2.0 [<cite><a class="bibref" data-link-type="biblio"
 <blockquote>
 <p>Note that the original concept of the [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.nlgov" title="NL GOV Assurance profile for OpenID Connect 1.0">OpenID.NLGov</a></cite>] profile was published on logius.gitlab.io as version 1.0 in February 2021 with the title "NL GOV Assurance profile for OpenID Connect 1.0".</p>
 </blockquote>
-</section></section><section id="use-case-context"><div class="header-wrapper"><h2 id="x2-use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</h2><a class="self-link" href="#use-case-context" aria-label="Permalink for Section 2."></a></div>
+</section></section>
+  <section id="use-case-context"><div class="header-wrapper"><h2 id="x2-use-case-context"><bdi class="secno">2. </bdi>Use Case &amp; context</h2><a class="self-link" href="#use-case-context" aria-label="Permalink for Section 2."></a></div>
 <p>This profile supports several Use Cases or partial aspects thereof. Design choices within this profile have been made with these Use Cases under consideration.</p>
 <p>The generic Use Case is an End-User with the intention to consume an online service of a Service Provider. As the service requires authentication, this triggers the authentication process.</p>
 <p>Authentication is provided in a federated manner. In other words, a Client system is relying upon another system, the OpenID Provider, for authentication.
@@ -747,7 +739,8 @@ To mitigate such risks, end-to-end security is considered throughout this profil
 <blockquote>
 <p>Note that future versions of this profile may support use cases where Service Intermediation is applicable.</p>
 </blockquote>
-</section></section><section id="flow"><div class="header-wrapper"><h2 id="x3-flow"><bdi class="secno">3. </bdi>Flow</h2><a class="self-link" href="#flow" aria-label="Permalink for Section 3."></a></div>
+</section></section>
+  <section id="flow"><div class="header-wrapper"><h2 id="x3-flow"><bdi class="secno">3. </bdi>Flow</h2><a class="self-link" href="#flow" aria-label="Permalink for Section 3."></a></div>
 <p>OpenID Connect Core specifies three paths via which authentication can be performed: the <em>Authorization Code Flow</em>, the <em>Implicit Flow</em> and the <em>Hybrid Flow</em>. The flows determine how the ID Token and Access Token are returned to the Client.</p>
 <p>This profile requires that authentication is performed using the Authorization Code Flow, in where all tokens are returned from the Token Endpoint.</p>
 <p>The Implicit Flow and Hybrid Flow allow tokens to be obtained from the Authorization Endpoint, and thereby omitting the Token endpoint. This  makes them vulnerable to token leakage and token replay and makes it impossible to cryptographically bind tokens to a certain Client.</p>
@@ -767,7 +760,8 @@ To mitigate such risks, end-to-end security is considered throughout this profil
   <img src="media/authorization-code-flow.png" alt="authorization code flow" width="479">
   <figcaption><a class="self-link" href="#authorization_code_flow">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">Authorization Code Flow</span></figcaption>
 
-</figure></section></section><section id="openid-client-profile"><div class="header-wrapper"><h2 id="x4-openid-client-profile"><bdi class="secno">4. </bdi>OpenID Client profile</h2><a class="self-link" href="#openid-client-profile" aria-label="Permalink for Section 4."></a></div>
+</figure></section></section>
+  <section id="openid-client-profile"><div class="header-wrapper"><h2 id="x4-openid-client-profile"><bdi class="secno">4. </bdi>OpenID Client profile</h2><a class="self-link" href="#openid-client-profile" aria-label="Permalink for Section 4."></a></div>
 <section id="client-types"><div class="header-wrapper"><h3 id="x4-1-client-types"><bdi class="secno">4.1 </bdi>Client Types</h3><a class="self-link" href="#client-types" aria-label="Permalink for Section 4.1"></a></div>
 <p>OAuth 2.0 defines two Client Types (<em>confidential</em> and <em>public</em> Clients) and three Client Profiles (<em>Web Applications</em>, <em>Browser / User-Agent based Applications</em>, and <em>Native Applications</em>).</p>
 <p>This profile includes specific design considerations related to security and platform capabilities for these different Client Types and Profiles.</p>
@@ -954,7 +948,8 @@ Passing a Request Object by reference using the <code>request_uri</code> is pref
 <p>Native Clients <em class="rfc2119">MUST</em> either be provisioned a unique per-instance Client identifier or be registered as <em>public</em> Clients by using a common Client identifier; browser-based Clients <em class="rfc2119">MUST</em> be registered as <em>public</em> Clients.</p>
 <p>Clients <em class="rfc2119">SHOULD</em> use Dynamic Registration as per [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">RFC7591</a></cite>] to reduce manual labor and the risks of configuration errors. Dynamic Client Registration Management Protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7592" title="OAuth 2.0 Dynamic Client Registration Management Protocol">RFC7592</a></cite>] <em class="rfc2119">MAY</em> be used by Clients.</p>
 <p>In case a native Client is using per-instance registration, the Client <em class="rfc2119">MUST</em> use Dynamic Registration.</p>
-</section></section><section id="openid-provider-profile"><div class="header-wrapper"><h2 id="x5-openid-provider-profile"><bdi class="secno">5. </bdi>OpenID Provider profile</h2><a class="self-link" href="#openid-provider-profile" aria-label="Permalink for Section 5."></a></div>
+</section></section>
+  <section id="openid-provider-profile"><div class="header-wrapper"><h2 id="x5-openid-provider-profile"><bdi class="secno">5. </bdi>OpenID Provider profile</h2><a class="self-link" href="#openid-provider-profile" aria-label="Permalink for Section 5."></a></div>
 <p>For OpenID Providers the following items are applicable:</p>
 <ul>
 <li>OpenID Providers <em class="rfc2119">MUST</em> implement all <em>Mandatory to Implement Features for All OpenID Providers</em> (Section 15.1) and all <em>Mandatory to Implement Features for Dynamic OpenID Providers</em> (Section 15.2) of [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>]. Note that these Mandatory to Implement features include required support for the Hybrid Flow for authentication (Response Types <code>id_token</code> and <code>id_token token</code>). This profile deviates from this requirement, as this profile specifically forbids the use of the Hybrid Flow (see also <a href="#flow">Chapter 3</a>).</li>
@@ -1518,7 +1513,8 @@ An example of a Client registration request:
 </aside>
 
 <p>Please refer to <a href="#algorithms">Algorithms</a> for more information on eligible cryptographic methods and keys that can be used when registering a Client.</p>
-</section></section><section id="user-info"><div class="header-wrapper"><h2 id="x6-user-info"><bdi class="secno">6. </bdi>User Info</h2><a class="self-link" href="#user-info" aria-label="Permalink for Section 6."></a></div>
+</section></section>
+  <section id="user-info"><div class="header-wrapper"><h2 id="x6-user-info"><bdi class="secno">6. </bdi>User Info</h2><a class="self-link" href="#user-info" aria-label="Permalink for Section 6."></a></div>
 <p>The availability, quality and reliability of an individual's identity attributes will vary greatly across jurisdictions and Provider systems. The following recommendations ensure maximum cross-jurisdictional interoperability, while setting Client expectations on the type of data they may acquire.</p>
 <section id="claim-interoperability"><div class="header-wrapper"><h3 id="x6-1-claim-interoperability"><bdi class="secno">6.1 </bdi>Claim Interoperability</h3><a class="self-link" href="#claim-interoperability" aria-label="Permalink for Section 6.1"></a></div>
 <p>As per Section 5.1.2 of [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>], Claim names <em class="rfc2119">SHOULD</em> be collision-resistant. It is <em class="rfc2119">RECOMMENDED</em> to use domain name based URIs as attribute names.</p>
@@ -1588,7 +1584,7 @@ The following example shows the use if <code>verified_claims</code> attribute wi
 <ul>
 <li><code>iss</code>: The issuer of the token, which is the OpenID Provider (<abbr title="OpenID Provider">OP</abbr>).</li>
 <li><code>sub</code>: The subject identifier, uniquely identifying the user.</li>
-<li><code>acr</code>: The Authentication Context Class Reference, set to the <abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr> <abbr title="Level of Assurance">LoA</abbr> value <a href="http://eidas.europa.eu/LoA/high">http://eidas.europa.eu/<abbr title="Level of Assurance">LoA</abbr>/high</a>, indicating a high level of assurance.</li>
+<li><code>acr</code>: The Authentication Context Class Reference, set to the <abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr> <abbr title="Level of Assurance">LoA</abbr> value <code>http://eidas.europa.eu/<abbr title="Level of Assurance">LoA</abbr>/high</code>, indicating a high level of assurance.</li>
 <li><code>verified_claims</code>: Contains verified identity information, structured as follows:</li>
 <li><code>verification</code>: Describes the verification process:</li>
 <li><code>trust_framework</code>: Indicates the trust framework used (in this case <abbr title="Electronic Identification, Authentication and Trust Services">eIDAS</abbr>). This anwsers the question of <em>which rules</em> are in play.</li>
@@ -1617,7 +1613,8 @@ OpenID Providers <em class="rfc2119">MUST NOT</em> provide any personal identifi
 <p>Claims Metadata (such as locale or the confidence level the OpenID Provider has in the Claim for the End-User) can be expressed as attributes within the UserInfo object, but are outside the scope of this document. These types of Claims are best described by the trust framework the Clients and OpenID Providers operate within.
 It is up to the Client to assess the level of confidence provided by the OpenID Provider or the trust framework, per Claim. Expressing or evaluating such confidence is beyond the scope of this profile.</p>
 <p>In order to provide a source, including integrity and optionally confidentiality, an OpenID Provider <em class="rfc2119">SHOULD</em> be able to provide aggregated or support distributed Claims. The signee of such aggregated or distributed Claims implies the source and can support in assessing the level confidence or quality of the Claim.</p>
-</section></section><section id="considerations"><div class="header-wrapper"><h2 id="x7-considerations"><bdi class="secno">7. </bdi>Considerations</h2><a class="self-link" href="#considerations" aria-label="Permalink for Section 7."></a></div>
+</section></section>
+  <section id="considerations"><div class="header-wrapper"><h2 id="x7-considerations"><bdi class="secno">7. </bdi>Considerations</h2><a class="self-link" href="#considerations" aria-label="Permalink for Section 7."></a></div>
 <section id="privacy-considerations"><div class="header-wrapper"><h3 id="x7-1-privacy-considerations"><bdi class="secno">7.1 </bdi>Privacy considerations</h3><a class="self-link" href="#privacy-considerations" aria-label="Permalink for Section 7.1"></a></div>
 <p>Data minimization is an essential concept in trust frameworks and federations exchanging End-User identity information for government applications.
 The design of this profile takes into consideration mechanisms to protect the End-User's government identity information and activity from unintentional exposure.</p>
@@ -1725,7 +1722,8 @@ The OpenID Foundation is currently drafting a specification for explicit support
 <ul>
 <li>Work by the OpenID Foundation to support federations of OpenID Providers and relying Service Providers, by publishing aggregated metadata in a specified format.</li>
 </ul>
-</section></section></section><section class="informative" id="glossary"><div class="header-wrapper"><h2 id="x8-glossary"><bdi class="secno">8. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 8."></a></div><p><em>This section is non-normative.</em></p>
+</section></section></section>
+  <section class="appendix" id="glossary"><div class="header-wrapper"><h2 id="a-glossary"><bdi class="secno">A. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Appendix A."></a></div>
 <p>The following terms that are specific to this profile or its functional context are used throughout this specification:</p>
 <p>Representation</p>
 <blockquote>
@@ -1766,46 +1764,33 @@ The OpenID Foundation is currently drafting a specification for explicit support
     <abbr title="Cross-Site Scripting">XSS</abbr>
 </div>
 
-<section id="notices"><div class="header-wrapper"><h3 id="x8-1-notices"><bdi class="secno">8.1 </bdi>Notices</h3><a class="self-link" href="#notices" aria-label="Permalink for Section 8.1"></a></div>
+<section id="notices"><div class="header-wrapper"><h3 id="a-1-notices"><bdi class="secno">A.1 </bdi>Notices</h3><a class="self-link" href="#notices" aria-label="Permalink for Appendix A.1"></a></div>
 <p>The technology described in this specification was made available from contributions from various sources, including members of the OpenID Foundation (OIDF), the Internet Engineering Task Force (<abbr title="Internet Engineering Task Force">IETF</abbr>) and others.</p>
-</section><section id="acknowledgements"><div class="header-wrapper"><h3 id="x8-2-acknowledgements"><bdi class="secno">8.2 </bdi>Acknowledgements</h3><a class="self-link" href="#acknowledgements" aria-label="Permalink for Section 8.2"></a></div>
+</section><section id="acknowledgements"><div class="header-wrapper"><h3 id="a-2-acknowledgements"><bdi class="secno">A.2 </bdi>Acknowledgements</h3><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix A.2"></a></div>
 <p>Special thanks go to the following people for their involvement in the working group and for their contributions to the specification:</p>
 <i>
 
 <p>Anouschka Biekman (Logius), Arjen Monster (Gemeente Den Haag), Arnout van Velzen (Logius/RV), Bart Geesink (Surfnet), Bart Kerver (VWS), Bob te Riele (RVIG), Dennis Reumer (RVO), Dolf Smits (Belastingdienst), Elsbeth Bodde (iShare), Erwin Reinout (Kennisnet), Frank van Es (Logius), Frans de Kok (Logius/ETD), Jan Geert Koops (Dictu), Jan Jaap Zoutendijk (CIV), Jeroen de Ruig (Lost Lemon), Joost van Dijk (Surfnet), Joris Joosten (VZVZ/MedMij), Lakeshia Tjin Liep Shie (Logius), Mark Nijmeijer (Justid), Martin Borgman (Kadaster), Peter Haasnoot (Logius/CvS), Peter Kooi (Belastingdienst), Pieter Heering (Logius), Redouan Ahaloui (Forum Standaardisatie), Remco Schaar (Logius), Rob Post (RVIG), Robin Gelhard (Forum Standaardisatie), Timen Olthof (VNG), and Victor den Bak (iShare).</p>
 </i></section></section>
-  <script>
-    let content = "";
-
-    const getClass = function(key) {
-      if (respecConfig.content[key]!==""){return <code> class="${respecConfig.content[key]}"</code>}
-    }
-
-    for (let contentKey in respecConfig.content) {
-      content += <code>&lt;section data-include-format="markdown" data-include="${contentKey}.md" ${getClass(contentKey)||""}&gt;&lt;/section&gt;</code>
-    }
-
-    document.getElementById("sotd").insertAdjacentHTML('afterend', content);
-  </script>
-  <section id="conformance"><div class="header-wrapper"><h2 id="x9-conformance"><bdi class="secno">9. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 9."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+  <section id="conformance"><div class="header-wrapper"><h2 id="b-conformance"><bdi class="secno">B. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section B."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
         <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
         when, and only when, they appear in all capitals, as shown here.
       </p></section>
-  <section id="tof"><div class="header-wrapper"><h2 id="x10-list-of-figures"><bdi class="secno">10. </bdi>List of Figures</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 10."></a></div><ul class="tof">
+  <section id="tof"><div class="header-wrapper"><h2 id="c-list-of-figures"><bdi class="secno">C. </bdi>List of Figures</h2><a class="self-link" href="#tof" aria-label="Permalink for Section C."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#authorization_code_flow"><span class="self-link">Figure <bdi class="figno">1</bdi></span> <span class="fig-title">Authorization Code Flow</span></a>
   </li>
       </ul></section>
-  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
-    <div class="header-wrapper"><h3 id="a-1-terms-defined-by-this-specification"><bdi class="secno">A.1 </bdi>Terms defined by this specification</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="d-index"><bdi class="secno">D. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix D."></a></div><section id="index-defined-here">
+    <div class="header-wrapper"><h3 id="d-1-terms-defined-by-this-specification"><bdi class="secno">D.1 </bdi>Terms defined by this specification</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix D.1"></a></div>
     <ul class="index">
     
   </ul>
   </section><section id="index-defined-elsewhere">
-    <div class="header-wrapper"><h3 id="a-2-terms-defined-by-reference"><bdi class="secno">A.2 </bdi>Terms defined by reference</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    <div class="header-wrapper"><h3 id="d-2-terms-defined-by-reference"><bdi class="secno">D.2 </bdi>Terms defined by reference</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix D.2"></a></div>
     <ul class="index">
     
   </ul>
@@ -1813,8 +1798,8 @@ The OpenID Foundation is currently drafting a specification for explicit support
 
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references">
-    <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="e-references"><bdi class="secno">E. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix E."></a></div><section id="normative-references">
+    <div class="header-wrapper"><h3 id="e-1-normative-references"><bdi class="secno">E.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix E.1"></a></div>
     <dl class="bibliography"><dt id="bib-cors">[CORS]</dt><dd>
       <a href="https://www.w3.org/TR/cors/"><cite>Cross-Origin Resource Sharing</cite></a>. Anne van Kesteren.  W3C. 2 June 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/cors/">https://www.w3.org/TR/cors/</a>
     </dd><dt id="bib-csp">[CSP]</dt><dd>
@@ -1893,11 +1878,11 @@ The OpenID Foundation is currently drafting a specification for explicit support
       <a href="https://www.w3.org/TR/SRI/"><cite>Subresource Integrity</cite></a>. Devdatta Akhawe; Frederik Braun; Francois Marier; Joel Weinberger.  W3C. 23 June 2016. W3C Recommendation. URL: <a href="https://www.w3.org/TR/SRI/">https://www.w3.org/TR/SRI/</a>
     </dd></dl>
   </section><section id="informative-references">
-    <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
+    <div class="header-wrapper"><h3 id="e-2-informative-references"><bdi class="secno">E.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix E.2"></a></div>
     <dl class="bibliography"><dt id="bib-eidas.saml">[eIDAS.SAML]</dt><dd>
       <a href="https://ec.europa.eu/digital-building-blocks/sites/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.4.1_final.pdf"><cite>eIDAS SAML Message Format</cite></a>.  eIDAS Coorperation Network. URL: <a href="https://ec.europa.eu/digital-building-blocks/sites/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.4.1_final.pdf">https://ec.europa.eu/digital-building-blocks/sites/download/attachments/467109280/eIDAS%20SAML%20Message%20Format%20v.1.4.1_final.pdf</a>
     </dd><dt id="bib-lo.gba">[LO.GBA]</dt><dd>
-      <a href="https://www.rvig.nl/logisch-ontwerp-brp "><cite> Logisch ontwerp BRP</cite></a>. .  RvIG. July 2023. URL: <a href="https://www.rvig.nl/logisch-ontwerp-brp ">https://www.rvig.nl/logisch-ontwerp-brp </a>
+      <a href="https://www.rvig.nl/lo-brp"><cite> Logisch ontwerp BRP</cite></a>. .  RvIG. 1 april, 2025. URL: <a href="https://www.rvig.nl/lo-brp">https://www.rvig.nl/lo-brp</a>
     </dd><dt id="bib-oauth2.1">[OAuth2.1]</dt><dd>
       <a href="https://tools.ietf.org/html/draft-parecki-oauth-v2-1"><cite>OAuth 2.1 Working draft</cite></a>. D. Hardt; A. Parecki; T. Lodderstedt.  IETF OAuth Working Group. April 2020. URL: <a href="https://tools.ietf.org/html/draft-parecki-oauth-v2-1">https://tools.ietf.org/html/draft-parecki-oauth-v2-1</a>
     </dd><dt id="bib-oauth2.browser-based-apps">[OAuth2.Browser-Based-Apps]</dt><dd>
@@ -2141,4 +2126,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Standard - Definitive version</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

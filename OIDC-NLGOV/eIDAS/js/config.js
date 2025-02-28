@@ -2,7 +2,7 @@ let respecConfig = {
   useLogo: true,
   useLabel: true,
   license: "cc-by",
-  specStatus: "DEF",
+  specStatus: "WV",
   specType: "ST",
   pubDomain: "api",
   shortName: "oidc",
@@ -13,8 +13,7 @@ let respecConfig = {
   previousPublishDate: "2021-02-18",
   previousMaturity: "WV",
   title: "OpenID NLGov",
-  // content: {"NLGovOpenID": ""},
-  content: {"Introduction": "", "UseCase": "", "Flow": "", "ClientProfile": "", "ProviderProfile": "", "UserInfo": "", "Considerations": "", "Appendix": "informative" },
+
   editors:
     [
       {
@@ -99,10 +98,10 @@ let respecConfig = {
       publisher: "eIDAS Coorperation Network"
     },
     "LO.GBA": {
-      href: "https://www.rvig.nl/logisch-ontwerp-brp ",
+      href: "https://www.rvig.nl/lo-brp",
       title: " Logisch ontwerp BRP",
       authors: [""],
-      date: "July 2023",
+      date: "1 april, 2025",
       publisher: "RvIG",
     },
     "OAuth2.1": {
