@@ -859,7 +859,7 @@ In addition to the requirements specified in Section 2.1.1 of the NL GOV OAuth2 
 </ul>
 <p><code>code_challenge_method</code></p>
 <ul>
-<li><span title="NLGov alteration" class="nlgov"><em class="rfc2119">REQUIRED</em>. <em class="rfc2119">MUST</em> use the value of <code>S256</code>.</span></li>
+<li><span title="NLGov alteration" class="nlgov"><em class="rfc2119">REQUIRED</em>. <em class="rfc2119">MUST</em> use the value of <code>S256</code>.</span> </li>
 </ul>
 <aside class="example" id="example-1"><div class="marker">
     <a class="self-link" href="#example-1">Example<bdi> 1</bdi></a>
@@ -878,9 +878,10 @@ client_id=55f9f559-<span class="hljs-number">2496</span>-49d4-b6c3-351a586b7484
 </aside>
 
 <div class="header-wrapper"><h3 id="request-objects">Request Objects</h3><a class="self-link" href="#request-objects" aria-label="Permalink for this Section"></a></div>
-<p>Clients <em class="rfc2119">MAY</em> optionally send requests to the Authorization Endpoint using the <code>request</code> or <code>request_uri</code> parameter as defined by OpenID Connect [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>], section 6.
-Passing a Request Object by reference using the <code>request_uri</code> is preferred because of browser limits and network latency.</p>
-<p>Request Objects <em class="rfc2119">MUST</em> be signed by the Client's registered key. Request Objects <em class="rfc2119">MAY</em> be encrypted to the OpenID Provider's public key. When sending Request Objects by reference, Clients <em class="rfc2119">MUST</em> pre-register <code>request_uri</code> values with the OpenID Provider at registration and <em class="rfc2119">MUST</em> only use pre-registered values for <code>request_uri</code>.</p>
+<p>Clients <em class="rfc2119">MAY</em> optionally send requests to the authorization endpoint using the <code>request</code> <span title="NLGov alteration" class="nlgov"> or <code>request_uri</code></span> parameter as defined by OpenID Connect [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>]</p>
+
+<p><span title="NLGov alteration" class="nlgov">Passing a Request Object by reference using the <code>request_uri</code> is preferred because of browser limits and network latency.</span></p>
+<p>Request Objects <em class="rfc2119">MUST</em> be signed by the client's registered key. Request Objects <em class="rfc2119">MAY</em> be encrypted to the authorization server's public key. <span title="NLGov alteration" class="nlgov">When sending Request Objects by reference, Clients <em class="rfc2119">MUST</em> pre-register <code>request_uri</code> values with the OpenID Provider at registration and <em class="rfc2119">MUST</em> only use pre-registered values for <code>request_uri</code>.</span> </p>
 <div class="header-wrapper"><h3 id="authentication-response-validation">Authentication Response Validation</h3><a class="self-link" href="#authentication-response-validation" aria-label="Permalink for this Section"></a></div>
 <p>All Clients <em class="rfc2119">MUST</em> validate the following in received Authentication Responses:</p>
 <p><code>state</code></p>
@@ -960,18 +961,24 @@ Passing a Request Object by reference using the <code>request_uri</code> is pref
 <li>The <code>represents</code> Claim, if applicable, identifies the represented service consumer on behalf of which the End-User intends to authenticate. Any Client <em class="rfc2119">MUST</em> be able to process <code>represents</code> Claims. As an exception, <code>represents</code> Claims <em class="rfc2119">MAY</em> be ignored by the Client if, and only if, it is explicitly agreed upon beforehand that no Representation will be provided.</li>
 </ul>
 <div class="header-wrapper"><h2 id="discovery-0">Discovery</h2><a class="self-link" href="#discovery-0" aria-label="Permalink for this Section"></a></div>
-<p>All Clients <em class="rfc2119">SHOULD</em> use OpenID Provider discovery to avoid manual configuration and risk of mistakes.</p>
+<span title="NLGov alteration" class="nlgov">
+All Clients <em class="rfc2119">SHOULD</em> use OpenID Provider discovery to avoid manual configuration and risk of mistakes.
+
 <p>Clients <em class="rfc2119">SHOULD</em> acquire OpenID Provider metadata using either 'OpenID Connect Discovery 1.0' ([<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.discovery" title="OpenID Connect Discovery 1.0">OpenID.Discovery</a></cite>] Section 4) or 'OAuth 2.0 Authorization Server Metadata' ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8414" title="OAuth 2.0 Authorization Server Metadata">RFC8414</a></cite>] Section 3) via one of the Discovery endpoints provided by the OpenID Provider. See also Section <a href="#discovery">5.4</a>.</p>
 <p>Clients <em class="rfc2119">SHOULD NOT</em> use OpenID Provider Issuer Discover using WebFinger (as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>], Section 2) to avoid privacy issues such as leaking information to unknown locations.</p>
 <p>Clients <em class="rfc2119">SHOULD</em> follow caching directives provided by the OpenID Provider via HTTP headers [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7234" title="Hypertext Transfer Protocol (HTTP/1.1): Caching">RFC7234</a></cite>] for the OpenID Provider's Discovery and <code>jwks</code> endpoints. This to avoid having to unnecessarily re-retrieve these documents while getting fresh updates of these documents when they have changed.</p>
 <p>Clients <em class="rfc2119">SHOULD</em> support <code>signed_metadata</code> as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8414" title="OAuth 2.0 Authorization Server Metadata">RFC8414</a></cite>] Section 2.1. In case signed metadata is available, this <em class="rfc2119">MUST</em> be used over non-signed metadata and the signature <em class="rfc2119">MUST</em> be verified prior to further utilizing any contents.</p>
-<p>Clients <em class="rfc2119">MUST</em> use the public keys obtained from the <code>jwks</code> endpoint to validate the signature on tokens or to encrypt Request Objects to the OpenID Provider.</p>
+<p>Clients <em class="rfc2119">MUST</em> use the public keys obtained from the <code>jwks</code> endpoint to validate the signature on tokens or to encrypt Request Objects to the OpenID Provider.
+</p>
 <div class="header-wrapper"><h2 id="registration">Registration</h2><a class="self-link" href="#registration" aria-label="Permalink for this Section"></a></div>
-<p>All Clients <em class="rfc2119">MUST</em> register with the OpenID Provider.</p>
+<span title="NLGov alteration" class="nlgov">
+All Clients <em class="rfc2119">MUST</em> register with the OpenID Provider.
+
 <p>Native Clients <em class="rfc2119">MUST</em> either be provisioned a unique per-instance Client identifier or be registered as <em>public</em> Clients by using a common Client identifier; browser-based Clients <em class="rfc2119">MUST</em> be registered as <em>public</em> Clients.</p>
 <p>Clients <em class="rfc2119">SHOULD</em> use Dynamic Registration as per [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">RFC7591</a></cite>] to reduce manual labor and the risks of configuration errors. Dynamic Client Registration Management Protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7592" title="OAuth 2.0 Dynamic Client Registration Management Protocol">RFC7592</a></cite>] <em class="rfc2119">MAY</em> be used by Clients.</p>
-<p>In case a native Client is using per-instance registration, the Client <em class="rfc2119">MUST</em> use Dynamic Registration.</p>
-</span></span></section>
+<p>In case a native Client is using per-instance registration, the Client <em class="rfc2119">MUST</em> use Dynamic Registration.
+</p>
+</span></span></span></span></section>
   <section id="openid-provider-profile"><div class="header-wrapper"><h2 id="x5-openid-provider-profile"><bdi class="secno">5. </bdi>OpenID Provider profile</h2><a class="self-link" href="#openid-provider-profile" aria-label="Permalink for Section 5."></a></div>
 <p>For OpenID Providers the following items are applicable:</p>
 <ul>
