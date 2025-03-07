@@ -66,14 +66,6 @@ rules:
       function: truthy
     message: "There does not exist a resource `/` that should resolve to the homepage"
 
-  home-page-successful-response:
-    severity: error
-    given:
-      - "$.paths[/].responses[?(@property && @property.match(/(2|3)\d\d/))]"
-    then:
-      function: truthy
-    message: "There should be a 2XX or 3XX response for the `/` resource"
-
   home-page-no-get-response:
     severity: error
     given:
