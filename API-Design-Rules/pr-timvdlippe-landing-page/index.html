@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.2.2">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -38,11 +38,15 @@ dfn{cursor:pointer}
   
   
   
+<meta name="color-scheme" content="light dark">
+  
   
 <title>NLGov REST API Design Rules</title>
   
   
 <link href="./media/style.css" rel="stylesheet" type="text/css">
+  
+<link href="./media/dark.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)">
   
   
   
@@ -145,7 +149,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "id": "Logius",
       "height": 77,
       "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
     }
   ],
   "latestVersion": [
@@ -526,6 +530,14 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "publisher": "OpenID foundation",
       "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
     },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
     "Introspection": {
       "authors": [
         "J. Richer"
@@ -845,16 +857,17 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   "specType": "ST",
   "pluralize": true
 }</script>
-<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  
  <body class="h-entry"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">February 11, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">March 07, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -902,9 +915,9 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
           <a rel="alternate" href="API-Design-Rules.pdf">pdf</a>
         </p>
     <p class="copyright">
-          This document is licensed under 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
-        </p>
+            This document is licensed under 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.
@@ -1677,10 +1690,11 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
       <div class="example">
-         <p>An example of a base path for an API with current version 1.0.2:</p>
-         <pre class="nohighlight">https://api.example.org/v1</pre>
-         <pre class="nohighlight">version: '1.0.2'</pre>
-         <pre><code class="yaml hljs" aria-busy="false">servers:
+         <p>An example of an <code class="nohighlight">openapi.yaml</code> for an API with a base path <code class="nohighlight">https://api.example.org/v1</code> and current version 1.0.2:</p>
+         <pre><code class="yaml hljs" aria-busy="false">openapi: 3.0.0
+info:
+   version: '1.0.2'
+servers:
    - description: test environment
    url: https://api.test.example.org/v1
    - description: production environment
@@ -1696,7 +1710,7 @@ In addition to this (normative) document, separate modules are being written to 
          <ul>
             <li> Step 1: The base path <em class="rfc2119">MUST</em> contain a version number.</li>
             <li> Step 2: Each url of the server object of the OpenAPI Description <em class="rfc2119">MUST</em> include a version number.</li>
-            <li> Step 3: The version in the OAS file <em class="rfc2119">MUST</em> be the same as the version in the base path.</li>
+            <li> Step 3: The major number of the version in the OAS file <em class="rfc2119">MUST</em> be the same as the version in the base path.</li>
          </ul>
       </dd>
    </dl>
@@ -2067,7 +2081,7 @@ This avoids XXE-attack vectors for example.</li>
     </dd><dt id="bib-rfc8252">[rfc8252]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8252"><cite>OAuth 2.0 for Native Apps</cite></a>. W. Denniss; J. Bradley.  IETF. October 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8252">https://www.rfc-editor.org/rfc/rfc8252</a>
     </dd><dt id="bib-rfc9110">[rfc9110]</dt><dd>
-      <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed..  IETF. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
+      <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed. IETF. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
     </dd><dt id="bib-semver">[SemVer]</dt><dd>
       <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
     </dd><dt id="bib-sri">[SRI]</dt><dd>
