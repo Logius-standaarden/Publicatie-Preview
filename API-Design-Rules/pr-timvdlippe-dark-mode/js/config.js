@@ -47,5 +47,4 @@ var respecConfig = {
   specStatus: "WV",
   specType: "ST",
   pluralize: true,
-  nl_organisationStylesURL: "https://logius-standaarden.github.io/publicatie/respec/style/"
 };
