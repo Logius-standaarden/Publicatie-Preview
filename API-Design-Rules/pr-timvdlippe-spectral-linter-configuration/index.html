@@ -843,7 +843,10 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   "shortName": "adr",
   "specStatus": "WV",
   "specType": "ST",
-  "pluralize": true
+  "pluralize": true,
+  "postProcess": [
+    null
+  ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
@@ -855,7 +858,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">March 07, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">March 10, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -2019,7 +2022,7 @@ This avoids XXE-attack vectors for example.</li>
   <section class="appendix informative" id="spectral-linter-configuration">
     <div class="header-wrapper"><h2 id="a-spectral-linter-configuration"><bdi class="secno">A. </bdi>Spectral linter configuration</h2><a class="self-link" href="#spectral-linter-configuration" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
     <details>
-      <pre class="nohighlight"><code class="yaml"># spectral lint -r https://developer.overheid.nl/static/adr/ruleset.yaml $OAS_URL_OR_FILE
+      <pre class="nohighlight"><code class=".spectral-yaml yaml"># spectral lint -r https://developer.overheid.nl/static/adr/ruleset.yaml $OAS_URL_OR_FILE
 # curl https://developer.overheid.nl/static/adr/ruleset.yaml &gt; .spectral.yml
 
 extends: spectral:oas
