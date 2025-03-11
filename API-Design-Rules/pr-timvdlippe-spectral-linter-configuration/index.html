@@ -1650,14 +1650,14 @@ In addition to this (normative) document, separate modules are being written to 
          The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
       <div class="example">
          <p>An example of an <code class="nohighlight">openapi.yaml</code> for an API with a base path <code class="nohighlight">https://api.example.org/v1</code> and current version 1.0.2:</p>
-         <pre><code class="yaml hljs" aria-busy="false">openapi: 3.0.0
-info:
-   version: '1.0.2'
-servers:
-   - description: test environment
-   url: https://api.test.example.org/v1
-   - description: production environment
-   url: https://api.example.org/v1</code></pre>
+         <pre><code class="yaml hljs" aria-busy="false"><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.0</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">info:</span>
+   <span class="hljs-attr">version:</span> <span class="hljs-string">'1.0.2'</span>
+<span class="hljs-attr">servers:</span>
+   <span class="hljs-bullet">-</span> <span class="hljs-attr">description:</span> <span class="hljs-string">test</span> <span class="hljs-string">environment</span>
+   <span class="hljs-attr">url:</span> <span class="hljs-string">https://api.test.example.org/v1</span>
+   <span class="hljs-bullet">-</span> <span class="hljs-attr">description:</span> <span class="hljs-string">production</span> <span class="hljs-string">environment</span>
+   <span class="hljs-attr">url:</span> <span class="hljs-string">https://api.example.org/v1</span></code></pre>
       </div>
       </dd>
       <dt>Implications</dt>
