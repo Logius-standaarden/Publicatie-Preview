@@ -866,13 +866,12 @@ Effectively this means that browser based and native clients <em class="rfc2119"
   </div>
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
-<pre class="hljs"><code class="http hljs" aria-busy="false">HTTP/1.2 302 Found
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false">HTTP/1.2 302 Found
 Cache-Control: no-cache
 Connection: close
 Content-Type: text/plain; charset=UTF-8
 Date: Wed, 07 Jan 2015 20:24:15 GMT
-Location: https://idp-p.example.com/authorize?client_id=55f9f559-2496-49d4-b6c3-351a58
-6b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+Location: https://idp-p.example.com/authorize?client_id=55f9f559-2496-49d4-b6c3-351a586b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
 Status: 302 Found
 </code></pre>
 
@@ -1043,22 +1042,16 @@ Parties <em class="rfc2119">MAY</em> agree to use <code>x5u</code>, for instance
   </div>
 For reference, the corresponding public/private key pair for this public key is the following (in JWK format):
 
-<pre aria-busy="false"><code class="hljs">{
-   "alg": "RS256",
-   "d": "PjIX4i2NsBQuOVIw74ZDjqthYsoFvaoah9GP-cPrai5s5VUIlLoadEAdGbBrss
-_6dR58x_pRlPHWh04vLQsFBuwQNc9SN3O6TAaai9Jg5TlCi6V0d4O6lUoTYpMR0cxFIU-xF
-MwII--_OZRgmAxiYiAXQj7TKMKvgSvVO7-9-YdhMwHoD-UrJkfnZckMKSs0BoAbjReTski3
-IV9f1wVJ53_pmr9NBpiZeHYmmG_1QDSbBuY35Zummut4QShF-fey2gSALdp9h9hRk1p1fsT
-ZtH2lwpvmOcjwDkSDv-zO-4Pt8NuOyqNVPFahROBPlsMVxc_zjPck8ltblalBHPo6AQ",
-   "e": "AQAB",
-   "n": "kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3K
-aKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsU
-sAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0f
-w7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1
-H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
-   "kty": "RSA",
-   "kid": "oauth-client"
-}</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false">
+<span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"d"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"PjIX4i2NsBQuOVIw74ZDjqthYsoFvaoah9GP-cPrai5s5VUIlLoadEAdGbBrss_6dR58x_pRlPHWh04vLQsFBuwQNc9SN3O6TAaai9Jg5TlCi6V0d4O6lUoTYpMR0cxFIU-xFMwII--_OZRgmAxiYiAXQj7TKMKvgSvVO7-9-YdhMwHoD-UrJkfnZckMKSs0BoAbjReTski3IV9f1wVJ53_pmr9NBpiZeHYmmG_1QDSbBuY35Zummut4QShF-fey2gSALdp9h9hRk1p1fsTZtH2lwpvmOcjwDkSDv-zO-4Pt8NuOyqNVPFahROBPlsMVxc_zjPck8ltblalBHPo6AQ"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"oauth-client"</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 
 <p>Note that the second example contains both the public and private keys, while the first example contains the public key only.</p>
 </aside>
@@ -1074,19 +1067,14 @@ H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
   </div>
 An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, sending the token in the Authorization header, follows:
 
-<pre aria-busy="false"><code class="hljs css">GET /userinfo HTTP/<span class="hljs-number">1.1</span>
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsImF1ZCI6WyJjMWJjOD
-RlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjoiaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGU
-uY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgxLTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2
-OTg4MTJ9.iHMz_tzZ90_b0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEq
-PD738oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu-<span class="hljs-number">6</span>h2Oqw-ize
-<span class="hljs-number">4</span>dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjUWMyn2I4Nu2s-R20aCA-<span class="hljs-number">7</span>T5dunr0
-iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePyq3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKa
-HtSZ6PQICoA
-Accept: text/plain, application/json, application<span class="hljs-comment">/*+json, */</span>*
-Host: idp-p.example.com
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/<span class="hljs-number">4.2</span>.<span class="hljs-number">3</span> (java <span class="hljs-number">1.5</span>)</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false">
+<span class="hljs-keyword">GET</span> <span class="hljs-string">/userinfo</span> <span class="hljs-meta">HTTP/1.1</span>
+<span class="hljs-attribute">Authorization</span><span class="hljs-punctuation">: </span>Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsImF1ZCI6WyJjMWJjODRlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjoiaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGUuY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgxLTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2OTg4MTJ9.iHMz_tzZ90_b0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEqPD738oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu-6h2Oqw-ize4dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjUWMyn2I4Nu2s-R20aCA-7T5dunr0iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePyq3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKaHtSZ6PQICoA
+<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/plain, application/json, application/*+json, */*
+<span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>idp-p.example.com
+<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>Keep-Alive
+<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Apache-HttpClient/4.2.3 (java 1.5)
+</code></pre>
 </aside></section></section></section>
   <section id="authorization-server-profile"><div class="header-wrapper"><h2 id="x3-authorization-server-profile"><bdi class="secno">3. </bdi>Authorization Server Profile</h2><a class="self-link" href="#authorization-server-profile" aria-label="Permalink for Section 3."></a></div>
 
@@ -1202,54 +1190,54 @@ The following example shows the JSON document found at a discovery endpoint for 
 Added <code>tls_client_auth</code>
 </aside>
 
-<pre class="json" aria-busy="false"><code class="hljs">{
-  "request_parameter_supported": true,
-  "registration_endpoint": "https://idp-p.example.com/register",
-  "userinfo_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "token_endpoint": "https://idp-p.example.com/token",
-  "request_uri_parameter_supported": false,
-  "request_object_encryption_enc_values_supported": [
-    "A192CBC-HS384", "A192GCM", "A256CBC+HS512",
-    "A128CBC+HS256", "A256CBC-HS512",
-    "A128CBC-HS256", "A128GCM", "A256GCM"
-  ],
-  "token_endpoint_auth_methods_supported": [
-    "private_key_jwt", "tls_client_auth"
-  ],
-  "jwks_uri": "https://idp-p.example.com/jwk",
-  "authorization_endpoint": "https://idp-p.example.com/authorize",
-  "require_request_uri_registration": false,
-  "introspection_endpoint": "https://idp-p.example.com/introspect",
-  "request_object_encryption_alg_values_supported": [
-    "RSA-OAEP", ?RSA1_5", "RSA-OAEP-256"
-  ],
-  "service_documentation": "https://idp-p.example.com/about",
-  "response_types_supported": [
-    "code", "token"
-  ],
-  "token_endpoint_auth_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "revocation_endpoint": "https://idp-p.example.com/revoke",
-  "request_object_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "grant_types_supported": [
-    "authorization_code",
-    "implicit",
-    "urn:ietf:params:oauth:grant-type:jwt-bearer",
-    "client_credentials",
-    "urn:ietf:params:oauth:grant_type:redelegate"
-  ],
-  "scopes_supported": [
-    "profile", "openid", "email", "address", "phone", "offline_access"
-  ],
-  "op_tos_uri": "https://idp-p.example.com/about",
-  "issuer": "https://idp-p.example.com/",
-  "op_policy_uri": "https://idp-p.example.com/about"
-}</code></pre>
+<pre aria-busy="false"><code class="hljs json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"request_parameter_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"registration_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/register"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"userinfo_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/token"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_uri_parameter_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_encryption_enc_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"A192CBC-HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A192GCM"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256CBC+HS512"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"A128CBC+HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256CBC-HS512"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"A128CBC-HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A128GCM"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256GCM"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint_auth_methods_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"private_key_jwt"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"tls_client_auth"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"jwks_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/jwk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"authorization_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/authorize"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"require_request_uri_registration"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"introspection_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/introspect"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_encryption_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"RSA-OAEP"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RSA1_5"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RSA-OAEP-256"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"service_documentation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"response_types_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"code"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"token"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint_auth_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"revocation_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/revoke"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"grant_types_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"authorization_code"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"implicit"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"urn:ietf:params:oauth:grant-type:jwt-bearer"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"client_credentials"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"urn:ietf:params:oauth:grant_type:redelegate"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"scopes_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"profile"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"openid"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"email"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"address"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"phone"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"offline_access"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"op_tos_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"issuer"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"op_policy_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span>
+<span class="hljs-punctuation">}</span></code></pre>
 </aside>
 
 <p>Clients and protected resources <em class="rfc2119">SHOULD</em> cache this discovery information. It is <em class="rfc2119">RECOMMENDED</em> that servers provide cache information through HTTP headers and make the cache valid for at least one week.</p>
@@ -1275,21 +1263,18 @@ Added <code>tls_client_auth</code>
   </div>
 The following is an example of a 2048-bit RSA public key:
 
-<pre class="json" aria-busy="false"><code class="hljs">{
-  "keys": [
-    {
-      "alg": "RS256",
-      "e": "AQAB",
-      "n": "o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9FxvHPK1R
-eEW3-p7-A8GNcLAuFP_8jPhiL6LyJC3F10aV9KPQFF-w6Eq6VtpEgYSfzvFegNiPtpMWd7C43
-EDwjQ-GrXMVCLrBYxZC-P1ShyxVBOzeR_5MTC0JGiDTecr_2YT6o_3aE2SIJu4iNPgGh9Mnyx
-dBo0Uf0TmrqEIabquXA1-V8iUihwfI8qjf3EujkYi7gXXelIo4_gipQYNjr4DBNlE0__RI0kD
-U-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEqfCaPDNp00J6AbY6w",
-      "kty": "RSA",
-      "kid": "rsa1"
-    }
-  ]
-}</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"keys"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9FxvHPK1ReEW3-p7-A8GNcLAuFP_8jPhiL6LyJC3F10aV9KPQFF-w6Eq6VtpEgYSfzvFegNiPtpMWd7C43EDwjQ-GrXMVCLrBYxZC-P1ShyxVBOzeR_5MTC0JGiDTecr_2YT6o_3aE2SIJu4iNPgGh9MnyxdBo0Uf0TmrqEIabquXA1-V8iUihwfI8qjf3EujkYi7gXXelIo4_gipQYNjr4DBNlE0__RI0kDU-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEqfCaPDNp00J6AbY6w"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"rsa1"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 </aside>
 
 <p>Clients and protected resources <em class="rfc2119">SHOULD</em> cache this key. It is <em class="rfc2119">RECOMMENDED</em> that servers provide cache information through HTTP headers and make the cache valid for at least one week.</p>
@@ -1567,9 +1552,7 @@ The following example is a response from the introspection endpoint:
   </div>
 The following is an example response:
 
-<pre class="nohighlight">https://client.example.org/cb?
-    state=2ca3359dfbfd0
-   &amp;code=gOIFJ1hV6Rb1sxUdFhZGACWwR1sMhYbJJcQbVJN0wHA</pre>
+<pre class="nohighlight">https://client.example.org/cb?state=2ca3359dfbfd0&amp;code=gOIFJ1hV6Rb1sxUdFhZGACWwR1sMhYbJJcQbVJN0wHA</pre>
 </aside>
 
 
