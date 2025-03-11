@@ -1325,15 +1325,15 @@ Ter verduidelijking van elk niveau gebruiken we een niet-normatief voorbeeld van
 <section id="niveau-1-registerverwijzing"><div class="header-wrapper"><h4 id="x6-1-1-niveau-1-registerverwijzing"><bdi class="secno">6.1.1 </bdi>Niveau 1: registerverwijzing</h4><a class="self-link" href="#niveau-1-registerverwijzing" aria-label="Permalink for Section 6.1.1"></a></div>
 <p>Op het laagste niveau wordt er enkel naar het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-4"><code>Register</code></a> verwezen.
 Dit betekent dat de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-1"><code>Logregel</code></a> enkel de referentie naar het register bevat.
-Hieruit kan worden opgemaakt welke potentiele data is verwerkt, maar hiermee kan niet worden herleid welke data is verwerkt op basis van enkel de Logregel.
-Dit kan wel op basis van de verwerkingsactiviteit ID</p>
+Hieruit kan worden opgemaakt welke potentiële data is verwerkt, maar hiermee kan niet worden herleid welke data is verwerkt op basis van enkel de Logregel.
+Dit kan wel op basis van de verwerkingsactiviteit ID.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
-Er wordt hier niet verder gespecificeerd welke categorieen van informatie zijn opgevraagd.
+Er wordt hier niet verder gespecificeerd welke categorieën van informatie zijn opgevraagd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-2"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: verwerkingsactiviteit ID &lt;&lt;UUID&gt;&gt;"</p>
 </section><section id="niveau-2-kolomverwijzing"><div class="header-wrapper"><h4 id="x6-1-2-niveau-2-kolomverwijzing"><bdi class="secno">6.1.2 </bdi>Niveau 2: kolomverwijzing</h4><a class="self-link" href="#niveau-2-kolomverwijzing" aria-label="Permalink for Section 6.1.2"></a></div>
-<p>Op dit niveau wordt er zowel naar het betreffende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-5"><code>Register</code></a> verwezen alsmede de specifieke categorien van data die zijn verwerkt.
-Hieruit kan dus worden opgemaakt welke specifieke categorien van data zijn verwerkt, maar kan er niet worden herleid wat de waarde van de data is tijdens het loggen.</p>
+<p>Op dit niveau wordt er zowel naar het betreffende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-5"><code>Register</code></a> verwezen alsmede de specifieke categorieën van data die zijn verwerkt.
+Hieruit kan dus worden opgemaakt welke specifieke categorieën van data zijn verwerkt, maar kan er niet worden herleid wat de waarde van de data is tijdens het loggen.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-7"><code>Dataverwerking</code></a> betrof het BSN, Kenteken en APK gekeurd.
@@ -1341,7 +1341,7 @@ Omdat de overige categorien niet werden gebruikt, zijn die ook niet gelogd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-3"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN, Kenteken, APK gekeurd, verwerkingsactiviteit ID &lt;&lt;UUID&gt;&gt;"</p>
 </section><section id="niveau-3-concrete-data"><div class="header-wrapper"><h4 id="x6-1-3-niveau-3-concrete-data"><bdi class="secno">6.1.3 </bdi>Niveau 3: concrete data</h4><a class="self-link" href="#niveau-3-concrete-data" aria-label="Permalink for Section 6.1.3"></a></div>
 <p>Op het hoogste niveau wordt alle data in de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-4"><code>Logregel</code></a> gezet.
-Dit betekent dat alle relevante categorien uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-6"><code>Register</code></a> met bijbehorende concrete data worden gelogd.
+Dit betekent dat alle relevante categorieën uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-6"><code>Register</code></a> met bijbehorende concrete data worden gelogd.
 Op dit niveau kan de gehele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-8"><code>Dataverwerking</code></a> worden gereconstrueerd.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
