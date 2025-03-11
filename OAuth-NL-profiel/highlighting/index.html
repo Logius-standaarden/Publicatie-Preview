@@ -450,7 +450,7 @@ img.license{float:left;padding-right:5px}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">March 10, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">March 11, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -866,23 +866,20 @@ Effectively this means that browser based and native clients <em class="rfc2119"
   </div>
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
-<pre class="http" aria-busy="false"><code class="hljs">HTTP/1.2 302 Found
+<pre class="hljs"><code class="http hljs" aria-busy="false">HTTP/1.2 302 Found
 Cache-Control: no-cache
 Connection: close
 Content-Type: text/plain; charset=UTF-8
 Date: Wed, 07 Jan 2015 20:24:15 GMT
 Location: https://idp-p.example.com/authorize?client_id=55f9f559-2496-49d4-b6c3-351a58
 6b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
-Status: 302 Found</code></pre>
+Status: 302 Found
+</code></pre>
 
-<p>This causes the browser to send the following (non-normative) request to the authorization endpoint (inline wraps for display purposes only):</p>
-<pre class="http" aria-busy="false"><code class="hljs">GET /authorize?
-   client_id=55f9f559-2496-49d4-b6c3-351a586b7484
-  &amp;nonce=cd567ed4d958042f721a7cdca557c30d
-  &amp;response_type=code
-  &amp;scope=openid+email
-  &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
-Host: idp-p.example.com</code></pre>
+<p>This causes the browser to send the following (non-normative) request to the authorization endpoint:</p>
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false"><span class="hljs-keyword">GET</span> <span class="hljs-string">/authorize?</span>  <span class="hljs-string"></span> client_id=55f9f559-2496-49d4-b6c3-351a586b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3<span class="hljs-keyword">A</span>%2<span class="hljs-keyword">F</span>%2<span class="hljs-keyword">F</span>client.example.org%2<span class="hljs-keyword">F</span>cb <span class="hljs-string">HTTP/1.1
+Host:</span> idp-p.example.com
+</code></pre>
 </aside>
 
 
@@ -1015,21 +1012,20 @@ xuCxgOotXY6O3et4n77GtgspMgOEKj3b_WpCiuNEwQ</code></pre>
 <aside class="example" id="example-3"><div class="marker">
     <a class="self-link" href="#example-3">Example<bdi> 3</bdi></a>
   </div>
-<pre class="json" aria-busy="false"><code class="hljs">{
-   "keys": [
-     {
-       "alg": "RS256",
-       "e": "AQAB",
-       "n": "kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23P
-Tn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG
-9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe
-0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLm
-cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
-       "kty": "RSA",
-       "kid": "oauth-client"
-     }
-   ]
-}</code></pre>
+
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false">
+<span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">"keys"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+     <span class="hljs-punctuation">{</span>
+       <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"oauth-client"</span>
+     <span class="hljs-punctuation">}</span>
+   <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 </aside>
 
 
