@@ -845,7 +845,9 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   "specType": "ST",
   "pluralize": true,
   "preProcess": [
-    null,
+    null
+  ],
+  "postProcess": [
     null
   ]
 }</script>
@@ -2022,8 +2024,148 @@ This avoids XXE-attack vectors for example.</li>
 </dl></section>
   <section class="appendix informative" id="spectral-linter-configuration">
     <div class="header-wrapper"><h2 id="a-spectral-linter-configuration"><bdi class="secno">A. </bdi>Spectral linter configuration</h2><a class="self-link" href="#spectral-linter-configuration" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
-    <details>
-      <pre><code class="spectral-yaml yaml hljs" aria-busy="false"></code></pre>
+    <details class="spectral-yaml">
+      <pre><code><span class="hljs-comment"># spectral lint -r https://developer.overheid.nl/static/adr/ruleset.yaml $OAS_URL_OR_FILE</span>
+<span class="hljs-comment"># curl https://developer.overheid.nl/static/adr/ruleset.yaml &gt; .spectral.yml</span>
+
+<span class="hljs-attr">extends:</span> <span class="hljs-string">spectral:oas</span>
+
+<span class="hljs-attr">rules:</span>
+
+  <span class="hljs-comment">#/core/doc-openapi</span>
+  <span class="hljs-attr">openapi3:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.['openapi']"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">"^3.0.*$"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/doc-openapi: Use OpenAPI Specification for documentation: https://logius-standaarden.github.io/API-Design-Rules/#/core/doc-openapi"</span>
+
+  <span class="hljs-comment">#/core/version-header</span>
+  <span class="hljs-attr">missing-version-header:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))][headers]</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">API-Version</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/version-header: Return the full version number in a response header: https://logius-standaarden.github.io/API-Design-Rules/#/core/version-header"</span>
+
+  <span class="hljs-attr">missing-header:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))]</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">headers</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/version-header: Return the full version number in a response header: https://logius-standaarden.github.io/API-Design-Rules/#/core/version-header"</span>
+
+  <span class="hljs-comment">#/core/uri-version</span>
+  <span class="hljs-attr">include-major-version-in-uri:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.servers[*]"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">"\\/v[\\d+]"</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">url</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/uri-version: Include the major version number in the URI: https://logius-standaarden.github.io/API-Design-Rules/#/core/uri-version"</span>
+
+  <span class="hljs-comment">#/core/no-trailing-slash</span>
+  <span class="hljs-attr">paths-no-trailing-slash:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">notMatch:</span> <span class="hljs-string">"\\/$"</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"</span>
+
+  <span class="hljs-comment">#/core/http-methods</span>
+  <span class="hljs-attr">http-methods:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths[?(@property &amp;&amp; @property.match(/(description|summary)/i))]"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">"post|put|get|delete|patch|parameters"</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/http-methods: Only apply standard HTTP methods: https://logius-standaarden.github.io/API-Design-Rules/#http-methods"</span>
+
+  <span class="hljs-attr">paths-kebab-case:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{property}}</span> is not kebab-case."</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[*]~</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">"^(\/[a-z0-9-.]+|\/{[a-zA-Z0-9_]+})+$"</span>
+
+  <span class="hljs-attr">schema-camel-case:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Schema name should be CamelCase in <span class="hljs-template-variable">{{path}}</span>"</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">&gt;-
+      $.components.schemas[*]~
+</span>    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">casing</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">type:</span> <span class="hljs-string">pascal</span>
+        <span class="hljs-attr">separator:</span>
+          <span class="hljs-attr">char:</span> <span class="hljs-string">""</span>
+
+  <span class="hljs-attr">servers-use-https:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Server URL <span class="hljs-template-variable">{{value}}</span> <span class="hljs-template-variable">{{error}}</span>."</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.servers[*]</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths..servers[*]</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">url</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^https://.*</span>
+
+  <span class="hljs-attr">use-problem-schema:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">Your</span> <span class="hljs-string">schema</span> <span class="hljs-string">doesn't</span> <span class="hljs-string">seem</span> <span class="hljs-string">to</span> <span class="hljs-string">match</span> <span class="hljs-string">RFC7807.</span> <span class="hljs-string">Are</span> <span class="hljs-string">you</span> <span class="hljs-string">sure</span> <span class="hljs-string">it</span> <span class="hljs-string">is</span> <span class="hljs-string">ok?</span> {{<span class="hljs-string">path</span>}}
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/^(4|5|default)/))][[schema]].properties</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">schema:</span>
+          <span class="hljs-attr">anyOf:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">required:</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">required:</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">type</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">required:</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">type</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">required:</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
+                <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+
+  <span class="hljs-attr">property-casing:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.*.schemas[*].properties.[?(@property &amp;&amp; @property.match(/_links/i))]"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">casing</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">type:</span> <span class="hljs-string">camel</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">Properties</span> <span class="hljs-string">must</span> <span class="hljs-string">be</span> <span class="hljs-string">lowerCamelCase.</span>
+</code></pre>
     </details>
   </section>
  
