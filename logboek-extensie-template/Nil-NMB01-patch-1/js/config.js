@@ -1,6 +1,7 @@
 let respecConfig = {
   useLogo: true,
   useLabel: true,
+  maxTocLevel: 3,
   license: "cc-by",
   specStatus: "WV",
   specType: "PR",
@@ -8,10 +9,7 @@ let respecConfig = {
   shortName: "logboek-extensie-template",
   publishDate: "2025-03-31",
   publishVersion: "0.9",
-  
-  previousPublishVersion: "0.0.1",
-  previousPublishDate: "2025-03-01",
-  previousMaturity: "WV",
+
   editors:
     [
       {
