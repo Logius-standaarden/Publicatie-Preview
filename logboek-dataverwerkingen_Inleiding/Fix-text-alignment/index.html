@@ -838,7 +838,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Algemene inleiding - Logboek dataverwerkingen</h1>
     
@@ -1281,10 +1281,10 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <img src="./medias/relatie_logboekelementen_afbeelding12.png" alt="Alt text"></li>
 </ul>
 </section><section id="spanid"><div class="header-wrapper"><h4 id="x5-2-9-spanid"><bdi class="secno">5.2.9 </bdi>SpanId</h4><a class="self-link" href="#spanid" aria-label="Permalink for Section 5.2.9"></a></div>
-<p>In de gemeente-applicatie krijgt elke (sub)Operation een eigen, unieke SpanId.
-*	De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een parentSpanId met de waarde van SpanId van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen.
-*	Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke SpanId.
-*	Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een foreignSpanId moeten worden vastgelegd. De waarde van deze foreignSpanId is gelijk aan de waarde van de SpanId van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.
+<p>In de gemeente-applicatie krijgt elke (sub)Operation een eigen, unieke SpanId. <br>
+•	De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een parentSpanId met de waarde van SpanId van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen. <br>
+•	Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke SpanId. <br>
+•	Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een foreignSpanId moeten worden vastgelegd. De waarde van deze foreignSpanId is gelijk aan de waarde van de SpanId van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.
 <img src="./medias/relatie_logboekelementen_afbeelding13.png" alt="Alt text"></p>
 </section><section id="totaalbeeld"><div class="header-wrapper"><h4 id="x5-2-10-totaalbeeld"><bdi class="secno">5.2.10 </bdi>Totaalbeeld</h4><a class="self-link" href="#totaalbeeld" aria-label="Permalink for Section 5.2.10"></a></div>
 <p>Als alle relaties gelegd zijn, ziet de traceringsconstructie er als volgt uit:
@@ -2669,28 +2669,23 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <p>Met de volgende sequentie diagrammen wordt in beeld gebracht wat de gevolgen zijn voor de diverse flows in het gebruik van de standaard.</p>
 <section id="loggen-van-een-verwerking"><div class="header-wrapper"><h5 id="x6-2-3-1-loggen-van-een-verwerking"><bdi class="secno">6.2.3.1 </bdi>Loggen van een verwerking</h5><a class="self-link" href="#loggen-van-een-verwerking" aria-label="Permalink for Section 6.2.3.1"></a></div>
 <p>Het wegschrijven van een verwerking in de log-API is uiterst simpel:</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">Logboek
-Applicatie
-Logboek
-Applicatie
-Dataverwerking in Applicatie
-Schrijf logregel in Logboek
-ack</code></pre>
+<pre><code class="mermaid" data-processed="true"></code></pre>
 <p>Deze transactie is geoptimaliseerd op eenvoud en snelheid, want deze heeft rechtstreeks invloed op de snelheid van verwerkingen. Deze transactie moet schaalbaar zijn naar bijv. tienduizenden transacties per seconde.</p>
 </section><section id="tonen-van-een-verwerking"><div class="header-wrapper"><h5 id="x6-2-3-2-tonen-van-een-verwerking"><bdi class="secno">6.2.3.2 </bdi>Tonen van een verwerking</h5><a class="self-link" href="#tonen-van-een-verwerking" aria-label="Permalink for Section 6.2.3.2"></a></div>
 <p>Om verwerkingen op een significante manier te tonen aan bijvoorbeeld een Betrokkene, is het noodzakelijk om gegevens op te vragen uit zowel de logs als het RvVA. Deze flow mag wat complexer zijn, omdat deze niet voor alle vastgelegde data wordt uitgevoerd en het belang van de bevraging rechtvaardigt dat een bevraging wat langer kan duren.</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">Register
-Logboek
-Inzage App
-Register
-Logboek
-Inzage App
-Betrokkene vraagt om inzage
-Vraag Logregels van Betrokkene
-Logregels
-Vraag Verwerkingsactiviteiten bij Logregels
-verwerkingsactiviteiten
-Combineeer</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">sequenceDiagram
+    participant F as Inzage App
+    participant L as Logboek
+    participant R as Register
+    Note over F, R: Betrokkene vraagt om inzage
+    F-&gt;&gt;+L: Vraag Logregels van Betrokkene
+    Activate F
+    L--&gt;&gt;-F: Logregels
+    F-&gt;&gt;+R: Vraag Verwerkingsactiviteiten bij Logregels
+    R--&gt;&gt;-F: verwerkingsactiviteiten
+    F--&gt;&gt;F: Combineeer
+    Deactivate F
+</code></pre>
 </section></section></section>
     <section class="informative" id="bewaartermijnen-worden-in-het-profiel-vastgelegd"><div class="header-wrapper"><h3 id="x6-3-bewaartermijnen-worden-in-het-profiel-vastgelegd"><bdi class="secno">6.3 </bdi>Bewaartermijnen worden in het Profiel vastgelegd</h3><a class="self-link" href="#bewaartermijnen-worden-in-het-profiel-vastgelegd" aria-label="Permalink for Section 6.3"></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <ul>
@@ -2883,25 +2878,31 @@ Combineeer</code></pre>
 <li>De gemeente toont de gegevens aan de persoon en logt dat deze gegevens zijn getoond aan de persoon.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">Vergunningsoftware BV
-Gemeente
-Burger
-Log Vergunning
-Parkeeradmin
-Log Gemeente
-MijnOmgeving
-Browser
-Log Vergunning
-Parkeeradmin
-Log Gemeente
-MijnOmgeving
-Browser
-tonenVergunningenVraag
-opvragenVergunningenVraag
-opvragenVergunningenAntwoord
-Log gegevensverwerking (opvragenVergunningen)
-tonenVergunningenAntwoord
-Log gegevensverwerking (tonenVergunningen)</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">
+sequenceDiagram
+    box ivory Burger
+      participant B as Browser
+    end
+ 
+    box ivory Gemeente 
+      participant MO as MijnOmgeving
+      participant L1 as Log Gemeente
+    end 
+
+    box ivory Vergunningsoftware BV
+      participant V as Parkeeradmin
+      participant L2 as Log Vergunning
+    end 
+
+    rect lavender
+    B-&gt;&gt;+MO: tonenVergunningenVraag
+    MO-&gt;&gt;V: opvragenVergunningenVraag
+    V--&gt;&gt;MO: opvragenVergunningenAntwoord
+    V-&gt;&gt;L2: Log gegevensverwerking (opvragenVergunningen)
+    MO--&gt;&gt;B: tonenVergunningenAntwoord
+    MO-&gt;&gt;L1: Log gegevensverwerking (tonenVergunningen)
+    End
+</code></pre>
 </section><section id="logging-van-gegevens-parkeervergunning-inzien"><div class="header-wrapper"><h4 id="x7-1-4-logging-van-gegevens-parkeervergunning-inzien"><bdi class="secno">7.1.4 </bdi>Logging van gegevens  (Parkeervergunning - inzien)</h4><a class="self-link" href="#logging-van-gegevens-parkeervergunning-inzien" aria-label="Permalink for Section 7.1.4"></a></div>
 <p>De volgende gegevens worden gelogd in de diverse logmomenten:</p>
 <p><strong>Log opvragenVergunningen (log vergunningenapplicatie):</strong></p>
@@ -3095,46 +3096,57 @@ Log gegevensverwerking (tonenVergunningen)</code></pre>
 <li>De gemeente toont de gegevens aan de persoon en logt dat deze gegevens zijn getoond aan de persoon.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">RDW
-Vergunningsoftware BV
-Gemeente
-Burger
-Log BRV
-BRV
-Log Vergunning
-Parkeeradmin
-Log Gemeente
-MijnOmgeving
-Browser
-Log BRV
-BRV
-Log Vergunning
-Parkeeradmin
-Log Gemeente
-MijnOmgeving
-Browser
-tonenVergunningenVraag
-opvragenVergunningenVraag
-opvragenVergunningenAntwoord
-Log gegevensverwerking (opvragenVergunningen)
-tonenVergunningenAntwoord
-Log gegevensverwerking (tonenVergunningen)
-wijzigenKentekenVraag
-wijzigenKentekenVraag
-controlerenKentekenVraag
-controlerenKentekenAntwoord
-Log gegevensverwerking (controlerenKenteken)
-Log gegevensverwerking (controlerenKenteken)
-wijzigenKenteken
-wijzigenKentekenAntwoord
-Log gegevensverwerking (wijzigenKenteken)
-Log gegevensverwerking (wijzigenKenteken)
-tonenVergunningenVraag
-opvragenVergunningenVraag
-opvragenVergunningenAntwoord
-Log gegevensverwerking (opvragenVergunningen)
-tonenVergunningenAntwoord
-Log gegevensverwerking (tonenVergunningen)</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">sequenceDiagram
+    box ivory Burger
+      participant B as Browser
+    end
+ 
+    box ivory Gemeente 
+      participant MO as MijnOmgeving
+      participant L1 as Log Gemeente
+    end 
+
+    box ivory Vergunningsoftware BV
+      participant V as Parkeeradmin
+      participant L2 as Log Vergunning
+    end 
+
+    box ivory RDW
+      participant BR as BRV
+      participant L3 as Log BRV
+    end 
+
+    rect lavender
+    B-&gt;&gt;+MO: tonenVergunningenVraag
+    MO-&gt;&gt;V: opvragenVergunningenVraag
+    V--&gt;&gt;MO: opvragenVergunningenAntwoord
+    V-&gt;&gt;L2: Log gegevensverwerking (opvragenVergunningen)
+    MO--&gt;&gt;B: tonenVergunningenAntwoord
+    MO-&gt;&gt;L1: Log gegevensverwerking (tonenVergunningen)
+    end
+
+    rect lavender
+    B-&gt;&gt;+MO: wijzigenKentekenVraag
+    MO-&gt;&gt;V: wijzigenKentekenVraag
+    V-&gt;&gt;BR: controlerenKentekenVraag
+    BR--&gt;&gt;V: controlerenKentekenAntwoord
+    BR-&gt;&gt;L3: Log gegevensverwerking (controlerenKenteken)
+    V-&gt;&gt;L2: Log gegevensverwerking (controlerenKenteken)
+    V-&gt;&gt;V: wijzigenKenteken
+    V--&gt;&gt;MO: wijzigenKentekenAntwoord
+    V-&gt;&gt;L2: Log gegevensverwerking (wijzigenKenteken)
+    MO-&gt;&gt;L1: Log gegevensverwerking (wijzigenKenteken)
+    end
+
+    rect lavender
+    B-&gt;&gt;+MO: tonenVergunningenVraag
+    MO-&gt;&gt;V: opvragenVergunningenVraag
+    V--&gt;&gt;MO: opvragenVergunningenAntwoord
+    V-&gt;&gt;L2: Log gegevensverwerking (opvragenVergunningen)
+    MO--&gt;&gt;B: tonenVergunningenAntwoord
+    MO-&gt;&gt;L1: Log gegevensverwerking (tonenVergunningen)
+    end
+</code></pre>
 </section><section id="logging-van-gegevens-parkeervergunning-wijzigen"><div class="header-wrapper"><h4 id="x7-2-4-logging-van-gegevens-parkeervergunning-wijzigen"><bdi class="secno">7.2.4 </bdi>Logging van gegevens (Parkeervergunning - wijzigen)</h4><a class="self-link" href="#logging-van-gegevens-parkeervergunning-wijzigen" aria-label="Permalink for Section 7.2.4"></a></div>
 <p>De volgende gegevens worden gelogd in de diverse logmomenten:</p>
 <p><strong>1. Log opvragenVergunningen (log vergunningenapplicatie):</strong></p>
@@ -3759,37 +3771,48 @@ Log gegevensverwerking (tonenVergunningen)</code></pre>
 <li>De gemeentelijke Balieapplicatie stuurt de persoonsgegevens naar de Browser en logt de aanvraag.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">BRP Registratie
-Gemeente
-Baliemedewerker
-Log BRP
-BRP
-Log Gemeente
-Balieapplicatie
-Browser
-Log BRP
-BRP
-Log Gemeente
-Balieapplicatie
-Browser
-tonenNAWGegevensVraag
-opvragenPersoonsgegevensVraag
-opvragenPersoonsgegevensAntwoord
-Log gegevensverwerking (opvragenPersoonsgegevens)
-tonenNAWGegevensAntwoord
-Log gegevensverwerking (tonenNAWGegegevens)
-wijzigenNAWGegevensVraag
-wijzigenPersoonsgegevensVraag
-wijzigenPersoonsgegevens
-wijzigenPersoonsgegevensAntwoord
-Loggen verwerking (wijzigenPersoonsgegevens)
-Loggen verwerking (wijzigenPersoonsgegevens)
-tonenNAWGegevensVraag
-opvragenPersoonsgegevensVraag
-opvragenPersoonsgegevensAntwoord
-Loggen gegevensverwerking (opvragenPersoonsgegevens)
-tonenNAWGegevensAntwoord
-Loggen gegevensverwerking (tonenNAWGegevens)</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">sequenceDiagram
+    box ivory Baliemedewerker
+      participant B as Browser
+    end
+ 
+    box ivory Gemeente 
+      participant BA as Balieapplicatie
+      participant L1 as Log Gemeente
+    end 
+
+    box ivory BRP Registratie
+      participant BR as BRP
+      participant L2 as Log BRP
+    end 
+
+    rect lavender
+    B-&gt;&gt;+BA: tonenNAWGegevensVraag
+    BA-&gt;&gt;BR: opvragenPersoonsgegevensVraag
+    BR--&gt;&gt;BA: opvragenPersoonsgegevensAntwoord
+    BR-&gt;&gt;L2: Log gegevensverwerking (opvragenPersoonsgegevens)
+    BA--&gt;&gt;B: tonenNAWGegevensAntwoord
+    BA-&gt;&gt;L1: Log gegevensverwerking (tonenNAWGegegevens)
+    end
+
+    rect lavender
+    B-&gt;&gt;BA: wijzigenNAWGegevensVraag
+    BA-&gt;&gt;BR : wijzigenPersoonsgegevensVraag
+    BR--&gt;&gt;BR : wijzigenPersoonsgegevens
+    BR--&gt;&gt;BA: wijzigenPersoonsgegevensAntwoord
+    BR-&gt;&gt;L2: Loggen verwerking (wijzigenPersoonsgegevens)
+    BA-&gt;&gt;L1: Loggen verwerking (wijzigenPersoonsgegevens)
+    end
+
+    rect lavender
+    B-&gt;&gt;BA: tonenNAWGegevensVraag
+    BA-&gt;&gt;BR: opvragenPersoonsgegevensVraag
+    BR--&gt;&gt;BA: opvragenPersoonsgegevensAntwoord
+    BR-&gt;&gt;L2: Loggen gegevensverwerking (opvragenPersoonsgegevens)
+    BA--&gt;&gt;B: tonenNAWGegevensAntwoord
+    BA-&gt;&gt;L1: Loggen gegevensverwerking (tonenNAWGegevens)
+    End
+</code></pre>
 </section><section id="logging-van-gegevens-registratie-verhuizing-eenvoudig"><div class="header-wrapper"><h4 id="x7-3-4-logging-van-gegevens-registratie-verhuizing-eenvoudig"><bdi class="secno">7.3.4 </bdi>Logging van gegevens (Registratie Verhuizing - Eenvoudig)</h4><a class="self-link" href="#logging-van-gegevens-registratie-verhuizing-eenvoudig" aria-label="Permalink for Section 7.3.4"></a></div>
 <p>De volgende gegevens worden gelogd in de diverse logmomenten:</p>
 <p><strong>1. Log opvragenPersoonsgegevens (log BRP):</strong></p>
@@ -4267,25 +4290,30 @@ Loggen gegevensverwerking (tonenNAWGegevens)</code></pre>
 <li>De gemeentelijke Balieapplicatie stuurt de gegevens naar de Browser en worden getoond aan de Baliemedewerker. De aanvraag wordt gelogd door de Balieapplicatie.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">BRP Registratie
-Gemeente
-Baliemedewerker
-Log BRP
-BRP
-Log Gemeente
-Balieapplicatie
-Browser
-Log BRP
-BRP
-Log Gemeente
-Balieapplicatie
-Browser
-tonenNAWGegevensVraag
-opvragenPersoonsgegevensVraag
-opvragenPersoonsgegevensAntwoord
-Log gegevensverwerking (opvragenPersoonsgegevens)
-tonenNAWGegevensAntwoord
-Log gegevensverwerking (tonenNAWGegegevens)</code></pre>
+<pre><code class="mermaid hljs" aria-busy="false">sequenceDiagram
+    box ivory Baliemedewerker
+      participant B as Browser
+    end
+ 
+    box ivory Gemeente 
+      participant BA as Balieapplicatie
+      participant L1 as Log Gemeente
+    end 
+
+    box ivory BRP Registratie
+      participant BR as BRP
+      participant L2 as Log BRP
+    end 
+
+    rect lavender
+    B-&gt;&gt;+BA: tonenNAWGegevensVraag
+    BA-&gt;&gt;BR: opvragenPersoonsgegevensVraag
+    BR--&gt;&gt;BA: opvragenPersoonsgegevensAntwoord
+    BR-&gt;&gt;L2: Log gegevensverwerking (opvragenPersoonsgegevens)
+    BA--&gt;&gt;B: tonenNAWGegevensAntwoord
+    BA-&gt;&gt;L1: Log gegevensverwerking (tonenNAWGegegevens)
+    end
+</code></pre>
 </section><section id="logging-van-gegevens-registratie-verhuizing"><div class="header-wrapper"><h4 id="x7-4-4-logging-van-gegevens-registratie-verhuizing"><bdi class="secno">7.4.4 </bdi>Logging van gegevens (Registratie verhuizing)</h4><a class="self-link" href="#logging-van-gegevens-registratie-verhuizing" aria-label="Permalink for Section 7.4.4"></a></div>
 <p>De volgende gegevens worden gelogd in de diverse logmomenten:</p>
 <p><strong>1. Log opvragenPersoonsgegevens (log BRP) persoon 1:</strong></p>
@@ -4889,6 +4917,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Praktijkrichtlijn - Werkversie</div><div id="ddiagram-1"><svg id="diagram-1" width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2412 512" style="max-width: 512px;" role="graphics-document document" aria-roledescription="error"><style>
-#diagram-1{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-1 .error-icon{fill:#552222;}#diagram-1 .error-text{fill:#552222;stroke:#552222;}#diagram-1 .edge-thickness-normal{stroke-width:2px;}#diagram-1 .edge-thickness-thick{stroke-width:3.5px;}#diagram-1 .edge-pattern-solid{stroke-dasharray:0;}#diagram-1 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-1 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-1 .marker{fill:#333333;stroke:#333333;}#diagram-1 .marker.cross{stroke:#333333;}#diagram-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
-</style><g></g><g><path class="error-icon" d="m411.313,123.313c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32-9.375,9.375-20.688-20.688c-12.484-12.5-32.766-12.5-45.25,0l-16,16c-1.261,1.261-2.304,2.648-3.31,4.051-21.739-8.561-45.324-13.426-70.065-13.426-105.867,0-192,86.133-192,192s86.133,192 192,192 192-86.133 192-192c0-24.741-4.864-48.327-13.426-70.065 1.402-1.007 2.79-2.049 4.051-3.31l16-16c12.5-12.492 12.5-32.758 0-45.25l-20.688-20.688 9.375-9.375 32.001-31.999zm-219.313,100.687c-52.938,0-96,43.063-96,96 0,8.836-7.164,16-16,16s-16-7.164-16-16c0-70.578 57.422-128 128-128 8.836,0 16,7.164 16,16s-7.164,16-16,16z"></path><path class="error-icon" d="m459.02,148.98c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l16,16c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16.001-16z"></path><path class="error-icon" d="m340.395,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16-16c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l15.999,16z"></path><path class="error-icon" d="m400,64c8.844,0 16-7.164 16-16v-32c0-8.836-7.156-16-16-16-8.844,0-16,7.164-16,16v32c0,8.836 7.156,16 16,16z"></path><path class="error-icon" d="m496,96.586h-32c-8.844,0-16,7.164-16,16 0,8.836 7.156,16 16,16h32c8.844,0 16-7.164 16-16 0-8.836-7.156-16-16-16z"></path><path class="error-icon" d="m436.98,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688l32-32c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32c-6.251,6.25-6.251,16.375-0.001,22.625z"></path><text class="error-text" x="1440" y="250" font-size="150px" style="text-anchor: middle;">Syntax error in text</text><text class="error-text" x="1250" y="400" font-size="100px" style="text-anchor: middle;">mermaid version 10.6.1</text></g></svg></div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Praktijkrichtlijn - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
