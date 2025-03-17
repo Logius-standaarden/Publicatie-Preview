@@ -103,7 +103,7 @@ dd{margin-left:0}
 img.license{float:left;padding-right:5px}
 </style>
 <meta name="description" content="This document contains a normative standard for designing APIs in the Dutch Public Sector.
-The Governance of this standard is described by the API-Standaarden beheermodel in a separate repository and published by Logius.
+The Governance of this standard is described by the API-Standaarden beheermodel published by Logius.
 This document is part of the Nederlandse API Strategie, which consists of a set of documents.">
 <style>
 .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
@@ -854,14 +854,14 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">March 11, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">March 17, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -915,7 +915,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document contains a normative standard for designing APIs in the Dutch Public Sector.
-<a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/">The Governance of this standard</a> is described by the API-Standaarden beheermodel in a <a href="https://github.com/Logius-standaarden/API-Standaarden-Beheermodel/">separate repository</a> and published by Logius.
+The Governance of this standard is described by the <a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/">API-Standaarden beheermodel</a> published by Logius.
 This document is part of the <em>Nederlandse API Strategie</em>, which consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">a set of documents</a>.</p>
 </section>
   <section class="notoc" id="conformance"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
@@ -1077,16 +1077,16 @@ In addition to this (normative) document, separate modules are being written to 
 <section id="normative-design-rules"><div class="header-wrapper"><h3 id="x2-1-normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 2.1"></a></div>
 <p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considerd when designing and building the api.</p>
 <section id="list-of-functional-rules"><div class="header-wrapper"><h4 id="x2-1-1-list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</h4><a class="self-link" href="#list-of-functional-rules" aria-label="Permalink for Section 2.1.1"></a></div>
-<ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
+<ul id="functionalList"></ul>
 
 </section><section id="list-of-technical-rules"><div class="header-wrapper"><h4 id="x2-1-2-list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</h4><a class="self-link" href="#list-of-technical-rules" aria-label="Permalink for Section 2.1.2"></a></div>
-<ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul></section></section></section>
+<ul id="technicalList"></ul></section></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x3-the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 3."></a></div>
 <section id="resources"><div class="header-wrapper"><h3 id="x3-1-resources"><bdi class="secno">3.1 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 3.1"></a></div>
 <p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is the key abstraction of information, where every piece of information is named by assigning a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a> (Uniform Resource Identifier). Resources describe <em>things</em>, which can vary between physical objects (e.g. a building or a person) and more abstract concepts (e.g. a permit or an event).</p>
 <p><span id="api-05"></span></p>
-<div class="rule" id="/core/naming-resources" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</p>
+<div class="rule" id="/core/naming-resources" data-type="functional">
+   <p class="rulelab">Use nouns to name resources</p>
    <dl>
    <dt>Statement</dt>
    <dd>
@@ -1109,14 +1109,14 @@ In addition to this (normative) document, separate modules are being written to 
    Resources describe objects not actions.
    </dd>
    <dt>Implications</dt>
-   <dd>Adherence to this rule needs to be manually verified.</dd>
+   <dd id="implications"></dd>
 </dl>
 </div>
 
 <p>A resource describing a single thing is called a <a data-link-type="dfn|abstract-op" href="#dfn-singular-resource" class="internalDFN" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be grouped into collections, which are resources in their own right and can typically be paged, sorted and filtered. Most often all collection members have the same type, but this is not necessarily the case. A resource describing multiple things is called a <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-1">collection resource</a>. Collection resources typically contain references to the underlying singular resources.</p>
 <p><span id="api-54"></span></p>
-<div class="rule" id="/core/naming-collections" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</p>
+<div class="rule" id="/core/naming-collections" data-type="functional">
+   <p class="rulelab">Use plural nouns to name collection resources</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1141,13 +1141,13 @@ In addition to this (normative) document, separate modules are being written to 
          </div>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-04"></span></p>
-<div class="rule" id="/core/interface-language" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</p>
+<div class="rule" id="/core/interface-language" data-type="functional">
+   <p class="rulelab">Define interfaces in Dutch unless there is an official English glossary available</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1159,13 +1159,13 @@ In addition to this (normative) document, separate modules are being written to 
          Note that glossaries exist that define useful sets of attributes which <em class="rfc2119">SHOULD</em> preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-48"></span></p>
-<div class="rule" id="/core/no-trailing-slash" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-   <p class="rulelab"><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</p>
+<div class="rule" id="/core/no-trailing-slash" data-type="technical">
+   <p class="rulelab">Leave off trailing slashes from URIs</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1193,8 +1193,8 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 <p><span id="api-53"></span></p>
-<div class="rule" id="/core/hide-implementation" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</p>
+<div class="rule" id="/core/hide-implementation" data-type="functional">
+   <p class="rulelab">Hide irrelevant implementation details</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1222,8 +1222,8 @@ In addition to this (normative) document, separate modules are being written to 
 </section><section id="http-methods"><div class="header-wrapper"><h3 id="x3-2-http-methods"><bdi class="secno">3.2 </bdi>HTTP methods</h3><a class="self-link" href="#http-methods" aria-label="Permalink for Section 3.2"></a></div>
 <p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>].</p>
 <p><span id="api-03"></span></p>
-<div class="rule" id="/core/http-methods" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-   <p class="rulelab"><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</p>
+<div class="rule" id="/core/http-methods" data-type="technical">
+   <p class="rulelab">Only apply standard HTTP methods</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1323,8 +1323,8 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 <p><span id="api-01"></span></p>
-<div class="rule" id="/core/http-safety" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</p>
+<div class="rule" id="/core/http-safety" data-type="functional">
+   <p class="rulelab">Adhere to HTTP safety and idempotency semantics for operations</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1387,8 +1387,8 @@ In addition to this (normative) document, separate modules are being written to 
    </dl>
 </div>
 
-<div class="rule" id="/core/http-response-code" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</p>
+<div class="rule" id="/core/http-response-code" data-type="functional">
+   <p class="rulelab">Adhere to HTTP status codes to convey appropriate errors</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1400,7 +1400,7 @@ In addition to this (normative) document, separate modules are being written to 
          </p><p>In case of an error, the server <em class="rfc2119">SHOULD NOT</em> pass technical details (e.g. call stacks or other internal hints) to the client. The error message <em class="rfc2119">SHOULD</em> be generic to avoid revealing additional details and expose internal information which can be used with malicious intent.
       </p></dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1421,8 +1421,8 @@ In addition to this (normative) document, separate modules are being written to 
 <li><em>Reliability</em> is improved because it eases the task of recovering from partial failures since the server doesn't have to maintain, update or communicate session state. One failing request does not influence other requests (depending on the nature of the failure of course).</li>
 </ul>
 <p><span id="api-02"></span></p>
-<div class="rule" id="/core/stateless" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</p>
+<div class="rule" id="/core/stateless" data-type="functional">
+   <p class="rulelab">Do not maintain session state on the server</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1433,7 +1433,7 @@ In addition to this (normative) document, separate modules are being written to 
          To achieve full decoupling between client and server, and to benefit from the advantages mentioned above, no session state <em class="rfc2119">MUST</em> reside on the server. Session state <em class="rfc2119">MUST</em> therefore reside entirely on the client.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
    <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
@@ -1441,8 +1441,8 @@ In addition to this (normative) document, separate modules are being written to 
 </section><section id="relationships"><div class="header-wrapper"><h3 id="x3-4-relationships"><bdi class="secno">3.4 </bdi>Relationships</h3><a class="self-link" href="#relationships" aria-label="Permalink for Section 3.4"></a></div>
 <p>Resources are often interconnected by relationships. Relationships can be modelled in different ways depending on the cardinality, semantics and more importantly, the use cases and access patterns the REST API needs to support.</p>
 <p><span id="api-06"></span></p>
-<div class="rule" id="/core/nested-child" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</p>
+<div class="rule" id="/core/nested-child" data-type="functional">
+  <p class="rulelab">Use nested URIs for child resources</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1466,13 +1466,13 @@ In addition to this (normative) document, separate modules are being written to 
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
   <dt>Implications</dt>
-  <dd>Adherence to this rule needs to be manually verified.</dd>
+  <dd id="implications"></dd>
 </dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
 <p><span id="api-10"></span></p>
-<div class="rule" id="/core/resource-operations" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</p>
+<div class="rule" id="/core/resource-operations" data-type="functional">
+  <p class="rulelab">Model resource operations as a sub-resource or dedicated resource</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1488,15 +1488,15 @@ In addition to this (normative) document, separate modules are being written to 
       </ol>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl> 
 </div>
 
 </section><section id="documentation"><div class="header-wrapper"><h3 id="x3-6-documentation"><bdi class="secno">3.6 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 3.6"></a></div>
 <p>An API is as good as the accompanying documentation. The documentation has to be easily findable, searchable and publicly accessible. Most developers will first read the documentation before they start implementing. Hiding the technical documentation in PDF documents and/or behind a login creates a barrier for both developers and search engines.</p>
 <p><span id="api-16"></span></p>
-<div class="rule" id="/core/doc-openapi" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</p>
+<div class="rule" id="/core/doc-openapi" data-type="technical">
+  <p class="rulelab">Use OpenAPI Specification for documentation</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1522,8 +1522,8 @@ In addition to this (normative) document, separate modules are being written to 
    </dl>
 </div>
 
-<div class="rule" id="/core/doc-openapi-contact" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</p>
+<div class="rule" id="/core/doc-openapi-contact" data-type="functional">
+  <p class="rulelab">Document contact information for publicly available APIs</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1552,8 +1552,8 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 <p><span id="api-17"></span></p>
-<div class="rule" id="/core/doc-language" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</p>
+<div class="rule" id="/core/doc-language" data-type="functional">
+  <p class="rulelab">Publish documentation in Dutch unless there is existing documentation in English</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1564,13 +1564,13 @@ In addition to this (normative) document, separate modules are being written to 
          In line with design rule <a href="#/core/interface-language">/core/interface-language</a>, the OAS document (e.g. descriptions and examples) <em class="rfc2119">SHOULD</em> be written in Dutch. If relevant, you <em class="rfc2119">MAY</em> refer to existing documentation written in English.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-51"></span></p>
-<div class="rule" id="/core/publish-openapi" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</p>
+<div class="rule" id="/core/publish-openapi" data-type="technical">
+  <p class="rulelab">Publish OAS document at a standard location in JSON-format</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1607,8 +1607,8 @@ In addition to this (normative) document, separate modules are being written to 
 </section><section id="versioning"><div class="header-wrapper"><h3 id="x3-7-versioning"><bdi class="secno">3.7 </bdi>Versioning</h3><a class="self-link" href="#versioning" aria-label="Permalink for Section 3.7"></a></div>
 <p>Changes in APIs are inevitable. APIs should therefore always be versioned, facilitating the transition between changes.</p>
 <p><span id="api-18"></span></p>
-<div class="rule" id="/core/deprecation-schedule" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</p>
+<div class="rule" id="/core/deprecation-schedule" data-type="functional">
+  <p class="rulelab">Include a deprecation schedule when deprecating features or versions</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1619,13 +1619,13 @@ In addition to this (normative) document, separate modules are being written to 
          Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule <em class="rfc2119">MUST</em> be published. This document <em class="rfc2119">SHOULD</em> be published on a public web page. Furthermore, active clients <em class="rfc2119">SHOULD</em> be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-19"></span></p>
-<div class="rule" id="/core/transition-period" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</p>
+<div class="rule" id="/core/transition-period" data-type="functional">
+  <p class="rulelab">Schedule a fixed transition period for a new major API version</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1636,13 +1636,13 @@ In addition to this (normative) document, separate modules are being written to 
          When releasing a new major API version, the old version <em class="rfc2119">MUST</em> remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions <em class="rfc2119">MAY</em> be published concurrently.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-20"></span></p>
-<div class="rule" id="/core/uri-version" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</p>
+<div class="rule" id="/core/uri-version" data-type="technical">
+  <p class="rulelab">Include the major version number in the URI</p>
     <dl>
       <dt>Statement</dt>
       <dd>
@@ -1679,8 +1679,8 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 <p><span id="api-55"></span></p>
-<div class="rule" id="/core/changelog" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</p>
+<div class="rule" id="/core/changelog" data-type="functional">
+  <p class="rulelab">Publish a changelog for API changes between versions</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1691,13 +1691,13 @@ In addition to this (normative) document, separate modules are being written to 
          <p>When releasing new (major, minor or patch) versions, all API changes <em class="rfc2119">MUST</em> be documented properly in a publicly available changelog.</p>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
 <p><span id="api-56"></span></p>
-<div class="rule" id="/core/semver" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</p>
+<div class="rule" id="/core/semver" data-type="technical">
+  <p class="rulelab">Adhere to the Semantic Versioning model when releasing API changes</p>
   <dl>
       <dt>Statement</dt>
       <dd>
@@ -1719,8 +1719,8 @@ In addition to this (normative) document, separate modules are being written to 
 </div>
 
 <p><span id="api-57"></span></p>
-<div class="rule" id="/core/version-header" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</p>
+<div class="rule" id="/core/version-header" data-type="technical">
+  <p class="rulelab">Return the full version number in a response header</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1755,8 +1755,8 @@ Effectively, only security standards directly applicable to interactions are dis
 <p>In order to meet the complete security objectives, every implementer <em class="rfc2119">MUST</em> also apply a range of controls not mentioned in this section.</p>
 <p>Note: security controls for signing and encrypting of application level messages are part of separate extensions: <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">Signing</a> and <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/">Encryption</a>.</p>
 <p><span id="api-11"></span></p>
-<div class="rule" id="/core/transport/tls" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</p>
+<div class="rule" id="/core/transport/tls" data-type="technical">
+  <p class="rulelab">Secure connections using TLS</p>
   <dl>
     <dt>Statement</dt>
     <dd>
@@ -1779,8 +1779,8 @@ Effectively, only security standards directly applicable to interactions are dis
 </div>
 
 <p><span id="api-58"></span></p>
-<div class="rule" id="/core/transport/no-sensitive-uris" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</p>
+<div class="rule" id="/core/transport/no-sensitive-uris" data-type="functional">
+  <p class="rulelab">No sensitive information in URIs</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1826,8 +1826,8 @@ Additional HTTP headers are used in such example to pass an original IP-address 
 <p>Implementations <em class="rfc2119">MUST</em> consider filtering both inbound and outbound traffic for HTTP-headers used internally.
 Primary focus of inbound filtering is to prevent injection of malicious headers on requests.
 As for outbound filtering, the main concern is leaking of information.</p>
-<div class="rule" id="/core/transport/security-headers" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</p>
+<div class="rule" id="/core/transport/security-headers" data-type="technical">
+  <p class="rulelab">Use mandatory security headers in API all responses</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1915,8 +1915,8 @@ As for outbound filtering, the main concern is leaking of information.</p>
 </div>
 
 <p><span id="api-50"></span></p>
-<div class="rule" id="/core/transport/cors" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</p>
+<div class="rule" id="/core/transport/cors" data-type="technical">
+  <p class="rulelab">Use CORS to control access</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1969,8 +1969,8 @@ This avoids XXE-attack vectors for example.</li>
 </ul>
 </section></section><section id="geospatial"><div class="header-wrapper"><h3 id="x3-9-geospatial"><bdi class="secno">3.9 </bdi>Geospatial</h3><a class="self-link" href="#geospatial" aria-label="Permalink for Section 3.9"></a></div>
 <p>Geospatial data refers to information that is associated with a physical location on Earth, often expressed by its 2D/3D coordinates. </p>
-<div class="rule" id="/core/geospatial" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-  <p class="rulelab"><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</p>
+<div class="rule" id="/core/geospatial" data-type="functional">
+  <p class="rulelab">Apply the geospatial module for geospatial data</p>
   <dl>
     <dt>Statement</dt>
     <dd>
@@ -1986,7 +1986,7 @@ This avoids XXE-attack vectors for example.</li>
       </ol>
     </dd>
     <dt>Implications</dt>
-    <dd>Adherence to this rule needs to be manually verified.</dd>
+    <dd id="implications"></dd>
   </dl>
 </div></section></section>
   <section id="glossary"><div class="header-wrapper"><h2 id="x4-glossary"><bdi class="secno">4. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 4."></a></div>
