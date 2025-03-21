@@ -23,9 +23,6 @@
     "tags": [
         {
             "name": "openapi"
-        },
-        {
-            "name": "organisatie"
         }
     ],
     "paths": {
@@ -55,16 +52,7 @@
                     {
                         "default": []
                     }
-                ],
-                "x-throttling-tier": "Unlimited",
-                "x-auth-type": "None",
-                "x-wso2-application-security": {
-                    "security-types": [
-                        "oauth2",
-                        "api_key"
-                    ],
-                    "optional": false
-                }
+                ]
             }
         }
     },
