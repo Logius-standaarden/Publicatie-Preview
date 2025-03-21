@@ -845,16 +845,18 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   "specType": "ST",
   "pluralize": true,
   "preProcess": [
+    null,
     null
   ],
   "postProcess": [
+    null,
     null
   ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
@@ -1109,7 +1111,7 @@ In addition to this (normative) document, separate modules are being written to 
    Resources describe objects not actions.
    </dd>
    <dt>Implications</dt>
-   <dd>Adherence to this rule needs to be manually verified.</dd>
+   <dd id="implications"></dd>
 </dl>
 </div>
 
@@ -1141,7 +1143,7 @@ In addition to this (normative) document, separate modules are being written to 
          </div>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1159,7 +1161,7 @@ In addition to this (normative) document, separate modules are being written to 
          Note that glossaries exist that define useful sets of attributes which <em class="rfc2119">SHOULD</em> preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1188,7 +1190,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>How to test</dt>
       <dd>
          Analyse all resource paths in the OpenAPI Description to confirm no resource paths end with a forward slash (<code>/</code>).
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%2Fcore%2Fno%2Dtrailing%2Dslash">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1319,7 +1321,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>How to test</dt>
       <dd>
         Analyse the OpenAPI Description to confirm all supported methods are either <code>post</code>, <code>put</code>, <code>get</code>, <code>delete</code>, or <code>patch</code>.
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%2Fcore%2Fhttp%2Dmethods">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1401,7 +1403,7 @@ In addition to this (normative) document, separate modules are being written to 
          </p><p>In case of an error, the server <em class="rfc2119">SHOULD NOT</em> pass technical details (e.g. call stacks or other internal hints) to the client. The error message <em class="rfc2119">SHOULD</em> be generic to avoid revealing additional details and expose internal information which can be used with malicious intent.
       </p></dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1434,7 +1436,7 @@ In addition to this (normative) document, separate modules are being written to 
          To achieve full decoupling between client and server, and to benefit from the advantages mentioned above, no session state <em class="rfc2119">MUST</em> reside on the server. Session state <em class="rfc2119">MUST</em> therefore reside entirely on the client.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
    <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
@@ -1467,7 +1469,7 @@ In addition to this (normative) document, separate modules are being written to 
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
   <dt>Implications</dt>
-  <dd>Adherence to this rule needs to be manually verified.</dd>
+  <dd id="implications"></dd>
 </dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
@@ -1489,7 +1491,7 @@ In addition to this (normative) document, separate modules are being written to 
       </ol>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl> 
 </div>
 
@@ -1515,7 +1517,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>How to test</dt>
       <dd>
          Parse the resource at the provided location as an OpenAPI Description and confirm all $refs are resolvable and paths are defined.
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%2Fcore%2Fdoc%2Dopenapi">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1562,7 +1564,7 @@ In addition to this (normative) document, separate modules are being written to 
          In line with design rule <a href="#/core/interface-language">/core/interface-language</a>, the OAS document (e.g. descriptions and examples) <em class="rfc2119">SHOULD</em> be written in Dutch. If relevant, you <em class="rfc2119">MAY</em> refer to existing documentation written in English.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1617,7 +1619,7 @@ In addition to this (normative) document, separate modules are being written to 
          Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule <em class="rfc2119">MUST</em> be published. This document <em class="rfc2119">SHOULD</em> be published on a public web page. Furthermore, active clients <em class="rfc2119">SHOULD</em> be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1634,7 +1636,7 @@ In addition to this (normative) document, separate modules are being written to 
          When releasing a new major API version, the old version <em class="rfc2119">MUST</em> remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions <em class="rfc2119">MAY</em> be published concurrently.
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1668,7 +1670,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>How to test</dt>
       <dd>
         Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm the a version number is present with prefix <code>v</code> and only contains the *major* version number.
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%2Fcore%2Furi%2Dversion">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1685,7 +1687,7 @@ In addition to this (normative) document, separate modules are being written to 
          <p>When releasing new (major, minor or patch) versions, all API changes <em class="rfc2119">MUST</em> be documented properly in a publicly available changelog.</p>
       </dd>
       <dt>Implications</dt>
-      <dd>Adherence to this rule needs to be manually verified.</dd>
+      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1736,7 +1738,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>How to test</dt>
       <dd>
          A response <em class="rfc2119">MUST</em> include the header "API-Version" with a number matching the version number set in the <code>info.version</code> field of the OpenAPI Description.
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%2Fcore%2Fversion%2Dheader">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1980,7 +1982,7 @@ This avoids XXE-attack vectors for example.</li>
       </ol>
     </dd>
     <dt>Implications</dt>
-    <dd>Adherence to this rule needs to be manually verified.</dd>
+    <dd id="implications"></dd>
   </dl>
 </div></section></section>
   <section id="glossary"><div class="header-wrapper"><h2 id="x4-glossary"><bdi class="secno">4. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 4."></a></div>
