@@ -863,7 +863,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">March 22, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">March 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1183,10 +1183,6 @@ In addition to this (normative) document, separate modules are being written to 
             <pre class="nohighlight">https://api.example.org/v1/gebouwen/</pre>
          </div>
       </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific test used for this rule can be found in the <a href="#:~:text=core/uri%2Dversion%22-,%23/core/no%2Dtrailing%2Dslash,-paths%2Dno%2Dtrailing">linter</a>.
-      </dd>
       <dt>How to test</dt>
       <dd>
          Analyse all resource paths in the OpenAPI Description to confirm no resource paths end with a forward slash (<code>/</code>).
@@ -1271,12 +1267,7 @@ In addition to this (normative) document, separate modules are being written to 
             </tbody>
          </table>
       </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>.
-         The specific test used for this rule can be found in the <a href="#:~:text=core/uri%2Dversion%22-,%23/core/no%2Dtrailing%2Dslash,-paths%2Dno%2Dtrailing">linter</a>.
-      </dd>
-   <div class="example">The following table shows some examples of the use of standard HTTP methods:
+      <div class="example">The following table shows some examples of the use of standard HTTP methods:
       <table>
       <thead>
       <tr>
@@ -1510,10 +1501,6 @@ In addition to this (normative) document, separate modules are being written to 
          The OpenAPI Specification (OAS) [<cite><a class="bibref" data-link-type="biblio" href="#bib-openapis" title="OpenAPI Specification">OPENAPIS</a></cite>] defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with a minimal amount of implementation logic.
          API documentation <em class="rfc2119">MUST</em> be provided in the form of an OpenAPI definition document which conforms to the OpenAPI Specification (from v3 onwards). As a result, a variety of tools can be used to render the documentation (e.g. Swagger UI or ReDoc) or automate tasks such as testing or code generation. The OAS document <em class="rfc2119">SHOULD</em> provide clear descriptions and examples.
       </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
       <dt>How to test</dt>
       <dd>
          Parse the resource at the provided location as an OpenAPI Description and confirm all $refs are resolvable and paths are defined.
@@ -1539,10 +1526,6 @@ In addition to this (normative) document, separate modules are being written to 
   <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"teamgebouwen@ministerie.nl"</span>
 <span class="hljs-punctuation">}</span></code></pre>
          </div>
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1587,10 +1570,6 @@ In addition to this (normative) document, separate modules are being written to 
             <p>Optionally, the same OAS document <em class="rfc2119">MAY</em> be provided in YAML format:</p>
             <pre class="nohighlight">https://api.example.org/v1/openapi.yaml</pre>
          </div>
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1663,10 +1642,6 @@ In addition to this (normative) document, separate modules are being written to 
    <span class="hljs-attr">url:</span> <span class="hljs-string">https://api.example.org/v1</span></code></pre>
       </div>
       </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
       <dt>How to test</dt>
       <dd>
         Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm the a version number is present with prefix <code>v</code> and only contains the *major* version number.
@@ -1702,10 +1677,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dt>Rationale</dt>
       <dd>
          Version numbering <em class="rfc2119">MUST</em> follow the Semantic Versioning [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] model to prevent breaking changes when releasing new API versions. Release versions are formatted using the <code>major.minor.patch</code> template (examples: 1.0.2, 1.11.0). Pre-release versions <em class="rfc2119">MAY</em> be denoted by appending a hyphen and a series of dot separated identifiers (examples: 1.0.2-rc.1, 2.0.0-beta.3). When releasing a new version which contains backwards-incompatible changes, a new major version <em class="rfc2119">MUST</em> be released. Minor and patch releases <em class="rfc2119">MAY</em> only contain backwards compatible changes (e.g. the addition of an endpoint or an optional attribute).
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1763,10 +1734,6 @@ Effectively, only security standards directly applicable to interactions are dis
     <dd>
         <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.
     </p></dd>
-    <dt>Implications</dt>
-    <dd>
-        This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-    </dd>
     <dt>How to test</dt>
     <dd>
         <p>The usage of TLS is machine testable. Follow the latest NCSC guidelines on what is required to test. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers that are deemed insufficient or phased out by NCSC will lead to failure on the automated test. Both positive and negative scenarios are part of the test: testing that a subset of *Good* and *Sufficient* configurations are supported and configurations deemed  *Insufficient* or marked for *Phase out*. A manual exception to the automated test results can be made when configurations designated for *Phase out* are supported; The API provider will have to provide clear documentation regarding the phase out schedule.  
@@ -1899,10 +1866,6 @@ As for outbound filtering, the main concern is leaking of information.</p>
          </table>
          <p>In addition to the above listed HTTP security headers, web- and browser-based applications <em class="rfc2119">SHOULD</em> apply <cite><a data-matched-text="[[[SRI]]]" href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></cite>. When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
       </p></dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
       <dt>How to test</dt>
       <dd>
          <p>The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.
@@ -1923,10 +1886,6 @@ As for outbound filtering, the main concern is leaking of information.</p>
          <p>Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another <code>[scheme]://[hostname]:[port]</code> than the <code>Origin</code> request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a <code>Access-Control-Allow-Origin</code> response header. An allowlist <em class="rfc2119">SHOULD</em> be used to determine the validity of different cross-site request. To do this check the <code>Origin</code> header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming <code>Origin</code> header in the <code>Access-Control-Allow-Origin</code> response header.
          </p><p>Using a wildcard <code>*</code> in the <code>Access-Control-Allow-Origin</code> response header is <em class="rfc2119">NOT RECOMMENDED</em>, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
       </p></dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
       <dt>How to test</dt>
       <dd>
          <p>Tests of this design rule can only be performed when the intended client is known to the tester. A test can be performed when this information is provided by the API provider. Otherwise no conclusive test result can be reached.
