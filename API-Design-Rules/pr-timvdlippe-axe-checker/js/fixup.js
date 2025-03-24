@@ -114,6 +114,7 @@
       tocJump.id = tocJumpId;
       tocJump.href = '#toc';
       tocJump.innerHTML = tocJumpText;
+      tocJump.setAttribute('aria-labelledby', `${tocJumpId}-text`);
       tocNav.appendChild(tocJump);
     }
 
