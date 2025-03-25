@@ -741,8 +741,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
         "H. Stijns"
       ],
       "publisher": "Geonovum",
-      "date": "November 2023",
-      "id": "adr-validator"
+      "date": "November 2023"
     },
     "JRC117836": {
       "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
@@ -832,6 +831,11 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "company": "Logius",
       "companyURL": "https://www.logius.nl",
       "name": "Martin van der Plas"
+    },
+    {
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl",
+      "name": "Tim van der Lippe"
     }
   ],
   "github": "https://github.com/Logius-standaarden/API-Design-Rules",
@@ -863,7 +867,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">March 24, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">March 25, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -887,6 +891,8 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <span class="p-name fn">Alexander Green</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Tim van der Lippe</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
   </dd>
       
       <dt>Authors:</dt><dd class="editor p-author h-card vcard">
@@ -1109,10 +1115,7 @@ In addition to this (normative) document, separate modules are being written to 
    <dt>Rationale</dt>
    <dd>
    Resources describe objects not actions.
-   </dd>
-   <dt>Implications</dt>
-   <dd id="implications"></dd>
-</dl>
+</dd></dl>
 </div>
 
 <p>A resource describing a single thing is called a <a data-link-type="dfn|abstract-op" href="#dfn-singular-resource" class="internalDFN" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be grouped into collections, which are resources in their own right and can typically be paged, sorted and filtered. Most often all collection members have the same type, but this is not necessarily the case. A resource describing multiple things is called a <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-1">collection resource</a>. Collection resources typically contain references to the underlying singular resources.</p>
@@ -1142,8 +1145,6 @@ In addition to this (normative) document, separate modules are being written to 
             <pre class="nohighlight">https://api.example.org/v1/gebruikersprofiel</pre>
          </div>
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1160,8 +1161,6 @@ In addition to this (normative) document, separate modules are being written to 
          The exact meaning of concepts is often lost in translation. Publishing an API for an international audience might also be a reason to define interfaces in English.
          Note that glossaries exist that define useful sets of attributes which <em class="rfc2119">SHOULD</em> preferably be reused. Examples can be found at <a href="http://schema.org/docs/schemas.html">schema.org</a>.
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1393,8 +1392,6 @@ In addition to this (normative) document, separate modules are being written to 
          <p>The server <em class="rfc2119">SHOULD NOT</em> only use <code>200</code> for success and <code>404</code> for error states. Use the semantically appropriate status code for success or failure.
          </p><p>In case of an error, the server <em class="rfc2119">SHOULD NOT</em> pass technical details (e.g. call stacks or other internal hints) to the client. The error message <em class="rfc2119">SHOULD</em> be generic to avoid revealing additional details and expose internal information which can be used with malicious intent.
       </p></dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1426,8 +1423,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          To achieve full decoupling between client and server, and to benefit from the advantages mentioned above, no session state <em class="rfc2119">MUST</em> reside on the server. Session state <em class="rfc2119">MUST</em> therefore reside entirely on the client.
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
    <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
@@ -1459,8 +1454,6 @@ In addition to this (normative) document, separate modules are being written to 
     <pre class="nohighlight">https://api.example.org/v1/comments/123<br>https://api.example.org/v1/comments/456</pre>
     <p>Although this approach might seem counterintuitive from a technical perspective (we simply could have modelled a single <code>/comments</code> resource with optional filters for article and photo) and might introduce partially redundant functionality, it makes perfect sense from the perspective of the consumer, which increases developer experience.</p>
   </div>
-  <dt>Implications</dt>
-  <dd id="implications"></dd>
 </dl></div>
 
 </section><section id="operations"><div class="header-wrapper"><h3 id="x3-5-operations"><bdi class="secno">3.5 </bdi>Operations</h3><a class="self-link" href="#operations" aria-label="Permalink for Section 3.5"></a></div>
@@ -1481,8 +1474,6 @@ In addition to this (normative) document, separate modules are being written to 
          <li>In exceptional cases, the approaches above still don't offer an appropriate solution. An example of such an operation is a global search across multiple resources. In this case, the creation of a dedicated resource, possibly nested under an existing resource, is the most obvious solution. Use the imperative mood of a verb, maybe even prefix it with a underscore to distinguish these resources from regular resources. For example: <code>/search</code> or <code>/_search</code>. Depending on the operation characteristics, <code>GET</code> and/or <code>POST</code> method <em class="rfc2119">MAY</em> be supported for such a resource.</li>
       </ol>
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl> 
 </div>
 
@@ -1546,8 +1537,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          In line with design rule <a href="#/core/interface-language">/core/interface-language</a>, the OAS document (e.g. descriptions and examples) <em class="rfc2119">SHOULD</em> be written in Dutch. If relevant, you <em class="rfc2119">MAY</em> refer to existing documentation written in English.
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1597,8 +1586,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          Managing change is important. In general, well documented and timely communicated deprecation schedules are the most important for API users. When deprecating features or versions, a deprecation schedule <em class="rfc2119">MUST</em> be published. This document <em class="rfc2119">SHOULD</em> be published on a public web page. Furthermore, active clients <em class="rfc2119">SHOULD</em> be informed by e-mail once the schedule has been updated or when versions have reached end-of-life.
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1614,8 +1601,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          When releasing a new major API version, the old version <em class="rfc2119">MUST</em> remain available for a limited and fixed deprecation period. Offering a deprecation period allows clients to carefully plan and execute the migration from the old to the new API version, as long as they do this prior to the end of the deprecation period. A maximum of 2 major API versions <em class="rfc2119">MAY</em> be published concurrently.
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1661,8 +1646,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          <p>When releasing new (major, minor or patch) versions, all API changes <em class="rfc2119">MUST</em> be documented properly in a publicly available changelog.</p>
       </dd>
-      <dt>Implications</dt>
-      <dd id="implications"></dd>
    </dl>
 </div>
 
@@ -1701,10 +1684,6 @@ In addition to this (normative) document, separate modules are being written to 
             <p>An example of an API version response header:</p>
             <pre class="nohighlight">API-Version: 1.0.2</pre>
          </div>
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1754,10 +1733,6 @@ Effectively, only security standards directly applicable to interactions are dis
          <p>Even when using TLS connections, information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therefore be considered readable by anyone with access to the network (in the case of the internet, the whole world) and <em class="rfc2119">MUST NOT</em> contain any sensitive information. This includes client secrets used for authentication, privacy sensitive information suchs as BSNs or any other information which should not be shared. 
          </p><p>Be aware that queries (anything after the '?' in a URI) are also part of an URI.
       </p></dd>
-      <dt>Implications</dt>
-      <dd>
-         Adherence to this rule needs to be manually verified.
-      </dd>
    </dl>
 </div>
 
@@ -1940,8 +1915,6 @@ This avoids XXE-attack vectors for example.</li>
          <li>How to deal with different coordinate systems (CRS).</li>
       </ol>
     </dd>
-    <dt>Implications</dt>
-    <dd id="implications"></dd>
   </dl>
 </div></section></section>
   <section id="glossary"><div class="header-wrapper"><h2 id="x4-glossary"><bdi class="secno">4. </bdi>Glossary</h2><a class="self-link" href="#glossary" aria-label="Permalink for Section 4."></a></div>
@@ -2150,9 +2123,7 @@ This avoids XXE-attack vectors for example.</li>
     </dd></dl>
   </section><section id="informative-references">
     <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
-    <dl class="bibliography"><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
-      <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets"><cite>Technical ADR Validation rule testset 0.5.0</cite></a>. H. Stijns.  Geonovum. November 2023. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets">https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets</a>
-    </dd><dt id="bib-oauth2">[OAuth2]</dt><dd>
+    <dl class="bibliography"><dt id="bib-oauth2">[OAuth2]</dt><dd>
       <a href="https://tools.ietf.org/html/rfc6749"><cite>The OAuth 2.0 Authorization Framework</cite></a>. D. Hardt.  The Internet Engineering Task Force. October 2012. URL: <a href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
