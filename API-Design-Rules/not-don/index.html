@@ -1205,11 +1205,6 @@ In addition to this (normative) document, separate modules are being written to 
             <li>The API, application and infrastructure need to be able to evolve independently to ease the task of maintaining backwards compatibility for APIs during an agile development process.</li>
             <li>The API design of Convenience,- and Process API types (as described in <a href="https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20200204/#aanbeveling-2-analyseer-welke-api-s-je-aan-moet-bieden-welke-informatievragen-wil-je-beantwoorden">Aanbeveling 2</a> of the NL API Strategie) <em class="rfc2119">SHOULD</em> not be a 1-on-1 mapping of the underlying domain- or persistence model.</li>
             <li>The API design of a System API type (as described in <a href="https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20200204/#aanbeveling-2-analyseer-welke-api-s-je-aan-moet-bieden-welke-informatievragen-wil-je-beantwoorden">Aanbeveling 2</a> of the NL API Strategie) <em class="rfc2119">MAY</em> be a mapping of the underlying  persistence model.</li>
-         </ul>
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         <ul>
             <li>The API <em class="rfc2119">SHOULD</em> not expose information about the technical components being used, such as development platforms/frameworks or database systems.</li>
             <li>The API <em class="rfc2119">SHOULD</em> offer client-friendly attribute names and values, while persisted data may contain abbreviated terms or serializations which might be cumbersome for consumption.</li>
          </ul>
@@ -1372,11 +1367,12 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Rationale</dt>
       <dd>
-         The HTTP protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] specifies whether an HTTP method <em class="rfc2119">SHOULD</em> be considered safe and/or idempotent. These characteristics are important for clients and middleware applications, because they <em class="rfc2119">SHOULD</em> be taken into account when implementing caching and fault tolerance strategies.
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         Request methods are considered <i>safe</i> if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource. A request method is considered <i>idempotent</i> if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.
+         <p>
+            The HTTP protocol [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] specifies whether an HTTP method <em class="rfc2119">SHOULD</em> be considered safe and/or idempotent. These characteristics are important for clients and middleware applications, because they <em class="rfc2119">SHOULD</em> be taken into account when implementing caching and fault tolerance strategies.
+         </p>
+         <p>
+            Request methods are considered <i>safe</i> if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource. A request method is considered <i>idempotent</i> if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.
+         </p>
       </dd>
    </dl>
 </div>
