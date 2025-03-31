@@ -741,8 +741,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
         "H. Stijns"
       ],
       "publisher": "Geonovum",
-      "date": "November 2023",
-      "id": "adr-validator"
+      "date": "November 2023"
     },
     "JRC117836": {
       "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
@@ -1304,10 +1303,6 @@ In addition to this (normative) document, separate modules are being written to 
   According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
   If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.</p></div>
-      </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific testscripts are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -2104,8 +2099,6 @@ This avoids XXE-attack vectors for example.</li>
     <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr-geo">[ADR-GEO]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/"><cite>API Design Rules Module: Geospatial</cite></a>. L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker.  Geonovum. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/</a>
-    </dd><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
-      <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets"><cite>Technical ADR Validation rule testset 0.5.0</cite></a>. H. Stijns.  Geonovum. November 2023. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets">https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets</a>
     </dd><dt id="bib-ncsc 2021">[NCSC 2021]</dt><dd>
       <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1</cite></a>.  NCSC. Jan 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
