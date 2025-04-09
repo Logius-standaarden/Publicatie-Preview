@@ -1,4 +1,5 @@
 #!/bin/sh
-./mvnw package
+CURRENT_DIRECTORY=$(dirname "$0")
+$CURRENT_DIRECTORY/mvnw package
 
-spectral lint -r ../../linter/spectral.yml target/generated/openapi/openapi.json
+spectral lint -r $CURRENT_DIRECTORY/../../linter/spectral.yml $CURRENT_DIRECTORY/target/generated/openapi/openapi.json
