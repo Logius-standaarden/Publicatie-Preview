@@ -1,18 +1,18 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "COR API Services",
-        "description": "Deze Logius REST API's bieden de openbare informatie voor organisaties",
+        "title": "Baseline",
+        "description": "Deze OpenAPI specification bevat het minimale om aan alle regels te voldoen.",
         "contact": {
-            "name": "Logius",
-            "url": "https://www.logius.nl/diensten/digikoppeling/",
-            "email": "servicecentrum@logius.nl"
+            "name": "Beheerder",
+            "url": "https://www.example.com",
+            "email": "mail@example.com"
         },
-        "version": "1.2.9-SNAPSHOT"
+        "version": "1.0.0"
     },
     "servers": [
         {
-            "url": "https://oinregister.logius.nl/api/v1"
+            "url": "https://example.com/api/v1"
         }
     ],
     "security": [
@@ -30,12 +30,12 @@
     ],
     "paths": {
         "/openapi.json": {
-            "get": {
+            "post": {
                 "tags": [
                     "openapi"
                 ],
                 "description": "OpenAPI document",
-                "operationId": "getOpenapiJSON",
+                "operationId": "pushOpenapiJSON",
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -65,7 +65,7 @@
             }
         },
         "/": {
-            "post": {
+            "get": {
                 "tags": ["Homepage"],
                 "summary": "Homepage",
                 "description": "Homepage with a description",
@@ -93,6 +93,8 @@
         }
     },
     "components": {
+        "schemas": {
+        },
         "securitySchemes": {
             "default": {
                 "type": "oauth2",

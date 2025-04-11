@@ -1,9 +1,26 @@
-# spectral lint -r https://developer.overheid.nl/static/adr/ruleset.yaml $OAS_URL_OR_FILE
-# curl https://developer.overheid.nl/static/adr/ruleset.yaml > .spectral.yml
+# Deze linter configuratie is geschreven voor Spectral. Voor meer informatie over
+# die tool, zie https://stoplight.io/open-source/spectral
+#
+# De linter configuratie wordt tevens gehost op https://developer.overheid.nl (DON).
+# Deze kan worden gebruikt in onder andere CI systemen voor live updates van de
+# configuratie.
+#
+# Voor meer informatie hierover, zie de kennisbank van DON:
+# https://developer.overheid.nl/kennisbank/apis/tools/api-design-rules-linter
+#
+# Hierbij ook de ingevoegde instructies die kunnen worden gekopieerd om de linter
+# te draaien:
+#
+# ```
+# npm install -g @stoplight/spectral-cli
+# curl -L https://static.developer.overheid.nl/adr/ruleset.yaml > .spectral.yml
+# spectral lint -r .spectral.yml $OAS_URL_OR_FILE
+# ```
 
 extends: spectral:oas
 
 rules:
+  oas3-api-servers: error
 
   #/core/doc-openapi
   openapi3:
@@ -57,6 +74,37 @@ rules:
       field: "@key"
     message: "/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"
 
+  #/core/publish-openapi
+  paths-open-api-json-resource-exists:
+    severity: error
+    given:
+      - "$.paths"
+    then:
+      function: truthy
+      field: "/openapi.json"
+    message: "There does not exist a resource `/openapi.json` that returns the OpenAPI specification document"
+
+  paths-open-api-json-resource-has-get:
+    severity: error
+    given:
+      - "$.paths[/openapi.json]"
+    then:
+      function: pattern
+      functionOptions:
+        match: "get"
+      field: "@key"
+    message: "There does not exist a GET method (and no other methods) for the `/openapi.json` resource"
+
+  paths-open-api-json-specify-cors-header:
+    severity: error
+    given:
+      - $.paths[/openapi.json].get.responses[?(@property && @property.match(/(2|3)\d\d/))].headers
+    then:
+      function: truthy
+      field: "access-control-allow-origin"
+    message: "The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"
+
+  #/core/doc-home-page
   missing-home-page:
     severity: error
     given:
