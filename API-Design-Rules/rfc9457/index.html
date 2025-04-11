@@ -2107,11 +2107,11 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/^(4|5|default)/))].content</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
-            <span class="hljs-attr">functionOptions:</span>
-              <span class="hljs-attr">schema:</span>
-                <span class="hljs-attr">anyOf:</span>
-                  <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+json"</span>]
-                  <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+xml"</span>]
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">schema:</span>
+          <span class="hljs-attr">anyOf:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+json"</span>]
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+xml"</span>]
 
   <span class="hljs-attr">property-casing:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
