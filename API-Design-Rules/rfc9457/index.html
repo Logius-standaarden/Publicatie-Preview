@@ -2103,8 +2103,8 @@ This avoids XXE-attack vectors for example.</li>
 
   <span class="hljs-attr">use-problem-schema:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">Your</span> <span class="hljs-string">schema</span> <span class="hljs-string">doesn't</span> <span class="hljs-string">seem</span> <span class="hljs-string">to</span> <span class="hljs-string">match</span> <span class="hljs-string">RFC</span> <span class="hljs-number">9457. </span><span class="hljs-string">Are</span> <span class="hljs-string">you</span> <span class="hljs-string">sure</span> <span class="hljs-string">it</span> <span class="hljs-string">is</span> <span class="hljs-string">ok?</span> {{<span class="hljs-string">path</span>}}
-    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/^(4|5|default)/))].content</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The content type of an error response should be application/problem+json or application/problem+xml to match RFC 9457."</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
       <span class="hljs-attr">functionOptions:</span>
