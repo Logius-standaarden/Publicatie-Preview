@@ -25,7 +25,7 @@
             "name": "openapi"
         },
         {
-            "name": "Homepage"
+            "name": "Landingpage"
         }
     ],
     "paths": {
@@ -99,13 +99,13 @@
         },
         "/": {
             "get": {
-                "tags": ["Homepage"],
-                "summary": "Homepage",
-                "description": "Homepage with a description",
-                "operationId": "getHomepage",
+                "tags": ["Landingpage"],
+                "summary": "Landingpage",
+                "description": "Landingpage with a description",
+                "operationId": "getLandingpage",
                 "responses": {
                     "200": {
-                        "description": "Homepage content",
+                        "description": "Landingpage content",
                         "headers": {
                             "API-Version": {
                                 "description": "Current version",

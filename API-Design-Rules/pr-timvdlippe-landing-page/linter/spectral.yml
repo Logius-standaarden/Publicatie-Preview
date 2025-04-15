@@ -104,17 +104,17 @@ rules:
       field: "access-control-allow-origin"
     message: "The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"
 
-  #/core/doc-home-page
-  missing-home-page:
+  #/core/doc-landing-page
+  missing-landing-page:
     severity: error
     given:
       - "$.paths"
     then:
       field: "/"
       function: truthy
-    message: "There does not exist a resource `/` that should resolve to the homepage"
+    message: "There does not exist a resource `/` that should resolve to the landing-page"
 
-  home-page-no-get-response:
+  landing-page-no-get-response:
     severity: error
     given:
       - "$.paths[/]"

@@ -25,7 +25,7 @@
             "name": "openapi"
         },
         {
-            "name": "Homepage"
+            "name": "Landingpage"
         }
     ],
     "paths": {
@@ -64,15 +64,24 @@
                 ]
             }
         },
-        "/": {
+        "/no-landing-page": {
             "get": {
-                "tags": ["Homepage"],
-                "summary": "Homepage",
-                "description": "Homepage with a description",
-                "operationId": "getHomepage",
+                "tags": ["Landingpage"],
+                "summary": "Landingpage",
+                "description": "Landingpage with a description",
+                "operationId": "getLandingpage",
                 "responses": {
-                    "403": {
-                        "description": "Unauthorized"
+                    "200": {
+                        "description": "Landingpage content",
+                        "headers": {
+                            "API-Version": {
+                                "description": "Current version",
+                                "style": "simple",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
                     }
                 },
                 "security": [
