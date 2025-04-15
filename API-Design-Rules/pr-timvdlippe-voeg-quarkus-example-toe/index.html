@@ -867,7 +867,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">April 09, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">April 15, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1565,7 +1565,7 @@ In addition to this (normative) document, separate modules are being written to 
             <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Description as the openapi.json.</li>
             <li> Step 4: The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
          </ul>
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fpublish%2Dopenapi">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -2025,6 +2025,36 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">notMatch:</span> <span class="hljs-string">"\\/$"</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"</span>
+
+  <span class="hljs-comment">#/core/publish-openapi</span>
+  <span class="hljs-attr">paths-open-api-json-resource-exists:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"/openapi.json"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a resource `/openapi.json` that returns the OpenAPI specification document"</span>
+
+  <span class="hljs-attr">paths-open-api-json-resource-has-get:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths[/openapi.json]"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">"get"</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a GET method (and no other methods) for the `/openapi.json` resource"</span>
+
+  <span class="hljs-attr">paths-open-api-json-specify-cors-header:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths[/openapi.json].get.responses[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))].headers</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">"access-control-allow-origin"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"</span>
 
   <span class="hljs-comment">#/core/http-methods</span>
   <span class="hljs-attr">http-methods:</span>
