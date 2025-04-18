@@ -17,7 +17,7 @@ const oapi = openapi({
   openapi: '3.0.0',
   info: {
     title: 'Express example',
-    description: 'Example project built with Express',
+    description: 'Example project gebouwd met Express',
     version: '0.0.1',
     contact: {
       name: 'API Support',
@@ -86,9 +86,9 @@ app.get('/', oapi.path({
     }
   }
 }), (req, res) => {
-  res.send('Hello World!');
+  res.send('Dit is de landing pagina van deze API');
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example express app beschikbaar op poort ${port}`);
 });

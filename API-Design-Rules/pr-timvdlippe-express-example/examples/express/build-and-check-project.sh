@@ -6,7 +6,7 @@ cd $CURRENT_DIRECTORY
 # Installeer benodigde dependencies
 npm ci
 
-# Start the server as a background process
+# Start the server als een background process
 node src/server.js &
 SERVER_PID=$!
 
@@ -20,8 +20,9 @@ CURL_EXIT_CODE=1
 while [ $CURL_EXIT_CODE -ne 0 ]
 do
     sleep 0.1
-    # Check if the server is running. If it has crashed, we should
-    # stop checking and exit the script
+    # Check of de server nog steeds draait. Als dat niet meer
+    # zo is, stop dan onmiddelijk met checken en downloaden van
+    # het openapi.json
     ps --pid $SERVER_PID 1> /dev/null
     PROCESS_EXISTS=$(echo $?)
     if [ $PROCESS_EXISTS -ne 0 ]
@@ -33,7 +34,8 @@ do
     CURL_EXIT_CODE=$(echo $?)
 done
 
-# Silently kill the server background process
+# Stop het server background process, zonder de output naar de
+# terminal te printen
 kill $SERVER_PID
 wait $SERVER_PID 2>/dev/null
 
