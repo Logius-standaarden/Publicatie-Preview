@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.3.0">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -32,11 +32,10 @@ dfn{cursor:pointer}
   
   
   
+<meta name="color-scheme" content="light dark">
+  
   
 <title>NL GOV Assurance profile for OAuth 2.0</title>
-  
-  
-<link href="./media/style.css" rel="stylesheet" type="text/css">
   
   
   
@@ -66,7 +65,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -94,7 +93,7 @@ dd{margin-left:0}
 }
 </style>
 <style id="respec-nlgov">
-img.license{float:left;padding-right:5px}
+img.license{float:left;padding-right:5px;background:0 0}
 </style>
 <meta name="description" content="The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.">
 <style>
@@ -440,7 +439,8 @@ img.license{float:left;padding-right:5px}
   "specStatus": "WV",
   "specType": "ST"
 }</script>
-<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  
  <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
@@ -449,7 +449,7 @@ img.license{float:left;padding-right:5px}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">February 21, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">April 23, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -516,9 +516,9 @@ img.license{float:left;padding-right:5px}
     
     
     <p class="copyright">
-          This document is licensed under 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
-        </p>
+            This document is licensed under 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <div>
@@ -729,7 +729,7 @@ The contents and protocol of the Resource Request and Resource Response are out 
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
-        <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
+        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
         when, and only when, they appear in all capitals, as shown here.
       </p><div class="header-wrapper"><h2 id="introduction-1">Introduction</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div>
@@ -800,11 +800,11 @@ In addition to <code>private_key_jwt</code>, the client authentication method <c
 <p>Native clients <em class="rfc2119">MUST</em> either:</p>
 <ul>
 <li>use dynamic client registration to obtain a separate client id for each instance, or</li>
-<li>act as a public client by using a common client id and use PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">RFC7636</a></cite>] to protect calls to the token endpoint.</li>
+<li>act as a public client by using a common client id and use PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">rfc7636</a></cite>] to protect calls to the token endpoint.</li>
 </ul>
 <p>Native applications using dynamic registration <em class="rfc2119">SHOULD</em> generate a unique public and private key pair on the device and register that public key value with the authorization server. Alternatively, an authorization server <em class="rfc2119">MAY</em> issue a public and private key pair to the client as part of the registration process. In such cases, the authorization server <em class="rfc2119">MUST</em> discard its copy of the private key. Client credentials <em class="rfc2119">MUST NOT</em> be shared among instances of client software.</p>
 <p>Dynamically registered native applications <em class="rfc2119">MAY</em> use PKCE.</p>
-<p>Native applications not registering a separate public key for each instance are considered Public Clients, and <em class="rfc2119">MUST</em> use PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">RFC7636</a></cite>] with the S256 code challenge mechanism. Public Clients do not authenticate with the Token Endpoint in any other way.</p>
+<p>Native applications not registering a separate public key for each instance are considered Public Clients, and <em class="rfc2119">MUST</em> use PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">rfc7636</a></cite>] with the S256 code challenge mechanism. Public Clients do not authenticate with the Token Endpoint in any other way.</p>
 
 </section><section id="direct-access-client"><div class="header-wrapper"><h4 id="x2-1-3-direct-access-client"><bdi class="secno">2.1.3 </bdi>Direct Access Client</h4><a class="self-link" href="#direct-access-client" aria-label="Permalink for Section 2.1.3"></a></div>
 <p>This client type <em class="rfc2119">MUST NOT</em> request or be issued a refresh token.</p>
@@ -865,23 +865,19 @@ Effectively this means that browser based and native clients <em class="rfc2119"
   </div>
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
-<pre aria-busy="false"><code class="hljs javascript"><span class="hljs-variable constant_">HTTP</span>/<span class="hljs-number">1.2</span> <span class="hljs-number">302</span> <span class="hljs-title class_">Found</span>
-<span class="hljs-title class_">Cache</span>-<span class="hljs-title class_">Control</span>: no-cache
-<span class="hljs-title class_">Connection</span>: close
-<span class="hljs-title class_">Content</span>-<span class="hljs-title class_">Type</span>: text/plain; charset=<span class="hljs-variable constant_">UTF</span>-<span class="hljs-number">8</span>
-<span class="hljs-title class_">Date</span>: <span class="hljs-title class_">Wed</span>, <span class="hljs-number">07</span> <span class="hljs-title class_">Jan</span> <span class="hljs-number">2015</span> <span class="hljs-number">20</span>:<span class="hljs-number">24</span>:<span class="hljs-number">15</span> <span class="hljs-variable constant_">GMT</span>
-<span class="hljs-title class_">Location</span>: <span class="hljs-attr">https</span>:<span class="hljs-comment">//idp-p.example.com/authorize?client_id=55f9f559-2496-49d4-b6c3-351a58</span>
-6b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3A%2F%2Fclient.<span class="hljs-property">example</span>.<span class="hljs-property">org</span>%2Fcb
-<span class="hljs-title class_">Status</span>: <span class="hljs-number">302</span> <span class="hljs-title class_">Found</span></code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false">HTTP/1.2 302 Found
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/plain; charset=UTF-8
+Date: Wed, 07 Jan 2015 20:24:15 GMT
+Location: https://idp-p.example.com/authorize?client_id=55f9f559-2496-49d4-b6c3-351a586b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+Status: 302 Found
+</code></pre>
 
-<p>This causes the browser to send the following (non-normative) request to the authorization endpoint (inline wraps for display purposes only):</p>
-<pre aria-busy="false"><code class="hljs">GET /authorize?
-   client_id=55f9f559-2496-49d4-b6c3-351a586b7484
-  &amp;nonce=cd567ed4d958042f721a7cdca557c30d
-  &amp;response_type=code
-  &amp;scope=openid+email
-  &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
-Host: idp-p.example.com</code></pre>
+<p>This causes the browser to send the following (non-normative) request to the authorization endpoint:</p>
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false"><span class="hljs-keyword">GET</span> <span class="hljs-string">/authorize?</span>  <span class="hljs-string"></span> client_id=55f9f559-2496-49d4-b6c3-351a586b7484&amp;nonce=cd567ed4d958042f721a7cdca557c30d&amp;response_type=code&amp;scope=openid+email&amp;redirect_uri=https%3<span class="hljs-keyword">A</span>%2<span class="hljs-keyword">F</span>%2<span class="hljs-keyword">F</span>client.example.org%2<span class="hljs-keyword">F</span>cb <span class="hljs-string">HTTP/1.1
+Host:</span> idp-p.example.com
+</code></pre>
 </aside>
 
 
@@ -960,7 +956,7 @@ The authorization server <em class="rfc2119">MUST</em> support the RS256 signatu
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
 
-<p>In addition to above signing methods, the Authorization server <em class="rfc2119">SHOULD</em> support PS256 signing algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>] for the signing of the private_key_jwt.</p>
+<p>In addition to above signing methods, the Authorization server <em class="rfc2119">SHOULD</em> support PS256 signing algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">rfc7518</a></cite>] for the signing of the private_key_jwt.</p>
 </aside>
 
 
@@ -1014,21 +1010,20 @@ xuCxgOotXY6O3et4n77GtgspMgOEKj3b_WpCiuNEwQ</code></pre>
 <aside class="example" id="example-3"><div class="marker">
     <a class="self-link" href="#example-3">Example<bdi> 3</bdi></a>
   </div>
-<pre aria-busy="false"><code class="hljs">{
-   "keys": [
-     {
-       "alg": "RS256",
-       "e": "AQAB",
-       "n": "kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23P
-Tn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG
-9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe
-0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLm
-cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
-       "kty": "RSA",
-       "kid": "oauth-client"
-     }
-   ]
-}</code></pre>
+
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false">
+<span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">"keys"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+     <span class="hljs-punctuation">{</span>
+       <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+       <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"oauth-client"</span>
+     <span class="hljs-punctuation">}</span>
+   <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 </aside>
 
 
@@ -1046,22 +1041,16 @@ Parties <em class="rfc2119">MAY</em> agree to use <code>x5u</code>, for instance
   </div>
 For reference, the corresponding public/private key pair for this public key is the following (in JWK format):
 
-<pre aria-busy="false"><code class="hljs">{
-   "alg": "RS256",
-   "d": "PjIX4i2NsBQuOVIw74ZDjqthYsoFvaoah9GP-cPrai5s5VUIlLoadEAdGbBrss
-_6dR58x_pRlPHWh04vLQsFBuwQNc9SN3O6TAaai9Jg5TlCi6V0d4O6lUoTYpMR0cxFIU-xF
-MwII--_OZRgmAxiYiAXQj7TKMKvgSvVO7-9-YdhMwHoD-UrJkfnZckMKSs0BoAbjReTski3
-IV9f1wVJ53_pmr9NBpiZeHYmmG_1QDSbBuY35Zummut4QShF-fey2gSALdp9h9hRk1p1fsT
-ZtH2lwpvmOcjwDkSDv-zO-4Pt8NuOyqNVPFahROBPlsMVxc_zjPck8ltblalBHPo6AQ",
-   "e": "AQAB",
-   "n": "kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3K
-aKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsU
-sAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0f
-w7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1
-H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
-   "kty": "RSA",
-   "kid": "oauth-client"
-}</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false">
+<span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"d"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"PjIX4i2NsBQuOVIw74ZDjqthYsoFvaoah9GP-cPrai5s5VUIlLoadEAdGbBrss_6dR58x_pRlPHWh04vLQsFBuwQNc9SN3O6TAaai9Jg5TlCi6V0d4O6lUoTYpMR0cxFIU-xFMwII--_OZRgmAxiYiAXQj7TKMKvgSvVO7-9-YdhMwHoD-UrJkfnZckMKSs0BoAbjReTski3IV9f1wVJ53_pmr9NBpiZeHYmmG_1QDSbBuY35Zummut4QShF-fey2gSALdp9h9hRk1p1fsTZtH2lwpvmOcjwDkSDv-zO-4Pt8NuOyqNVPFahROBPlsMVxc_zjPck8ltblalBHPo6AQ"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"kAMYD62n_f2rUcR4awJX4uccDt0zcXRssq_mDch5-ifcShx9aTtTVza23PTn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG9QsUsAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"oauth-client"</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 
 <p>Note that the second example contains both the public and private keys, while the first example contains the public key only.</p>
 </aside>
@@ -1077,19 +1066,14 @@ H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
   </div>
 An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, sending the token in the Authorization header, follows:
 
-<pre aria-busy="false"><code class="hljs css">GET /userinfo HTTP/<span class="hljs-number">1.1</span>
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsImF1ZCI6WyJjMWJjOD
-RlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjoiaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGU
-uY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgxLTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2
-OTg4MTJ9.iHMz_tzZ90_b0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEq
-PD738oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu-<span class="hljs-number">6</span>h2Oqw-ize
-<span class="hljs-number">4</span>dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjUWMyn2I4Nu2s-R20aCA-<span class="hljs-number">7</span>T5dunr0
-iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePyq3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKa
-HtSZ6PQICoA
-Accept: text/plain, application/json, application<span class="hljs-comment">/*+json, */</span>*
-Host: idp-p.example.com
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/<span class="hljs-number">4.2</span>.<span class="hljs-number">3</span> (java <span class="hljs-number">1.5</span>)</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="http hljs" aria-busy="false">
+<span class="hljs-keyword">GET</span> <span class="hljs-string">/userinfo</span> <span class="hljs-meta">HTTP/1.1</span>
+<span class="hljs-attribute">Authorization</span><span class="hljs-punctuation">: </span>Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsImF1ZCI6WyJjMWJjODRlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjoiaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGUuY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgxLTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2OTg4MTJ9.iHMz_tzZ90_b0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEqPD738oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu-6h2Oqw-ize4dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjUWMyn2I4Nu2s-R20aCA-7T5dunr0iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePyq3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKaHtSZ6PQICoA
+<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/plain, application/json, application/*+json, */*
+<span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>idp-p.example.com
+<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>Keep-Alive
+<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Apache-HttpClient/4.2.3 (java 1.5)
+</code></pre>
 </aside></section></section></section>
   <section id="authorization-server-profile"><div class="header-wrapper"><h2 id="x3-authorization-server-profile"><bdi class="secno">3. </bdi>Authorization Server Profile</h2><a class="self-link" href="#authorization-server-profile" aria-label="Permalink for Section 3."></a></div>
 
@@ -1119,7 +1103,7 @@ User-Agent: Apache-HttpClient/<span class="hljs-number">4.2</span>.<span class="
 </section><section id="dynamic-registration"><div class="header-wrapper"><h4 id="x3-1-3-dynamic-registration"><bdi class="secno">3.1.3 </bdi>Dynamic Registration</h4><a class="self-link" href="#dynamic-registration" aria-label="Permalink for Section 3.1.3"></a></div>
 <p>Dynamic Registration allows for authorized Clients to on-board programmatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers <em class="rfc2119">MUST</em> support dynamic client registration,
 and clients <em class="rfc2119">MAY</em> register using the [Dynamic Client Registration Protocol] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] for authorization code grant types. Clients <em class="rfc2119">MUST NOT</em> dynamically register for the client credentials grant type. Authorization servers <em class="rfc2119">MAY</em> limit the scopes available to dynamically registered clients.</p>
-<p>Authorization servers <em class="rfc2119">MAY</em> protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers <em class="rfc2119">MAY</em> accept signed software statements as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">RFC7591</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] issued 
+<p>Authorization servers <em class="rfc2119">MAY</em> protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers <em class="rfc2119">MAY</em> accept signed software statements as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] issued 
 to client software developers from a trusted registration entity. The software statement can be used to tie together many instances of the same client software that will be run, dynamically registered, and authorized separately at runtime. The software statement <em class="rfc2119">MUST</em> include the following client metadata parameters:</p>
 <dl>
 
@@ -1178,7 +1162,7 @@ The current requirement fits an architecture where there is a limited number of 
 
 <dt>token_endpoint</dt>
 
-<dd style="margin-left: 8"><em class="rfc2119">REQUIRED</em>. The fully qualified URL of the server's token endpoint defined by [OAuth 2.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>]</dd>
+<dd style="margin-left: 8"><em class="rfc2119">REQUIRED</em>. The fully qualified URL of the server's token endpoint defined by [OAuth 2.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>]</dd>
 
 <dt>introspection_endpoint</dt>
 
@@ -1205,54 +1189,54 @@ The following example shows the JSON document found at a discovery endpoint for 
 Added <code>tls_client_auth</code>
 </aside>
 
-<pre aria-busy="false"><code class="hljs">{
-  "request_parameter_supported": true,
-  "registration_endpoint": "https://idp-p.example.com/register",
-  "userinfo_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "token_endpoint": "https://idp-p.example.com/token",
-  "request_uri_parameter_supported": false,
-  "request_object_encryption_enc_values_supported": [
-    "A192CBC-HS384", "A192GCM", "A256CBC+HS512",
-    "A128CBC+HS256", "A256CBC-HS512",
-    "A128CBC-HS256", "A128GCM", "A256GCM"
-  ],
-  "token_endpoint_auth_methods_supported": [
-    "private_key_jwt", "tls_client_auth"
-  ],
-  "jwks_uri": "https://idp-p.example.com/jwk",
-  "authorization_endpoint": "https://idp-p.example.com/authorize",
-  "require_request_uri_registration": false,
-  "introspection_endpoint": "https://idp-p.example.com/introspect",
-  "request_object_encryption_alg_values_supported": [
-    "RSA-OAEP", ?RSA1_5", "RSA-OAEP-256"
-  ],
-  "service_documentation": "https://idp-p.example.com/about",
-  "response_types_supported": [
-    "code", "token"
-  ],
-  "token_endpoint_auth_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "revocation_endpoint": "https://idp-p.example.com/revoke",
-  "request_object_signing_alg_values_supported": [
-    "HS256", "HS384", "HS512", "RS256", "RS384", "RS512"
-  ],
-  "grant_types_supported": [
-    "authorization_code",
-    "implicit",
-    "urn:ietf:params:oauth:grant-type:jwt-bearer",
-    "client_credentials",
-    "urn:ietf:params:oauth:grant_type:redelegate"
-  ],
-  "scopes_supported": [
-    "profile", "openid", "email", "address", "phone", "offline_access"
-  ],
-  "op_tos_uri": "https://idp-p.example.com/about",
-  "issuer": "https://idp-p.example.com/",
-  "op_policy_uri": "https://idp-p.example.com/about"
-}</code></pre>
+<pre aria-busy="false"><code class="hljs json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"request_parameter_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"registration_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/register"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"userinfo_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/token"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_uri_parameter_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_encryption_enc_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"A192CBC-HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A192GCM"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256CBC+HS512"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"A128CBC+HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256CBC-HS512"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"A128CBC-HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A128GCM"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256GCM"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint_auth_methods_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"private_key_jwt"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"tls_client_auth"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"jwks_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/jwk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"authorization_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/authorize"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"require_request_uri_registration"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"introspection_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/introspect"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_encryption_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"RSA-OAEP"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RSA1_5"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RSA-OAEP-256"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"service_documentation"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"response_types_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"code"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"token"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"token_endpoint_auth_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"revocation_endpoint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/revoke"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"request_object_signing_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"HS512"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS384"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RS512"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"grant_types_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"authorization_code"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"implicit"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"urn:ietf:params:oauth:grant-type:jwt-bearer"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"client_credentials"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"urn:ietf:params:oauth:grant_type:redelegate"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"scopes_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">"profile"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"openid"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"email"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"address"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"phone"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"offline_access"</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"op_tos_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"issuer"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"op_policy_uri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://idp-p.example.com/about"</span>
+<span class="hljs-punctuation">}</span></code></pre>
 </aside>
 
 <p>Clients and protected resources <em class="rfc2119">SHOULD</em> cache this discovery information. It is <em class="rfc2119">RECOMMENDED</em> that servers provide cache information through HTTP headers and make the cache valid for at least one week.</p>
@@ -1278,21 +1262,18 @@ Added <code>tls_client_auth</code>
   </div>
 The following is an example of a 2048-bit RSA public key:
 
-<pre aria-busy="false"><code class="hljs">{
-  "keys": [
-    {
-      "alg": "RS256",
-      "e": "AQAB",
-      "n": "o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9FxvHPK1R
-eEW3-p7-A8GNcLAuFP_8jPhiL6LyJC3F10aV9KPQFF-w6Eq6VtpEgYSfzvFegNiPtpMWd7C43
-EDwjQ-GrXMVCLrBYxZC-P1ShyxVBOzeR_5MTC0JGiDTecr_2YT6o_3aE2SIJu4iNPgGh9Mnyx
-dBo0Uf0TmrqEIabquXA1-V8iUihwfI8qjf3EujkYi7gXXelIo4_gipQYNjr4DBNlE0__RI0kD
-U-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEqfCaPDNp00J6AbY6w",
-      "kty": "RSA",
-      "kid": "rsa1"
-    }
-  ]
-}</code></pre>
+<pre class="hljs" style="white-space: pre-wrap"><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"keys"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"alg"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RS256"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"e"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"AQAB"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"n"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9FxvHPK1ReEW3-p7-A8GNcLAuFP_8jPhiL6LyJC3F10aV9KPQFF-w6Eq6VtpEgYSfzvFegNiPtpMWd7C43EDwjQ-GrXMVCLrBYxZC-P1ShyxVBOzeR_5MTC0JGiDTecr_2YT6o_3aE2SIJu4iNPgGh9MnyxdBo0Uf0TmrqEIabquXA1-V8iUihwfI8qjf3EujkYi7gXXelIo4_gipQYNjr4DBNlE0__RI0kDU-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEqfCaPDNp00J6AbY6w"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"kty"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RSA"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"kid"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"rsa1"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 </aside>
 
 <p>Clients and protected resources <em class="rfc2119">SHOULD</em> cache this key. It is <em class="rfc2119">RECOMMENDED</em> that servers provide cache information through HTTP headers and make the cache valid for at least one week.</p>
@@ -1409,7 +1390,7 @@ The following sample claim set illustrates the use of the required claims for an
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
 
-<p>In addition to above signing methods, the Authorization server <em class="rfc2119">SHOULD</em> support PS256 signing algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>] for the signing of the JWT Bearer Tokens.</p>
+<p>In addition to above signing methods, the Authorization server <em class="rfc2119">SHOULD</em> support PS256 signing algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">rfc7518</a></cite>] for the signing of the JWT Bearer Tokens.</p>
 </aside>
 
 
@@ -1525,7 +1506,7 @@ F2vFdL6D_lLeHRy-H2g2OzF59eMIsM_Ccs4G47862w
   </div>
 The following example is a response from the introspection endpoint:
 
-<pre aria-busy="false"><code class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK
+<pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK
 <span class="hljs-attribute">Date</span><span class="hljs-punctuation">: </span>Tue, 16 Dec 2014 03:00:14 GMT
 <span class="hljs-attribute">Access-Control-Allow-Origin</span><span class="hljs-punctuation">: </span>*
 <span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json;charset=ISO-8859-1
@@ -1533,14 +1514,17 @@ The following example is a response from the introspection endpoint:
 <span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>266
 <span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close
 
-<span class="language-json"><span class="hljs-punctuation">{</span>
+</code>
+<code class="json hljs" aria-busy="false">
+<span class="hljs-punctuation">{</span>
    <span class="hljs-attr">"active"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
    <span class="hljs-attr">"scope"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"file search visa"</span><span class="hljs-punctuation">,</span>
    <span class="hljs-attr">"exp"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1418702414</span><span class="hljs-punctuation">,</span>
    <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"{sub\u003d6WZQPpnQxV, iss\u003dhttps://idp-p.example.com/}"</span><span class="hljs-punctuation">,</span>
    <span class="hljs-attr">"client_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"e71fb72a-974f-4001-bcb7-e67c2bc0037f"</span><span class="hljs-punctuation">,</span>
    <span class="hljs-attr">"token_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Bearer"</span>
-<span class="hljs-punctuation">}</span></span></code></pre>
+<span class="hljs-punctuation">}</span>
+</code></pre>
 </aside>
 
 <p>The authorization server <em class="rfc2119">MUST</em> require authentication for both the revocation and introspection endpoints as described in <a href="#requests-to-the-token-endpoint">Section 2.3.2</a> . Protected resources calling the introspection endpoint <em class="rfc2119">MUST</em> use credentials distinct from any other OAuth client registered at the server.</p>
@@ -1567,9 +1551,7 @@ The following example is a response from the introspection endpoint:
   </div>
 The following is an example response:
 
-<pre aria-busy="false"><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//client.example.org/cb?</span>
-    state=2ca3359dfbfd0
-   &amp;code=gOIFJ1hV6Rb1sxUdFhZGACWwR1sMhYbJJcQbVJN0wHA</code></pre>
+<pre class="nohighlight">https://client.example.org/cb?state=2ca3359dfbfd0&amp;code=gOIFJ1hV6Rb1sxUdFhZGACWwR1sMhYbJJcQbVJN0wHA</pre>
 </aside>
 
 
@@ -1674,8 +1656,8 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 <p><del>OAuth proof of possession tokens are currently defined in a set of drafts under active development in the Internet Engineering Task Force (IETF) OAuth Working Group.</del><br>While a bearer token can be used by anyone in possession of the token, a proof of possession token is bound to a particular symmetric or asymmetric key issued to, or already possessed by, the client. The association of the key to the token is also communicated to the protected resource.<br><del>a variety of mechanisms for doing this are outlined in the draft [OAuth 2.0 Proof-of-Possession (PoP) Security Architecture] [<cite><a class="bibref" data-link-type="biblio" href="#bib-i-d.ietf-oauth-pop-architecture" title="OAuth 2.0 Proof-of-Possession (PoP) Security Architecture">I-D.ietf-oauth-pop-architecture</a></cite>] .</del><br>When the client presents the token to the protected resource, it is also required to demonstrate possession of the corresponding key <del>(e.g., by creating a cryptographic hash or signature of the request)</del>.</p>
 
 <aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  
-<cite><a data-matched-text="[[[RFC9449]]]" href="https://www.rfc-editor.org/rfc/rfc9449">OAuth 2.0 Demonstrating Proof of Possession (DPoP)</a></cite>, is an extension that describes a technique to cryptographically bind access tokens to a particular client when they are issued.   
+<b>iGov-NL : Additional content</b><br>
+<cite><a data-matched-text="[[[RFC9449]]]" href="https://www.rfc-editor.org/rfc/rfc9449">OAuth 2.0 Demonstrating Proof of Possession (DPoP)</a></cite> is an extension that describes a technique to cryptographically bind access tokens to a particular client when they are issued.
 </aside>
 
 
@@ -1701,9 +1683,14 @@ Another implementation of PoP is using TLS with mutual authentication, where the
 <b>iGov-NL : Additional content</b><br>  
 
 <p><cite><a data-matched-text="[[[RFC9396]]]" href="https://www.rfc-editor.org/rfc/rfc9396">OAuth 2.0 Rich Authorization Requests</a></cite> is an extension that provides a way for clients to request and obtain fine-grained authorization from resource owners such as end users during the Authorization Code Flow.
-In traditional OAuth flows, clients typically request access to a set of scopes from a Resource Server. The Resource Owner then grants access to the resources to the client. However, this approach does not allow for granular control over the access granted to a client and can lead to over-provisioning of access, which poses various security risks. With RAR, clients can pass an <code>authorization_details</code> claim to request specific permissions for each individual resource they want to access. It also allows for the Resource Server to implement specific business logic to deal with special types of requests. Think of one-time payments or step-up multi-factor authentication.</p>
+In traditional OAuth flows, clients typically request access to a set of scopes from a Resource Server. The Resource Owner then grants access to the resources to the client. However, this approach allows limited granular control over the access granted to a client and can lead to over-provisioning of access, which poses various security risks. With RAR, clients can pass an <code>authorization_details</code> claim with additional details that allow for more fine-grained authorization. This also allows for the Resource Server to implement fine-grained authorization for specific requests. Think of one-time payment approvals, document signing or requesting or approving (access to a) specific cases or documents.</p>
 <p>According to the RFC, <code>authorization_details</code> requires just one field, <code>type</code>, which determines the allowable contents of the <code>authorization_details</code>. The value is unique for the described API in the context of the Authorization Server. 
 The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <code>identifier</code> and <code>privileges</code> as common fields in the <code>authorization_details</code> parameter.</p>
+<p>As mentioned in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9396" title="OAuth 2.0 Rich Authorization Requests">RFC9396</a></cite>]:</p>
+<blockquote>
+<p>In case of authorization requests as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>], implementers <em class="rfc2119">MAY</em> consider using pushed authorization requests [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9126" title="OAuth 2.0 Pushed Authorization Requests">RFC9126</a></cite>] to improve the security, privacy, and reliability of the flow.</p>
+</blockquote>
+<p>In case more data, or more recent data, is required for fine-grained authorization then one <em class="rfc2119">MAY</em> include the OpenID AuthZEN standard in the <code>authorization_details</code>.</p>
 </aside>
 </section></section>
   <section id="security-considerations"><div class="header-wrapper"><h2 id="x6-security-considerations"><bdi class="secno">6. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 6."></a></div>
@@ -1751,7 +1738,7 @@ The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <co
     </dd><dt id="bib-rfc4122">[rfc4122]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc4122"><cite>A Universally Unique IDentifier (UUID) URN Namespace</cite></a>. P. Leach; M. Mealling; R. Salz.  IETF. July 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4122">https://www.rfc-editor.org/rfc/rfc4122</a>
     </dd><dt id="bib-rfc6749">[rfc6749]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc6749"><cite>The OAuth 2.0 Authorization Framework</cite></a>. D. Hardt, Ed..  IETF. October 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6749">https://www.rfc-editor.org/rfc/rfc6749</a>
+      <a href="https://www.rfc-editor.org/rfc/rfc6749"><cite>The OAuth 2.0 Authorization Framework</cite></a>. D. Hardt, Ed. IETF. October 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6749">https://www.rfc-editor.org/rfc/rfc6749</a>
     </dd><dt id="bib-rfc6750">[rfc6750]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc6750"><cite>The OAuth 2.0 Authorization Framework: Bearer Token Usage</cite></a>. M. Jones; D. Hardt.  IETF. October 2012. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6750">https://www.rfc-editor.org/rfc/rfc6750</a>
     </dd><dt id="bib-rfc6819">[rfc6819]</dt><dd>
@@ -1774,10 +1761,10 @@ The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <co
       <a href="https://www.rfc-editor.org/rfc/rfc7523"><cite>JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants</cite></a>. M. Jones; B. Campbell; C. Mortimore.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7523">https://www.rfc-editor.org/rfc/rfc7523</a>
     </dd><dt id="bib-rfc7591">[rfc7591]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7591"><cite>OAuth 2.0 Dynamic Client Registration Protocol</cite></a>. J. Richer, Ed.; M. Jones; J. Bradley; M. Machulak; P. Hunt.  IETF. July 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7591">https://www.rfc-editor.org/rfc/rfc7591</a>
-    </dd><dt id="bib-rfc7636">[RFC7636]</dt><dd>
+    </dd><dt id="bib-rfc7636">[rfc7636]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7636"><cite>Proof Key for Code Exchange by OAuth Public Clients</cite></a>. N. Sakimura, Ed.; J. Bradley; N. Agarwal.  IETF. September 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7636">https://www.rfc-editor.org/rfc/rfc7636</a>
     </dd><dt id="bib-rfc7662">[rfc7662]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc7662"><cite>OAuth 2.0 Token Introspection</cite></a>. J. Richer, Ed..  IETF. October 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7662">https://www.rfc-editor.org/rfc/rfc7662</a>
+      <a href="https://www.rfc-editor.org/rfc/rfc7662"><cite>OAuth 2.0 Token Introspection</cite></a>. J. Richer, Ed. IETF. October 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7662">https://www.rfc-editor.org/rfc/rfc7662</a>
     </dd><dt id="bib-rfc7800">[rfc7800]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7800"><cite>Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs)</cite></a>. M. Jones; J. Bradley; H. Tschofenig.  IETF. April 2016. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7800">https://www.rfc-editor.org/rfc/rfc7800</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
@@ -1790,6 +1777,8 @@ The RFC suggests to suppport <code>locations</code>, <code>datatypes</code>, <co
       <a href="https://www.rfc-editor.org/rfc/rfc8705"><cite>OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens</cite></a>. B. Campbell; J. Bradley; N. Sakimura; T. Lodderstedt.  IETF. February 2020. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8705">https://www.rfc-editor.org/rfc/rfc8705</a>
     </dd><dt id="bib-rfc9068">[rfc9068]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc9068"><cite>JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens</cite></a>. V. Bertocci.  IETF. October 2021. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9068">https://www.rfc-editor.org/rfc/rfc9068</a>
+    </dd><dt id="bib-rfc9126">[RFC9126]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc9126"><cite>OAuth 2.0 Pushed Authorization Requests</cite></a>. T. Lodderstedt; B. Campbell; N. Sakimura; D. Tonge; F. Skokan.  IETF. September 2021. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9126">https://www.rfc-editor.org/rfc/rfc9126</a>
     </dd><dt id="bib-rfc9396">[RFC9396]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc9396"><cite>OAuth 2.0 Rich Authorization Requests</cite></a>. T. Lodderstedt; J. Richer; B. Campbell.  IETF. May 2023. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9396">https://www.rfc-editor.org/rfc/rfc9396</a>
     </dd><dt id="bib-rfc9449">[RFC9449]</dt><dd>
@@ -2019,4 +2008,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Standard - Draft</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
