@@ -269,10 +269,18 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
         "Jasper Roes",
         "Joost Farla"
       ],
-      "date": "Juli 2020",
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
     },
     "ADR-ext": {
       "authors": [
@@ -289,6 +297,12 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
     },
     "AVG": {
       "date": "27 april 2016",
@@ -741,8 +755,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
         "H. Stijns"
       ],
       "publisher": "Geonovum",
-      "date": "November 2023",
-      "id": "adr-validator"
+      "date": "November 2023"
     },
     "JRC117836": {
       "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
@@ -880,7 +893,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">April 15, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">April 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1503,7 +1516,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p> Clients (such as Swagger UI or ReDoc) <em class="rfc2119">MUST</em> be able to retrieve the document without having to authenticate. Furthermore, the CORS policy for this <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-8">URI</a> <em class="rfc2119">MUST</em> allow external domains to read the documentation from a browser environment.</p>
+         <p>Clients (such as Swagger UI or ReDoc) <em class="rfc2119">MUST</em> be able to retrieve the document without having to authenticate. Furthermore, the CORS policy for this <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-8">URI</a> <em class="rfc2119">MUST</em> allow external domains to read the documentation from a browser environment.</p>
          <p>The standard location for the OAS document is a URI called <code>openapi.json</code> or <code>openapi.yaml</code> within the base path of the API. This can be convenient, because OAS document updates can easily  become part of the CI/CD process.</p>
          <p>At least the JSON format <em class="rfc2119">MUST</em> be supported. When having multiple (major) versions of an API, every API <em class="rfc2119">SHOULD</em> provide its own OAS document(s).</p>
          <div class="example">
@@ -1534,7 +1547,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p>Consumers of an API need to know that the API exists. A landing page at the root resource (append <code>/</code> to the service root URL) <em class="rfc2119">MUST</em> return a 200 or 30X status. Depending on your API, you <em class="rfc2119">SHOULD</em> include one of the following options:
+         <p>Consumers of an API need to know that the API exists. A landing page at the root resource (append <code>/</code> to the service root URL) <em class="rfc2119">MUST</em> return a 200 or 30X status. Furthermore, the CORS policy for this <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-9">URI</a> <em class="rfc2119">MUST</em> allow external domains to read the documentation from a browser environment. Depending on your API, you <em class="rfc2119">SHOULD</em> include one of the following options:
          </p><ul>
             <li>The root resource shows a landing page with documentation about the API</li>
             <li>The root resource redirects to a landing page</li>
@@ -1546,13 +1559,10 @@ In addition to this (normative) document, separate modules are being written to 
             <pre class="nohighlight">https://api.example.org/v1/</pre>
          </div>
       </dd>
-      <dt>Implications</dt>
-      <dd>
-         This rule can be tested automatically and an example of the test is included in the automatic tests on <a href="https://developer.overheid.nl/">developer.overheid.nl</a>. The specific tests are published in the [<cite><a class="bibref" data-link-type="biblio" href="#bib-adr-validator" title="Technical ADR Validation rule testset 0.5.0">ADR-Validator</a></cite>] repository.
-      </dd>
       <dt>How to test</dt>
       <dd>
-         The server root URL appended with a <code>/</code> <em class="rfc2119">MUST</em> result in a HTTP 200 or 30X status
+         <li>The server root URL appended with a <code>/</code> <em class="rfc2119">MUST</em> result in a HTTP 200 or 30X status</li>
+         <li>The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fdoc%2Dlanding%2Dpage">linter configuration</a>.</dd>
    </dl>
 </div>
@@ -1595,11 +1605,11 @@ In addition to this (normative) document, separate modules are being written to 
     <dl>
       <dt>Statement</dt>
       <dd>
-         The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-9">URI</a> of an API <em class="rfc2119">MUST</em> include the major version number.
+         The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API <em class="rfc2119">MUST</em> include the major version number.
       </dd>
       <dt>Rationale</dt>
       <dd>
-         The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-10">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
+         The <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-11">URI</a> of an API (base path) <em class="rfc2119">MUST</em> include the major version number, prefixed by the letter <code>v</code>. This allows the exploration of multiple versions of an API in the browser. The minor and patch version numbers are not part of the <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-12">URI</a> and <em class="rfc2119">MAY</em> not have any impact on existing client implementations.
       <div class="example">
          <p>An example of an <code class="nohighlight">openapi.yaml</code> for an API with a base path <code class="nohighlight">https://api.example.org/v1</code> and current version 1.0.2:</p>
          <pre><code class="yaml hljs" aria-busy="false"><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.0</span><span class="hljs-number">.0</span>
@@ -1908,7 +1918,7 @@ This avoids XXE-attack vectors for example.</li>
     <dfn id="dfn-resource" tabindex="0" aria-haspopup="dialog">Resource</dfn>
   </dt>
   <dd>
-    A resource is the key abstraction of information, where every piece of information is identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-12">URI</a>.
+    A resource is the key abstraction of information, where every piece of information is identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-13">URI</a>.
   </dd>
   <dt>
     <dfn data-plurals="singular resources" id="dfn-singular-resource" tabindex="0" aria-haspopup="dialog">Singular resource</dfn>
@@ -2153,8 +2163,6 @@ This avoids XXE-attack vectors for example.</li>
     <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr-geo">[ADR-GEO]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/"><cite>API Design Rules Module: Geospatial</cite></a>. L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker.  Geonovum. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/</a>
-    </dd><dt id="bib-adr-validator">[ADR-Validator]</dt><dd>
-      <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets"><cite>Technical ADR Validation rule testset 0.5.0</cite></a>. H. Stijns.  Geonovum. November 2023. URL: <a href="https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets">https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets</a>
     </dd><dt id="bib-ncsc 2021">[NCSC 2021]</dt><dd>
       <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1</cite></a>.  NCSC. Jan 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
@@ -2238,11 +2246,11 @@ This avoids XXE-attack vectors for example.</li>
     </li><li>
       <a href="#ref-for-dfn-uri-7" title="§ 3.4 Relationships">§ 3.4 Relationships</a> 
     </li><li>
-      <a href="#ref-for-dfn-uri-8" title="§ 3.6 Documentation">§ 3.6 Documentation</a> 
+      <a href="#ref-for-dfn-uri-8" title="§ 3.6 Documentation">§ 3.6 Documentation</a> <a href="#ref-for-dfn-uri-9" title="Reference 2">(2)</a> 
     </li><li>
-      <a href="#ref-for-dfn-uri-9" title="§ 3.7 Versioning">§ 3.7 Versioning</a> <a href="#ref-for-dfn-uri-10" title="Reference 2">(2)</a> <a href="#ref-for-dfn-uri-11" title="Reference 3">(3)</a> 
+      <a href="#ref-for-dfn-uri-10" title="§ 3.7 Versioning">§ 3.7 Versioning</a> <a href="#ref-for-dfn-uri-11" title="Reference 2">(2)</a> <a href="#ref-for-dfn-uri-12" title="Reference 3">(3)</a> 
     </li><li>
-      <a href="#ref-for-dfn-uri-12" title="§ 4. Glossary">§ 4. Glossary</a> 
+      <a href="#ref-for-dfn-uri-13" title="§ 4. Glossary">§ 4. Glossary</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ogc" aria-label="Links in this document to definition: OGC">
