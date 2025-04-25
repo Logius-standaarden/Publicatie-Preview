@@ -1037,8 +1037,7 @@ manier kan een groep organisaties interoperabiliteit organiseren. Voorbeelden va
  
   <section id="architectuur">
     <div class="header-wrapper"><h2 id="x4-architectuur"><bdi class="secno">4. </bdi>Architectuur</h2><a class="self-link" href="#architectuur" aria-label="Permalink for Section 4."></a></div>
-    <section>
-<p>Deze sectie beschrijft de algemene architectuur voor het loggen van dataverwerkingen bij toepassing van deze standaard.</p>
+    <section><p>Deze sectie beschrijft de algemene architectuur voor het loggen van dataverwerkingen bij toepassing van deze standaard.</p>
 </section>
     <section id="context"><div class="header-wrapper"><h3 id="x4-1-context"><bdi class="secno">4.1 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 4.1"></a></div>
 <p>Op hoog abstractieniveau zijn voor het begrijpen van deze standaard de volgende componenten te onderscheiden:</p>
@@ -1111,18 +1110,17 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 </section></section>
     <section id="flows"><div class="header-wrapper"><h3 id="x4-4-flows"><bdi class="secno">4.4 </bdi>Flows</h3><a class="self-link" href="#flows" aria-label="Permalink for Section 4.4"></a></div>
 <section id="wegschrijven-van-een-logregel-na-een-dataverwerking"><div class="header-wrapper"><h4 id="x4-4-1-wegschrijven-van-een-logregel-na-een-dataverwerking"><bdi class="secno">4.4.1 </bdi>Wegschrijven van een logregel na een Dataverwerking</h4><a class="self-link" href="#wegschrijven-van-een-logregel-na-een-dataverwerking" aria-label="Permalink for Section 4.4.1"></a></div>
-<img src="media/data-verwerking-applicatie.svg">
+<img src="media/data-verwerking-applicatie.svg" alt="Data verwerking in een applicatie">
 
 <p>Deze transactie is geoptimaliseerd op eenvoud en snelheid, want deze heeft rechtstreeks invloed op de snelheid van Dataverwerkingen. Deze transactie moet schaalbaar zijn naar bijv. honderdduizenden transacties per seconde, o.a. omdat wanneer bij een enkele Dataverwerking meerdere Betrokkenen gerelateerd zijn, voor elk van deze Betrokkenen een logregel wordt weggeschreven.</p>
 </section><section id="tonen-van-informatie-over-een-dataverwerking"><div class="header-wrapper"><h4 id="x4-4-2-tonen-van-informatie-over-een-dataverwerking"><bdi class="secno">4.4.2 </bdi>Tonen van informatie over een Dataverwerking</h4><a class="self-link" href="#tonen-van-informatie-over-een-dataverwerking" aria-label="Permalink for Section 4.4.2"></a></div>
 <p>Voor het op betekenisvolle manier tonen van informatie over Dataverwerkingen aan bijvoorbeeld een Betrokkene is het nodig om data op te vragen uit zowel het Logboek als het Register. Deze flow mag wat complexer zijn, omdat deze niet voor alle vastgelegde data wordt uitgevoerd en het belang van de bevraging rechtvaardigt dat een bevraging wat langer kan duren.</p>
-<img src="media/data-verwerking-tonen.svg"></section></section>
+<img src="media/data-verwerking-tonen.svg" alt="Tonen van informatie over dataverwerking"></section></section>
   </section>
  
   <section id="specificaties">
     <div class="header-wrapper"><h2 id="x5-specificaties"><bdi class="secno">5. </bdi>Specificaties</h2><a class="self-link" href="#specificaties" aria-label="Permalink for Section 5."></a></div>
-    <section>
-<p>Deze sectie geeft de specificatie voor de te gebruiken protocollen en interfaces en het verwachte gedrag van de componenten.</p>
+    <section><p>Deze sectie geeft de specificatie voor de te gebruiken protocollen en interfaces en het verwachte gedrag van de componenten.</p>
 </section>
     <section id="protocollen"><div class="header-wrapper"><h3 id="x5-1-protocollen"><bdi class="secno">5.1 </bdi>Protocollen</h3><a class="self-link" href="#protocollen" aria-label="Permalink for Section 5.1"></a></div>
 <p>De protocollen die worden gebruikt tussen applicatie en logboek en voor het uitvoeren van transacties tussen applicaties worden niet voorgeschreven in de standaard.</p>
