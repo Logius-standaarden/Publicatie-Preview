@@ -1197,7 +1197,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>Gemeenteapplicatie accepteert de wijziging van de persoon.</li>
 </ol>
 <p>De traceringsdata worden als volgt vastgelegd:</p>
-<p><strong>processingActivityId</strong></p>
+</section><section id="processingactivityid"><div class="header-wrapper"><h4 id="x4-2-8-processingactivityid"><bdi class="secno">4.2.8 </bdi>processingActivityId</h4><a class="self-link" href="#processingactivityid" aria-label="Permalink for Section 4.2.8"></a></div>
 <p>In de gemeenteapplicatie worden de volgende Operations uitgevoerd die een relatie hebben met het Register van Verwerkingsactiviteiten van de gemeente:</p>
 <ul>
 <li><p><strong>Toon alle vergunningen</strong>: na het inloggen, worden de parkeervergunningen van de persoon getoond. Deze Operation is gerelateerd aan de processingActivity     <strong>Parkeervergunningadministratie voeren</strong>.</p>
@@ -1209,14 +1209,14 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 </ul>
 <p>In de RDW-applicatie wordt het verstrekken van data aan de gemeenteapplicatie ook geregistreerd. De Operation <strong>Verstrek houdergegevens</strong> is gerelateerd aan de processingActivity <strong>Kentekenhoudergegevens verstrekken</strong>. Merk op dat er hier dus GEEN directe relatie is tussen het Register van Verwerkingsactiviteiten van de gemeente en die van het RDW.
 <img src="./medias/relatie_logboekelementen_afbeelding11.png" alt="Alt text"></p>
-</section><section id="traceid"><div class="header-wrapper"><h4 id="x4-2-8-traceid"><bdi class="secno">4.2.8 </bdi>traceId</h4><a class="self-link" href="#traceid" aria-label="Permalink for Section 4.2.8"></a></div>
+</section><section id="traceid"><div class="header-wrapper"><h4 id="x4-2-9-traceid"><bdi class="secno">4.2.9 </bdi>traceId</h4><a class="self-link" href="#traceid" aria-label="Permalink for Section 4.2.9"></a></div>
 <ul>
 <li>De gemeenteOperations <strong>Toon alle vergunningen, Wijzig kenteken en Controleer tenaamstelling</strong> behoren tot dezelfde handeling (met als eindresultaat het wijzigingen van het kenteken op de vergunning). Deze Operations krijgen allemaal dezelfde traceId.</li>
 <li>De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen traceId.</li>
 <li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een foreignOperationTraceId opgeslagen, de waarde hier van is gelijk aan de waarde van de traceId van de Operation <strong>Controleer tenaamstelling</strong>.
 <img src="./medias/relatie_logboekelementen_afbeelding12.png" alt="Alt text"></li>
 </ul>
-</section><section id="spanid"><div class="header-wrapper"><h4 id="x4-2-9-spanid"><bdi class="secno">4.2.9 </bdi>SpanId</h4><a class="self-link" href="#spanid" aria-label="Permalink for Section 4.2.9"></a></div>
+</section><section id="spanid"><div class="header-wrapper"><h4 id="x4-2-10-spanid"><bdi class="secno">4.2.10 </bdi>SpanId</h4><a class="self-link" href="#spanid" aria-label="Permalink for Section 4.2.10"></a></div>
 <p>In de gemeente-applicatie krijgt elke (sub)Operation een eigen, unieke SpanId.</p>
 <ul>
 <li>De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een parentSpanId met de waarde van SpanId van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen.</li>
@@ -1224,7 +1224,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een foreignSpanId moeten worden vastgelegd. De waarde van deze foreignSpanId is gelijk aan de waarde van de SpanId van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.
 <img src="./medias/relatie_logboekelementen_afbeelding13.png" alt="Alt text"></li>
 </ul>
-</section><section id="totaalbeeld"><div class="header-wrapper"><h4 id="x4-2-10-totaalbeeld"><bdi class="secno">4.2.10 </bdi>Totaalbeeld</h4><a class="self-link" href="#totaalbeeld" aria-label="Permalink for Section 4.2.10"></a></div>
+</section><section id="totaalbeeld"><div class="header-wrapper"><h4 id="x4-2-11-totaalbeeld"><bdi class="secno">4.2.11 </bdi>Totaalbeeld</h4><a class="self-link" href="#totaalbeeld" aria-label="Permalink for Section 4.2.11"></a></div>
 <p>Als alle relaties gelegd zijn, ziet de traceringsconstructie er als volgt uit:
 <img src="./medias/relatie_logboekelementen_afbeelding14.png" alt="Alt text"></p>
 <p>Meer gedetailleerde voorbeelden staan beschreven in de <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen_Inleiding/blob/main/ch05_voorbeelden.md">inleiding</a> van de standaard logboek dataverwerkingen.</p>
@@ -2803,11 +2803,11 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>De gemeente toont de data aan de persoon en logt dat deze data is getoond aan de persoon.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<img src="medias/parkeervergunning-inzien.svg">
+<img src="medias/parkeervergunning-inzien.svg" alt="Schematische weergave parkeervergunning inzien">
 
 </section><section id="logging-van-data-parkeervergunning-inzien"><div class="header-wrapper"><h4 id="x6-1-4-logging-van-data-parkeervergunning-inzien"><bdi class="secno">6.1.4 </bdi>Logging van data  (Parkeervergunning - inzien)</h4><a class="self-link" href="#logging-van-data-parkeervergunning-inzien" aria-label="Permalink for Section 6.1.4"></a></div>
 <p>De volgende data worden gelogd in de diverse logmomenten:</p>
-<p><strong>Log opvragenVergunningen (log vergunningenapplicatie):</strong></p>
+<section id="log-opvragenvergunningen-log-vergunningenapplicatie"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-vergunningenapplicatie-2">Log opvragenVergunningen (log vergunningenapplicatie):</h5><a class="self-link" href="#log-opvragenvergunningen-log-vergunningenapplicatie" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -2880,7 +2880,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td>9f8971bfd093637d</td>
 </tr>
 </tbody></table>
-<p><strong>Log opvragenVergunningen (log gemeente)</strong></p>
+</section><section id="log-opvragenvergunningen-log-gemeente"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-gemeente-0">Log opvragenVergunningen (log gemeente)</h5><a class="self-link" href="#log-opvragenvergunningen-log-gemeente" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -2945,7 +2945,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td>rva:13j2ec27-0cc4-3541-9av6-219a178fcfe5</td>
 </tr>
 </tbody></table>
-</section><section id="relatie-tussen-data-parkeervergunning-inzien"><div class="header-wrapper"><h4 id="x6-1-5-relatie-tussen-data-parkeervergunning-inzien"><bdi class="secno">6.1.5 </bdi>Relatie tussen data  (Parkeervergunning - inzien)</h4><a class="self-link" href="#relatie-tussen-data-parkeervergunning-inzien" aria-label="Permalink for Section 6.1.5"></a></div>
+</section></section><section id="relatie-tussen-data-parkeervergunning-inzien"><div class="header-wrapper"><h4 id="x6-1-5-relatie-tussen-data-parkeervergunning-inzien"><bdi class="secno">6.1.5 </bdi>Relatie tussen data  (Parkeervergunning - inzien)</h4><a class="self-link" href="#relatie-tussen-data-parkeervergunning-inzien" aria-label="Permalink for Section 6.1.5"></a></div>
 <p>Om uiteindelijk alle data te kunnen rapporteren, is het van belang dat data op een bepaalde manier aan elkaar gekoppeld is. In dit voorbeeld is de data op de volgende manier gekoppeld:
 <img src="./medias/relatie-tussen-gegevens-parkeervergunning-inzien.png" alt="Alt text"></p>
 </section><section id="relatie-met-de-standaard-logboek-dataverwerkingen-parkeervergunning-inzien"><div class="header-wrapper"><h4 id="x6-1-6-relatie-met-de-standaard-logboek-dataverwerkingen-parkeervergunning-inzien"><bdi class="secno">6.1.6 </bdi>Relatie met de standaard Logboek dataverwerkingen  (Parkeervergunning - inzien)</h4><a class="self-link" href="#relatie-met-de-standaard-logboek-dataverwerkingen-parkeervergunning-inzien" aria-label="Permalink for Section 6.1.6"></a></div>
@@ -2998,11 +2998,11 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>De gemeente toont de data aan de persoon en logt dat deze data is getoond aan de persoon.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<img src="medias/parkeervergunning-wijzigen.svg">
+<img src="medias/parkeervergunning-wijzigen.svg" alt="Schematische weergave parkeervergunning wijzigen">
 
 </section><section id="logging-van-data-parkeervergunning-wijzigen"><div class="header-wrapper"><h4 id="x6-2-4-logging-van-data-parkeervergunning-wijzigen"><bdi class="secno">6.2.4 </bdi>Logging van data (Parkeervergunning - wijzigen)</h4><a class="self-link" href="#logging-van-data-parkeervergunning-wijzigen" aria-label="Permalink for Section 6.2.4"></a></div>
 <p>De volgende data worden gelogd in de diverse logmomenten:</p>
-<section id="log-opvragenvergunningen-log-vergunningenapplicatie"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-vergunningenapplicatie-1">Log opvragenVergunningen (log vergunningenapplicatie):</h5><a class="self-link" href="#log-opvragenvergunningen-log-vergunningenapplicatie" aria-label="Permalink for this Section"></a></div>
+<section id="log-opvragenvergunningen-log-vergunningenapplicatie-0"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-vergunningenapplicatie-3">Log opvragenVergunningen (log vergunningenapplicatie)</h5><a class="self-link" href="#log-opvragenvergunningen-log-vergunningenapplicatie-0" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -3432,7 +3432,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td><code>&lt;leeg&gt;</code></td>
 </tr>
 </tbody></table>
-</section><section id="log-opvragenvergunningen-log-vergunningenapplicatie-0"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-vergunningenapplicatie-2">Log opvragenVergunningen (log vergunningenapplicatie)</h5><a class="self-link" href="#log-opvragenvergunningen-log-vergunningenapplicatie-0" aria-label="Permalink for this Section"></a></div>
+</section><section id="log-opvragenvergunningen-log-vergunningenapplicatie-1"><div class="header-wrapper"><h5 id="log-opvragenvergunningen-log-vergunningenapplicatie-4">Log opvragenVergunningen (log vergunningenapplicatie)</h5><a class="self-link" href="#log-opvragenvergunningen-log-vergunningenapplicatie-1" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -3583,7 +3583,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li><p><strong>het aan elkaar relateren van dataverwerkingen over de grenzen van systemen:</strong> Naast het koppelen van logs van diverse applicaties, wordt ook een koppeling gelegd met het Register van verwerkingsactiviteiten. Dit gebeurt per applicatie op basis van het ProcessingActivityId (register) te koppelen aan dplCoreProcessingActivityId (logboek). De diverse registers hebben <strong>geen</strong> directe koppeling met elkaar.</p>
 </li>
 </ul>
-<section id="standaard-logverwerkingen-paragraaf-3-3-1-gedrag"><div class="header-wrapper"><h5 id="standaard-logverwerkingen-paragraaf-3-3-1-gedrag-0">Standaard Logverwerkingen: paragraaf 3.3.1 Gedrag</h5><a class="self-link" href="#standaard-logverwerkingen-paragraaf-3-3-1-gedrag" aria-label="Permalink for this Section"></a></div>
+<section id="standaard-logverwerkingen-paragraaf-3-3-1-gedrag"><div class="header-wrapper"><h5 id="standaard-logverwerkingen-paragraaf-3-3-1-gedrag-0">Standaard Logverwerkingen paragraaf 3.3.1 Gedrag</h5><a class="self-link" href="#standaard-logverwerkingen-paragraaf-3-3-1-gedrag" aria-label="Permalink for this Section"></a></div>
 <ol>
 <li><em>De applicatie <em class="rfc2119">MOET</em> een Trace starten voor iedere Dataverwerking waarvan nog geen Trace bekend is.</em> Bij elke start van een verwerking wordt een traceId aangemaakt. Bijvoorbeeld: in het voorbeeld komt er een bericht binnen bij de ‘MijnOmgeving’ van de gemeente (opvragenVergunningenVraag). Er wordt direct een traceId aangemaakt.</li>
 <li><em>De applicatie <em class="rfc2119">MOET</em> voor iedere Dataverwerking een logregel wegschrijven in een Logboek. Log Sampling is niet toegestaan. Een dataverwerking wordt opgeslagen als deze volledig is afgerond.</em> In het voorbeeld is te zien dat een logregel wordt geschreven op het moment dat de vraag- en het antwoordbericht zijn afgerond.</li>
@@ -3624,11 +3624,11 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>De gemeentelijke Balieapplicatie stuurt de persoonsdata naar de Browser en logt de aanvraag.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<img src="medias/verhuizing-eenvoudig.svg">
+<img src="medias/verhuizing-eenvoudig.svg" alt="Schematische weergave verhuizing">
 
 </section><section id="logging-van-data-registratie-verhuizing-eenvoudig"><div class="header-wrapper"><h4 id="x6-3-4-logging-van-data-registratie-verhuizing-eenvoudig"><bdi class="secno">6.3.4 </bdi>Logging van data (Registratie Verhuizing - Eenvoudig)</h4><a class="self-link" href="#logging-van-data-registratie-verhuizing-eenvoudig" aria-label="Permalink for Section 6.3.4"></a></div>
 <p>De volgende data worden gelogd in de diverse logmomenten:</p>
-<section id="log-opvragenpersoonsgegevens-log-brp"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-1">Log opvragenPersoonsgegevens (log BRP):</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp" aria-label="Permalink for this Section"></a></div>
+<section id="log-opvragenpersoonsgegevens-log-brp"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-1">Log opvragenPersoonsgegevens (log BRP)</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -4103,11 +4103,11 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li>De gemeentelijke Balieapplicatie stuurt de data naar de Browser en worden getoond aan de Baliemedewerker. De aanvraag wordt gelogd door de Balieapplicatie.</li>
 </ol>
 <p>Schematisch ziet dit proces er als volgt uit:</p>
-<img src="medias/verhuizing-registratie.svg">
+<img src="medias/verhuizing-registratie.svg" alt="Schematische weergave verhuizing registeren">
 
 </section><section id="logging-van-data-registratie-verhuizing"><div class="header-wrapper"><h4 id="x6-4-4-logging-van-data-registratie-verhuizing"><bdi class="secno">6.4.4 </bdi>Logging van data (Registratie verhuizing)</h4><a class="self-link" href="#logging-van-data-registratie-verhuizing" aria-label="Permalink for Section 6.4.4"></a></div>
 <p>De volgende data worden gelogd in de diverse logmomenten:</p>
-<section id="log-opvragenpersoonsgegevens-log-brp-persoon-1"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-persoon-1-0">Log opvragenPersoonsgegevens (log BRP) persoon 1:</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp-persoon-1" aria-label="Permalink for this Section"></a></div>
+<section id="log-opvragenpersoonsgegevens-log-brp-persoon-1"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-persoon-1-0">Log opvragenPersoonsgegevens (log BRP) persoon 1</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp-persoon-1" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -4192,7 +4192,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td>7a22eb38-bca6-463f-9955-54ab040287cb</td>
 </tr>
 </tbody></table>
-</section><section id="log-opvragenpersoonsgegevens-log-brp-persoon-2"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-persoon-2-0">Log opvragenPersoonsgegevens (log BRP) persoon 2:</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp-persoon-2" aria-label="Permalink for this Section"></a></div>
+</section><section id="log-opvragenpersoonsgegevens-log-brp-persoon-2"><div class="header-wrapper"><h5 id="log-opvragenpersoonsgegevens-log-brp-persoon-2-0">Log opvragenPersoonsgegevens (log BRP) persoon 2</h5><a class="self-link" href="#log-opvragenpersoonsgegevens-log-brp-persoon-2" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -4277,7 +4277,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td>7a22eb38-bca6-463f-9955-54ab040287cb</td>
 </tr>
 </tbody></table>
-</section><section id="log-tonennawgegevens-log-gemeente-persoon-1"><div class="header-wrapper"><h5 id="log-tonennawgegevens-log-gemeente-persoon-1-0">Log tonenNAWGegevens (log gemeente) persoon 1:</h5><a class="self-link" href="#log-tonennawgegevens-log-gemeente-persoon-1" aria-label="Permalink for this Section"></a></div>
+</section><section id="log-tonennawgegevens-log-gemeente-persoon-1"><div class="header-wrapper"><h5 id="log-tonennawgegevens-log-gemeente-persoon-1-0">Log tonenNAWGegevens (log gemeente) persoon 1</h5><a class="self-link" href="#log-tonennawgegevens-log-gemeente-persoon-1" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
@@ -4354,7 +4354,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <td>b2e339a595246e01</td>
 </tr>
 </tbody></table>
-</section><section id="log-tonennawgegevens-log-gemeente-persoon-2"><div class="header-wrapper"><h5 id="log-tonennawgegevens-log-gemeente-persoon-2-0">Log tonenNAWGegevens (log gemeente) persoon 2:</h5><a class="self-link" href="#log-tonennawgegevens-log-gemeente-persoon-2" aria-label="Permalink for this Section"></a></div>
+</section><section id="log-tonennawgegevens-log-gemeente-persoon-2"><div class="header-wrapper"><h5 id="log-tonennawgegevens-log-gemeente-persoon-2-0">Log tonenNAWGegevens (log gemeente) persoon 2</h5><a class="self-link" href="#log-tonennawgegevens-log-gemeente-persoon-2" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
 <tr>
