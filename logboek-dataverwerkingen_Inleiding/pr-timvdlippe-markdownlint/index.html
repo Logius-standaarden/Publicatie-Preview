@@ -994,7 +994,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <ul>
 <li><em>Api’s / Services</em><ul>
 <li>Naast richtlijnen voor de inrichting en het gedrag van het Logboek dataverwerkingen, biedt deze standaard ook een aantal voorbeeld API’s:</li>
-<li><strong>Inzicht API:</strong> deze service geeft de mogelijkheid een query uit te voeren op loggings van dataverwerkingen (nog niet beschikbaar). </li>
+<li><strong>Inzicht API:</strong> deze service geeft de mogelijkheid een query uit te voeren op loggings van dataverwerkingen (nog niet beschikbaar).</li>
 <li><strong>Register van de Verwerkingsactiviteiten:</strong> deze service geeft de mogelijkheid de data van een Register van Verwerkingsactiviteiten te bekijken (nog niet beschikbaar).</li>
 </ul>
 </li>
@@ -1033,14 +1033,14 @@ img.license{float:left;padding-right:5px;background:0 0}
 <section id="netwerken-en-slimme-apparaten"><div class="header-wrapper"><h5 id="netwerken-en-slimme-apparaten-0">Netwerken en slimme apparaten</h5><a class="self-link" href="#netwerken-en-slimme-apparaten" aria-label="Permalink for this Section"></a></div>
 <p>De standaard Logboek dataverwerkingen kan ook worden toegepast in een middleware- of cloud-omgeving. Het netwerkcomponent logt binnenkomende en uitgaande berichten.</p>
 <p><img src="./medias/technische_architectuur.png" alt="technische architectuur"></p>
-<p>Ook voor mobiele Apps en IoT (Internet of Things) geldt dat het netwerkcomponent de databerichten logt. </p>
+<p>Ook voor mobiele Apps en IoT (Internet of Things) geldt dat het netwerkcomponent de databerichten logt.</p>
 </section></section><section id="software-architectuur"><div class="header-wrapper"><h4 id="x4-1-4-software-architectuur"><bdi class="secno">4.1.4 </bdi>Software architectuur</h4><a class="self-link" href="#software-architectuur" aria-label="Permalink for Section 4.1.4"></a></div>
 <p>Hoofdstuk <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#componenten">2.2 Componenten</a> geeft een globaal overzicht van de benodigde softwarecomponenten om de standaard te implementeren.</p>
 <section id="platformen-voor-dagelijkse-exploitatie-en-huisvesting"><div class="header-wrapper"><h5 id="platformen-voor-dagelijkse-exploitatie-en-huisvesting-0">Platformen voor dagelijkse exploitatie en huisvesting</h5><a class="self-link" href="#platformen-voor-dagelijkse-exploitatie-en-huisvesting" aria-label="Permalink for this Section"></a></div>
 <p>De standaard Logboek dataverwerkingen gaat er vanuit dat de het Logboekcomponent op een beveiligd platform in een beveiligd datacenter is geïnstalleerd.</p>
 </section><section id="aspectgebieden"><div class="header-wrapper"><h5 id="aspectgebieden-0">Aspectgebieden</h5><a class="self-link" href="#aspectgebieden" aria-label="Permalink for this Section"></a></div>
 <ul>
-<li><em>Informatiebeveiliging</em> <ul>
+<li><em>Informatiebeveiliging</em><ul>
 <li>De standaard Logboek dataverwerkingen gaat er vanuit dat zowel het Logboekcomponent als de data in het Logboek beveiligd zijn volgens de BIO (=Baseline Informatiebeveiliging Overheid) – zie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#beleidskader">Beleidskader</a>.</li>
 </ul>
 </li>
@@ -1140,30 +1140,35 @@ img.license{float:left;padding-right:5px;background:0 0}
 </tbody></table>
 </section></section>
     <section id="de-relatie-tussen-logboekelementen-waarom-eigenlijk"><div class="header-wrapper"><h3 id="x4-2-de-relatie-tussen-logboekelementen-waarom-eigenlijk"><bdi class="secno">4.2 </bdi>De relatie tussen logboekelementen, waarom eigenlijk?</h3><a class="self-link" href="#de-relatie-tussen-logboekelementen-waarom-eigenlijk" aria-label="Permalink for Section 4.2"></a></div>
-<p>Logging van dataverwerkingen kunnen vaak en veelvuldig plaatsvinden. Het geheel kan groot en complex worden want sommige Logregels zijn aan elkaar gerelateerd. Deze relaties kunnen gelegd worden met Logregels met andere applicaties binnen dezelfde organisatie of met logregels van applicaties van andere organisaties. </p>
+<p>Logging van dataverwerkingen kunnen vaak en veelvuldig plaatsvinden. Het geheel kan groot en complex worden want sommige Logregels zijn aan elkaar gerelateerd. Deze relaties kunnen gelegd worden met Logregels met andere applicaties binnen dezelfde organisatie of met logregels van applicaties van andere organisaties.</p>
 <p>Maar ook zijn er relaties nodig met activiteiten in het Register van Verwerkingsactiviteiten.
 Wat nu als alle Logregels zonder relaties worden opgeslagen? Bij een rapportage (bijvoorbeeld een verzoek tot inzage van een burger) moet nu handmatig worden uitgezocht welke dataverwerkingen bij elkaar horen en er moet, in het ernstigste geval, ook contact worden gezocht moet andere organisaties om te onderzoeken of daar ook de nodige dataverwerkingen zijn uitgevoerd. Als er bij elke Logregel de nodige relatiedata worden bijgevoegd, kan de rapportage snel en accuraat worden gegenereerd.</p>
 <section id="welke-relatiedata-moeten-er-dan-worden-opgeslagen-per-logregel"><div class="header-wrapper"><h4 id="x4-2-1-welke-relatiedata-moeten-er-dan-worden-opgeslagen-per-logregel"><bdi class="secno">4.2.1 </bdi>Welke relatiedata moeten er dan worden opgeslagen per Logregel?</h4><a class="self-link" href="#welke-relatiedata-moeten-er-dan-worden-opgeslagen-per-logregel" aria-label="Permalink for Section 4.2.1"></a></div>
 <p>Om er zeker van te zijn dat de relatie tussen Logregels gelegd kan worden, moeten de volgende data worden geregistreerd per Logregel:</p>
-<p>•	<strong>processingActivityId</strong>: elke dataverwerking die een organisatie doet, moet bekend zijn in het Register van Verwerkingsactiviteiten. Het processingActivity legt de relatie tussen de dataverwerking door een applicatie, en de activiteit gedefinieerd in het Register.</p>
-<p>•	<strong>traceId</strong>: alle logregels die voor een specifieke dataverwerking bij elkaar horen, krijgen een traceId. De traceId-waarde voor alle Logregels die bij elkaar horen is hetzelfde.</p>
-<p>•	<strong>SpanId</strong>: elke individuele Logregel (Operation) krijgt een eigen, unieke SpanId (net zoals elk databaserecord dat ook krijgt).</p>
+<ul>
+<li><p><strong>processingActivityId</strong>: elke dataverwerking die een organisatie doet, moet bekend zijn in het Register van Verwerkingsactiviteiten. Het processingActivity legt de relatie tussen de dataverwerking door een applicatie, en de activiteit gedefinieerd in het Register.</p>
+</li>
+<li><p><strong>traceId</strong>: alle logregels die voor een specifieke dataverwerking bij elkaar horen, krijgen een traceId. De traceId-waarde voor alle Logregels die bij elkaar horen is hetzelfde.</p>
+</li>
+<li><p><strong>SpanId</strong>: elke individuele Logregel (Operation) krijgt een eigen, unieke SpanId (net zoals elk databaserecord dat ook krijgt).</p>
+</li>
+</ul>
 <p>In werkelijkheid worden alle relaties door de Applicatie in een fractie van een seconde (in parallel)  gelegd. Om het grote geheel beter te begrijpen, worden alle relaties hieronder stap voor stap uitgelegd.</p>
 </section><section id="het-logboek-en-het-register-van-verwerkingsactiviteiten"><div class="header-wrapper"><h4 id="x4-2-2-het-logboek-en-het-register-van-verwerkingsactiviteiten"><bdi class="secno">4.2.2 </bdi>Het logboek en het Register van Verwerkingsactiviteiten</h4><a class="self-link" href="#het-logboek-en-het-register-van-verwerkingsactiviteiten" aria-label="Permalink for Section 4.2.2"></a></div>
 <p>Als er een Dataverwerking plaatsvindt, moet dit altijd een relatie hebben met het Register van Verwerkingsactiviteiten. In dit Register staat informatie over de data die een organisatie verwerkt. Het Register is verplicht, een geautomatiseerde koppeling met het Logboek niet.</p>
-<p>Bij elke Dataverwerking wordt door het Logboek een relatie gelegd met het Register door middel van het processingActivityId. 
+<p>Bij elke Dataverwerking wordt door het Logboek een relatie gelegd met het Register door middel van het processingActivityId.
 Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze dus allemaal dezelfde processingActivityId.</p>
 <p><img src="./medias/relatie_logboekelementen_afbeelding1.png" alt="Alt text"></p>
 <p>In het geval er een Dataverwerking plaatsvindt ter ondersteuning van een andere Dataverwerking (suboperation), dan kan deze ondersteunende Dataverwerking een eigen processingActivityId krijgen. Deze kan anders zijn dan het processingActivityId van de ‘hoofdprocessingActivity’.
 <img src="./medias/relatie_logboekelementen_afbeelding2.png" alt="Alt text"></p>
-<p>De subOperation heeft nu een eigen processingActivityId gekregen, maar het is nog niet duidelijk aan welke hoofdprocessingActivityId deze gekoppeld is. Om dit op te lossen, wordt ook een ‘parentProcessingActivityId’ geregistreerd. </p>
+<p>De subOperation heeft nu een eigen processingActivityId gekregen, maar het is nog niet duidelijk aan welke hoofdprocessingActivityId deze gekoppeld is. Om dit op te lossen, wordt ook een ‘parentProcessingActivityId’ geregistreerd.</p>
 <p>Bij de subOperation wordt in dit geval naast de processingActivityId ook een parentProcessingActivityId geregistreerd. De waarde van deze parentProcessingActivityId is gelijk aan de waarde van het hoofdProcessingActivityId.
 <img src="./medias/relatie_logboekelementen_afbeelding3.png" alt="Alt text"></p>
-<p>Bij een Dataverwerking kan het zijn dat data moeten worden opgevraagd bij een andere organisatie. Deze organisatie heeft zelf ook een Register van Verwerkingsactiviteiten. In dit Register staat beschreven dat een specifieke organisatie specifieke gegevens mag opvragen als aparte operation. </p>
+<p>Bij een Dataverwerking kan het zijn dat data moeten worden opgevraagd bij een andere organisatie. Deze organisatie heeft zelf ook een Register van Verwerkingsactiviteiten. In dit Register staat beschreven dat een specifieke organisatie specifieke gegevens mag opvragen als aparte operation.</p>
 <p>Bij het verstrekken van deze data aan de aanvragende organisatie, wordt het processingActivityId van de gegevensverstrekkende organisatie geregistreerd. Er is dus GEEN rechtstreekse koppeling tussen het Register van de aanvragende en het Register van de verstrekkende organisatie.
 <img src="./medias/relatie_logboekelementen_afbeelding4.png" alt="Alt text"></p>
 </section><section id="traceid-als-grootste-gemene-deler"><div class="header-wrapper"><h4 id="x4-2-3-traceid-als-grootste-gemene-deler"><bdi class="secno">4.2.3 </bdi>TraceId als grootste gemene deler</h4><a class="self-link" href="#traceid-als-grootste-gemene-deler" aria-label="Permalink for Section 4.2.3"></a></div>
-<p>Operations kunnen bestaan uit meerdere (sub)Operations binnen de eigen organisatie maar ook over organisaties heen. Het geheel kan een grote en ingewikkelde constructie worden. Om toch het overzicht te kunnen behouden, is het noodzakelijk een ‘traceId’ te introduceren per (sub)Operation. </p>
+<p>Operations kunnen bestaan uit meerdere (sub)Operations binnen de eigen organisatie maar ook over organisaties heen. Het geheel kan een grote en ingewikkelde constructie worden. Om toch het overzicht te kunnen behouden, is het noodzakelijk een ‘traceId’ te introduceren per (sub)Operation.</p>
 <p>Het traceId is als het ware de ‘lijm’ tussen alle  (sub)Operations. Als er nog geen traceId bekend is, wordt deze automatisch gegenereerd voor de eerste Operation.
 <img src="./medias/relatie_logboekelementen_afbeelding5.png" alt="Alt text"></p>
 <p>Alle bij elkaar horende (sub)Operations, krijgen vervolgens dezelfde traceId-waarde.
@@ -1171,11 +1176,11 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <p>In het geval er data wordt opgevraagd aan een andere organisatie, krijgt elke operation bij verstrekkende organisatie een traceId. Om de relatie te leggen tussen de vragende en de verstrekkende organisatie, wordt bij elke Operation van de verstrekkende organisatie een ‘foreignOperationTraceId’ geregistreerd. De waarde van de foreignOperationTraceId van de verstrekkende organisatie is gelijk aan de waarde van traceId van de vragende organisatie.
 <img src="./medias/relatie_logboekelementen_afbeelding7.png" alt="Alt text"></p>
 </section><section id="relatie-tussen-sub-operations"><div class="header-wrapper"><h4 id="x4-2-4-relatie-tussen-sub-operations"><bdi class="secno">4.2.4 </bdi>Relatie tussen (sub)Operations</h4><a class="self-link" href="#relatie-tussen-sub-operations" aria-label="Permalink for Section 4.2.4"></a></div>
-<p>Elke (sub)Operation krijgt een eigen, unieke SpanId. Hiermee zijn alle loggings altijd uniek traceerbeer. Ook subOperations krijgen een eigen, unieke SpanId. 
+<p>Elke (sub)Operation krijgt een eigen, unieke SpanId. Hiermee zijn alle loggings altijd uniek traceerbeer. Ook subOperations krijgen een eigen, unieke SpanId.
 <img src="./medias/relatie_logboekelementen_afbeelding8.png" alt="Alt text"></p>
 <p>Als er ook subOperations plaatsvinden, moet er ook een ‘parentSpanId’ worden geregistreerd om de koppeling met de hoofdOperation te realiseren.</p>
 <p><img src="./medias/relatie_logboekelementen_afbeelding9.png" alt="Alt text"></p>
-<p>In het geval er data nodig is van een andere organisatie, krijgt de Operation van de verstrekkende organisatie ook een eigen, unieke SpanId. </p>
+<p>In het geval er data nodig is van een andere organisatie, krijgt de Operation van de verstrekkende organisatie ook een eigen, unieke SpanId.</p>
 <p>Daarnaast wordt bij deze Operation ook het SpanId geregistreerd die het verzoek voor informatie geïnitieerd heeft (vanuit de vragende organisatie). Deze specifieke SpanId wordt het ‘foreignSpanId’ genoemd en krijgt de waarde gelijk aan het SpanId van de initiërende Operation van de vragende organisatie.
 <img src="./medias/relatie_logboekelementen_afbeelding10.png" alt="Alt text"></p>
 </section><section id="voorbeeld-van-een-traceringsconstructie"><div class="header-wrapper"><h4 id="x4-2-5-voorbeeld-van-een-traceringsconstructie"><bdi class="secno">4.2.5 </bdi>Voorbeeld van een traceringsconstructie</h4><a class="self-link" href="#voorbeeld-van-een-traceringsconstructie" aria-label="Permalink for Section 4.2.5"></a></div>
@@ -1184,34 +1189,39 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <p>Een persoon heeft een parkeervergunning in een gemeente. Er is een nieuwe auto aangeschaft, het kenteken moet worden aangepast ten behoeve van de vergunning. De persoon kan het kenteken online wijzigen in de ‘mijnGemeente’ applicatie. Om het voorbeeld eenvoudig te houden, worden foutsituaties buiten beschouwing gelaten.</p>
 </section><section id="procesgang"><div class="header-wrapper"><h4 id="x4-2-7-procesgang"><bdi class="secno">4.2.7 </bdi>Procesgang</h4><a class="self-link" href="#procesgang" aria-label="Permalink for Section 4.2.7"></a></div>
 <ol>
-<li>   Persoon logt in gemeenteapplicatie.</li>
-<li>   Gemeente toont huidige parkeervergunning.</li>
-<li>   Persoon wijzigt kenteken in de gemeenteapplicatie.</li>
-<li>   Gemeenteapplicatie vraagt het RDW om data op basis van de tenaamstelling.</li>
-<li>   RDW geeft de gevraagde data terug aan de gemeenteapplicatie.</li>
-<li>   Gemeenteapplicatie accepteert de wijziging van de persoon.</li>
+<li>Persoon logt in gemeenteapplicatie.</li>
+<li>Gemeente toont huidige parkeervergunning.</li>
+<li>Persoon wijzigt kenteken in de gemeenteapplicatie.</li>
+<li>Gemeenteapplicatie vraagt het RDW om data op basis van de tenaamstelling.</li>
+<li>RDW geeft de gevraagde data terug aan de gemeenteapplicatie.</li>
+<li>Gemeenteapplicatie accepteert de wijziging van de persoon.</li>
 </ol>
 <p>De traceringsdata worden als volgt vastgelegd:</p>
 <p><strong>processingActivityId</strong></p>
 <p>In de gemeenteapplicatie worden de volgende Operations uitgevoerd die een relatie hebben met het Register van Verwerkingsactiviteiten van de gemeente:</p>
-<p>  •	<strong>Toon alle vergunningen</strong>: na het inloggen, worden de parkeervergunningen van de persoon getoond. Deze Operation is gerelateerd aan de processingActivity     <strong>Parkeervergunningadministratie voeren</strong>.</p>
-<p>  •	<strong>Wijzig kenteken</strong>: het wijzigen van het kenteken valt ook onder de processingActivity <strong>Parkeervergunningadministratie</strong> voeren. Hierdoor is het processingActivityId hetzelfde als die van de Operation <strong>Toon alle vergunningen</strong>.</p>
-<p>  •	<strong>Controleer tenaamstelling:</strong> deze Operation zorgt voor de aanvraag van data richting het RDW en controle van de terugontvangen data. Deze Operation is een subOperation van <strong>Wijzig kenteken</strong> en krijgt een processingActivity wat hoort bij de processingActivity in het Register genaamd <strong>Tenaamstelling controleren</strong>. De processingActivity is op zijn beurt weer een subprocessingActivity van <strong>Parkeeradministratie voeren</strong>. Om deze relatie te leggen, moet ook een parentProcessingActivityId worden geregistreerd. De waarde hiervan is gelijk aan de waarde van het processingActivityId van <strong>Parkeervergunningadministratie voeren</strong>.</p>
+<ul>
+<li><p><strong>Toon alle vergunningen</strong>: na het inloggen, worden de parkeervergunningen van de persoon getoond. Deze Operation is gerelateerd aan de processingActivity     <strong>Parkeervergunningadministratie voeren</strong>.</p>
+</li>
+<li><p><strong>Wijzig kenteken</strong>: het wijzigen van het kenteken valt ook onder de processingActivity <strong>Parkeervergunningadministratie</strong> voeren. Hierdoor is het processingActivityId hetzelfde als die van de Operation <strong>Toon alle vergunningen</strong>.</p>
+</li>
+<li><p><strong>Controleer tenaamstelling:</strong> deze Operation zorgt voor de aanvraag van data richting het RDW en controle van de terugontvangen data. Deze Operation is een subOperation van <strong>Wijzig kenteken</strong> en krijgt een processingActivity wat hoort bij de processingActivity in het Register genaamd <strong>Tenaamstelling controleren</strong>. De processingActivity is op zijn beurt weer een subprocessingActivity van <strong>Parkeeradministratie voeren</strong>. Om deze relatie te leggen, moet ook een parentProcessingActivityId worden geregistreerd. De waarde hiervan is gelijk aan de waarde van het processingActivityId van <strong>Parkeervergunningadministratie voeren</strong>.</p>
+</li>
+</ul>
 <p>In de RDW-applicatie wordt het verstrekken van data aan de gemeenteapplicatie ook geregistreerd. De Operation <strong>Verstrek houdergegevens</strong> is gerelateerd aan de processingActivity <strong>Kentekenhoudergegevens verstrekken</strong>. Merk op dat er hier dus GEEN directe relatie is tussen het Register van Verwerkingsactiviteiten van de gemeente en die van het RDW.
 <img src="./medias/relatie_logboekelementen_afbeelding11.png" alt="Alt text"></p>
 </section><section id="traceid"><div class="header-wrapper"><h4 id="x4-2-8-traceid"><bdi class="secno">4.2.8 </bdi>traceId</h4><a class="self-link" href="#traceid" aria-label="Permalink for Section 4.2.8"></a></div>
 <ul>
-<li>   De gemeenteOperations <strong>Toon alle vergunningen, Wijzig kenteken en Controleer tenaamstelling</strong> behoren tot dezelfde handeling (met als eindresultaat het wijzigingen van het kenteken op de vergunning). Deze Operations krijgen allemaal dezelfde traceId.</li>
-<li>   De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen traceId.</li>
-<li>   Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een foreignOperationTraceId opgeslagen, de waarde hier van is gelijk aan de waarde van de traceId van de Operation <strong>Controleer tenaamstelling</strong>.
+<li>De gemeenteOperations <strong>Toon alle vergunningen, Wijzig kenteken en Controleer tenaamstelling</strong> behoren tot dezelfde handeling (met als eindresultaat het wijzigingen van het kenteken op de vergunning). Deze Operations krijgen allemaal dezelfde traceId.</li>
+<li>De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen traceId.</li>
+<li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een foreignOperationTraceId opgeslagen, de waarde hier van is gelijk aan de waarde van de traceId van de Operation <strong>Controleer tenaamstelling</strong>.
 <img src="./medias/relatie_logboekelementen_afbeelding12.png" alt="Alt text"></li>
 </ul>
 </section><section id="spanid"><div class="header-wrapper"><h4 id="x4-2-9-spanid"><bdi class="secno">4.2.9 </bdi>SpanId</h4><a class="self-link" href="#spanid" aria-label="Permalink for Section 4.2.9"></a></div>
 <p>In de gemeente-applicatie krijgt elke (sub)Operation een eigen, unieke SpanId.</p>
 <ul>
-<li>   De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een parentSpanId met de waarde van SpanId van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen.</li>
-<li>   Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke SpanId.</li>
-<li>   Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een foreignSpanId moeten worden vastgelegd. De waarde van deze foreignSpanId is gelijk aan de waarde van de SpanId van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.
+<li>De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een parentSpanId met de waarde van SpanId van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen.</li>
+<li>Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke SpanId.</li>
+<li>Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een foreignSpanId moeten worden vastgelegd. De waarde van deze foreignSpanId is gelijk aan de waarde van de SpanId van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.
 <img src="./medias/relatie_logboekelementen_afbeelding13.png" alt="Alt text"></li>
 </ul>
 </section><section id="totaalbeeld"><div class="header-wrapper"><h4 id="x4-2-10-totaalbeeld"><bdi class="secno">4.2.10 </bdi>Totaalbeeld</h4><a class="self-link" href="#totaalbeeld" aria-label="Permalink for Section 4.2.10"></a></div>
