@@ -1073,71 +1073,26 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>1.4. Datadiensten zijn afgestemd op de behoeften van afnemers</td>
 <td>- Data  die gelogd worden bij een dataverwerking zijn afgestemd op het doel  waarvoor er gelogd moet worden (bijvoorbeeld de data die gevraagd worden  op basis van de AVG-wetgeving). Er wordt niet minder opgeslagen, meer zeker  niet meer dan nodig is.<br> - Het ontwerp  van het datamodel van deze standaard is gebaseerd op OpenTelemetry,  vertaling van data is dus niet nodig.</td>
 </tr>
-<tr>
-<td>1.5. De bron van de data is leidend</td>
-<td>- Overheidsapplicaties  moeten rekening houden met de onderhoud van data bij de <a href="https://www.digitaleoverheid.nl/data-bij-de-bron/">bron</a>. Dit  betekent dat data niet zonder meer gekopieerd opgeslagen mogen worden.  Bij sommige dataverwerkingen zijn data nodig van andere databronnen (in de  eigen organisatie of bij een andere organisatie). De standaard Logboek  Dataverwerkingen schrijft een traceringsmechanisme voor zodat kopiëren van  specifieke data naar het Logboek niet nodig is, er kan altijd nagegaan worden  waar data vandaan kwamen en welke data er gebruikt werden.<br> - De  standaard verwijst zo veel mogelijk naar bestaande databronnen elders in  plaats van de data te dupliceren (zie besluit <a href="#logregels-bevatten-geen-gegevens-die-al-vastliggen-in-een-register">4.2</a>  en <a href="#geen-data-over-gebruikers-in-logregels">4.4</a>)</td>
-</tr>
-<tr>
-<td>1.6. Burgers en organisaties hebben regie over hun eigen data</td>
-<td>- Burgers,  (overheids)organisaties en parlement hebben recht om inzicht te krijgen in  verwerkte data. Door toepassing van deze standaard kan er een rapportage  gemaakt worden die voldoet aan die informatiebehoefte.<br> - De  standaard Logboek dataverwerkingen biedt geen handreiking ten aanzien van de manier  waarop datainzicht plaats moet vinden richting belanghebbende, wel op de  in de inhoud van het datainzicht.</td>
-</tr>
-<tr>
-<td>1.7. Persoonsdata zijn beschermd bij het uitwisselen van data</td>
-<td>- Deze  standaard gaat er vanuit dat autorisatie- en beveiligingsmechanismen worden  toegepast rondom Applicatie en Logboek, daarom zijn er geen extra richtlijnen  op dit vlak. Zie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#beleidskader">Beleidskader</a>.</td>
-</tr>
-<tr>
-<td>1.8. Uitwisseling van data wordt gelogd als deze later  aantoonbaar moet   zijn</td>
-<td>- Logging van  verwerkte data is de kern van deze standaard. Door gebruikt te maken van een  traceringsmechanisme en unieke identificatoren, kan er altijd worden voldaan  aan de eis dat ontvangen en verzonden data aan elkaar gerelateerd kunnen  worden.</td>
-</tr>
-<tr>
-<td>2.1. Datauitwisseling is federatief georganiseerd</td>
-<td>- Logboek  Dataverwerkingen maakt het mogelijk om in een gefedereerde omgeving en in  informatieketens verantwoording te kunnen afleggen over datauitwisseling.  Hiervoor wordt tracing ingezet, een concept dat gebaseerd op de open  standaard OpenTelemetry. Zie voor enkele juridische en beleidsmatige  uitgangspunten het Juridisch Beleidskader <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#een-standaard-opstellen-om-deze-kaders-te-faciliteren">hoofdstuk   6</a> en <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#beleidskader">hoofdstuk   8</a>.<br> - Nadere  invulling t.a.v. datauitwisseling in het kader van inzage zal volgen als  de extensie voor inzage wordt gemaakt.</td>
-</tr>
-<tr>
-<td>2.2. Voorwaarden en afspraken zijn expliciet en inzichtelijk</td>
-<td>- Afspraken  in het kader van deze standaard zullen vooral gemaakt worden op het gebied  van tracering van data binnen organisaties en over organisaties heen.</td>
-</tr>
-<tr>
-<td>3.1. Gemeenschappelijke begripsvorming is het startpunt</td>
-<td>- De data die  gebruikt worden in deze standaard, staan vermeld en uitgelegd in het <a href="#canoniek-datamodel">Canoniek   datamodel</a>. Het is van belang dat alle (overheids)organisatie die  gebruik maken van de standaard hetzelfde beeld hebben ten aanzien specifieke data  en uitwisseling daarvan om foutsituaties en verwarring te voorkomen.</td>
-</tr>
-<tr>
-<td>3.2. Metadata zijn begrijpelijk voor mensen</td>
-<td>- De  metadata zijn veelal ontstaan op basis van de internationale standaard OpenTelemetry.  Daarnaast worden de begrippen ook uitgelegd in het Canoniek Datamodel.</td>
-</tr>
-<tr>
-<td>3.3. Data worden contextrijk vastgelegd</td>
-<td>- Het gebruik  van metadata in deze standaard is essentieel. De context wordt uitgelegd in  het Canoniek Datamodel. Daarnaast zijn er verdiepingsdocumenten aanwezig  zoals het traceringsmechanisme [nog toe te voegen]  en concrete <a href="#voorbeelden">voorbeelden</a>  van loggingssituaties.</td>
-</tr>
-<tr>
-<td>3.4. Metadata zijn aan elkaar verbonden</td>
-<td>- Metadata  tussen de verschillende Logboeken zijn aan elkaar gerelateerd middels de  beschrijvingen en afspraken zoals gespecifieerd in de standaard .</td>
-</tr>
-<tr>
-<td>3.5. Metadata zijn beschikbaar als Linked Data</td>
-<td>- De  gedefinieerde metadata is gerelateerd aan de standaard <a href="https://docs.geostandaarden.nl/nl-sbb/nl-sbb/">NL-SBB   – standaard voor het beschrijven van begrippen</a>.</td>
-</tr>
-<tr>
-<td>4.1. Data worden geleverd vanuit herbruikbare datadiensten</td>
-<td>- Nadere  invulling volgt bij het ontwerp van de Inzage extensie.</td>
-</tr>
-<tr>
-<td>4.2. Registraties bieden historische data aan</td>
-<td>- Data in het  Logboek mogen niet fysiek worden verwijderd; als ze niet meer geldig zijn dan  wordt alleen vastgelegd dat ze niet meer geldig zijn (tenzij ze om juridische  redenen vernietigd moeten worden).<br> - De  historische integriteit van Logboekdata is geborgd; oude data mogen niet worden  niet overschreven.  <br> - Nieuwe  formele overheidsregistraties die worden ontwikkeld, moeten de formele  historie van datawerking vastleggen  conform de standaard Logboek dataverwerking.  Ook de wijzigingen in Register van  Verwerkingsactiviteiten worden toevoegd als nieuwe verwerkingsactiviteiten  met een eigen unieke identificator. Bestaande verwerkingsactiviteiten mogen  niet wijzigen of verwijderd worden. Hierdoor blijven de oude verwijzingen uit  de Logboek Dataverwerking intact.</td>
-</tr>
-<tr>
-<td>4.3. Aanbieders kunnen notificeren over belangrijke gebeurtenissen</td>
-<td>- N.v.t.  Standaard beschrijft geen notificatiemechanisme voor wijzigingen in de Log.</td>
-</tr>
-<tr>
-<td>5.1. Informatieproducten zijn herleidbaar naar de onderliggende  data en  regels</td>
-<td>- Door  gebruikt te maken van een traceringsmechanisme en unieke identificatoren, kan  er altijd worden voldaan aan de eis dat ontvangen en verzonden data aan  elkaar gerelateerd kunnen worden. De bron, en daarmee de kwaliteit en  betrouwbaarheid van verwerkte data, kunnen snel en eenvoudig worden  opgehaald.  <br>- Wordt  eventueel nader ingevuld bij de ontwikkeling van een Inzage extensie.</td>
-</tr>
-<tr>
-<td>6.1. Data worden zo vroeg mogelijk gevalideerd</td>
-<td>- Validatie  van logdata is een taak van de Applicatie zelf, deze standaard geeft hiervoor  geen handreiking.</td>
-</tr>
 </tbody></table>
+
+<p>| 1.5. De bron van de data is leidend                      | - Overheidsapplicaties  moeten rekening houden met de onderhoud van data bij de <a href="https://www.digitaleoverheid.nl/data-bij-de-bron/">bron</a>. Dit  betekent dat data niet zonder meer gekopieerd opgeslagen mogen worden.  Bij sommige dataverwerkingen zijn data nodig van andere databronnen (in de  eigen organisatie of bij een andere organisatie). De standaard Logboek  Dataverwerkingen schrijft een traceringsmechanisme voor zodat kopiëren van  specifieke data naar het Logboek niet nodig is, er kan altijd nagegaan worden  waar data vandaan kwamen en welke data er gebruikt werden.<br> - De  standaard verwijst zo veel mogelijk naar bestaande databronnen elders in  plaats van de data te dupliceren (zie besluit <a href="#logregels-bevatten-geen-gegevens-die-al-vastliggen-in-een-register">4.2</a>  en <a href="#geen-data-over-gebruikers-in-logregels">4.4</a>) |
+| 1.6. Burgers en organisaties hebben regie over hun eigen data | - Burgers,  (overheids)organisaties en parlement hebben recht om inzicht te krijgen in  verwerkte data. Door toepassing van deze standaard kan er een rapportage  gemaakt worden die voldoet aan die informatiebehoefte.<br> - De  standaard Logboek dataverwerkingen biedt geen handreiking ten aanzien van de manier  waarop datainzicht plaats moet vinden richting belanghebbende, wel op de  in de inhoud van het datainzicht. |
+| 1.7. Persoonsdata zijn beschermd bij het uitwisselen van data | - Deze  standaard gaat er vanuit dat autorisatie- en beveiligingsmechanismen worden  toegepast rondom Applicatie en Logboek, daarom zijn er geen extra richtlijnen  op dit vlak. Zie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#beleidskader">Beleidskader</a>. |
+| 1.8. Uitwisseling van data wordt gelogd als deze later  aantoonbaar moet   zijn | - Logging van  verwerkte data is de kern van deze standaard. Door gebruikt te maken van een  traceringsmechanisme en unieke identificatoren, kan er altijd worden voldaan  aan de eis dat ontvangen en verzonden data aan elkaar gerelateerd kunnen  worden. |
+| 2.1. Datauitwisseling is federatief georganiseerd        | - Logboek  Dataverwerkingen maakt het mogelijk om in een gefedereerde omgeving en in  informatieketens verantwoording te kunnen afleggen over datauitwisseling.  Hiervoor wordt tracing ingezet, een concept dat gebaseerd op de open  standaard OpenTelemetry. Zie voor enkele juridische en beleidsmatige  uitgangspunten het Juridisch Beleidskader <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#een-standaard-opstellen-om-deze-kaders-te-faciliteren">hoofdstuk   6</a> en <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen_Juridisch-beleidskader/#beleidskader">hoofdstuk   8</a>.<br> - Nadere  invulling t.a.v. datauitwisseling in het kader van inzage zal volgen als  de extensie voor inzage wordt gemaakt. |
+| 2.2. Voorwaarden en afspraken zijn expliciet en inzichtelijk | - Afspraken  in het kader van deze standaard zullen vooral gemaakt worden op het gebied  van tracering van data binnen organisaties en over organisaties heen. |</p>
+
+<p>| 3.1. Gemeenschappelijke begripsvorming is het startpunt      | - De data die  gebruikt worden in deze standaard, staan vermeld en uitgelegd in het <a href="#canoniek-datamodel">Canoniek datamodel</a>. Het is van belang dat alle (overheids)organisatie die  gebruik maken van de standaard hetzelfde beeld hebben ten aanzien specifieke data  en uitwisseling daarvan om foutsituaties en verwarring te voorkomen. |
+| 3.2. Metadata zijn begrijpelijk voor mensen              | - De  metadata zijn veelal ontstaan op basis van de internationale standaard OpenTelemetry.  Daarnaast worden de begrippen ook uitgelegd in het Canoniek Datamodel. |</p>
+
+<p>| 3.3. Data worden contextrijk vastgelegd                  | - Het gebruik  van metadata in deze standaard is essentieel. De context wordt uitgelegd in  het Canoniek Datamodel. Daarnaast zijn er verdiepingsdocumenten aanwezig  zoals het traceringsmechanisme [nog toe te voegen]  en concrete <a href="#voorbeelden">voorbeelden</a>  van loggingssituaties. |
+| 3.4. Metadata zijn aan elkaar verbonden                  | - Metadata  tussen de verschillende Logboeken zijn aan elkaar gerelateerd middels de  beschrijvingen en afspraken zoals gespecifieerd in de standaard . |
+| 3.5. Metadata zijn beschikbaar als Linked Data           | - De  gedefinieerde metadata is gerelateerd aan de standaard <a href="https://docs.geostandaarden.nl/nl-sbb/nl-sbb/">NL-SBB   – standaard voor het beschrijven van begrippen</a>. |
+| 4.1. Data worden geleverd vanuit herbruikbare datadiensten | - Nadere  invulling volgt bij het ontwerp van de Inzage extensie. |
+| 4.2. Registraties bieden historische data aan            | - Data in het  Logboek mogen niet fysiek worden verwijderd; als ze niet meer geldig zijn dan  wordt alleen vastgelegd dat ze niet meer geldig zijn (tenzij ze om juridische  redenen vernietigd moeten worden).<br> - De  historische integriteit van Logboekdata is geborgd; oude data mogen niet worden  niet overschreven.  <br> - Nieuwe  formele overheidsregistraties die worden ontwikkeld, moeten de formele  historie van datawerking vastleggen  conform de standaard Logboek dataverwerking.  Ook de wijzigingen in Register van  Verwerkingsactiviteiten worden toevoegd als nieuwe verwerkingsactiviteiten  met een eigen unieke identificator. Bestaande verwerkingsactiviteiten mogen  niet wijzigen of verwijderd worden. Hierdoor blijven de oude verwijzingen uit  de Logboek Dataverwerking intact. |
+| 4.3. Aanbieders kunnen notificeren over belangrijke gebeurtenissen | - N.v.t.  Standaard beschrijft geen notificatiemechanisme voor wijzigingen in de Log. |
+| 5.1. Informatieproducten zijn herleidbaar naar de onderliggende  data en  regels | - Door  gebruikt te maken van een traceringsmechanisme en unieke identificatoren, kan  er altijd worden voldaan aan de eis dat ontvangen en verzonden data aan  elkaar gerelateerd kunnen worden. De bron, en daarmee de kwaliteit en  betrouwbaarheid van verwerkte data, kunnen snel en eenvoudig worden  opgehaald.  <br>- Wordt  eventueel nader ingevuld bij de ontwikkeling van een Inzage extensie. |
+| 6.1. Data worden zo vroeg mogelijk gevalideerd           | - Validatie  van logdata is een taak van de Applicatie zelf, deze standaard geeft hiervoor  geen handreiking. |</p>
 </section></section>
     <section id="de-relatie-tussen-logboekelementen-waarom-eigenlijk"><div class="header-wrapper"><h3 id="x4-2-de-relatie-tussen-logboekelementen-waarom-eigenlijk"><bdi class="secno">4.2 </bdi>De relatie tussen logboekelementen, waarom eigenlijk?</h3><a class="self-link" href="#de-relatie-tussen-logboekelementen-waarom-eigenlijk" aria-label="Permalink for Section 4.2"></a></div>
 <p>Logging van dataverwerkingen kunnen vaak en veelvuldig plaatsvinden. Het geheel kan groot en complex worden want sommige Logregels zijn aan elkaar gerelateerd. Deze relaties kunnen gelegd worden met Logregels met andere applicaties binnen dezelfde organisatie of met logregels van applicaties van andere organisaties.</p>
@@ -4472,7 +4427,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li><p><strong>het aan elkaar relateren van dataverwerkingen over de grenzen van systemen:</strong> Naast het koppelen van logs van diverse applicaties, wordt ook een koppeling gelegd met het Register van verwerkingsactiviteiten. Dit gebeurt per applicatie op basis van het ProcessingActivityId (register) te koppelen aan dplCoreProcessingActivityId (logboek). De diverse registers hebben <strong>geen</strong> directe koppeling met elkaar.</p>
 </li>
 </ul>
-<p><strong>Standaard Logverwerkingen: paragraaf 3.3.1 Gedrag</strong></p>
+<section id="paragraaf-3-3-1-gedrag"><div class="header-wrapper"><h5 id="paragraaf-3-3-1-gedrag-0">Paragraaf 3.3.1 Gedrag</h5><a class="self-link" href="#paragraaf-3-3-1-gedrag" aria-label="Permalink for this Section"></a></div>
 <ol>
 <li><em>De applicatie <em class="rfc2119">MOET</em> een Trace starten voor iedere Dataverwerking waarvan nog geen Trace bekend is.</em> Bij elke start van een verwerking wordt een traceId aangemaakt. Bijvoorbeeld: in het voorbeeld komt er een bericht binnen bij de Balieapplicatie van de gemeente (tonenNAWGegevens). Er wordt direct een traceId aangemaakt.</li>
 <li><em>De applicatie <em class="rfc2119">MOET</em> voor iedere Dataverwerking een logregel wegschrijven in een Logboek. Log Sampling is niet toegestaan.</em> Een dataverwerking wordt opgeslagen als deze volledig is afgerond. In het voorbeeld is te zien dat logregels worden geschreven op het moment dat de vraag- en het antwoordbericht zijn afgerond.</li>
@@ -4480,7 +4435,7 @@ Als er meerdere dezelfde Dataverwerkingen (‘Operations’) zijn, krijgen deze 
 <li><em>Als een Dataverwerking meerdere Betrokkenen heeft dan <em class="rfc2119">MOET</em> de applicatie voor iedere betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 betrokkenen verwijzen.</em> In het voorbeeld gaat het om twee betrokkenen (dplCoreDataSubjectId), er wordt één logregel aangemaakt per BSN.</li>
 <li><em>Als een applicatie aangeroepen kan worden vanuit een andere applicatie <em class="rfc2119">MOET</em> de applicatie Trace Context metadata accepteren bij een dergelijke aanroepen deze metadata kunnen omzetten naar een foreign_operation bericht.</em> Bij een externe verwerking (bijvoorbeeld opvragenPersoonsgegevens) geeft de Balieapplicatie de traceId en SpanId mee aan het BRP-systeem. Het BRP-systeem registreert de traceId en SpanId beide als ‘foreignOperation’.</li>
 </ol>
-</section></section><section id="voorbeeldapplicaties"><div class="header-wrapper"><h3 id="x6-5-voorbeeldapplicaties"><bdi class="secno">6.5 </bdi>Voorbeeldapplicaties</h3><a class="self-link" href="#voorbeeldapplicaties" aria-label="Permalink for Section 6.5"></a></div>
+</section></section></section><section id="voorbeeldapplicaties"><div class="header-wrapper"><h3 id="x6-5-voorbeeldapplicaties"><bdi class="secno">6.5 </bdi>Voorbeeldapplicaties</h3><a class="self-link" href="#voorbeeldapplicaties" aria-label="Permalink for Section 6.5"></a></div>
 <section id="register-van-de-verwerkingsactiviteiten-rvva"><div class="header-wrapper"><h4 id="x6-5-1-register-van-de-verwerkingsactiviteiten-rvva"><bdi class="secno">6.5.1 </bdi>Register van de verwerkingsactiviteiten (RvvA)</h4><a class="self-link" href="#register-van-de-verwerkingsactiviteiten-rvva" aria-label="Permalink for Section 6.5.1"></a></div>
 <p>Dit project biedt een overzicht van dataverwerkingen binnen de overheid, waaronder het Register van de verwerkingsactiviteiten (RvvA). Dit register documenteert hoe data worden verwerkt, waarschijnlijk ter ondersteuning van transparantie en naleving van de Algemene Verordening Gegevensbescherming (AVG).</p>
 <p>Je kunt de voorbeeldapplicatie van het logboek en de specifieke RvvA-sectie hier bekijken:</p>
