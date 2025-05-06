@@ -1222,7 +1222,10 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-         Loop all resource paths in the OpenAPI Description and check that all resource path segments use lowercase letters, digits or hyphens (<code>-</code>). The last path segment is allowed to start with a <code>_</code>.
+         Loop all resource paths in the OpenAPI Description and check that all resource path segments use lowercase letters, digits or hyphens (<code>-</code>). The last path segment is allowed to start with a <code>_</code>. You can use the following regex for each resource path:
+         <div class="example">
+            <pre><code aria-busy="false" class="hljs">^(\/|(\/_[a-z]+|\/(([a-z\-]+|{[a-z]+})(\/([a-z\-\.]+|{[a-z]+}))*)(\/_[a-z]+)?))$</code></pre>
+         </div>
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fpath%2Dsegments%2Dkebab%2Dcase">linter configuration</a>.</dd>
    </dl>
 </div>
