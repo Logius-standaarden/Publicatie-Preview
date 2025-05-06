@@ -1,7 +1,7 @@
 ﻿:root {
   --logius-rule-background: rgb(241, 246, 253);
   --logius-rule-example-correct: green;
-  --logius-rule-example-incorrect: red;
+  --logius-rule-example-incorrect: #e10000;
 }
 
 /*-- Design rule block ------------------------------------------------------------*/
