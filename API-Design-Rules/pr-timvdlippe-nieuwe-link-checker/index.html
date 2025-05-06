@@ -881,7 +881,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 02, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">May 06, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -2052,11 +2052,17 @@ This avoids XXE-attack vectors for example.</li>
   <span class="hljs-attr">paths-kebab-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{property}}</span> is not kebab-case."</span>
-    <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[*]~</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-type">!@property.match(/</span><span class="hljs-string">\/openapi\.json/))]~</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
       <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">/^(\/|[a-z0-9\-\.]+|{[a-zA-Z0-9]+})+$/</span>
+        <span class="hljs-comment"># Deze regex bestaat uit meerdere delen. Ter toelichting:</span>
+        <span class="hljs-comment"># - `\/` staat toe dat een pad enkel een `/` is (de landingspagina)</span>
+        <span class="hljs-comment"># - `\/_[a-z]+` staat toe dat het laatste stuk van een pad mag beginnen met een `_`</span>
+        <span class="hljs-comment"># - ([a-z\-]+|{[a-z]+}) zijn kebab-case paden of met variabele notatie (`{id}`)</span>
+        <span class="hljs-comment"># - Paden mogen nesten, waardoor de twee groep genest wordt, gescheiden met een `/`</span>
+        <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z]+|\/(([a-z\-]+|{[a-z]+})(\/([a-z\-\.]+|{[a-z]+}))*)(\/_[a-z]+)?)\/?)$</span>
 
   <span class="hljs-attr">schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
