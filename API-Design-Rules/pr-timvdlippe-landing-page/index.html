@@ -893,7 +893,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">April 24, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">May 07, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1067,7 +1067,7 @@ In addition to this (normative) document, separate modules are being written to 
    <dl>
    <dt>Statement</dt>
    <dd>
-   Resources are referred to using nouns (instead of verbs) that are relevant from the perspective of the user of the API.   
+   Resources are referred to using nouns (instead of verbs) that are relevant from the perspective of the user of the API.
    <div class="example">
       A few correct examples of nouns as part of a URI:
       <ul>
@@ -1267,15 +1267,15 @@ In addition to this (normative) document, separate modules are being written to 
       </tbody>
       </table>
    </div>
-    <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
-    The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
+   <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
+   The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
   According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
   If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.</p></div>
       </dd>
       <dt>How to test</dt>
       <dd>
-        Analyse the OpenAPI Description to confirm all supported methods are either <code>post</code>, <code>put</code>, <code>get</code>, <code>delete</code>, or <code>patch</code>.
+         Analyse the OpenAPI Description to confirm all supported methods are either <code>post</code>, <code>put</code>, <code>get</code>, <code>delete</code>, or <code>patch</code>.
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fhttp%2Dmethods">linter configuration</a>.</dd>
    </dl>
 </div>
@@ -1440,7 +1440,7 @@ In addition to this (normative) document, separate modules are being written to 
          <li>In exceptional cases, the approaches above still don't offer an appropriate solution. An example of such an operation is a global search across multiple resources. In this case, the creation of a dedicated resource, possibly nested under an existing resource, is the most obvious solution. Use the imperative mood of a verb, maybe even prefix it with a underscore to distinguish these resources from regular resources. For example: <code>/search</code> or <code>/_search</code>. Depending on the operation characteristics, <code>GET</code> and/or <code>POST</code> method <em class="rfc2119">MAY</em> be supported for such a resource.</li>
       </ol>
       </dd>
-   </dl> 
+   </dl>
 </div>
 
 </section><section id="documentation"><div class="header-wrapper"><h3 id="x3-6-documentation"><bdi class="secno">3.6 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 3.6"></a></div>
@@ -1486,8 +1486,8 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-        Parse the OpenAPI Description to confirm the <code>info.contact</code> object is present.
-      </dd>
+         Parse the OpenAPI Description to confirm the <code>info.contact</code> object is present.
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fdoc%2Dopenapi%2Dcontact">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -1624,7 +1624,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-        Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm the a version number is present with prefix <code>v</code> and only contains the *major* version number.
+         Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm the a version number is present with prefix <code>v</code> and only contains the *major* version number.
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Furi%2Dversion">linter configuration</a>.</dd>
    </dl>
 </div>
@@ -1725,7 +1725,7 @@ Effectively, only security standards directly applicable to interactions are dis
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p>Even when using TLS connections, information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therefore be considered readable by anyone with access to the network (in the case of the internet, the whole world) and <em class="rfc2119">MUST NOT</em> contain any sensitive information. This includes client secrets used for authentication, privacy sensitive information suchs as BSNs or any other information which should not be shared. 
+         <p>Even when using TLS connections, information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therefore be considered readable by anyone with access to the network (in the case of the internet, the whole world) and <em class="rfc2119">MUST NOT</em> contain any sensitive information. This includes client secrets used for authentication, privacy sensitive information suchs as BSNs or any other information which should not be shared.
          </p><p>Be aware that queries (anything after the '?' in a URI) are also part of an URI.
       </p></dd>
    </dl>
@@ -1893,7 +1893,7 @@ This avoids XXE-attack vectors for example.</li>
 <li>Ensure sending intended content type headers in your response matching your body content e.g. <code>application/json</code> and not <code>application/javascript</code>.</li>
 </ul>
 </section></section><section id="geospatial"><div class="header-wrapper"><h3 id="x3-9-geospatial"><bdi class="secno">3.9 </bdi>Geospatial</h3><a class="self-link" href="#geospatial" aria-label="Permalink for Section 3.9"></a></div>
-<p>Geospatial data refers to information that is associated with a physical location on Earth, often expressed by its 2D/3D coordinates. </p>
+<p>Geospatial data refers to information that is associated with a physical location on Earth, often expressed by its 2D/3D coordinates.</p>
 <div class="rule" id="/core/geospatial" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
   <p class="rulelab"><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</p>
   <dl>
@@ -1972,6 +1972,9 @@ This avoids XXE-attack vectors for example.</li>
 <span class="hljs-attr">rules:</span>
   <span class="hljs-attr">oas3-api-servers:</span> <span class="hljs-string">error</span>
 
+  <span class="hljs-comment">#/core/no-trailing-slash</span>
+  <span class="hljs-attr">path-keys-no-trailing-slash:</span> <span class="hljs-string">error</span>
+
   <span class="hljs-comment">#/core/doc-openapi</span>
   <span class="hljs-attr">openapi3:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
@@ -1981,16 +1984,22 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
       <span class="hljs-attr">functionOptions:</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">"^3.0.*$"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/doc-openapi: Use OpenAPI Specification for documentation: https://logius-standaarden.github.io/API-Design-Rules/#/core/doc-openapi"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Use OpenAPI Specification for documentation"</span>
 
   <span class="hljs-comment">#/core/version-header</span>
   <span class="hljs-attr">missing-version-header:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))][headers]</span>
     <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">API-Version</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/version-header: Return the full version number in a response header: https://logius-standaarden.github.io/API-Design-Rules/#/core/version-header"</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">or</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">properties:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">API-Version</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">Api-Version</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">Api-version</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">api-version</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">API-version</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Return the full version number in a response header"</span>
 
   <span class="hljs-attr">missing-header:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
@@ -2011,18 +2020,6 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">match:</span> <span class="hljs-string">"\\/v[\\d+]"</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">url</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/uri-version: Include the major version number in the URI: https://logius-standaarden.github.io/API-Design-Rules/#/core/uri-version"</span>
-
-  <span class="hljs-comment">#/core/no-trailing-slash</span>
-  <span class="hljs-attr">paths-no-trailing-slash:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
-      <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">notMatch:</span> <span class="hljs-string">".+\\/$"</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"</span>
 
   <span class="hljs-comment">#/core/publish-openapi</span>
   <span class="hljs-attr">paths-open-api-json-resource-exists:</span>
@@ -2053,6 +2050,24 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"access-control-allow-origin"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"</span>
+
+  <span class="hljs-comment">#/core/doc-openapi-contact</span>
+  <span class="hljs-comment"># This rule exists in the base oas spectral linter set</span>
+  <span class="hljs-attr">info-contact:</span> <span class="hljs-string">error</span>
+
+  <span class="hljs-attr">info-contact-fields-exist:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.info.contact"</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">schema:</span>
+          <span class="hljs-attr">required:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">email</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-string">url</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Missing fields in `info.contact` field. Must specify email, name and url."</span>
 
   <span class="hljs-comment">#/core/doc-landing-page</span>
   <span class="hljs-attr">missing-landing-page:</span>
@@ -2088,11 +2103,17 @@ This avoids XXE-attack vectors for example.</li>
   <span class="hljs-attr">paths-kebab-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{property}}</span> is not kebab-case."</span>
-    <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[*]~</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-type">!@property.match(/</span><span class="hljs-string">\/openapi\.json/))]~</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
       <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">/^(\/|[a-z0-9\-\.]+|{[a-zA-Z0-9]+})+$/</span>
+        <span class="hljs-comment"># Deze regex bestaat uit meerdere delen. Ter toelichting:</span>
+        <span class="hljs-comment"># - `\/` staat toe dat een pad enkel een `/` is (de landingspagina)</span>
+        <span class="hljs-comment"># - `\/_[a-z]+` staat toe dat het laatste stuk van een pad mag beginnen met een `_`</span>
+        <span class="hljs-comment"># - ([a-z\-]+|{[a-z]+}) zijn kebab-case paden of met variabele notatie (`{id}`)</span>
+        <span class="hljs-comment"># - Paden mogen nesten, waardoor de twee groep genest wordt, gescheiden met een `/`</span>
+        <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z]+|\/(([a-z\-]+|{[a-z]+})(\/([a-z\-\.]+|{[a-z]+}))*)(\/_[a-z]+)?)\/?)$</span>
 
   <span class="hljs-attr">schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
@@ -2120,29 +2141,15 @@ This avoids XXE-attack vectors for example.</li>
 
   <span class="hljs-attr">use-problem-schema:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">Your</span> <span class="hljs-string">schema</span> <span class="hljs-string">doesn't</span> <span class="hljs-string">seem</span> <span class="hljs-string">to</span> <span class="hljs-string">match</span> <span class="hljs-string">RFC7807.</span> <span class="hljs-string">Are</span> <span class="hljs-string">you</span> <span class="hljs-string">sure</span> <span class="hljs-string">it</span> <span class="hljs-string">is</span> <span class="hljs-string">ok?</span> {{<span class="hljs-string">path</span>}}
-    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/^(4|5|default)/))][[schema]].properties</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The content type of an error response should be application/problem+json or application/problem+xml to match RFC 9457."</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
       <span class="hljs-attr">functionOptions:</span>
         <span class="hljs-attr">schema:</span>
           <span class="hljs-attr">anyOf:</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
-              <span class="hljs-attr">required:</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
-              <span class="hljs-attr">required:</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">type</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
-              <span class="hljs-attr">required:</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">type</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
-              <span class="hljs-attr">required:</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
-                <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+json"</span>]
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+xml"</span>]
 
   <span class="hljs-attr">property-casing:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
