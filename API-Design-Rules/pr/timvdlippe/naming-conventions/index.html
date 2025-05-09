@@ -1240,6 +1240,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          <div>
             <p>Query keys in a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-5">URI</a> <em class="rfc2119">MUST</em> only contain letters and digits, where the first letter of each word is capitalized, except for the first letter of the entire compound word. This is also known as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Camel_case">lower camelCase</a>. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
+            </p><p>The query key <em class="rfc2119">MAY</em> start with <code>$</code> which is used as a convention to implement OData API's
          </p></div>
       </dd>
       <dt>Rationale</dt>
@@ -1256,9 +1257,9 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          Loop all resource paths in the OpenAPI Description and check that all query keys use letters, digits in camelCase. You can use the following regex for each query key:
          <div class="example">
-            <pre><code aria-busy="false" class="hljs">^[a-z0-9]+[a-zA-Z0-9]*$</code></pre>
+            <pre><code aria-busy="false" class="hljs">^\$?[a-z][a-z0-9]*([A-Z][\w0-9]*)*$</code></pre>
          </div>
-      </dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fquery%2Dkeys%2Dcamel%2Dcase">linter configuration</a>.</dd>
    </dl>
 </div>
 
@@ -2179,6 +2180,19 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-comment"># - Paden mogen nesten, waardoor de twee groep genest wordt, gescheiden met een `/`</span>
         <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z0-9]+|\/(([a-z0-9\-]+|{[^}]+})(\/([a-z0-9\-\.]+|{[^}]+}))*)(\/_[a-z]+)?)\/?)$</span>
+
+  <span class="hljs-comment">#/core/query-keys-camel-case</span>
+  <span class="hljs-attr">query-keys-camel-case:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{value}}</span> is not lower camelCase."</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths.*.*.parameters[?(@.in=='query')]</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.components.securitySchemes[?(@.in=='query')]</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">name</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^\$?[a-z][a-z0-9]*([A-Z][\w0-9]*)*$</span>
 
   <span class="hljs-attr">schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
