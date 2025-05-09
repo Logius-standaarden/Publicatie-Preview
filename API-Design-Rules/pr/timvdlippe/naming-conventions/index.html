@@ -1189,8 +1189,8 @@ In addition to this (normative) document, separate modules are being written to 
          <div>
             <p>Path segments of a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-4">URI</a> <em class="rfc2119">MUST</em> only contain lowercase letters, digits or hyphens. This is also known as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case">kebab-case</a>. Hyphens <em class="rfc2119">MUST</em> only be used to deliniate distinct words. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
             </p><p>Another implication of this rule is that file extensions <em class="rfc2119">MUST NOT</em> be used. Resources <em class="rfc2119">SHOULD</em> use the <code>Accept</code> header for content negotation.
-            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code>, which is used as a convention to implement search API's
-            </p><div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">This rule does not apply to variables in paths, only literal path segments
+            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code> which is used as a convention to implement search API's
+            </p><div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">This rule does not apply to variables in paths in <code>openapi.json</code> specifications, only literal path segments
          </p></div></div>
       </dd>
       <dt>Rationale</dt>
@@ -1219,6 +1219,8 @@ In addition to this (normative) document, separate modules are being written to 
             <pre class="nohighlight example-incorrect">https://api.example.org/v1/schema.txt</pre>
             <p>Last URI path segment starting with <code>_</code> (correct):</p>
             <pre class="nohighlight example-correct">https://api.example.org/v1/organisaties/_zoek</pre>
+            <p>URI path included in <code>openapi.json</code> with camelCase variable (correct):</p>
+            <pre class="nohighlight example-correct">https://api.example.org/v1/organisaties/{organisatieId}</pre>
          </div>
       </dd>
       <dt>How to test</dt>
