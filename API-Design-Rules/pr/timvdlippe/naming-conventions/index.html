@@ -2178,7 +2178,7 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-comment"># - ([a-z\-]+|{[a-z]+}) zijn kebab-case paden of met variabele notatie (`{id}`)</span>
         <span class="hljs-comment"># - Paden mogen nesten, waardoor de twee groep genest wordt, gescheiden met een `/`</span>
         <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z]+|\/(([a-z\-]+|{[a-z]+})(\/([a-z\-\.]+|{[a-z]+}))*)(\/_[a-z]+)?)\/?)$</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z0-9]+|\/(([a-z0-9\-]+|{[^}]+})(\/([a-z0-9\-\.]+|{[^}]+}))*)(\/_[a-z]+)?)\/?)$</span>
 
   <span class="hljs-attr">schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
