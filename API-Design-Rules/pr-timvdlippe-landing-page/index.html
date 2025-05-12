@@ -893,7 +893,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 07, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">May 12, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1543,11 +1543,11 @@ In addition to this (normative) document, separate modules are being written to 
   <dl>
       <dt>Statement</dt>
       <dd>
-         The root resource of an API (<code>/</code>) <em class="rfc2119">MUST</em> result in a 200 or 30X status.
+         The root resource of an API (<code>/</code>) <em class="rfc2119">MUST</em> have a GET endpoint which returns a response with a 200 or 30X status.
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p>Consumers of an API need to know that the API exists. A landing page at the root resource (append <code>/</code> to the service root URL) <em class="rfc2119">MUST</em> return a 200 or 30X status. Furthermore, the CORS policy for this <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-9">URI</a> <em class="rfc2119">MUST</em> allow external domains to read the documentation from a browser environment. Depending on your API, you <em class="rfc2119">SHOULD</em> include one of the following options:
+         <p>Consumers of an API need to know that the API exists. A landing page at the root resource (append <code>/</code> to the service root URL) <em class="rfc2119">MUST</em> have a GET endpoint that returns a response with a 200 or 30X status. Furthermore, the CORS policy for this <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-9">URI</a> <em class="rfc2119">MUST</em> allow external domains to read the documentation from a browser environment. Depending on your API, you <em class="rfc2119">SHOULD</em> include one of the following options:
          </p><ul>
             <li>The root resource shows a landing page with documentation about the API</li>
             <li>The root resource redirects to a landing page</li>
@@ -1561,8 +1561,8 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-         <li>The server root URL appended with a <code>/</code> <em class="rfc2119">MUST</em> result in a HTTP 200 or 30X status</li>
-         <li>The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
+         <li>A GET request to the server root URL appended with a <code>/</code> <em class="rfc2119">MUST</em> result in a HTTP 200 or 30X status</li>
+         <li>The CORS header Access-Control-Allow-Origin for this endpoint <em class="rfc2119">MUST</em> allow all origins.</li>
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fdoc%2Dlanding%2Dpage">linter configuration</a>.</dd>
    </dl>
 </div>
