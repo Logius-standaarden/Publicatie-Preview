@@ -881,7 +881,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 09, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">May 12, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1189,9 +1189,8 @@ In addition to this (normative) document, separate modules are being written to 
          <div>
             <p>Path segments of a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-4">URI</a> <em class="rfc2119">MUST</em> only contain lowercase letters, digits or hyphens. This is also known as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case">kebab-case</a>. Hyphens <em class="rfc2119">MUST</em> only be used to deliniate distinct words. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
             </p><p>Another implication of this rule is that file extensions <em class="rfc2119">MUST NOT</em> be used. Resources <em class="rfc2119">SHOULD</em> use the <code>Accept</code> header for content negotation.
-            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code> which is used as a convention to implement search API's
-            </p><div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">This rule does not apply to variables in paths in <code>openapi.json</code> specifications, only literal path segments
-         </p></div></div>
+            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code>, which is used as a convention to implement search API's
+         </p></div>
       </dd>
       <dt>Rationale</dt>
       <dd>
@@ -1219,15 +1218,13 @@ In addition to this (normative) document, separate modules are being written to 
             <pre class="nohighlight example-incorrect">https://api.example.org/v1/schema.txt</pre>
             <p>Last URI path segment starting with <code>_</code> (correct):</p>
             <pre class="nohighlight example-correct">https://api.example.org/v1/organisaties/_zoek</pre>
-            <p>URI path included in <code>openapi.json</code> with camelCase variable (correct):</p>
-            <pre class="nohighlight example-correct">https://api.example.org/v1/organisaties/{organisatieId}</pre>
          </div>
       </dd>
       <dt>How to test</dt>
       <dd>
          Loop all resource paths in the OpenAPI Description and check that all resource path segments use lowercase letters, digits or hyphens (<code>-</code>). The last path segment is allowed to start with a <code>_</code>. You can use the following regex for each resource path:
          <div class="example">
-            <pre><code aria-busy="false" class="hljs">^(\/|(\/_[a-z]+|\/(([a-z\-]+|{[a-z]+})(\/([a-z\-\.]+|{[a-z]+}))*)(\/_[a-z]+)?))$</code></pre>
+            <pre><code aria-busy="false" class="hljs">^(\/|(\/_[a-z0-9]+|\/(([a-z0-9\-]+|{[^}]+})(\/([a-z0-9\-\.]+|{[^}]+}))*)(\/_[a-z]+)?)\/?)$</code></pre>
          </div>
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fpath%2Dsegments%2Dkebab%2Dcase">linter configuration</a>.</dd>
    </dl>
@@ -1240,7 +1237,6 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          <div>
             <p>Query keys in a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-5">URI</a> <em class="rfc2119">MUST</em> only contain letters and digits, where the first letter of each word is capitalized, except for the first letter of the entire compound word. This is also known as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Camel_case">lower camelCase</a>. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
-            </p><p>The query key <em class="rfc2119">MAY</em> start with <code>$</code> which is used as a convention to implement OData API's
          </p></div>
       </dd>
       <dt>Rationale</dt>
@@ -1257,9 +1253,9 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          Loop all resource paths in the OpenAPI Description and check that all query keys use letters, digits in camelCase. You can use the following regex for each query key:
          <div class="example">
-            <pre><code aria-busy="false" class="hljs">^\$?[a-z][a-z0-9]*([A-Z][\w0-9]*)*$</code></pre>
+            <pre><code aria-busy="false" class="hljs">^[a-z0-9]+[a-zA-Z0-9]*$</code></pre>
          </div>
-      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fquery%2Dkeys%2Dcamel%2Dcase">linter configuration</a>.</dd>
+      </dd>
    </dl>
 </div>
 
@@ -1371,7 +1367,7 @@ In addition to this (normative) document, separate modules are being written to 
       </tbody>
       </table>
    </div>
-   <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
+   <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics. HTTP also defines other methods, e.g. <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code>, and <code>CONNECT</code>.<br>
    The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
   According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
   In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
@@ -1472,7 +1468,7 @@ In addition to this (normative) document, separate modules are being written to 
 <li><em>Session state</em>: information about the interactions of an end user with a particular client application within the same user session, such as the last page being viewed, the login state or form data in a multi-Step registration process. Session state must reside entirely on the client (e.g. in the user's browser).</li>
 <li><em>Resource state</em>: information that is permanently stored on the server beyond the scope of a single user session, such as the user's profile, a product purchase or information about a building. Resource state is persisted on the server and must be exchanged between client and server (in both directions) using  representations as part of the request or response payload. This is actually where the term <em>REpresentational State Transfer (REST)</em> originates from.</li>
 </ul>
-<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">It's a misconception that there should be no state at all. The stateless communication constraint should be seen from the server's point of view and states that the server should not be aware of any <em>session state</em>.</p></div>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">It's a misconception that there should be no state at all. The stateless communication constraint should be seen from the server's point of view and states that the server should not be aware of any <em>session state</em>.</p></div>
 
 <p>Stateless communication offers many advantages, including:</p>
 <ul>
@@ -1494,7 +1490,7 @@ In addition to this (normative) document, separate modules are being written to 
          To achieve full decoupling between client and server, and to benefit from the advantages mentioned above, no session state <em class="rfc2119">MUST</em> reside on the server. Session state <em class="rfc2119">MUST</em> therefore reside entirely on the client.
       </dd>
    </dl>
-   <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
+   <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">The client of a REST API could be a variety of applications such as a browser application, a mobile or desktop application and even another server serving as a backend component for another client. REST APIs should therefore be completely client-agnostic.</p></div>
 </div>
 
 </section><section id="relationships"><div class="header-wrapper"><h3 id="x3-4-relationships"><bdi class="secno">3.4 </bdi>Relationships</h3><a class="self-link" href="#relationships" aria-label="Permalink for Section 3.4"></a></div>
@@ -2175,24 +2171,11 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">functionOptions:</span>
         <span class="hljs-comment"># Deze regex bestaat uit meerdere delen. Ter toelichting:</span>
         <span class="hljs-comment"># - `\/` staat toe dat een pad enkel een `/` is (de landingspagina)</span>
-        <span class="hljs-comment"># - `\/_[a-z]+` staat toe dat het laatste stuk van een pad mag beginnen met een `_`</span>
-        <span class="hljs-comment"># - ([a-z\-]+|{[a-z]+}) zijn kebab-case paden of met variabele notatie (`{id}`)</span>
+        <span class="hljs-comment"># - `\/_[a-z0-9]+` staat toe dat het laatste stuk van een pad mag beginnen met een `_`</span>
+        <span class="hljs-comment"># - ([a-z0-9\-]+|{[^}]+}) zijn kebab-case paden of met variabele notatie (`{id}`)</span>
         <span class="hljs-comment"># - Paden mogen nesten, waardoor de twee groep genest wordt, gescheiden met een `/`</span>
         <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z0-9]+|\/(([a-z0-9\-]+|{[^}]+})(\/([a-z0-9\-\.]+|{[^}]+}))*)(\/_[a-z]+)?)\/?)$</span>
-
-  <span class="hljs-comment">#/core/query-keys-camel-case</span>
-  <span class="hljs-attr">query-keys-camel-case:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{value}}</span> is not lower camelCase."</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths.*.*.parameters[?(@.in=='query')]</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">$.components.securitySchemes[?(@.in=='query')]</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">name</span>
-      <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">^\$?[a-z][a-z0-9]*([A-Z][\w0-9]*)*$</span>
 
   <span class="hljs-attr">schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
