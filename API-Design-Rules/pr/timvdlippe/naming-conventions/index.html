@@ -881,7 +881,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 12, 2025</time>
+      <time class="dt-published" datetime="2025-01-07">May 13, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1042,7 +1042,7 @@ In addition to this (normative) document, separate modules are being written to 
 <section id="normative-design-rules"><div class="header-wrapper"><h3 id="x2-1-normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 2.1"></a></div>
 <p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considerd when designing and building the api.</p>
 <section id="list-of-functional-rules"><div class="header-wrapper"><h4 id="x2-1-1-list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</h4><a class="self-link" href="#list-of-functional-rules" aria-label="Permalink for Section 2.1.1"></a></div>
-<ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/no-abbreviations-in-resources">/core/no-abbreviations-in-resources</a>: Do not use abbreviations (except standarized) in a resource name</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
+<ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
 
 </section><section id="list-of-technical-rules"><div class="header-wrapper"><h4 id="x2-1-2-list-of-technical-rules"><bdi class="secno">2.1.2 </bdi>List of technical rules</h4><a class="self-link" href="#list-of-technical-rules" aria-label="Permalink for Section 2.1.2"></a></div>
 <ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul></section></section></section>
@@ -1101,40 +1101,6 @@ In addition to this (normative) document, separate modules are being written to 
          <div class="example">
             <p>Example singular resource describing the profile of the currently authenticated user:</p>
             <pre class="nohighlight">https://api.example.org/v1/gebruikersprofiel</pre>
-         </div>
-      </dd>
-   </dl>
-</div>
-
-<div class="rule" id="/core/no-abbreviations-in-resources" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
-   <p class="rulelab"><a href="#/core/no-abbreviations-in-resources">/core/no-abbreviations-in-resources</a>: Do not use abbreviations (except standarized) in a resource name</p>
-   <dl>
-      <dt>Statement</dt>
-      <dd>
-         A resource <em class="rfc2119">MUST NOT</em> use abbreviations, except standardized abbreviations as defined by the API or organisation itself.
-      </dd>
-      <dt>Rationale</dt>
-      <dd>
-         <p>Abbreviations can have multiple definitions depending on the context. Improve understanding by not using these abbreviations.
-         </p><div class="example">
-            <p>URI avoiding abbreviations (correct):</p>
-            <pre class="nohighlight example-correct">https://api.example.org/v1/gebouwen/19/coordinates</pre>
-            <p>URI including abbreviations (incorrect):</p>
-            <pre class="nohighlight example-incorrect">https://api.example.org/v1/gebouwen/19/coords</pre>
-         </div>
-         <p>The exception to this rule are abbreviations solely related to the API itself or the organisation. When you exempt an abbreviation from this rule, there <em class="rfc2119">MUST</em> be a glossary entry in the API documentation. The glossary entry <em class="rfc2119">SHOULD</em> link to an external definition of the abbreviation. In the example below, the Kadaster API includes the abbrevation <code>BAG</code> which is a standardized definition for "Basisregistratie Adressen en Gebouwen" used in all Kadaster contexts.
-         </p><div class="example">
-            <p>URI including standardized abbreviations (correct):</p>
-            <pre class="nohighlight example-correct">https://api.bag.kadaster.nl/contractloos/v2/bag</pre>
-         </div>
-         <p>This rule does not apply to variables used in API documentation. Authors <em class="rfc2119">MAY</em> avoid abbreviations in documentation (examples) to improve understanding to readers unfamiliar with the context. The abbreviation <code>Id</code> <em class="rfc2119">MAY</em> be used instead of <code>Identificatie</code> or <code>IdentificatieNummer</code>
-         </p><div class="example">
-            <p>Documentation including a URI with abbreviations in variable (discouraged):</p>
-            <pre class="nohighlight example-incorrect">https://api.example.org/v1/gebouwen/{gbId}</pre>
-            <p>Documentation including a URI without abbreviations in variable (advised):</p>
-            <pre class="nohighlight example-correct">https://api.example.org/v1/gebouwen/{gebouwId}</pre>
-            <p>Documentation including a URI with standardized abbreviations in variable (advised):</p>
-            <pre class="nohighlight example-correct">https://api.bag.kadaster.nl/contractloos/v2/bag/{bagId}</pre>
          </div>
       </dd>
    </dl>
