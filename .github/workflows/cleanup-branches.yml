@@ -1,0 +1,17 @@
+name: Cleanup preview branches
+on:
+  workflow_call:
+  schedule:
+    # Run on Mondays at 5:45 UTC
+    - cron: '45 5 * * 1'
+
+jobs:
+  cleanup-preview-branches:
+    name: Cleanup preview branches
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run cleanup-script
+        run: |
+          wget https://raw.githubusercontent.com/Logius-standaarden/Automatisering/main/scripts/cleanup-branches.py
+          python cleanup-branches.py
