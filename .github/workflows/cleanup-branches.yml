@@ -1,6 +1,6 @@
 name: Cleanup preview branches
 on:
-  workflow_call:
+  workflow_dispatch:
   schedule:
     # Run on Mondays at 5:45 UTC
     - cron: '45 5 * * 1'
