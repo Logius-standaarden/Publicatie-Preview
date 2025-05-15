@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.3.0">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -74,7 +74,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -102,8 +102,9 @@ dd{margin-left:0}
 }
 </style>
 <style id="respec-nlgov">
-img.license{float:left;padding-right:5px}
+img.license{float:left;padding-right:5px;background:0 0}
 </style>
+<meta name="color-scheme" content="light">
 <style>
 ul.index{columns:30ch;column-gap:1.5em}
 ul.index li{list-style:inherit}
@@ -280,10 +281,18 @@ ul.index code{color:inherit}
         "Jasper Roes",
         "Joost Farla"
       ],
-      "date": "Juli 2020",
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
     },
     "ADR-ext": {
       "authors": [
@@ -301,6 +310,12 @@ ul.index code{color:inherit}
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius",
       "id": "algemene voorwaarden logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
     },
     "AVG": {
       "date": "27 april 2016",
@@ -835,14 +850,14 @@ ul.index code{color:inherit}
   "specType": "HR"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry toc-inline"><div class="head">
+ <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">OIN Stelsel</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2024-01-19">24 februari 2025</time>
+      <time class="dt-published" datetime="2024-01-19">15 mei 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -882,9 +897,9 @@ ul.index code{color:inherit}
           <a rel="alternate" href="OIN-Stelsel.pdf">pdf</a>
         </p>
     <p class="copyright">
-          Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
-        </p>
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>OIN Stelsel 2.0 beschrijft het OIN beleid en de werking van het OIN. In de nieuwe versie zijn de volgende wijzigingen opgenomen</p>
@@ -1242,7 +1257,7 @@ Sinds de wijziging van 2016 staat de afkorting voor OIN voor <strong>Organisatie
 <p>Volgens de ISO 6523 part 1 standaard is een ICD code (International Code Designator) nodig. Het OIN is sinds 2018 opgenomen in de ICD lijst</p>
 <p>De volgende alinea's geven achtergrondinformatie over de ISO 6523 standaard.</p>
 <section id="mapping-naar-de-iso-6523-standaard"><div class="header-wrapper"><h4 id="x3-12-1-mapping-naar-de-iso-6523-standaard"><bdi class="secno">3.12.1 </bdi>Mapping naar de ISO 6523 standaard</h4><a class="self-link" href="#mapping-naar-de-iso-6523-standaard" aria-label="Permalink for Section 3.12.1"></a></div>
-<p>Het OIN is aangemeld en opgenomen in de <em>ISO 6523 ICD list</em> (zie <a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/#0190">https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/#0190</a>). Het OIN is geregistreerd onder code <code>0190</code> met de volgende beschrijving.</p>
+<p>Het OIN is aangemeld en opgenomen in de <em>ISO 6523 ICD list</em> (zie <a href="http://iso6523.info/">http://iso6523.info/</a> , zie ook <a href="https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/#0190">https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/#0190</a>). Het OIN is geregistreerd onder code <code>0190</code> met de volgende beschrijving.</p>
 <blockquote>
 <p><strong>Organisatie Indentificatie Nummer (OIN)</strong><br>
 The OIN is part of the Dutch standard ‘Digikoppeling’ and is used for identifying the organisations that take part in electronic message exchange with the Dutch Government. The OIN must also be included in the PKIo certificate.</p>
@@ -2659,4 +2674,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
