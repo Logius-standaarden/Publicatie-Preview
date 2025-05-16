@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.3.0">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -71,7 +71,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -99,8 +99,9 @@ dd{margin-left:0}
 }
 </style>
 <style id="respec-nlgov">
-img.license{float:left;padding-right:5px}
+img.license{float:left;padding-right:5px;background:0 0}
 </style>
+<meta name="color-scheme" content="light">
 <style>
 ul.index{columns:30ch;column-gap:1.5em}
 ul.index li{list-style:inherit}
@@ -157,7 +158,7 @@ ul.index code{color:inherit}
       "id": "Logius",
       "height": 77,
       "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
     }
   ],
   "latestVersion": [
@@ -277,10 +278,18 @@ ul.index code{color:inherit}
         "Jasper Roes",
         "Joost Farla"
       ],
-      "date": "Juli 2020",
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
     },
     "ADR-ext": {
       "authors": [
@@ -298,6 +307,12 @@ ul.index code{color:inherit}
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius",
       "id": "algemene voorwaarden logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
     },
     "AVG": {
       "date": "27 april 2016",
@@ -539,6 +554,14 @@ ul.index code{color:inherit}
       "publisher": "OpenID foundation",
       "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
     },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
     "Introspection": {
       "authors": [
         "J. Richer"
@@ -765,6 +788,32 @@ ul.index code{color:inherit}
       ],
       "publisher": "Association of Computing Machinery (ACM)",
       "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
     }
   },
   "alternateFormats": [
@@ -799,7 +848,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  <body class="h-entry"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">OIN Stelsel 2.1.0</h1>
     
     <h2>
@@ -845,9 +894,9 @@ ul.index code{color:inherit}
           <a rel="alternate" href="OIN-Stelsel.pdf">pdf</a>
         </p>
     <p class="copyright">
-          Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
-        </p>
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>OIN Stelsel 2.0 beschrijft het OIN beleid en de werking van het OIN. In de nieuwe versie zijn de volgende wijzigingen opgenomen</p>
@@ -1779,13 +1828,13 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 </section>
-  <section class="informative" id="invulling-oin-en-naam-in-het-pkioverheidcertificaat"><div class="header-wrapper"><h2 id="c-invulling-oin-en-naam-in-het-pkioverheidcertificaat"><bdi class="secno">C. </bdi>Invulling OIN en Naam in het  PKIoverheidcertificaat</h2><a class="self-link" href="#invulling-oin-en-naam-in-het-pkioverheidcertificaat" aria-label="Permalink for Section C."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+  <section class="appendix informative" id="invulling-oin-en-naam-in-het-pkioverheidcertificaat"><div class="header-wrapper"><h2 id="c-invulling-oin-en-naam-in-het-pkioverheidcertificaat"><bdi class="secno">C. </bdi>Invulling OIN en Naam in het  PKIoverheidcertificaat</h2><a class="self-link" href="#invulling-oin-en-naam-in-het-pkioverheidcertificaat" aria-label="Permalink for Appendix C."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Noot</span></div><aside class="">
 
 <p>Onderstaande beschrijving is voorgelegd aan de TSP's voor verificatie.</p>
 </aside></div>
 
-<section id="inleiding-1"><div class="header-wrapper"><h3 id="c-1-inleiding"><bdi class="secno">C.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-1" aria-label="Permalink for Section C.1"></a></div>
+<section id="inleiding-1"><div class="header-wrapper"><h3 id="c-1-inleiding"><bdi class="secno">C.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-1" aria-label="Permalink for Appendix C.1"></a></div>
 <p>Dit hoofdstuk beschrijft Invulling (Sub)OIN en Organisatienaam, en –onderdeel/voorziening/samenwerking in velden van het PKIO certificaat, zie <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://por.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite>.</p>
 <table>
 <thead>
@@ -1816,7 +1865,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p>*<span style="font-size:smaller">C=Criteria: V=Compulsory, O=Optional</span></p>
-<section id="voorbeelden-van-invulling"><div class="header-wrapper"><h4 id="c-1-1-voorbeelden-van-invulling"><bdi class="secno">C.1.1 </bdi>Voorbeelden van invulling</h4><a class="self-link" href="#voorbeelden-van-invulling" aria-label="Permalink for Section C.1.1"></a></div>
+<section id="voorbeelden-van-invulling"><div class="header-wrapper"><h4 id="c-1-1-voorbeelden-van-invulling"><bdi class="secno">C.1.1 </bdi>Voorbeelden van invulling</h4><a class="self-link" href="#voorbeelden-van-invulling" aria-label="Permalink for Appendix C.1.1"></a></div>
 <p>In onderstaande voorbeelden wordt uitgegaan van de volgende (werkelijke) combinaties OIN + Organisatienaam</p>
 <table>
 <thead>
@@ -1847,7 +1896,7 @@ Voorbeeldresultaat van de COR API:
 </tr>
 </tbody></table>
 <p>** <span style="font-size:smaller">Het OIN/SubOIN dient voor <em>identificatie</em> van een organisatie door een nummer. Het onderscheid of een OIN een (Hoofd)OIN of een SubOIN is in het gebruik in principe niet relevant.</span></p>
-</section><section id="voorbeelden-uit-de-praktijk"><div class="header-wrapper"><h4 id="c-1-2-voorbeelden-uit-de-praktijk"><bdi class="secno">C.1.2 </bdi>voorbeelden uit de praktijk</h4><a class="self-link" href="#voorbeelden-uit-de-praktijk" aria-label="Permalink for Section C.1.2"></a></div>
+</section><section id="voorbeelden-uit-de-praktijk"><div class="header-wrapper"><h4 id="c-1-2-voorbeelden-uit-de-praktijk"><bdi class="secno">C.1.2 </bdi>voorbeelden uit de praktijk</h4><a class="self-link" href="#voorbeelden-uit-de-praktijk" aria-label="Permalink for Appendix C.1.2"></a></div>
 <aside class="example" id="example-3"><div class="marker">
     <a class="self-link" href="#example-3">Voorbeeld<bdi> 3</bdi></a>
   </div>
@@ -1929,14 +1978,14 @@ Voorbeeldresultaat van de COR API:
 </tbody></table>
 </aside>
 
-</section><section id="raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor"><div class="header-wrapper"><h4 id="c-1-3-raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor"><bdi class="secno">C.1.3 </bdi>Raadplegen OINs en SubOINS in de Centrale OIN Raadpleegvoorziening (COR)</h4><a class="self-link" href="#raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor" aria-label="Permalink for Section C.1.3"></a></div>
+</section><section id="raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor"><div class="header-wrapper"><h4 id="c-1-3-raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor"><bdi class="secno">C.1.3 </bdi>Raadplegen OINs en SubOINS in de Centrale OIN Raadpleegvoorziening (COR)</h4><a class="self-link" href="#raadplegen-oins-en-suboins-in-de-centrale-oin-raadpleegvoorziening-cor" aria-label="Permalink for Appendix C.1.3"></a></div>
 <p>
       </p><figure id="fig-screenshot-van-de-website-van-de-cor">
         <img src="media/screenshotCOR.png" alt="Screenshot van de Website van de [=COR=]">
         <figcaption><a class="self-link" href="#fig-screenshot-van-de-website-van-de-cor">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Screenshot van de website van de <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-105">COR</a></span></figcaption>
       </figure>
     <p></p>
-</section><section id="raadplegen-via-de-cor-api"><div class="header-wrapper"><h4 id="c-1-4-raadplegen-via-de-cor-api"><bdi class="secno">C.1.4 </bdi>Raadplegen via de COR API</h4><a class="self-link" href="#raadplegen-via-de-cor-api" aria-label="Permalink for Section C.1.4"></a></div>
+</section><section id="raadplegen-via-de-cor-api"><div class="header-wrapper"><h4 id="c-1-4-raadplegen-via-de-cor-api"><bdi class="secno">C.1.4 </bdi>Raadplegen via de COR API</h4><a class="self-link" href="#raadplegen-via-de-cor-api" aria-label="Permalink for Appendix C.1.4"></a></div>
 <p>De COR kent ook aan publiek toegankelijke REST API om OINs van organisaties te raadplegen. De COR API biedt meer raadpleegmogelijkheden dan de website. Zie voor meer informatie <a data-link-type="dfn|abstract-op" href="#dfn-cor" class="internalDFN" id="ref-for-dfn-cor-106">COR</a>.</p>
 </section></section></section>
   <section id="conformance"><div class="header-wrapper"><h2 id="d-conformiteit"><bdi class="secno">D. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section D."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
@@ -2625,4 +2674,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Handreiking - Vastgestelde versie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Handreiking - Vastgestelde versie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
