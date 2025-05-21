@@ -3,6 +3,19 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 35.3.0">
 <style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
@@ -822,7 +835,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   "specType": "ST"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Architectuur 2.1.0</h1>
     
@@ -1612,30 +1625,15 @@ Combineren van deze primitieve interacties tot meerdere (eventueel over de tijd 
 <p>Een <cite><a data-matched-text="[[[openapi]]]" href="https://www.openapis.org/">OpenAPI Specification</a></cite> beschrijft de eigenschappen van de data die een API als input accepteert en als output teruggeeft. OAS specificeert alleen welke attributen de API verwerkt en hun datatypen, niet welke implementatie er achter de API schuilgaat.</p>
 <p>Voor het beschrijven van DK-Rest API's is het gebruik van OAS verplicht. Op [<cite><a class="bibref" data-link-type="biblio" href="#bib-pas-toe-of-leg-uit" title="Lijst Verplichte standaarden">Pas-toe-of-leg-uit</a></cite>] staat beschreven welke versie toegepast moet worden.</p>
 </section></section><section id="wus"><div class="header-wrapper"><h3 id="x6-4-wus"><bdi class="secno">6.4 </bdi>WUS</h3><a class="self-link" href="#wus" aria-label="Permalink for Section 6.4"></a></div>
-<blockquote>
-<p><strong>In het kader van Life-Cycle Management van de Koppelvlakstandaarden krijgt het DK WUS Koppelvlak de status "Uit te faseren" als volgt:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Koppelvlak Standaard</th>
-<th>Status</th>
-<th>Toelichting</th>
-<th>Einde Ondersteuning</th>
-<th>Einde Gebruik</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Digikoppeling WUS</td>
-<td>Uit te faseren</td>
-<td>Het DK WUS koppelvlak dient te worden uit gefaseerd</td>
-<td>01-01-2028</td>
-<td>01-01-2033</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Na 01-01-2028 is gebruik nog toegestaan voor legacy applicaties tot 01-01-2033 — echter de organisatie is zelf verantwoordelijk voor functionele en security updates.</li>
-</ul>
-</blockquote>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span><span class="issue-label">: Uitfasering</span></div><p class="">
+  In het kader van Life-Cycle Management wordt het DK WUS-koppelvlak gemarkeerd als "Uit te faseren".
+  </p></div><ul>
+    <li>Einde ondersteuning: 01-01-2028</li>
+    <li>Einde gebruik: 01-01-2033</li>
+    <li>Legacygebruik is toegestaan tot 01-01-2033, maar organisaties zijn na 2028 zelf verantwoordelijk voor functionele en security-updates.</li>
+  </ul>
+<p></p>
+
 <section id="wus-familie-van-standaarden"><div class="header-wrapper"><h4 id="x6-4-1-wus-familie-van-standaarden"><bdi class="secno">6.4.1 </bdi>WUS familie van standaarden</h4><a class="self-link" href="#wus-familie-van-standaarden" aria-label="Permalink for Section 6.4.1"></a></div>
 <p>Digikoppeling maakt gebruik van een familie van standaarden die we binnen Digikoppeling de naam “WUS” geven. Deze familie van standaarden is gebaseerd op webservice standaarden uit de profielen van de OASIS “Web Services – Basic Reliable and Secure Profiles” Technical Committee (WS-BRSP)<sup><a href="#f27">27</a></sup>. De naam WUS staat voor WSDL, UDDI en SOAP, drie belangrijke deelstandaarden. Hoewel Digikoppeling geen gebruik van UDDI maakt is deze term inmiddels gebruikelijk.</p>
 <p>Kenmerkend voor de WUS-standaarden die voortkomen uit de Internet-wereld is de 1-op-n relatie tussen service aanbieder en meerdere service afnemers. Dit betekent b.v. dat een WUS service één WSDL heeft die door alle afnemers kan worden gebruikt.</p>
