@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.3.0">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -50,7 +50,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -78,8 +78,9 @@ dd{margin-left:0}
 }
 </style>
 <style id="respec-nlgov">
-img.license{float:left;padding-right:5px}
+img.license{float:left;padding-right:5px;background:0 0}
 </style>
+<meta name="color-scheme" content="light">
 <meta name="description" content="Tekst">
 <style>
 .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
@@ -125,7 +126,7 @@ img.license{float:left;padding-right:5px}
       "id": "Logius",
       "height": 77,
       "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
     }
   ],
   "latestVersion": [
@@ -245,10 +246,18 @@ img.license{float:left;padding-right:5px}
         "Jasper Roes",
         "Joost Farla"
       ],
-      "date": "Juli 2020",
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
     },
     "ADR-ext": {
       "authors": [
@@ -265,6 +274,12 @@ img.license{float:left;padding-right:5px}
       "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
     },
     "AVG": {
       "date": "27 april 2016",
@@ -505,6 +520,14 @@ img.license{float:left;padding-right:5px}
       "publisher": "OpenID foundation",
       "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
     },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
     "Introspection": {
       "authors": [
         "J. Richer"
@@ -729,6 +752,32 @@ img.license{float:left;padding-right:5px}
       ],
       "publisher": "Association of Computing Machinery (ACM)",
       "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
     }
   },
   "specStatus": "WV",
@@ -766,14 +815,14 @@ img.license{float:left;padding-right:5px}
   ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry informative"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+ <body class="h-entry"><div class="head">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">BOMOSS, BOMOS voor open source</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2023-01-31">16 januari 2025</time>
+      <time class="dt-published" datetime="2023-01-31">26 mei 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -813,14 +862,14 @@ img.license{float:left;padding-right:5px}
           <a rel="alternate" href="BOMOS-OpenSource.pdf">pdf</a>
         </p>
     <p class="copyright">
-          Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg" alt="Logo Creative Commons 0 Public Domain Dedication"><br> Creative Commons 0 Public Domain Dedication</a>
-        </p>
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg" alt="Logo Creative Commons 0 Public Domain Dedication"><br> Creative Commons 0 Public Domain Dedication</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Tekst</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li></ol></nav>
   <section class="introductory">
 
 
@@ -901,7 +950,7 @@ img.license{float:left;padding-right:5px}
 <pre aria-busy="false"><code class="hljs">Cannot GET /ch05_Communicatie.md</code></pre>
 
 </section>
-  <section>
+  <section class="appendix">
 
 
 <meta charset="utf-8">
@@ -911,7 +960,8 @@ img.license{float:left;padding-right:5px}
 <pre aria-busy="false"><code class="hljs">Cannot GET /App01_Kader.md</code></pre>
 
 </section>
-  
+  <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
+  </section>
   <section id="tof">
   </section>
  
@@ -1140,4 +1190,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
