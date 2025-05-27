@@ -817,7 +817,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2024-10-23">19 mei 2025</time>
+      <time class="dt-published" datetime="2024-10-23">27 mei 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1160,31 +1160,31 @@ Wat nu als alle Logregels zonder relaties worden opgeslagen? Bij een rapportage 
 <p>Als er een Dataverwerking plaatsvindt, moet dit altijd een relatie hebben met het Register van Verwerkingsactiviteiten. In dit Register staat informatie over de data die een organisatie verwerkt. Het Register is verplicht, een geautomatiseerde koppeling met het Logboek niet.</p>
 <p>Bij elke Dataverwerking wordt door het Logboek een relatie gelegd met het Register door middel van het <code>processing_activity_id</code>.
 Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus allemaal dezelfde <code>processing_activity_id</code>.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding1.svg" alt="processing_activity_id"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding1.svg" alt="Afbeelding relaties processing_activity_id"></p>
 <p>In het geval er een Dataverwerking plaatsvindt ter ondersteuning van een andere Dataverwerking (suboperation), dan kan deze ondersteunende Dataverwerking een eigen <code>processing_activity_id</code> krijgen. Deze kan anders zijn dan het <code>processing_activity_id</code> van de 'hoofdprocessingActivity'.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding2.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding2.svg" alt="Afbeelding relaties processing_activity_id tussen Logboek en Register"></p>
 <p>De subOperation heeft nu een eigen <code>processing_activity_id</code> gekregen, maar het is nog niet duidelijk aan welke hoofdprocessingActivityId deze gekoppeld is. Om dit op te lossen, wordt ook een 'parentProcessingActivityId' geregistreerd.</p>
 <p>Bij de subOperation wordt in dit geval naast de <code>processing_activity_id</code> ook een parentProcessingActivityId geregistreerd. De waarde van deze parentProcessingActivityId is gelijk aan de waarde van het hoofdProcessingActivityId.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding3.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding3.svg" alt="Afbeelding relaties processing_activity_id tussen Logboek en Register met parent_processing_activity_id"></p>
 <p>Bij een Dataverwerking kan het zijn dat data moeten worden opgevraagd bij een andere organisatie. Deze organisatie heeft zelf ook een Register van Verwerkingsactiviteiten. In dit Register staat beschreven dat een specifieke organisatie specifieke gegevens mag opvragen als aparte operation.</p>
 <p>Bij het verstrekken van deze data aan de aanvragende organisatie, wordt het <code>processing_activity_id</code> van de gegevensverstrekkende organisatie geregistreerd. Er is dus GEEN rechtstreekse koppeling tussen het Register van de aanvragende en het Register van de verstrekkende organisatie.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding4.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding4.svg" alt="Afbeelding relaties processing_activity_id tussen Logboek en Register met parent_processing_activity_id en meerdere organisaties"></p>
 </section><section id="trace_id-als-grootste-gemene-deler"><div class="header-wrapper"><h4 id="x4-2-3-trace_id-als-grootste-gemene-deler"><bdi class="secno">4.2.3 </bdi>trace_id als grootste gemene deler</h4><a class="self-link" href="#trace_id-als-grootste-gemene-deler" aria-label="Permalink for Section 4.2.3"></a></div>
 <p>Operations kunnen bestaan uit meerdere (sub)Operations binnen de eigen organisatie maar ook over organisaties heen. Het geheel kan een grote en ingewikkelde constructie worden. Om toch het overzicht te kunnen behouden, is het noodzakelijk een <code>trace_id</code> te introduceren per (sub)Operation.</p>
 <p>Het <code>trace_id</code> is als het ware de 'lijm' tussen alle  (sub)Operations. Als er nog geen <code>trace_id</code> bekend is, wordt deze automatisch gegenereerd voor de eerste Operation.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding5.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding5.svg" alt="Afbeelding trace_id"></p>
 <p>Alle bij elkaar horende (sub)Operations, krijgen vervolgens dezelfde <code>trace_id</code>-waarde.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding6.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding6.svg" alt="Afbeelding relaties trace_id"></p>
 <p>In het geval er data wordt opgevraagd aan een andere organisatie, krijgt elke operation bij verstrekkende organisatie een <code>trace_id</code>. Om de relatie te leggen tussen de vragende en de verstrekkende organisatie, wordt bij elke Operation van de verstrekkende organisatie een <code>foreign_operation.trace_id</code> geregistreerd. De waarde van de <code>foreign_operation.trace_id</code> van de verstrekkende organisatie is gelijk aan de waarde van <code>trace_id</code> van de vragende organisatie.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding7.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding7.svg" alt="Afbeelding relaties trace_id en foreign_trace_id en meerdere organisaties "></p>
 </section><section id="relatie-tussen-sub-operations"><div class="header-wrapper"><h4 id="x4-2-4-relatie-tussen-sub-operations"><bdi class="secno">4.2.4 </bdi>Relatie tussen (sub)Operations</h4><a class="self-link" href="#relatie-tussen-sub-operations" aria-label="Permalink for Section 4.2.4"></a></div>
 <p>Elke (sub)Operation krijgt een eigen, unieke <code>span_id</code>. Hiermee zijn alle loggings altijd uniek traceerbeer. Ook subOperations krijgen een eigen, unieke <code>span_id</code>.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding8.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding8.svg" alt="Afbeelding span_id"></p>
 <p>Als er ook subOperations plaatsvinden, moet er ook een <code>parent_span_id</code> worden geregistreerd om de koppeling met de hoofdOperation te realiseren.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding9.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding9.svg" alt="Afbeelding span_id en parent_span_id"></p>
 <p>In het geval er data nodig is van een andere organisatie, krijgt de Operation van de verstrekkende organisatie ook een eigen, unieke <code>span_id</code>.</p>
 <p>Daarnaast wordt bij deze Operation ook het <code>span_id</code> geregistreerd die het verzoek voor informatie geïnitieerd heeft (vanuit de vragende organisatie). Deze specifieke <code>span_id</code> wordt het <code>foreign_operation._span_id</code> genoemd en krijgt de waarde gelijk aan het <code>span_id</code> van de initiërende Operation van de vragende organisatie.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding10.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding10.svg" alt="Afbeelding span_id, parent_span_id en foreign_span_id"></p>
 </section><section id="voorbeeld-van-een-traceringsconstructie"><div class="header-wrapper"><h4 id="x4-2-5-voorbeeld-van-een-traceringsconstructie"><bdi class="secno">4.2.5 </bdi>Voorbeeld van een traceringsconstructie</h4><a class="self-link" href="#voorbeeld-van-een-traceringsconstructie" aria-label="Permalink for Section 4.2.5"></a></div>
 <p>Het nu volgende voorbeeld is volledig fictief en is puur bedoeld om een beeld te schetsen ten behoeve van een traceringsconstructie in een logboek.</p>
 </section><section id="situatieschets"><div class="header-wrapper"><h4 id="x4-2-6-situatieschets"><bdi class="secno">4.2.6 </bdi>Situatieschets</h4><a class="self-link" href="#situatieschets" aria-label="Permalink for Section 4.2.6"></a></div>
@@ -1210,14 +1210,14 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 </li>
 </ul>
 <p>In de RDW-applicatie wordt het verstrekken van data aan de gemeenteapplicatie ook geregistreerd. De Operation <strong>Verstrek houdergegevens</strong> is gerelateerd aan de processingActivity <strong>Kentekenhoudergegevens verstrekken</strong>. Merk op dat er hier dus GEEN directe relatie is tussen het Register van Verwerkingsactiviteiten van de gemeente en die van het RDW.</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding11.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding11.svg" alt="Afbeelding voorbeeld processing_activity_id en parent_processing_activity_id bij Gemeente en RDW"></p>
 </section><section id="trace_id"><div class="header-wrapper"><h4 id="x4-2-9-trace_id"><bdi class="secno">4.2.9 </bdi>trace_id</h4><a class="self-link" href="#trace_id" aria-label="Permalink for Section 4.2.9"></a></div>
 <ul>
 <li>De gemeenteOperations <strong>Toon alle vergunningen, Wijzig kenteken en Controleer tenaamstelling</strong> behoren tot dezelfde handeling (met als eindresultaat het wijzigingen van het kenteken op de vergunning). Deze Operations krijgen allemaal dezelfde <code>trace_id</code>.</li>
 <li>De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen <code>trace_id</code>.</li>
 <li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een <code>foreign_operation.trace_id</code> opgeslagen, de waarde hier van is gelijk aan de waarde van de <code>trace_id</code> van de Operation <strong>Controleer tenaamstelling</strong>.</li>
 </ul>
-<p><img src="../media/relatie_logboekelementen_afbeelding12.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding12.svg" alt="Afbeelding voorbeeld trace_id en foreign_trace_id bij Gemeente en RDW"></p>
 </section><section id="span_id"><div class="header-wrapper"><h4 id="x4-2-10-span_id"><bdi class="secno">4.2.10 </bdi>span_id</h4><a class="self-link" href="#span_id" aria-label="Permalink for Section 4.2.10"></a></div>
 <p>In de gemeente-applicatie krijgt elke (sub)Operation een eigen, unieke <code>span_id</code>.</p>
 <ul>
@@ -1225,10 +1225,10 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <li>Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke <code>span_id</code>.</li>
 <li>Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een <code>foreign_operation.span_id</code> moeten worden vastgelegd. De waarde van deze <code>foreign_operation.span_id</code> is gelijk aan de waarde van de <code>span_id</code> van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.</li>
 </ul>
-<p><img src="../media/relatie_logboekelementen_afbeelding13.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding13.svg" alt="Afbeelding voorbeeld span_id, parent_span_id en foreign_span_id bij Gemeente en RDW"></p>
 </section><section id="totaalbeeld"><div class="header-wrapper"><h4 id="x4-2-11-totaalbeeld"><bdi class="secno">4.2.11 </bdi>Totaalbeeld</h4><a class="self-link" href="#totaalbeeld" aria-label="Permalink for Section 4.2.11"></a></div>
 <p>Als alle relaties gelegd zijn, ziet de traceringsconstructie er als volgt uit:</p>
-<p><img src="../media/relatie_logboekelementen_afbeelding14.svg" alt="Alt text"></p>
+<p><img src="./media/relatie_logboekelementen_afbeelding14.svg" alt="Afbeelding Voorbeeld met alle span, trace en processing elementen"></p>
 <p>Meer gedetailleerde voorbeelden staan beschreven in de <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen_Inleiding/blob/main/ch05_voorbeelden.md">inleiding</a> van de standaard logboek dataverwerkingen.</p>
 </section></section>
     <section id="canoniek-datamodel"><div class="header-wrapper"><h3 id="x4-3-canoniek-datamodel"><bdi class="secno">4.3 </bdi>Canoniek Datamodel</h3><a class="self-link" href="#canoniek-datamodel" aria-label="Permalink for Section 4.3"></a></div>
@@ -4493,6 +4493,12 @@ Deze extensie zal niet worden vastgesteld en is enkel bedoeld als proof-of-conce
 Mocht in de toekomst er interesse zijn om de NEN7513 norm te implementeren op basis van deze standaard, dan kan deze extensie als startpunt van het traject gebruikt worden.</p>
 </section><section class="notoc"><div class="header-wrapper"><h3 id="als-mijn-organisatie-besluit-de-logboek-dataverwerkingen-standaard-te-implementeren-moeten-wij-dan-historische-logregels-aanpassen">Als mijn organisatie besluit de Logboek Dataverwerkingen-standaard te implementeren, moeten wij dan historische logregels aanpassen?</h3><a class="self-link" href="#als-mijn-organisatie-besluit-de-logboek-dataverwerkingen-standaard-te-implementeren-moeten-wij-dan-historische-logregels-aanpassen" aria-label="Permalink for this Section"></a></div>
 <p>Nee, organisaties hoeven historische logregels niet aan te passen wanneer zij starten met het implementeren van deze standaard. De standaard is ontworpen zonder verplichting tot het herstructureren van bestaande data.</p>
+</section><section class="notoc"><div class="header-wrapper"><h3 id="is-er-een-risicoanalyse-beschikbaar-voor-deze-standaard">Is er een risicoanalyse beschikbaar voor deze standaard?</h3><a class="self-link" href="#is-er-een-risicoanalyse-beschikbaar-voor-deze-standaard" aria-label="Permalink for this Section"></a></div>
+<p>Ja, deze is beschikbaar:</p>
+<ul>
+<li><a href="./media/risicoanalyse-logboek-dataverwerkingen.pdf">De tekstuele beschrijving</a></li>
+<li><a href="./media/risicoanalyse-logboek-dataverwerkingen.xlsx">De bijbehorende tabel met dreigingen en classificaties</a></li>
+</ul>
 </section></section>
 
 
