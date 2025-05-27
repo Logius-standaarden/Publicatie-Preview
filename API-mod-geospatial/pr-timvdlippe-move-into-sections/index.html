@@ -1019,11 +1019,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 </section>
   <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#request-and-response"><bdi class="secno">2. </bdi>Request and response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.1 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#call-requests"><bdi class="secno">2.2 </bdi>Call (requests)</a></li><li class="tocline"><a class="tocxref" href="#result-response"><bdi class="secno">2.3 </bdi>Result (response)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#coordinate-reference-system-crs"><bdi class="secno">3. </bdi>Coordinate Reference System (CRS)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#crs-discovery"><bdi class="secno">3.1 </bdi>CRS discovery</a></li><li class="tocline"><a class="tocxref" href="#crs-negotiation"><bdi class="secno">3.2 </bdi>CRS negotiation</a></li><li class="tocline"><a class="tocxref" href="#crs-transformation"><bdi class="secno">3.3 </bdi>CRS transformation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#inspire-requirements"><bdi class="secno">4. </bdi>INSPIRE requirements</a></li><li class="tocline"><a class="tocxref" href="#deprecated-rules"><bdi class="secno">A. </bdi>Deprecated rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#post-endpoint-for-geospatial-queries"><bdi class="secno">A.1 </bdi>POST endpoint for geospatial queries</a></li><li class="tocline"><a class="tocxref" href="#old-crs-negotiation-method"><bdi class="secno">A.2 </bdi>Old CRS negotiation method</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>Informative references</a></li></ol></li></ol></nav>
   <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
-<p>This document provides rules for publishing geospatial data using Web APIs. Spatial data is </p>
+<p>This document provides rules for publishing geospatial data using Web APIs. Spatial data is</p>
 <blockquote>
 <p>data that describes anything with spatial extent (i.e. size, shape or position). Spatial data is also known as location information. [<cite><a class="bibref" data-link-type="biblio" href="#bib-sdw-bp" title="Spatial Data on the Web Best Practices">sdw-bp</a></cite>]</p>
 </blockquote>
-<p>Geospatial data is more specific in that it is explicitly located relative to the Earth. </p>
+<p>Geospatial data is more specific in that it is explicitly located relative to the Earth.</p>
 <p>Geospatial data is 'special' data in the sense that it typically indicates the location of things using geometry. This geometry allows geospatial functions such as 'find only the things located within this area' but also requires specific ways of handling. There are international regulations and standards for geospatial data that need to be taken into account in certain cases.</p>
 <figure id="fig-the-red-bounding-box-acts-as-a-filter-to-find-only-the-castles-located-within-this-area">
     <img alt="castle features shown on map with bounding box" src="media/boundingbox.png">
@@ -1373,46 +1373,49 @@ In case a collection of resources is embedded in the request resource, the name 
   <p>
   Note that:</p>
 <ul>
-<li>The resources' properties (e.g. <code>naam</code>) are passed in the properties object. Depending on the implemented filter capabilities the properties object may contain all or a selection of the resources' properties.</li>
-<li>The OGC API Features specification provides the possibility to add an array of links to a feature and feature collection, which may contain a self link and in case of a feature collection may contain navigation links.  <p></p>
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test-3">How to test</h4><a class="self-link" href="#how-to-test-3" aria-label="Permalink for this Section"></a></div>
-  <p>
-  Test case 1:
-  </p>
-  <ul>
-<li>Request a single resource that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
-<li>Validate that a response with status code 200 is returned.</li>
-<li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
-<li>Validate that the returned document is a GeoJSON Feature document.</li>
-  </ul>
-  <p>
-  Test case 2:
-  </p>
-  <ul>
-<li>Request a collection of resources that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
-<li>Validate that a response with status code 200 is returned.</li>
-<li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
-<li>Validate that the returned document is a GeoJSON FeatureCollection document.</li>
-  </ul>
-  <p>
-  Test case 3:
-  </p>
-  <ul>
-<li>Request a single resource that does not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
-<li>Validate that a response with status code 200 is returned.</li>
-<li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-<li>Validate that the returned document is a JSON document.</li>
-  </ul>
-  <p>
-  Test case 4:
-  </p>
-  <ul>
-<li>Request a collection of resources that do not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
-<li>Validate that a response with status code 200 is returned.</li>
-<li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-<li>Validate that the returned document is a JSON document.</li>
-  </ul>
-</li></ul></div>
+<li><p>The resources' properties (e.g. <code>naam</code>) are passed in the properties object. Depending on the implemented filter capabilities the properties object may contain all or a selection of the resources' properties.</p>
+</li>
+<li><p>The OGC API Features specification provides the possibility to add an array of links to a feature and feature collection, which may contain a self link and in case of a feature collection may contain navigation links.</p>
+<p></p>
+<div class="header-wrapper"><h4 class="rulelab" id="how-to-test-3">How to test</h4><a class="self-link" href="#how-to-test-3" aria-label="Permalink for this Section"></a></div>
+<p>
+Test case 1:
+</p>
+<ul>
+  <li>Request a single resource that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
+  <li>Validate that the returned document is a GeoJSON Feature document.</li>
+</ul>
+<p>
+Test case 2:
+</p>
+<ul>
+  <li>Request a collection of resources that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
+  <li>Validate that the returned document is a GeoJSON FeatureCollection document.</li>
+</ul>
+<p>
+Test case 3:
+</p>
+<ul>
+  <li>Request a single resource that does not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+</ul>
+<p>
+Test case 4:
+</p>
+<ul>
+  <li>Request a collection of resources that do not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+</ul></li>
+</ul>
+</div>
 
 <p>In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If resources contain geometry, the geometry shall be returned as a GeoJSON <code>Geometry</code> object embedded in the resource. The media type <code>application/json</code>  must be supported. This may also apply to other media types <code>application/*+json</code>, however this depends on the media type specification. If the media type specification prescribes that resource information must be embedded in a JSON structure defined in the media type specification, then the media type should not be supported while it is impossible to comply to that specification with the method described below. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the response does not return a feature or feature collection.
 A template for the definition of the schemas for the GeoJSON <code>Geometry</code> object in the responses in OpenAPI definitions is available: <a href="https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml">geometryGeoJSON.yaml</a>.
@@ -1527,66 +1530,66 @@ In case a collection of resources is returned, the name of the array containing 
   <p>
   Note that:</p>
 <ul>
-<li>The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.</li>
+<li><p>The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.</p>
+<p></p>
+<div class="header-wrapper"><h4 class="rulelab" id="how-to-test-4">How to test</h4><a class="self-link" href="#how-to-test-4" aria-label="Permalink for this Section"></a></div>
+<p>
+Test case 1:
+</p>
+<ul>
+  <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+  <li>Validate that the returned document contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
+  <ul>
+    <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
+    <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
+  </ul></li>
 </ul>
-  <p></p>
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test-4">How to test</h4><a class="self-link" href="#/geo/embed-geojson-geometry-response" aria-label="Permalink for this Section"></a></div>
-  <p>
-  Test case 1:
-  </p>
+<p>
+Test case 2:
+</p>
+<ul>
+  <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+  <li>Validate that the returned document contains an array of resources and that each resource contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
   <ul>
-    <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-    <li>Validate that a response with status code 200 is returned.</li>
-    <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-    <li>Validate that the returned document is a JSON document.</li>
-    <li>Validate that the returned document contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
-    <ul>
-      <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
-      <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
-    </ul></li>
-  </ul>
-  <p>
-  Test case 2:
-  </p>
+    <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
+    <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
+  </ul></li>
+</ul>
+<p>
+Test case 3:
+</p>
+<ul>
+  <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+  <li>Validate that the returned document contains a property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
   <ul>
-    <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-    <li>Validate that a response with status code 200 is returned.</li>
-    <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-    <li>Validate that the returned document is a JSON document.</li>
-    <li>Validate that the returned document contains an array of resources and that each resource contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
-    <ul>
-      <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
-      <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
-    </ul></li>
-  </ul>
-  <p>
-  Test case 3:
-  </p>
+    <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
+    <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
+  </ul></li>
+</ul>
+<p>
+Test case 4:
+</p>
+<ul>
+  <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+  <li>Validate that a response with status code 200 is returned.</li>
+  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+  <li>Validate that the returned document is a JSON document.</li>
+  <li>Validate that the returned document contains an array of resources and that each resource contains a  property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
   <ul>
-    <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-    <li>Validate that a response with status code 200 is returned.</li>
-    <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-    <li>Validate that the returned document is a JSON document.</li>
-    <li>Validate that the returned document contains a property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
-    <ul>
-      <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
-      <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
-    </ul></li>
-  </ul>
-  <p>
-  Test case 4:
-  </p>
-  <ul>
-    <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-    <li>Validate that a response with status code 200 is returned.</li>
-    <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-    <li>Validate that the returned document is a JSON document.</li>
-    <li>Validate that the returned document contains an array of resources and that each resource contains a  property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
-    <ul>
-      <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
-      <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
-    </ul></li>
-  </ul>
+    <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
+    <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
+  </ul></li>
+</ul></li>
+</ul>
 </div></section></section>
   <section id="coordinate-reference-system-crs"><div class="header-wrapper"><h2 id="x3-coordinate-reference-system-crs"><bdi class="secno">3. </bdi>Coordinate Reference System (CRS)</h2><a class="self-link" href="#coordinate-reference-system-crs" aria-label="Permalink for Section 3."></a></div>
 <p>A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.</p>
@@ -1823,7 +1826,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>easting, northing (x, y)</td>
 <td>2D</td>
 <td>Dutch</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/28992">http://www.opengis.net/def/crs/EPSG/9.9.1/28992</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/28992">https://www.opengis.net/def/crs/EPSG/9.9.1/28992</a></td>
 </tr>
 <tr>
 <td>Amersfoort / RD New + NAP height</td>
@@ -1831,7 +1834,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>easting, northing, height (x, y, h)</td>
 <td>3D</td>
 <td>Dutch</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/7415">http://www.opengis.net/def/crs/EPSG/9.9.1/7415</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/7415">https://www.opengis.net/def/crs/EPSG/9.9.1/7415</a></td>
 </tr>
 <tr>
 <td>ETRS89</td>
@@ -1839,7 +1842,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude (φ, λ)</td>
 <td>2D</td>
 <td>European</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/4258">http://www.opengis.net/def/crs/EPSG/9.9.1/4258</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/4258">https://www.opengis.net/def/crs/EPSG/9.9.1/4258</a></td>
 </tr>
 <tr>
 <td>ETRS89</td>
@@ -1847,7 +1850,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude, height (φ, λ, h)</td>
 <td>3D</td>
 <td>European</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/4937">http://www.opengis.net/def/crs/EPSG/9.9.1/4937</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/4937">https://www.opengis.net/def/crs/EPSG/9.9.1/4937</a></td>
 </tr>
 <tr>
 <td>ETRF2000</td>
@@ -1855,7 +1858,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude, height (φ, λ, h)</td>
 <td>3D</td>
 <td>European</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/7931">http://www.opengis.net/def/crs/EPSG/9.9.1/7931</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/7931">https://www.opengis.net/def/crs/EPSG/9.9.1/7931</a></td>
 </tr>
 <tr>
 <td>ETRF2000</td>
@@ -1863,7 +1866,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude (φ, λ)</td>
 <td>2D</td>
 <td>European</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/9067">http://www.opengis.net/def/crs/EPSG/9.9.1/9067</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/9067">https://www.opengis.net/def/crs/EPSG/9.9.1/9067</a></td>
 </tr>
 <tr>
 <td>ITRF2014</td>
@@ -1871,7 +1874,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude, height (φ, λ, h)</td>
 <td>3D</td>
 <td>Global</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/7912">http://www.opengis.net/def/crs/EPSG/9.9.1/7912</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/7912">https://www.opengis.net/def/crs/EPSG/9.9.1/7912</a></td>
 </tr>
 <tr>
 <td>ITRF2014</td>
@@ -1879,7 +1882,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>latitude, longitude (φ, λ)</td>
 <td>2D</td>
 <td>Global</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/9000">http://www.opengis.net/def/crs/EPSG/9.9.1/9000</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/9000">https://www.opengis.net/def/crs/EPSG/9.9.1/9000</a></td>
 </tr>
 <tr>
 <td>WGS 84 longitude-latitude</td>
@@ -1887,7 +1890,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>longitude, latitude (λ, φ)</td>
 <td>2D</td>
 <td>Global</td>
-<td><a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">http://www.opengis.net/def/crs/OGC/1.3/CRS84</a></td>
+<td><a href="https://www.opengis.net/def/crs/OGC/1.3/CRS84">https://www.opengis.net/def/crs/OGC/1.3/CRS84</a></td>
 </tr>
 <tr>
 <td>WGS 84 longitude-latitude-height</td>
@@ -1895,7 +1898,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>longitude, latitude, height (λ, φ, h)</td>
 <td>3D</td>
 <td>Global</td>
-<td><a href="http://www.opengis.net/def/crs/OGC/0/CRS84h">http://www.opengis.net/def/crs/OGC/0/CRS84h</a></td>
+<td><a href="https://www.opengis.net/def/crs/OGC/0/CRS84h">https://www.opengis.net/def/crs/OGC/0/CRS84h</a></td>
 </tr>
 <tr>
 <td>WGS 84 / Pseudo-Mercator</td>
@@ -1903,7 +1906,7 @@ When referring to a coordinate reference system using its code in the rest of th
 <td>easting, northing (x, y)</td>
 <td>2D</td>
 <td>Global</td>
-<td><a href="http://www.opengis.net/def/crs/EPSG/9.9.1/3857">http://www.opengis.net/def/crs/EPSG/9.9.1/3857</a></td>
+<td><a href="https://www.opengis.net/def/crs/EPSG/9.9.1/3857">https://www.opengis.net/def/crs/EPSG/9.9.1/3857</a></td>
 </tr>
 </tbody></table>
 <p>For a more extensive overview of CRSs see: <a href="https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel">https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel</a>.
