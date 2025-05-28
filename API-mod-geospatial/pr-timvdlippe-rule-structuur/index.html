@@ -1166,32 +1166,32 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
     <a class="self-link" href="#example-6">Example<bdi> 6</bdi></a>
   </div>
         <pre><code class="json hljs" aria-busy="false">
-          <span class="hljs-comment">// POST /api/v1/_search:</span>
-          <span class="hljs-punctuation">{</span>
-            <span class="hljs-attr">"currentPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"nextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"pageSize"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"_embedded"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-              <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-                <span class="hljs-punctuation">{</span>
-                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"enkelbestemming"</span><span class="hljs-punctuation">,</span>
-                  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-                    <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-                      <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/enkelbestemmingen/1234"</span>
-                    <span class="hljs-punctuation">}</span>
-                  <span class="hljs-punctuation">}</span>
-                <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-                <span class="hljs-punctuation">{</span>
-                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"dubbelbestemming"</span><span class="hljs-punctuation">,</span>
-                  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-                    <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-                      <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/dubbelbestemmingen/8765"</span>
-                    <span class="hljs-punctuation">}</span>
-                  <span class="hljs-punctuation">}</span>
-                <span class="hljs-punctuation">}</span>
-              <span class="hljs-punctuation">]</span>
-            <span class="hljs-punctuation">}</span>
+<span class="hljs-comment">// POST /api/v1/_search:</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"currentPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"nextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"pageSize"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"_embedded"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"enkelbestemming"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/enkelbestemmingen/1234"</span>
           <span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"dubbelbestemming"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/dubbelbestemmingen/8765"</span>
+          <span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
     </dd>
@@ -1218,19 +1218,19 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
   </div>
         POST feature
         <pre><code class="json hljs" aria-busy="false">
-          // POST /collections/gebouwen/items   HTTP/1.1
-          // Content-Type: application/geo+json
-          {
-            "type": "Feature",
-            "geometry":  {
-              "type": "Point",
-              "coordinates": [5.2795,52.1933]
-            },
-            "properties": {
-              "naam": "Paleis Soestdijk",
-              ...
-            }
-          }
+<span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
+<span class="hljs-comment">// Content-Type: application/geo+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Feature"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometry"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-comment">// ...</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <aside class="example" id="example-8"><div class="marker">
@@ -1238,23 +1238,23 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
   </div>
         POST feature collection
         <pre><code class="json hljs" aria-busy="false">
-          // POST /collections   HTTP/1.1
-          // Content-Type: application/geo+json
-          {
-            "type": "FeatureCollection",
-            "features": [
-            {
-              "type": "Feature",
-              "geometry":  {
-                "type": "Point",
-                "coordinates": [5.2795,52.1933]
-              },
-              "properties": {
-                "naam": "Paleis Soestdijk",
-                ...
-              }
-            }]
-          }
+<span class="hljs-comment">// POST /collections   HTTP/1.1</span>
+<span class="hljs-comment">// Content-Type: application/geo+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"FeatureCollection"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"features"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Feature"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"geometry"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-comment">// ...</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
     </dd>
@@ -1283,15 +1283,15 @@ In case a collection of resources is embedded in the request resource, the name 
   </div>
         POST resource containing geometry
         <pre><code class="json hljs" aria-busy="false">
-          <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
-          <span class="hljs-comment">// Content-Type: application/json</span>
-          <span class="hljs-punctuation">{</span>
-            <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-              <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
-              <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
-            <span class="hljs-punctuation">}</span>
-          <span class="hljs-punctuation">}</span>
+<span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
+<span class="hljs-comment">// Content-Type: application/json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <aside class="example" id="example-10"><div class="marker">
@@ -1299,20 +1299,20 @@ In case a collection of resources is embedded in the request resource, the name 
   </div>
         POST resource containing geometry collection
         <pre><code class="json hljs" aria-busy="false">
-          <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
-          <span class="hljs-comment">// Content-Type: application/json</span>
-          <span class="hljs-punctuation">{</span>
-            <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-              <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"GeometryCollection"</span><span class="hljs-punctuation">,</span>
-              <span class="hljs-attr">"geometries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-                <span class="hljs-punctuation">{</span>
-                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
-                  <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
-                <span class="hljs-punctuation">}</span>
-              <span class="hljs-punctuation">]</span>
-            <span class="hljs-punctuation">}</span>
-          <span class="hljs-punctuation">}</span>
+<span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
+<span class="hljs-comment">// Content-Type: application/json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"GeometryCollection"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"geometries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
     </dd>
@@ -1340,25 +1340,25 @@ In case a collection of resources is embedded in the request resource, the name 
   </div>
         Feature
         <pre><code class="json hljs" aria-busy="false">
-          // GET /collections/gebouwen/items/0308100000022041   HTTP 1.1
-          // Content-type: application/geo+json
-          {
-            "type": "Feature",
-            "id": "0308100000022041",
-            "geometry":  {
-              "type": "Point",
-              "coordinates": [5.2795,52.1933]
-            },
-            "properties": {
-              "naam": "Paleis Soestdijk",
-              ...
-            },
-            "links": [
-              {
-                "self": "/collections/gebouwen/items/0308100000022041"
-              }
-            ]
-          }
+<span class="hljs-comment">// GET /collections/gebouwen/items/0308100000022041   HTTP 1.1</span>
+<span class="hljs-comment">// Content-type: application/geo+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Feature"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometry"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-comment">// ...</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/collections/gebouwen/items/0308100000022041"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <aside class="example" id="example-12"><div class="marker">
@@ -1366,43 +1366,43 @@ In case a collection of resources is embedded in the request resource, the name 
   </div>
         Feature collection
         <pre><code class="json hljs" aria-busy="false">
-          // GET /collections/gebouwen   HTTP 1.1
-          // Content-type: application/geo+json
-          {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "type": "Feature",
-                "id": "0308100000022041",
-                "geometry":  {
-                  "type": "Point",
-                  "coordinates": [5.2795,52.1933]
-                },
-                "properties": {
-                  "naam": "Paleis Soestdijk",
-                  ...
-                },
-                "links": [
-                  {
-                    "self": "/collections/gebouwen/0308100000022041"
-                  }
-                ]
-              },
-              {
-              }
-            ],
-            "timeStamp" : "2023-02-22T10:32:23Z",
-            "numberMatched" : "0308100000022041",
-            "numberReturned" : "1",
-            "links": [
-              {
-                "self": "/collections/gebouwen"
-              },
-              {
-                "next": ""
-              }
-            ]
-          }
+<span class="hljs-comment">// GET /collections/gebouwen   HTTP 1.1</span>
+<span class="hljs-comment">// Content-type: application/geo+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"FeatureCollection"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"features"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Feature"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"geometry"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-comment">// ...</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/collections/gebouwen/0308100000022041"</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"timeStamp"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"2023-02-22T10:32:23Z"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"numberMatched"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"numberReturned"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"1"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/collections/gebouwen"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"next"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">""</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span></div><div class="">
@@ -1459,22 +1459,21 @@ In case a collection of resources is returned, the name of the array containing 
   </div>
         Resource containing geometry
         <pre><code class="json hljs" aria-busy="false">
-          // GET /gebouwen/0308100000022041   HTTP 1.1
-          // Content-type: application/hal+json
-          {
-            "identificatie": "0308100000022041",
-            "naam": "Paleis Soestdijk",
-            "geometrie":  {
-              "type": "Point",
-              "coordinates": [5.2795,52.1933]
-            },
-            ...,
-            "_links": {
-              {
-                "self": "/gebouwen/0308100000022041"
-              }
-            }
-          }
+<span class="hljs-comment">// GET /gebouwen/0308100000022041   HTTP 1.1</span>
+<span class="hljs-comment">// Content-type: application/hal+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"identificatie"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/gebouwen/0308100000022041"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <aside class="example" id="example-14"><div class="marker">
@@ -1482,31 +1481,30 @@ In case a collection of resources is returned, the name of the array containing 
   </div>
         Resource containing geometry collection
         <pre><code class="json hljs" aria-busy="false">
-          // GET /gebouwen/0308100000022041   HTTP 1.1
-          // Content-type: application/hal+json
-          {
-            "identificatie": "0308100000022041",
-            "naam": "Paleis Soestdijk",
-            "geometrie": {
-              "type": "GeometryCollection",
-              "geometries": [
-                {
-                  "type": "Point"
-                  "coordinates": [5.2795,52.1933]
-                },
-                {
-                  "type": "Polygon"
-                  "coordinates" : [...]
-                }
-              ]
-            },
-            ...,
-            "_links": {
-              {
-                "self": "/gebouwen/0308100000022041"
-              }
-            }
-          }
+<span class="hljs-comment">// GET /gebouwen/0308100000022041   HTTP 1.1</span>
+<span class="hljs-comment">// Content-type: application/hal+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"identificatie"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"GeometryCollection"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"geometries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span>
+        <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Polygon"</span>
+        <span class="hljs-attr">"coordinates"</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-comment">/* ... */</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/gebouwen/0308100000022041"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <aside class="example" id="example-15"><div class="marker">
@@ -1514,34 +1512,33 @@ In case a collection of resources is returned, the name of the array containing 
   </div>
         Collection of resources containing geometry
         <pre><code class="json hljs" aria-busy="false">
-          // GET /gebouwen   HTTP 1.1
-          // Content-type: application/hal+json
-          {
-            "gebouwen": [
-              {
-                "identificatie": "0308100000022041",
-                "naam": "Paleis Soestdijk",
-                "geometrie":  {
-                  "type": "Point",
-                  "coordinates": [5.2795,52.1933]
-                }
-                ...
-                "_links": {
-                  {
-                    "self": "/gebouwen/0308100000022041"
-                  }
-                }
-              }
-            ],
-            "_links": {
-              {
-                "self": "/gebouwen"
-              },
-              {
-                "next": ""
-              }
-            }
-          }
+<span class="hljs-comment">// GET /gebouwen   HTTP 1.1</span>
+<span class="hljs-comment">// Content-type: application/hal+json</span>
+<span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"gebouwen"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"identificatie"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"0308100000022041"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span>  <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+      <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/gebouwen/0308100000022041"</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/gebouwen"</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"next"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">""</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
         </code></pre>
       </aside>
       <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span></div><p class="">The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.
