@@ -1119,9 +1119,11 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
     <dt>Statement</dt>
     <dd>
       Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.<p></p>
-      <div class="example">
+      <aside class="example" id="example-5"><div class="marker">
+    <a class="self-link" href="#example-5">Example<bdi> 5</bdi></a>
+  </div>
         <code>GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</code>
-      </div>
+      </aside>
       <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><div class="">Note that if a resource contains multiple geometries, it is up to the provider to decide if geometries of type single geometry or type multiple geometry are returned and that the provider shall clearly document this behavior.</div></div>
     </dd>
     <dt>Rationale</dt>
@@ -1160,7 +1162,9 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
     <dt>Statement</dt>
     <dd>
       In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.2/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:
-      <div class="example">
+      <aside class="example" id="example-6"><div class="marker">
+    <a class="self-link" href="#example-6">Example<bdi> 6</bdi></a>
+  </div>
         <pre><code class="json hljs" aria-busy="false">
           <span class="hljs-comment">// POST /api/v1/_search:</span>
           <span class="hljs-punctuation">{</span>
@@ -1189,7 +1193,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
             <span class="hljs-punctuation">}</span>
           <span class="hljs-punctuation">}</span>
         </code></pre>
-      </div>
+      </aside>
     </dd>
     <dt>How to test</dt>
     <dd>
@@ -1209,7 +1213,9 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
     <dt>Statement</dt>
     <dd>
       For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in <a href="https://docs.ogc.org/DRAFTS/20-002r1.html">OGC API Features part 4</a>, but note that this standard is still in development.
-      <div class="example">
+      <aside class="example" id="example-7"><div class="marker">
+    <a class="self-link" href="#example-7">Example<bdi> 7</bdi></a>
+  </div>
         POST feature
         <pre><code class="json hljs" aria-busy="false">
           // POST /collections/gebouwen/items   HTTP/1.1
@@ -1226,8 +1232,10 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
             }
           }
         </code></pre>
-      </div>
-      <div class="example">
+      </aside>
+      <aside class="example" id="example-8"><div class="marker">
+    <a class="self-link" href="#example-8">Example<bdi> 8</bdi></a>
+  </div>
         POST feature collection
         <pre><code class="json hljs" aria-busy="false">
           // POST /collections   HTTP/1.1
@@ -1248,7 +1256,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
             }]
           }
         </code></pre>
-      </div>
+      </aside>
     </dd>
     <dt>How to test</dt>
     <dd>
@@ -1270,7 +1278,9 @@ In case a collection of resources is embedded in the request resource, the name 
     <dt>Statement</dt>
     <dd>
       When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.
-      <div class="example">
+      <aside class="example" id="example-9"><div class="marker">
+    <a class="self-link" href="#example-9">Example<bdi> 9</bdi></a>
+  </div>
         POST resource containing geometry
         <pre><code class="json hljs" aria-busy="false">
           <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
@@ -1283,8 +1293,10 @@ In case a collection of resources is embedded in the request resource, the name 
             <span class="hljs-punctuation">}</span>
           <span class="hljs-punctuation">}</span>
         </code></pre>
-      </div>
-      <div class="example">
+      </aside>
+      <aside class="example" id="example-10"><div class="marker">
+    <a class="self-link" href="#example-10">Example<bdi> 10</bdi></a>
+  </div>
         POST resource containing geometry collection
         <pre><code class="json hljs" aria-busy="false">
           <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
@@ -1302,7 +1314,7 @@ In case a collection of resources is embedded in the request resource, the name 
             <span class="hljs-punctuation">}</span>
           <span class="hljs-punctuation">}</span>
         </code></pre>
-      </div>
+      </aside>
     </dd>
     <dt>How to test</dt>
     <dd>
@@ -1323,7 +1335,9 @@ In case a collection of resources is embedded in the request resource, the name 
     <dt>Statement</dt>
     <dd>
       For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>].
-      <div class="example">
+      <aside class="example" id="example-11"><div class="marker">
+    <a class="self-link" href="#example-11">Example<bdi> 11</bdi></a>
+  </div>
         Feature
         <pre><code class="json hljs" aria-busy="false">
           // GET /collections/gebouwen/items/0308100000022041   HTTP 1.1
@@ -1346,8 +1360,10 @@ In case a collection of resources is embedded in the request resource, the name 
             ]
           }
         </code></pre>
-      </div>
-      <div class="example">
+      </aside>
+      <aside class="example" id="example-12"><div class="marker">
+    <a class="self-link" href="#example-12">Example<bdi> 12</bdi></a>
+  </div>
         Feature collection
         <pre><code class="json hljs" aria-busy="false">
           // GET /collections/gebouwen   HTTP 1.1
@@ -1388,7 +1404,7 @@ In case a collection of resources is embedded in the request resource, the name 
             ]
           }
         </code></pre>
-      </div>
+      </aside>
       <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span></div><div class="">
         <li>The resources' properties (e.g. <code>naam</code>) are passed in the properties object. Depending on the implemented filter capabilities the properties object may contain all or a selection of the resources' properties.</li>
         <li>The OGC API Features specification provides the possibility to add an array of links to a feature and feature collection, which may contain a self link and in case of a feature collection may contain navigation links</li>
@@ -1438,7 +1454,9 @@ In case a collection of resources is returned, the name of the array containing 
     <dt>Statement</dt>
     <dd>
       When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.
-      <div class="example">
+      <aside class="example" id="example-13"><div class="marker">
+    <a class="self-link" href="#example-13">Example<bdi> 13</bdi></a>
+  </div>
         Resource containing geometry
         <pre><code class="json hljs" aria-busy="false">
           // GET /gebouwen/0308100000022041   HTTP 1.1
@@ -1458,8 +1476,10 @@ In case a collection of resources is returned, the name of the array containing 
             }
           }
         </code></pre>
-      </div>
-      <div class="example">
+      </aside>
+      <aside class="example" id="example-14"><div class="marker">
+    <a class="self-link" href="#example-14">Example<bdi> 14</bdi></a>
+  </div>
         Resource containing geometry collection
         <pre><code class="json hljs" aria-busy="false">
           // GET /gebouwen/0308100000022041   HTTP 1.1
@@ -1488,8 +1508,10 @@ In case a collection of resources is returned, the name of the array containing 
             }
           }
         </code></pre>
-      </div>
-      <div class="example">
+      </aside>
+      <aside class="example" id="example-15"><div class="marker">
+    <a class="self-link" href="#example-15">Example<bdi> 15</bdi></a>
+  </div>
         Collection of resources containing geometry
         <pre><code class="json hljs" aria-busy="false">
           // GET /gebouwen   HTTP 1.1
@@ -1521,7 +1543,7 @@ In case a collection of resources is returned, the name of the array containing 
             }
           }
         </code></pre>
-      </div>
+      </aside>
       <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span></div><p class="">The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.
     </p></div></dd>
     <dt>How to test</dt>
@@ -1594,13 +1616,17 @@ SRIDs may refer to different standards, for example EPSG Geodetic Parameter Data
     <dt>Statement</dt>
     <dd>
       <p>If a REST API shall comply to the OGC API Features specification then the API must provide an endpoint to determine a list of supported CRSs.</p>
-      <div class="example">
+      <aside class="example" id="example-16"><div class="marker">
+    <a class="self-link" href="#example-16">Example<bdi> 16</bdi></a>
+  </div>
         <code>GET /api/v1/collections</code>
-      </div>
+      </aside>
       <p>If a REST API does not have to comply to the OGC API Features specification, e.g. when the API is used for administrative purposes, then the API shall also provide an endpoint to determine the supported CRSs.</p>
-      <div class="example">
+      <aside class="example" id="example-17"><div class="marker">
+    <a class="self-link" href="#example-17">Example<bdi> 17</bdi></a>
+  </div>
         <code>GET /api/v1/crss</code>
-      </div>
+      </aside>
     </dd>
     <dt>Rationale</dt>
     <dd>
