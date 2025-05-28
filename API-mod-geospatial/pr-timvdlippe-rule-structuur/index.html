@@ -1115,37 +1115,38 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 <p>A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>] bounding box parameter:</p>
 <div class="rule" id="/geo/bbox-query-parameter">
   <p class="rulelab"><b>/geo/bbox-query-parameter</b>: Supply a simple spatial filter as a bounding box parameter</p>
-  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.</p>
-  <div class="example" id="example-5">
-        <div class="marker">
-    <a class="self-link" href="#example-5">Example<bdi> 5</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs">GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</code></pre>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.<p></p>
+      <div class="example">
+        <code>GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</code>
       </div>
-  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if geometries of type single geometry or type multiple geometry are returned and that the provider shall clearly document this behavior.
-  </p>
-  <p> The default spatial operator <code>intersects</code> is used to determine which resources are returned.
-  </p>
-  <p> Due to possible performance issue, especially when a combination of filters is used, a provider may decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases.
-  The provider shall clearly document this behavior.
-  </p>
-  <p>
-  The provider shall be able to provide resources that do not have a geometry property and are related to resources that match the bounding box filter.
-  </p>
-  <p> An error shall be given if the provided coordinates are outside the specified coordinate reference system.
-  </p>
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test">How to test</h4><a class="self-link" href="#/geo/bbox-query-parameter" aria-label="Permalink for this Section"></a></div>
-  <ul>
-    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="#crs-negotiation">CRS Negotiation</a>.</li>
-    <li>Validate that a response with status code 200 is returned.</li>
-    <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
-  </ul>
+      <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><div class="">Note that if a resource contains multiple geometries, it is up to the provider to decide if geometries of type single geometry or type multiple geometry are returned and that the provider shall clearly document this behavior.</div></div>
+    </dd>
+    <dt>Rationale</dt>
+    <dd>
+      <p>The default spatial operator <code>intersects</code> is used to determine which resources are returned.
+      </p><p>Due to possible performance issue, especially when a combination of filters is used, a provider may decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases. The provider shall clearly document this behavior.
+      </p><p>The provider shall be able to provide resources that do not have a geometry property and are related to resources that match the bounding box filter.
+      </p><p>An error shall be given if the provided coordinates are outside the specified coordinate reference system.
+    </p></dd>
+    <dt>How to test</dt>
+    <dd>
+      <ol>
+        <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="#crs-negotiation">CRS Negotiation</a>.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
+      </ol>
+    </dd>
+  </dl>
 </div>
 
-<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><aside class="">
 Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing long lines, may result in erroneous responses, since a straight line between two coordinates in a CRS is, depending on the CRS, not a straight line in reality. See the <a href="https://docs.geostandaarden.nl/crs/crs/#vormvastheid">explanation in the Handreiking CRS</a> (Dutch).
 </aside></div>
 
-<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Note</span></div><aside class="">
 Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since <code>GET</code> may not have a payload (although supported by some clients).
 
 <p>More complex spatial filtering is not addressed in this module. A new API Design Rules module on filtering will address spatial as well as non-spatial filtering. [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-3" title="OGC API - Features - Part 3: Filtering">ogcapi-features-3</a></cite>] will provide input for this.</p>
@@ -1155,95 +1156,109 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 <p><span name="api-38"></span></p>
 <div class="rule" id="/geo/geometric-context">
   <p class="rulelab"><b>/geo/geometric-context</b>: Place results of a global spatial query in the relevant geometric context</p>
-  <p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.2/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
-  <div class="example" id="example-6">
-        <div class="marker">
-    <a class="self-link" href="#example-6">Example<bdi> 6</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs json"><span class="hljs-comment">// POST /api/v1/_search:</span>
-<span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"currentPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"nextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"pageSize"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"_embedded"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-punctuation">{</span>
-        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"enkelbestemming"</span><span class="hljs-punctuation">,</span>
-        <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-            <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/enkelbestemmingen/1234"</span>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.2/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:
+      <div class="example">
+        <pre><code class="json hljs" aria-busy="false">
+          <span class="hljs-comment">// POST /api/v1/_search:</span>
+          <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"currentPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"nextPage"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"pageSize"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"_embedded"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+              <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-punctuation">{</span>
+                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"enkelbestemming"</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                    <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                      <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/enkelbestemmingen/1234"</span>
+                    <span class="hljs-punctuation">}</span>
+                  <span class="hljs-punctuation">}</span>
+                <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-punctuation">{</span>
+                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"dubbelbestemming"</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                    <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                      <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/dubbelbestemmingen/8765"</span>
+                    <span class="hljs-punctuation">}</span>
+                  <span class="hljs-punctuation">}</span>
+                <span class="hljs-punctuation">}</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">}</span>
           <span class="hljs-punctuation">}</span>
-        <span class="hljs-punctuation">}</span>
-      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-punctuation">{</span>
-        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"dubbelbestemming"</span><span class="hljs-punctuation">,</span>
-        <span class="hljs-attr">"_links"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-          <span class="hljs-attr">"self"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-            <span class="hljs-attr">"href"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"https://api.example.org/v1/dubbelbestemmingen/8765"</span>
-          <span class="hljs-punctuation">}</span>
-        <span class="hljs-punctuation">}</span>
-      <span class="hljs-punctuation">}</span>
-    <span class="hljs-punctuation">]</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+        </code></pre>
       </div>
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test-0">How to test</h4><a class="self-link" href="#/geo/geometric-context" aria-label="Permalink for this Section"></a></div>
-  <ul>
-    <li>Issue an HTTP GET request to the API.</li>
-    <li>Validate that the returned document contains the expected <code>type</code> property for each member.</li>
-  </ul>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      <ol>
+        <li>Issue an HTTP GET request to the API.</li>
+        <li>Validate that the returned document contains the expected <code>type</code> property for each member.</li>
+      </ol>
+    </dd>
+  </dl>
 </div>
 
 <p>In case a REST API shall comply to the OGC API Features specification for creating, updating and deleting a resource, the following applies.</p>
 <p><span name="api-34"></span></p>
 <div class="rule" id="/geo/geojson-request">
   <p class="rulelab"><b>/geo/geojson-request</b>: Support GeoJSON in geospatial API requests</p>
-  <p>For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in <a href="https://docs.ogc.org/DRAFTS/20-002r1.html">OGC API Features part 4</a>, but note that this standard is still in development.</p>
-  Example: POST feature
-  <div class="example" id="example-7">
-        <div class="marker">
-    <a class="self-link" href="#example-7">Example<bdi> 7</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs css">// POST /collections/gebouwen/items   HTTP/<span class="hljs-number">1.1</span>
-// <span class="hljs-attribute">Content</span>-Type: application/geo+json
-{
-  "type": <span class="hljs-string">"Feature"</span>,
-  <span class="hljs-string">"geometry"</span>:  {
-    "type": <span class="hljs-string">"Point"</span>,
-    <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-  },
-  "properties": {
-    "naam": <span class="hljs-string">"Paleis Soestdijk"</span>,
-    ...
-  }
-}</code></pre>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in <a href="https://docs.ogc.org/DRAFTS/20-002r1.html">OGC API Features part 4</a>, but note that this standard is still in development.
+      <div class="example">
+        POST feature
+        <pre><code class="json hljs" aria-busy="false">
+          // POST /collections/gebouwen/items   HTTP/1.1
+          // Content-Type: application/geo+json
+          {
+            "type": "Feature",
+            "geometry":  {
+              "type": "Point",
+              "coordinates": [5.2795,52.1933]
+            },
+            "properties": {
+              "naam": "Paleis Soestdijk",
+              ...
+            }
+          }
+        </code></pre>
       </div>
-  Example: POST feature collection
-  <div class="example" id="example-8">
-        <div class="marker">
-    <a class="self-link" href="#example-8">Example<bdi> 8</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs css">// POST /collections   HTTP/<span class="hljs-number">1.1</span>
-// <span class="hljs-attribute">Content</span>-Type: application/geo+json
-{
-  "type": <span class="hljs-string">"FeatureCollection"</span>,
-  <span class="hljs-string">"features"</span>: [
-  {
-    "type": <span class="hljs-string">"Feature"</span>,
-    <span class="hljs-string">"geometry"</span>:  {
-      "type": <span class="hljs-string">"Point"</span>,
-      <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-    },
-    "properties": {
-      "naam": <span class="hljs-string">"Paleis Soestdijk"</span>,
-      ...
-    }
-  }]
-}</code></pre>
+      <div class="example">
+        POST feature collection
+        <pre><code class="json hljs" aria-busy="false">
+          // POST /collections   HTTP/1.1
+          // Content-Type: application/geo+json
+          {
+            "type": "FeatureCollection",
+            "features": [
+            {
+              "type": "Feature",
+              "geometry":  {
+                "type": "Point",
+                "coordinates": [5.2795,52.1933]
+              },
+              "properties": {
+                "naam": "Paleis Soestdijk",
+                ...
+              }
+            }]
+          }
+        </code></pre>
       </div>
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test-1">How to test</h4><a class="self-link" href="#/geo/geojson-request" aria-label="Permalink for this Section"></a></div>
-  <ul>
-    <li>Create a new resource that includes feature content (i.e. coordinates) using the HTTP POST method with request media type <code>application/geo+json</code> in the <code>Content-Type</code> header.</li>
-    <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
-    <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
-  </li></ul>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      <ol>
+        <li>Create a new resource that includes feature content (i.e. coordinates) using the HTTP POST method with request media type <code>application/geo+json</code> in the <code>Content-Type</code> header.</li>
+        <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
+        <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
+      </li></ol>
+    </dd>
+  </dl>
 </div>
 
 <p>In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If a resource contains geometry, that geometry shall be embedded as a GeoJSON <code>Geometry</code> object within the resource. The media type <code>application/json</code> must be supported. This may also apply to other media types <code>application/*+json</code>, however this depends on the media type specification. If the media type specification prescribes that resource information must be embedded in a JSON structure defined in the media specification, then the media type should not be supported while it is impossible to comply to that specification with the method described below. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the request resource does not embed a feature or feature collection.
@@ -1251,176 +1266,166 @@ A template for the definition of the schemas for the GeoJSON <code>Geometry</cod
 In case a collection of resources is embedded in the request resource, the name of the array containing the resources should be the plural of the resource name.</p>
 <div class="rule" id="/geo/embed-geojson-geometry-request">
   <p class="rulelab"><b>/geo/embed-geojson-geometry-request</b>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API requests</p>
-  <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
-  Example: POST resource containing geometry
-  <div class="example" id="example-9">
-        <div class="marker">
-    <a class="self-link" href="#example-9">Example<bdi> 9</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs json"><span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
-<span class="hljs-comment">// Content-Type: application/json</span>
-<span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.
+      <div class="example">
+        POST resource containing geometry
+        <pre><code class="json hljs" aria-busy="false">
+          <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
+          <span class="hljs-comment">// Content-Type: application/json</span>
+          <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+              <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">}</span>
+          <span class="hljs-punctuation">}</span>
+        </code></pre>
       </div>
-  Example: POST resource containing geometry collection
-  <div class="example" id="example-10">
-        <div class="marker">
-    <a class="self-link" href="#example-10">Example<bdi> 10</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs json"><span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
-<span class="hljs-comment">// Content-Type: application/json</span>
-<span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"GeometryCollection"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"geometries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-      <span class="hljs-punctuation">{</span>
-        <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
-        <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
-      <span class="hljs-punctuation">}</span>
-    <span class="hljs-punctuation">]</span>
-  <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+      <div class="example">
+        POST resource containing geometry collection
+        <pre><code class="json hljs" aria-busy="false">
+          <span class="hljs-comment">// POST /collections/gebouwen/items   HTTP/1.1</span>
+          <span class="hljs-comment">// Content-Type: application/json</span>
+          <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"naam"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Paleis Soestdijk"</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"geometrie"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+              <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"GeometryCollection"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">"geometries"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-punctuation">{</span>
+                  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Point"</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">"coordinates"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-number">5.2795</span><span class="hljs-punctuation">,</span><span class="hljs-number">52.1933</span><span class="hljs-punctuation">]</span>
+                <span class="hljs-punctuation">}</span>
+              <span class="hljs-punctuation">]</span>
+            <span class="hljs-punctuation">}</span>
+          <span class="hljs-punctuation">}</span>
+        </code></pre>
       </div>
-
-  <div class="header-wrapper"><h4 class="rulelab" id="how-to-test-2">How to test</h4><a class="self-link" href="#/geo/embed-geojson-geometry-request" aria-label="Permalink for this Section"></a></div>
-  <ul>
-    <li>Create a new resource that includes geometry of GeoJSON <code>Geometry</code> object type using the HTTP POST method with request media type <code>application/json</code> in the <code>Content-Type</code> header.</li>
-    <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
-    <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
-  </li></ul>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      <ol>
+        <li>Create a new resource that includes geometry of GeoJSON <code>Geometry</code> object type using the HTTP POST method with request media type <code>application/json</code> in the <code>Content-Type</code> header.</li>
+        <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
+        <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
+      </li></ol>
+    </dd>
+  </dl>
 </div>
 
 </section><section id="result-response"><div class="header-wrapper"><h3 id="x2-3-result-response"><bdi class="secno">2.3 </bdi>Result (response)</h3><a class="self-link" href="#result-response" aria-label="Permalink for Section 2.3"></a></div>
 <p>In case a REST API shall comply to the OGC API Features specification, e.g. for usage in GIS applications, the following applies.</p>
 <div class="rule" id="/geo/geojson-response">
   <p class="rulelab"><b>/geo/geojson-response</b>: Support GeoJSON in geospatial API responsess</p>
-  <p>For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>]. </p>
-  Example: feature
-  <div class="example" id="example-11">
-        <div class="marker">
-    <a class="self-link" href="#example-11">Example<bdi> 11</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-title class_">Request</span>:
-  <span class="hljs-comment">// GET /collections/gebouwen/items/0308100000022041   HTTP 1.1</span>
-  <span class="hljs-comment">// Content-type: application/geo+json</span>
-
-
-
-  <span class="hljs-title class_">Response</span>:
-  {
-    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
-    <span class="hljs-string">"id"</span>: <span class="hljs-string">"0308100000022041"</span>,
-    <span class="hljs-string">"geometry"</span>:  {
-      <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
-      <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-    },
-    <span class="hljs-string">"properties"</span>: {
-      <span class="hljs-string">"naam"</span>: <span class="hljs-string">"Paleis Soestdijk"</span>,
-      ...
-    },
-    <span class="hljs-string">"links"</span>: [
-      {
-        <span class="hljs-string">"self"</span>: <span class="hljs-string">"/collections/gebouwen/items/0308100000022041"</span>
-      }
-    ]
-  }</code></pre>
-      </div><p></p>
-<p>  Example: feature collection
-  </p><div class="example" id="example-12">
-        <div class="marker">
-    <a class="self-link" href="#example-12">Example<bdi> 12</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-title class_">Request</span>:
-  <span class="hljs-comment">// GET /collections/gebouwen   HTTP 1.1</span>
-  <span class="hljs-comment">// Content-type: application/geo+json</span>
-
-
-
-
-  <span class="hljs-title class_">Response</span>:
-  {
-    <span class="hljs-string">"type"</span>: <span class="hljs-string">"FeatureCollection"</span>,
-    <span class="hljs-string">"features"</span>: [
-      {
-        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
-        <span class="hljs-string">"id"</span>: <span class="hljs-string">"0308100000022041"</span>,
-        <span class="hljs-string">"geometry"</span>:  {
-          <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
-          <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-        },
-        <span class="hljs-string">"properties"</span>: {
-          <span class="hljs-string">"naam"</span>: <span class="hljs-string">"Paleis Soestdijk"</span>,
-          ...
-        },
-        <span class="hljs-string">"links"</span>: [
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>].
+      <div class="example">
+        Feature
+        <pre><code class="json hljs" aria-busy="false">
+          // GET /collections/gebouwen/items/0308100000022041   HTTP 1.1
+          // Content-type: application/geo+json
           {
-            <span class="hljs-string">"self"</span>: <span class="hljs-string">"/collections/gebouwen/0308100000022041"</span>
+            "type": "Feature",
+            "id": "0308100000022041",
+            "geometry":  {
+              "type": "Point",
+              "coordinates": [5.2795,52.1933]
+            },
+            "properties": {
+              "naam": "Paleis Soestdijk",
+              ...
+            },
+            "links": [
+              {
+                "self": "/collections/gebouwen/items/0308100000022041"
+              }
+            ]
           }
-        ]
-      },
-      {
-      }
-    ],
-    <span class="hljs-string">"timeStamp"</span> : <span class="hljs-string">"2023-02-22T10:32:23Z"</span>,
-    <span class="hljs-string">"numberMatched"</span> : <span class="hljs-string">"0308100000022041"</span>,
-    <span class="hljs-string">"numberReturned"</span> : <span class="hljs-string">"1"</span>,
-    <span class="hljs-string">"links"</span>: [
-      {
-        <span class="hljs-string">"self"</span>: <span class="hljs-string">"/collections/gebouwen"</span>
-      },
-      {
-        <span class="hljs-string">"next"</span>: <span class="hljs-string">""</span>
-      }
-    ]
-  }</code></pre>
+        </code></pre>
       </div>
-  <p>
-  Note that:</p>
-<ul>
-<li><p>The resources' properties (e.g. <code>naam</code>) are passed in the properties object. Depending on the implemented filter capabilities the properties object may contain all or a selection of the resources' properties.</p>
-</li>
-<li><p>The OGC API Features specification provides the possibility to add an array of links to a feature and feature collection, which may contain a self link and in case of a feature collection may contain navigation links.</p>
-<p></p>
-<div class="header-wrapper"><h4 class="rulelab" id="how-to-test-3">How to test</h4><a class="self-link" href="#how-to-test-3" aria-label="Permalink for this Section"></a></div>
-<p>
-Test case 1:
-</p>
-<ul>
-  <li>Request a single resource that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
-  <li>Validate that the returned document is a GeoJSON Feature document.</li>
-</ul>
-<p>
-Test case 2:
-</p>
-<ul>
-  <li>Request a collection of resources that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
-  <li>Validate that the returned document is a GeoJSON FeatureCollection document.</li>
-</ul>
-<p>
-Test case 3:
-</p>
-<ul>
-  <li>Request a single resource that does not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-</ul>
-<p>
-Test case 4:
-</p>
-<ul>
-  <li>Request a collection of resources that do not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-</ul></li>
-</ul>
+      <div class="example">
+        Feature collection
+        <pre><code class="json hljs" aria-busy="false">
+          // GET /collections/gebouwen   HTTP 1.1
+          // Content-type: application/geo+json
+          {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "id": "0308100000022041",
+                "geometry":  {
+                  "type": "Point",
+                  "coordinates": [5.2795,52.1933]
+                },
+                "properties": {
+                  "naam": "Paleis Soestdijk",
+                  ...
+                },
+                "links": [
+                  {
+                    "self": "/collections/gebouwen/0308100000022041"
+                  }
+                ]
+              },
+              {
+              }
+            ],
+            "timeStamp" : "2023-02-22T10:32:23Z",
+            "numberMatched" : "0308100000022041",
+            "numberReturned" : "1",
+            "links": [
+              {
+                "self": "/collections/gebouwen"
+              },
+              {
+                "next": ""
+              }
+            ]
+          }
+        </code></pre>
+      </div>
+      <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span></div><div class="">
+        <li>The resources' properties (e.g. <code>naam</code>) are passed in the properties object. Depending on the implemented filter capabilities the properties object may contain all or a selection of the resources' properties.</li>
+        <li>The OGC API Features specification provides the possibility to add an array of links to a feature and feature collection, which may contain a self link and in case of a feature collection may contain navigation links</li>
+      </div></div>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      Test case 1:
+      <ol>
+        <li>Request a single resource that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
+        <li>Validate that the returned document is a GeoJSON Feature document.</li>
+      </ol>
+      Test case 2:
+      <ol>
+        <li>Request a collection of resources that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li>
+        <li>Validate that the returned document is a GeoJSON FeatureCollection document.</li>
+      </ol>
+      Test case 3:
+      <ol>
+        <li>Request a single resource that does not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+      </ol>
+      Test case 4:
+      <ol>
+        <li>Request a collection of resources that do not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+      </ol>
+    </dd>
+  </dl>
 </div>
 
 <p>In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If resources contain geometry, the geometry shall be returned as a GeoJSON <code>Geometry</code> object embedded in the resource. The media type <code>application/json</code>  must be supported. This may also apply to other media types <code>application/*+json</code>, however this depends on the media type specification. If the media type specification prescribes that resource information must be embedded in a JSON structure defined in the media type specification, then the media type should not be supported while it is impossible to comply to that specification with the method described below. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the response does not return a feature or feature collection.
@@ -1429,174 +1434,149 @@ In case a collection of resources is returned, the name of the array containing 
 <p><span name="api-35"></span></p>
 <div class="rule" id="/geo/embed-geojson-geometry-response">
   <p class="rulelab"><b>/geo/embed-geojson-geometry-response</b>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API responses</p>
-  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
-
-<p>  Example: resource containing geometry
-  </p><div class="example" id="example-13">
-        <div class="marker">
-    <a class="self-link" href="#example-13">Example<bdi> 13</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-title class_">Request</span>:
-  <span class="hljs-comment">// GET /gebouwen/0308100000022041   HTTP 1.1</span>
-  <span class="hljs-comment">// Content-type: application/hal+json</span>
-
-
-
-
-  <span class="hljs-title class_">Response</span>:
-  {
-    <span class="hljs-string">"identificatie"</span>: <span class="hljs-string">"0308100000022041"</span>,
-    <span class="hljs-string">"naam"</span>: <span class="hljs-string">"Paleis Soestdijk"</span>,
-    <span class="hljs-string">"geometrie"</span>:  {
-      <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
-      <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-    },
-    ...,
-    <span class="hljs-string">"_links"</span>: {
-      {
-        <span class="hljs-string">"self"</span>: <span class="hljs-string">"/gebouwen/0308100000022041"</span>
-      }
-    }
-  }</code></pre>
-      </div><p></p>
-<p> Example: resource containing geometry collection
-  </p><div class="example" id="example-14">
-        <div class="marker">
-    <a class="self-link" href="#example-14">Example<bdi> 14</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-title class_">Request</span>:
-  <span class="hljs-comment">// GET /gebouwen/0308100000022041   HTTP 1.1</span>
-  <span class="hljs-comment">// Content-type: application/hal+json</span>
-
-
-
-
-  <span class="hljs-title class_">Response</span>:
-  {
-    <span class="hljs-string">"identificatie"</span>: <span class="hljs-string">"0308100000022041"</span>,
-    <span class="hljs-string">"naam"</span>: <span class="hljs-string">"Paleis Soestdijk"</span>,
-    <span class="hljs-string">"geometrie"</span>: {
-      <span class="hljs-string">"type"</span>: <span class="hljs-string">"GeometryCollection"</span>,
-      <span class="hljs-string">"geometries"</span>: [
-        {
-          <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>
-          <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-        },
-        {
-          <span class="hljs-string">"type"</span>: <span class="hljs-string">"Polygon"</span>
-          <span class="hljs-string">"coordinates"</span> : [...]
-        }
-      ]
-    },
-    ...,
-    <span class="hljs-string">"_links"</span>: {
-      {
-        <span class="hljs-string">"self"</span>: <span class="hljs-string">"/gebouwen/0308100000022041"</span>
-      }
-    }
-  }</code></pre>
-      </div><p></p>
-<p>  Example: collection of resources containing geometry
-  </p><div class="example" id="example-15">
-        <div class="marker">
-    <a class="self-link" href="#example-15">Example<bdi> 15</bdi></a>
-  </div> <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-title class_">Request</span>:
-  <span class="hljs-comment">// GET /gebouwen   HTTP 1.1</span>
-  <span class="hljs-comment">// Content-type: application/hal+json</span>
-
-
-
-
-  <span class="hljs-title class_">Response</span>:
-  {
-    <span class="hljs-string">"gebouwen"</span>: [
-      {
-        <span class="hljs-string">"identificatie"</span>: <span class="hljs-string">"0308100000022041"</span>,
-        <span class="hljs-string">"naam"</span>: <span class="hljs-string">"Paleis Soestdijk"</span>,
-        <span class="hljs-string">"geometrie"</span>:  {
-          <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
-          <span class="hljs-string">"coordinates"</span>: [<span class="hljs-number">5.2795</span>,<span class="hljs-number">52.1933</span>]
-        }
-        ...
-        <span class="hljs-string">"_links"</span>: {
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.
+      <div class="example">
+        Resource containing geometry
+        <pre><code class="json hljs" aria-busy="false">
+          // GET /gebouwen/0308100000022041   HTTP 1.1
+          // Content-type: application/hal+json
           {
-            <span class="hljs-string">"self"</span>: <span class="hljs-string">"/gebouwen/0308100000022041"</span>
+            "identificatie": "0308100000022041",
+            "naam": "Paleis Soestdijk",
+            "geometrie":  {
+              "type": "Point",
+              "coordinates": [5.2795,52.1933]
+            },
+            ...,
+            "_links": {
+              {
+                "self": "/gebouwen/0308100000022041"
+              }
+            }
           }
-        }
-      }
-    ],
-    <span class="hljs-string">"_links"</span>: {
-      {
-        <span class="hljs-string">"self"</span>: <span class="hljs-string">"/gebouwen"</span>
-      },
-      {
-        <span class="hljs-string">"next"</span>: <span class="hljs-string">""</span>
-      }
-    }
-  }</code></pre>
+        </code></pre>
       </div>
-  <p>
-  Note that:</p>
-<ul>
-<li><p>The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.</p>
-<p></p>
-<div class="header-wrapper"><h4 class="rulelab" id="how-to-test-4">How to test</h4><a class="self-link" href="#how-to-test-4" aria-label="Permalink for this Section"></a></div>
-<p>
-Test case 1:
-</p>
-<ul>
-  <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-  <li>Validate that the returned document contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
-  <ul>
-    <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
-    <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
-  </ul></li>
-</ul>
-<p>
-Test case 2:
-</p>
-<ul>
-  <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-  <li>Validate that the returned document contains an array of resources and that each resource contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
-  <ul>
-    <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
-    <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
-  </ul></li>
-</ul>
-<p>
-Test case 3:
-</p>
-<ul>
-  <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-  <li>Validate that the returned document contains a property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
-  <ul>
-    <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
-    <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
-  </ul></li>
-</ul>
-<p>
-Test case 4:
-</p>
-<ul>
-  <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
-  <li>Validate that a response with status code 200 is returned.</li>
-  <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
-  <li>Validate that the returned document is a JSON document.</li>
-  <li>Validate that the returned document contains an array of resources and that each resource contains a  property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
-    <ul>
-      <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
-      <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
-    </ul>
-  </li>
-</ul></li>
-</ul>
+      <div class="example">
+        Resource containing geometry collection
+        <pre><code class="json hljs" aria-busy="false">
+          // GET /gebouwen/0308100000022041   HTTP 1.1
+          // Content-type: application/hal+json
+          {
+            "identificatie": "0308100000022041",
+            "naam": "Paleis Soestdijk",
+            "geometrie": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point"
+                  "coordinates": [5.2795,52.1933]
+                },
+                {
+                  "type": "Polygon"
+                  "coordinates" : [...]
+                }
+              ]
+            },
+            ...,
+            "_links": {
+              {
+                "self": "/gebouwen/0308100000022041"
+              }
+            }
+          }
+        </code></pre>
+      </div>
+      <div class="example">
+        Collection of resources containing geometry
+        <pre><code class="json hljs" aria-busy="false">
+          // GET /gebouwen   HTTP 1.1
+          // Content-type: application/hal+json
+          {
+            "gebouwen": [
+              {
+                "identificatie": "0308100000022041",
+                "naam": "Paleis Soestdijk",
+                "geometrie":  {
+                  "type": "Point",
+                  "coordinates": [5.2795,52.1933]
+                }
+                ...
+                "_links": {
+                  {
+                    "self": "/gebouwen/0308100000022041"
+                  }
+                }
+              }
+            ],
+            "_links": {
+              {
+                "self": "/gebouwen"
+              },
+              {
+                "next": ""
+              }
+            }
+          }
+        </code></pre>
+      </div>
+      <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span></div><p class="">The resource and resource collection may be [<cite><a class="bibref" data-link-type="biblio" href="#bib-hal" title="HAL - Hypertext Application Language">HAL</a></cite>] resources and therefore may contain a <code>_links</code> object. The <code>_links</code> object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.
+    </p></div></dd>
+    <dt>How to test</dt>
+    <dd>
+      Test case 1:
+      <ol>
+        <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+        <li>Validate that the returned document contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
+        <ul>
+          <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
+          <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
+        </ul></li>
+      </ol>
+      Test case 2:
+      <ol>
+        <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code> or <code>MultiPolygon</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+        <li>Validate that the returned document contains an array of resources and that each resource contains a property that complies to one of the GeoJSON <code>Geometry</code> objects mentioned above and contains:
+        <ul>
+          <li>a property <code>type</code> containing the name of one of the GeoJSON <code>Geometry</code> object types mentioned above, and</li>
+          <li>a property <code>coordinates</code> containing an array with the coordinates. Depending on the type of geometry object, the content of the array differs.</li>
+        </ul></li>
+      </ol>
+      Test case 3:
+      <ol>
+        <li>Request a single resource that contains geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+        <li>Validate that the returned document contains a property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
+        <ul>
+          <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
+          <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
+        </ul></li>
+      </ol>
+      Test case 4:
+      <ol>
+        <li>Request a collection of resources that contain geometry of GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code> and with response media type <code>application/json</code> in the <code>Accept</code> header.</li>
+        <li>Validate that a response with status code 200 is returned.</li>
+        <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li>
+        <li>Validate that the returned document is a JSON document.</li>
+        <li>Validate that the returned document contains an array of resources and that each resource contains a  property that complies to the GeoJSON <code>Geometry</code> object mentioned above and contains:
+          <ul>
+            <li>a property <code>type</code> containing the name of the GeoJSON <code>Geometry</code> object type: <code>GeometryCollection</code>, and</li>
+            <li>a property <code>geometries</code> containing an array of GeoJSON <code>Geometry</code> objects.</li>
+          </ul>
+        </li>
+      </ol>
+    </dd>
+  </dl>
 </div></section></section>
   <section id="coordinate-reference-system-crs"><div class="header-wrapper"><h2 id="x3-coordinate-reference-system-crs"><bdi class="secno">3. </bdi>Coordinate Reference System (CRS)</h2><a class="self-link" href="#coordinate-reference-system-crs" aria-label="Permalink for Section 3."></a></div>
 <p>A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.</p>
@@ -1604,7 +1584,7 @@ Test case 4:
 SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).</p>
 <p>CRSs may be grouped into ensemble CRSs, e.g. ETRS89 (EPSG:4258). The CRSs that are part of an ensemble CRS are called ensemble member CRSs or member CRSs that realize a ensemble CRS, e.g ETRF2000 (EPSG:9067) is a member of and realizes the ETRS89 (EPSG:4258) ensemble. When exchanging geometry an ensemble member CRS shall be used instead of an ensemble CRS when known and if accurate data is required. When transforming geometry from one CRS to another, use an ensemble member CRS (instead of an ensemble CRS) as input and output of coordinate transformation, when known and if accurate data is required.</p>
 <p>For a detailed description of CRSs see [<cite><a class="bibref" data-link-type="biblio" href="#bib-hr-crs" title="Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie">hr-crs</a></cite>].</p>
-<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="3"><span>Note</span></div><aside class="">In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.</aside></div>
+<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="3"><span>Note</span></div><aside class="">In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.</aside></div>
 
 <section id="crs-discovery"><div class="header-wrapper"><h3 id="x3-1-crs-discovery"><bdi class="secno">3.1 </bdi>CRS discovery</h3><a class="self-link" href="#crs-discovery" aria-label="Permalink for Section 3.1"></a></div>
 <p>A client shall be able to determine a list of CRSs supported by an API.</p>
@@ -1673,7 +1653,7 @@ SRIDs may refer to different standards, for example EPSG Geodetic Parameter Data
 
 </section><section id="crs-negotiation"><div class="header-wrapper"><h3 id="x3-2-crs-negotiation"><bdi class="secno">3.2 </bdi>CRS negotiation</h3><a class="self-link" href="#crs-negotiation" aria-label="Permalink for Section 3.2"></a></div>
 <p>The default CRS for GeoJSON and for OGC API Features is CRS84 (OGC:CRS84), this CRS uses the WGS 84 datum with an ellipsoidal coordinate system in the order longitude-latitude. This refers to an ensemble of global CRSs that can be applied world-wide. For accurate applications the use of the CRS84 ensemble is not suitable. For more information about coordinate reference systems, read the Geonovum guidelines on CRS [<cite><a class="bibref" data-link-type="biblio" href="#bib-hr-crs" title="Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie">hr-crs</a></cite>].</p>
-<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Note</span></div><aside class="">
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RDNAP"; when WGS 84 is mentioned, this should be taken to mean "CRS84 or CRS84h". Each variant has an identifier.
 </aside></div>
 
@@ -1986,11 +1966,11 @@ When referring to a coordinate reference system using its code in the rest of th
 <p>For a more extensive overview of CRSs see: <a href="https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel">https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel</a>.
 Note that the URI of each CRS contains a version number and that new versions may be released in future.
 Before using a URI verify if newer versions are available and use the latest version.</p>
-<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="4"><span>Note</span></div><aside class="">
 New ensemble member CRSs may be released in future (e.g. ITRF2020 has been released as a realization for ITRF). These new realizations shall be used instead of older realizations in case of ITRF. In case of ETRF however, National Mapping Agencies have agreed on using ETRF2000 instead of newer realisations (e.g. ETRF2014).
 </aside></div>
 
-<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>Note</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-9" aria-level="4"><span>Note</span></div><aside class="">
 Officially, WGS 84 longitude-latitude (OGC:CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84 (OGC:CRS84).
 
 <p>In addition, the Geonovum CRS guidelines [<cite><a class="bibref" data-link-type="biblio" href="#bib-hr-crs" title="Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie">hr-crs</a></cite>] describe <a href="https://docs.geostandaarden.nl/crs/crs/#wgs-84-gelijkstellen-aan-etrs89-nultransformatie">how ETRS89 can be treated as equal to CRS84 (OGC:CRS84)under certain circumstances</a>.</p>
@@ -2018,7 +1998,7 @@ Officially, WGS 84 longitude-latitude (OGC:CRS84) is the only CRS allowed in Geo
   <section class="appendix" id="deprecated-rules"><div class="header-wrapper"><h2 id="a-deprecated-rules"><bdi class="secno">A. </bdi>Deprecated rules</h2><a class="self-link" href="#deprecated-rules" aria-label="Permalink for Appendix A."></a></div>
 <p>This appendix contains some of the rules that were described in the <a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/#geospatial">first version</a> of the "Geospatial Extension", which was never officially adopted as a standard. Only those rules that are still relevant in some situations or do not have a good replacement in the current Geospatial model are retained here. They are shown here only as information.</p>
 <section id="post-endpoint-for-geospatial-queries"><div class="header-wrapper"><h3 id="a-1-post-endpoint-for-geospatial-queries"><bdi class="secno">A.1 </bdi>POST endpoint for geospatial queries</h3><a class="self-link" href="#post-endpoint-for-geospatial-queries" aria-label="Permalink for Appendix A.1"></a></div>
-<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Note</span></div><aside class="">Two rules related to using a POST endpoint for geospatial queries were deprecated because it is expected that a new API Design Rules module "Filtering" will address the issue of using POST for queries. Until then, the old rules may still be of use.
+<div class="note" role="note" id="issue-container-generatedID-10"><div role="heading" class="note-title marker" id="h-note-10" aria-level="4"><span>Note</span></div><aside class="">Two rules related to using a POST endpoint for geospatial queries were deprecated because it is expected that a new API Design Rules module "Filtering" will address the issue of using POST for queries. Until then, the old rules may still be of use.
 
 <p>What follows is the original description of the rules in the old Geospatial Extension.</p>
 </aside></div>
@@ -2054,7 +2034,7 @@ Officially, WGS 84 longitude-latitude (OGC:CRS84) is the only CRS allowed in Geo
 }</code></pre>
 
 </section><section id="old-crs-negotiation-method"><div class="header-wrapper"><h3 id="a-2-old-crs-negotiation-method"><bdi class="secno">A.2 </bdi>Old CRS negotiation method</h3><a class="self-link" href="#old-crs-negotiation-method" aria-label="Permalink for Appendix A.2"></a></div>
-<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="4"><span>Note</span></div><aside class="">An older method of specifying CRS in the headers of requests was part of the first version of the "Geospatial Extension" which was never officially adopted as a standard. APIs that already support this old header method can add support for the current parameter method (see <a href="#crs-negotiation">CRS negotiation</a>) while still supporting the header method for a certain period. Supporting both the new method (using parameters) and the old (using headers) is trivial.
+<div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="4"><span>Note</span></div><aside class="">An older method of specifying CRS in the headers of requests was part of the first version of the "Geospatial Extension" which was never officially adopted as a standard. APIs that already support this old header method can add support for the current parameter method (see <a href="#crs-negotiation">CRS negotiation</a>) while still supporting the header method for a certain period. Supporting both the new method (using parameters) and the old (using headers) is trivial.
 
 <p>If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.</p>
 <p>What follows is the original description of the rule in the old Geospatial Extension.</p>
