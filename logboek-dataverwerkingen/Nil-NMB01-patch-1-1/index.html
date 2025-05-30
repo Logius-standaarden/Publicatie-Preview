@@ -845,7 +845,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">01 mei 2025</time>
+      <time class="dt-published" datetime="2024-12-13">30 mei 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1219,7 +1219,7 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Het veld <code>span_id</code> is in implementaties voor logging.</p>
 <p>Het veld <code>status_code</code> is een enumeratie die de volgende waarden kan bevatten:</p>
 <ul>
-<li><code>0: STATUS_CODE_UNSET</code>: De standaardwaarde voor elke <code>status_code</code> is <code>Unset</code>. Dit betekent dat de dataverwerking is uitgevoerd zonder interne fout. Deze waarde wordt toegepast wanneer de dataverwerking technisch correct is afgerond, ook als er geen resultaat beschikbaar is of wanneer de invoer onvolledig was. <br></li>
+<li><code>0: STATUS_CODE_UNSET</code>: De standaardwaarde voor elke <code>status_code</code> is <code>Unset</code>. Dit betekent dat de dataverwerking is uitgevoerd zonder interne fout. Deze waarde wordt toegepast wanneer de dataverwerking technisch correct is afgerond, ook als er geen resultaat beschikbaar is of wanneer de invoer onvolledig was.</li>
 <li><code>1: STATUS_CODE_OK</code>: De waarde <code>Ok</code> kan optioneel gebruikt worden wanneer de ontwikkelaar expliciet wil markeren dat de dataverwerking succesvol is afgerond. Dit is afhankelijk van hoe de organisatie die de standaard implementeert een dataverwerking als succesvol definieert en of zij dit onderscheid expliciet willen loggen als andere waarde dan <code>Unset</code>.</li>
 <li><code>2: STATUS_CODE_ERROR</code>: De waarde <code>Error</code> wordt toegekend bij fouten die zijn ontstaan binnen het systeem dat de dataverwerking uitvoert, zoals interne fouten of mislukte uitvoeringen door technische oorzaken.</li>
 </ul>
