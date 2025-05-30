@@ -19,3 +19,10 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/Logius-standaarden/Automatisering/main/scripts/cleanup-branches.py
           python cleanup-branches.py
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Remove obsolete preview branches
+          commit_user_name: GitHub Actions
+          commit_user_email: api@logius.nl
+          commit_author: Standaardenbeheer <api@logius.nl>
