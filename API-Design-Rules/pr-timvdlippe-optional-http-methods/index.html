@@ -854,10 +854,10 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   ],
   "github": "https://github.com/Logius-standaarden/API-Design-Rules",
   "pubDomain": "api",
-  "publishDate": "2025-01-07",
-  "publishVersion": "2.0.1",
-  "previousPublishDate": "2024-03-07",
-  "previousPublishVersion": "2.0.0",
+  "publishDate": "2025-02-17",
+  "publishVersion": "2.0.2",
+  "previousPublishDate": "2025-01-07",
+  "previousPublishVersion": "2.0.1",
   "shortName": "adr",
   "specStatus": "WV",
   "specType": "ST",
@@ -874,14 +874,14 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  
- <body class="h-entry"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 13, 2025</time>
+      <time class="dt-published" datetime="2025-02-17">May 30, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -894,7 +894,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.1/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.1/</a></dd>
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
@@ -1177,12 +1177,14 @@ In addition to this (normative) document, separate modules are being written to 
    <dl>
       <dt>Statement</dt>
       <dd>
-         Resources <em class="rfc2119">MUST</em> be retrieved or manipulated using standard HTTP methods (GET/POST/PUT/PATCH/DELETE). Resources <em class="rfc2119">SHOULD</em> support HTTP methods that provide information without manipulating the underlying resources (HEAD/CONNECT/OPTIONS/TRACE).
+         Resources <em class="rfc2119">MUST</em> be retrieved or manipulated using standard HTTP methods (GET/POST/PUT/PATCH/DELETE). Resources <em class="rfc2119">MAY</em> support HTTP methods that provide information without manipulating the underlying resources (including but not limited to HEAD/CONNECT/OPTIONS/TRACE).
       </dd>
       <dt>Rationale</dt>
       <dd>
          The HTTP specifications offer a set of standard methods, where every method is designed with explicit semantics. Adhering to the HTTP specification is crucial, since HTTP clients and middleware applications rely on standardized characteristics.
-         <table>
+         <p>According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.
+         </p><p>If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.
+         </p><table>
             <thead>
                <tr>
                   <th scope="col">Method</th>
@@ -1239,47 +1241,46 @@ In addition to this (normative) document, separate modules are being written to 
             </tbody>
          </table>
          <div class="example">The following table shows some examples of the use of standard HTTP methods retrieving or manipulating resources:
-      <table>
-      <thead>
-      <tr>
-      <th scope="col">
-      Request</th>
-      <th scope="col">Description</th>
-      </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td><code>GET /rijksmonumenten</code></td>
-            <td>Retrieves a list of national monuments.</td>
-         </tr>
-         <tr>
-            <td><code>GET /rijksmonumenten/12</code></td>
-            <td>Retrieves an individual national monument.</td>
-         </tr>
-         <tr>
-            <td><code>POST /rijksmonumenten</code></td>
-            <td>Creates a new national monument.</td>
-         </tr>
-         <tr>
-            <td><code>PUT /rijksmonumenten/12</code></td>
-            <td>Modifies national monument #12 completely.</td>
-         </tr>
-         <tr>
-            <td><code>PATCH /rijksmonumenten/12</code></td>
-            <td>Modifies national monument #12 partially.</td>
-         </tr>
-         <tr>
-            <td><code>DELETE /rijksmonumenten/12</code></td>
-            <td>Deletes national monument #12.</td>
-         </tr>
-      </tbody>
-      </table>
-   </div>
-   <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><p class="">The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics.
-   The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.<br>
-  According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.<br>
-  In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.<br>
-  If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.</p></div>
+            <table>
+               <thead>
+                  <tr>
+                     <th scope="col">Request</th>
+                     <th scope="col">Description</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><code>GET /rijksmonumenten</code></td>
+                     <td>Retrieves a list of national monuments.</td>
+                  </tr>
+                  <tr>
+                     <td><code>GET /rijksmonumenten/12</code></td>
+                     <td>Retrieves an individual national monument.</td>
+                  </tr>
+                  <tr>
+                     <td><code>POST /rijksmonumenten</code></td>
+                     <td>Creates a new national monument.</td>
+                  </tr>
+                  <tr>
+                     <td><code>PUT /rijksmonumenten/12</code></td>
+                     <td>Modifies national monument #12 completely.</td>
+                  </tr>
+                  <tr>
+                     <td><code>PATCH /rijksmonumenten/12</code></td>
+                     <td>Modifies national monument #12 partially.</td>
+                  </tr>
+                  <tr>
+                     <td><code>DELETE /rijksmonumenten/12</code></td>
+                     <td>Deletes national monument #12.</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><div class="">
+            <p>The HTTP specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>] offers a set of standard methods, where every method is designed with explicit semantics.
+            The OpenAPI Specification 3.0 <a href="https://spec.openapis.org/oas/v3.0.1#path-item-object">Path Item Object</a> also supports these methods, except for <code>CONNECT</code>.
+            </p><p>In addition to the standard HTTP methods, a server may support other optional methods as well, e.g. <code>PROPFIND</code>, <code>COPY</code>, <code>PURGE</code>, <code>VIEW</code>, <code>LINK</code>, <code>UNLINK</code>, <code>LOCK</code>, <code>UNLOCK</code>, etc.
+         </p></div></div>
       </dd>
       <dt>How to test</dt>
       <dd>
@@ -1542,7 +1543,7 @@ In addition to this (normative) document, separate modules are being written to 
             <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Description as the openapi.json.</li>
             <li> Step 4: The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
          </ul>
-      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fpublish%2Dopenapi">linter configuration</a>.</dd>
+      </dd>
    </dl>
 </div>
 
@@ -1954,13 +1955,20 @@ This avoids XXE-attack vectors for example.</li>
   <span class="hljs-comment">#/core/doc-openapi</span>
   <span class="hljs-attr">openapi3:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.['openapi']"</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.['openapi']</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
       <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">"^3.0.*$"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"Use OpenAPI Specification for documentation"</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">'^3(.\d+){1,2}$'</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The OpenAPI Specification is versioned using a `major.minor.patch` versioning scheme. Use a version 3 OpenAPI Specification for documentation."</span>
+
+  <span class="hljs-attr">openapi-root-exists:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">openapi</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The root of the document must contain the `openapi` property"</span>
 
   <span class="hljs-comment">#/core/version-header</span>
   <span class="hljs-attr">missing-version-header:</span>
@@ -2008,36 +2016,6 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">notMatch:</span> <span class="hljs-string">".+ \\/$"</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"</span>
-
-  <span class="hljs-comment">#/core/publish-openapi</span>
-  <span class="hljs-attr">paths-open-api-json-resource-exists:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"/openapi.json"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a resource `/openapi.json` that returns the OpenAPI specification document"</span>
-
-  <span class="hljs-attr">paths-open-api-json-resource-has-get:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths[/openapi.json]"</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
-      <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">"get"</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a GET method (and no other methods) for the `/openapi.json` resource"</span>
-
-  <span class="hljs-attr">paths-open-api-json-specify-cors-header:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths[/openapi.json].get.responses[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))].headers</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"access-control-allow-origin"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"</span>
 
   <span class="hljs-comment">#/core/doc-openapi-contact</span>
   <span class="hljs-comment"># This rule exists in the base oas spectral linter set</span>
@@ -2130,7 +2108,15 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">type:</span> <span class="hljs-string">camel</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">Properties</span> <span class="hljs-string">must</span> <span class="hljs-string">be</span> <span class="hljs-string">lowerCamelCase.</span>
-</code></pre>
+
+  <span class="hljs-attr">semver:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Version <span class="hljs-template-variable">{{value}}</span> is not in semver format."</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.info.version</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$</span></code></pre>
     </details>
   </section>
  
