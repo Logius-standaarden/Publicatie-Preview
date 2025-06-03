@@ -836,14 +836,14 @@ To address this issue, the <code>properties</code> object must be converted to a
 <section id="requirements"><div class="header-wrapper"><h5 id="x3-2-2-1-requirements"><bdi class="secno">3.2.2.1 </bdi>requirements</h5><a class="self-link" href="#requirements" aria-label="Permalink for Section 3.2.2.1"></a></div>
 <ul>
 <li>Each Grant <strong><em class="rfc2119">MAY</em></strong> contain a <code>properties</code> object. </li>
-<li>The <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> have the key <code>properties</code>.</li>
+<li>The <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be added to Grants using the key <code>properties</code>.</li>
 <li>The <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be a valid JSON object that can contain any number of key-value pairs.</li>
-<li>When provided, the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the access token as specified in the [access token section].(#access_token)</li>
-<li>When provided, the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the Grant Hash as specified in the [Grant hash section].(#grant-hash)</li>
+<li>When provided, the fields of the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the access token as specified in the [access token section].(#access_token)</li>
+<li>When provided, the fields of the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the Grant Hash as specified in the [Grant hash section].(#grant-hash)</li>
 </ul>
 </section><section id="security-considerations"><div class="header-wrapper"><h5 id="x3-2-2-2-security-considerations"><bdi class="secno">3.2.2.2 </bdi>Security Considerations</h5><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 3.2.2.2"></a></div>
 <ul>
-<li>The size of the <code>properties</code> object should be limited to prevent excessive data transfer and storage. It is recommended to implement a size limit of 1MB for the serialized properties object.</li>
+<li>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to implement a size limit of 1 MB for the serialized properties object. This limit should prevent excessive data transfer and storage. </li>
 <li>Sensitive information like secrets or other private information should not be stored in the <code>properties</code> object, as it may be visible to Services and potentially logged or stored in various systems.</li>
 <li>Implementers should be aware that the content of the <code>properties</code> object is unsanitized. For example, they should consider sanitizing the data before showing it in user interfaces to prevent XSS injections or other security vulnerabilities.</li>
 </ul>
@@ -1092,7 +1092,7 @@ An object which can be used to provide additional data</li>
       <span class="hljs-attr">"x5t#S256"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"DpAyDYakmVAQ4oOJC3UYLRk/ONRCqMj00TeGJemMiLA"</span>
     <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">"prp"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"properties_field"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"properties_value"</span>
+      <span class="hljs-attr">"properties_key"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"properties_value"</span>
     <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">"add"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
@@ -1178,7 +1178,7 @@ The Manager is responsible for:</p>
 <p>The <code>cnf.x5t#S256</code> claim <strong><em class="rfc2119">MUST</em></strong> contain the certificate thumbprint of the X.509 certificate provided by the client requesting the token according to [section 3.1] of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].
 The <code>act</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Peer who is connecting to the Service on behalf of another Peer. I.e. the authorization to connect has been granted using a DelegatedServiceConnectionGrant.
 The <code>pdi</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Service which is being offered on behalf of another Peer. 
-The <code>prp</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when the Grant contains a <code>properties</code> object in the field <code>grant.data.properties</code>. </p>
+The <code>prp</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when the Grant contains the <code>properties</code> object in the <code>grant.data.properties</code> field. </p>
 <p>The Manager <strong><em class="rfc2119">MUST</em></strong> include the address of the Inway in the field <code>aud</code> of the access token.</p>
 </section><section id="services"><div class="header-wrapper"><h5 id="x3-4-1-7-services"><bdi class="secno">3.4.1.7 </bdi>Services</h5><a class="self-link" href="#services" aria-label="Permalink for Section 3.4.1.7"></a></div>
 <p>The name of a Service <strong><em class="rfc2119">MUST</em></strong> be unique within the scope of a Peer.</p>
