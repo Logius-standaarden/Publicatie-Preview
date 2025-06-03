@@ -37,9 +37,6 @@ dfn{cursor:pointer}
   
   
   
-<script>document.title = respecConfig.title</script>
-<title>OpenID NLGov</title>
-  
 <title>OpenID NLGov</title>
   
 <link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
@@ -527,44 +524,43 @@ about an End-User.">
   "previousVersion": "1.0",
   "previousPublishDate": "2021-02-18",
   "previousMaturity": "WV",
-  "title": "OpenID NLGov",
   "editors": [
     {
       "name": "Remco Schaar",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Frank van Es",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Pieter Hering",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Martin van der Plas",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Alexander Green",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     }
   ],
   "authors": [
     {
       "name": "Remco Schaar",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Frank van Es",
       "company": "Logius",
-      "companyURL": "https://github.com/Logius-standaarden"
+      "companyURL": "https://logius.nl"
     },
     {
       "name": "Joris Joosten",
@@ -595,7 +591,7 @@ about an End-User.">
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2023-09-18">April 02, 2025</time>
+      <time class="dt-published" datetime="2023-09-18">June 03, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -612,21 +608,21 @@ about an End-User.">
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Remco Schaar</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Remco Schaar</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Frank van Es</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Frank van Es</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Pieter Hering</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Pieter Hering</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Alexander Green</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Alexander Green</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd>
       
       <dt>Authors:</dt><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Remco Schaar</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Remco Schaar</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Frank van Es</span> (<a class="p-org org h-org" href="https://github.com/Logius-standaarden">Logius</a>)
+    <span class="p-name fn">Frank van Es</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Joris Joosten</span> (<a class="p-org org h-org" href="https://www.vzvz.nl/">VZVZ</a>)
   </dd><dd class="editor p-author h-card vcard">
@@ -1144,19 +1140,19 @@ This profile does not directly place any constraints on the placement of Claims 
     <a class="self-link" href="#example-4">Example<bdi> 4</bdi></a>
   </div>
 In an example transaction, the Client sends a request to the UserInfo Endpoint like the following:
-<pre aria-busy="false"><code class="hljs">GET /userinfo HTTP/1.1
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsIm
-  F1ZCI6WyJjMWJjODRlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjo
-  iaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGUuY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgx
-  LTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2OTg4MTJ9i.HMz_tzZ90_b
-  0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEqPD738
-  oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu
-  -6h2Oqw-ize4dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjU
-  WMyn2I4Nu2s-R20aCA-7T5dunr0iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePy
-  q3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKaHtSZ6PQICoA
-Accept: application/json
-Host: idp-p.example.com
-Connection: Keep-Alive</code></pre>
+<pre aria-busy="false"><code class="hljs yaml"><span class="hljs-string">GET</span> <span class="hljs-string">/userinfo</span> <span class="hljs-string">HTTP/1.1</span>
+<span class="hljs-attr">Authorization:</span> <span class="hljs-string">Bearer</span> <span class="hljs-string">eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsIm</span>
+  <span class="hljs-string">F1ZCI6WyJjMWJjODRlNC00N2VlLTRiNjQtYmI1Mi01Y2RhNmM4MWY3ODgiXSwiaXNzIjo</span>
+  <span class="hljs-string">iaHR0cHM6XC9cL2lkcC1wLmV4YW1wbGUuY29tXC8iLCJqdGkiOiJkM2Y3YjQ4Zi1iYzgx</span>
+  <span class="hljs-string">LTQwZWMtYTE0MC05NzRhZjc0YzRkZTMiLCJpYXQiOjE0MTg2OTg4MTJ9i.HMz_tzZ90_b</span>
+  <span class="hljs-string">0QZS-AXtQtvclZ7M4uDAs1WxCFxpgBfBanolW37X8h1ECrUJexbXMD6rrj_uuWEqPD738</span>
+  <span class="hljs-string">oWRo0rOnoKJAgbF1GhXPAYnN5pZRygWSD1a6RcmN85SxUig0H0e7drmdmRkPQgbl2wMhu</span>
+  <span class="hljs-string">-6h2Oqw-ize4dKmykN9UX_2drXrooSxpRZqFVYX8PkCvCCBuFy2O-HPRov_SwtJMk5qjU</span>
+  <span class="hljs-string">WMyn2I4Nu2s-R20aCA-7T5dunr0iWCkLQnVnaXMfA22RlRiU87nl21zappYb1_EHF9ePy</span>
+  <span class="hljs-string">q3Q353cDUY7vje8m2kKXYTgc_bUAYuW-W3SMSw5UlKaHtSZ6PQICoA</span>
+<span class="hljs-attr">Accept:</span> <span class="hljs-string">application/json</span>
+<span class="hljs-attr">Host:</span> <span class="hljs-string">idp-p.example.com</span>
+<span class="hljs-attr">Connection:</span> <span class="hljs-string">Keep-Alive</span></code></pre>
 And receives a document in response like the following:
 <pre aria-busy="false"><code class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK
 <span class="hljs-attribute">Date</span><span class="hljs-punctuation">: </span>Mon, 16 Dec 2019 03:00:12 GMT
@@ -1330,7 +1326,7 @@ The following example shows the <abbr title="JavaScript Object Notation, a light
     <span class="hljs-string">"A128CBC-HS256"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A128GCM"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"A256GCM"</span>
   <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"token_endpoint_auth_methods_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-    <span class="hljs-string">"private_key_jwt"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"private_key_jwt"</span>
   <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"userinfo_encryption_alg_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
     <span class="hljs-string">"RSA-OAEP"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"RSA-OAEP-256"</span>
@@ -1386,7 +1382,7 @@ The following example shows the <abbr title="JavaScript Object Notation, a light
   <span class="hljs-attr">"claims_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
     <span class="hljs-string">"sub"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"name"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"vot"</span><span class="hljs-punctuation">,</span> <span class="hljs-string">"acr"</span>
   <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-string">"acr_values_supported"</span> <span class="hljs-punctuation">[</span>
+  <span class="hljs-attr">"acr_values_supported"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
     <span class="hljs-string">"http://eidas.europa.eu/LoA/substantial"</span><span class="hljs-punctuation">,</span>
     <span class="hljs-string">"http://eidas.europa.eu/LoA/high"</span>
   <span class="hljs-punctuation">]</span>
@@ -1402,38 +1398,38 @@ The above on caching and changes <em class="rfc2119">MUST</em> be applied to the
 <aside class="example" id="example-6"><div class="marker">
     <a class="self-link" href="#example-6">Example<bdi> 6</bdi></a>
   </div>
-  <pre aria-busy="false"><code class="hljs">{
-  "keys": [
+  <pre aria-busy="false"><code class="hljs yaml">{
+  <span class="hljs-attr">"keys":</span> [
     {
-      "alg": "RS256",
-      "e": "AQAB",
-      "n": "o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9Fx
+      <span class="hljs-attr">"alg":</span> <span class="hljs-string">"RS256"</span>,
+      <span class="hljs-attr">"e":</span> <span class="hljs-string">"AQAB"</span>,
+      <span class="hljs-attr">"n":</span> <span class="hljs-string">"o80vbR0ZfMhjZWfqwPUGNkcIeUcweFyzB2S2T-hje83IOVct8gVg9Fx
             vHPK1ReEW3-p7-A8GNcLAuFP_8jPhiL6LyJC3F10aV9KPQFF-w6Eq6V
             tpEgYSfzvFegNiPtpMWd7C43EDwjQ-GrXMVCLrBYxZC-P1ShyxVBOze
             R_5MTC0JGiDTecr_2YT6o_3aE2SIJu4iNPgGh9MnyxdBo0Uf0TmrqEI
             abquXA1-V8iUihwfI8qjf3EujkYi7gXXelIo4_gipQYNjr4DBNl
             E0__RI0kDU-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEq
-            fCaPDNp00J6AbY6w",
-      "kty": "RSA",
-      "kid": "rsa-PKIo",
-      "x5c": [
-        "MIIE3jCCA8agAwIBAgICAwEwDQYJKoZIhvcNAQEFBQAwYzELMAkGA
+            fCaPDNp00J6AbY6w"</span>,
+      <span class="hljs-attr">"kty":</span> <span class="hljs-string">"RSA"</span>,
+      <span class="hljs-attr">"kid":</span> <span class="hljs-string">"rsa-PKIo"</span>,
+      <span class="hljs-attr">"x5c":</span> [
+        <span class="hljs-string">"MIIE3jCCA8agAwIBAgICAwEwDQYJKoZIhvcNAQEFBQAwYzELMAkGA
         1UEBhMCVVMxITAfBgNVBAoTGFRoZSBHbyBEYWRkeSBHcm91cCwgSW5
         jLjExMC8GA1UECxMoR2[...]TVSzGh6O1mawGhId/dQb8vxRMDsxux
         N89txJx9OjxUUAiKEngHUuHqDTMBqLdElrRhjZkAzVvb3du6/KFUJh
-        eqwNTrZEjYx8WnM25sgVjOuH0aBsXBTWVU+4=",
-        "MIIE+zCCBGSgAwIBAgICAQ0wDQYJKoZIhvcNAQEFBQAwgbsxJDAiB
+        eqwNTrZEjYx8WnM25sgVjOuH0aBsXBTWVU+4="</span>,
+        <span class="hljs-string">"MIIE+zCCBGSgAwIBAgICAQ0wDQYJKoZIhvcNAQEFBQAwgbsxJDAiB
         gNVBAcTG1ZhbGlDZXJ0IFZhbGlkYXRpb24gTmV0d29yazEXMBUGA1U
         EChMOVmFsaUNlcnQsIE[...]luYAzBgNVBAsTLFZhbGlDZXJ0IENsY
         XNzIDIgUG9saWN5IFZhbGlkYXRpb24gQXV0aG9yaXR5MSEwHwYDVQQ
-        DExhodHRwOjZXRn453HWkrugp++85j09VZw==",
-        "MIIC5zCCAlACAQEwDQYJKoZIhvcNAQEFBQAwgbsxJDAiBgNVBAcTG
+        DExhodHRwOjZXRn453HWkrugp++85j09VZw=="</span>,
+        <span class="hljs-string">"MIIC5zCCAlACAQEwDQYJKoZIhvcNAQEFBQAwgbsxJDAiBgNVBAcTG
         1ZhbGlDZXJ0IFZhbGlkYXRpb24gTmV0d29yazEXMBUGA1UEChMOVmF
         saUNlcnQsIEluYy4xNT[...]AzBgNVBAsTLFZhbGlDZXJ0IENsYXNz
         IDIgUG9saWN5IFZhbGlkYXRpb24gQXV0aMtsq2azSiGM5bUMMj4Qss
-        xsodyamEwCW/POuZ6lcg5Ktz885hZo+L7tdEy8W9ViH0Pd"
+        xsodyamEwCW/POuZ6lcg5Ktz885hZo+L7tdEy8W9ViH0Pd"</span>
       ],
-      "use": "sig",
+      <span class="hljs-attr">"use":</span> <span class="hljs-string">"sig"</span>,
     }
   ]
 }</code></pre>
@@ -1729,7 +1725,7 @@ The OpenID Foundation is currently drafting a specification for explicit support
     <dl class="bibliography"><dt id="bib-cors">[CORS]</dt><dd>
       <a href="https://www.w3.org/TR/cors/"><cite>Cross-Origin Resource Sharing</cite></a>. Anne van Kesteren.  W3C. 2 June 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/cors/">https://www.w3.org/TR/cors/</a>
     </dd><dt id="bib-csp">[CSP]</dt><dd>
-      <a href="https://www.w3.org/TR/CSP3/"><cite>Content Security Policy Level 3</cite></a>. Mike West; Antonio Sartori.  W3C. 24 March 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/CSP3/">https://www.w3.org/TR/CSP3/</a>
+      <a href="https://www.w3.org/TR/CSP3/"><cite>Content Security Policy Level 3</cite></a>. Mike West; Antonio Sartori.  W3C. 2 June 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/CSP3/">https://www.w3.org/TR/CSP3/</a>
     </dd><dt id="bib-oauth2.nlgov">[OAuth2.NLGov]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/"><cite>NL GOV Assurance profile for OAuth 2.0</cite></a>. F. Terpstra; J. van Gelder.  Logius. july 2020. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">https://gitdocumentatie.logius.nl/publicatie/api/oauth/</a>
     </dd><dt id="bib-openid.core">[OpenID.Core]</dt><dd>
