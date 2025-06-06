@@ -1980,7 +1980,7 @@ This avoids XXE-attack vectors for example.</li>
 <span class="hljs-attr">extends:</span> <span class="hljs-string">spectral:oas</span>
 
 <span class="hljs-attr">rules:</span>
-  <span class="hljs-attr">nlgov:oas3-api-servers:</span> <span class="hljs-string">error</span>
+  <span class="hljs-attr">oas3-api-servers:</span> <span class="hljs-string">error</span>
 
   <span class="hljs-comment">#/core/doc-openapi</span>
   <span class="hljs-attr">nlgov:openapi3:</span>
@@ -2020,7 +2020,7 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))]</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">headers</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+    <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/version-header: Return the full version number in a response header: https://logius-standaarden.github.io/API-Design-Rules/#/core/version-header"</span>
 
   <span class="hljs-comment">#/core/uri-version</span>
@@ -2049,7 +2049,7 @@ This avoids XXE-attack vectors for example.</li>
 
   <span class="hljs-comment">#/core/doc-openapi-contact</span>
   <span class="hljs-comment"># This rule exists in the base oas spectral linter set</span>
-  <span class="hljs-attr">nlgov:info-contact:</span> <span class="hljs-string">error</span>
+  <span class="hljs-attr">info-contact:</span> <span class="hljs-string">error</span>
 
   <span class="hljs-attr">nlgov:info-contact-fields-exist:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
