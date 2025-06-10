@@ -25,6 +25,7 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/Logius-standaarden/Automatisering/main/scripts/cleanup-branches.py
           python cleanup-branches.py
+          rm cleanup-branches.py
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
