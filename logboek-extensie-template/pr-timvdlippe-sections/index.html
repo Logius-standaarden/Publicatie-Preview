@@ -423,19 +423,19 @@ In het onderwijs kunnen er juist andere gegevens worden gelogd, zoals toetsresul
 <p>In deze voorbeeldcase wordt uitgegaan van een school die informatie wil ophalen over de status van een student binnen een hogeschool en de status van zijn examenrecht in één API-call. Dit is nodig om te zien of de student nog is ingeschreven bij de school en of hij het examen mag afleggen.</p>
 <p>Het systeem roept hiervoor een bepaalde API-call aan, namelijk <code>https://www.schoolapi.nl/student?id=123&amp;status_exam</code>.</p>
 <p>Die krijgt vervolgens het volgende response terug:</p>
-<pre><code aria-busy="false" class="hljs yaml">  <span class="hljs-attr">id:</span> <span class="hljs-string">student115839</span>
-  <span class="hljs-attr">status:</span> <span class="hljs-string">ingeschreven</span>
-  <span class="hljs-attr">id:</span> <span class="hljs-string">examenNederlands</span>
-  <span class="hljs-attr">status:</span> <span class="hljs-string">gemachtigd</span>
+<pre><code class="yaml hljs" aria-busy="false"><span class="hljs-attr">id:</span> <span class="hljs-string">student115839</span>
+<span class="hljs-attr">status:</span> <span class="hljs-string">ingeschreven</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">examenNederlands</span>
+<span class="hljs-attr">status:</span> <span class="hljs-string">gemachtigd</span>
 </code></pre>
 <p>De velden <code>id</code> en <code>status</code> komen twee keer voor, maar het systeem kan niet herkennen welke van deze velden bij de student horen en welke bij het examen.
 Hierdoor kan het systeem ten onrechte verkeerde data terugkoppelen, omdat er gebruik gemaakt wordt van dezelfde namespaces voor twee verschillende datavelden.</p>
 <p>Maar op het moment dat er wel gebruik gemaakt wordt van unieke namespaces zoals <code>student</code> en <code>exam</code> en duidelijk onderscheid maakt, kan het systeem de velden wel duidelijk herkennen.</p>
 <p>Hiermee kan je gebruik maken van twee extensies tegelijkertijd en krijg je het volgende response terug:</p>
-<pre><code aria-busy="false" class="hljs yaml">  <span class="hljs-attr">dpl.student.id:</span> <span class="hljs-string">student115839</span>
-  <span class="hljs-attr">dpl.student.status:</span> <span class="hljs-string">ingeschreven</span>
-  <span class="hljs-attr">dpl.exam.id:</span> <span class="hljs-string">examenNederlands</span>
-  <span class="hljs-attr">dpl.exam.status:</span> <span class="hljs-string">gemachtigd</span>
+<pre><code class="yaml hljs" aria-busy="false"><span class="hljs-attr">dpl.student.id:</span> <span class="hljs-string">student115839</span>
+<span class="hljs-attr">dpl.student.status:</span> <span class="hljs-string">ingeschreven</span>
+<span class="hljs-attr">dpl.exam.id:</span> <span class="hljs-string">examenNederlands</span>
+<span class="hljs-attr">dpl.exam.status:</span> <span class="hljs-string">gemachtigd</span>
 </code></pre>
 <p>Dit is enkel een voorbeeld van als er gebruik wordt gemaakt van twee extensies, maar op het moment dat er meer dan twee extensies gebruikt worden, kan het overzicht van de response zo lang worden dat het onoverzichtelijk voor de gebruiker wordt.</p>
 </section><section id="namespaces-key"><div class="header-wrapper"><h5 id="x2-2-2-2-namespaces-key"><bdi class="secno">2.2.2.2 </bdi>Namespaces Key</h5><a class="self-link" href="#namespaces-key" aria-label="Permalink for Section 2.2.2.2"></a></div>
