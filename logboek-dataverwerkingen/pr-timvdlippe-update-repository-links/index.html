@@ -1,0 +1,1875 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 35.3.0">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+<meta name="color-scheme" content="light dark">
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
+  
+<title>Logboek dataverwerkingen</title>
+  
+  
+  
+  
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px;background:0 0}
+</style>
+<style>
+ul.index{columns:30ch;column-gap:1.5em}
+ul.index li{list-style:inherit}
+ul.index li span{color:inherit;cursor:pointer;white-space:normal}
+#index-defined-here ul.index li{font-size:.9rem}
+ul.index code{color:inherit}
+#index-defined-here .print-only{display:none}
+@media print{
+#index-defined-here .print-only{display:initial}
+}
+</style>
+<meta name="description" content="De overheid wil voor burgers en bedrijven zo transparant mogelijk zijn in de omgang met hun data. Daarom is het bij de informatieverwerking in datasets belangrijk om voor elke mutatie of raadpleging vast te leggen wie deze actie wanneer uitvoert, en waarom. Voor een optimale samenwerking over organisaties en bronnen heen is voor deze logging een algemene standaard nodig.">
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "Logius",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
+    }
+  ],
+  "latestVersion": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion",
+    "/"
+  ],
+  "prevVersion": [],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc-by",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "ADR": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR-ext": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
+    },
+    "AVG": {
+      "date": "27 april 2016",
+      "href": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679",
+      "publisher": "Verordening (EU) 2016/679 van het Europees Parlement",
+      "title": "Algemene Verordening Gegevensbescherming",
+      "id": "avg"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer",
+        "R. Holz",
+        "P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "DK-beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "NLGOV-CloudEvents": {
+      "authors": [
+        "Werkgroep Berichtenstandaard (Project Notificatieservices)"
+      ],
+      "href": "https://logius-standaarden.github.io/NL-GOV-profile-for-CloudEvents/",
+      "publisher": "Logius",
+      "title": "NL GOV profile for CloudEvents"
+    },
+    "DK-CV": {
+      "href": "https://gitlab.com/logius/digikoppeling-compliance",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "DK-Portaal": {
+      "href": "https://oinregister.logius.nl/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Portaal"
+    },
+    "DK-WUS-voorbeeld": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Set voorbeeldberichten (zip)"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "DK": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius | Digikoppeling"
+    },
+    "DK-Doc": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling documentatie"
+    },
+    "DK-Beheermodel": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beheer/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beheermodel"
+    },
+    "DK-BPebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2"
+    },
+    "DK-BPGB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten"
+    },
+    "DK-BPWUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS"
+    },
+    "DK-Beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "DK-gbachtcert": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-ebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-GB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/gb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten"
+    },
+    "DK-WUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/wus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard WUS"
+    },
+    "DK-RESTAPI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard REST-API"
+    },
+    "DK-Architectuur": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "DK-IDAuth": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/idauth/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "DK-WI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/",
+      "publisher": "Logius",
+      "title": "Wat is Digikoppeling?"
+    },
+    "BOMOSFundament": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, het fundament"
+    },
+    "BOMOSVerdieping": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, de verdieping"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "folmer2011": {
+      "href": "https://research.utwente.nl/en/publications/management-and-development-model-for-open-standards-bomos-version",
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://research.utwente.nl/en/publications/quality-of-semantic-standards",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
+    "DK-Gebruiksvoorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "ADR-GEO": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design Rules Module: Geospatial"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden"
+    },
+    "PKIO-PvE": {
+      "href": "https://por.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Certificate Policy/Programme of Requirements PKIoverheid"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/domeinen/toegang/aansluiten-als-trust-service-provider",
+      "publisher": "Logius",
+      "title": "Aansluiten als Trust Service Provider"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/domeinen/toegang/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIO-Cert": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Overzicht PKIoverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "ADR-TS": {
+      "authors": [
+        ""
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/",
+      "publisher": "Kennisplatform API's",
+      "title": "API Design Rules Module: Transport Security"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "DK-Voorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets",
+      "title": "Technical ADR Validation rule testset 0.5.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "November 2023"
+    },
+    "JRC117836": {
+      "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
+      "title": "The Relationship Between Open Source Software and Standard Setting",
+      "authors": [
+        "Knut Blind",
+        "Mirko Böhm"
+      ],
+      "editors": [
+        "Nikolaus Thumm"
+      ],
+      "publisher": "Joint Research Center",
+      "id": "JRC117836",
+      "date": "2019"
+    },
+    "Krechmer2002": {
+      "href": "https://www.isology.com/pdf/cathedrals.pdf",
+      "title": "Cathedrals, Libraries and Bazaars",
+      "authors": [
+        "Ken Krechmer"
+      ],
+      "publisher": "Association of Computing Machinery (ACM)",
+      "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0-03.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "ietf-oauth-v2-1-10-refresh-token-grant": {
+      "authors": [
+        "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
+      ],
+      "date": "January 9, 2024",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant",
+      "publisher": "IETF",
+      "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile"
+    }
+  },
+  "maxTocLevel": 3,
+  "specStatus": "WV",
+  "specType": "ST",
+  "pubDomain": "logboek",
+  "shortName": "dataverwerkingen",
+  "publishDate": "2024-12-13",
+  "publishVersion": "0.8.0",
+  "edDraftURI": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+  "editors": [
+    {
+      "name": "Jeroen Mulder",
+      "company": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "companyURL": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties"
+    },
+    {
+      "name": "Pieter Teekens",
+      "company": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "companyURL": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties"
+    },
+    {
+      "name": "Nil Barua",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    },
+    {
+      "name": "Martin van der Plas",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    },
+    {
+      "name": "Tim van der Lippe",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Eelco Hotting",
+      "company": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "companyURL": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties"
+    },
+    {
+      "name": "Vedran Bilanovic",
+      "company": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "companyURL": "https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/logboek-dataverwerkingen",
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "logboek-dataverwerkingen.pdf"
+    }
+  ]
+}</script>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
+<body class="h-entry"><div class="head">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Logboek dataverwerkingen</h1>
+    
+    <h2>
+      Logius Standaard<br>
+      Werkversie
+      <time class="dt-published" datetime="2024-12-13">17 juni 2025</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Jeroen Mulder</span> (<a class="p-org org h-org" href="https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Pieter Teekens</span> (<a class="p-org org h-org" href="https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Nil Barua</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Tim van der Lippe</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd>
+      
+      <dt>Auteurs:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Eelco Hotting</span> (<a class="p-org org h-org" href="https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Vedran Bilanovic</span> (<a class="p-org org h-org" href="https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen/">GitHub Logius-standaarden/logboek-dataverwerkingen</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p>
+          Dit document is ook beschikbaar in dit niet-normatieve formaat:
+          <a rel="alternate" href="logboek-dataverwerkingen.pdf">pdf</a>
+        </p>
+    <p class="copyright">
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Context bij de standaard</h2>
+<p>De overheid wil voor burgers en bedrijven zo transparant mogelijk zijn in de omgang met hun data. Daarom is het bij de informatieverwerking in datasets belangrijk om voor elke mutatie of raadpleging vast te leggen wie deze actie wanneer uitvoert, en waarom. Voor een optimale samenwerking over organisaties en bronnen heen is voor deze logging een algemene standaard nodig.</p>
+<p>Transparantie en verantwoording naar burgers is één van de drijfveren voor ontwikkeling van deze logging standaard maar geen onderdeel van de standaard. De standaard richt zich op vastlegging van de logging en deze eenduidige vastlegging maakt het mogelijk om, indien daar later behoefte aan is, inzage mogelijk te maken.</p>
+<p>Het project Logboek Dataverwerkingen maakt deel uit van het <a href="https://www.digitaleoverheid.nl/data-bij-de-bron/">actieplan Data bij de Bron</a> en onderzoekt met <a href="https://digilab.overheid.nl/">Digilab</a> of we op basis van de tot nu toe opgedane inzichten een overheidsbrede standaard kunnen vaststellen.</p>
+<section id="verwijzingen"><div class="header-wrapper"><h3 id="verwijzingen-0">Verwijzingen</h3><a class="self-link" href="#verwijzingen" aria-label="Permalink for this Section"></a></div>
+<p>De Logboek Dataverwerkingen (LDV) standaard bestaat uit de volgende vier documenten:</p>
+<table>
+<thead>
+<tr>
+<th>Beschrijving van het document</th>
+<th>Gepubliceerde versie</th>
+<th>Werk versie</th>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. De LDV Normatieve Standaard</td>
+<td>-</td>
+<td><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">Logboek dataverwerkingen (werkversie)</a></td>
+<td><a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen">logboek-dataverwerkingen</a></td>
+</tr>
+<tr>
+<td>2. De Algemene Inleiding</td>
+<td>-</td>
+<td><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/">De Algemene Inleiding (werkversie)</a></td>
+<td><a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen-inleiding">logboek-dataverwerkingen-inleiding</a></td>
+</tr>
+<tr>
+<td>3. Het Juridische Beleidskader</td>
+<td>-</td>
+<td><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">Juridisch Beleidskader (werkversie)</a></td>
+<td><a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen-juridisch-beleidskader/">logboek-dataverwerkingen-juridisch-beleidskader</a></td>
+</tr>
+<tr>
+<td>4. LDV Extensie Guideline</td>
+<td>-</td>
+<td><a href="https://logius-standaarden.github.io/logboek-extensie-template/">Guideline voor het schrijven van een extensie voor LDV (werkversie)</a></td>
+<td><a href="https://github.com/Logius-standaarden/logboek-extensie-template">logboek-extensie-template</a></td>
+</tr>
+</tbody></table>
+</section></section>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Context bij de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verwijzingen">Verwijzingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#feedback"><bdi class="secno">2. </bdi>Feedback en Issues</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">3. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doelen-van-de-standaard"><bdi class="secno">3.1 </bdi>Doelen van de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-van-de-standaard"><bdi class="secno">3.1.1 </bdi>Werkingsgebied van de standaard</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">3.1.2 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terminologie"><bdi class="secno">3.2 </bdi>Terminologie</a></li><li class="tocline"><a class="tocxref" href="#algemene-werking-van-de-standaard"><bdi class="secno">3.3 </bdi>Algemene werking van de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensies"><bdi class="secno">3.3.1 </bdi>Extensies</a></li><li class="tocline"><a class="tocxref" href="#profielen"><bdi class="secno">3.3.2 </bdi>Profielen</a></li><li class="tocline"><a class="tocxref" href="#use-case"><bdi class="secno">3.3.3 </bdi>Use case</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">4. </bdi>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">4.1 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#componenten"><bdi class="secno">4.2 </bdi>Componenten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#applicatie"><bdi class="secno">4.2.1 </bdi>Applicatie</a></li><li class="tocline"><a class="tocxref" href="#logboek"><bdi class="secno">4.2.2 </bdi>Logboek</a></li><li class="tocline"><a class="tocxref" href="#register"><bdi class="secno">4.2.3 </bdi>Register</a></li></ol></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">4.3 </bdi>Scope</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vastlegging-door-verantwoordelijke"><bdi class="secno">4.3.1 </bdi>Vastlegging door Verantwoordelijke</a></li><li class="tocline"><a class="tocxref" href="#geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><bdi class="secno">4.3.2 </bdi>Geen inhoudelijke uitwisseling tussen Verantwoordelijken</a></li><li class="tocline"><a class="tocxref" href="#geen-specificatie-voor-het-beheren-van-logboeken"><bdi class="secno">4.3.3 </bdi>Geen specificatie voor het beheren van Logboeken</a></li><li class="tocline"><a class="tocxref" href="#geen-data-over-gebruikers-in-logregels"><bdi class="secno">4.3.4 </bdi>Geen data over gebruikers in Logregels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#flows"><bdi class="secno">4.4 </bdi>Flows</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wegschrijven-van-een-logregel-na-een-dataverwerking"><bdi class="secno">4.4.1 </bdi>Wegschrijven van een logregel na een Dataverwerking</a></li><li class="tocline"><a class="tocxref" href="#tonen-van-informatie-over-een-dataverwerking"><bdi class="secno">4.4.2 </bdi>Tonen van informatie over een Dataverwerking</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#specificaties"><bdi class="secno">5. </bdi>Specificaties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocollen"><bdi class="secno">5.1 </bdi>Protocollen</a></li><li class="tocline"><a class="tocxref" href="#component-logboek"><bdi class="secno">5.2 </bdi>Component: Logboek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag"><bdi class="secno">5.2.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface"><bdi class="secno">5.2.2 </bdi>Interface</a></li></ol></li><li class="tocline"><a class="tocxref" href="#component-applicatie"><bdi class="secno">5.3 </bdi>Component: Applicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-0"><bdi class="secno">5.3.1 </bdi>Gedrag</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#component-register"><bdi class="secno">5.4 </bdi>Component: Register</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-1"><bdi class="secno">5.4.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface-0"><bdi class="secno">5.4.2 </bdi>Interface</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#volwassenheidsniveaus"><bdi class="secno">6. </bdi>Volwassenheidsniveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities-van-niveaus"><bdi class="secno">6.1 </bdi>Definities van niveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#niveau-1-registerverwijzing"><bdi class="secno">6.1.1 </bdi>Niveau 1: registerverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-2-kolomverwijzing"><bdi class="secno">6.1.2 </bdi>Niveau 2: kolomverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-3-concrete-data"><bdi class="secno">6.1.3 </bdi>Niveau 3: concrete data</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implicaties-van-niveaus"><bdi class="secno">6.2 </bdi>Implicaties van niveaus</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+  <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformiteit"><bdi class="secno">1. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p><p>
+        De trefwoorden <em class="rfc2119">AANBEVOLEN</em>, <em class="rfc2119">MAG</em>, <em class="rfc2119">MOET</em> en <em class="rfc2119">MOETEN</em> in dit
+        document moeten worden geïnterpreteerd als in
+        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        als, en alleen als deze in hoofdletters zijn weergegeven, zoals hier
+        getoond.
+      </p></section>
+  <section id="feedback" class="informative">
+    <div class="header-wrapper"><h2 id="x2-feedback-en-issues"><bdi class="secno">2. </bdi>Feedback en Issues</h2><a class="self-link" href="#feedback" aria-label="Permalink for Section 2."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+    <p>
+      We moedigen gebruikers aan om meldingen of suggesties aan te maken via
+      <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen/issues">GitHub</a>. Mocht dit niet mogelijk zijn, dan kunt u ook een e-mail sturen naar 
+      <a href="mailto:api@logius.nl">api@logius.nl</a>.
+    </p>
+  </section>
+  <section id="introductie">
+    <div class="header-wrapper"><h2 id="x3-introductie"><bdi class="secno">3. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 3."></a></div>
+    <section id="doelen-van-de-standaard"><div class="header-wrapper"><h3 id="x3-1-doelen-van-de-standaard"><bdi class="secno">3.1 </bdi>Doelen van de standaard</h3><a class="self-link" href="#doelen-van-de-standaard" aria-label="Permalink for Section 3.1"></a></div>
+<p>De standaard Logboek Dataverwerkingen beschrijft een manier om technisch interoperabele functionaliteit voor het
+loggen van dataverwerkingen te implementeren, door voor de volgende functionaliteit de interface en het gedrag voor te schrijven:</p>
+<ul>
+<li>het vastleggen van logs van dataverwerkingen</li>
+<li>het aan elkaar relateren van logs van dataverwerkingen</li>
+<li>het aan elkaar relateren van dataverwerkingen over de grenzen van systemen</li>
+</ul>
+<p>Door Dataverwerkingen te loggen volgens de standaard kunnen organisaties het datagebruik verantwoorden.</p>
+<section id="werkingsgebied-van-de-standaard"><div class="header-wrapper"><h4 id="x3-1-1-werkingsgebied-van-de-standaard"><bdi class="secno">3.1.1 </bdi>Werkingsgebied van de standaard</h4><a class="self-link" href="#werkingsgebied-van-de-standaard" aria-label="Permalink for Section 3.1.1"></a></div>
+<p>Functioneel toepassingsgebied: De standaard Logboek Dataverwerkingen kan worden toegepast als data wordt verwerkt in geautomatiseerde systemen. Uitgangspunt is de verantwoordingsplicht van de overheid over de uitvoering van haar taken en de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">wetten en kaders</a> die daarbij horen.</p>
+<p>Organisatorisch werkingsgebied: Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen) en instellingen uit de (semi-) publieke sector.</p>
+</section><section id="doelgroep"><div class="header-wrapper"><h4 id="x3-1-2-doelgroep"><bdi class="secno">3.1.2 </bdi>Doelgroep</h4><a class="self-link" href="#doelgroep" aria-label="Permalink for Section 3.1.2"></a></div>
+<p>De standaard heeft als doelgroep iedereen die zich bezighoudt met het implementeren van logging rond dataverwerkingen en beschrijft alleen wat relevant is voor de implementatie. Alle achterliggende overwegingen zijn te vinden in de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/">Algemene inleiding</a> en het <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">Juridisch Beleidskader</a>.</p>
+</section></section>
+    <section id="terminologie"><div class="header-wrapper"><h3 id="x3-2-terminologie"><bdi class="secno">3.2 </bdi>Terminologie</h3><a class="self-link" href="#terminologie" aria-label="Permalink for Section 3.2"></a></div>
+<p>De volgende lijst beschrijft terminologie in de betekenis zoals deze wordt gebruikt in dit document.</p>
+<p><dfn data-lt="Acties|Actie" id="dfn-acties" tabindex="0" aria-haspopup="dialog">Actie</dfn></p>
+<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-1"><code>Dataverwerking</code></a> bestaat uit één of meerdere kleinere discrete stappen. Een Actie is één discrete stap binnen een Dataverwerking.</p>
+<p><dfn data-lt="Applicaties|Applicatie" id="dfn-applicaties" tabindex="0" aria-haspopup="dialog">Applicatie</dfn></p>
+<p>Iedere softwaretoepassing waarmee <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-2"><code>Dataverwerkingen</code></a> worden uitgevoerd.</p>
+<p><dfn data-lt="Betrokkenen|Betrokkene" id="dfn-betrokkenen" tabindex="0" aria-haspopup="dialog">Betrokkene</dfn></p>
+<p>Als gegevens van rechtssubjecten door de overheid worden verwerkt, worden subjecten van wie de organisatie gegevens verwerkt de 'Betrokkene' genoemd. Betrokkenen in het kader van deze standaard kunnen zowel natuurlijke personen als rechtspersonen (bedrijven) zijn die met de verwerkte gegevens geïdentificeerd kunnen worden. Als identificeerbaar wordt beschouwd als een (rechts)persoon die direct of indirect kan worden geïdentificeerd, met name aan de hand van een identificerend gegeven zoals een (bedrijfs)naam, een identificatienummer, locatiedata of van een of meer elementen die kenmerkend zijn voor de fysieke, fysiologische, genetische, psychische, economische, culturele of sociale identiteit van die (rechts)persoon.</p>
+<p><dfn data-lt="Dataverwerkingen|Dataverwerking" id="dfn-dataverwerkingen" tabindex="0" aria-haspopup="dialog">Dataverwerking</dfn></p>
+<p>Iedere bewerking (of ieder geheel van bewerkingen) met betrekking tot gegevens, al dan niet uitgevoerd via geautomatiseerde procedures, zoals het verzamelen, vastleggen, ordenen, structureren, opslaan, bijwerken of wijzigen, opvragen, raadplegen, gebruiken, verstrekken door middel van doorzending, verspreiden of op andere wijze ter beschikking stellen, aligneren of combineren, afschermen, wissen of vernietigen van gegevens wordt opgevat als een Dataverwerking. Iedere Dataverwerking bestaat uit één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-1"><code>Acties</code></a>.</p>
+<p><dfn id="dfn-inzage" tabindex="0" aria-haspopup="dialog">Inzage</dfn></p>
+<p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-1"><code>Betrokkene</code></a> heeft het recht om van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-1"><code>Verantwoordelijke</code></a> uitsluitsel te verkrijgen over het al dan niet verwerken van hem betreffende gegevens en, wanneer dat het geval is, om inzage te verkrijgen van die gegevens. Voor natuurlijke personen sluit dit aan bij hun recht op inzage zoals bedoeld in de AVG, voor rechtspersonen([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>], art. 15, lid 1). Voor rechtspersonen sluit dit aan bij het recht op transparantie over besluitvorming waar zij bij betrokken zijn. Met <em>Inzage</em> doelen we op de handeling waarmee uitvoering wordt gegeven aan dat recht.</p>
+<p><dfn data-lt="Logboeken|Logboek" id="dfn-logboeken" tabindex="0" aria-haspopup="dialog">Logboek</dfn></p>
+<p>Softwaretoepassing waarmee het log van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-3"><code>Dataverwerkingen</code></a> wordt bijgehouden.</p>
+<p><dfn id="dfn-logregel" tabindex="0" aria-haspopup="dialog">Logregel</dfn></p>
+<p>Resultaat van een enkele gebeurtenis in de logging.</p>
+<p><dfn data-lt="Registers|Register" id="dfn-registers" tabindex="0" aria-haspopup="dialog">Register</dfn></p>
+<p>Register waarin statische data over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteiten" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-1"><code>Verwerkingsactiviteiten</code></a> worden geregistreerd en ter beschikking gesteld.</p>
+<p><dfn data-lt="Traces|Trace" id="dfn-traces" tabindex="0" aria-haspopup="dialog">Trace</dfn></p>
+<p>Concept waarmee bij elkaar behorende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-4"><code>Dataverwerkingen</code></a> binnen de grenzen van een systeem worden gegroepeerd.</p>
+<p><dfn data-lt="Verantwoordelijke|Verantwoordelijken|Verwerkingsverantwoordelijken|Verwerkingsverantwoordelijke" id="dfn-verantwoordelijke" tabindex="0" aria-haspopup="dialog">Verwerkingsverantwoordelijke</dfn></p>
+<p>Een natuurlijke persoon of rechtspersoon, een overheidsinstantie, een dienst of een ander orgaan die/dat, alleen of samen met anderen, het doel van en de middelen voor de verwerking van data vaststelt. Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>] art. 4, lid 7.), maar laat de verantwoordelijkheid betrekking hebben op de verwerking van álle data, niet alleen persoonsdata.</p>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span></div><p class="">In de standaard wordt de Verwerkingsverantwoordelijke aangeduid als de Verantwoordelijke voor de leesbaarheid.
+
+</p></div><p><dfn data-lt="Verwerkers|Verwerker" id="dfn-verwerkers" tabindex="0" aria-haspopup="dialog">Verwerker</dfn></p>
+<p>Een natuurlijke persoon of rechtspersoon, een overheidsinstantie, een dienst of een ander orgaan die/dat ten behoeve van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsverantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-2"><code>Verwerkingsverantwoordelijke</code></a> persoonsdata verwerkt. Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>] art. 4, lid 8.), maar laat de verantwoordelijkheid betrekking hebben op de verwerking van álle data, niet alleen persoonsdata.</p>
+<p><dfn data-lt="Verwerkingsactiviteiten|Verwerkingsactiviteit" id="dfn-verwerkingsactiviteiten" tabindex="0" aria-haspopup="dialog">Verwerkingsactiviteit</dfn></p>
+<p>Activiteiten die een organisatie onderkent heeft als activiteiten waarbinnen <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-5"><code>Dataverwerkingen</code></a> plaatsvinden.</p>
+</section>
+    <section id="algemene-werking-van-de-standaard"><div class="header-wrapper"><h3 id="x3-3-algemene-werking-van-de-standaard"><bdi class="secno">3.3 </bdi>Algemene werking van de standaard</h3><a class="self-link" href="#algemene-werking-van-de-standaard" aria-label="Permalink for Section 3.3"></a></div>
+<p><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-1"><code>Applicaties</code></a> loggen metadata over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-6"><code>Dataverwerkingen</code></a> in een daarvoor ingerichte softwaretoepassing, het Logboek Dataverwerkingen. Elke Dataverwerking wordt apart gelogd. Dataverwerkingen binnen dezelfde context (bijvoorbeeld een organisatie of een verantwoordelijkheid binnen een organisatie) worden gegroepeerd met behulp van een Trace. Wanneer een Dataverwerking een andere Dataverwerking tot gevolg heeft worden de logregels van beide Dataverwerkingen aan elkaar gelinkt. Statische informatie over Dataverwerkingen kan worden opgezocht in Registers op basis van een verwijzing die in elke logregel wordt opgenomen.</p>
+<section id="extensies"><div class="header-wrapper"><h4 id="x3-3-1-extensies"><bdi class="secno">3.3.1 </bdi>Extensies</h4><a class="self-link" href="#extensies" aria-label="Permalink for Section 3.3.1"></a></div>
+<p>De standaard Logboek Dataverwerkingen specificeert de basis voor het loggen en aan elkaar relateren van Dataverwerkingen.
+Aanvullende functionaliteit wordt gestandaardiseerd in <code>extensies</code>:</p>
+<ul>
+<li><p><em>Extensie Betrokkenen</em><br>
+Met deze extensie wordt meer precies uitgewerkt hoe de identiteit van een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-2"><code>Betrokkene</code></a> wordt gerelateerd aan een verwerking, zodat actief informeren of het faciliteren van inzageverzoeken gestandaardiseerd mogelijk wordt. Dit is een nadere uitwerking van wat in de kern van de standaard al mogelijk is rond vastlegging van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-3"><code>Betrokkene</code></a>.</p>
+</li>
+<li><p><em>Extensie Verwerkte Data</em><br>
+Deze extensie specificeert een uniforme manier om verwerkte data in logregels op te nemen.</p>
+</li>
+<li><p><em>Extensie Inzage</em><br>
+Deze extensie heeft een afhankelijkheid van de extensies <em>Betrokkenen</em> en <em>Verwerkte Data</em>, en biedt een interface op de logs vanuit een bepaald perspectief.</p>
+</li>
+<li><p><em>Extensie (geo)objecten</em><br>
+Deze extensie specificeert hoe dataverwerkingen voor <a href="https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/">objecten</a> kunnen worden vastgelegd en beheerd in een logboek.</p>
+</li>
+</ul>
+</section><section id="profielen"><div class="header-wrapper"><h4 id="x3-3-2-profielen"><bdi class="secno">3.3.2 </bdi>Profielen</h4><a class="self-link" href="#profielen" aria-label="Permalink for Section 3.3.2"></a></div>
+<p>In een <strong>profiel</strong> worden aanvullende beperkingen en verplichtingen vastgelegd over het gebruik van de standaard. Op deze
+manier kan een groep organisaties interoperabiliteit organiseren. Voorbeelden van aanvullende afspraken in een profiel zijn:</p>
+<ul>
+<li>De combinatie van extensies die gebruikt wordt</li>
+<li>Afspraken over specifieke aanvullende eisen (bijvoorbeeld over <a href="https://www.forumstandaardisatie.nl/open-standaarden/tls">TLS</a> configuratie)</li>
+<li>Afspraken over data-retentie</li>
+<li>De wijze waarop <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/#pseudonimiseren-gegevens">pseudonimisering</a> van persoonsdata plaatsvindt</li>
+</ul>
+</section><section id="use-case"><div class="header-wrapper"><h4 id="x3-3-3-use-case"><bdi class="secno">3.3.3 </bdi>Use case</h4><a class="self-link" href="#use-case" aria-label="Permalink for Section 3.3.3"></a></div>
+<p>Een typische use case voor het gebruik van de standaard is een samenwerking tussen meerdere organisaties die interoperabiliteit willen bereiken bij het loggen van Dataverwerkingen, om zo op eenduidige manier te kunnen verantwoorden over de dataverwerking.</p>
+</section></section>
+  </section>
+ 
+  <section id="architectuur">
+    <div class="header-wrapper"><h2 id="x4-architectuur"><bdi class="secno">4. </bdi>Architectuur</h2><a class="self-link" href="#architectuur" aria-label="Permalink for Section 4."></a></div>
+    <section><p>Deze sectie beschrijft de algemene architectuur voor het loggen van dataverwerkingen bij toepassing van deze standaard.</p>
+</section>
+    <section id="context"><div class="header-wrapper"><h3 id="x4-1-context"><bdi class="secno">4.1 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 4.1"></a></div>
+<p>Op hoog abstractieniveau zijn voor het begrijpen van deze standaard de volgende componenten te onderscheiden:</p>
+<ul>
+<li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-2"><code>Applicatie</code></a></li>
+<li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-1"><code>Logboek</code></a></li>
+<li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-1"><code>Register</code></a></li>
+</ul>
+<p>Applicaties schrijven logs over Dataverwerkingen weg in een Logboek.
+Logregels in het Logboek verwijzen naar nadere informatie in een Register.</p>
+<p>Een Dataverwerking kan plaatsvinden over de grenzen van een verantwoordelijkheid. In dat geval roept een Applicatie van Verantwoordelijke A de Applicatie van Verantwoordelijke B aan. Denk bijvoorbeeld aan het bevragen of muteren van data via een Application Programming Interface (API).</p>
+<p>Een Verantwoordelijke is bijvoorbeeld een organisatie, maar kan ook bestaan uit meerdere organisaties die allemaal onder dezelfde Verantwoordelijke werk uitvoeren. Denk daarbij aan Verwerkers in het kader van de AVG.</p>
+<p>Iedere Verantwoordelijke kan een veelheid aan Applicaties, Logboeken en Registers gebruiken.
+Iedere Verantwoordelijke houdt alleen Logregels bij over eigen Dataverwerkingen.
+Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk om bij elkaar behorende Logregels in meerdere Logboeken aan elkaar te relateren.</p>
+<p>Registers bevatten statische informatie waar vanuit Logregels naar verwezen kan worden voor extra informatie over een Dataverwerking.</p>
+<p>
+      </p><figure id="fig-componenten-in-context">
+        <img src="diagrams/architecture-context.svg" alt="architecture">
+        <figcaption><a class="self-link" href="#fig-componenten-in-context">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Componenten in context</span></figcaption>
+      </figure>
+    <p></p>
+<p>De standaard beschrijft de interfaces (in het diagram aangeduid met groene lijnen), en het gedrag van de componenten voor zover relevant om technisch interoperabel te worden.</p>
+<p>De relatie tussen Logboek en Registers is los. Een Register hoeft niet digitaal te bestaan, wel moet een relatie gelegd kunnen worden vanuit de logregels in het Logboek naar aanvullende data in Registers die de Logregels van nedere context voorzien.</p>
+</section>
+    <section id="componenten"><div class="header-wrapper"><h3 id="x4-2-componenten"><bdi class="secno">4.2 </bdi>Componenten</h3><a class="self-link" href="#componenten" aria-label="Permalink for Section 4.2"></a></div>
+<section id="applicatie"><div class="header-wrapper"><h4 id="x4-2-1-applicatie"><bdi class="secno">4.2.1 </bdi>Applicatie</h4><a class="self-link" href="#applicatie" aria-label="Permalink for Section 4.2.1"></a></div>
+<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-3"><code>Applicatie</code></a> is een softwarecomponent of groep van softwarecomponenten waarmee een Dataverwerking wordt uitgevoerd. Een Applicatie kan in allerlei vormen voorkomen. Voor de architectuur is niet relevant welke vorm de Applicatie heeft, het is slechts relevant dat dit de component is waar een Dataverwerking wordt uitgevoerd.</p>
+<p>In een Applicatie is de context van de Dataverwerking bekend, zoals welke Verwerkingsactiviteit wordt uitgevoerd met de Dataverwerking. Het is dan ook de Applicatie die het loggen van de Dataverwerking initiëert.</p>
+</section><section id="logboek"><div class="header-wrapper"><h4 id="x4-2-2-logboek"><bdi class="secno">4.2.2 </bdi>Logboek</h4><a class="self-link" href="#logboek" aria-label="Permalink for Section 4.2.2"></a></div>
+<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-2"><code>Logboek</code></a> is een Applicatie met een specifieke rol in de context van deze standaard. In het Logboek worden Dataverwerkingen gelogd.</p>
+<p>Dataverwerkingen in het Logboek zelf worden <em>niet</em> gelogd in een Logboek Dataverwerkingen, dit zou een oneindige recursiviteit veroorzaken.</p>
+</section><section id="register"><div class="header-wrapper"><h4 id="x4-2-3-register"><bdi class="secno">4.2.3 </bdi>Register</h4><a class="self-link" href="#register" aria-label="Permalink for Section 4.2.3"></a></div>
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: Verwerkingsactiviteiten zijn niet gestandaardiseerd</span></div><div class="">
+  <p>Let op: De standaard beschrijft géén vaste structuur of interface voor het register van verwerkingsactiviteiten. De inrichting van het register van verwerkingsactiviteiten verschilt per organisatie en maakt géén onderdeel uit van deze standaard.</p>
+</div></div>
+
+<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-2"><code>Register</code></a> bevat statische informatie over Dataverwerkingen. Elk record in een Register heeft een unieke identificatiecode waarmee de Verwerkingsactiviteit kan worden aangeduid. Deze identificatiecode wordt gebruikt om vanuit een Logregel te linken naar aanvullende informatie in een Register.</p>
+<p>Het Register kan een Applicatie zijn, in dat geval is het een Applicatie met een specifieke rol in de context van deze standaard. Eventueel kan het ook een Register in de vorm van een document zijn.</p>
+<p>Dataverwerkingen in het Register worden gelogd in een Logboek Dataverwerkingen.</p>
+<p>Voor alle Dataverwerkingen waarbij persoonsdata worden verwerkt is wettelijk geregeld dat de Verwerkingsactiviteiten moeten worden beschreven in het zogenaamde Register van Verwerkingsactiviteiten (AVG art. 30). Dit Register wordt verondersteld aanwezig te zijn in iedere organisatie die de standaard Logboek Dataverwerkingen toepast.</p>
+<p>Verwerkingsactiviteiten waarin geen persoonsdata worden verwerkt staan niet verplicht in het Register van Verwerkingsactiviteiten. De standaard laat ruimte om dit op te lossen naar eigen voorkeur:</p>
+<ul>
+<li>In het bestaande Register ook Verwerkingsactiviteiten opnemen zonder persoonsdata, al is dit niet wettelijk verplicht</li>
+<li>Zelf een ander Register opzetten met gelijke interface maar specifiek voor Verwerkingsactiviteiten zonder persoonsdata</li>
+</ul>
+<p>Het is daarnaast ook mogelijk om Registers te gebruiken met heel andere statische informatie die meer context geeft over een Logregel, bijv. informatie over de gebruikte beslisregels of van toepassing zijnde normen. Dit wordt niet verder uitgewerkt.</p>
+</section></section>
+    <section id="scope"><div class="header-wrapper"><h3 id="x4-3-scope"><bdi class="secno">4.3 </bdi>Scope</h3><a class="self-link" href="#scope" aria-label="Permalink for Section 4.3"></a></div>
+<p>In deze sectie wordt de scope van de standaard afgebakend.</p>
+<section id="vastlegging-door-verantwoordelijke"><div class="header-wrapper"><h4 id="x4-3-1-vastlegging-door-verantwoordelijke"><bdi class="secno">4.3.1 </bdi>Vastlegging door Verantwoordelijke</h4><a class="self-link" href="#vastlegging-door-verantwoordelijke" aria-label="Permalink for Section 4.3.1"></a></div>
+<p>Voor een juiste toepassing van de standaard is het nodig om strict de grenzen aan te houden die passen bij de Verantwoording die een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-3"><code>Verantwoordelijke</code></a> af moet kunnen leggen. Het wordt <em><em class="rfc2119">AANBEVOLEN</em></em> om alle Dataverwerkingen te loggen alsof zij persoonsdata bevatten, ook wanneer de Dataverwerking geen persoonsdata betreft. Dit omdat het wettelijk kader dat leidt tot verantwoordingsplicht breder is dan alleen de AVG. Logregels kunnen ook worden gebruikt voor bijvoorbeeld het verantwoorden welke data gebruikt zijn bij het nemen van een besluit.</p>
+<p>Belangrijk uitgangspunt is dat een Verantwoordelijke alleen Logregels bijhoudt voor Dataverwerkingen die onder eigen verantwoordelijkheid plaatsvinden.</p>
+<p>Een zogenaamde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerker" href="#dfn-verwerkers" class="internalDFN" id="ref-for-dfn-verwerkers-1"><code>Verwerker</code></a> die Dataverwerkingen uitvoert in opdracht van een Verantwoordelijke wordt in deze standaard beschouwd als deel van de Verantwoordelijke. Van welke Logboeken en Registers een Verwerker gebruik maakt is een implementatiekeuze.</p>
+</section><section id="geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><div class="header-wrapper"><h4 id="x4-3-2-geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><bdi class="secno">4.3.2 </bdi>Geen inhoudelijke uitwisseling tussen Verantwoordelijken</h4><a class="self-link" href="#geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken" aria-label="Permalink for Section 4.3.2"></a></div>
+<p>Er wordt met de standaard geen inhoudelijke informatie over Dataverwerkingen uitgewisseld tussen Verantwoordelijken. Dit is niet nodig, aangezien iedere Verantwoordelijke alleen Logregels over eigen Dataverwerkingen vastlegt. De informatie die wordt uitgewisseld is beperkt tot zogenaamde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-1"><code>Trace</code></a>-informatie waarmee Logregels van de ene Verantwoordelijke gerelateerd kunnen worden aan Logregels bij de andere Verantwoordelijke.</p>
+<p>
+      </p><figure id="fig-context-dataverwerking-meegeven-over-grenzen">
+        <img src="diagrams/architecture-grenzen.svg" alt="architecture">
+        <figcaption><a class="self-link" href="#fig-context-dataverwerking-meegeven-over-grenzen">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Context Dataverwerking meegeven over Grenzen</span></figcaption>
+      </figure>
+    <p></p>
+</section><section id="geen-specificatie-voor-het-beheren-van-logboeken"><div class="header-wrapper"><h4 id="x4-3-3-geen-specificatie-voor-het-beheren-van-logboeken"><bdi class="secno">4.3.3 </bdi>Geen specificatie voor het beheren van Logboeken</h4><a class="self-link" href="#geen-specificatie-voor-het-beheren-van-logboeken" aria-label="Permalink for Section 4.3.3"></a></div>
+<p>De standaard specificeert een interface voor het wegschrijven van Logregels. Dit is het deel dat in alle organisaties hetzelfde moet zijn om interoperabel te zijn. Het beheren van een Logboek is vrij in te vullen per implementatie.</p>
+<p>Dit betekent o.a. dat de standaard <em>geen</em> gedrag of interfaces specificeert voor:</p>
+<ul>
+<li>het verwijderen of muteren van Logregels</li>
+<li>het regelen van toegang tot het Logboek</li>
+<li>het regelen van duurzame toegankelijkheid</li>
+<li>het regelen van archivering en verwijdering van Logregels</li>
+</ul>
+</section><section id="geen-data-over-gebruikers-in-logregels"><div class="header-wrapper"><h4 id="x4-3-4-geen-data-over-gebruikers-in-logregels"><bdi class="secno">4.3.4 </bdi>Geen data over gebruikers in Logregels</h4><a class="self-link" href="#geen-data-over-gebruikers-in-logregels" aria-label="Permalink for Section 4.3.4"></a></div>
+<p>In Logregels ligt geen informatie vast over welke specifieke medewerker van de Verantwoordelijke ofwel de gebruiker de Dataverwerking heeft uitgevoerd. Deze informatie hoort niet in het Logboek maar in een auditlog, en is daarmee buiten scope van de standaard. Wel is het mogelijk om vanuit auditlogs de relatie te leggen naar specifieke Logregels in het Logboek. (toevoegen link naar Algemene inleiding, besluit over gebruikers)</p>
+</section></section>
+    <section id="flows"><div class="header-wrapper"><h3 id="x4-4-flows"><bdi class="secno">4.4 </bdi>Flows</h3><a class="self-link" href="#flows" aria-label="Permalink for Section 4.4"></a></div>
+<section id="wegschrijven-van-een-logregel-na-een-dataverwerking"><div class="header-wrapper"><h4 id="x4-4-1-wegschrijven-van-een-logregel-na-een-dataverwerking"><bdi class="secno">4.4.1 </bdi>Wegschrijven van een logregel na een Dataverwerking</h4><a class="self-link" href="#wegschrijven-van-een-logregel-na-een-dataverwerking" aria-label="Permalink for Section 4.4.1"></a></div>
+<img src="media/data-verwerking-applicatie.svg" alt="Data verwerking in een applicatie">
+
+<p>Deze transactie is geoptimaliseerd op eenvoud en snelheid, want deze heeft rechtstreeks invloed op de snelheid van Dataverwerkingen. Deze transactie moet schaalbaar zijn naar bijv. honderdduizenden transacties per seconde, o.a. omdat wanneer bij een enkele Dataverwerking meerdere Betrokkenen gerelateerd zijn, voor elk van deze Betrokkenen een logregel wordt weggeschreven.</p>
+</section><section id="tonen-van-informatie-over-een-dataverwerking"><div class="header-wrapper"><h4 id="x4-4-2-tonen-van-informatie-over-een-dataverwerking"><bdi class="secno">4.4.2 </bdi>Tonen van informatie over een Dataverwerking</h4><a class="self-link" href="#tonen-van-informatie-over-een-dataverwerking" aria-label="Permalink for Section 4.4.2"></a></div>
+<p>Voor het op betekenisvolle manier tonen van informatie over Dataverwerkingen aan bijvoorbeeld een Betrokkene is het nodig om data op te vragen uit zowel het Logboek als het Register. Deze flow mag wat complexer zijn, omdat deze niet voor alle vastgelegde data wordt uitgevoerd en het belang van de bevraging rechtvaardigt dat een bevraging wat langer kan duren.</p>
+<img src="media/data-verwerking-tonen.svg" alt="Tonen van informatie over dataverwerking"></section></section>
+  </section>
+ 
+  <section id="specificaties">
+    <div class="header-wrapper"><h2 id="x5-specificaties"><bdi class="secno">5. </bdi>Specificaties</h2><a class="self-link" href="#specificaties" aria-label="Permalink for Section 5."></a></div>
+    <section><p>Deze sectie geeft de specificatie voor de te gebruiken protocollen en interfaces en het verwachte gedrag van de componenten.</p>
+</section>
+    <section id="protocollen"><div class="header-wrapper"><h3 id="x5-1-protocollen"><bdi class="secno">5.1 </bdi>Protocollen</h3><a class="self-link" href="#protocollen" aria-label="Permalink for Section 5.1"></a></div>
+<p>De protocollen die worden gebruikt tussen applicatie en logboek en voor het uitvoeren van transacties tussen applicaties worden niet voorgeschreven in de standaard.</p>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span></div><div class="">
+
+<p>Let wel, met "de protocollen" bedoelen we de manier van afleveren van berichten tussen de componenten. Deze standaard beschrijft wel degelijk interfaces van de berichten zelf waar de componenten aan <strong><em class="rfc2119">MOETEN</em></strong> voldoen, met als doel interopabiliteit tussen functionaliteit van componenten. De standaard laat vrij hoe die informatie tussen componenten wordt doorgegeven, omdat dat afhangt van de technische/architecturele keuzes die software ontwikkelaars maken. Dit biedt de vrijheid om de standaard toe te voegen aan vrijwel iedere softwareoplossing.</p>
+</div></div>
+
+<p>Het is <em><strong><em class="rfc2119">AANBEVOLEN</em></strong></em> om <a href="https://opentelemetry.io/docs/specs/otlp/">het OpenTelemetry Protocol (OTLP)</a> te gebruiken in de interactie tussen Applicatie en Logboek.</p>
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span></div><div class="">
+
+<p><a href="https://opentelemetry.io/">OpenTelemetry</a> is een standaard en open source framework voor het beheren, genereren, verzamelen en exporteren van telemetriedata. Door het gebruik van deze open standaard kunnen leverancierspecifieke integraties voorkomen worden. OpenTelemetry is een <a href="https://www.cncf.io/projects/">CNCF incubating project</a>.</p>
+</div></div>
+
+<p>Als gebruik wordt gemaakt van  HTTP/1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9112" title="HTTP/1.1">RFC9112</a></cite>] of HTTP/2 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9113" title="HTTP/2">RFC9113</a></cite>] voor het uitvoeren van dataverwerkingen in meerdere applicaties <em><strong><em class="rfc2119">MOET</em></strong></em> gebruik worden gemaakt van de <cite><a data-matched-text="[[[trace-context-1]]]" href="https://www.w3.org/TR/trace-context-1/">Trace Context</a></cite> specificatie voor het uitwisselen van metadata over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Traces" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-2"><code>Traces</code></a>.</p>
+</section>
+    <section id="component-logboek"><div class="header-wrapper"><h3 id="x5-2-component-logboek"><bdi class="secno">5.2 </bdi>Component: Logboek</h3><a class="self-link" href="#component-logboek" aria-label="Permalink for Section 5.2"></a></div>
+<p>Voor ieder Logboek waarin Dataverwerkingen worden gelogd gelden de volgende specificaties voor gedrag en interface.</p>
+<section id="gedrag"><div class="header-wrapper"><h4 id="x5-2-1-gedrag"><bdi class="secno">5.2.1 </bdi>Gedrag</h4><a class="self-link" href="#gedrag" aria-label="Permalink for Section 5.2.1"></a></div>
+<p>Het Logboek <em><strong><em class="rfc2119">MOET</em></strong></em> TLS afdwingen op connecties volgens de binnen de organisatie gangbare standaard.</p>
+<p>Het Logboek <em><strong><em class="rfc2119">MOET</em></strong></em> het wegschrijven van elke logregel bevestigen.</p>
+</section><section id="interface"><div class="header-wrapper"><h4 id="x5-2-2-interface"><bdi class="secno">5.2.2 </bdi>Interface</h4><a class="self-link" href="#interface" aria-label="Permalink for Section 5.2.2"></a></div>
+<p>De interface <em><strong><em class="rfc2119">MOET</em></strong></em> de volgende velden implementeren:</p>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Type</th>
+<th>optioneel</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>trace_id</code></td>
+<td>16 byte</td>
+<td>verplicht</td>
+<td>Unieke identificerende code van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-3"><code>Trace</code></a> die <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-7"><code>Dataverwerking</code></a> volgt</td>
+</tr>
+<tr>
+<td><code>span_id</code></td>
+<td>8 byte</td>
+<td>verplicht</td>
+<td>Unieke identificerende code van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-2"><code>Actie</code></a> binnen de Dataverwerking</td>
+</tr>
+<tr>
+<td><code>status_code</code></td>
+<td>enum</td>
+<td>verplicht</td>
+<td>Status van de Actie</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>verplicht</td>
+<td>Naam van de specifieke Actie binnen de Dataverwerking</td>
+</tr>
+<tr>
+<td><code>start_time</code></td>
+<td>timestamp (ms)</td>
+<td>verplicht</td>
+<td>Tijdstip waarop de Actie gestart is</td>
+</tr>
+<tr>
+<td><code>end_time</code></td>
+<td>timestamp (ms)</td>
+<td>verplicht</td>
+<td>Tijdstip waarop de Actie beëindigd is</td>
+</tr>
+<tr>
+<td><code>parent_span_id</code></td>
+<td>8 byte</td>
+<td>optioneel</td>
+<td>Unieke identificerende code aanroepende Actie <em>binnen huidige Trace</em></td>
+</tr>
+<tr>
+<td><code>foreign_operation</code></td>
+<td>message</td>
+<td>optioneel</td>
+<td>Unieke identificerende code aanroepende Actie <em>bij externe partij</em></td>
+</tr>
+<tr>
+<td><code>resource</code></td>
+<td>message</td>
+<td>optioneel</td>
+<td>Zie toelichting hieronder</td>
+</tr>
+<tr>
+<td><code>attributes</code></td>
+<td>list</td>
+<td>verplicht</td>
+<td>Verplichte key-value pairs</td>
+</tr>
+</tbody></table>
+<p>Het veld <code>span_id</code> is in implementaties voor logging.</p>
+<p>Het veld <code>status_code</code> is een enumeratie die de volgende waarden kan bevatten:</p>
+<ul>
+<li><code>0: STATUS_CODE_UNSET</code>: De standaardwaarde voor elke <code>status_code</code> is <code>Unset</code>. Dit betekent dat de dataverwerking is uitgevoerd zonder interne fout. Deze waarde wordt toegepast wanneer de dataverwerking technisch correct is afgerond, ook als er geen resultaat beschikbaar is of wanneer de invoer onvolledig was.</li>
+<li><code>1: STATUS_CODE_OK</code>: De waarde <code>Ok</code> kan optioneel gebruikt worden wanneer de ontwikkelaar expliciet wil markeren dat de dataverwerking succesvol is afgerond. Dit is afhankelijk van hoe de organisatie die de standaard implementeert een dataverwerking als succesvol definieert en of zij dit onderscheid expliciet willen loggen als andere waarde dan <code>Unset</code>.</li>
+<li><code>2: STATUS_CODE_ERROR</code>: De waarde <code>Error</code> wordt toegekend bij fouten die zijn ontstaan binnen het systeem dat de dataverwerking uitvoert, zoals interne fouten of mislukte uitvoeringen door technische oorzaken.</li>
+</ul>
+<p>De waarden <code>Unset</code> en <code>Ok</code> worden altijd bepaald op basis van het resultaat van de verwerking. De waarde <code>Ok</code> is optioneel en kan gebruikt worden als de organisatie ervoor kiest dataverwerkingen expliciet als succesvol te markeren. <code>Error</code> is alleen nodig als er een fout is opgetreden bij het interne proces. Een dataverwerking die niet klopt op basis van de gegeven gebruikersinput, maar die zonder fouten is afgehandeld, hoort dus status <code>Unset</code> te krijgen.</p>
+<p>Het veld <code>foreign_operation</code> is een <code>message</code>, opgebouwd uit de volgende velden:</p>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Type</th>
+<th>optioneel</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>trace_id</code></td>
+<td>16 byte</td>
+<td>verplicht</td>
+<td>Unieke identificerende code van <em>Trace</em> bij externe partij</td>
+</tr>
+<tr>
+<td><code>span_id</code></td>
+<td>8 byte</td>
+<td>verplicht</td>
+<td>Unieke identificerende code van de <em>Actie</em> bij externe partij</td>
+</tr>
+<tr>
+<td><code>entity</code></td>
+<td>URI</td>
+<td>verplicht</td>
+<td>URI verwijzend naar externe partij</td>
+</tr>
+</tbody></table>
+<p>Deze velden worden optioneel aangeboden door een aanroepende Applicatie, zie de specificatie van het <a href="#gedrag">gedrag van Applicaties</a>.</p>
+<p>Het veld <code>resource</code> is een bericht, opgebouwd uit het volgende veld:</p>
+<ul>
+<li><code>attributes</code>: Lijst attributen in de vorm van <em>KeyValue pairs</em>. De organisatie kan deze lijst gebruiken om een systeem, applicatie of component aan te duiden op een manier die binnen de organisatie gebruikelijk is. Dit zijn bijvoorbeeld naam en versienummer van een applicatie, of een verwijzing naar een record in een <a href="https://www.hci-itil.com/ITIL_v3/books/3_service_transition/service_transition_ch4_3.html">CMDB</a>.</li>
+</ul>
+<p>Het veld <code>attributes</code> is een lijst van <em>key-value pairs</em>, in een namespace met prefix <code>dpl.</code> (data processing log). De volgende attributen zijn mogelijk in de namespace <code>core</code>:</p>
+<ul>
+<li><code>dpl.core.processing_activity_id</code>: URI; Verwijzing naar Register met meer informatie over de Verwerkingsactiviteit</li>
+<li><code>dpl.core.data_subject_id</code>: Unieke identificerende code van de Betrokkene; versleuteld. Hiermee wordt aangeduid welke persoon Betrokkene is bij de verwerking, gelet op de AVG.</li>
+<li><code>dpl.core.data_subject_id_type</code>: Type van het veld <code>data_subject_id</code>. Dit is bijvoorbeeld <code>BSN</code>, <code>Personeelsnummer</code> of <code>Vreemdelingennummer</code>, of een URI naar een Register waar het veld meer precies wordt geduid.</li>
+</ul>
+</section></section>
+    <section id="component-applicatie"><div class="header-wrapper"><h3 id="x5-3-component-applicatie"><bdi class="secno">5.3 </bdi>Component: Applicatie</h3><a class="self-link" href="#component-applicatie" aria-label="Permalink for Section 5.3"></a></div>
+<p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-4"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
+<section id="gedrag-0"><div class="header-wrapper"><h4 id="x5-3-1-gedrag"><bdi class="secno">5.3.1 </bdi>Gedrag</h4><a class="self-link" href="#gedrag-0" aria-label="Permalink for Section 5.3.1"></a></div>
+<p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
+<p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> een nieuwe Trace  met een uniek <code>trace_id</code> starten voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
+<p>Een Dataverwerking kan uit meerdere acties bestaan. De applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> een voor iedere nieuwe actie een unieke <code>span_id</code> bijhouden. Iedere Trace heeft tenminste één <code>span_id</code>.</p>
+<p>Wanneer een actie binnen een Applicatie is gestart door een andere actie, dan <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie de <code>trace_id</code> ongewijzigd overnemen en de <code>span_id</code> opnemen in een veld genaamd <code>parent_span_id</code> voor deze nieuwe actie.</p>
+<p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em><strong><em class="rfc2119">MOET</em></strong></em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
+<p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> voor iedere actie (<code>span_id</code>) een logregel wegschrijven via de interface van het Logboek.</p>
+<p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> bijhouden of een actie geslaagd of mislukt is en dit per Dataverwerking als status (<code>status_code</code>) meegeven in de Logregel.</p>
+<p>Als de Applicatie een verzoek van een andere Applicatie kan ontvangen, <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie metadata volgens de W3C Trace Context standaard kunnen verwerken en gebruiken in de eigen Trace(s). Metadata verkregen via W3C Trace Context <em><strong><em class="rfc2119">MOET</em></strong></em> als <code>foreign_operation</code> worden opgenomen in de Logregel.</p>
+<p>Als de Applicatie een verzoek aan een andere Applicatie kan versturen, <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie metadata volgens de W3C Trace Context standaard meegeven aan dit verzoek.</p>
+<p>De Applicatie <em><strong><em class="rfc2119">MAG</em> NIET</strong></em> gebruik maken van <em>Log Sampling</em>.</p>
+<section id="loggen-van-dataverwerkingen-met-persoonsdata"><div class="header-wrapper"><h5 id="x5-3-1-1-loggen-van-dataverwerkingen-met-persoonsdata"><bdi class="secno">5.3.1.1 </bdi>Loggen van Dataverwerkingen met persoonsdata</h5><a class="self-link" href="#loggen-van-dataverwerkingen-met-persoonsdata" aria-label="Permalink for Section 5.3.1.1"></a></div>
+<p>Voor iedere Betrokkene moet iedere Dataverwerking apart gelogd worden. De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> in elke Logregel een identificerende code van de Betrokkene opnemen in <code>dpl.core.data_subject_id</code> en aan te duiden welk soort identificerende code wordt gebruikt in <code>dpl.core.data_subject_id_type</code>. Het wordt <em><strong><em class="rfc2119">AANBEVOLEN</em></strong></em> om de identificerende code te pseudonimiseren.</p>
+<p>Wanneer een enkele Dataverwerking meerdere Betrokkenen heeft, <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie voor elke Betrokkene een nieuwe actie met unieke <code>span_id</code> starten en deze onder de reeds bekende actie voegen door het <code>span_id</code> daarvan op te nemen als <code>parent_span_id</code> in de nieuwe actie. Voor iedere betrokkene wordt een <em>child operation</em> bijgehouden.</p>
+<p>Let op: het kan zijn dat pas na een antwoord van een externe Applicatie bekend is dat er meerdere Betrokkenen zijn bij een Dataverwerking, in dat geval moeten na ontvangst van het antwoord de nieuwe acties ten behoeve van correcte logging gestart worden.</p>
+<p>Iedere Dataverwerking van persoonsdata betreft een Verwerkingsactiviteit die in het Register van Verwerkingsactiviteiten moet zijn opgenomen. De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> in de Logregel een verwijzing naar de juiste Verwerkingsactiviteit in het Register van Verwerkingsactiviteiten opnemen in het veld <code>dpl.core.processing_activity_id</code>.</p>
+</section><section id="loggen-van-dataverwerkingen-zonder-data"><div class="header-wrapper"><h5 id="x5-3-1-2-loggen-van-dataverwerkingen-zonder-data"><bdi class="secno">5.3.1.2 </bdi>Loggen van Dataverwerkingen zonder data</h5><a class="self-link" href="#loggen-van-dataverwerkingen-zonder-data" aria-label="Permalink for Section 5.3.1.2"></a></div>
+<p>Dataverwerkingen zonder persoonsdata zijn over het algemeen niet als Verwerkingsactiviteit opgenomen in het Register van Verwerkingsactiviteiten. Het wordt aanbevolen om wel een soortgelijk register bij te houden voor alle Dataverwerkingen zonder persoonsdata.</p>
+<p>Het wordt <em><strong><em class="rfc2119">AANBEVOLEN</em></strong></em> dat de Applicatie in de Logregel een verwijzing naar de juiste Verwerkingsactiviteit in een daarvoor aan te wijzen Register opneemt in het veld <code>dpl.core.processing_activity_id</code>.</p>
+</section></section></section>
+    <section id="component-register"><div class="header-wrapper"><h3 id="x5-4-component-register"><bdi class="secno">5.4 </bdi>Component: Register</h3><a class="self-link" href="#component-register" aria-label="Permalink for Section 5.4"></a></div>
+<p>Voor ieder <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-3"><code>Register</code></a> met statische data over Dataverwerkingen gelden de volgende specificaties voor het gedrag en de interface.</p>
+<section id="gedrag-1"><div class="header-wrapper"><h4 id="x5-4-1-gedrag"><bdi class="secno">5.4.1 </bdi>Gedrag</h4><a class="self-link" href="#gedrag-1" aria-label="Permalink for Section 5.4.1"></a></div>
+<p>Het Register <strong><em class="rfc2119">MOET</em></strong> iedere relevante wijziging van een Verwerkingsactiviteit opslaan met een nieuwe identifier, zodat de <code>dpl.core.processing_activity_id</code> naar een eenduidige versie van de verwerkingsactiviteit verwijst.</p>
+</section><section id="interface-0"><div class="header-wrapper"><h4 id="x5-4-2-interface"><bdi class="secno">5.4.2 </bdi>Interface</h4><a class="self-link" href="#interface-0" aria-label="Permalink for Section 5.4.2"></a></div>
+<p>Voor de werking van het Logboek is het niet nodig de Registers te ontsluiten met een API. Wel moeten de Verwerkingsactiviteiten die gebruikt worden in de logregels ook voorkomen in een register. Wanneer bij het raadplegen van de logregels geautomatiseerd context aan de logregels moet worden gegeven is een read-only interface op het Register nodig. Deze interface wordt hieronder gespecificeerd.</p>
+<p>Nog uitwerken, REST API, Read-only OpenAPI 3 specificatie.</p>
+</section></section>
+  </section>
+
+  <section id="volwassenheidsniveaus"><div class="header-wrapper"><h2 id="x6-volwassenheidsniveaus"><bdi class="secno">6. </bdi>Volwassenheidsniveaus</h2><a class="self-link" href="#volwassenheidsniveaus" aria-label="Permalink for Section 6."></a></div>
+<p>Logging kan op verschillende <dfn id="dfn-volwassenheidsniveaus" tabindex="0" aria-haspopup="dialog">Volwassenheidsniveaus</dfn>: hoe hoger het volwassenheidsniveau, hoe gedetailleerder er wordt gelogd.</p>
+<section id="definities-van-niveaus"><div class="header-wrapper"><h3 id="x6-1-definities-van-niveaus"><bdi class="secno">6.1 </bdi>Definities van niveaus</h3><a class="self-link" href="#definities-van-niveaus" aria-label="Permalink for Section 6.1"></a></div>
+<p>We maken drie verschillende niveaus op.
+Ter verduidelijking van elk niveau gebruiken we een niet-normatief voorbeeld van het opvragen van informatie over een auto.</p>
+<section id="niveau-1-registerverwijzing"><div class="header-wrapper"><h4 id="x6-1-1-niveau-1-registerverwijzing"><bdi class="secno">6.1.1 </bdi>Niveau 1: registerverwijzing</h4><a class="self-link" href="#niveau-1-registerverwijzing" aria-label="Permalink for Section 6.1.1"></a></div>
+<p>Op het laagste niveau wordt er enkel naar het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-4"><code>Register</code></a> verwezen.
+Dit betekent dat de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-1"><code>Logregel</code></a> enkel de referentie naar het register bevat.
+Hieruit kan worden opgemaakt welke potentiële data is verwerkt, maar hiermee kan niet worden herleid welke data is verwerkt op basis van enkel de Logregel.
+Dit kan wel op basis van de verwerkingsactiviteit ID.</p>
+<p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
+Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
+Er wordt hier niet verder gespecificeerd welke categorieën van informatie zijn opgevraagd.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-2"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: <code>dpl.core.processing_activity_id</code> &lt;&lt;UUID&gt;&gt;"</p>
+</section><section id="niveau-2-kolomverwijzing"><div class="header-wrapper"><h4 id="x6-1-2-niveau-2-kolomverwijzing"><bdi class="secno">6.1.2 </bdi>Niveau 2: kolomverwijzing</h4><a class="self-link" href="#niveau-2-kolomverwijzing" aria-label="Permalink for Section 6.1.2"></a></div>
+<p>Op dit niveau wordt er zowel naar het betreffende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-5"><code>Register</code></a> verwezen alsmede de specifieke categorieën van data die zijn verwerkt.
+Hieruit kan dus worden opgemaakt welke specifieke categorieën van data zijn verwerkt, maar kan er niet worden herleid wat de waarde van de data is tijdens het loggen.</p>
+<p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
+Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-8"><code>Dataverwerking</code></a> betrof het BSN, Kenteken en APK gekeurd.
+Omdat de overige categorien niet werden gebruikt, zijn die ook niet gelogd.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-3"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN, Kenteken, APK gekeurd, <code>dpl.core.processing_activity_id</code> &lt;&lt;UUID&gt;&gt;"</p>
+</section><section id="niveau-3-concrete-data"><div class="header-wrapper"><h4 id="x6-1-3-niveau-3-concrete-data"><bdi class="secno">6.1.3 </bdi>Niveau 3: concrete data</h4><a class="self-link" href="#niveau-3-concrete-data" aria-label="Permalink for Section 6.1.3"></a></div>
+<p>Op het hoogste niveau wordt alle data in de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-4"><code>Logregel</code></a> gezet.
+Dit betekent dat alle relevante categorieën uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-6"><code>Register</code></a> met bijbehorende concrete data worden gelogd.
+Op dit niveau kan de gehele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-9"><code>Dataverwerking</code></a> worden gereconstrueerd.</p>
+<p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
+Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-10"><code>Dataverwerking</code></a> bevat de BSN, Kenteken en APK gekeurd met specifieke data.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-5"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN 1234, Kenteken 1-ABC-23, APK gekeurd: ja, <code>dpl.core.processing_activity_id</code> &lt;&lt;UUID&gt;&gt;"</p>
+</section></section><section id="implicaties-van-niveaus"><div class="header-wrapper"><h3 id="x6-2-implicaties-van-niveaus"><bdi class="secno">6.2 </bdi>Implicaties van niveaus</h3><a class="self-link" href="#implicaties-van-niveaus" aria-label="Permalink for Section 6.2"></a></div>
+<p>Hoe hoger het niveau, hoe bruikbaarder de data is die uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-3"><code>Logboek</code></a> kan worden opgemaakt.
+Echter, de consequenties van een hoger niveau brengen ook lastigere vraagstukken met zich mee omtrent schaalbaarheid en technische haalbaarheid.
+Als voor elke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-11"><code>Dataverwerking</code></a> alle informatie wordt gelogd, dan kan dat problemen opleveren voor de hoeveelheid data en ook of het doenlijk is om de data te verwijderen als de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-4"><code>Betrokkene</code></a> daar om vraagt.</p>
+<p>Tegelijkertijd is het laagste niveau van logging niet per definitie voldoende om de vereiste verantwoordelijkheid af te kunnen leggen.
+Dit hangt af van de situatie en de wettelijke bepalingen die verbonden zijn aan een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-12"><code>Dataverwerking</code></a>.
+Daarom is het van belang dat bij elke dataverwerking er wordt gekeken welk niveau van toepassing is, in plaats van een generiek niveau voor alle dataverwerkingen te bepalen.
+Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau wordt gekozen.</p>
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Noot</span></div><p class="">Op dit moment is de standaard geschikt voor implementaties van volwassenheidsniveau 1.
+De uitwerking van volwassenheidsniveau 2 en 3 worden op dit moment uitgeprobeerd in een project van Geonovum waarbij een extensie voor object wordt beschreven.
+Volwassenheidsniveau 3 is vanwege technische limitaties nog niet aan te raden, omdat dit verder wordt uitgewerkt op basis van de bevindingen voor niveau 2.</p></div></section></section>
+
+  <section id="tof"><div class="header-wrapper"><h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 7."></a></div><ul class="tof">
+        <li class="tofline">
+    <a class="tocxref" href="#fig-componenten-in-context"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Componenten in context</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-context-dataverwerking-meegeven-over-grenzen"><span class="self-link">Figuur <bdi class="figno">2</bdi></span> <span class="fig-title">Context Dataverwerking meegeven over Grenzen</span></a>
+  </li>
+      </ul></section>
+  <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
+    <div class="header-wrapper"><h3 id="a-1-begrippen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+    <ul class="index">
+    <li>
+      <a class="index-term" href="#dfn-acties">Actie</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-applicaties">Applicatie</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-betrokkenen">Betrokkene</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-dataverwerkingen">Dataverwerking</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-inzage">Inzage</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-logboeken">Logboek</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-logregel">Logregel</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-registers">Register</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-traces">Trace</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-verwerkers">Verwerker</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-verwerkingsactiviteiten">Verwerkingsactiviteit</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-verantwoordelijke">Verwerkingsverantwoordelijke</a> 
+    <span class="print-only">§3.2</span></li><li>
+      <a class="index-term" href="#dfn-volwassenheidsniveaus">Volwassenheidsniveaus</a> 
+    <span class="print-only">§6.</span></li>
+  </ul>
+  </section><section id="index-defined-elsewhere">
+    <div class="header-wrapper"><h3 id="a-2-begrippen-gedefinieerd-door-verwijzing"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    <ul class="index">
+    
+  </ul>
+  </section></section>
+
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normatieve-referenties">
+    <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
+    <dl class="bibliography"><dt id="bib-avg">[AVG]</dt><dd>
+      <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679"><cite>Algemene Verordening Gegevensbescherming</cite></a>.  Verordening (EU) 2016/679 van het Europees Parlement. 27 april 2016. URL: <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679">https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd><dt id="bib-rfc9112">[RFC9112]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc9112.html"><cite>HTTP/1.1</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed. IETF. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9112.html">https://httpwg.org/specs/rfc9112.html</a>
+    </dd><dt id="bib-rfc9113">[RFC9113]</dt><dd>
+      <a href="https://httpwg.org/specs/rfc9113.html"><cite>HTTP/2</cite></a>. M. Thomson, Ed.; C. Benfield, Ed. IETF. June 2022. Proposed Standard. URL: <a href="https://httpwg.org/specs/rfc9113.html">https://httpwg.org/specs/rfc9113.html</a>
+    </dd><dt id="bib-trace-context-1">[trace-context-1]</dt><dd>
+      <a href="https://www.w3.org/TR/trace-context-1/"><cite>Trace Context</cite></a>. Sergey Kanzhelev; Morgan McLean; Alois Reitbauer; Bogdan Drutu; Nik Molnar; Yuri Shkuro.  W3C. 23 November 2021. W3C Recommendation. URL: <a href="https://www.w3.org/TR/trace-context-1/">https://www.w3.org/TR/trace-context-1/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-acties" aria-label="Links in this document to definition: Actie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-acties" aria-label="Permalink for definition: Actie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-acties-1" title="§ 3.2 Terminologie">§ 3.2 Terminologie</a> 
+    </li><li>
+      <a href="#ref-for-dfn-acties-2" title="§ 5.2.2 Interface">§ 5.2.2 Interface</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-applicaties" aria-label="Links in this document to definition: Applicatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-applicaties" aria-label="Permalink for definition: Applicatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-applicaties-1" title="§ 3.3 Algemene werking van de standaard">§ 3.3 Algemene werking van de standaard</a> 
+    </li><li>
+      <a href="#ref-for-dfn-applicaties-2" title="§ 4.1 Context">§ 4.1 Context</a> 
+    </li><li>
+      <a href="#ref-for-dfn-applicaties-3" title="§ 4.2.1 Applicatie">§ 4.2.1 Applicatie</a> 
+    </li><li>
+      <a href="#ref-for-dfn-applicaties-4" title="§ 5.3 Component: Applicatie">§ 5.3 Component: Applicatie</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-betrokkenen" aria-label="Links in this document to definition: Betrokkene">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-betrokkenen" aria-label="Permalink for definition: Betrokkene. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-betrokkenen-1" title="§ 3.2 Terminologie">§ 3.2 Terminologie</a> 
+    </li><li>
+      <a href="#ref-for-dfn-betrokkenen-2" title="§ 3.3.1 Extensies">§ 3.3.1 Extensies</a> <a href="#ref-for-dfn-betrokkenen-3" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-betrokkenen-4" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-dataverwerkingen" aria-label="Links in this document to definition: Dataverwerking">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-dataverwerkingen" aria-label="Permalink for definition: Dataverwerking. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-dataverwerkingen-1" title="§ 3.2 Terminologie">§ 3.2 Terminologie</a> <a href="#ref-for-dfn-dataverwerkingen-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-dataverwerkingen-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-dataverwerkingen-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-dataverwerkingen-5" title="Reference 5">(5)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-6" title="§ 3.3 Algemene werking van de standaard">§ 3.3 Algemene werking van de standaard</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-7" title="§ 5.2.2 Interface">§ 5.2.2 Interface</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-8" title="§ 6.1.2 Niveau 2: kolomverwijzing">§ 6.1.2 Niveau 2: kolomverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-9" title="§ 6.1.3 Niveau 3: concrete data">§ 6.1.3 Niveau 3: concrete data</a> <a href="#ref-for-dfn-dataverwerkingen-10" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-dataverwerkingen-11" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> <a href="#ref-for-dfn-dataverwerkingen-12" title="Reference 2">(2)</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-inzage" aria-label="Links in this document to definition: Inzage">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-inzage" aria-label="Permalink for definition: Inzage. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-logboeken" aria-label="Links in this document to definition: Logboek">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-logboeken" aria-label="Permalink for definition: Logboek. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-logboeken-1" title="§ 4.1 Context">§ 4.1 Context</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logboeken-2" title="§ 4.2.2 Logboek">§ 4.2.2 Logboek</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logboeken-3" title="§ 6.2 Implicaties van niveaus">§ 6.2 Implicaties van niveaus</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-logregel" aria-label="Links in this document to definition: Logregel">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-logregel" aria-label="Permalink for definition: Logregel. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-logregel-1" title="§ 6.1.1 Niveau 1: registerverwijzing">§ 6.1.1 Niveau 1: registerverwijzing</a> <a href="#ref-for-dfn-logregel-2" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logregel-3" title="§ 6.1.2 Niveau 2: kolomverwijzing">§ 6.1.2 Niveau 2: kolomverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logregel-4" title="§ 6.1.3 Niveau 3: concrete data">§ 6.1.3 Niveau 3: concrete data</a> <a href="#ref-for-dfn-logregel-5" title="Reference 2">(2)</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-registers" aria-label="Links in this document to definition: Register">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-registers" aria-label="Permalink for definition: Register. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-registers-1" title="§ 4.1 Context">§ 4.1 Context</a> 
+    </li><li>
+      <a href="#ref-for-dfn-registers-2" title="§ 4.2.3 Register">§ 4.2.3 Register</a> 
+    </li><li>
+      <a href="#ref-for-dfn-registers-3" title="§ 5.4 Component: Register">§ 5.4 Component: Register</a> 
+    </li><li>
+      <a href="#ref-for-dfn-registers-4" title="§ 6.1.1 Niveau 1: registerverwijzing">§ 6.1.1 Niveau 1: registerverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-registers-5" title="§ 6.1.2 Niveau 2: kolomverwijzing">§ 6.1.2 Niveau 2: kolomverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-registers-6" title="§ 6.1.3 Niveau 3: concrete data">§ 6.1.3 Niveau 3: concrete data</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-traces" aria-label="Links in this document to definition: Trace">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-traces" aria-label="Permalink for definition: Trace. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-traces-1" title="§ 4.3.2 Geen inhoudelijke uitwisseling tussen Verantwoordelijken">§ 4.3.2 Geen inhoudelijke uitwisseling tussen Verantwoordelijken</a> 
+    </li><li>
+      <a href="#ref-for-dfn-traces-2" title="§ 5.1 Protocollen">§ 5.1 Protocollen</a> 
+    </li><li>
+      <a href="#ref-for-dfn-traces-3" title="§ 5.2.2 Interface">§ 5.2.2 Interface</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-verantwoordelijke" aria-label="Links in this document to definition: Verwerkingsverantwoordelijke">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-verantwoordelijke" aria-label="Permalink for definition: Verwerkingsverantwoordelijke. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-verantwoordelijke-1" title="§ 3.2 Terminologie">§ 3.2 Terminologie</a> <a href="#ref-for-dfn-verantwoordelijke-2" title="Reference 2">(2)</a> 
+    </li><li>
+      <a href="#ref-for-dfn-verantwoordelijke-3" title="§ 4.3.1 Vastlegging door Verantwoordelijke">§ 4.3.1 Vastlegging door Verantwoordelijke</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-verwerkers" aria-label="Links in this document to definition: Verwerker">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-verwerkers" aria-label="Permalink for definition: Verwerker. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-verwerkers-1" title="§ 4.3.1 Vastlegging door Verantwoordelijke">§ 4.3.1 Vastlegging door Verantwoordelijke</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-verwerkingsactiviteiten" aria-label="Links in this document to definition: Verwerkingsactiviteit">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-verwerkingsactiviteiten" aria-label="Permalink for definition: Verwerkingsactiviteit. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-verwerkingsactiviteiten-1" title="§ 3.2 Terminologie">§ 3.2 Terminologie</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-volwassenheidsniveaus" aria-label="Links in this document to definition: Volwassenheidsniveaus">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-volwassenheidsniveaus" aria-label="Permalink for definition: Volwassenheidsniveaus. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">Logius Standaard - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
