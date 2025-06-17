@@ -891,7 +891,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">13 juni 2025</time>
+      <time class="dt-published" datetime="2024-12-13">17 juni 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1119,6 +1119,10 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-2"><code>Logboek</code></a> is een Applicatie met een specifieke rol in de context van deze standaard. In het Logboek worden Dataverwerkingen gelogd.</p>
 <p>Dataverwerkingen in het Logboek zelf worden <em>niet</em> gelogd in een Logboek Dataverwerkingen, dit zou een oneindige recursiviteit veroorzaken.</p>
 </section><section id="register"><div class="header-wrapper"><h4 id="x4-2-3-register"><bdi class="secno">4.2.3 </bdi>Register</h4><a class="self-link" href="#register" aria-label="Permalink for Section 4.2.3"></a></div>
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: Verwerkingsactiviteiten zijn niet gestandaardiseerd</span></div><div class="">
+  <p>Let op: De standaard beschrijft géén vaste structuur of interface voor het register van verwerkingsactiviteiten. De inrichting van het register van verwerkingsactiviteiten verschilt per organisatie en maakt géén onderdeel uit van deze standaard.</p>
+</div></div>
+
 <p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-2"><code>Register</code></a> bevat statische informatie over Dataverwerkingen. Elk record in een Register heeft een unieke identificatiecode waarmee de Verwerkingsactiviteit kan worden aangeduid. Deze identificatiecode wordt gebruikt om vanuit een Logregel te linken naar aanvullende informatie in een Register.</p>
 <p>Het Register kan een Applicatie zijn, in dat geval is het een Applicatie met een specifieke rol in de context van deze standaard. Eventueel kan het ook een Register in de vorm van een document zijn.</p>
 <p>Dataverwerkingen in het Register worden gelogd in een Logboek Dataverwerkingen.</p>
@@ -1172,13 +1176,13 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 </section>
     <section id="protocollen"><div class="header-wrapper"><h3 id="x5-1-protocollen"><bdi class="secno">5.1 </bdi>Protocollen</h3><a class="self-link" href="#protocollen" aria-label="Permalink for Section 5.1"></a></div>
 <p>De protocollen die worden gebruikt tussen applicatie en logboek en voor het uitvoeren van transacties tussen applicaties worden niet voorgeschreven in de standaard.</p>
-<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Noot</span></div><div class="">
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span></div><div class="">
 
 <p>Let wel, met "de protocollen" bedoelen we de manier van afleveren van berichten tussen de componenten. Deze standaard beschrijft wel degelijk interfaces van de berichten zelf waar de componenten aan <strong><em class="rfc2119">MOETEN</em></strong> voldoen, met als doel interopabiliteit tussen functionaliteit van componenten. De standaard laat vrij hoe die informatie tussen componenten wordt doorgegeven, omdat dat afhangt van de technische/architecturele keuzes die software ontwikkelaars maken. Dit biedt de vrijheid om de standaard toe te voegen aan vrijwel iedere softwareoplossing.</p>
 </div></div>
 
 <p>Het is <em><strong><em class="rfc2119">AANBEVOLEN</em></strong></em> om <a href="https://opentelemetry.io/docs/specs/otlp/">het OpenTelemetry Protocol (OTLP)</a> te gebruiken in de interactie tussen Applicatie en Logboek.</p>
-<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span></div><div class="">
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span></div><div class="">
 
 <p><a href="https://opentelemetry.io/">OpenTelemetry</a> is een standaard en open source framework voor het beheren, genereren, verzamelen en exporteren van telemetriedata. Door het gebruik van deze open standaard kunnen leverancierspecifieke integraties voorkomen worden. OpenTelemetry is een <a href="https://www.cncf.io/projects/">CNCF incubating project</a>.</p>
 </div></div>
@@ -1312,7 +1316,7 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <tbody><tr>
 <td>attributes</td>
 <td>Any</td>
-<td>Een lijst van key-value pairs die gebruikt kunnen worden om een systeem, applicatie of component aan te duiden op een manier die binnen de organisatie gebruikelijk is. Denk hierbij aan zaken als naam en versienummer van een applicatie, of een verwijzing naar een record in een <a href="https://www.hci-itil.com/ITIL_v3/books/3_service_transition/service_transition_ch4_3.html">CMDB</a>.</td>
+<td>Een object met velden dat gebruikt wordt om een systeem, applicatie of component aan te duiden op een manier die binnen de organisatie gebruikelijk is. Denk hierbij aan velden als naam en versienummer van een applicatie, of een verwijzing naar een record in een <a href="https://www.hci-itil.com/ITIL_v3/books/3_service_transition/service_transition_ch4_3.html">CMDB</a>.</td>
 </tr>
 </tbody></table>
 <p>Het veld <code>attributes</code> is een object, opgebouwd uit de volgende velden:</p>
@@ -1411,7 +1415,7 @@ Als voor elke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwer
 Dit hangt af van de situatie en de wettelijke bepalingen die verbonden zijn aan een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-12"><code>Dataverwerking</code></a>.
 Daarom is het van belang dat bij elke dataverwerking er wordt gekeken welk niveau van toepassing is, in plaats van een generiek niveau voor alle dataverwerkingen te bepalen.
 Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau wordt gekozen.</p>
-<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span></div><p class="">Op dit moment is de standaard geschikt voor implementaties van volwassenheidsniveau 1.
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Noot</span></div><p class="">Op dit moment is de standaard geschikt voor implementaties van volwassenheidsniveau 1.
 De uitwerking van volwassenheidsniveau 2 en 3 worden op dit moment uitgeprobeerd in een project van Geonovum waarbij een extensie voor object wordt beschreven.
 Volwassenheidsniveau 3 is vanwege technische limitaties nog niet aan te raden, omdat dit verder wordt uitgewerkt op basis van de bevindingen voor niveau 2.</p></div></section></section>
 
