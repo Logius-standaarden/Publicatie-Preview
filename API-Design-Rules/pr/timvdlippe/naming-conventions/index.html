@@ -40,13 +40,11 @@ dfn{cursor:pointer}
   
 <meta name="color-scheme" content="light dark">
   
-  
 <title>NLGov REST API Design Rules</title>
   
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/adr-style.css" rel="stylesheet" type="text/css">
   
-<link href="./media/style.css" rel="stylesheet" type="text/css">
-  
-<link href="./media/dark.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)">
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/adr-dark.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)">
   
   
   
@@ -619,6 +617,12 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1",
       "id": "ncsc 2021"
     },
+    "NCSC 2025": {
+      "date": "June 2025",
+      "href": "https://www.ncsc.nl/wat-kun-je-zelf-doen/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
     "NEN3610": {
       "authors": [
         ""
@@ -805,6 +809,60 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
         "Pim Gaemers"
       ],
       "publisher": "Logius"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0-03.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "ietf-oauth-v2-1-10-refresh-token-grant": {
+      "authors": [
+        "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
+      ],
+      "date": "January 9, 2024",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant",
+      "publisher": "IETF",
+      "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile"
     }
   },
   "alternateFormats": [
@@ -854,10 +912,10 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
   ],
   "github": "https://github.com/Logius-standaarden/API-Design-Rules",
   "pubDomain": "api",
-  "publishDate": "2025-01-07",
-  "publishVersion": "2.0.1",
-  "previousPublishDate": "2024-03-07",
-  "previousPublishVersion": "2.0.0",
+  "publishDate": "2025-02-17",
+  "publishVersion": "2.0.2",
+  "previousPublishDate": "2025-01-07",
+  "previousPublishVersion": "2.0.1",
   "shortName": "adr",
   "specStatus": "WV",
   "specType": "ST",
@@ -873,7 +931,6 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
- 
  <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">NLGov REST API Design Rules</h1>
@@ -881,7 +938,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-07">May 13, 2025</time>
+      <time class="dt-published" datetime="2025-02-17">June 20, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -894,7 +951,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.1/">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.1/</a></dd>
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
@@ -1048,14 +1105,14 @@ In addition to this (normative) document, separate modules are being written to 
 <ul id="technicalList"><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in API all responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul></section></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x3-the-core-set-of-design-rules"><bdi class="secno">3. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 3."></a></div>
 <section id="resources"><div class="header-wrapper"><h3 id="x3-1-resources"><bdi class="secno">3.1 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 3.1"></a></div>
-<p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is the key abstraction of information, where every piece of information is named by assigning a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a> (Uniform Resource Identifier). Resources describe <em>things</em>, which can vary between physical objects (e.g. a building or a person) and more abstract concepts (e.g. a permit or an event).</p>
+<p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is an abstraction of a conceptual entity, identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a>. It may correspond to anything from a physical object (e.g. a building or a person) to an abstract concept (e.g. a permit, an event or today's weather). Although a resource is not tied to any specific exchange format, its current state can be transferred to clients through one or more representations, such as JSON or XML.</p>
 <p><span id="api-05"></span></p>
 <div class="rule" id="/core/naming-resources" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
    <p class="rulelab"><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</p>
    <dl>
    <dt>Statement</dt>
    <dd>
-   Resources are referred to using nouns (instead of verbs) that are relevant from the perspective of the user of the API.
+   Resources are referred to using nouns (instead of verbs) that represent entities meaningful to the API consumer.
    <div class="example">
       A few correct examples of nouns as part of a URI:
       <ul>
@@ -1076,14 +1133,14 @@ In addition to this (normative) document, separate modules are being written to 
 </dl>
 </div>
 
-<p>A resource describing a single thing is called a <a data-link-type="dfn|abstract-op" href="#dfn-singular-resource" class="internalDFN" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be grouped into collections, which are resources in their own right and can typically be paged, sorted and filtered. Most often all collection members have the same type, but this is not necessarily the case. A resource describing multiple things is called a <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-1">collection resource</a>. Collection resources typically contain references to the underlying singular resources.</p>
+<p>A resource that corresponds to a single conceptual entity is referred to as a <a data-link-type="dfn|abstract-op" href="#dfn-singular-resource" class="internalDFN" id="ref-for-dfn-singular-resource-1">singular resource</a>. Resources can also be logically grouped into collections, which are themselves resources and typically support operations like paging, sorting, and filtering. While collection members are often of the same type, this is not strictly required. A collection resource contains references (URIs) to the individual singular resources it includes.</p>
 <p><span id="api-54"></span></p>
 <div class="rule" id="/core/naming-collections" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
    <p class="rulelab"><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</p>
    <dl>
       <dt>Statement</dt>
       <dd>
-         A collection resource represents multiple things.
+         Collection resources are referred to using plural nouns.
       </dd>
       <dt>Rationale</dt>
       <dd>
@@ -1155,7 +1212,7 @@ In addition to this (normative) document, separate modules are being written to 
          <div>
             <p>Path segments of a <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-4">URI</a> <em class="rfc2119">MUST</em> only contain lowercase letters, digits or hyphens. This is also known as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case">kebab-case</a>. Hyphens <em class="rfc2119">MUST</em> only be used to deliniate distinct words. This also implies that diacritics <em class="rfc2119">MUST</em> be normalized and special characters <em class="rfc2119">MUST</em> be omitted.
             </p><p>Another implication of this rule is that file extensions <em class="rfc2119">MUST NOT</em> be used. Resources <em class="rfc2119">SHOULD</em> use the <code>Accept</code> header for content negotation.
-            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code>, which is used as a convention to implement search API's
+            </p><p>The last path segment <em class="rfc2119">MAY</em> start with <code>_</code>, which is used as a convention to implement <a href="#/core/resource-operations">operations</a>
          </p></div>
       </dd>
       <dt>Rationale</dt>
@@ -1473,7 +1530,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          In this use case, the child resource does not necessarily have a top-level collection resource. The best way to explain this design rule is by example.
          <div class="example">
-    <p>When modelling resources for a news platform including the ability for users to write comments, it might be a good strategy to model the <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-2">collection resources</a> hierarchically:</p>
+    <p>When modelling resources for a news platform including the ability for users to write comments, it might be a good strategy to model the <a data-link-type="dfn|abstract-op" href="#dfn-collection-resource" class="internalDFN" id="ref-for-dfn-collection-resource-1">collection resources</a> hierarchically:</p>
     <pre class="nohighlight">https://api.example.org/v1/articles/123/comments</pre>
     <p>The platform might also offer a photo section, where the same commenting functionality is offered. In the same way as for articles, the corresponding sub-collection resource might be published at:</p>
     <pre class="nohighlight">https://api.example.org/v1/photos/456/comments</pre>
@@ -1600,7 +1657,7 @@ In addition to this (normative) document, separate modules are being written to 
             <li> Step 3: The openapi.yaml <em class="rfc2119">MUST</em> contain the same OpenAPI Description as the openapi.json.</li>
             <li> Step 4: The CORS header Access-Control-Allow-Origin <em class="rfc2119">MUST</em> allow all origins.</li>
          </ul>
-      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fpublish%2Dopenapi">linter configuration</a>.</dd>
+      </dd>
    </dl>
 </div>
 
@@ -1955,25 +2012,25 @@ This avoids XXE-attack vectors for example.</li>
     <dfn id="dfn-resource" tabindex="0" aria-haspopup="dialog">Resource</dfn>
   </dt>
   <dd>
-    A resource is the key abstraction of information, where every piece of information is identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-14">URI</a>.
+    A resource is an abstraction of a conceptual entity, identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-14">URI</a>, whose current state can be transferred to clients through one or more representations.
   </dd>
   <dt>
     <dfn data-plurals="singular resources" id="dfn-singular-resource" tabindex="0" aria-haspopup="dialog">Singular resource</dfn>
   </dt>
   <dd>
-    A singular resource is a resource describing a single thing (e.g. a building, person or event).
+    A singular resource is a resource that corresponds to a single conceptual entity (e.g. a building, person or event).
   </dd>
   <dt>
     <dfn data-plurals="collection resources" id="dfn-collection-resource" tabindex="0" aria-haspopup="dialog">Collection resource</dfn>
   </dt>
   <dd>
-    A collection resource is a resource describing multiple things (e.g. a list of buildings).
+    A collection resource is a resource that corresponds to a logical grouping of related resources and contains references (URIs) to the individual singular resources it includes. (e.g. a list of buildings).
   </dd>
   <dt>
     <dfn id="dfn-uri" tabindex="0" aria-haspopup="dialog">URI</dfn>
   </dt>
   <dd>
-    A URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">rfc3986</a></cite>] (Uniform Resource Identifier) is a globally unique identifier for a resource.
+    A URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">rfc3986</a></cite>] (Uniform Resource Identifier) is a string that identifies a resource. URIs are intended to be unique across the web, allowing resources to be unambiguously referenced.
   </dd>
   <dt>
     <dfn id="dfn-ogc" tabindex="0" aria-haspopup="dialog">OGC</dfn>
@@ -2010,18 +2067,25 @@ This avoids XXE-attack vectors for example.</li>
   <span class="hljs-attr">oas3-api-servers:</span> <span class="hljs-string">error</span>
 
   <span class="hljs-comment">#/core/doc-openapi</span>
-  <span class="hljs-attr">openapi3:</span>
+  <span class="hljs-attr">nlgov:openapi3:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.['openapi']"</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.['openapi']</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
       <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">"^3.0.*$"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"Use OpenAPI Specification for documentation"</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">'^3(.\d+){1,2}$'</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The OpenAPI Specification is versioned using a `major.minor.patch` versioning scheme. Use a version 3 OpenAPI Specification for documentation."</span>
+
+  <span class="hljs-attr">nlgov:openapi-root-exists:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">field:</span> <span class="hljs-string">openapi</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"The root of the document must contain the `openapi` property"</span>
 
   <span class="hljs-comment">#/core/version-header</span>
-  <span class="hljs-attr">missing-version-header:</span>
+  <span class="hljs-attr">nlgov:missing-version-header:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))][headers]</span>
     <span class="hljs-attr">then:</span>
@@ -2035,7 +2099,7 @@ This avoids XXE-attack vectors for example.</li>
           <span class="hljs-bullet">-</span> <span class="hljs-string">API-version</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"Return the full version number in a response header"</span>
 
-  <span class="hljs-attr">missing-header:</span>
+  <span class="hljs-attr">nlgov:missing-header:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))]</span>
     <span class="hljs-attr">then:</span>
@@ -2044,7 +2108,7 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/version-header: Return the full version number in a response header: https://logius-standaarden.github.io/API-Design-Rules/#/core/version-header"</span>
 
   <span class="hljs-comment">#/core/uri-version</span>
-  <span class="hljs-attr">include-major-version-in-uri:</span>
+  <span class="hljs-attr">nlgov:include-major-version-in-uri:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">"$.servers[*]"</span>
@@ -2056,7 +2120,7 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/uri-version: Include the major version number in the URI: https://logius-standaarden.github.io/API-Design-Rules/#/core/uri-version"</span>
 
   <span class="hljs-comment">#/core/no-trailing-slash</span>
-  <span class="hljs-attr">paths-no-trailing-slash:</span>
+  <span class="hljs-attr">nlgov:paths-no-trailing-slash:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
@@ -2067,41 +2131,11 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/no-trailing-slash: Leave off trailing slashes from URIs: https://logius-standaarden.github.io/API-Design-Rules/#/core/no-trailing-slash"</span>
 
-  <span class="hljs-comment">#/core/publish-openapi</span>
-  <span class="hljs-attr">paths-open-api-json-resource-exists:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths"</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"/openapi.json"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a resource `/openapi.json` that returns the OpenAPI specification document"</span>
-
-  <span class="hljs-attr">paths-open-api-json-resource-has-get:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths[/openapi.json]"</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
-      <span class="hljs-attr">functionOptions:</span>
-        <span class="hljs-attr">match:</span> <span class="hljs-string">"get"</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"There does not exist a GET method (and no other methods) for the `/openapi.json` resource"</span>
-
-  <span class="hljs-attr">paths-open-api-json-specify-cors-header:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">given:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths[/openapi.json].get.responses[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(2|3)\d\d/))].headers</span>
-    <span class="hljs-attr">then:</span>
-      <span class="hljs-attr">function:</span> <span class="hljs-string">truthy</span>
-      <span class="hljs-attr">field:</span> <span class="hljs-string">"access-control-allow-origin"</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"The response of the `/openapi.json` resource should set the `access-control-allow-origin` header with value `*`"</span>
-
   <span class="hljs-comment">#/core/doc-openapi-contact</span>
   <span class="hljs-comment"># This rule exists in the base oas spectral linter set</span>
   <span class="hljs-attr">info-contact:</span> <span class="hljs-string">error</span>
 
-  <span class="hljs-attr">info-contact-fields-exist:</span>
+  <span class="hljs-attr">nlgov:info-contact-fields-exist:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">"$.info.contact"</span>
@@ -2116,7 +2150,7 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"Missing fields in `info.contact` field. Must specify email, name and url."</span>
 
   <span class="hljs-comment">#/core/http-methods</span>
-  <span class="hljs-attr">http-methods:</span>
+  <span class="hljs-attr">nlgov:http-methods:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">given:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">"$.paths[?(@property &amp;&amp; @property.match(/(description|summary)/i))]"</span>
@@ -2128,7 +2162,7 @@ This avoids XXE-attack vectors for example.</li>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"/core/http-methods: Only apply standard HTTP methods: https://logius-standaarden.github.io/API-Design-Rules/#http-methods"</span>
 
   <span class="hljs-comment">#/core/path-segments-kebab-case</span>
-  <span class="hljs-attr">paths-kebab-case:</span>
+  <span class="hljs-attr">nlgov:paths-kebab-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{property}}</span> is not kebab-case."</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$.paths[?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-type">!@property.match(/</span><span class="hljs-string">\/openapi\.json/))]~</span>
@@ -2143,9 +2177,9 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-comment"># - Een pad mag eindigen met een `/`. Dat is volgens een andere regel niet toegestaan, maar we willen niet twee errors genereren</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">^(\/|(\/_[a-z0-9]+|\/(([a-z0-9\-]+|{[^}]+})(\/([a-z0-9\-\.]+|{[^}]+}))*)(\/_[a-z]+)?)\/?)$</span>
 
-  <span class="hljs-attr">schema-camel-case:</span>
+  <span class="hljs-attr">nlgov:schema-camel-case:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"Schema name should be CamelCase in <span class="hljs-template-variable">{{path}}</span>"</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Schema name should be UpperCamelCase in <span class="hljs-template-variable">{{path}}</span>"</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">&gt;-
       $.components.schemas[*]~
 </span>    <span class="hljs-attr">then:</span>
@@ -2155,7 +2189,7 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">separator:</span>
           <span class="hljs-attr">char:</span> <span class="hljs-string">""</span>
 
-  <span class="hljs-attr">servers-use-https:</span>
+  <span class="hljs-attr">nlgov:servers-use-https:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"Server URL <span class="hljs-template-variable">{{value}}</span> <span class="hljs-template-variable">{{error}}</span>."</span>
     <span class="hljs-attr">given:</span>
@@ -2167,7 +2201,7 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">functionOptions:</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">^https://.*</span>
 
-  <span class="hljs-attr">use-problem-schema:</span>
+  <span class="hljs-attr">nlgov:use-problem-schema:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"The content type of an error response should be application/problem+json or application/problem+xml to match RFC 9457."</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content</span>
@@ -2179,7 +2213,7 @@ This avoids XXE-attack vectors for example.</li>
             <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+json"</span>]
             <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+xml"</span>]
 
-  <span class="hljs-attr">property-casing:</span>
+  <span class="hljs-attr">nlgov:property-casing:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
     <span class="hljs-attr">given:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-string">"$.*.schemas[*].properties.[?(@property &amp;&amp; @property.match(/_links/i))]"</span>
@@ -2189,6 +2223,15 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">type:</span> <span class="hljs-string">camel</span>
       <span class="hljs-attr">field:</span> <span class="hljs-string">"@key"</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">Properties</span> <span class="hljs-string">must</span> <span class="hljs-string">be</span> <span class="hljs-string">lowerCamelCase.</span>
+
+  <span class="hljs-attr">nlgov:semver:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Version <span class="hljs-template-variable">{{value}}</span> is not in semver format."</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$.info.version</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">pattern</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">match:</span> <span class="hljs-string">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$</span>
 </code></pre>
     </details>
   </section>
@@ -2259,9 +2302,7 @@ This avoids XXE-attack vectors for example.</li>
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-collection-resource-1" title="§ 3.1 Resources">§ 3.1 Resources</a> 
-    </li><li>
-      <a href="#ref-for-dfn-collection-resource-2" title="§ 3.4 Relationships">§ 3.4 Relationships</a> 
+      <a href="#ref-for-dfn-collection-resource-1" title="§ 3.4 Relationships">§ 3.4 Relationships</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-uri" aria-label="Links in this document to definition: URI">
