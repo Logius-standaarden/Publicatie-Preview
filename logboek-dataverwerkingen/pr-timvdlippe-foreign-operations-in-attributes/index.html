@@ -1374,7 +1374,11 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em><strong><em class="rfc2119">MOET</em></strong></em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
 <p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> voor iedere actie (<code>span_id</code>) een logregel wegschrijven via de interface van het Logboek.</p>
 <p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> bijhouden of een actie geslaagd of mislukt is en dit per Dataverwerking als status (<code>status_code</code>) meegeven in de Logregel.</p>
+
+
 <p>Als de Applicatie een verzoek van een andere Applicatie kan ontvangen, <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie metadata volgens de W3C Trace Context standaard kunnen verwerken en gebruiken in de eigen Trace(s). Metadata verkregen via W3C Trace Context <em><strong><em class="rfc2119">MOET</em></strong></em> in <code>attributes</code> meegenomen worden als velden die beginnen met <code>dpl.core.foreign_operation</code>. Zie de <a href="#interface">specificatie van het logboek</a> voor de lijst van velden.</p>
+
+
 <p>Als de Applicatie een verzoek aan een andere Applicatie kan versturen, <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie metadata volgens de W3C Trace Context standaard meegeven aan dit verzoek.</p>
 <p>De Applicatie <em><strong><em class="rfc2119">MAG</em> NIET</strong></em> gebruik maken van <em>Log Sampling</em>.</p>
 <section id="loggen-van-dataverwerkingen-met-persoonsdata"><div class="header-wrapper"><h5 id="x5-3-1-1-loggen-van-dataverwerkingen-met-persoonsdata"><bdi class="secno">5.3.1.1 </bdi>Loggen van Dataverwerkingen met persoonsdata</h5><a class="self-link" href="#loggen-van-dataverwerkingen-met-persoonsdata" aria-label="Permalink for Section 5.3.1.1"></a></div>
