@@ -289,7 +289,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Logboek Dataverwerkingen Extensie Guidelines</h1>
     
@@ -435,7 +435,7 @@ het individuele product/proces geinstantieerd worden.</p>
 <p>Dit sluit goed aan op het abstractieniveau van wat we willen loggen met Logboek Dataverwerkingen. De beschreven structuur hieronder legt deze structurele componenten vast.</p>
 <p>Afhankelijk van het gekozen niveau wordt er alleen gelogd op het niveau van het Dataproduct (niveau 1), Op het niveau van de datasets (of tabellen) en eventueel de features (rijen in de tabellen) (niveau 2), of zelfs de attributen en de waarden binnen de features (niveau 3).</p>
 <pre class="nohighlight"><code>dpl.objects.algorithm_id
-dpl.objects.dataproduct_id 
+dpl.objects.dataproduct_id
 dpl.objects.dataset [
     dataset_id
     dataset_def
@@ -450,7 +450,7 @@ dpl.objects.dataset [
             attribute_value
             attribute_def
         ]
-    ]   
+    ]
 ]
 </code></pre>
 
