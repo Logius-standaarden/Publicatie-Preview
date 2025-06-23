@@ -398,10 +398,6 @@ img.license{float:left;padding-right:5px;background:0 0}
   <section id="logboek-dataverwerkingen-extensie-objecten"><div class="header-wrapper"><h2 id="x2-logboek-dataverwerkingen-extensie-objecten"><bdi class="secno">2. </bdi>Logboek Dataverwerkingen Extensie Objecten</h2><a class="self-link" href="#logboek-dataverwerkingen-extensie-objecten" aria-label="Permalink for Section 2."></a></div>
 <p>De overheid wil voor burgers en bedrijven zo transparant mogelijk zijn in de omgang met hun gegevens. Daarom is het bij de informatieverwerking in datasets belangrijk om voor elke mutatie of raadpleging vast te leggen wie deze actie wanneer uitvoert, en waarom. Deze herleidbaarheid speelt zowel een rol in het kader van de wetgeving op het gebied van privacy als ook het streven naar openheid en transparantie bij de overheid. Voor een optimale samenwerking over organisaties en bronnen heen is voor deze logging een algemene standaard nodig.</p>
 <p>Deze extensie beschrijft de technische specificaties hoe de Logboek Dataverwerkingen standaard kan worden toegepast voor het loggen van objectgegevens.</p>
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Noot</span></div><aside class="">
-Dit document is een conceptversie voor een extensie voor Objecten.S De extensie is dus niet vastgesteld en niet direct bruikbaar als standaard.
-</aside></div>
-
 <section id="doel-en-nut"><div class="header-wrapper"><h3 id="x2-1-doel-en-nut"><bdi class="secno">2.1 </bdi>Doel en nut</h3><a class="self-link" href="#doel-en-nut" aria-label="Permalink for Section 2.1"></a></div>
 <p>De logboek Dataverwerkingen standaard specificeert hoe het verwerken van gegevens van personen en niet-natuurlijke personen gedaan moet worden.
 Er zijn diverse scenario's waarbij het wenselijk is om wel logging toe te passen, maar waar geen sprake is van persoonsgegevens. Of waar aanvullend aan perssonsgegevens ook gegevens over objecten gelogd dienen te worden.</p>
@@ -534,7 +530,7 @@ dpl.objects.dataset [
 </tbody></table>
 <p>Afhankelijk van het volwassenheidsniveau wordt er meer gelogd. Voor de hogere niveaus geldt dat de gegevens van het lagere niveau ook gelogd worden.</p>
 <p>Voor niveau 2 (kolomniveau) geldt dat er op gehele dataset gelogd kan worden (2a), of dat er specifiek aangegeven kan worden welke features in een dataset gebruikt zijn (2b).</p>
-<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span></div><aside class="">
 Er is expliciet gekozen voor de naamgeving dpl.objects.algorithm_id om een duidelijk onderscheid te maken met ```dpl.core.processing_activity_id```.
 ```processing_activity_id``` is altijd een verwijzing naar een verwerkingsregister van persoonsgegevens. ```Algorithm_id``` is altijd de verwerking naar een register specifiek voor data verwerkingen.
 Dit kan het algoritme register zijn, maar zou ook een ander register kunnen zijn.
