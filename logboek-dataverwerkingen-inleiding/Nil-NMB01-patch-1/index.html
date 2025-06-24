@@ -871,7 +871,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Inleiding Logboek dataverwerkingen</h1>
     
@@ -1295,6 +1295,29 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <p>Zelfs in de meest eenvoudige applicaties kunnen fouten optreden. Fouten kunnen ontstaan door bijvoorbeeld verkeerde invoer door de gebruiker, een fout in de software van de applicatie of een connectie met een andere applicatie die niet werkt. Dit document geeft een handreiking ten aanzien van de afhandeling van foutsituaties met betrekking tot het gebruik van het Logboek Dataverwerkingen.</p>
 <section id="uitgangspunten-registratie-foutsituaties"><div class="header-wrapper"><h5 id="uitgangspunten-registratie-foutsituaties-0">Uitgangspunten registratie foutsituaties</h5><a class="self-link" href="#uitgangspunten-registratie-foutsituaties" aria-label="Permalink for this Section"></a></div>
 <p>De volgende punten zijn belangrijk in het ontwerpen en implementeren van de registratie van foutsituaties in relatie tot het Logboek Dataverwerkingen:</p>
+<ul>
+<li><p>Gebruik zoveel mogelijk de standaardfoutmethodes van de gebruikte ontwikkeltaal.<br>Bijvoorbeeld:  </p>
+<ul>
+<li>De Java SDK van OpenTelemetry gebruikt <a href="%5Bhttps://opentelemetry.io/docs/instrumentation/java/manual/#recording-exceptions%5D(https://github.com/open-telemetry/opentelemetry-java/blob/cc2844d86745544f5076db72800f411fc4ee4fb0/api/all/src/main/java/io/opentelemetry/api/trace/Span.java#L338)">RecordException</a> als methode.</li>
+</ul>
+</li>
+<li><p>Foutdata moeten worden gerelateerd aan een <code>trace_id</code> en <code>span_id</code>.</p>
+</li>
+<li><p>Het is toegestaan de foutsituatie te registreren als transactie (Span) in het Logboek Dataverwerkingen <strong>of</strong> te integreren in een foutenlog <strong>buiten</strong> het Logboek Dataverwerkingen. Beiden hebben voor- en nadelen:</p>
+<ul>
+<li><p><strong>In het Logboek Dataverwerkingen</strong>:<br><strong>Voordeel:</strong> Alle transacties staan bij elkaar en fouten zijn te herkennen door <code>name</code> (=exception) en <code>status_code</code> (=error).<br><strong>Nadeel:</strong> Er moet een trigger zijn zodat de beheerder ingelicht wordt dat er een foutsituatie is ontstaan. Als er een grote hoeveelheid logregels zijn, is het zoeken lastig.</p>
+</li>
+<li><p><strong>Buiten het Logboek Dataverwerkingen</strong>:<br><strong>Voordeel:</strong> Alle foutsituaties staan gecentraliseerd opgeslagen waardoor monitoring eenvoudiger is.<br><strong>Nadeel:</strong> Foutsituaties moeten worden gekoppeld aan <code>trace_id</code> en <code>span_id</code>, dit betekent een extra inspanning om de foutsituatie te registreren.</p>
+</li>
+</ul>
+</li>
+<li><p>Als er een foutsituatie optreedt, moeten de foutdata worden geregistreerd als een transactie als er voor gekozen wordt dat een foutsituatie in het Logboek Dataverwerkingen wordt opgeslagen.</p>
+</li>
+<li><p>De software van de applicatie die de registratie van de logdata registreert, moet er voor zorgen dat er geen fout optreedt in ‘run-time’.<br>Bijvoorbeeld als <code>name</code> leeg is, moet deze automatisch worden gevuld met een waarde zodat er in ieder geval op dit punt geen fout kan optreden.</p>
+</li>
+<li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.<br>Er moet een mechanisme zijn om de lege velden te vullen en een ‘crash’ te voorkomen.</p>
+</li>
+</ul>
 </section></section></section>
     <section id="canoniek-datamodel"><div class="header-wrapper"><h3 id="x4-3-canoniek-datamodel"><bdi class="secno">4.3 </bdi>Canoniek Datamodel</h3><a class="self-link" href="#canoniek-datamodel" aria-label="Permalink for Section 4.3"></a></div>
 <p>Ter verduidelijking van de standaard is een Canoniek datamodel uitgewerkt, dit gestandaardiseerd model voor datarepresentatie is  ontworpen om de attributen eenduidig en consistenter te maken. Het biedt een uniforme structuur en terminologie voor alle relevante data in de standaard. Zie voor de definitie van de gebruikte terminologie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#terminologie">Paragraaf 1.2 van de standaard</a>.</p>
