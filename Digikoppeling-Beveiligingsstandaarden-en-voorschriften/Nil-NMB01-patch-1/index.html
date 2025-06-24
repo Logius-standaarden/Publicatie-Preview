@@ -840,6 +840,11 @@ img.license{float:left;padding-right:5px;background:0 0}
       "href": "https://logius-standaarden.github.io/logboek-extensie-template/",
       "publisher": "Logius",
       "title": "LDV Extensie Guideline"
+    },
+    "logboek dataverwerkingen": {
+      "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+      "publisher": "Logius",
+      "title": "Logboek Dataverwerkingen"
     }
   },
   "alternateFormats": [
@@ -1255,7 +1260,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <tbody><tr>
 <td>SIGN001</td>
 <td>Signing met SHA-2 is verplicht.</td>
-<td>Minimaal SHA-256.</td>
+<td>Minimaal SHA 224 of SHA-256.</td>
 </tr>
 <tr>
 <td>SIGN002</td>
@@ -1264,12 +1269,12 @@ img.license{float:left;padding-right:5px;background:0 0}
 </tr>
 <tr>
 <td>SIGN003</td>
-<td>Het DigestMethod Algorithm moet gebruik maken van een van de volgende algoritmen: SHA-256, SHA-384, SHA-512 [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmlenc-core" title="XML Encryption Syntax and Processing">xmlenc-core</a></cite>], <cite><a data-matched-text="[[[FIPS-180-4]]]" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">FIPS PUB 180-4: Secure Hash Standard (SHS)</a></cite></td>
+<td>Het DigestMethod Algorithm moet gebruik maken van een van de volgende algoritmen: SHA-224, SHA-256, SHA-384, SHA-512 [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmlenc-core" title="XML Encryption Syntax and Processing">xmlenc-core</a></cite>], <cite><a data-matched-text="[[[FIPS-180-4]]]" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">FIPS PUB 180-4: Secure Hash Standard (SHS)</a></cite></td>
 <td>Zie ook <a href="https://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod">https://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmldsig-core1" title="XML Signature Syntax and Processing Version 1.1">xmldsig-core1</a></cite>]</td>
 </tr>
 <tr>
 <td>SIGN004</td>
-<td>Het SignatureMethod Algorithm kan gebruik maken van een van de volgende algoritmen: [SHA-256] [SHA-384] [SHA-512]</td>
+<td>Het SignatureMethod Algorithm kan gebruik maken van een van de volgende algoritmen: [SHA-224] [SHA-256] [SHA-384] [SHA-512]</td>
 <td>Zie ook <a href="https://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod">https://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod</a> voor voorbeelden</td>
 </tr>
 </tbody></table>
