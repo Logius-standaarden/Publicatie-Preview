@@ -889,7 +889,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Inleiding Logboek dataverwerkingen</h1>
     
@@ -1330,17 +1330,14 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 </li>
 <li><p>De software van de applicatie die de registratie van de logdata registreert, moet er voor zorgen dat er geen fout optreedt in 'run-time'.  Bijvoorbeeld als <code>name</code> leeg is, moet deze automatisch worden gevuld met een waarde zodat er in ieder geval op dit punt geen fout kan optreden.</p>
 </li>
-<li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.  Er moet een mechanisme zijn om de lege velden te vullen en een ‘crash’ te voorkomen.</p>
+<li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.  Er moet een mechanisme zijn om de lege velden te vullen en een 'crash' te voorkomen.</p>
 </li>
 </ul>
 </section><section id="header"><div class="header-wrapper"><h5 id="header-0">Header</h5><a class="self-link" href="#header" aria-label="Permalink for this Section"></a></div>
 <p>Als een fout gerelateerd aan een Span wordt geregistreerd, dan moet er in de Header de volgende zaken worden opgeslagen:</p>
-<ul>
-<li><p><code>name</code> = ‘exception’</p>
-</li>
-<li><p><code>status_code</code> = ‘error’</p>
-</li>
-</ul>
+<pre><code aria-busy="false" class="hljs abnf"><span class="hljs-attribute">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">"exception"</span>
+status_code <span class="hljs-operator">=</span> <span class="hljs-string">"error"</span>
+</code></pre>
 <p>De overige gegevens in de Header worden ingevuld zoals bij een reguliere verwerking.</p>
 </section><section id="attributes"><div class="header-wrapper"><h5 id="attributes-0">Attributes</h5><a class="self-link" href="#attributes" aria-label="Permalink for this Section"></a></div>
 <p>Specifieke foutdata worden opgeslagen als key-value pairs in Attributes:</p>
