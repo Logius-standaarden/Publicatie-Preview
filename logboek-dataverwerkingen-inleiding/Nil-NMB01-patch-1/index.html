@@ -871,7 +871,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Inleiding Logboek dataverwerkingen</h1>
     
@@ -1298,7 +1298,7 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <ul>
 <li><p>Gebruik zoveel mogelijk de standaardfoutmethodes van de gebruikte ontwikkeltaal.<br>Bijvoorbeeld:  </p>
 <ul>
-<li>De Java SDK van OpenTelemetry gebruikt <a href="%5Bhttps://opentelemetry.io/docs/instrumentation/java/manual/#recording-exceptions%5D(https://github.com/open-telemetry/opentelemetry-java/blob/cc2844d86745544f5076db72800f411fc4ee4fb0/api/all/src/main/java/io/opentelemetry/api/trace/Span.java#L338)">RecordException</a> als methode.</li>
+<li>De Java SDK van OpenTelemetry gebruikt <a href="https://github.com/open-telemetry/opentelemetry-java/blob/cc2844d86745544f5076db72800f411fc4ee4fb0/api/all/src/main/java/io/opentelemetry/api/trace/Span.java#L338">RecordException</a></li>
 </ul>
 </li>
 <li><p>Foutdata moeten worden gerelateerd aan een <code>trace_id</code> en <code>span_id</code>.</p>
@@ -1318,6 +1318,51 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.<br>Er moet een mechanisme zijn om de lege velden te vullen en een ‘crash’ te voorkomen.</p>
 </li>
 </ul>
+</section><section id="header"><div class="header-wrapper"><h5 id="header-0">Header</h5><a class="self-link" href="#header" aria-label="Permalink for this Section"></a></div>
+<p>Als een fout gerelateerd aan een Span wordt geregistreerd, dan moet er in de Header de volgende zaken worden opgeslagen:</p>
+<ul>
+<li><p>name = ‘exception’</p>
+</li>
+<li><p>status_code = ‘error’</p>
+</li>
+</ul>
+<p>De overige gegevens in de Header worden ingevuld zoals bij een reguliere verwerking.</p>
+</section><section id="attributes"><div class="header-wrapper"><h5 id="attributes-0">Attributes</h5><a class="self-link" href="#attributes" aria-label="Permalink for this Section"></a></div>
+<p>Specifieke foutdata worden opgeslagen als key-value pairs in Attributes:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Veld</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Optioneel</strong></th>
+<th><strong>Omschrijving</strong></th>
+<th><strong>Voorbeeld</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exception.message</td>
+<td>String</td>
+<td>Verplicht als <code>exception.type</code> leeg is.</td>
+<td>Foutmelding</td>
+<td>Division by zero</td>
+</tr>
+<tr>
+<td>exception.type</td>
+<td>String</td>
+<td>Verplicht als <code>exception.message</code> leeg is.</td>
+<td>Type foutmelding (idealiter een dynamische foutmelding)</td>
+<td>java.net.ConnectException</td>
+</tr>
+<tr>
+<td>exception.stacktrace</td>
+<td>String</td>
+<td>Optioneel (gebruik is aan te raden)</td>
+<td>Volledige stacktrace (afhankelijk van programmeertaal)</td>
+<td>Exception in thread "main" java.lang.RuntimeException...</td>
+</tr>
+</tbody></table>
+</section><section id="datamodel-in-het-geval-van-een-fout"><div class="header-wrapper"><h5 id="datamodel-in-het-geval-van-een-fout-0">Datamodel in het geval van een fout</h5><a class="self-link" href="#datamodel-in-het-geval-van-een-fout" aria-label="Permalink for this Section"></a></div>
+<p>In geval van een fout gerelateerd aan een Span, ziet het datamodel er als volgt uit:</p>
 </section></section></section>
     <section id="canoniek-datamodel"><div class="header-wrapper"><h3 id="x4-3-canoniek-datamodel"><bdi class="secno">4.3 </bdi>Canoniek Datamodel</h3><a class="self-link" href="#canoniek-datamodel" aria-label="Permalink for Section 4.3"></a></div>
 <p>Ter verduidelijking van de standaard is een Canoniek datamodel uitgewerkt, dit gestandaardiseerd model voor datarepresentatie is  ontworpen om de attributen eenduidig en consistenter te maken. Het biedt een uniforme structuur en terminologie voor alle relevante data in de standaard. Zie voor de definitie van de gebruikte terminologie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#terminologie">Paragraaf 1.2 van de standaard</a>.</p>
