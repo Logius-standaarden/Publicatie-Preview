@@ -1384,21 +1384,20 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <p><img src="./media/Datamodel_foutgeval.PNG" alt="Datamodel bij een foutgeval"></p>
 </section><section id="voorbeeld-registratie-foutsituatie"><div class="header-wrapper"><h5 id="voorbeeld-registratie-foutsituatie-0">Voorbeeld registratie foutsituatie</h5><a class="self-link" href="#voorbeeld-registratie-foutsituatie" aria-label="Permalink for this Section"></a></div>
 <p>Op basis van het bovenstaande datamodel, kan een foutregistratie er als volgt uitzien (in JSON):</p>
-<pre><code class="json hljs" aria-busy="false">{
-  "trace_id": "7bba9f33312b3dabc8f8e90c7c61f194",
-  "span_id": "2a3f5c8d1e6b4a09",
-  "status_code": "error",
-  "name": "exception",
-  "start_time": "2025-03-09T20:21:00Z",
-  "end_time": "2025-03-09T20:23:00Z",
-  "parent_span_id": "",
-  "attributes": {
-    "exception.type": "ValueError",
-    "exception.message": "HTTP 500 error processing /api/v1/orders",
-    "exception.stacktrace": "TimeoutException: Database connection failed"
-  }
-}
-```json
+<pre><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"trace_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"7bba9f33312b3dabc8f8e90c7c61f194"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"span_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2a3f5c8d1e6b4a09"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"status_code"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"error"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"exception"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"start_time"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2025-03-09T20:21:00Z"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"end_time"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"2025-03-09T20:23:00Z"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"parent_span_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"attributes"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"exception.type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"ValueError"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"exception.message"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"HTTP 500 error processing /api/v1/orders"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"exception.stacktrace"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"TimeoutException: Database connection failed"</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
 </code></pre>
 </section></section></section>
     <section id="canoniek-datamodel"><div class="header-wrapper"><h3 id="x4-3-canoniek-datamodel"><bdi class="secno">4.3 </bdi>Canoniek Datamodel</h3><a class="self-link" href="#canoniek-datamodel" aria-label="Permalink for Section 4.3"></a></div>
