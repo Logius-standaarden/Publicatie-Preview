@@ -889,7 +889,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Inleiding Logboek dataverwerkingen</h1>
     
@@ -1323,7 +1323,7 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 </li>
 <li><p>Het is toegestaan de foutsituatie te registreren als transactie (Span) in het Logboek Dataverwerkingen <strong>of</strong> te integreren in een foutenlog <strong>buiten</strong> het Logboek Dataverwerkingen. Beiden hebben voor- en nadelen:</p>
 <ul>
-<li><p><strong>In het Logboek Dataverwerkingen</strong>:<br><strong>Voordeel:</strong> Alle transacties staan bij elkaar en fouten zijn te herkennen door <code>name</code> (=exception) en <code>status_code</code> (=error).<br><strong>Nadeel:</strong> Er moet een trigger zijn zodat de beheerder ingelicht wordt dat er een foutsituatie is ontstaan. Als er een grote hoeveelheid logregels zijn, is het zoeken lastig.</p>
+<li><p><strong>In het Logboek Dataverwerkingen</strong>:<br><strong>Voordeel:</strong> Alle transacties staan bij elkaar en fouten zijn te herkennen door <code>name</code> (=exception) en <code>status_code</code> (=error).<br><strong>Nadeel:</strong> Er moet een trigger zijn, zodat de beheerder ingelicht wordt dat er een foutsituatie is ontstaan. Als er een grote hoeveelheid logregels zijn, is het zoeken lastig.</p>
 </li>
 <li><p><strong>Buiten het Logboek Dataverwerkingen</strong>:<br><strong>Voordeel:</strong> Alle foutsituaties staan gecentraliseerd opgeslagen waardoor monitoring eenvoudiger is.<br><strong>Nadeel:</strong> Foutsituaties moeten worden gekoppeld aan <code>trace_id</code> en <code>span_id</code>. Dit betekent een extra inspanning om de foutsituatie te registreren.</p>
 </li>
@@ -1331,9 +1331,9 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 </li>
 <li><p>Als er een foutsituatie optreedt, moeten de foutdata worden geregistreerd als een transactie als er voor gekozen wordt dat een foutsituatie in het Logboek Dataverwerkingen wordt opgeslagen.</p>
 </li>
-<li><p>De software van de applicatie die de registratie van de logdata registreert, moet er voor zorgen dat er geen fout optreedt in ‘run-time’.<br>Bijvoorbeeld als <code>name</code> leeg is, moet deze automatisch worden gevuld met een waarde zodat er in ieder geval op dit punt geen fout kan optreden.</p>
+<li><p>De software van de applicatie die de registratie van de logdata registreert, moet er voor zorgen dat er geen fout optreedt in ‘run-time’.  Bijvoorbeeld als <code>name</code> leeg is, moet deze automatisch worden gevuld met een waarde zodat er in ieder geval op dit punt geen fout kan optreden.</p>
 </li>
-<li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.<br>Er moet een mechanisme zijn om de lege velden te vullen en een ‘crash’ te voorkomen.</p>
+<li><p>De software moet voorbereid zijn op fouten in binnenkomende berichten waarbij velden niet leeg mogen zijn.  Er moet een mechanisme zijn om de lege velden te vullen en een ‘crash’ te voorkomen.</p>
 </li>
 </ul>
 </section><section id="header"><div class="header-wrapper"><h5 id="header-0">Header</h5><a class="self-link" href="#header" aria-label="Permalink for this Section"></a></div>
