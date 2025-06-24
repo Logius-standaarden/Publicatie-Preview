@@ -1314,10 +1314,7 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <section id="uitgangspunten-registratie-foutsituaties"><div class="header-wrapper"><h5 id="uitgangspunten-registratie-foutsituaties-0">Uitgangspunten registratie foutsituaties</h5><a class="self-link" href="#uitgangspunten-registratie-foutsituaties" aria-label="Permalink for this Section"></a></div>
 <p>De volgende punten zijn belangrijk in het ontwerpen en implementeren van de registratie van foutsituaties in relatie tot het Logboek Dataverwerkingen:</p>
 <ul>
-<li><p>Gebruik zoveel mogelijk de standaardfoutmethodes van de gebruikte ontwikkeltaal.<br>Bijvoorbeeld:  </p>
-<ul>
-<li>De Java SDK van OpenTelemetry gebruikt <a href="https://github.com/open-telemetry/opentelemetry-java/blob/cc2844d86745544f5076db72800f411fc4ee4fb0/api/all/src/main/java/io/opentelemetry/api/trace/Span.java#L338">RecordException</a></li>
-</ul>
+<li><p>Gebruik zoveel mogelijk de standaardfoutmethodes van de gebruikte ontwikkeltaal. Bijvoorbeeld de Java SDK van OpenTelemetry gebruikt <a href="https://github.com/open-telemetry/opentelemetry-java/blob/cc2844d86745544f5076db72800f411fc4ee4fb0/api/all/src/main/java/io/opentelemetry/api/trace/Span.java#L338">RecordException</a></p>
 </li>
 <li><p>Foutdata moeten worden gerelateerd aan een <code>trace_id</code> en <code>span_id</code>.</p>
 </li>
