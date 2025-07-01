@@ -1324,11 +1324,6 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <p>Meer gedetailleerde voorbeelden staan beschreven in de <a href="https://github.com/Logius-standaarden/logboek-dataverwerkingen-inleiding/blob/main/ch05_voorbeelden.md">inleiding</a> van de standaard logboek dataverwerkingen.</p>
 </section></section>
     <section id="foutafhandeling-in-het-logboek-dataverwerkingen"><div class="header-wrapper"><h3 id="x4-3-foutafhandeling-in-het-logboek-dataverwerkingen"><bdi class="secno">4.3 </bdi>Foutafhandeling in het Logboek Dataverwerkingen</h3><a class="self-link" href="#foutafhandeling-in-het-logboek-dataverwerkingen" aria-label="Permalink for Section 4.3"></a></div>
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span></div><div class="">
-
-<p>Let op: wanneer een gebruiker een verwerking bewust afbreekt, wordt dit niet als een fout beschouwd. Het is aan te raden om dit als een expliciete stap in het proces op te nemen, zodat deze handeling ook kan worden gelogd. In zulke gevallen krijgt de verwerking statuscode <code>STATUS_CODE_OK</code>, omdat er sprake is van een bewuste en correcte actie van de gebruiker. Meer informatie over status codes staat in het <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface">normatief document</a>.</p>
-</div></div>
-
 <p>Zelfs in de meest eenvoudige applicaties kunnen fouten optreden. Fouten kunnen ontstaan door bijvoorbeeld verkeerde invoer door de gebruiker, een fout in de software van de applicatie of een connectie met een andere applicatie die niet werkt. Deze sectie geeft een handreiking ten aanzien van de afhandeling van foutsituaties met betrekking tot het gebruik van het Logboek Dataverwerkingen.</p>
 <section id="uitgangspunten-registratie-foutsituaties"><div class="header-wrapper"><h4 id="x4-3-1-uitgangspunten-registratie-foutsituaties"><bdi class="secno">4.3.1 </bdi>Uitgangspunten registratie foutsituaties</h4><a class="self-link" href="#uitgangspunten-registratie-foutsituaties" aria-label="Permalink for Section 4.3.1"></a></div>
 <p>De volgende punten zijn belangrijk in het ontwerpen en implementeren van de registratie van foutsituaties in relatie tot het Logboek Dataverwerkingen:</p>
@@ -1413,7 +1408,10 @@ status_code = "error"
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-</section></section>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span></div><div class="">
+
+<p>Let op: wanneer een gebruiker een verwerking bewust afbreekt, wordt dit niet als een fout beschouwd. Het is aan te raden om dit als een expliciete stap in het proces op te nemen, zodat deze handeling ook kan worden gelogd. In zulke gevallen krijgt de verwerking statuscode <code>STATUS_CODE_OK</code>, omdat er sprake is van een bewuste en correcte actie van de gebruiker. Meer informatie over status codes staat in het <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface">normatief document</a>.</p>
+</div></div></section></section>
     <section id="canoniek-datamodel"><div class="header-wrapper"><h3 id="x4-4-canoniek-datamodel"><bdi class="secno">4.4 </bdi>Canoniek Datamodel</h3><a class="self-link" href="#canoniek-datamodel" aria-label="Permalink for Section 4.4"></a></div>
 <p>Ter verduidelijking van de standaard is een Canoniek datamodel uitgewerkt, dit gestandaardiseerd model voor datarepresentatie is  ontworpen om de attributen eenduidig en consistenter te maken. Het biedt een uniforme structuur en terminologie voor alle relevante data in de standaard. Zie voor de definitie van de gebruikte terminologie ook <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#terminologie">Paragraaf 1.2 van de standaard</a>.</p>
 <section id="attribute"><div class="header-wrapper"><h4 id="x4-4-1-attribute"><bdi class="secno">4.4.1 </bdi>attribute</h4><a class="self-link" href="#attribute" aria-label="Permalink for Section 4.4.1"></a></div>
