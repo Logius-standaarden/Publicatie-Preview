@@ -335,7 +335,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
   "github": "https://github.com/Logius-standaarden/fsc-core"
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
-  <body class="h-entry"><div class="head">
+  <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://github.com/Logius-standaarden"><img alt="Logius" height="77" id="Logius" src="https://www.logius.nl/themes/custom/logius/logo.svg" width="44">
   </a> <h1 id="title" class="title">FSC - Core 1.0.2</h1>
     
@@ -904,7 +904,7 @@ To convert the hash algorithm to an integer see the <a href="#type_mapping_hash_
 <li><code>int32</code>: use <code>Little-endian</code> as endianness when converting to a byte array</li>
 <li><code>int64</code>: use <code>Little-endian</code> as endianness when converting to a byte array</li>
 <li><code>string</code>: use <code>utf-8</code> encoding when converting to a byte array</li>
-<li><code>UUIDv7</code>: the field <code>contract.content.iv</code> contains an UUIDv7 in the form of a string. The string <strong>must</strong> be parsed as an UUIDv7. The bytes of the UUIDv7 are added to the byte array of the Content or Grant hash.</li>
+<li><code>UUIDv7</code>: the field <code>contract.content.iv</code> contains a UUIDv7 in the form of a string. The string <strong>must</strong> be parsed as a UUIDv7. The bytes of the UUIDv7 are added to the byte array of the Content or Grant hash.</li>
 </ul>
 </section></section><section id="grant-hash"><div class="header-wrapper"><h4 id="grant_hash"><bdi class="secno">3.2.4 </bdi>Grant hash</h4><a class="self-link" href="#grant_hash" aria-label="Permalink for Section 3.2.4"></a></div><p>The Grant hash is used in the access token request to identify the Contract and Grant which contain the authorization for the connection to the Service. 
 The <code>iv</code> (Initialization vector) field is included in the Grant hash to create a Grant hash that references to a single Contract. 
