@@ -664,8 +664,7 @@ img.license{float:left;padding-right:5px;background:0 0}
       ],
       "date": "June 2013",
       "href": "https://semver.org",
-      "title": "Semantic Versioning 2.0.0",
-      "id": "semver"
+      "title": "Semantic Versioning 2.0.0"
     },
     "ADR-TS": {
       "authors": [
@@ -994,39 +993,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 </ol>
 <p>This extension maintains backwards compatibility with the FSC Core specification while enabling more detailed and flexible grant definitions. It opens up possibilities for application-specific metadata and configuration options within the FSC ecosystem, enhancing the capabilities of federated service connectivity implementations.</p>
 </section>
-    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">1. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">1.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">1.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">1.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">1.4 </bdi>Optioneel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#architecture"><bdi class="secno">2. </bdi>Architecture</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#grant-properties"><bdi class="secno">2.1 </bdi>Grant Properties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specifications"><bdi class="secno">3. </bdi>Specifications</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#property-object"><bdi class="secno">3.1 </bdi>Property Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#structure"><bdi class="secno">3.1.1 </bdi>Structure</a></li><li class="tocline"><a class="tocxref" href="#grant"><bdi class="secno">3.1.2 </bdi>Grant</a></li><li class="tocline"><a class="tocxref" href="#inclusion-in-grant-hash"><bdi class="secno">3.1.3 </bdi>Inclusion in Grant Hash</a></li><li class="tocline"><a class="tocxref" href="#validation"><bdi class="secno">3.1.4 </bdi>Validation</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">3.1.5 </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#backwards-compatibility"><bdi class="secno">3.1.6 </bdi>Backwards Compatibility</a></li><li class="tocline"><a class="tocxref" href="#future-considerations"><bdi class="secno">3.1.7 </bdi>Future Considerations</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#architecture"><bdi class="secno">1. </bdi>Architecture</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#grant-properties"><bdi class="secno">1.1 </bdi>Grant Properties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specifications"><bdi class="secno">2. </bdi>Specifications</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#property-object"><bdi class="secno">2.1 </bdi>Property Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#structure"><bdi class="secno">2.1.1 </bdi>Structure</a></li><li class="tocline"><a class="tocxref" href="#grant"><bdi class="secno">2.1.2 </bdi>Grant</a></li><li class="tocline"><a class="tocxref" href="#inclusion-in-grant-hash"><bdi class="secno">2.1.3 </bdi>Inclusion in Grant Hash</a></li><li class="tocline"><a class="tocxref" href="#validation"><bdi class="secno">2.1.4 </bdi>Validation</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">2.1.5 </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#backwards-compatibility"><bdi class="secno">2.1.6 </bdi>Backwards Compatibility</a></li><li class="tocline"><a class="tocxref" href="#future-considerations"><bdi class="secno">2.1.7 </bdi>Future Considerations</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
     
-    <section id="meer-inhoud"><div class="header-wrapper"><h2 id="x1-meer-inhoud"><bdi class="secno">1. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 1."></a></div>
-<section id="definities"><div class="header-wrapper"><h3 id="x1-1-definities"><bdi class="secno">1.1 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 1.1"></a></div>
-<p><dfn id="dfn-definitie" tabindex="0" aria-haspopup="dialog">Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor definitie is betekenis of beschrijving.</p>
-</section><section id="afbeeldingen"><div class="header-wrapper"><h3 id="x1-2-afbeeldingen"><bdi class="secno">1.2 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 1.2"></a></div>
-<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">5. </bdi>List of Figures</a>.</p>
-<p>
-      </p><figure id="fig-onderschrift">
-        <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
-      </figure>
-    <p></p>
-</section><section id="referenties"><div class="header-wrapper"><h3 id="x1-3-referenties"><bdi class="secno">1.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 1.3"></a></div>
-<p>Referentie uit locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
-<p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
-</section><section id="optioneel"><div class="header-wrapper"><h3 id="x1-4-optioneel"><bdi class="secno">1.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 1.4"></a></div>
-<p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre>
-</section></section>
-    <section id="architecture"><div class="header-wrapper"><h2 id="x2-architecture"><bdi class="secno">2. </bdi>Architecture</h2><a class="self-link" href="#architecture" aria-label="Permalink for Section 2."></a></div>
+    <section id="architecture"><div class="header-wrapper"><h2 id="x1-architecture"><bdi class="secno">1. </bdi>Architecture</h2><a class="self-link" href="#architecture" aria-label="Permalink for Section 1."></a></div>
 <p>This section describes how the property object fits into the existing FSC architecture.</p>
-<section id="grant-properties"><div class="header-wrapper"><h3 id="x2-1-grant-properties"><bdi class="secno">2.1 </bdi>Grant Properties</h3><a class="self-link" href="#grant-properties" aria-label="Permalink for Section 2.1"></a></div>
+<section id="grant-properties"><div class="header-wrapper"><h3 id="x1-1-grant-properties"><bdi class="secno">1.1 </bdi>Grant Properties</h3><a class="self-link" href="#grant-properties" aria-label="Permalink for Section 1.1"></a></div>
 <p>Each grant in a Contract can now contain an optional property object. This object is included in the grant's data and is part of the content that is hashed when creating the grant hash and contract content hash.</p>
 <p>The property object can contain one or multiple keys, with values of any valid JSON datatype. This flexibility allows for a wide range of use cases and future extensibility.</p>
 <p>Example of a ServiceConnectionGrant with a property object:</p>
@@ -1053,18 +1024,18 @@ img.license{float:left;padding-right:5px;background:0 0}
 <span class="hljs-punctuation">}</span>
 </code></pre>
 </section></section>
-    <section id="specifications"><div class="header-wrapper"><h2 id="x3-specifications"><bdi class="secno">3. </bdi>Specifications</h2><a class="self-link" href="#specifications" aria-label="Permalink for Section 3."></a></div>
+    <section id="specifications"><div class="header-wrapper"><h2 id="x2-specifications"><bdi class="secno">2. </bdi>Specifications</h2><a class="self-link" href="#specifications" aria-label="Permalink for Section 2."></a></div>
 <p>This section provides detailed specifications for implementing the property object extension.</p>
-<section id="property-object"><div class="header-wrapper"><h3 id="x3-1-property-object"><bdi class="secno">3.1 </bdi>Property Object</h3><a class="self-link" href="#property-object" aria-label="Permalink for Section 3.1"></a></div>
-<section id="structure"><div class="header-wrapper"><h4 id="x3-1-1-structure"><bdi class="secno">3.1.1 </bdi>Structure</h4><a class="self-link" href="#structure" aria-label="Permalink for Section 3.1.1"></a></div>
+<section id="property-object"><div class="header-wrapper"><h3 id="x2-1-property-object"><bdi class="secno">2.1 </bdi>Property Object</h3><a class="self-link" href="#property-object" aria-label="Permalink for Section 2.1"></a></div>
+<section id="structure"><div class="header-wrapper"><h4 id="x2-1-1-structure"><bdi class="secno">2.1.1 </bdi>Structure</h4><a class="self-link" href="#structure" aria-label="Permalink for Section 2.1.1"></a></div>
 <p>The property object must be a valid JSON object. It can contain any number of key-value pairs, where:</p>
 <ol>
 <li>Keys must be strings</li>
 <li>Values can be of any valid JSON datatype (string, number, boolean, object, array, or null)</li>
 </ol>
-</section><section id="grant"><div class="header-wrapper"><h4 id="x3-1-2-grant"><bdi class="secno">3.1.2 </bdi>Grant</h4><a class="self-link" href="#grant" aria-label="Permalink for Section 3.1.2"></a></div>
+</section><section id="grant"><div class="header-wrapper"><h4 id="x2-1-2-grant"><bdi class="secno">2.1.2 </bdi>Grant</h4><a class="self-link" href="#grant" aria-label="Permalink for Section 2.1.2"></a></div>
 <p>The property object <em class="rfc2119">MAY</em> be added to a grant object and <em class="rfc2119">MUST</em> have the key 'properties'.</p>
-</section><section id="inclusion-in-grant-hash"><div class="header-wrapper"><h4 id="x3-1-3-inclusion-in-grant-hash"><bdi class="secno">3.1.3 </bdi>Inclusion in Grant Hash</h4><a class="self-link" href="#inclusion-in-grant-hash" aria-label="Permalink for Section 3.1.3"></a></div>
+</section><section id="inclusion-in-grant-hash"><div class="header-wrapper"><h4 id="x2-1-3-inclusion-in-grant-hash"><bdi class="secno">2.1.3 </bdi>Inclusion in Grant Hash</h4><a class="self-link" href="#inclusion-in-grant-hash" aria-label="Permalink for Section 2.1.3"></a></div>
 <p>When calculating the grant hash, the property object must be included in the hashing process. This ensures that the properties are part of the immutable grant definition.</p>
 <p>To include the property object in the grant hash:</p>
 <ol>
@@ -1073,13 +1044,13 @@ img.license{float:left;padding-right:5px;background:0 0}
 <li>Add the hash to the grantBytes array as described in the FSC Core specification.</li>
 <li>Continue with the hashing process as described in the FSC Core specification.</li>
 </ol>
-</section><section id="validation"><div class="header-wrapper"><h4 id="x3-1-4-validation"><bdi class="secno">3.1.4 </bdi>Validation</h4><a class="self-link" href="#validation" aria-label="Permalink for Section 3.1.4"></a></div>
+</section><section id="validation"><div class="header-wrapper"><h4 id="x2-1-4-validation"><bdi class="secno">2.1.4 </bdi>Validation</h4><a class="self-link" href="#validation" aria-label="Permalink for Section 2.1.4"></a></div>
 <p>When validating a grant with properties:</p>
 <ol>
 <li>The Manager must ensure that the <code>properties</code> field, if present, is a valid JSON object.</li>
 <li>The Manager should not impose any restrictions on the content of the property object beyond it being valid JSON, as the meaning and use of properties are application-specific.</li>
 </ol>
-</section><section id="security-considerations"><div class="header-wrapper"><h4 id="x3-1-5-security-considerations"><bdi class="secno">3.1.5 </bdi>Security Considerations</h4><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 3.1.5"></a></div>
+</section><section id="security-considerations"><div class="header-wrapper"><h4 id="x2-1-5-security-considerations"><bdi class="secno">2.1.5 </bdi>Security Considerations</h4><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 2.1.5"></a></div>
 <ol>
 <li><p>The size of the <code>properties</code> object should be limited to prevent excessive data transfer and storage. It is recommended to implement a size limit of 1MB for the serialized <code>properties</code> object.</p>
 </li>
@@ -1088,25 +1059,21 @@ img.license{float:left;padding-right:5px;background:0 0}
 <li><p>Implementers should be aware that the contents of the <code>properties</code> object are unsanitized. For example, they should consider sanitizing the data before showing it in user interfaces to prevent XSS injections or other security vulnerabilities.</p>
 </li>
 </ol>
-</section><section id="backwards-compatibility"><div class="header-wrapper"><h4 id="x3-1-6-backwards-compatibility"><bdi class="secno">3.1.6 </bdi>Backwards Compatibility</h4><a class="self-link" href="#backwards-compatibility" aria-label="Permalink for Section 3.1.6"></a></div>
+</section><section id="backwards-compatibility"><div class="header-wrapper"><h4 id="x2-1-6-backwards-compatibility"><bdi class="secno">2.1.6 </bdi>Backwards Compatibility</h4><a class="self-link" href="#backwards-compatibility" aria-label="Permalink for Section 2.1.6"></a></div>
 <p>This extension is backwards compatible with the FSC Core specification. Systems that do not implement this extension will ignore the <code>properties</code> field in grants and the <code>prp</code> claim in access tokens.</p>
-</section><section id="future-considerations"><div class="header-wrapper"><h4 id="x3-1-7-future-considerations"><bdi class="secno">3.1.7 </bdi>Future Considerations</h4><a class="self-link" href="#future-considerations" aria-label="Permalink for Section 3.1.7"></a></div>
+</section><section id="future-considerations"><div class="header-wrapper"><h4 id="x2-1-7-future-considerations"><bdi class="secno">2.1.7 </bdi>Future Considerations</h4><a class="self-link" href="#future-considerations" aria-label="Permalink for Section 2.1.7"></a></div>
 <ol>
 <li>Standard property keys and their meanings could be defined in future versions to promote interoperability between different implementations.</li>
 </ol>
 </section></section></section>
-    <section id="conformance"><div class="header-wrapper"><h2 id="x4-conformance"><bdi class="secno">4. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+    <section id="conformance"><div class="header-wrapper"><h2 id="x3-conformance"><bdi class="secno">3. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em> and <em class="rfc2119">MUST</em> in this document
         are to be interpreted as described in
         <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
         when, and only when, they appear in all capitals, as shown here.
       </p></section>
-    <section id="tof"><div class="header-wrapper"><h2 id="x5-list-of-figures"><bdi class="secno">5. </bdi>List of Figures</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></div><ul class="tof">
-        <li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figure <bdi class="figno">1</bdi></span> <span class="fig-title">Onderschrift</span></a>
-  </li>
-      </ul></section>
+    <section id="tof"></section>
   
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
     <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
@@ -1114,24 +1081,10 @@ img.license{float:left;padding-right:5px;background:0 0}
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
-    </dd><dt id="bib-semver">[SemVer]</dt><dd>
-      <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-definitie" aria-label="Links in this document to definition: Definitie">
-      <span class="caret"></span>
-      <div>
-        <a class="self-link" href="#dfn-definitie" aria-label="Permalink for definition: Definitie. Activate to close this dialog.">Permalink</a>
-         
-      </div>
-      <p><b>Referenced in:</b></p>
-      <ul>
-    <li>
-      <a href="#ref-for-dfn-definitie-1" title="§ 1.3 Referenties">§ 1.3 Referenties</a> 
-    </li>
-  </ul>
-    </div><script id="respec-dfn-panel">(() => {
+  </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
   document.respec.ready.then(setupPanel);
