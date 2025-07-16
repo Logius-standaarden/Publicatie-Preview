@@ -1156,7 +1156,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <p><sup>3</sup>: Trust Service Providers (TSPs) is de engelse term voor certificatie dienstverleners. De afkorting TSPs wordt in dit document gebruikt voor beide begrippen. TSP’s werden eerder CSP genoemd, Certificate Service Provider.</p>
 <p><sup>4</sup>: <a href="https://www.logius.nl/diensten/pkioverheid">https://www.logius.nl/diensten/pkioverheid</a></p>
 <p>Kenmerken PKIoverheid<sup>5</sup>:</p>
-<p><sup>5</sup>: <a href="https://www.logius.nl/diensten/pkioverheid/hoe-werkt-het">Hoe werkt PKIoverheid?</a></p>
+<p><sup>5</sup>: <a href="https://www.logius.nl/domeinen/toegang/pkioverheid/hoe-werkt-een-pkioverheidcertificaat">Hoe werkt PKIoverheid?</a></p>
 <ul>
 <li><p>Exclusief keurmerk van de Staat der Nederlanden.</p>
 </li>
@@ -1274,7 +1274,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 </section><section id="stappen-0"><div class="header-wrapper"><h3 id="x4-3-stappen"><bdi class="secno">4.3 </bdi>Stappen</h3><a class="self-link" href="#stappen-0" aria-label="Permalink for Section 4.3"></a></div>
 <p>De procesgang voor het aansluiten op Digikoppeling is beschreven in het document “Leeswijzer aansluitprocedure gebruik Digikoppeling”. Deze maakt onderdeel uit van de aanvraagprocedure Digikoppeling die u vindt <a href="https://www.logius.nl/diensten/digikoppeling/aanvragen">https://www.logius.nl/diensten/digikoppeling/aanvragen</a>. Het bestellen van certificaten vormt hiervan een onderdeel. Om certificaten te kunnen bestellen, moet de organisatie een identificerend nummer hebben: het OIN. Dit nummer wordt verkregen bij de beheerorganisatie van Digikoppeling volgens de procedure die is beschreven op de website van Logius.</p>
 <p>Bestellen van een certificaat vindt plaats bij een door PKIoverheid aangewezen TSP die certificaten op commerciële basis verstrekt. Logius houdt op haar website een lijst met goedgekeurde TSP's bij die een PKIoverheid certificaat kunnen leveren<sup>12</sup>. Op deze website staat ook achtergrondinformatie over certificaten en hun werking. Belangrijk aandachtspunt hierbij is dat de eerste keer een aantal extra handelingen (bijvoorbeeld een bezoek aan de notaris of GWK) voorafgaat aan het daadwerkelijk bestellen van het certificaat. De website van Logius en het stelselhandboek bieden een heldere beschrijving van het bestellen en de daarbij betrokken TSP's.</p>
-<p><sup>12</sup>: <a href="https://www.logius.nl/diensten/pkioverheid/aanvragen">https://www.logius.nl/diensten/pkioverheid/aanvragen</a> bevat specifieke informatie over het aanschaffen van een certificaat.</p>
+<p><sup>12</sup>: <a href="https://www.logius.nl/domeinen/toegang/pkioverheid/pkioverheidcertificaat-aanvragen">https://www.logius.nl/domeinen/toegang/pkioverheid/pkioverheidcertificaat-aanvragen</a> bevat specifieke informatie over het aanschaffen van een certificaat.</p>
 <p>De websites van de TSP's bevatten formulieren voor de aanvraag van certificaten. In het bestelproces en leveringsproces voor certificaten is het nodig om informatie zoals sleutels en certificaten uit te wisselen. Hiervoor bestaan verschillende bestandsformaten. Deze zijn beschreven in “Bestandsformaten voor certificaten“ in bijlage 1.</p>
 <p>Om op deze wijze een certificaat te bestellen moet u eerst een Certificate Signing Request (CSR) maken op de server waarop u het certificaat wilt installeren. Dit CSR bevat naast de door u gegenereerde publieke sleutel ook gegevens die u in het certificaat wilt opnemen (zie hieronder). Vervolgens stuurt u dit CSR in p10 formaat op (afhankelijk van de TSP-procedure) per mail of op een fysieke drager per aangetekende post. Het aanmaken van een CSR verschilt per type server, maar er zijn veel leveranciers die hier handleidingen voor publiceren<sup>13</sup>. De privésleutel kunt u uit de keystore van uw server exporteren voor veilige back-up in een kluis; het p12 formaat is hiervoor geschikt (zie ook “Bestandsformaten voor certificaten“ in bijlage 1. Het volgende hoofdstuk beschrijft hoe u deze privésleutel zou moeten beveiligen.</p>
 <p><sup>13</sup>: Zie bijvoorbeeld <a href="https://www.verisign.com/en_US/website-presence/online/ssl-certificates/index.xhtml">https://www.verisign.com/en_US/website-presence/online/ssl-certificates/index.xhtml</a></p>
@@ -1291,7 +1291,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <li>Extended key usage: In certificaten voor Digikoppeling wordt afgeraden om dit veld toe te passen<sup>14</sup>. Deze gegevens zijn daarom standaard voor een Digikoppeling certificaat en kan men niet opnemen in het CSR of de aanvraag.</li>
 </ul>
 <p><sup>14</sup>: Interoperabiliteit met sterk verouderde Java-tooling kan vereisen dat de “extended key usage”-bits TLSwwwServerAuthentication en/of TLSwwwClientAuthentication opgenomen worden.</p>
-<p>Het programma van Eisen deel 3b van PKIoverheid bevat een uitgebreider overzicht van velden die (deels optioneel) in een certificaat voor kunnen komen. Zie <a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/programma-van-eisen">Programma van Eisen</a>, zoekterm “deel 3b”.</p>
+<p>Het programma van Eisen deel 3b van PKIoverheid bevat een uitgebreider overzicht van velden die (deels optioneel) in een certificaat voor kunnen komen. Zie <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://por.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite>, zoekterm “deel 3b”.</p>
 <p>Het door de TSP ondertekende certificaat ontvangt u meestal in een .p7b formaat of een .cer formaat (zie ook “Bestandsformaten voor certificaten“). Veranderen van informatie in het certificaat is niet mogelijk behalve door een nieuw certificaat aan te vragen. Het volgende hoofdstuk beschrijft hoe u dit certificaat kunt installeren.</p>
 </section></section>
   <section id="installatie-certificaat"><div class="header-wrapper"><h2 id="x5-installatie-certificaat"><bdi class="secno">5. </bdi>Installatie certificaat</h2><a class="self-link" href="#installatie-certificaat" aria-label="Permalink for Section 5."></a></div>
@@ -1463,7 +1463,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 </section>
   <section id="bijlage-3-basisattributen-in-certificaat"><div class="header-wrapper"><h2 id="x10-bijlage-3-basisattributen-in-certificaat"><bdi class="secno">10. </bdi>Bijlage 3: Basisattributen in certificaat</h2><a class="self-link" href="#bijlage-3-basisattributen-in-certificaat" aria-label="Permalink for Section 10."></a></div>
 <p>Voor de meest actuele versie zie het Programma van Eisen van PKIoverheid deel 3b<sup>27</sup></p>
-<p><sup>27</sup>: http:// <a href="https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen/">https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen/</a></p>
+<p><sup>27</sup>: <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://por.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite></p>
 <table>
 <thead>
 <tr>
