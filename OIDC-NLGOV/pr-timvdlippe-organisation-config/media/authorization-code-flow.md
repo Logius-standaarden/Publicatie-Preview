@@ -1,4 +1,4 @@
-```mermaid
+<pre class="mermaid nohighlight">
 sequenceDiagram
     participant EndUser as End-User
     participant UserAgent as User-Agent
@@ -11,8 +11,4 @@ sequenceDiagram
     OP -->> UserAgent: (3) Authorization Code
     UserAgent ->> Client: (4) Authorization Code & Redirect URI
     Client -->> OP: (5) Authorization Code
-```
-
-<figure id='authorization_code_flow'>
-  <figcaption>Authorization code flow</figcaption>
-</figure>
+</pre>
