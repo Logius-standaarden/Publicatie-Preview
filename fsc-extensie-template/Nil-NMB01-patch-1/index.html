@@ -882,7 +882,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">FSC Extensie Guidelines</h1>
     
@@ -966,7 +966,7 @@ In het onderwijs kunnen er juist andere gegevens worden gelogd, zoals toetsresul
 <p>De extensie mag geen bestaande protocollen vanuit de core-standaard overschrijven, maar wel extra protocollen als ondersteuning toevoegen als deze compatibel zijn met de core-standaard.</p>
 </section><section id="interoperabiliteit"><div class="header-wrapper"><h4 id="x2-2-2-interoperabiliteit"><bdi class="secno">2.2.2 </bdi>Interoperabiliteit</h4><a class="self-link" href="#interoperabiliteit" aria-label="Permalink for Section 2.2.2"></a></div>
 <p>Interoperabiliteit is nodig om samenwerking tussen verschillende systemenen aan te sporen en om te voorkomen dat het niet in conflict komt met andere extensies. De extensie mag de samenwerkingen tussen systemen niet verstoren, vooral als data wordt uitgewisseld tussen verschillende organisaties.</p>
-<p>Extensies kunnen velden toevoegen aan het <a href="#"><code>properties</code> object</a> van het Contract. Om conflicten te voorkomen moet elke extensie een unieke namespace gebruiken in de veldnamen die de extensie toevoegt aan het <code>properties</code> object. Een extensie mag geen velden gebruiken die al door andere extensies gebruikt worden, hierdoor kunnen er juist conflicten ontstaan. Het is dus van belang om de veldnamen uniek te houden voor het geval dat een systeem gebruik maakt van verschillende extensies en deze interoperabel wil toepassen.</p>
+<p>Extensies kunnen velden toevoegen aan het <code>properties</code> object [verwijs naar fsc-core properties]:: van het Contract. Om conflicten te voorkomen moet elke extensie een unieke namespace gebruiken in de veldnamen die de extensie toevoegt aan het <code>properties</code> object. Een extensie mag geen velden gebruiken die al door andere extensies gebruikt worden, hierdoor kunnen er juist conflicten ontstaan. Het is dus van belang om de veldnamen uniek te houden voor het geval dat een systeem gebruik maakt van verschillende extensies en deze interoperabel wil toepassen.</p>
 <section id="belang-unieke-namespaces-a-d-h-v-voorbeeldcase-ledenadministratie"><div class="header-wrapper"><h5 id="x2-2-2-1-belang-unieke-namespaces-a-d-h-v-voorbeeldcase-ledenadministratie"><bdi class="secno">2.2.2.1 </bdi>Belang unieke namespaces a.d.h.v. voorbeeldcase ledenadministratie</h5><a class="self-link" href="#belang-unieke-namespaces-a-d-h-v-voorbeeldcase-ledenadministratie" aria-label="Permalink for Section 2.2.2.1"></a></div>
 <p>In deze voorbeeldcase wordt uitgegaan van een fictieve leden administratie extensie die verplicht dat een Peer lid moet zijn van een leden administratie voordat een Service bevraagt mag worden. En een fictieve auditor extensie die verplicht dat een Peer een succesvolle audit moet hebben gehad voor dat de Service bevraagd mag worden.  </p>
 <p>Beide extensies gebruiken de velden id en peer_id zonder het gebruik van namespaces zou het properties object van het Contract er als volgt uitzien.</p>
