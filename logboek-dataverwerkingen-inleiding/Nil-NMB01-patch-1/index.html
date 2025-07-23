@@ -4645,7 +4645,7 @@ Als het is toegestaan om een vaste retentieperiode voor alle logregels te hanter
 <li>envisedTimeLimit: 6 maanden</li>
 <li>end_time: 1-1-2025</li>
 </ul>
-<p>1-8-2025 – 6 maanden = 1-2-2025, de logregel mag dus verwijderd worden.</p>
+<p><code>1-8-2025 – 6 maanden = 1-2-2025</code>, de logregel mag dus verwijderd worden.</p>
 <p><strong>Scenario 2:</strong>
 Als het <strong>niet</strong> is toegestaan om een vaste retentieperiode voor alle logregels te hanteren, dan moet deze worden vastgelegd in de <code>envisedTimeLimit</code> in het <em>Register van Verwerkingsactiviteiten</em> per activiteit.
 De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <code>envisedTimeLimit</code> opzoeken in het <em>Register van Verwerkingsactiviteiten</em> en bepalen of de logregel verwijderd mag worden.</p>
