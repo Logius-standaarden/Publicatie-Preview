@@ -4637,7 +4637,7 @@ status_code = "error"
 <p>Het belangrijkste is dat de organisatie duidelijk kan aantonen (<em>verantwoordingsplicht</em>) waarom een bepaalde bewaartermijn is gekozen en dat deze termijn in lijn is met de AVG. Dit betekent dat de keuze van het datatype minder cruciaal is dan de heldere vastlegging en naleving van de bewaartermijn zelf.</p>
 <p>Concreet zou de logverwijderingssituatie er als volgt uit kunnen zien:
 <img src="./media/UseCase01_afbeelding1.png" alt="logverwijderingssituatie Use Case 01"></p>
-<p><strong>Scenario 1</strong>
+<p><strong>Scenario 1:</strong>
 Als het is toegestaan om een vaste retentieperiode voor alle logregels te hanteren, dan zou deze kunnen worden vastgelegd in de <code>envisedTimeLimit</code> in een profiel. Dagelijks wordt een batch gedraaid om te bepalen of een logregel mag worden verwijderd. Als <code>Huidige datum – envisedTimeLimit &lt; end_time</code> dan mag de logregel worden verwijderd.</p>
 <p><strong>Voorbeeld:</strong></p>
 <ul>
@@ -4646,10 +4646,18 @@ Als het is toegestaan om een vaste retentieperiode voor alle logregels te hanter
 <li>end_time: 1-1-2025</li>
 </ul>
 <p><code>1-8-2025 – 6 maanden = 1-2-2025</code>, de logregel mag dus verwijderd worden.</p>
-<p><strong>Scenario 2</strong>
+<p><strong>Scenario 2:</strong>
 Als het <strong>niet</strong> is toegestaan om een vaste retentieperiode voor alle logregels te hanteren, dan moet deze worden vastgelegd in de <code>envisedTimeLimit</code> in het <em>Register van Verwerkingsactiviteiten</em> per activiteit.
 De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <code>envisedTimeLimit</code> opzoeken in het <em>Register van Verwerkingsactiviteiten</em> en bepalen of de logregel verwijderd mag worden.</p>
-</section></section>
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Noot</span></div><div class="">
+
+<p>Let op:</p>
+<ul>
+<li>De standaard Logboek Dataverwerkingen schrijft niet voor hoe het mechanisme van het verwijderen van logregels zou moeten werken. Het ontwerp en de architectuur moeten door de organisatie zelf bepaald worden.  </li>
+<li>De standaard Logboek Dataverwerkingen schrijft niet voor wat de retentietijd is voor activiteiten. Het is de taak van de organisatie om te bepalen (op basis van de wettelijke basis) wat de bewaartijd is van een logregel.  </li>
+<li>Het veld <code>envisedTimeLimit</code> in het Register van Verwerkingsactiviteiten moet altijd worden ingevuld, ook al is de bewaartijd voor alle activiteiten hetzelfde.</li>
+</ul>
+</div></div></section></section>
   <section data-max-toc="1" id="faq"><div class="header-wrapper"><h2 id="x7-faq"><bdi class="secno">7. </bdi>FAQ</h2><a class="self-link" href="#faq" aria-label="Permalink for Section 7."></a></div>
 <p>Dit hoofdstuk bevat veelgestelde vragen over de standaard Logboek Dataverwerking en in dit hoofdstuk worden deze veelgestelde vragen beantwoord en toegelicht.</p>
 <section class="notoc"><div class="header-wrapper"><h3 id="wat-is-het-doel-van-de-standaard-logboek-dataverwerking">Wat is het doel van de standaard Logboek Dataverwerking?</h3><a class="self-link" href="#wat-is-het-doel-van-de-standaard-logboek-dataverwerking" aria-label="Permalink for this Section"></a></div>
