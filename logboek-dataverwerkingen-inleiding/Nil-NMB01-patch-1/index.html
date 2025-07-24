@@ -1264,7 +1264,7 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <p><img src="./media/relatie_logboekelementen_afbeelding5.svg" alt="Afbeelding trace_id"></p>
 <p>Alle bij elkaar horende (sub)Operations, krijgen vervolgens dezelfde <code>trace_id</code>-waarde.</p>
 <p><img src="./media/relatie_logboekelementen_afbeelding6.svg" alt="Afbeelding relaties trace_id"></p>
-<p>In het geval er data wordt opgevraagd aan een andere organisatie, krijgt elke operation bij verstrekkende organisatie een <code>trace_id</code>. Om de relatie te leggen tussen de vragende en de verstrekkende organisatie, wordt bij elke Operation van de verstrekkende organisatie een <code>foreign_operation.trace_id</code> geregistreerd. De waarde van de <code>foreign_operation.trace_id</code> van de verstrekkende organisatie is gelijk aan de waarde van <code>trace_id</code> van de vragende organisatie.</p>
+<p>In het geval er data wordt opgevraagd aan een andere organisatie, krijgt elke operation bij verstrekkende organisatie een <code>trace_id</code>. Om de relatie te leggen tussen de vragende en de verstrekkende organisatie, wordt bij elke Operation van de verstrekkende organisatie een <code>trace_id</code> geregistreerd. De waarde van de <code>trace_id</code> van de verstrekkende organisatie is gelijk aan de waarde van <code>trace_id</code> van de vragende organisatie.</p>
 <p><img src="./media/relatie_logboekelementen_afbeelding7.svg" alt="Afbeelding relaties trace_id en foreign_trace_id en meerdere organisaties "></p>
 </section><section id="relatie-tussen-sub-operations"><div class="header-wrapper"><h4 id="x4-2-4-relatie-tussen-sub-operations"><bdi class="secno">4.2.4 </bdi>Relatie tussen (sub)Operations</h4><a class="self-link" href="#relatie-tussen-sub-operations" aria-label="Permalink for Section 4.2.4"></a></div>
 <p>Elke (sub)Operation krijgt een eigen, unieke <code>span_id</code>. Hiermee zijn alle loggings altijd uniek traceerbeer. Ook subOperations krijgen een eigen, unieke <code>span_id</code>.</p>
@@ -1304,7 +1304,7 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 <ul>
 <li>De gemeenteOperations <strong>Toon alle vergunningen, Wijzig kenteken en Controleer tenaamstelling</strong> behoren tot dezelfde handeling (met als eindresultaat het wijzigingen van het kenteken op de vergunning). Deze Operations krijgen allemaal dezelfde <code>trace_id</code>.</li>
 <li>De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen <code>trace_id</code>.</li>
-<li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een <code>foreign_operation.trace_id</code> opgeslagen, de waarde hier van is gelijk aan de waarde van de <code>trace_id</code> van de Operation <strong>Controleer tenaamstelling</strong>.</li>
+<li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een <code>trace_id</code> opgeslagen, de waarde hier van is gelijk aan de waarde van de <code>trace_id</code> van de Operation <strong>Controleer tenaamstelling</strong>.</li>
 </ul>
 <p><img src="./media/relatie_logboekelementen_afbeelding12.svg" alt="Afbeelding voorbeeld trace_id en foreign_trace_id bij Gemeente en RDW"></p>
 </section><section id="span_id"><div class="header-wrapper"><h4 id="x4-2-10-span_id"><bdi class="secno">4.2.10 </bdi>span_id</h4><a class="self-link" href="#span_id" aria-label="Permalink for Section 4.2.10"></a></div>
