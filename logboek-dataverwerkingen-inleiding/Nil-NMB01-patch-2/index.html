@@ -4771,6 +4771,8 @@ De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <c
 <td>8ccfd3c567c51d68937c263e00a352be</td>
 </tr>
 </tbody></table>
+</section><section><div class="header-wrapper"><h4 id="opmerkingen-use-case-03">Opmerkingen Use Case 03</h4><a class="self-link" href="#opmerkingen-use-case-03" aria-label="Permalink for this Section"></a></div>
+<p>Als het bericht 1 op 1 zou worden doorgestuurd, zou één logregel kunnen volstaan (geen persoonsgegevens zichtbaar).</p>
 </section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-04-service-bericht-mededeling-vanuit-een-overheidsinstantie-naar-een-dienstverlener-via-een-intermediair">Use Case 04: Service Bericht Mededeling vanuit een overheidsinstantie naar een dienstverlener via een intermediair</h3><a class="self-link" href="#use-case-04-service-bericht-mededeling-vanuit-een-overheidsinstantie-naar-een-dienstverlener-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
 <ol>
 <li>Een overheidsinstantie stuurt mededelende berichten in batchvorm naar een centrale verwerkingsdienst.</li>
@@ -4778,7 +4780,9 @@ De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <c
 <li>De portaaldienst verstuurt de individuele file naar de juiste dienstverlener.</li>
 </ol>
 <p><img src="./media/UseCase04_afbeelding1.png" alt="intermediairsituatie_UseCase04"></p>
-</section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-05-persoonsgebeurtenisberichten-via-een-intermediair">Use Case 05: Persoonsgebeurtenisberichten via een intermediair</h3><a class="self-link" href="#use-case-05-persoonsgebeurtenisberichten-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="opmerkingen-use-case-04">Opmerkingen Use Case 04</h4><a class="self-link" href="#opmerkingen-use-case-04" aria-label="Permalink for this Section"></a></div>
+<p>Als er geen HTTP protocol wordt gebruikt, moet er  op een bepaalde manier toch headerinformatie worden verzonden.</p>
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-05-persoonsgebeurtenisberichten-via-een-intermediair">Use Case 05: Persoonsgebeurtenisberichten via een intermediair</h3><a class="self-link" href="#use-case-05-persoonsgebeurtenisberichten-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
 <section><div class="header-wrapper"><h4 id="proces-0">Proces</h4><a class="self-link" href="#proces-0" aria-label="Permalink for this Section"></a></div>
 <ol>
 <li>Een werkgeversdienst zendt individuele berichten naar een overheidsinstantie met betrekking tot personen met een werkverleden.</li>
@@ -4792,6 +4796,12 @@ De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <c
 <li>De centrale verwerkingsdienst bundelt persoonsgebeurtenisberichten van diverse EU-landen en stuurt deze als batch naar de overheidsinstantie.</li>
 <li>De overheidsinstantie stuurt de batch door naar de werkgeversdienst.</li>
 </ol>
+</section><section><div class="header-wrapper"><h4 id="opmerkingen-use-case-05">Opmerkingen Use Case 05</h4><a class="self-link" href="#opmerkingen-use-case-05" aria-label="Permalink for this Section"></a></div>
+<ul>
+<li>   De organisatie die als centrale verwerkingsdienst acteert zou een <code>trace_id</code> aan moeten maken op het moment dat er een bericht vanuit een EU-land komt.</li>
+<li>   De overheidsinstantie in deze afbeelding is verantwoordelijke ook al komt het initiële bericht vanuit de werkgeversdienst.</li>
+<li>   Niet elke organisatie geeft een acknowledgement terug.</li>
+</ul>
 </section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-06-register-van-niet-ingezetenen-rni">Use Case 06: Register van Niet-Ingezetenen (RNI)</h3><a class="self-link" href="#use-case-06-register-van-niet-ingezetenen-rni" aria-label="Permalink for this Section"></a></div>
 <section><div class="header-wrapper"><h4 id="proces-1">Proces</h4><a class="self-link" href="#proces-1" aria-label="Permalink for this Section"></a></div>
 <ol>
@@ -4800,6 +4810,16 @@ De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <c
 <li>De RVIG voert aanpassing uit in de RNI.</li>
 </ol>
 <p><img src="./media/UseCase06_afbeelding1.png" alt="intermediairsituatie_UseCase06"></p>
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-07-statistische-informatie">Use Case 07: Statistische Informatie</h3><a class="self-link" href="#use-case-07-statistische-informatie" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="proces-2">Proces</h4><a class="self-link" href="#proces-2" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een werkgeversdienst verstuurt statistische informatie over burgers bedoeld voor zowel een overheidsinstantie als het CBS (twee aparte berichten) in batch via een centrale verwerkingsdienst.</li>
+<li>De centrale verwerkingsdienst verwerkt de batch en stuurt individuele berichten naar zowel de overheidsinstantie als het CBS.</li>
+<li>Het CBS anonimiseert de aangeleverde data.</li>
+</ol>
+<p><img src="./media/UseCase07_afbeelding1.png" alt="intermediairsituatie_UseCase07"></p>
+</section><section><div class="header-wrapper"><h4 id="opmerkingen-use-case-07">Opmerkingen Use Case 07</h4><a class="self-link" href="#opmerkingen-use-case-07" aria-label="Permalink for this Section"></a></div>
+<p>Het CBS moet de verwerking loggen van verwerkingen persoonsgegevens om persoonsgegevens te anonimiseren.</p>
 </section></section></section>
   <section data-max-toc="1" id="faq"><div class="header-wrapper"><h2 id="x7-faq"><bdi class="secno">7. </bdi>FAQ</h2><a class="self-link" href="#faq" aria-label="Permalink for Section 7."></a></div>
 <p>Dit hoofdstuk bevat veelgestelde vragen over de standaard Logboek Dataverwerking en in dit hoofdstuk worden deze veelgestelde vragen beantwoord en toegelicht.</p>
