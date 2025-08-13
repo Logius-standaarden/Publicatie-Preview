@@ -906,7 +906,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2024-10-23">28 juli 2025</time>
+      <time class="dt-published" datetime="2024-10-23">13 augustus 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -4442,13 +4442,183 @@ De batch moet nu op basis van <code>dpl.core.processing_activity_id</code> de <c
 <ul>
 <li>De standaard Logboek Dataverwerkingen schrijft <strong>niet</strong> voor hoe het mechanisme van het verwijderen van logregels zou moeten werken. Het ontwerp en de architectuur moeten door de organisatie zelf bepaald worden.  </li>
 <li>De standaard Logboek Dataverwerkingen schrijft <strong>niet</strong> voor wat de retentietijd is voor activiteiten. Het is de taak van de organisatie om te bepalen (op basis van de wettelijke basis) wat de bewaartijd is van een logregel.  </li>
-<li>Het veld <code>envisedTimeLimit</code> in het Register van Verwerkingsactiviteiten moet altijd worden ingevuld, ook al is de bewaartijd voor alle activiteiten hetzelfde.</li>
+<li>Het veld <code>envisedTimeLimit</code> in het Register van Verwerkingsactiviteiten moet <strong>altijd</strong> worden ingevuld, ook al is de bewaartijd voor alle activiteiten hetzelfde.</li>
 </ul>
 </div></div>
 
 </section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-02-wordt-er-een-vlag-gelogd-in-de-logregel-zodat-ik-weet-dat-de-gegevens-in-deze-logregel-niet-getoond-mogen-worden-in-het-geval-van-inzageverzoek">Use Case 02: Wordt er een vlag gelogd in de logregel, zodat ik weet dat de gegevens in deze logregel niet getoond mogen worden in het geval van inzageverzoek?</h3><a class="self-link" href="#use-case-02-wordt-er-een-vlag-gelogd-in-de-logregel-zodat-ik-weet-dat-de-gegevens-in-deze-logregel-niet-getoond-mogen-worden-in-het-geval-van-inzageverzoek" aria-label="Permalink for this Section"></a></div>
 <p>Nee, in het Logboek Verwerkingsgegevens worden geen vlaggen gelogd waardoor kan worden gezien dat de gegevens niet getoond mogen worden aan een burger. Het is aan de organisatie om procedures op te stellen om te regelen dat in specifieke gevallen data niet getoond mag worden aan een burger.</p>
-</section></section>
+</section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-03-berichten-versturen-naar-de-burger-vanuit-een-overheidsinstantie-via-een-intermediaire-organisatie">Use Case 03: Berichten versturen naar de burger vanuit een overheidsinstantie via een intermediaire organisatie</h3><a class="self-link" href="#use-case-03-berichten-versturen-naar-de-burger-vanuit-een-overheidsinstantie-via-een-intermediaire-organisatie" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="procesbeschrijving-use-case-03">Procesbeschrijving Use Case 03</h4><a class="self-link" href="#procesbeschrijving-use-case-03" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een overheidsinstantie stuurt mededelende berichten in batchvorm naar een centrale verwerkingsdienst.</li>
+<li>De centrale verwerkingsdienst (intermediair) verwerkt de batch en maakt hier individuele bestanden van. Deze individuele bestanden worden verstuurd naar Logius.</li>
+<li>Logius verstuurt het individueel bestand naar de juiste inbox van de burger in MijnOverheid.</li>
+</ol>
+<p><img src="./media/UseCase03_afbeelding1.png" alt="intermediairsituatie_UseCase03"></p>
+</section><section><div class="header-wrapper"><h4 id="logging">Logging</h4><a class="self-link" href="#logging" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Voor zowel de verwerking van de batch als het verzenden van de (individuele) berichten wordt een logregel aangemaakt (in beide gevallen komt een BSN ‘tevoorschijn’).</li>
+<li>De <code>trace_id</code> wordt aangeleverd door de overheidsinstantie, er wordt door de centrale verwerkingsdienst (intermediair) geen aparte <code>trace_id</code> aangemaakt noch wordt er een <code>foreign_trace_id</code> gelogd.</li>
+<li>De centrale verwerkingsdienst (intermediair) heeft een eigen Register van Verwerkingsactiviteiten (via <code>dpl.core.processing_activity_id</code>).</li>
+<li>De allereerste logregel geldt als ‘kapstok’, alle logregels daarna refereren naar de <code>span_id</code> van deze allereerste logregel via <code>parent_span_id</code>.</li>
+<li>Elk individueel BSN krijgt een eigen logregel.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Veld</th>
+<th>Logregel 1</th>
+<th>Logregel 2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>trace_id</td>
+<td>bc9126aaae813fd491ee10bf870db292</td>
+<td>bc9126aaae813fd491ee10bf870db292</td>
+</tr>
+<tr>
+<td>span_id</td>
+<td>b2e339a595246e01</td>
+<td>414514cf1d40d6b2</td>
+</tr>
+<tr>
+<td>parent_span_id</td>
+<td>NA</td>
+<td>b2e339a595246e01</td>
+</tr>
+<tr>
+<td>name</td>
+<td>VerwerkBatch</td>
+<td>VerzendBericht</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>2024-07-29 10:16:49.690</td>
+<td>2024-07-29 10:16:49.690</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>2024-07-29 10:16:49.723</td>
+<td>2024-07-29 10:16:49.723</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>OK</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>resource.name</td>
+<td>BatchVerwerking</td>
+<td>ZendDienst</td>
+</tr>
+<tr>
+<td>resource.version</td>
+<td>1.0</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>attributeKey1</td>
+<td>dpl.core.processing_activity_id</td>
+<td>dpl.core.processing_activity_id</td>
+</tr>
+<tr>
+<td>attributeValue1</td>
+<td>11x2ec2a-0774-3541-9b16</td>
+<td>12f2ec2a-0cc4-3541-9ae6</td>
+</tr>
+<tr>
+<td>attributeKey2</td>
+<td>dpl.core.data_subject_id</td>
+<td>dpl.core.data_subject_id</td>
+</tr>
+<tr>
+<td>attributeValue2</td>
+<td>13j2ec27-0cc4-3541-9av6</td>
+<td>19u2dd2a-0cb7-3541-9ae6-217</td>
+</tr>
+<tr>
+<td>attributeKey3</td>
+<td>dpl.core.data_subject_id_type</td>
+<td>dpl.core.data_subject_id_type</td>
+</tr>
+<tr>
+<td>attributeValue3</td>
+<td>BSN</td>
+<td>BSN</td>
+</tr>
+<tr>
+<td>attributeKey4</td>
+<td>dpl.core.foreign_operation.span_id</td>
+<td>dpl.core.foreign_operation.span_id</td>
+</tr>
+<tr>
+<td>attributeValue4</td>
+<td>8ccfd3c567c51d68937c263e00a352be</td>
+<td>8ccfd3c567c51d68937c263e00a352be</td>
+</tr>
+</tbody></table>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Noot</span></div><div class="">
+
+<p>Als het bericht 1 op 1 zou worden doorgestuurd, zou één logregel kunnen volstaan (geen persoonsgegevens zichtbaar).</p>
+</div></div>
+
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-04-service-bericht-mededeling-vanuit-een-overheidsinstantie-naar-een-dienstverlener-via-een-intermediair">Use Case 04: Service Bericht Mededeling vanuit een overheidsinstantie naar een dienstverlener via een intermediair</h3><a class="self-link" href="#use-case-04-service-bericht-mededeling-vanuit-een-overheidsinstantie-naar-een-dienstverlener-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="procesbeschrijving-use-case-04">Procesbeschrijving Use Case 04</h4><a class="self-link" href="#procesbeschrijving-use-case-04" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een overheidsinstantie stuurt mededelende berichten in batchvorm naar een centrale verwerkingsdienst (intermediair).</li>
+<li>De centrale verwerkingsdienst verwerkt batch en maakt hier individuele files van. De individuele files worden verstuurd naar een portaaldienst (bijv. Digipoort).</li>
+<li>De portaaldienst verstuurt de individuele file naar de juiste dienstverlener.</li>
+</ol>
+<p><img src="./media/UseCase04_afbeelding1.png" alt="intermediairsituatie_UseCase04"></p>
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Noot</span></div><div class="">
+
+<p>Als er geen HTTP protocol wordt gebruikt, moet er  op een bepaalde manier toch headerinformatie worden verzonden.</p>
+</div></div>
+
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-05-persoonsgebeurtenisberichten-via-een-intermediair">Use Case 05: Persoonsgebeurtenisberichten via een intermediair</h3><a class="self-link" href="#use-case-05-persoonsgebeurtenisberichten-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="procesbeschrijving-use-case-05">Procesbeschrijving Use Case 05</h4><a class="self-link" href="#procesbeschrijving-use-case-05" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een werkgeversdienst zendt individuele berichten naar een overheidsinstantie met betrekking tot personen met een werkverleden.</li>
+<li>De overheidsinstantie bundelt persoonsgebeurtenisberichten in een batch en zendt deze naar een centrale verwerkingsdienst (intermediair).</li>
+<li>De centrale verwerkingsdienst verwerkt de batch en maakt hier individuele files van en zendt deze naar het juiste EU-land.</li>
+</ol>
+<p><img src="./media/UseCase05_afbeelding1.png" alt="intermediairsituatie_UseCase05"></p>
+<p>Het proces kan ook andersom:</p>
+<ol>
+<li>EU-land komt een persoonsgebeurtenisbericht (bijvoorbeeld van een persoon in het buitenland) en zendt deze naar de centrale verwerkingsdienst.</li>
+<li>De centrale verwerkingsdienst bundelt persoonsgebeurtenisberichten van diverse EU-landen en stuurt deze als batch naar de overheidsinstantie.</li>
+<li>De overheidsinstantie stuurt de batch door naar de werkgeversdienst.</li>
+</ol>
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Noot</span></div><div class="">
+
+<ul>
+<li>De organisatie die als centrale verwerkingsdienst acteert zou een <code>trace_id</code> aan moeten maken op het moment dat er een bericht vanuit een EU-land komt.</li>
+<li>De overheidsinstantie in deze afbeelding is verantwoordelijke ook al komt het initiële bericht vanuit de werkgeversdienst.</li>
+<li>Niet elke organisatie geeft een acknowledgement terug.</li>
+</ul>
+</div></div>
+
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-06-register-van-niet-ingezetenen-rni">Use Case 06: Register van Niet-Ingezetenen (RNI)</h3><a class="self-link" href="#use-case-06-register-van-niet-ingezetenen-rni" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="procesbeschrijving-use-case-06">Procesbeschrijving Use Case 06</h4><a class="self-link" href="#procesbeschrijving-use-case-06" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een overheidsinstantie/werkgeversdienst/uitkeringsinstantie/zorginstantie stuurt aanpassing ten aanzien van RNI naar een centrale verwerkingsdienst.</li>
+<li>De centrale verwerkingsdienst stuurt aanpassing naar de RVIG (Rijksdienst voor identiteitsgegevens). In dit voorbeeld maakt de centrale verwerkingsdienst alleen individuele berichten indien aanpassingen in batchvorm zijn aangeleverd.</li>
+<li>De RVIG voert de aanpassing uit in de RNI.</li>
+</ol>
+<p><img src="./media/UseCase06_afbeelding1.png" alt="intermediairsituatie_UseCase06"></p>
+</section></section><section class="notoc"><div class="header-wrapper"><h3 id="use-case-07-statistische-informatie-via-een-intermediair">Use Case 07: Statistische Informatie via een intermediair</h3><a class="self-link" href="#use-case-07-statistische-informatie-via-een-intermediair" aria-label="Permalink for this Section"></a></div>
+<section><div class="header-wrapper"><h4 id="procesbeschrijving-use-case-07">Procesbeschrijving Use Case 07</h4><a class="self-link" href="#procesbeschrijving-use-case-07" aria-label="Permalink for this Section"></a></div>
+<ol>
+<li>Een werkgeversdienst verstuurt statistische informatie over burgers bedoeld voor zowel een overheidsinstantie als het CBS (twee aparte berichten) in batch via een centrale verwerkingsdienst (intermediair).</li>
+<li>De centrale verwerkingsdienst verwerkt de batch en stuurt individuele berichten naar zowel de overheidsinstantie als het CBS.</li>
+<li>Het CBS anonimiseert de aangeleverde data.</li>
+</ol>
+<p><img src="./media/UseCase07_afbeelding1.png" alt="intermediairsituatie_UseCase07"></p>
+<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Noot</span></div><div class="">
+
+<p>Het CBS moet de verwerking loggen van verwerkingen persoonsgegevens om persoonsgegevens te anonimiseren.</p>
+</div></div></section></section></section>
   <section data-max-toc="1" id="faq"><div class="header-wrapper"><h2 id="x7-faq"><bdi class="secno">7. </bdi>FAQ</h2><a class="self-link" href="#faq" aria-label="Permalink for Section 7."></a></div>
 <p>Dit hoofdstuk bevat veelgestelde vragen over de standaard Logboek Dataverwerking en in dit hoofdstuk worden deze veelgestelde vragen beantwoord en toegelicht.</p>
 <section class="notoc"><div class="header-wrapper"><h3 id="wat-is-het-doel-van-de-standaard-logboek-dataverwerking">Wat is het doel van de standaard Logboek Dataverwerking?</h3><a class="self-link" href="#wat-is-het-doel-van-de-standaard-logboek-dataverwerking" aria-label="Permalink for this Section"></a></div>
