@@ -1,0 +1,1281 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 35.3.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+<meta name="color-scheme" content="light dark">
+  
+<title>API Design Rules Module: Encryption</title>
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/adr-style.css" rel="stylesheet" type="text/css">
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/adr-dark.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)">
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
+  
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px;background:0 0}
+</style>
+<meta name="description" content="This document is part of the Nederlandse API Strategie.">
+<style>
+.hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
+@media (prefers-color-scheme:dark){
+.hljs{--base:#282c34;--mono-1:#abb2bf;--mono-2:#818896;--mono-3:#5c6370;--hue-1:#56b6c2;--hue-2:#61aeee;--hue-3:#c678dd;--hue-4:#98c379;--hue-5:#e06c75;--hue-5-2:#be5046;--hue-6:#d19a66;--hue-6-2:#e6c07b}
+}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
+.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
+.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "Logius",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
+    }
+  ],
+  "useLogo": true,
+  "latestVersion": "https://logius-standaarden.github.io/API-mod-encryption/",
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion",
+    "/"
+  ],
+  "prevVersion": [],
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
+  },
+  "useLabel": true,
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
+    }
+  },
+  "license": "cc-by",
+  "localBiblio": {
+    "ADR": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR-ext": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
+    },
+    "AVG": {
+      "date": "27 april 2016",
+      "href": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679",
+      "publisher": "Verordening (EU) 2016/679 van het Europees Parlement",
+      "title": "Algemene Verordening Gegevensbescherming"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer",
+        "R. Holz",
+        "P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "DK-beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "NLGOV-CloudEvents": {
+      "authors": [
+        "Werkgroep Berichtenstandaard (Project Notificatieservices)"
+      ],
+      "href": "https://logius-standaarden.github.io/NL-GOV-profile-for-CloudEvents/",
+      "publisher": "Logius",
+      "title": "NL GOV profile for CloudEvents"
+    },
+    "DK-CV": {
+      "href": "https://gitlab.com/logius/digikoppeling-compliance",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "DK-Portaal": {
+      "href": "https://oinregister.logius.nl/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Portaal"
+    },
+    "DK-WUS-voorbeeld": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Set voorbeeldberichten (zip)"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "DK": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius | Digikoppeling"
+    },
+    "DK-Doc": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling documentatie"
+    },
+    "DK-Beheermodel": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beheer/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beheermodel"
+    },
+    "DK-BPebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2"
+    },
+    "DK-BPGB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten"
+    },
+    "DK-BPWUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS"
+    },
+    "DK-Beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "DK-gbachtcert": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-ebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-GB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/gb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten"
+    },
+    "DK-WUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/wus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard WUS"
+    },
+    "DK-RESTAPI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard REST-API"
+    },
+    "DK-Architectuur": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "DK-IDAuth": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/idauth/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "DK-WI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/",
+      "publisher": "Logius",
+      "title": "Wat is Digikoppeling?"
+    },
+    "BOMOSFundament": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, het fundament"
+    },
+    "BOMOSVerdieping": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, de verdieping"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "folmer2011": {
+      "href": "https://research.utwente.nl/en/publications/management-and-development-model-for-open-standards-bomos-version",
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://research.utwente.nl/en/publications/quality-of-semantic-standards",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
+    "DK-Gebruiksvoorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "ADR-GEO": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design Rules Module: Geospatial"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NCSC 2025": {
+      "date": "June 2025",
+      "href": "https://www.ncsc.nl/wat-kun-je-zelf-doen/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden"
+    },
+    "PKIO-PvE": {
+      "href": "https://por.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Certificate Policy/Programme of Requirements PKIoverheid"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/domeinen/toegang/aansluiten-als-trust-service-provider",
+      "publisher": "Logius",
+      "title": "Aansluiten als Trust Service Provider"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/domeinen/toegang/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIO-Cert": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Overzicht PKIoverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "ADR-TS": {
+      "authors": [
+        ""
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/",
+      "publisher": "Kennisplatform API's",
+      "title": "API Design Rules Module: Transport Security"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "DK-Voorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets",
+      "title": "Technical ADR Validation rule testset 0.5.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "November 2023"
+    },
+    "JRC117836": {
+      "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
+      "title": "The Relationship Between Open Source Software and Standard Setting",
+      "authors": [
+        "Knut Blind",
+        "Mirko Böhm"
+      ],
+      "editors": [
+        "Nikolaus Thumm"
+      ],
+      "publisher": "Joint Research Center",
+      "id": "JRC117836",
+      "date": "2019"
+    },
+    "Krechmer2002": {
+      "href": "https://www.isology.com/pdf/cathedrals.pdf",
+      "title": "Cathedrals, Libraries and Bazaars",
+      "authors": [
+        "Ken Krechmer"
+      ],
+      "publisher": "Association of Computing Machinery (ACM)",
+      "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0-03.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "ietf-oauth-v2-1-10-refresh-token-grant": {
+      "authors": [
+        "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
+      ],
+      "date": "January 9, 2024",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant",
+      "publisher": "IETF",
+      "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile"
+    },
+    "logboek-extensie-guideline": {
+      "href": "https://logius-standaarden.github.io/logboek-extensie-template/",
+      "publisher": "Logius",
+      "title": "LDV Extensie Guideline"
+    },
+    "logboek dataverwerkingen": {
+      "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+      "publisher": "Logius",
+      "title": "Logboek Dataverwerkingen"
+    }
+  },
+  "pubDomain": "api",
+  "shortName": "mod-encryption",
+  "specType": "ST",
+  "specStatus": "WV",
+  "publishDate": "2024-09-06",
+  "publishVersion": "1.0.2",
+  "editors": [
+    {
+      "name": "Logius Standaarden",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://www.logius.nl"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/API-mod-encryption/",
+  "postProcess": [
+    null
+  ]
+}</script>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
+
+<body class="h-entry toc-inline"><div class="head">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">API Design Rules Module: Encryption</h1>
+    
+    <h2>
+      Logius Standard<br>
+      Draft
+      <time class="dt-published" datetime="2024-09-06">August 14, 2025</time>
+    </h2>
+    <dl>
+      <dt>This version:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/API-mod-encryption/">https://logius-standaarden.github.io/API-mod-encryption/</a>
+            </dd>
+      <dt>Latest published version:</dt><dd>
+              <a href="https://logius-standaarden.github.io/API-mod-encryption/">https://logius-standaarden.github.io/API-mod-encryption/</a>
+            </dd>
+      <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/API-mod-encryption/">https://logius-standaarden.github.io/API-mod-encryption/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Editor:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Logius Standaarden</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
+  </dd>
+      
+      <dt>Author:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Peter Haasnoot</span> (<a class="p-org org h-org" href="https://www.logius.nl">Logius</a>)
+  </dd>
+      <dt>Participate:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/API-mod-encryption/">GitHub Logius-standaarden/API-mod-encryption</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/API-mod-encryption/issues/">File an issue</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/API-mod-encryption/commits/">Commit history</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/API-mod-encryption/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+            This document is licensed under 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document is part of the <em>Nederlandse API Strategie</em>.</p>
+<p>The Nederlandse API Strategie consists of <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">a set of distinct documents</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description &amp; Link</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Informative</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Inleiding/">Inleiding NL API Strategie</a></td>
+</tr>
+<tr>
+<td>Informative</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/">Architectuur NL API Strategie</a></td>
+</tr>
+<tr>
+<td>Informative</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Gebruikerswensen/">Gebruikerswensen NL API Strategie</a></td>
+</tr>
+<tr>
+<td>Normative</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0/">API Design Rules (ADR v2.0)</a></td>
+</tr>
+<tr>
+<td>Normative</td>
+<td><a href="https://spec.openapis.org/oas/v3.0.1.html">Open API Specification (OAS 3.0)</a></td>
+</tr>
+<tr>
+<td>Normative</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">NL GOV OAuth profiel</a></td>
+</tr>
+<tr>
+<td>Normative</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/">Digikoppeling REST API koppelvlak specificatie</a></td>
+</tr>
+<tr>
+<td>Normative module</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/1.0.2/">GEO module v1.0</a></td>
+</tr>
+</tbody></table>
+<p>Before reading this document it is advised to gain knowledge of the informative documents, in particular the <a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/">Architecture</a>.</p>
+
+<p>This ADR Module contains the requirements for ADR REST-API encryption based on JWE.</p>
+</section>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">2. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.1 </bdi>Use Cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#jwe-encryption"><bdi class="secno">3. </bdi>JWE encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basic-jwe-proces-flow"><bdi class="secno">3.1 </bdi>Basic JWE proces flow</a></li><li class="tocline"><a class="tocxref" href="#parameters-and-requirements"><bdi class="secno">3.2 </bdi>Parameters and requirements</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">3.3 </bdi>Cryptographic Algorithms</a></li></ol></li><li class="tocline"><a class="tocxref" href="#encryption-in-combination-with-signing"><bdi class="secno">4. </bdi>Encryption in combination with signing</a></li><li class="tocline"><a class="tocxref" href="#tooling"><bdi class="secno">A. </bdi>Tooling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#jwt-jws-jwe-jwk-and-jwa-implementations"><bdi class="secno">A.1 </bdi>JWT, JWS, JWE, JWK, and JWA Implementations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+  <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key word <em class="rfc2119">MUST</em> in this document
+        is to be interpreted as described in
+        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        when, and only when, they appear in all capitals, as shown here.
+      </p>
+  </section>
+  <section id="introduction"><div class="header-wrapper"><h2 id="x2-introduction"><bdi class="secno">2. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 2."></a></div>
+<p>This module specifies the use of JWE for HTTP payload encryption.</p>
+<section id="use-cases"><div class="header-wrapper"><h3 id="x2-1-use-cases"><bdi class="secno">2.1 </bdi>Use Cases</h3><a class="self-link" href="#use-cases" aria-label="Permalink for Section 2.1"></a></div>
+<p>This module is applicable when there is a need for end to end message payload confidentiality between client application and server application. 
+In a complex IT landscape the path between client and server can go over several intermediary components/systems in which case end to end confidentiality can be especially relevant. (In this case TLS is terminated in each step on the path and does not protect the http-message in transport fully end to end).
+A specific example is when there is confidential data that is processed and routed by an intermediary organization which is not allowed to access the contents of the message.</p>
+</section></section>
+  <section id="jwe-encryption"><div class="header-wrapper"><h2 id="x3-jwe-encryption"><bdi class="secno">3. </bdi>JWE encryption</h2><a class="self-link" href="#jwe-encryption" aria-label="Permalink for Section 3."></a></div>
+<p> For encryption <cite><a data-matched-text="[[[rfc7516]]]" href="https://www.rfc-editor.org/rfc/rfc7516">JSON Web Encryption (JWE)</a></cite> is used.</p>
+<section id="basic-jwe-proces-flow"><div class="header-wrapper"><h3 id="x3-1-basic-jwe-proces-flow"><bdi class="secno">3.1 </bdi>Basic JWE proces flow</h3><a class="self-link" href="#basic-jwe-proces-flow" aria-label="Permalink for Section 3.1"></a></div>
+<p>The basic flow for encryption using JWE is :</p>
+<pre><code class="mermaid" aria-busy="false" data-processed="true"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="0 0 636 1034" style="max-width: 636px;" class="flowchart" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1755174330124"><style>
+#mermaid-1755174330124{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1755174330124 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1755174330124 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1755174330124 .error-icon{fill:#552222;}#mermaid-1755174330124 .error-text{fill:#552222;stroke:#552222;}#mermaid-1755174330124 .edge-thickness-normal{stroke-width:1px;}#mermaid-1755174330124 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1755174330124 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1755174330124 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1755174330124 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1755174330124 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1755174330124 .marker{fill:#333333;stroke:#333333;}#mermaid-1755174330124 .marker.cross{stroke:#333333;}#mermaid-1755174330124 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1755174330124 p{margin:0;}#mermaid-1755174330124 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1755174330124 .cluster-label text{fill:#333;}#mermaid-1755174330124 .cluster-label span{color:#333;}#mermaid-1755174330124 .cluster-label span p{background-color:transparent;}#mermaid-1755174330124 .label text,#mermaid-1755174330124 span{fill:#333;color:#333;}#mermaid-1755174330124 .node rect,#mermaid-1755174330124 .node circle,#mermaid-1755174330124 .node ellipse,#mermaid-1755174330124 .node polygon,#mermaid-1755174330124 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1755174330124 .rough-node .label text,#mermaid-1755174330124 .node .label text,#mermaid-1755174330124 .image-shape .label,#mermaid-1755174330124 .icon-shape .label{text-anchor:middle;}#mermaid-1755174330124 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1755174330124 .rough-node .label,#mermaid-1755174330124 .node .label,#mermaid-1755174330124 .image-shape .label,#mermaid-1755174330124 .icon-shape .label{text-align:center;}#mermaid-1755174330124 .node.clickable{cursor:pointer;}#mermaid-1755174330124 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1755174330124 .arrowheadPath{fill:#333333;}#mermaid-1755174330124 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1755174330124 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1755174330124 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1755174330124 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1755174330124 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1755174330124 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1755174330124 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1755174330124 .cluster text{fill:#333;}#mermaid-1755174330124 .cluster span{color:#333;}#mermaid-1755174330124 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1755174330124 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1755174330124 rect.text{fill:none;stroke-width:0;}#mermaid-1755174330124 .icon-shape,#mermaid-1755174330124 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1755174330124 .icon-shape p,#mermaid-1755174330124 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1755174330124 .icon-shape rect,#mermaid-1755174330124 .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1755174330124 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1755174330124 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1755174330124 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-1755174330124 .sc&gt;*{fill:#f96!important;}#mermaid-1755174330124 .sc span{fill:#f96!important;}
+</style><g><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330124_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330124_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330124_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330124_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755174330124_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755174330124_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"><g data-look="classic" id="subGraph1" class="cluster"><rect height="1018" width="300" y="8" x="8" style=""></rect><g transform="translate(92.1875, 8)" class="cluster-label"><foreignObject height="24" width="131.625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Service Requester</p></span></div></foreignObject></g></g><g data-look="classic" id="subGraph0" class="cluster"><rect height="408" width="300" y="313" x="328" style=""></rect><g transform="translate(419.3125, 313)" class="cluster-label"><foreignObject height="24" width="117.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Service Provider</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_Request_SignA_0" d="M158,87L158,93.167C158,99.333,158,111.667,158,123.333C158,135,158,146,158,151.5L158,157"></path><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignA_SignB_0" d="M158,239L158,245.167C158,251.333,158,263.667,158,276C158,288.333,158,300.667,191.513,313.536C225.026,326.405,292.052,339.81,325.565,346.513L359.078,353.216"></path><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignB_Proc_0" d="M478,416L478,422.167C478,428.333,478,440.667,478,452.333C478,464,478,475,478,480.5L478,486"></path><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_Proc_SignC_0" d="M478,544L478,550.167C478,556.333,478,568.667,478,580.333C478,592,478,603,478,608.5L478,614"></path><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignC_SignD_0" d="M478,696L478,700.167C478,704.333,478,712.667,424.667,723C371.333,733.333,264.667,745.667,211.333,757.333C158,769,158,780,158,785.5L158,791"></path><path marker-end="url(#mermaid-1755174330124_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignD_Response_0" d="M158,873L158,879.167C158,885.333,158,897.667,158,909.333C158,921,158,932,158,937.5L158,943"></path></g><g class="edgeLabels"><g transform="translate(158, 124)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(158, 276)" class="edgeLabel"><g transform="translate(-76.90625, -12)" class="label"><foreignObject height="24" width="153.8125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JWE(JSON(payload))</p></span></div></foreignObject></g></g><g transform="translate(478, 453)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(478, 581)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(158, 758)" class="edgeLabel"><g transform="translate(-76.90625, -12)" class="label"><foreignObject height="24" width="153.8125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JWE(JSON(payload))</p></span></div></foreignObject></g></g><g transform="translate(158, 910)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(158, 60)" id="flowchart-Request-0" class="node default sc"><rect height="54" width="119.59375" y="-27" x="-59.796875" style="fill:#f96 !important" class="basic label-container"></rect><g transform="translate(-29.796875, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="59.59375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Request</p></span></div></foreignObject></g></g><g transform="translate(158, 200)" id="flowchart-SignA-1" class="node default"><rect height="78" width="230" y="-39" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -24)" style="" class="label"><rect></rect><foreignObject height="48" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Encrypt with Provider public key</p></span></div></foreignObject></g></g><g transform="translate(478, 377)" id="flowchart-SignB-3" class="node default"><rect height="78" width="230" y="-39" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -24)" style="" class="label"><rect></rect><foreignObject height="48" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Decrypt with Provider private key</p></span></div></foreignObject></g></g><g transform="translate(478, 517)" id="flowchart-Proc-5" class="node default"><rect height="54" width="151.84375" y="-27" x="-75.921875" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-60.921875, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="121.84375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Process Request</p></span></div></foreignObject></g></g><g transform="translate(478, 657)" id="flowchart-SignC-7" class="node default"><rect height="78" width="230" y="-39" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -24)" style="" class="label"><rect></rect><foreignObject height="48" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Encrypt with Requester public key</p></span></div></foreignObject></g></g><g transform="translate(158, 834)" id="flowchart-SignD-9" class="node default"><rect height="78" width="230" y="-39" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -24)" style="" class="label"><rect></rect><foreignObject height="48" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Decrypt with Requester private key</p></span></div></foreignObject></g></g><g transform="translate(158, 974)" id="flowchart-Response-11" class="node default sc"><rect height="54" width="132.046875" y="-27" x="-66.0234375" style="fill:#f96 !important" class="basic label-container"></rect><g transform="translate(-36.0234375, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="72.046875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Response</p></span></div></foreignObject></g></g></g></g></g></svg></code></pre>
+<figure id="fig-encryption"><figcaption><a class="self-link" href="#fig-encryption">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">Encryption</span></figcaption></figure>
+
+
+<ul>
+<li><p>1 Service Requester encrypts payload using Service Provider public encryption key:</p>
+</li>
+<li><p>2 Service Provider decrypts the request using the corresponding Service Provider private encryption key.</p>
+</li>
+<li><p>3 Service Provider performs the request and then generates an encrypted response;</p>
+</li>
+<li><p>4 Service Requester decrypts response using Requester private key</p>
+</li>
+</ul>
+</section><section id="parameters-and-requirements"><div class="header-wrapper"><h3 id="x3-2-parameters-and-requirements"><bdi class="secno">3.2 </bdi>Parameters and requirements</h3><a class="self-link" href="#parameters-and-requirements" aria-label="Permalink for Section 3.2"></a></div>
+<p>The following specific requirements <em class="rfc2119">MUST</em> be met:</p>
+<ul>
+<li><p>The request is sent to Service Provider with the content-type: application/jose+json.</p>
+</li>
+<li><p>An encrypted request needs to pass application/jose+json as the value for the Content-Type and Accept headers:</p>
+</li>
+</ul>
+<pre><code aria-busy="false" class="hljs http"><span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/jose+json
+<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>application/jose+json
+</code></pre>
+<ul>
+<li><p>When the encrypted request uses an unsupported algorithm, the Service Provider rejects the request with a 400 HTTP response.</p>
+</li>
+<li><p>Use for encryption the public key from the X.509 certificate of the other party</p>
+</li>
+<li><p>Use the following parameters in the JWE protected header:</p>
+</li>
+</ul>
+<pre><code aria-busy="false" class="hljs css">alg : <span class="hljs-string">"RSA-OAEP"</span>, 
+enc : <span class="hljs-string">"A256GCM"</span>,
+typ : <span class="hljs-string">"JWE"</span>
+</code></pre>
+<ul>
+<li>JWE compact serialization format is used</li>
+</ul>
+</section><section id="cryptographic-algorithms"><div class="header-wrapper"><h3 id="x3-3-cryptographic-algorithms"><bdi class="secno">3.3 </bdi>Cryptographic Algorithms</h3><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 3.3"></a></div>
+<p>The following algorithms are used</p>
+<ul>
+<li>Key Management : <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-4.3">RSA-OAEP</a></li>
+<li>Content encryption : <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-5.3">A256GCM</a></li>
+</ul>
+<p>As defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">rfc7518</a></cite>].</p>
+</section></section>
+  <section id="encryption-in-combination-with-signing"><div class="header-wrapper"><h2 id="x4-encryption-in-combination-with-signing"><bdi class="secno">4. </bdi>Encryption in combination with signing</h2><a class="self-link" href="#encryption-in-combination-with-signing" aria-label="Permalink for Section 4."></a></div>
+<p>The following diagram shows the order in which encryption &amp; signing must be applied when encryption is used in combination with signing</p>
+<pre><code class="mermaid" aria-busy="false" data-processed="true"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="0 0 636 1514" style="max-width: 636px;" class="flowchart" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1755174330314"><style>
+#mermaid-1755174330314{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1755174330314 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1755174330314 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1755174330314 .error-icon{fill:#552222;}#mermaid-1755174330314 .error-text{fill:#552222;stroke:#552222;}#mermaid-1755174330314 .edge-thickness-normal{stroke-width:1px;}#mermaid-1755174330314 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1755174330314 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1755174330314 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1755174330314 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1755174330314 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1755174330314 .marker{fill:#333333;stroke:#333333;}#mermaid-1755174330314 .marker.cross{stroke:#333333;}#mermaid-1755174330314 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1755174330314 p{margin:0;}#mermaid-1755174330314 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1755174330314 .cluster-label text{fill:#333;}#mermaid-1755174330314 .cluster-label span{color:#333;}#mermaid-1755174330314 .cluster-label span p{background-color:transparent;}#mermaid-1755174330314 .label text,#mermaid-1755174330314 span{fill:#333;color:#333;}#mermaid-1755174330314 .node rect,#mermaid-1755174330314 .node circle,#mermaid-1755174330314 .node ellipse,#mermaid-1755174330314 .node polygon,#mermaid-1755174330314 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1755174330314 .rough-node .label text,#mermaid-1755174330314 .node .label text,#mermaid-1755174330314 .image-shape .label,#mermaid-1755174330314 .icon-shape .label{text-anchor:middle;}#mermaid-1755174330314 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1755174330314 .rough-node .label,#mermaid-1755174330314 .node .label,#mermaid-1755174330314 .image-shape .label,#mermaid-1755174330314 .icon-shape .label{text-align:center;}#mermaid-1755174330314 .node.clickable{cursor:pointer;}#mermaid-1755174330314 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1755174330314 .arrowheadPath{fill:#333333;}#mermaid-1755174330314 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1755174330314 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1755174330314 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1755174330314 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1755174330314 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1755174330314 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1755174330314 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1755174330314 .cluster text{fill:#333;}#mermaid-1755174330314 .cluster span{color:#333;}#mermaid-1755174330314 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1755174330314 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1755174330314 rect.text{fill:none;stroke-width:0;}#mermaid-1755174330314 .icon-shape,#mermaid-1755174330314 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1755174330314 .icon-shape p,#mermaid-1755174330314 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1755174330314 .icon-shape rect,#mermaid-1755174330314 .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1755174330314 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1755174330314 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1755174330314 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-1755174330314 .sc&gt;*{fill:#f96!important;}#mermaid-1755174330314 .sc span{fill:#f96!important;}
+</style><g><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330314_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330314_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330314_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755174330314_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755174330314_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755174330314_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"><g data-look="classic" id="subGraph1" class="cluster"><rect height="1498" width="300" y="8" x="8" style=""></rect><g transform="translate(92.1875, 8)" class="cluster-label"><foreignObject height="24" width="131.625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Service Requester</p></span></div></foreignObject></g></g><g data-look="classic" id="subGraph0" class="cluster"><rect height="648" width="300" y="433" x="328" style=""></rect><g transform="translate(419.3125, 433)" class="cluster-label"><foreignObject height="24" width="117.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Service Provider</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_Request_SignA_0" d="M158,87L158,93.167C158,99.333,158,111.667,158,123.333C158,135,158,146,158,151.5L158,157"></path><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignA_SignB_0" d="M158,359L158,365.167C158,371.333,158,383.667,158,396C158,408.333,158,420.667,191.545,439.832C225.09,458.997,292.18,484.995,325.725,497.994L359.27,510.992"></path><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignB_Proc_0" d="M478,656L478,662.167C478,668.333,478,680.667,478,692.333C478,704,478,715,478,720.5L478,726"></path><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_Proc_SignC_0" d="M478,784L478,790.167C478,796.333,478,808.667,478,820.333C478,832,478,843,478,848.5L478,854"></path><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignC_SignD_0" d="M478,1056L478,1060.167C478,1064.333,478,1072.667,424.667,1083C371.333,1093.333,264.667,1105.667,211.333,1117.333C158,1129,158,1140,158,1145.5L158,1151"></path><path marker-end="url(#mermaid-1755174330314_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_SignD_Response_0" d="M158,1353L158,1359.167C158,1365.333,158,1377.667,158,1389.333C158,1401,158,1412,158,1417.5L158,1423"></path></g><g class="edgeLabels"><g transform="translate(158, 124)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(158, 396)" class="edgeLabel"><g transform="translate(-99.1171875, -12)" class="label"><foreignObject height="24" width="198.234375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JWE(JWS(JSON(payload)))</p></span></div></foreignObject></g></g><g transform="translate(478, 693)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(478, 821)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g><g transform="translate(158, 1118)" class="edgeLabel"><g transform="translate(-99.1171875, -12)" class="label"><foreignObject height="24" width="198.234375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JWS(JWE(JSON(payload)))</p></span></div></foreignObject></g></g><g transform="translate(158, 1390)" class="edgeLabel"><g transform="translate(-54.6875, -12)" class="label"><foreignObject height="24" width="109.375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"><p>JSON(payload)</p></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(158, 60)" id="flowchart-Request-0" class="node default sc"><rect height="54" width="119.59375" y="-27" x="-59.796875" style="fill:#f96 !important" class="basic label-container"></rect><g transform="translate(-29.796875, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="59.59375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Request</p></span></div></foreignObject></g></g><g transform="translate(158, 260)" id="flowchart-SignA-1" class="node default"><rect height="198" width="230" y="-99" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -84)" style="" class="label"><rect></rect><foreignObject height="168" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Sign with Requester private key<br><br>-----------------------<br><br>Encrypt with Provider public key</p></span></div></foreignObject></g></g><g transform="translate(478, 557)" id="flowchart-SignB-3" class="node default"><rect height="198" width="230" y="-99" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -84)" style="" class="label"><rect></rect><foreignObject height="168" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Decrypt with Provider private key<br> <br>-----------------------<br><br>Verify signature with Requester public key</p></span></div></foreignObject></g></g><g transform="translate(478, 757)" id="flowchart-Proc-5" class="node default"><rect height="54" width="151.84375" y="-27" x="-75.921875" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-60.921875, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="121.84375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Process Request</p></span></div></foreignObject></g></g><g transform="translate(478, 957)" id="flowchart-SignC-7" class="node default"><rect height="198" width="230" y="-99" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -84)" style="" class="label"><rect></rect><foreignObject height="168" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Sign with Provider private key <br><br>-----------------------<br><br>Encrypt with Requester public key</p></span></div></foreignObject></g></g><g transform="translate(158, 1254)" id="flowchart-SignD-9" class="node default"><rect height="198" width="230" y="-99" x="-115" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-100, -84)" style="" class="label"><rect></rect><foreignObject height="168" width="200"><div style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Decrypt with Requester private key <br><br>-----------------------<br><br>Verify signature with Provider public key</p></span></div></foreignObject></g></g><g transform="translate(158, 1454)" id="flowchart-Response-11" class="node default sc"><rect height="54" width="132.046875" y="-27" x="-66.0234375" style="fill:#f96 !important" class="basic label-container"></rect><g transform="translate(-36.0234375, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="72.046875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Response</p></span></div></foreignObject></g></g></g></g></g></svg></code></pre>
+<figure id="fig-signing-encryption"><figcaption><a class="self-link" href="#fig-signing-encryption">Figure <bdi class="figno">2</bdi></a> <span class="fig-title">Signing &amp; Encryption</span></figcaption></figure></section>
+  <section class="appendix" id="tooling"><div class="header-wrapper"><h2 id="a-tooling"><bdi class="secno">A. </bdi>Tooling</h2><a class="self-link" href="#tooling" aria-label="Permalink for Appendix A."></a></div>
+<section id="jwt-jws-jwe-jwk-and-jwa-implementations"><div class="header-wrapper"><h3 id="a-1-jwt-jws-jwe-jwk-and-jwa-implementations"><bdi class="secno">A.1 </bdi>JWT, JWS, JWE, JWK, and JWA Implementations</h3><a class="self-link" href="#jwt-jws-jwe-jwk-and-jwa-implementations" aria-label="Permalink for Appendix A.1"></a></div>
+<p> Libraries implementing JWT and the JOSE specs JWS, JWE, JWK, and JWA are listed here.</p>
+<p><a href="https://openid.net/developers/jwt-jws-jwe-jwk-and-jwa-implementations/">https://openid.net/developers/jwt-jws-jwe-jwk-and-jwa-implementations/</a></p>
+</section></section>
+
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references">
+    <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
+    <dl class="bibliography"><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc7516">[rfc7516]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7516"><cite>JSON Web Encryption (JWE)</cite></a>. M. Jones; J. Hildebrand.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7516">https://www.rfc-editor.org/rfc/rfc7516</a>
+    </dd><dt id="bib-rfc7518">[rfc7518]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7518"><cite>JSON Web Algorithms (JWA)</cite></a>. M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7518">https://www.rfc-editor.org/rfc/rfc7518</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">Logius Standard - Draft</div><div class="mermaidTooltip" style="opacity: 0;"></div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
