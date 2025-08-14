@@ -929,7 +929,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2024-12-12">August 05, 2025</time>
+      <time class="dt-published" datetime="2024-12-12">August 14, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1421,9 +1421,12 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>In case of a Service that is published on behalf of another Peer, a signature is present with the subject serial number of the Peer defined the field <code>grant.data.service.delegator.peer_id</code></li>
 </ul>
 </section></section><section id="properties"><div class="header-wrapper"><h4 id="x3-2-2-properties"><bdi class="secno">3.2.2 </bdi>Properties</h4><a class="self-link" href="#properties" aria-label="Permalink for Section 3.2.2"></a></div>
-<p>Contracts contain the minimum amount of information needed to ensure a secure Service connection or publication. 
+<p>Contracts contain the minimum amount of information needed to ensure a secure Service Connection or Publication. 
 Some use cases might require additional information to ensure correct authentication/authorization or to provide additional functionality. </p>
-<p>Use case specific information can be provided using the <code>properties</code> field of a Grant. This field can contain any type of data as long as the data is valid JSON, making it flexible and suitable for a broad range of use cases.</p>
+<p>Use case specific information can be provided using the <code>properties</code> field of a Grant. 
+This field can contain any type of data as long as the data is valid JSON, making it flexible and suitable for a broad range of use cases.</p>
+<p>Only a limited set of properties is allowed. These should be documented in an <a href="https://github.com/Logius-standaarden/fsc-extensie-template">extension</a> 
+and the extension should be supported by the FSC Group you are using.</p>
 <section id="requirements"><div class="header-wrapper"><h5 id="x3-2-2-1-requirements"><bdi class="secno">3.2.2.1 </bdi>Requirements</h5><a class="self-link" href="#requirements" aria-label="Permalink for Section 3.2.2.1"></a></div>
 <ul>
 <li>Each Grant <strong><em class="rfc2119">MAY</em></strong> contain a <code>properties</code> object. </li>
