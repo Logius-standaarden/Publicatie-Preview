@@ -905,7 +905,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">22 juli 2025</time>
+      <time class="dt-published" datetime="2024-12-13">15 augustus 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1155,7 +1155,7 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Belangrijk uitgangspunt is dat een Verantwoordelijke alleen Logregels bijhoudt voor Dataverwerkingen die onder eigen verantwoordelijkheid plaatsvinden.</p>
 <p>Een zogenaamde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerker" href="#dfn-verwerkers" class="internalDFN" id="ref-for-dfn-verwerkers-1"><code>Verwerker</code></a> die Dataverwerkingen uitvoert in opdracht van een Verantwoordelijke wordt in deze standaard beschouwd als deel van de Verantwoordelijke. Van welke Logboeken en Registers een Verwerker gebruik maakt is een implementatiekeuze.</p>
 </section><section id="geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><div class="header-wrapper"><h4 id="x4-3-2-geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><bdi class="secno">4.3.2 </bdi>Geen inhoudelijke uitwisseling tussen Verantwoordelijken</h4><a class="self-link" href="#geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken" aria-label="Permalink for Section 4.3.2"></a></div>
-<p>Er wordt met de standaard geen inhoudelijke informatie over Dataverwerkingen uitgewisseld tussen Verantwoordelijken. Dit is niet nodig, aangezien iedere Verantwoordelijke alleen Logregels over eigen Dataverwerkingen vastlegt. De informatie die wordt uitgewisseld is beperkt tot zogenaamde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-1"><code>Trace</code></a>-informatie waarmee Logregels van de ene Verantwoordelijke gerelateerd kunnen worden aan Logregels bij de andere Verantwoordelijke. De verwerker krijgt als <code>trace_id</code> de <code>trace_id</code> van de verantwoordelijke, terwijl <code>foreign_span_id</code> wordt opgeslagen. De verwerker krijgt een eigen <code>span_id</code> per activiteit.</p>
+<p>Er wordt met de standaard geen inhoudelijke informatie over Dataverwerkingen uitgewisseld tussen Verantwoordelijken. Dit is niet nodig, aangezien iedere Verantwoordelijke alleen Logregels over eigen Dataverwerkingen vastlegt. De informatie die wordt uitgewisseld is beperkt tot zogenaamde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-1"><code>Trace</code></a>-informatie waarmee Logregels van de ene Verantwoordelijke gerelateerd kunnen worden aan Logregels bij de andere Verantwoordelijke.</p>
 <p>
       </p><figure id="fig-context-dataverwerking-meegeven-over-grenzen">
         <img src="media/architecture-grenzen.svg" alt="architecture">
