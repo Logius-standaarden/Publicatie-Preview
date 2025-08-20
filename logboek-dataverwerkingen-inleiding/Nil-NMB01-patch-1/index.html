@@ -2852,6 +2852,24 @@ status_code = "error"
 <p>•	Juridisch is het pseudonimiseren van data niet VERPLICHT. Er is een verplichting om persoonsdata adequaat te beveiligen. Pseudonimisering is een mogelijke maatregel. We kiezen daarom voor een AANBEVELING in plaats van een VERPLICHTING.</p>
 <p>•	In de standaard zetten we de aanbeveling om te standaardiseren, waarbij de implementatie aan de organisatie is ("Het is <em class="rfc2119">AANBEVOLEN</em> om ...").</p>
 </section></section>
+    <section class="informative notoc"><div class="header-wrapper"><h3 id="foreign_trace_id-wordt-niet-meer-opgeslagen"><code>foreign_trace_id</code> wordt niet meer opgeslagen</h3><a class="self-link" href="#foreign_trace_id-wordt-niet-meer-opgeslagen" aria-label="Permalink for this Section"></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+<ul>
+<li>Status: draft</li>
+<li>Datum: 2025-08-15</li>
+</ul>
+<section><div class="header-wrapper"><h4 id="context-en-probleemstelling-7">Context en probleemstelling</h4><a class="self-link" href="#context-en-probleemstelling-7" aria-label="Permalink for this Section"></a></div>
+<p>Tijdens de workshop casus met  RINIS is gebleken dat het veld <code>foreign_trace_id</code> overbodig is en geen praktische toepassing kent binnen de standaard. Dit inzicht heeft geleid tot heroverweging van de noodzaak ervan.</p>
+</section><section><div class="header-wrapper"><h4 id="besluit-8">Besluit</h4><a class="self-link" href="#besluit-8" aria-label="Permalink for this Section"></a></div>
+<ul>
+<li><code>foreign_trace_id</code> wordt <strong>niet</strong> meer opgeslagen</li>
+</ul>
+</section><section><div class="header-wrapper"><h4 id="gevolgen-7">Gevolgen</h4><a class="self-link" href="#gevolgen-7" aria-label="Permalink for this Section"></a></div>
+<ul>
+<li>De aangeroepen organisatie (verwerker) krijg als <code>trace_id</code> de <code>trace_id</code> van de aanroepende organisatie (verantwoordelijke)</li>
+<li><code>foreign_span_id</code> wordt wel opgeslagen</li>
+<li>De aangeroepen organisatie (verwerker) krijgt een eigen <code>span_id</code> per activiteit</li>
+</ul>
+</section></section>
   </section>
   <section data-max-toc="1" id="voorbeelden"><div class="header-wrapper"><h2 id="x6-voorbeelden"><bdi class="secno">6. </bdi>Voorbeelden</h2><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 6."></a></div>
 <p>In dit hoofdstuk worden er voorbeelden beschreven van hoe de standaard gebruikt kan worden in verschillende scenario's om de lezer een beter beeld te geven van de standaard in zijn echte werking. Hierbij zijn er vier voorbeelden met elk een schets van de situatie, de uitgangspunten, het globale proces, de relatie tussen data, de relatie met het Logboek Dataverwerkingen en het gedrag van de applicatie.</p>
