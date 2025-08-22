@@ -943,7 +943,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-02-17">August 13, 2025</time>
+      <time class="dt-published" datetime="2025-02-17">August 22, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1236,7 +1236,7 @@ In addition to this (normative) document, separate modules are being written to 
    <dl>
       <dt>Statement</dt>
       <dd>
-         <p>All date and time fields in requests and responses <em class="rfc2119">MUST</em> be in ISO 8601 format (e.g., <code>YYYY-MM-DD for dates</code>, <code>YYYY-MM-DDTHH:mm:ssZ</code> for timestamps). Fields in responses <em class="rfc2119">MUST</em> be in UTC. Fields in requests <em class="rfc2119">MUST</em> allow any time offset, which servers <em class="rfc2119">SHOULD</em> normalize to (and store in) UTC.</p>
+         <p>All date and time fields in requests and responses <em class="rfc2119">MUST</em> follow [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9557" title="Date and Time on the Internet: Timestamps with Additional Information">RFC9557</a></cite>] and thus be in [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso8601" title="Representation of dates and times. ISO 8601:2004.">ISO8601</a></cite>] format (e.g., <code>YYYY-MM-DD</code> for dates, <code>YYYY-MM-DDTHH:mm:ssZ</code> for timestamps). Fields in responses containing timestamps <em class="rfc2119">MUST</em> be in UTC (e.g. <code>Z</code> as offset). APIs <em class="rfc2119">MUST</em> accept fields with timestamps with any time offset in requests and servers <em class="rfc2119">SHOULD</em> normalize to (and store in) UTC.</p>
          <p>If the time portion is not relevant, only the date portion (e.g., <code>YYYY-MM-DD</code>) <em class="rfc2119">SHOULD</em> be accepted, stored, and returned.</p>
       </dd>
       <dt>Rationale</dt>
@@ -2179,6 +2179,8 @@ This avoids XXE-attack vectors for example.</li>
     <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-adr-geo">[ADR-GEO]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/"><cite>API Design Rules Module: Geospatial</cite></a>. L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker.  Geonovum. March 07, 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/">https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/</a>
+    </dd><dt id="bib-iso8601">[ISO8601]</dt><dd>
+      <a href="http://www.iso.org/iso/catalogue_detail?csnumber=40874"><cite>Representation of dates and times. ISO 8601:2004.</cite></a>.  International Organization for Standardization (ISO). 2004. ISO 8601:2004. URL: <a href="http://www.iso.org/iso/catalogue_detail?csnumber=40874">http://www.iso.org/iso/catalogue_detail?csnumber=40874</a>
     </dd><dt id="bib-ncsc 2021">[NCSC 2021]</dt><dd>
       <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1"><cite>ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1</cite></a>.  NCSC. Jan 2021. URL: <a href="https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1">https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1</a>
     </dd><dt id="bib-openapis">[OPENAPIS]</dt><dd>
@@ -2193,6 +2195,8 @@ This avoids XXE-attack vectors for example.</li>
       <a href="https://www.rfc-editor.org/rfc/rfc8252"><cite>OAuth 2.0 for Native Apps</cite></a>. W. Denniss; J. Bradley.  IETF. October 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8252">https://www.rfc-editor.org/rfc/rfc8252</a>
     </dd><dt id="bib-rfc9110">[rfc9110]</dt><dd>
       <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed. IETF. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
+    </dd><dt id="bib-rfc9557">[RFC9557]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc9557"><cite>Date and Time on the Internet: Timestamps with Additional Information</cite></a>. U. Sharma; C. Bormann.  IETF. April 2024. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9557">https://www.rfc-editor.org/rfc/rfc9557</a>
     </dd><dt id="bib-semver">[SemVer]</dt><dd>
       <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
     </dd><dt id="bib-sri">[SRI]</dt><dd>
