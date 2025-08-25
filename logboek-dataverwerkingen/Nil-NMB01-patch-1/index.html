@@ -905,7 +905,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">15 augustus 2025</time>
+      <time class="dt-published" datetime="2024-12-13">25 augustus 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1358,7 +1358,7 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-4"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
 <section id="gedrag-0"><div class="header-wrapper"><h4 id="x5-3-1-gedrag"><bdi class="secno">5.3.1 </bdi>Gedrag</h4><a class="self-link" href="#gedrag-0" aria-label="Permalink for Section 5.3.1"></a></div>
 <p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
-<p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> een nieuwe Trace  met een uniek <code>trace_id</code> starten voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
+<p>De Applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> een nieuwe Trace  met een uniek <code>trace_id</code> bijhouden voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
 <p>Een Dataverwerking kan uit meerdere acties bestaan. De applicatie <em><strong><em class="rfc2119">MOET</em></strong></em> een voor iedere nieuwe actie een unieke <code>span_id</code> bijhouden. Iedere Trace heeft tenminste één <code>span_id</code>.</p>
 <p>Wanneer een actie binnen een Applicatie is gestart door een andere actie, dan <em><strong><em class="rfc2119">MOET</em></strong></em> de Applicatie de <code>trace_id</code> ongewijzigd overnemen en de <code>span_id</code> opnemen in een veld genaamd <code>parent_span_id</code> voor deze nieuwe actie.</p>
 <p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em><strong><em class="rfc2119">MOET</em></strong></em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
