@@ -1105,7 +1105,7 @@ In addition to this (normative) document, separate modules are being written to 
 </aside></div></section></section>
   <section id="summary"><div class="header-wrapper"><h2 id="x2-summary"><bdi class="secno">2. </bdi>Summary</h2><a class="self-link" href="#summary" aria-label="Permalink for Section 2."></a></div>
 <section id="normative-design-rules"><div class="header-wrapper"><h3 id="x2-1-normative-design-rules"><bdi class="secno">2.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 2.1"></a></div>
-<p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considerd when designing and building the api.</p>
+<p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considered when designing and building the api.</p>
 <section id="list-of-functional-rules"><div class="header-wrapper"><h4 id="x2-1-1-list-of-functional-rules"><bdi class="secno">2.1.1 </bdi>List of functional rules</h4><a class="self-link" href="#list-of-functional-rules" aria-label="Permalink for Section 2.1.1"></a></div>
 <ul id="functionalList"><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul>
 
@@ -1648,7 +1648,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-         Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm the a version number is present with prefix <code>v</code> and only contains the *major* version number.
+         Parse the <code>url</code> field in the <code>servers</code> mentioned in the OpenAPI Description to confirm that a version number is present with prefix <code>v</code> and only contains the *major* version number.
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Furi%2Dversion">linter configuration</a>.</dd>
    </dl>
 </div>
@@ -1862,7 +1862,7 @@ As for outbound filtering, the main concern is leaking of information.</p>
       </p></dd>
       <dt>How to test</dt>
       <dd>
-         <p>The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.
+         <p>The presense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the presense of mandatory headers.
       </p></dd>
    </dl>
 </div>
