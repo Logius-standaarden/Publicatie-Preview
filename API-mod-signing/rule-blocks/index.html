@@ -877,7 +877,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2024-09-06">August 25, 2025</time>
+      <time class="dt-published" datetime="2024-09-06">August 29, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -966,7 +966,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <p>This ADR Module contains the requirements for ADR-HTTP Message and payload signing with <cite><a data-matched-text="[[[JAdES]]]" href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">JAdES digital signatures</a></cite>.</p>
 <p>This module is based on the <em>ISA² IPS REST API Profile v1.0 section 5.2.2 Message And Payload Level Security</em>.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">2. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.1 </bdi>Use Cases</a></li></ol></li><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">3. </bdi>Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">3.1 </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#list-of-functional-rules"><bdi class="secno">3.1.1 </bdi>List of functional rules</a></li><li class="tocline"><a class="tocxref" href="#list-of-technical-rules"><bdi class="secno">3.1.2 </bdi>List of technical rules</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">4. </bdi>JWS detached signatures</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">5. </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">6. </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#message-signing"><bdi class="secno">7. </bdi>Message signing</a></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">A. </bdi>Signature Representations</a></li><li class="tocline"><a class="tocxref" href="#tooling"><bdi class="secno">B. </bdi>Tooling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digital-signature-service"><bdi class="secno">B.1 </bdi>Digital Signature Service</a></li><li class="tocline"><a class="tocxref" href="#jwt-jws-jwe-jwk-and-jwa-implementations"><bdi class="secno">B.2 </bdi>JWT, JWS, JWE, JWK, and JWA Implementations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">2. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">2.1 </bdi>Use Cases</a></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">2.2 </bdi>JWS detached signatures</a></li></ol></li><li class="tocline"><a class="tocxref" href="#normative-design-rules"><bdi class="secno">3. </bdi>Normative Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">3.1 </bdi>Summary</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">3.2 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">3.3 </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#message-signing"><bdi class="secno">3.4 </bdi>Message signing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">A. </bdi>Signature Representations</a></li><li class="tocline"><a class="tocxref" href="#tooling"><bdi class="secno">B. </bdi>Tooling</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#digital-signature-service"><bdi class="secno">B.1 </bdi>Digital Signature Service</a></li><li class="tocline"><a class="tocxref" href="#jwt-jws-jwe-jwk-and-jwa-implementations"><bdi class="secno">B.2 </bdi>JWT, JWS, JWE, JWK, and JWA Implementations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li></ol></li></ol></nav>
   <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MUST</em> and <em class="rfc2119">SHOULD</em> in this document
         are to be interpreted as described in
@@ -981,16 +981,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <p>This module is applicable when there is a need for assurance of end to end message integrity and authenticity between client application and server application.
 In the context of HTTP messages signing header elements (for example HTTP operation (GET/POST/UPDATE/DELETE) and resource path / parameters, or timestamps) together with payload provides an extra level of protection against manipulation of the message.</p>
 <p>In a complex IT landscape the path between client and server can go over several intermediary components/systems in which case end to end integrity and authenticity can be especially relevant. (In this case TLS is terminated in each step on the path and does not protect the http-message in transport fully end to end).</p>
-</section></section>
-  <section id="summary"><div class="header-wrapper"><h2 id="x3-summary"><bdi class="secno">3. </bdi>Summary</h2><a class="self-link" href="#summary" aria-label="Permalink for Section 3."></a></div>
-<section id="normative-design-rules"><div class="header-wrapper"><h3 id="x3-1-normative-design-rules"><bdi class="secno">3.1 </bdi>Normative Design Rules</h3><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 3.1"></a></div>
-<p>Design rules can be technical rules, which should be tested automatically and functional rules which should be considered when designing and building the API.</p>
-<section id="list-of-functional-rules"><div class="header-wrapper"><h4 id="x3-1-1-list-of-functional-rules"><bdi class="secno">3.1.1 </bdi>List of functional rules</h4><a class="self-link" href="#list-of-functional-rules" aria-label="Permalink for Section 3.1.1"></a></div>
-<ul id="functionalList"></ul>
-
-</section><section id="list-of-technical-rules"><div class="header-wrapper"><h4 id="x3-1-2-list-of-technical-rules"><bdi class="secno">3.1.2 </bdi>List of technical rules</h4><a class="self-link" href="#list-of-technical-rules" aria-label="Permalink for Section 3.1.2"></a></div>
-<ul id="technicalList"><li><a href="#/signing/algorithm">/signing/algorithm</a>: Support the RSASSA-PSS Algorithm</li><li><a href="#/signing/payload">/signing/payload</a>: Apply JAdES detached signatures for payload signing</li><li><a href="#/signing/message">/signing/message</a>: Apply JAdES HttpHeaders Mechanism for message-level security</li></ul></section></section></section>
-  <section id="jws-detached-signatures"><div class="header-wrapper"><h2 id="x4-jws-detached-signatures"><bdi class="secno">4. </bdi>JWS detached signatures</h2><a class="self-link" href="#jws-detached-signatures" aria-label="Permalink for Section 4."></a></div>
+</section><section id="jws-detached-signatures"><div class="header-wrapper"><h3 id="x2-2-jws-detached-signatures"><bdi class="secno">2.2 </bdi>JWS detached signatures</h3><a class="self-link" href="#jws-detached-signatures" aria-label="Permalink for Section 2.2"></a></div>
 <p>This module enforces the use of JWS detached signatures following the HTTP Headers Mechanism of the ETSI ESI JAdES specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>].</p>
 <p>This structure is enforced for the following reasons:</p>
 <ul>
@@ -998,8 +989,12 @@ In the context of HTTP messages signing header elements (for example HTTP operat
 <li>JWS in detached form does not change the payload structure, meaning that a client not supporting the validation of signature can continue to operate as if there was no signature applied.</li>
 <li>JWS Detached can be transported using an HTTP header, making its presence unintrusive and easily transportable.</li>
 </ul>
-</section>
-  <section id="cryptographic-algorithms"><div class="header-wrapper"><h2 id="x5-cryptographic-algorithms"><bdi class="secno">5. </bdi>Cryptographic Algorithms</h2><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 5."></a></div>
+</section></section>
+  <section id="normative-design-rules"><div class="header-wrapper"><h2 id="x3-normative-design-rules"><bdi class="secno">3. </bdi>Normative Design Rules</h2><a class="self-link" href="#normative-design-rules" aria-label="Permalink for Section 3."></a></div>
+<section id="summary"><div class="header-wrapper"><h3 id="x3-1-summary"><bdi class="secno">3.1 </bdi>Summary</h3><a class="self-link" href="#summary" aria-label="Permalink for Section 3.1"></a></div>
+<div id="design-rule-summary">Design rules are technical rules, which should be tested automatically.<h3 id="list-of-technical-rules">List of technical rules</h3><ul><li><a href="#/signing/algorithm">/signing/algorithm</a>: Support the RSASSA-PSS Algorithm</li><li><a href="#/signing/payload">/signing/payload</a>: Apply JAdES detached signatures for payload signing</li><li><a href="#/signing/message">/signing/message</a>: Apply JAdES HttpHeaders Mechanism for message-level security</li></ul></div>
+
+</section><section id="cryptographic-algorithms"><div class="header-wrapper"><h3 id="x3-2-cryptographic-algorithms"><bdi class="secno">3.2 </bdi>Cryptographic Algorithms</h3><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 3.2"></a></div>
 <div class="rule" id="/signing/algorithm" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
    <p class="rulelab"><a href="#/signing/algorithm">/signing/algorithm</a>: Support the RSASSA-PSS Algorithm</p>
    <dl>
@@ -1008,35 +1003,37 @@ In the context of HTTP messages signing header elements (for example HTTP operat
    The RSASSA-PSS Algorithm <em class="rfc2119">MUST</em> be supported, with a key length of at least 256 bits. The value <code>PS256</code> for the <code>alg</code> parameter <em class="rfc2119">MUST</em> be used as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>].
    </dd>
 </dl>
-</div></section>
-  <section id="payload-signing"><div class="header-wrapper"><h2 id="x6-payload-signing"><bdi class="secno">6. </bdi>Payload signing</h2><a class="self-link" href="#payload-signing" aria-label="Permalink for Section 6."></a></div>
+</div>
+
+</section><section id="payload-signing"><div class="header-wrapper"><h3 id="x3-3-payload-signing"><bdi class="secno">3.3 </bdi>Payload signing</h3><a class="self-link" href="#payload-signing" aria-label="Permalink for Section 3.3"></a></div>
 <div class="rule" id="/signing/payload" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
    <p class="rulelab"><a href="#/signing/payload">/signing/payload</a>: Apply JAdES detached signatures for payload signing</p>
    <dl>
    <dt>Statement</dt>
    <dd>
-   Payload signing ensures the integrity and authenticity of the payload part of the message.  When payload signing is considered, the Detached JSON Web Signatures following the JAdES specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>] <em class="rfc2119">MUST</em> be applied with the following restrictions:
+Payload signing ensures the integrity and authenticity of the payload part of the message.  When payload signing is considered, the Detached JSON Web Signatures following the JAdES specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>] <em class="rfc2119">MUST</em> be applied with the following restrictions:
 
 <ul>
 <li>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F.</li>
 <li>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile.</li>
 <li>The value of the <code>mId</code> parameter <em class="rfc2119">MUST</em> be set to <code>http://uri.etsi.org/19182/HttpHeaders</code>.</li>
 <li>The <code>pars</code> array of the SigD <em class="rfc2119">MUST</em> contain only the element <code>digest</code>, denoting that for the calculation of the signature only the digest of the HTTP payload must be taken into account, according to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3230" title="Instance Digests in HTTP">RFC3230</a></cite>].</li>
-<li>The <code>alg</code> parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see <a href="#cryptographic-algorithms" data-matched-text="[[[#cryptographic-algorithms]]]" class="sec-ref"><bdi class="secno">5. </bdi>Cryptographic Algorithms</a>).</li>
+<li>The <code>alg</code> parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see <a href="#cryptographic-algorithms" data-matched-text="[[[#cryptographic-algorithms]]]" class="sec-ref"><bdi class="secno">3.2 </bdi>Cryptographic Algorithms</a>).</li>
 </ul>
-<p>   The JWS structure shall be carried in HTTP header field named <code>nlgov-adr-payload-sig</code>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-payload-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.
+<p>The JWS structure shall be carried in HTTP header field named <code>nlgov-adr-payload-sig</code>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-payload-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.
    </p></dd><p></p>
 </dl>
-</div></section>
-  <section id="message-signing"><div class="header-wrapper"><h2 id="x7-message-signing"><bdi class="secno">7. </bdi>Message signing</h2><a class="self-link" href="#message-signing" aria-label="Permalink for Section 7."></a></div>
+</div>
+
+</section><section id="message-signing"><div class="header-wrapper"><h3 id="x3-4-message-signing"><bdi class="secno">3.4 </bdi>Message signing</h3><a class="self-link" href="#message-signing" aria-label="Permalink for Section 3.4"></a></div>
 <p>The Introduction section of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9421" title="HTTP Message Signatures">RFC9421</a></cite>] details why message integrity and authenticity are critical to the secure operation of many HTTP/REST applications.</p>
 <div class="rule" id="/signing/message" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
    <p class="rulelab"><a href="#/signing/message">/signing/message</a>: Apply JAdES HttpHeaders Mechanism for message-level security</p>
    <dl>
    <dt>Statement</dt>
    <dd>
-   When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>] <em class="rfc2119">MUST</em> be used, with the following restrictions applied.
-   
+When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>] <em class="rfc2119">MUST</em> be used, with the following restrictions applied.
+
 <ul>
 <li>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F.</li>
 <li>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile.</li>
@@ -1051,14 +1048,14 @@ In the context of HTTP messages signing header elements (for example HTTP operat
 <li>the element <code>digest</code>, for taking into account the Digest header that contains the hash value of the HTTP payload.</li>
 </ul>
 </li>
-<li>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above).
-   Implementations that make use of the HTTP Header fields for data representation <em class="rfc2119">SHOULD</em> also include these header fields in the pars array. The JWS structure <em class="rfc2119">MUST</em> be carried in HTTP header field named <code>nlgov-adr-message-sig</code>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-message-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.   </li></ul></dd>
+<li>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above).</li>
+</ul>
+<p>Implementations that make use of the HTTP Header fields for data representation <em class="rfc2119">SHOULD</em> also include these header fields in the pars array. The JWS structure <em class="rfc2119">MUST</em> be carried in HTTP header field named <code>nlgov-adr-message-sig</code>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-message-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.
+   </p></dd><p></p>
 </dl>
-</div>
-
-</section>
-  <section class="appendix" id="signature-representations"><div class="header-wrapper"><h2 id="a-signature-representations"><bdi class="secno">A. </bdi>Signature Representations</h2><a class="self-link" href="#signature-representations" aria-label="Permalink for Appendix A."></a></div>
-<pre><code aria-busy="false" class="hljs yaml"><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.1</span><span class="hljs-number">.0</span>
+</div></section></section>
+  <section class="informative appendix" id="signature-representations"><div class="header-wrapper"><h2 id="a-signature-representations"><bdi class="secno">A. </bdi>Signature Representations</h2><a class="self-link" href="#signature-representations" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
+<pre><code class="yaml hljs" aria-busy="false"><span class="hljs-attr">openapi:</span> <span class="hljs-number">3.1</span><span class="hljs-number">.0</span>
 <span class="hljs-attr">info:</span>
     <span class="hljs-attr">title:</span> <span class="hljs-string">JAdES</span> <span class="hljs-string">Signatures</span>
     <span class="hljs-attr">summary:</span> <span class="hljs-string">An</span> <span class="hljs-string">example</span> <span class="hljs-string">showcasing</span> <span class="hljs-string">JAdES</span> <span class="hljs-string">signatures</span>
@@ -1131,12 +1128,12 @@ In the context of HTTP messages signing header elements (for example HTTP operat
          <span class="hljs-attr">pattern:</span> <span class="hljs-string">^[A-Za-z0-9_-]+(?:(\\.\\.)[A-Za-z0-9_-]+){1}</span>
 </code></pre>
 </section>
-  <section class="appendix" id="tooling"><div class="header-wrapper"><h2 id="b-tooling"><bdi class="secno">B. </bdi>Tooling</h2><a class="self-link" href="#tooling" aria-label="Permalink for Appendix B."></a></div>
+  <section class="informative appendix" id="tooling"><div class="header-wrapper"><h2 id="b-tooling"><bdi class="secno">B. </bdi>Tooling</h2><a class="self-link" href="#tooling" aria-label="Permalink for Appendix B."></a></div><p><em>This section is non-normative.</em></p>
 <section id="digital-signature-service"><div class="header-wrapper"><h3 id="b-1-digital-signature-service"><bdi class="secno">B.1 </bdi>Digital Signature Service</h3><a class="self-link" href="#digital-signature-service" aria-label="Permalink for Appendix B.1"></a></div>
 <p>The DSS (Digital Signature Service) project is an open-source software library, aimed at providing implementation of the standards for Advanced Electronic Signature creation, augmentation and validation in line with European legislation and the eIDAS Regulation in particular.</p>
 <p><a href="https://ec.europa.eu/digital-building-blocks/DSS/webapp-demo/doc/dss-documentation.html">https://ec.europa.eu/digital-building-blocks/DSS/webapp-demo/doc/dss-documentation.html</a></p>
 </section><section id="jwt-jws-jwe-jwk-and-jwa-implementations"><div class="header-wrapper"><h3 id="b-2-jwt-jws-jwe-jwk-and-jwa-implementations"><bdi class="secno">B.2 </bdi>JWT, JWS, JWE, JWK, and JWA Implementations</h3><a class="self-link" href="#jwt-jws-jwe-jwk-and-jwa-implementations" aria-label="Permalink for Appendix B.2"></a></div>
-<p> Libraries implementing JWT and the JOSE specs JWS, JWE, JWK, and JWA are listed here.</p>
+<p>Libraries implementing JWT and the JOSE specs JWS, JWE, JWK, and JWA are listed here.</p>
 <p><a href="https://openid.net/developers/jwt-jws-jwe-jwk-and-jwa-implementations/">https://openid.net/developers/jwt-jws-jwe-jwk-and-jwa-implementations/</a></p>
 </section></section><section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references">
     <div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
