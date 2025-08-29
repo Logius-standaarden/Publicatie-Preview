@@ -2169,7 +2169,7 @@ This avoids XXE-attack vectors for example.</li>
 
   <span class="hljs-attr">nlgov:problem-schema-members:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
-    <span class="hljs-attr">message:</span> <span class="hljs-string">"These fields are required: status, title and detail. Additionally, only type and instance are allowed."</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"<span class="hljs-template-variable">{{error}}</span>. These fields are required: status, title and detail. Additionally, only type and instance are allowed."</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content[?(@property=="application/problem+json"</span> <span class="hljs-string">||</span> <span class="hljs-string">@property=="application/problem+xml")]..schema</span>
     <span class="hljs-attr">then:</span>
       <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
@@ -2177,16 +2177,19 @@ This avoids XXE-attack vectors for example.</li>
         <span class="hljs-attr">schema:</span>
           <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
           <span class="hljs-attr">properties:</span>
-            <span class="hljs-attr">status:</span> {}
-            <span class="hljs-attr">title:</span> {}
-            <span class="hljs-attr">detail:</span> {}
-            <span class="hljs-attr">type:</span> {}
-            <span class="hljs-attr">instance:</span> {}
-          <span class="hljs-attr">required:</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
-            <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
-          <span class="hljs-attr">additionalProperties:</span> <span class="hljs-literal">false</span>
+            <span class="hljs-attr">properties:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">properties:</span>
+                <span class="hljs-attr">status:</span> {}
+                <span class="hljs-attr">title:</span> {}
+                <span class="hljs-attr">detail:</span> {}
+                <span class="hljs-attr">type:</span> {}
+                <span class="hljs-attr">instance:</span> {}
+              <span class="hljs-attr">required:</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+              <span class="hljs-attr">additionalProperties:</span> <span class="hljs-literal">false</span>
 
   <span class="hljs-attr">nlgov:property-casing:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
