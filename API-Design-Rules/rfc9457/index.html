@@ -943,7 +943,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-02-17">August 22, 2025</time>
+      <time class="dt-published" datetime="2025-02-17">August 29, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1614,7 +1614,7 @@ In addition to this (normative) document, separate modules are being written to 
       </dd>
       <dt>How to test</dt>
       <dd>
-         Verify all responses with status code <code>4xx</code> or <code>5xx</code> have <code>Content-Type</code> set to <code>application/problem+json</code> or <code>application/problem+xml</code>.
+         Verify all responses with status code <code>4xx</code> or <code>5xx</code> have <code>Content-Type</code> set to <code>application/problem+json</code> or <code>application/problem+xml</code> and contain the fields <code>status</code>, <code>title</code>, and <code>detail</code>. Optional fields are <code>type</code> and <code>instance</code>. Verify no additional fields are present.
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fproblem%2Ddetails">linter configuration</a>.</dd>
    </dl>
 </div>
@@ -2156,7 +2156,7 @@ This avoids XXE-attack vectors for example.</li>
 
   <span class="hljs-comment">#/core/problem-details</span>
   <span class="hljs-attr">nlgov:use-problem-schema:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"The content type of an error response should be application/problem+json or application/problem+xml to match RFC 9457."</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content</span>
     <span class="hljs-attr">then:</span>
@@ -2168,7 +2168,7 @@ This avoids XXE-attack vectors for example.</li>
             <span class="hljs-bullet">-</span> <span class="hljs-attr">required:</span> [<span class="hljs-string">"application/problem+xml"</span>]
 
   <span class="hljs-attr">nlgov:problem-schema-members:</span>
-    <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"These fields are required: status, title and detail. Additionally, only type and instance are allowed."</span>
     <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(/(4|5)\d\d/))].content[?(@property=="application/problem+json"</span> <span class="hljs-string">||</span> <span class="hljs-string">@property=="application/problem+xml")]..schema</span>
     <span class="hljs-attr">then:</span>
