@@ -1,0 +1,1600 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 35.3.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+  
+  
+  
+  
+<title>Algemene Inleiding Open Authenticatie (OAuth)</title>
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico">
+  
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px;background:0 0}
+</style>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Dit document geeft een inleiding op Open Authentication, kortweg OAuth. De laatste werkversie van de OAuth.NLGov standaard is gepubliceerd op github.io, de laatste vastgestelde versie is gepubliceerd op Logius.nl en de bronbestanden staan in de github repositories van Logius standaarden die zijn gemarkeerd met het topic &quot;oauth&quot;">
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #39870c;
+  }
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "Logius",
+  "nl_organisationStylesURL": "https://gitdocumentatie.logius.nl/publicatie/respec/style/",
+  "nl_organisationPublishURL": "https://gitdocumentatie.logius.nl/publicatie/",
+  "logos": [
+    {
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
+    }
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/"
+  ],
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion",
+    "/"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion",
+    "/"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc-by",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Consultation version",
+      "vv": "Proposed version",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar digikoppeling@logius.nl",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to api@logius.nl",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#39870c",
+    "cv": "#000000",
+    "vv": "#000000"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-zero.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "ADR": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
+    },
+    "ADR-ext": {
+      "authors": [
+        "Jasper Roes",
+        "Linda van den Brink"
+      ],
+      "date": "Januari 2020",
+      "href": "https://docs.geostandaarden.nl/api/API-Strategie-ext",
+      "publisher": "Geonovum/Kennisplatform APi's",
+      "title": "API Designrules Extensions (Nederlandse API Strategie IIb)"
+    },
+    "Algemene Voorwaarden Logius": {
+      "date": "12 juni 2018",
+      "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
+      "publisher": "Logius",
+      "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
+    },
+    "AVG": {
+      "date": "27 april 2016",
+      "href": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679",
+      "publisher": "Verordening (EU) 2016/679 van het Europees Parlement",
+      "title": "Algemene Verordening Gegevensbescherming"
+    },
+    "BCP195": {
+      "authors": [
+        "Y. Sheffer",
+        "R. Holz",
+        "P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "href": "https://tools.ietf.org/html/bcp195",
+      "publisher": "IETF",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"
+    },
+    "DK-beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "CloudEvents": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "May 2011",
+      "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
+      "publisher": "@@@",
+      "title": "CloudEvents - Version 1.0.1"
+    },
+    "NLGOV-CloudEvents": {
+      "authors": [
+        "Werkgroep Berichtenstandaard (Project Notificatieservices)"
+      ],
+      "href": "https://logius-standaarden.github.io/NL-GOV-profile-for-CloudEvents/",
+      "publisher": "Logius",
+      "title": "NL GOV profile for CloudEvents"
+    },
+    "DK-CV": {
+      "href": "https://gitlab.com/logius/digikoppeling-compliance",
+      "publisher": "Logius",
+      "title": "Digikoppeling Compliance Voorziening"
+    },
+    "DK-Portaal": {
+      "href": "https://oinregister.logius.nl/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Portaal"
+    },
+    "DK-WUS-voorbeeld": {
+      "href": "https://www.logius.nl/sites/default/files/public/bestanden/diensten/DigiKoppeling/Overig/Digikoppeling-Koppelvlakstandaard-WUS-Voorbeeldberichten.zip",
+      "publisher": "Logius",
+      "title": "Set voorbeeldberichten (zip)"
+    },
+    "Deployment Guide 1.1": {
+      "authors": [
+        "Pete Wenzel",
+        "Jacques Durand"
+      ],
+      "date": "June 2005",
+      "href": "http://www.oasis-open.org/apps/org/workgroup/ebxml-iic-deployment-profile-template-intro-100406.doc",
+      "publisher": "OASIS",
+      "title": "Deployment Profile Template For OASIS ebXML Message Service 2.0"
+    },
+    "DK": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling",
+      "publisher": "Logius",
+      "title": "Logius | Digikoppeling"
+    },
+    "DK-Doc": {
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie",
+      "publisher": "Logius",
+      "title": "Digikoppeling documentatie"
+    },
+    "DK-Beheermodel": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beheer/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beheermodel"
+    },
+    "DK-BPebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices ebMS2"
+    },
+    "DK-BPGB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpgb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices Grote Berichten"
+    },
+    "DK-BPWUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Best Practices WUS"
+    },
+    "DK-Beveiliging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/beveilig/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
+    },
+    "DK-gbachtcert": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-ebMS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/ebms/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard ebMS2"
+    },
+    "DK-GB": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/gb/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard Grote Berichten"
+    },
+    "DK-WUS": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/wus/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard WUS"
+    },
+    "DK-RESTAPI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/restapi/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Koppelvlakstandaard REST-API"
+    },
+    "DK-Architectuur": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/architectuur/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Architectuur"
+    },
+    "DK-IDAuth": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/idauth/",
+      "publisher": "Logius",
+      "title": "Digikoppeling Identificatie en Authenticatie"
+    },
+    "DK-WI": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/dk/watisdk/",
+      "publisher": "Logius",
+      "title": "Wat is Digikoppeling?"
+    },
+    "BOMOSFundament": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/fundament/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, het fundament"
+    },
+    "BOMOSVerdieping": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping/",
+      "date": "2 november 2023",
+      "publisher": "Logius",
+      "title": "BOMOS, de verdieping"
+    },
+    "ebCPP": {
+      "authors": [
+        "Oasis"
+      ],
+      "date": "september 2002",
+      "href": "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "ebMS3": {
+      "authors": [
+        "Ian Jones",
+        "Pete Wenzel"
+      ],
+      "date": "October 2007",
+      "href": "https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html",
+      "publisher": "Oasis",
+      "title": "Collaboration-Protocol Profile and Agreement Specification Version 2.0"
+    },
+    "eDelivery API4IPS": {
+      "authors": [
+        "J. Dimitriou, V. Veduta, B. Dumitriu"
+      ],
+      "date": "sept 8 2022",
+      "href": "https://ec.europa.eu/digital-building-blocks/wikis/display/EDELCOMMUNITY/Project+deliverables",
+      "publisher": "OpenID foundation",
+      "title": "(ISA2).(eDelivery).(Piloting a REST API extension of CEF eDelivery).(ISA² IPS REST API Profile).(v1.0).pdf"
+    },
+    "Expert": {
+      "authors": [
+        "@@@"
+      ],
+      "date": "@@@",
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
+      "publisher": "Forum Standaardisatie",
+      "title": "Expertadvies CloudEvents 1.0"
+    },
+    "folmer2011": {
+      "href": "https://research.utwente.nl/en/publications/management-and-development-model-for-open-standards-bomos-version",
+      "title": "Management and Development Model for Open Standards (BOMOS) version 2",
+      "keywords": "IR-76837",
+      "authors": [
+        "ErwinFolmer",
+        "Matthijs Punter"
+      ],
+      "date": "2011",
+      "language": "English",
+      "publisher": "Programmabureau NOiV"
+    },
+    "folmer2012": {
+      "href": "https://research.utwente.nl/en/publications/quality-of-semantic-standards",
+      "title": "Quality of Semantic Standards",
+      "authors": [
+        "Erwin Folmer"
+      ],
+      "date": "2012",
+      "publisher": "Universiteit Twente"
+    },
+    "DK-Gebruiksvoorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/gebruiksvoorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Gebruiksvoorwaarden Digikoppeling"
+    },
+    "ADR-GEO": {
+      "authors": [
+        "L. van den Brink, P. Bresters, P. van Genuchten, G. Mathijssen, M. Strijker"
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/",
+      "publisher": "Geonovum",
+      "title": "API Design Rules Module: Geospatial"
+    },
+    "HTTPS-factsheet NCSC": {
+      "date": "Nov 2014",
+      "href": "https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-https-kan-een-stuk-veiliger",
+      "publisher": "NCSC",
+      "title": "Factsheet HTTPS kan een stuk veiliger"
+    },
+    "iGOV.OpenID": {
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
+    },
+    "Introspection": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Token Introspection"
+    },
+    "JWA": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "publisher": "IETF",
+      "title": "JSON Web Algorithms (JWA)"
+    },
+    "JWE": {
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "publisher": "IETF",
+      "title": "JSON Web Encryption (JWE)"
+    },
+    "JWK": {
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "publisher": "IETF",
+      "title": "JSON Web Key (JWK))"
+    },
+    "JWS": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "publisher": "IETF",
+      "title": "JSON Web Signature (JWS)"
+    },
+    "JWT": {
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "publisher": "IETF",
+      "title": "JSON Web Token (JWT)"
+    },
+    "NCSC 2019": {
+      "date": "April 2019",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
+    },
+    "NCSC 2021": {
+      "date": "Jan 2021",
+      "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NCSC 2025": {
+      "date": "June 2025",
+      "href": "https://www.ncsc.nl/wat-kun-je-zelf-doen/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NEN3610": {
+      "authors": [
+        ""
+      ],
+      "date": "Maart 2011",
+      "href": "https://www.nen.nl/nen-3610-2011-a1-2016-nl-217738",
+      "publisher": "Nederlands Normalisatie-instituut",
+      "title": "Basismodel Geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten"
+    },
+    "no-Reliable-messaging": {
+      "authors": [
+        "Marc de Graauw"
+      ],
+      "date": "June 18, 2010",
+      "href": "https://www.infoq.com/articles/no-reliable-messaging/",
+      "publisher": "infoQ",
+      "title": "Nobody Needs Reliable Messaging"
+    },
+    "OAuth2": {
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "The OAuth 2.0 Authorization Framework"
+    },
+    "OpenID.Core": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Core 1.0"
+    },
+    "OpenID.Discovery": {
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "OpenID Connect Discovery 1.0"
+    },
+    "Pas-toe-of-leg-uit": {
+      "href": "https://www.forumstandaardisatie.nl/open-standaarden/verplicht",
+      "publisher": "Forum Standaardisatie",
+      "title": "Lijst Verplichte standaarden"
+    },
+    "PKIO-PvE": {
+      "href": "https://por.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Certificate Policy/Programme of Requirements PKIoverheid"
+    },
+    "PKI-CA": {
+      "href": "https://www.logius.nl/domeinen/toegang/aansluiten-als-trust-service-provider",
+      "publisher": "Logius",
+      "title": "Aansluiten als Trust Service Provider"
+    },
+    "PKIoverheid": {
+      "href": "https://www.logius.nl/domeinen/toegang/pkioverheid",
+      "publisher": "Logius",
+      "title": "PKIoverheid"
+    },
+    "PKIO-Cert": {
+      "href": "https://cert.pkioverheid.nl/",
+      "publisher": "Logius",
+      "title": "Overzicht PKIoverheid certificaten"
+    },
+    "SemVer": {
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013",
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0"
+    },
+    "ADR-TS": {
+      "authors": [
+        ""
+      ],
+      "date": "March 07, 2024",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/",
+      "publisher": "Kennisplatform API's",
+      "title": "API Design Rules Module: Transport Security"
+    },
+    "UMMR10": {
+      "authors": [
+        ""
+      ],
+      "date": "2001",
+      "href": "https://unece.org/DAM/cefact/umm/UMM_Revision_10_2001.zip",
+      "publisher": "UN/CEFACT",
+      "title": "UMM Revision 10"
+    },
+    "UMMUG": {
+      "authors": [
+        ""
+      ],
+      "date": "2003",
+      "href": "https://www.unece.org/fileadmin/DAM/cefact/umm/UMM_userguide_220606.pdf",
+      "publisher": "UN/CEFACT",
+      "title": "UN/CEFACT Modeling Methodology (UMM) User Guide"
+    },
+    "UUID": {
+      "authors": [
+        "P. Leach",
+        "M. Mealling",
+        "R. Salz"
+      ],
+      "date": "July 2005",
+      "href": "https://tools.ietf.org/html/rfc4122",
+      "publisher": "The Internet Engineering Task Force",
+      "title": "A Universally Unique IDentifier (UUID) URN Namespace"
+    },
+    "DK-Voorwaarden": {
+      "date": "1 januari 2021",
+      "href": "https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/voorwaarden-digikoppeling",
+      "publisher": "Logius",
+      "title": "Voorwaarden Digikoppeling"
+    },
+    "X520": {
+      "href": "https://www.iso.org/standard/43796.html",
+      "publisher": "ISO",
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
+    },
+    "ADR-Validator": {
+      "href": "https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets",
+      "title": "Technical ADR Validation rule testset 0.5.0",
+      "authors": [
+        "H. Stijns"
+      ],
+      "publisher": "Geonovum",
+      "date": "November 2023"
+    },
+    "JRC117836": {
+      "href": "https://op.europa.eu/en/publication-detail/-/publication/6521f427-01df-11ea-8c1f-01aa75ed71a1",
+      "title": "The Relationship Between Open Source Software and Standard Setting",
+      "authors": [
+        "Knut Blind",
+        "Mirko Böhm"
+      ],
+      "editors": [
+        "Nikolaus Thumm"
+      ],
+      "publisher": "Joint Research Center",
+      "id": "JRC117836",
+      "date": "2019"
+    },
+    "Krechmer2002": {
+      "href": "https://www.isology.com/pdf/cathedrals.pdf",
+      "title": "Cathedrals, Libraries and Bazaars",
+      "authors": [
+        "Ken Krechmer"
+      ],
+      "publisher": "Association of Computing Machinery (ACM)",
+      "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0-03.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "ietf-oauth-v2-1-10-refresh-token-grant": {
+      "authors": [
+        "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
+      ],
+      "date": "January 9, 2024",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant",
+      "publisher": "IETF",
+      "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile"
+    },
+    "logboek-extensie-guideline": {
+      "href": "https://logius-standaarden.github.io/logboek-extensie-template/",
+      "publisher": "Logius",
+      "title": "LDV Extensie Guideline"
+    },
+    "logboek dataverwerkingen": {
+      "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+      "publisher": "Logius",
+      "title": "Logboek Dataverwerkingen"
+    }
+  },
+  "specStatus": "WV",
+  "specType": "PR",
+  "pubDomain": "api",
+  "shortName": "oauth-inleiding",
+  "publishDate": "2024-11-16",
+  "publishVersion": "0.1.0",
+  "previousPublishVersion": [],
+  "editors": [
+    {
+      "name": "Logius Standaarden",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Martin van der Plas",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "github": "https://github.com/Logius-standaarden/OAuth-Inleiding",
+  "alternateFormats": [
+    {
+      "label": "pdf",
+      "uri": "OAuth-Inleiding.pdf"
+    }
+  ]
+}</script>
+<link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
+
+<body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Algemene Inleiding Open Authenticatie (OAuth)</h1>
+    
+    <h2>
+      Logius Praktijkrichtlijn<br>
+      Werkversie
+      <time class="dt-published" datetime="2024-11-16">02 september 2025</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://logius-standaarden.github.io/OAuth-Inleiding/">https://logius-standaarden.github.io/OAuth-Inleiding/</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth-inleiding/">https://gitdocumentatie.logius.nl/publicatie/api/oauth-inleiding/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/OAuth-Inleiding/">https://logius-standaarden.github.io/OAuth-Inleiding/</a></dd>
+      
+      
+      
+      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth-inleiding//">https://gitdocumentatie.logius.nl/publicatie/api/oauth-inleiding//</a></dd>
+      
+      <dt>Redacteur:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Logius Standaarden</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Martin van der Plas</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/Logius-standaarden/OAuth-Inleiding/">GitHub Logius-standaarden/OAuth-Inleiding</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/OAuth-Inleiding/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/OAuth-Inleiding/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/Logius-standaarden/OAuth-Inleiding/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    <p>
+          Dit document is ook beschikbaar in dit niet-normatieve formaat:
+          <a rel="alternate" href="OAuth-Inleiding.pdf">pdf</a>
+        </p>
+    <p class="copyright">
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document geeft een inleiding op Open Authentication, kortweg OAuth. De laatste werkversie van de OAuth.NLGov standaard is <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/">gepubliceerd op github.io</a>, de laatste vastgestelde versie is <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">gepubliceerd op Logius.nl</a> en de bronbestanden staan in <a href="https://github.com/search?q=topic%3Aoauth+org%3ALogius-standaarden+fork%3Atrue&amp;type=repositories">de github repositories van Logius standaarden die zijn gemarkeerd met het topic "oauth"</a></p>
+</section>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding-document"><bdi class="secno">1. </bdi>Inleiding document</a></li><li class="tocline"><a class="tocxref" href="#oauth-de-basis"><bdi class="secno">2. </bdi>OAuth - De basis</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.2 </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#in-onderstaand-schema-zijn-de-vier-bovenstaande-elementen-en-de-onderlinge-flow-weergegeven"><bdi class="secno">2.2.1 </bdi>In onderstaand schema zijn de vier bovenstaande elementen en de onderlinge flow weergegeven:</a></li><li class="tocline"><a class="tocxref" href="#de-flow-is-dan-als-volgt"><bdi class="secno">2.2.2 </bdi>De flow is dan als volgt:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeeld"><bdi class="secno">2.3 </bdi>Voorbeeld</a></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2.4 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.5 </bdi>Referenties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#oauth-samenvatting-van-de-oauth-nl-standaard"><bdi class="secno">3. </bdi>OAuth - Samenvatting van de OAuth-NL standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><bdi class="secno">3.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#schematische-weergave-van-de-flow-van-de-standaard"><bdi class="secno">3.1.1 </bdi>Schematische weergave van de flow van de standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#vereisten"><bdi class="secno">3.2 </bdi>Vereisten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-introductie"><bdi class="secno">3.2.1 </bdi>1. Introductie</a></li><li class="tocline"><a class="tocxref" href="#x2-client-profiel"><bdi class="secno">3.2.2 </bdi>2. Client profiel</a></li><li class="tocline"><a class="tocxref" href="#x3-authorization-server-profiel"><bdi class="secno">3.2.3 </bdi>3. Authorization Server profiel</a></li><li class="tocline"><a class="tocxref" href="#x4-protected-resource-api-profiel"><bdi class="secno">3.2.4 </bdi>4. Protected Resource (API) profiel</a></li><li class="tocline"><a class="tocxref" href="#x6-security-overwegingen"><bdi class="secno">3.2.5 </bdi>6. Security overwegingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#disclaimer"><bdi class="secno">3.3 </bdi>!! Disclaimer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">4. </bdi>Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-case-digital-system-environmental-law"><bdi class="secno">4.1 </bdi>Use Case Digital System Environmental Law</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">4.1.1 </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#resource-owner"><bdi class="secno">4.1.2 </bdi>Resource owner</a></li><li class="tocline"><a class="tocxref" href="#client"><bdi class="secno">4.1.3 </bdi>Client</a></li><li class="tocline"><a class="tocxref" href="#authorization-server"><bdi class="secno">4.1.4 </bdi>Authorization server</a></li><li class="tocline"><a class="tocxref" href="#resource-server"><bdi class="secno">4.1.5 </bdi>Resource server</a></li><li class="tocline"><a class="tocxref" href="#scopes-claims"><bdi class="secno">4.1.6 </bdi>Scopes &amp; claims</a></li><li class="tocline"><a class="tocxref" href="#rationale"><bdi class="secno">4.1.7 </bdi>Rationale</a></li></ol></li><li class="tocline"><a class="tocxref" href="#rights-delegation-key-registry-buildings-adresses"><bdi class="secno">4.2 </bdi>Rights delegation key registry Buildings &amp; adresses</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overview-0"><bdi class="secno">4.2.1 </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#resource-owner-0"><bdi class="secno">4.2.2 </bdi>Resource owner</a></li><li class="tocline"><a class="tocxref" href="#client-0"><bdi class="secno">4.2.3 </bdi>Client</a></li><li class="tocline"><a class="tocxref" href="#authorization-server-0"><bdi class="secno">4.2.4 </bdi>Authorization server</a></li><li class="tocline"><a class="tocxref" href="#resource-server-0"><bdi class="secno">4.2.5 </bdi>Resource server</a></li><li class="tocline"><a class="tocxref" href="#scopes-claims-0"><bdi class="secno">4.2.6 </bdi>Scopes &amp; claims</a></li><li class="tocline"><a class="tocxref" href="#rationale-0"><bdi class="secno">4.2.7 </bdi>Rationale</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overview-1"><bdi class="secno">4.3 </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#rights-delegation-air-sensors-network"><bdi class="secno">4.4 </bdi>Rights delegation Air sensors network</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overview-2"><bdi class="secno">4.4.1 </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#resource-owner-1"><bdi class="secno">4.4.2 </bdi>Resource owner</a></li><li class="tocline"><a class="tocxref" href="#client-1"><bdi class="secno">4.4.3 </bdi>Client</a></li><li class="tocline"><a class="tocxref" href="#authorization-server-1"><bdi class="secno">4.4.4 </bdi>Authorization server</a></li><li class="tocline"><a class="tocxref" href="#resource-server-1"><bdi class="secno">4.4.5 </bdi>Resource server</a></li><li class="tocline"><a class="tocxref" href="#scopes-claims-1"><bdi class="secno">4.4.6 </bdi>Scopes &amp; claims</a></li><li class="tocline"><a class="tocxref" href="#rationale-1"><bdi class="secno">4.4.7 </bdi>Rationale</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#detail-onderwerpen-oauth"><bdi class="secno">5. </bdi>Detail onderwerpen OAuth</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oauth-details"><bdi class="secno">5.1 </bdi>OAuth details</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#token-exchange"><bdi class="secno">5.1.1 </bdi>Token exchange</a></li></ol></li><li class="tocline"><a class="tocxref" href="#oin-en-pkio-in-relatie-tot-oauth-nlgov-profiel"><bdi class="secno">5.2 </bdi>OIN en PKIO in relatie tot OAuth NLGov profiel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-1"><bdi class="secno">5.2.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#context-0"><bdi class="secno">5.2.2 </bdi>Context:</a></li><li class="tocline"><a class="tocxref" href="#pki-referenties-de-standaard-heeft-de-volgende-relevante-verwijzingen-naar-pki-die-hieronder-verder-worden-toegelicht"><bdi class="secno">5.2.3 </bdi><strong>PKI referenties</strong>
+De standaard heeft de volgende relevante verwijzingen naar PKI die hieronder verder worden toegelicht:</a></li><li class="tocline"><a class="tocxref" href="#intenties"><bdi class="secno">5.2.4 </bdi>Intenties:</a></li><li class="tocline"><a class="tocxref" href="#conclusie"><bdi class="secno">5.2.5 </bdi>Conclusie:</a></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">5.2.6 </bdi>Achtergrondinformatie:</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-duo"><bdi class="secno">5.2.6.1 </bdi>Vragen DUO:</a></li><li class="tocline"><a class="tocxref" href="#interpretatie-kennisnet"><bdi class="secno">5.2.6.2 </bdi>Interpretatie Kennisnet:</a></li><li class="tocline"><a class="tocxref" href="#links"><bdi class="secno">5.2.6.3 </bdi>Links:</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#orkestratie"><bdi class="secno">6. </bdi>Orkestratie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-2"><bdi class="secno">6.1 </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wat-is-api-orkestratie"><bdi class="secno">6.1.1 </bdi>Wat is API Orkestratie?</a></li><li class="tocline"><a class="tocxref" href="#uitgangspunten"><bdi class="secno">6.1.2 </bdi>Uitgangspunten</a></li><li class="tocline"><a class="tocxref" href="#use-cases-0"><bdi class="secno">6.1.3 </bdi>Use cases</a></li><li class="tocline"><a class="tocxref" href="#aandachtsgebieden-van-orkestratie"><bdi class="secno">6.1.4 </bdi>Aandachtsgebieden van Orkestratie</a></li><li class="tocline"><a class="tocxref" href="#imx"><bdi class="secno">6.1.5 </bdi>IMX</a></li><li class="tocline"><a class="tocxref" href="#arazzo"><bdi class="secno">6.1.6 </bdi>Arazzo</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#belangrijkste-kenmerken"><bdi class="secno">6.1.6.1 </bdi>Belangrijkste Kenmerken</a></li><li class="tocline"><a class="tocxref" href="#relatie-met-openapi"><bdi class="secno">6.1.6.2 </bdi>Relatie met OpenAPI</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#orkestratie-beveiliging"><bdi class="secno">6.2 </bdi>Orkestratie beveiliging</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context-1"><bdi class="secno">6.2.1 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#use-cases-1"><bdi class="secno">6.2.2 </bdi>Use cases</a></li><li class="tocline"><a class="tocxref" href="#begrippen"><bdi class="secno">6.2.3 </bdi>Begrippen</a></li><li class="tocline"><a class="tocxref" href="#implicit-identity-reuse-token-based"><bdi class="secno">6.2.4 </bdi>Implicit Identity reuse - token based</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rationale-2"><bdi class="secno">6.2.4.1 </bdi>Rationale</a></li><li class="tocline"><a class="tocxref" href="#identity"><bdi class="secno">6.2.4.2 </bdi>Identity</a></li><li class="tocline"><a class="tocxref" href="#authenticiteit"><bdi class="secno">6.2.4.3 </bdi>Authenticiteit</a></li><li class="tocline"><a class="tocxref" href="#autorisatie"><bdi class="secno">6.2.4.4 </bdi>Autorisatie</a></li><li class="tocline"><a class="tocxref" href="#implicaties"><bdi class="secno">6.2.4.5 </bdi>Implicaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#identity-propagation-token-based"><bdi class="secno">6.2.5 </bdi>Identity propagation - token based</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rationale-3"><bdi class="secno">6.2.5.1 </bdi>Rationale</a></li><li class="tocline"><a class="tocxref" href="#identity-0"><bdi class="secno">6.2.5.2 </bdi>Identity</a></li><li class="tocline"><a class="tocxref" href="#authenticiteit-0"><bdi class="secno">6.2.5.3 </bdi>Authenticiteit</a></li><li class="tocline"><a class="tocxref" href="#autorisatie-0"><bdi class="secno">6.2.5.4 </bdi>Autorisatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#variatie-federated-identity-propagation"><bdi class="secno">6.2.6 </bdi>Variatie - Federated Identity Propagation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#implicaties-identity-propagation"><bdi class="secno">6.2.6.1 </bdi>Implicaties Identity propagation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conclusies-en-adviezen"><bdi class="secno">6.2.7 </bdi>Conclusies en Adviezen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section id="inleiding-document"><div class="header-wrapper"><h2 id="x1-inleiding-document"><bdi class="secno">1. </bdi>Inleiding document</h2><a class="self-link" href="#inleiding-document" aria-label="Permalink for Section 1."></a></div>
+<p>Dit document biedt een introductie in de OAuth standaard en met name het OAuth NLGov profiel wat op op de lijst verplichte standaarden is opgenomen van het Bureau Forum Standaardisatie <a href="https://forumstandaardisatie.gov.nl/open-standaarden/nl-gov-assurance-profile-oauth-20">link</a></p>
+<p>Het begrijpen en doorgronden van de implicaties van de OAuth standaarden en de profielen daarop blijken een steile leercurve te hebben en de technisch inhoudelijke documenten zijn niet geschikt voor een brede doelgroep die geen specialistische ICT kennis bezit van APIs, Authorisatie en security. Vandaar dit document waarmee we een algemeen beeld willen schetsen van de standaard. Dit doen we aan de hand van een praktijkvoorbeeld, een samenvatting van het profiel, een schets van de context en architectuur en verschillende use cases.
+Het document is zo opgebouwd dat alle hoofdstukken afzonderlijk kunne nwordn gelezen en voor verdieping wordt veelvuldig verwezen naar de standaard. Ook wordt er vanuit de standaard weer verwezen naar dit document voor meer algemene context.</p>
+</section>
+  <section id="oauth-de-basis"><div class="header-wrapper"><h2 id="x2-oauth-de-basis"><bdi class="secno">2. </bdi>OAuth - De basis</h2><a class="self-link" href="#oauth-de-basis" aria-label="Permalink for Section 2."></a></div>
+<section id="inleiding"><div class="header-wrapper"><h3 id="x2-1-inleiding"><bdi class="secno">2.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding" aria-label="Permalink for Section 2.1"></a></div>
+<p>Onlangs kregen we de vraag of er meer basisinformatie is over OAuth 2.0. Een heel begrijpelijke vraag. De huidige standaard die door het forum standaardisatie op de lijst van verplichte standaarden is gezet vereist namelijk deze basiskennis om te begrijpen wat de standaard nu eigenlijk verplicht stelt.</p>
+<p>Een deel van het antwoord zit m al in de formele naamgeving van de standaard. Het betreft namelijk een profiel ofwel een vastgestelde configuratie flow voor de Nederlandse overheden op de formele OAuth 2.0 standaard.</p>
+</section><section id="context"><div class="header-wrapper"><h3 id="x2-2-context"><bdi class="secno">2.2 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 2.2"></a></div>
+<p>OAuth 2.0 is een authorizatieframework wat het mogelijk maakt om gecontroleerde toegang te krijgen tot gebruikersaccounts op een HTTP service zoals bijvoorbeeld Google, Facebook, Spotify etc. De standaard werkt op basis van het delegeren van de user authentication aan de service die het user account host en door applicaties van derden te autoriseren om het user account te hergebruiken. Hierdoor kunnen gebruikersrechten of -gegevens met een website of applicatie gedeeld worden zonder wachtwoorden te delen.</p>
+<p>Deze interactie wordt altijd beschreven in een flow. Het Nederlandse profiel beschrijft alle aspecten van de door ons gewenste flow(s). Momenteel is alleen de Authorization Code Flow onderdeel van het Nederlandse profiel. Later meer hierover. Een aantal aspecten zijn wel essentieel en dus ook randvoorwaardelijk voor een gebruikelijke autorisatie op basis van OAuth 2.0:</p>
+<ol>
+<li>een <u><em>user</em></u> met een <u><em>account</em></u> : bijvoorbeeld <a href="mailto:example@logius.nl">example@logius.nl</a></li>
+<li>een <u><em>authorization service</em></u> : waar de user zich kan identificeren en authenticeren : bijvoorbeeld Facebook/Apple/Google</li>
+<li>een <u><em>resource service</em></u> : waar de inhoudelijke vraag aan wordt gesteld en waar de data/resources zijn opgeslagen : bijvoorbeeld Spotify</li>
+<li>een <u><em>client applicatie</em></u> : waarmee de user z'n account gegevens invult en de vraag stelt aan de authorization service en de resource service : bijvoorbeeld de Spotify app of een test tool als Postman.</li>
+</ol>
+<section id="in-onderstaand-schema-zijn-de-vier-bovenstaande-elementen-en-de-onderlinge-flow-weergegeven"><div class="header-wrapper"><h4 id="x2-2-1-in-onderstaand-schema-zijn-de-vier-bovenstaande-elementen-en-de-onderlinge-flow-weergegeven"><bdi class="secno">2.2.1 </bdi>In onderstaand schema zijn de vier bovenstaande elementen en de onderlinge flow weergegeven:</h4><a class="self-link" href="#in-onderstaand-schema-zijn-de-vier-bovenstaande-elementen-en-de-onderlinge-flow-weergegeven" aria-label="Permalink for Section 2.2.1"></a></div>
+<p><img src="./media/OAuth-Abstract_Authorization_Code_Flow.svg" alt="OAuth-Abstract_Authorization_Code_Flow"></p>
+</section><section id="de-flow-is-dan-als-volgt"><div class="header-wrapper"><h4 id="x2-2-2-de-flow-is-dan-als-volgt"><bdi class="secno">2.2.2 </bdi>De flow is dan als volgt:</h4><a class="self-link" href="#de-flow-is-dan-als-volgt" aria-label="Permalink for Section 2.2.2"></a></div>
+<ol>
+<li>De <strong><u>user</u></strong> navigeert naar de client application of webbrowser (<em><strong><u>de client</u></strong></em>) en wordt gevraagd in te loggen (het <em><u>authorization request</u></em>). </li>
+<li>De <u><strong>user</strong></u> voert z'n account gegevens in die alleen hij weet (het <em><u>client secret</u></em>). Uiteraard doet de user dit alleen als hij de client applicatie vertrouwd.</li>
+<li>De <u><strong>client</strong></u> stuurt op basis van de gegevens van de <u><strong>user</strong></u> een verzoek aan de <u><em><strong>authorization server</strong></em></u> (het <u><em>token request</em></u>). De <strong><u>authorization server</u></strong> beoordeeld dit verzoek op basis van alle beschikbare <strong><u>user</u></strong> en <strong><u>client</u></strong> gegevens. (Veelal dient een client applicatie zich vooraf eerst te registreren.)</li>
+<li>De <u><strong>authorization server</strong></u> stuurt als alles goed is een <em><u>Access token</u></em> terug aan de <strong><u>client</u></strong>. Dit is gebruikelijk een JSON Web Token (JWT).</li>
+<li>De <strong><u>client</u></strong> stuurt namens de <strong><u>user</u></strong> een request aan de resource server en voorziet dit request van het <u><em>access token</em></u>. De resource server kan de combinatie van het request en de en token beoordelen en bepalen welk response aan de client wordt gestuurd.</li>
+<li>Indien alles aan de vereisten voldoet stuurt de <strong><u>resource server</u></strong> een response aan de <strong><u>client</u></strong> met de gevraagde data (de <u><em>protected resource</em></u>)</li>
+</ol>
+</section></section><section id="voorbeeld"><div class="header-wrapper"><h3 id="x2-3-voorbeeld"><bdi class="secno">2.3 </bdi>Voorbeeld</h3><a class="self-link" href="#voorbeeld" aria-label="Permalink for Section 2.3"></a></div>
+<p>Zoals al aangegeven in de context werkt een voorbeeld het beste. In onderstaand schema is het voorbeeld opgenomen van Spotify waarbij een user, in dit geval <a href="mailto:example@logius.nl">example@logius.nl</a>, inlogt op de Spotify webclient. Het voorbeeld gebruikt de authorization server van Spotify zelf om een token te verkrijgen en daarna kan de user z'n persoonlijke gegevens, afspeellijsten en muziek opvragen bij de Spotify API.</p>
+<p><img src="./media/OAuth-Authorization_Code_Flow_Example.svg" alt="Spotify_login"></p>
+<p>Zowel de webclient van Spotify als de client applicatie of app gebruiken dezelfde API om resources op te vragen. De "Coursera basis training met Postman" die in <a href="#referenties" data-matched-text="[[[#referenties]]]" class="sec-ref"><bdi class="secno">2.5 </bdi>Referenties</a> wordt genoemd legt uit hoe je deze flow kan naspelen met als client de testtooling van Postman. De Coursera training is met name interessant om verdere kennis op te doen. De training is gebaseerd op Postman als client en gebruikt Spotify als server om tegen aan te praten. Hiervoor log je in op <a href="https://developer.spotify.com/">https://developer.spotify.com/</a> en maak je een App aan in het dashboard. In het voorbeeld is Spotify zowel de Authorization Server als de Resource server. Spotify beschrijft in het voorbeeld en de documentatie helder hoe de Authorization Code Flow precies werkt (zie <a href="https://developer.spotify.com/documentation/general/guides/authorization/code-flow/">https://developer.spotify.com/documentation/general/guides/authorization/code-flow/</a>) en dit is ook precies de flow die in het NL Profiel wordt gebruikt. Het gedetailleerde schema wat Spotify gebruikt om de flow toe te lichten is als volgt:</p>
+<p><img src="./media/spotify.png" alt="Spotify_Authorization_code_flow"></p>
+</section><section id="architectuur"><div class="header-wrapper"><h3 id="x2-4-architectuur"><bdi class="secno">2.4 </bdi>Architectuur</h3><a class="self-link" href="#architectuur" aria-label="Permalink for Section 2.4"></a></div>
+<p>De kern van OAuth is uiteraard het scheiden van de Authorization Server van de Resource Server en deze onafhankelijk te maken van de gebruikte client. Dit blijkt mooi uit bovenstaande flow en voorbeeld. Belangrijkste implicatie voor de architectuur is daarmee dan ook dat voor een dergelijke oplossing waarbij OAuth wordt toegepast de user niet alleen een client en een resource server wordt aangeboden, maar ook een authorization server (drie autonome architectural building blocks). Dit kan een authorization server zijn van de organisatie zelf, zoals in het voorbeeld, maar ook een authorization server van een derde partij zoals in de context al wordt gesuggereerd en zoals je kan zien in het inlogscherm van Spotify waarbij je ook kan registreren met Facebook, Apple of Google. In de context van de Nederlandse overheidsarchitectuur is het dus van belang bij een solution architectuur voor een voorziening goed na te gaan en documenteren welke partijen worden voorzien in de genoemde building blocks. Zie ook het theme IAM en API van de Nora en uiteraard de genoemde standaarden zoals gepubliceerd door Logius en het Forum Standaardisatie.</p>
+</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-5-referenties"><bdi class="secno">2.5 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.5"></a></div>
+<p>[Coursera basis training met Postman]</p>
+<p><a href="https://www.coursera.org/projects/api-testing-a-real-application-via-postman">https://www.coursera.org/projects/api-testing-a-real-application-via-postman</a></p>
+<p>[Link naar de lijst van verplichte standaarden]</p>
+<p><a href="https://forumstandaardisatie.nl/open-standaarden/verplicht">https://forumstandaardisatie.nl/open-standaarden/verplicht</a></p>
+<p>[link naar de standaard]</p>
+<p><a href="https://forumstandaardisatie.nl/open-standaarden/verplicht#:~:text=NL%20GOV%20Assurance%20profile%20for%20OAuth%202.0">https://forumstandaardisatie.nl/open-standaarden/verplicht#:~:text=NL%20GOV%20Assurance%20profile%20for%20OAuth%202.0</a></p>
+<p>[link naar de logius standaard]</p>
+<p><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">https://gitdocumentatie.logius.nl/publicatie/api/oauth/</a></p>
+<p>[link naar het IAM thema van de NORA]</p>
+<p><a href="https://www.noraonline.nl/wiki/Identity_%26_Access_Management_(IAM)">https://www.noraonline.nl/wiki/Identity_%26_Access_Management_(IAM)</a></p>
+<p>[link naar het API Thema van de NORA]</p>
+<p><a href="https://www.noraonline.nl/wiki/API">https://www.noraonline.nl/wiki/API</a></p>
+<p>[Het JWT token kan  men eenvoudig decoden/inspecteren op]</p>
+<p><a href="http://jwt.io">http://jwt.io</a></p>
+</section></section>
+  <section id="oauth-samenvatting-van-de-oauth-nl-standaard"><div class="header-wrapper"><h2 id="x3-oauth-samenvatting-van-de-oauth-nl-standaard"><bdi class="secno">3. </bdi>OAuth - Samenvatting van de OAuth-NL standaard</h2><a class="self-link" href="#oauth-samenvatting-van-de-oauth-nl-standaard" aria-label="Permalink for Section 3."></a></div>
+<blockquote>
+<p>link naar de standaard: <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0">https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0</a>
+Versie 1.0 vastgesteld op 09 juli 2020</p>
+</blockquote>
+<section id="inleiding-0"><div class="header-wrapper"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 3.1"></a></div>
+<p>Deze standaard is voor het ontsluiten van services van publieke/overheidsorganisaties. De services ontsluiten data via een zogenaamde Resource Server (verder aangeduid als de API). De resource server ofwel de API is afhankelijk van een Authorization Server. Deze Authorization Server voorziet in de identificatie en autorisatie van de user die de API bevraagd. De user gebruikt een Client die hij dient te vertrouwen om namens hem de vraag naar de API te sturen en de response op de vraag te ontvangen en presenteren.</p>
+<section id="schematische-weergave-van-de-flow-van-de-standaard"><div class="header-wrapper"><h4 id="x3-1-1-schematische-weergave-van-de-flow-van-de-standaard"><bdi class="secno">3.1.1 </bdi>Schematische weergave van de flow van de standaard</h4><a class="self-link" href="#schematische-weergave-van-de-flow-van-de-standaard" aria-label="Permalink for Section 3.1.1"></a></div>
+<p><img src="./media/OAuth-Abstract_Authorization_Code_Flow.svg" alt="OAuth-Abstract_Authorization_Code_Flow"></p>
+</section></section><section id="vereisten"><div class="header-wrapper"><h3 id="x3-2-vereisten"><bdi class="secno">3.2 </bdi>Vereisten</h3><a class="self-link" href="#vereisten" aria-label="Permalink for Section 3.2"></a></div>
+<p>De standaard biedt simpel gezegd access control voor RESTful API's. Dergelijke API's worden momenteel door de overheid ontwikkeld conform de API Design Rules (ADR) en beschreven conform de Open API Specification (OAS). </p>
+<p>Deze standaard beschrijft vereisten voor de API (Resource Server), Authorization Server en de Client. Hieronder is een samenvatting van de vereisten toegelicht:</p>
+<section id="x1-introductie"><div class="header-wrapper"><h4 id="x3-2-1-1-introductie"><bdi class="secno">3.2.1 </bdi>1. Introductie</h4><a class="self-link" href="#x1-introductie" aria-label="Permalink for Section 3.2.1"></a></div>
+<ul>
+<li>Iedere Authorization Server moet voldoen aan alle vereisten uit de standaard (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#conformance">§  1.3</a>)</li>
+<li>Iedere Client moet alle functies uit de standaard gebruiken (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#conformance">§  1.3</a>)</li>
+<li>Iedere API moet alle functies uit de standaard gebruiken (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#conformance">§  1.3</a>)</li>
+</ul>
+</section><section id="x2-client-profiel"><div class="header-wrapper"><h4 id="x3-2-2-2-client-profiel"><bdi class="secno">3.2.2 </bdi>2. Client profiel</h4><a class="self-link" href="#x2-client-profiel" aria-label="Permalink for Section 3.2.2"></a></div>
+<ul>
+<li>Clients zijn <em>Full</em> clients, ofwel web applicaties die centraal draaien, of <em>Native</em> clients, instanties van software die draaien op het device van de user, de zogenaamde apps. Beide client types hebben verschillende vereisten (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#client-types">§  2.1</a>)</li>
+<li>Clients moeten vooraf zijn geregistreerd bij de Authorization Server (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#client-registration">§  2.2</a>)</li>
+<li>Clients mogen geen gebruik maken van een redirect naar de localhost en mogen ook geen waardes doorsturen naar andere URI's (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#redirect-uri">§  2.2.1</a>)</li>
+<li>Clients moeten een willekeurige status parameter genereren en koppelen aan de client sessie om deze vervolgens mee te sturen naar de Authorization server en te verifiëren of deze ook correct in de response wordt meegegeven (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connection-to-the-authorization-server">§  2.3</a>)</li>
+<li>Clients moeten de volledige redirect URI meesturen in het verzoek aan de Authorization server (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connection-to-the-authorization-server">§  2.3</a>)</li>
+<li>De Authorization Server moet de redirect URI controleren ten opzichte van de URI die vooraf is geregistreerd door de Client (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connection-to-the-authorization-server">§  2.3</a>)</li>
+<li>Native Clients moeten PCKE toepassen (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connection-to-the-authorization-server">§  2.3</a>)</li>
+<li>Wanneer de API, Client en Authorisation Server niet onder verantwoordelijkheid vallen van één organisatie moeten PKIOverheid certificaten worden gebruikt (met OIN) (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#client-keys">§  2.3.4</a>)</li>
+<li>Clients moeten autorisatie requests over TLS sturen en moeten het certificaat van de API verifiëren (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connection-to-the-protected-resource">§  2.4</a>)</li>
+</ul>
+</section><section id="x3-authorization-server-profiel"><div class="header-wrapper"><h4 id="x3-2-3-3-authorization-server-profiel"><bdi class="secno">3.2.3 </bdi>3. Authorization Server profiel</h4><a class="self-link" href="#x3-authorization-server-profiel" aria-label="Permalink for Section 3.2.3"></a></div>
+<ul>
+<li>De Authorization Server moet alle communicatie versleutelen met TLS en voldoen aan alle security eisen (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#authorization-server-profile">§  3</a>)</li>
+<li>De Authorization Server moet dynamic client registration toestaan. De autorisatie server mag de Scopes beperken van dynamisch geregistreerde clients (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#dynamic-registration">§  3.1.3</a>)</li>
+<li>De Authorization Server moet de user laten weten welke Client is geregistreerd en welke access die Client vraagt (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#dynamic-registration">§  3.1.4</a>)</li>
+<li>De Authorization Server moet OpenID.Discovery aanbieden (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#discovery">§  3.1.5</a>)</li>
+<li>De Authorization Server moet op verzoek van de Client tokens intrekken (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#revocation">§  3.1.6</a>)</li>
+<li>De Authorization Server moet JWT tokens verstrekken die de API kan verifiëren (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#jwt-bearer-tokens">§  3.2.1</a>)</li>
+<li>De Authorization Server moet authenticatie vereisen voor de revocation en introspection endpoints (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#introspection">§  3.2.2</a>)</li>
+<li>Alle uitgegeven tokens mogen worden ingetrokken (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#token-lifetimes">§  3.4</a>)</li>
+<li>Access tokens hebben verschillende lifetimes (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#token-lifetimes">§  3.4</a>)</li>
+<li>De Authorization Server zou Scopes moeten definiëren en documenteren (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#scopes">§  3.5</a>)</li>
+</ul>
+</section><section id="x4-protected-resource-api-profiel"><div class="header-wrapper"><h4 id="x3-2-4-4-protected-resource-api-profiel"><bdi class="secno">3.2.4 </bdi>4. Protected Resource (API) profiel</h4><a class="self-link" href="#x4-protected-resource-api-profiel" aria-label="Permalink for Section 3.2.4"></a></div>
+<ul>
+<li>De API geeft de Client toegang wanneer deze een geldig access token en de correcte Scope heeft. De API vertrouwd erop dat de Authorization Server de security en access control borgt (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.1</a>)</li>
+<li>De API (met vertrouwelijke data) die een hoger vertrouwensniveau vereist van de eindgebruiker moet de data alleen beschikbaar stellen binnen een unieke Scope (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.1</a>)</li>
+<li>De Client die vertrouwelijke data wil opvragen bij de API moet een hoger vertrouwensniveau Scope meegeven in het verzoek aan de Authorization Server (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.1</a>)</li>
+<li>De Authorization Server moet de authenticatie van de eindgebruiker op het juiste vertrouwensniveau vaststellen (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.1</a>)</li>
+<li>Een API moet Bearer tokens accepteren in de authorization header en mag deze ook accepteren als form parameter (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.2</a>)</li>
+<li>Een API mag geen access tokens accepteren als query parameter (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.2</a>)</li>
+<li>Een API moet documenteren welke scopes vereist zijn voor toegang tot vertrouwelijke data (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#protecting-resources">§  4.2</a>)</li>
+<li>Een API moet een access token verifiëren (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connections-with-authorization-servers">§  4.3</a>)</li>
+<li>Een API moet limiteren welke Authorization Servers het vertrouwt (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#connections-with-authorization-servers">§  4.3</a>)</li>
+</ul>
+</section><section id="x6-security-overwegingen"><div class="header-wrapper"><h4 id="x3-2-5-6-security-overwegingen"><bdi class="secno">3.2.5 </bdi>6. Security overwegingen</h4><a class="self-link" href="#x6-security-overwegingen" aria-label="Permalink for Section 3.2.5"></a></div>
+<ul>
+<li>Alle transacties moeten worden versleuteld met TLS en het is aanbevolen om hierbij de richtlijnen van het NCSC op te volgen (<a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.0/#security-considerations">§  6</a>)</li>
+</ul>
+</section></section><section id="disclaimer"><div class="header-wrapper"><h3 id="x3-3-disclaimer"><bdi class="secno">3.3 </bdi>!! Disclaimer</h3><a class="self-link" href="#disclaimer" aria-label="Permalink for Section 3.3"></a></div>
+<p>Deze samenvatting is een interpretatie van de standaard en is niet volledig in de opsomming of beschrijving van alle vereisten. Wanneer de standaard moet worden geïmplementeerd dient altijd de officiële en actuele  standaard te worden gebruikt zoals gepubliceerd door het Forum Standaardisatie op: <a href="https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20">https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20</a>.</p>
+</section></section>
+  <section id="use-cases">
+    <div class="header-wrapper"><h2 id="x4-use-cases"><bdi class="secno">4. </bdi>Use Cases</h2><a class="self-link" href="#use-cases" aria-label="Permalink for Section 4."></a></div>
+    <section id="use-case-digital-system-environmental-law"><div class="header-wrapper"><h3 id="x4-1-use-case-digital-system-environmental-law"><bdi class="secno">4.1 </bdi>Use Case Digital System Environmental Law</h3><a class="self-link" href="#use-case-digital-system-environmental-law" aria-label="Permalink for Section 4.1"></a></div>
+<section id="overview"><div class="header-wrapper"><h4 id="x4-1-1-overview"><bdi class="secno">4.1.1 </bdi>Overview</h4><a class="self-link" href="#overview" aria-label="Permalink for Section 4.1.1"></a></div>
+<p>In this use case, the client credential flow is used in a digital system that enables citizens to request permits for activities they want to undertake in their environment. For example when a citizen wants to cut down a tree or change the exterior of their house they have to request a permit. The citizen can start a permit request in the web interface of the Digitaal Stelsel Omgevingswet - Digital System Environmental Law (hereafter: DSO) and this system will determine what local authorized authority (e.g. a municipality) is responsible. Once the permit request is ready, a trigger is sent to the system of the local authorized authority to use the client credential flow to retrieve the data associated with the request. The request can then be completed in the client software of that local authority.</p>
+</section><section id="resource-owner"><div class="header-wrapper"><h4 id="x4-1-2-resource-owner"><bdi class="secno">4.1.2 </bdi>Resource owner</h4><a class="self-link" href="#resource-owner" aria-label="Permalink for Section 4.1.2"></a></div>
+<p>The resource owner is the citizen that provided the information during the permit request. </p>
+</section><section id="client"><div class="header-wrapper"><h4 id="x4-1-3-client"><bdi class="secno">4.1.3 </bdi>Client</h4><a class="self-link" href="#client" aria-label="Permalink for Section 4.1.3"></a></div>
+<p>In this use case the client is the software that the authorized authority (e.g. the local authority, municipality, county etc.) who wants to retrieve information from the digital system, uses. </p>
+</section><section id="authorization-server"><div class="header-wrapper"><h4 id="x4-1-4-authorization-server"><bdi class="secno">4.1.4 </bdi>Authorization server</h4><a class="self-link" href="#authorization-server" aria-label="Permalink for Section 4.1.4"></a></div>
+<p>The authorization server is owned by the DSO, it is part of their API Management platform. </p>
+</section><section id="resource-server"><div class="header-wrapper"><h4 id="x4-1-5-resource-server"><bdi class="secno">4.1.5 </bdi>Resource server</h4><a class="self-link" href="#resource-server" aria-label="Permalink for Section 4.1.5"></a></div>
+<p>The resource server is the backend server of the DSO where the permit request is available.</p>
+</section><section id="scopes-claims"><div class="header-wrapper"><h4 id="x4-1-6-scopes-claims"><bdi class="secno">4.1.6 </bdi>Scopes &amp; claims</h4><a class="self-link" href="#scopes-claims" aria-label="Permalink for Section 4.1.6"></a></div>
+<p>The scopes and claims used in this system are defined by the DSO, and are related to the CRUD actions of the API's available. </p>
+</section><section id="rationale"><div class="header-wrapper"><h4 id="x4-1-7-rationale"><bdi class="secno">4.1.7 </bdi>Rationale</h4><a class="self-link" href="#rationale" aria-label="Permalink for Section 4.1.7"></a></div>
+<p>The DSO exposes API's secured on different levels. To standardise as much as possible, OAuth is used in several of the authentication and authorization flows. Therefore besides the Authorization code flow where an enduser is involved, the client credentials flow is used between systems in order to use the same authorization mechanism for as many usecases as possible.</p>
+</section></section>
+    <section id="rights-delegation-key-registry-buildings-adresses"><div class="header-wrapper"><h3 id="x4-2-rights-delegation-key-registry-buildings-adresses"><bdi class="secno">4.2 </bdi>Rights delegation key registry Buildings &amp; adresses</h3><a class="self-link" href="#rights-delegation-key-registry-buildings-adresses" aria-label="Permalink for Section 4.2"></a></div>
+<section id="overview-0"><div class="header-wrapper"><h4 id="x4-2-1-overview"><bdi class="secno">4.2.1 </bdi>Overview</h4><a class="self-link" href="#overview-0" aria-label="Permalink for Section 4.2.1"></a></div>
+<p>Key registries in Dutch government often have a single registry where all data is collected but multiple source holders are responsible for maintaining parts of the data.  Source holders, such as municipalities, should not be allowed to modify each others data without permission. It is very common to either have commercial cloud providers or partnerships of cooperating municipalities maintain a key registry on behalf of multiple sourceholders. Currently Dutch Cadastre hosts multiple key registries where this is the case each with its own application level solution to allow for this. Within the key registry adresses and buildings a PoC has been executed to show how OAuth can solve this in a generic way. This has the advantage of cutting down on custom code and affering a uniform procedure to source holders who often maintain multiple key registries at Dutch Cadastre.</p>
+</section><section id="resource-owner-0"><div class="header-wrapper"><h4 id="x4-2-2-resource-owner"><bdi class="secno">4.2.2 </bdi>Resource owner</h4><a class="self-link" href="#resource-owner-0" aria-label="Permalink for Section 4.2.2"></a></div>
+<p>A municipality that is legally required to maintain information on its buildings and adresses.</p>
+</section><section id="client-0"><div class="header-wrapper"><h4 id="x4-2-3-client"><bdi class="secno">4.2.3 </bdi>Client</h4><a class="self-link" href="#client-0" aria-label="Permalink for Section 4.2.3"></a></div>
+<p>A cloud provider or partnership of cooperating municipalities hosts an application that operates on behalf of the legal entity (municipality) to update and maintain the key registry Buildings &amp; Adresses. This application acts as client that connects to the API of the Dutch Cadastre.</p>
+</section><section id="authorization-server-0"><div class="header-wrapper"><h4 id="x4-2-4-authorization-server"><bdi class="secno">4.2.4 </bdi>Authorization server</h4><a class="self-link" href="#authorization-server-0" aria-label="Permalink for Section 4.2.4"></a></div>
+<p>manager
+The authorization server is hosted by Dutch Cadastre and provides (among other things) authorizations to municipalities to update and maintain data on buildings and adresses.</p>
+</section><section id="resource-server-0"><div class="header-wrapper"><h4 id="x4-2-5-resource-server"><bdi class="secno">4.2.5 </bdi>Resource server</h4><a class="self-link" href="#resource-server-0" aria-label="Permalink for Section 4.2.5"></a></div>
+<p>The central server that hosts the key registry for buildings and adresses at dutch Cadastre.</p>
+</section><section id="scopes-claims-0"><div class="header-wrapper"><h4 id="x4-2-6-scopes-claims"><bdi class="secno">4.2.6 </bdi>Scopes &amp; claims</h4><a class="self-link" href="#scopes-claims-0" aria-label="Permalink for Section 4.2.6"></a></div>
+<p>A JWT token containting the following claim is used:
+The claim "cdi" contains the ID of the municipality delegating its rights to maintain the key registry.
+The delegatee, the cloud provider gets a token containing this claim from the authorization server when providing its credentials. The actual delegation, provding client credentials to the client and delegating rights from the resource owner to the cleint is done out of band as this is not part of the client credentials flow.</p>
+</section><section id="rationale-0"><div class="header-wrapper"><h4 id="x4-2-7-rationale"><bdi class="secno">4.2.7 </bdi>Rationale</h4><a class="self-link" href="#rationale-0" aria-label="Permalink for Section 4.2.7"></a></div>
+<p>The client credentials flow is used instead of the authorization codeflow because the resource owner is a legal entity and the client acts on behalf of this legal entity, not the individual user working with the application.</p>
+</section></section>
+    <section id="overview-1"><div class="header-wrapper"><h3 id="x4-3-overview"><bdi class="secno">4.3 </bdi>Overview</h3><a class="self-link" href="#overview-1" aria-label="Permalink for Section 4.3"></a></div>
+<p>The Digitale Delta API provides access to measurements and related information.
+Consumers of the data, in general, will be automated processes or systems such as Business Intelligence or GIS systems.
+Since not all data may be open or public, access to certain data must be restricted.</p>
+<p>For this scenario, an interactive authentication method is not feasible and not all devices may equiped with PKI Overheid certificates.</p>
+<p>Next to requesting data, the API allows for adding or removing data by using import files or sensor devices. </p>
+<p>Client credential flow does offer the required functionality.</p>
+</section>
+    <section id="rights-delegation-air-sensors-network"><div class="header-wrapper"><h3 id="x4-4-rights-delegation-air-sensors-network"><bdi class="secno">4.4 </bdi>Rights delegation Air sensors network</h3><a class="self-link" href="#rights-delegation-air-sensors-network" aria-label="Permalink for Section 4.4"></a></div>
+<section id="overview-2"><div class="header-wrapper"><h4 id="x4-4-1-overview"><bdi class="secno">4.4.1 </bdi>Overview</h4><a class="self-link" href="#overview-2" aria-label="Permalink for Section 4.4.1"></a></div>
+<p>With the deployment of an endless number of air sensors the quality of the gathered data depends on the security of the sensor network. In this usecase the sensors are connected to a LoRaWAN network and equiped with a unique ID (GUID) for authentication. This prevents the injection of unindentifiable data into the network.</p>
+</section><section id="resource-owner-1"><div class="header-wrapper"><h4 id="x4-4-2-resource-owner"><bdi class="secno">4.4.2 </bdi>Resource owner</h4><a class="self-link" href="#resource-owner-1" aria-label="Permalink for Section 4.4.2"></a></div>
+<p>The resource owner is the sensor owner. In this case the the sensors are provided to citizens by the Resource owner, e.g. a local government or city.</p>
+</section><section id="client-1"><div class="header-wrapper"><h4 id="x4-4-3-client"><bdi class="secno">4.4.3 </bdi>Client</h4><a class="self-link" href="#client-1" aria-label="Permalink for Section 4.4.3"></a></div>
+<p>The Air sensor itself functions as a client, uploading each measurement to the API of the Resource owner via the LoRaWAN network.</p>
+</section><section id="authorization-server-1"><div class="header-wrapper"><h4 id="x4-4-4-authorization-server"><bdi class="secno">4.4.4 </bdi>Authorization server</h4><a class="self-link" href="#authorization-server-1" aria-label="Permalink for Section 4.4.4"></a></div>
+<p>In this use case the resource owner also provides the Authorization server. The unique id's of the sensors are preloaded in the authorization server.</p>
+</section><section id="resource-server-1"><div class="header-wrapper"><h4 id="x4-4-5-resource-server"><bdi class="secno">4.4.5 </bdi>Resource server</h4><a class="self-link" href="#resource-server-1" aria-label="Permalink for Section 4.4.5"></a></div>
+<p>The resource server is provided by the sensor provider, e.g. a local government or city, the resource server provides the API where all sensors write their data.</p>
+</section><section id="scopes-claims-1"><div class="header-wrapper"><h4 id="x4-4-6-scopes-claims"><bdi class="secno">4.4.6 </bdi>Scopes &amp; claims</h4><a class="self-link" href="#scopes-claims-1" aria-label="Permalink for Section 4.4.6"></a></div>
+<p>not applicable</p>
+</section><section id="rationale-1"><div class="header-wrapper"><h4 id="x4-4-7-rationale"><bdi class="secno">4.4.7 </bdi>Rationale</h4><a class="self-link" href="#rationale-1" aria-label="Permalink for Section 4.4.7"></a></div>
+<p>To mitigate the risk of incorrect data or manipulation of sensor data the sensor will connect to the authorization server first while onboarding (Step 1). The authorization server checks the provided sensor ID and provides the sensor with a token (Step 2). The sensor then starts to collect data and upload the data to the provided API and includes the token with each request to the resource server.</p>
+</section></section>
+  </section>
+  <section id="detail-onderwerpen-oauth">
+    <div class="header-wrapper"><h2 id="x5-detail-onderwerpen-oauth"><bdi class="secno">5. </bdi>Detail onderwerpen OAuth</h2><a class="self-link" href="#detail-onderwerpen-oauth" aria-label="Permalink for Section 5."></a></div>
+    <section id="oauth-details"><div class="header-wrapper"><h3 id="x5-1-oauth-details"><bdi class="secno">5.1 </bdi>OAuth details</h3><a class="self-link" href="#oauth-details" aria-label="Permalink for Section 5.1"></a></div>
+<p>Verdieping op Par 3.1.1 &amp; Token exchange</p>
+<section id="token-exchange"><div class="header-wrapper"><h4 id="x5-1-1-token-exchange"><bdi class="secno">5.1.1 </bdi>Token exchange</h4><a class="self-link" href="#token-exchange" aria-label="Permalink for Section 5.1.1"></a></div>
+<p>Where possible, the token exchange [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>] grant type SHOULD be implemented instead of client credentials grant type, as this proves the identity of the user (and, where applicable, a second user that may act on behalf of the user). </p>
+<p>To Do add as a third flow in this document in usecases</p>
+<p>Voorbeelden token exchange (rfc8693)</p>
+<p>• Impersonation. Een achterliggende applicatie doet namens een andere applicatie een API aanroep met een tweede token (delegation scenario, met act claim). Het tweede token zal vaak minder of andere scopes of audience restricties hebben dan het originele token. Een ander bekend voorbeeld is dat het token slechts geldig is in de context van één transactie, en/of dat het token langer geldig is, bijvoorbeeld bij asynchrone (batch) verwerking van gegevens. </p>
+<p>• Delegation. Een gebruiker (vertegenwoordigd door een actor token) acteert namens een andere gebruiker (subject token).</p>
+<p>@@@ [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>] distinguishes impersonation and delegation scenarios.</p>
+</section></section>
+    <section id="oin-en-pkio-in-relatie-tot-oauth-nlgov-profiel"><div class="header-wrapper"><h3 id="x5-2-oin-en-pkio-in-relatie-tot-oauth-nlgov-profiel"><bdi class="secno">5.2 </bdi>OIN en PKIO in relatie tot OAuth NLGov profiel</h3><a class="self-link" href="#oin-en-pkio-in-relatie-tot-oauth-nlgov-profiel" aria-label="Permalink for Section 5.2"></a></div>
+<blockquote>
+<p>Concept beschrijving dd 22-08-2024 - door Martin van der Plas</p>
+</blockquote>
+<section id="inleiding-1"><div class="header-wrapper"><h4 id="x5-2-1-inleiding"><bdi class="secno">5.2.1 </bdi>Inleiding</h4><a class="self-link" href="#inleiding-1" aria-label="Permalink for Section 5.2.1"></a></div>
+<p>De nieuwe versie van het OAuth NL profiel voegt onder meer het Client credentials profiel toe. 
+Zie ook v1.1.0-rc.2 op :  <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/">https://logius-standaarden.github.io/OAuth-NL-profiel/</a> </p>
+<p>Op basis van deze toevoeging kwamen, na vaststelling door de werkgroep en de publieke consultatie, aanvullende vragen over het gebruik van PKIO certificaten en het OIN vanuit het onderwijs domein. De Edukoppeling werkgroep gebruikt voor het definiëren van een aantal OAuth best practices[1] ook het NL GOV Assurance profile for OAuth 2.0 (NL GOV). </p>
+<p>Aangezien het NLGov OAuth profiel is opgesteld op basis van het iGov profiel is het soms wat lastig om te doorgronden wat de precieze vereisten zijn. Ook is de materie inzake oauth relatief complex en wordt er nogal eens wat impliciete voorkennis verondersteld. Dit atikel dient dan ook niet als vervanging van de standaard of als aanvulling daarop maar meer als richtlijn of toelichting. </p>
+</section><section id="context-0"><div class="header-wrapper"><h4 id="x5-2-2-context"><bdi class="secno">5.2.2 </bdi>Context:</h4><a class="self-link" href="#context-0" aria-label="Permalink for Section 5.2.2"></a></div>
+<p><strong>OIN refenties</strong>
+De standaard heeft de volgende relevante verwijzingen naar het OIN die hieronder verder worden toegelicht</p>
+<ul>
+<li>Par 2.3.4 <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/#client-keys">https://logius-standaarden.github.io/OAuth-NL-profiel/#client-keys</a> beschrijft de connectie van de client met de Authorization server en vereist simpel gezegd dat clients een keypair moeten hebben om zich te authenticeren bij het token endpoint. in onze additionele content eisen we dat hiervoor een PKIO certificaat met OIN moet worden gebruikt als de authorization server, resource server en client niet allemaal van dezelfde organisatie zijn. Aanvullend eisen we dat clients hun public key moeten registreren in de client metadata</li>
+<li>Par 3.2 <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/#connections-with-protected-resources">https://logius-standaarden.github.io/OAuth-NL-profiel/#connections-with-protected-resources</a> beschrijft hoe resources connecten met de authorization server. het vereist dat de authorization server JWT tokens uitgeeft. Ook hier eisen we dat hiervoor een PKIO certificaat met OIN moet worden gebruikt als de authorization server, resource server en client niet allemaal van dezelfde organisatie zijn.</li>
+</ul>
+</section><section id="pki-referenties-de-standaard-heeft-de-volgende-relevante-verwijzingen-naar-pki-die-hieronder-verder-worden-toegelicht"><div class="header-wrapper"><h4 id="x5-2-3-pki-referenties-de-standaard-heeft-de-volgende-relevante-verwijzingen-naar-pki-die-hieronder-verder-worden-toegelicht"><bdi class="secno">5.2.3 </bdi><strong>PKI referenties</strong>
+De standaard heeft de volgende relevante verwijzingen naar PKI die hieronder verder worden toegelicht:</h4><a class="self-link" href="#pki-referenties-de-standaard-heeft-de-volgende-relevante-verwijzingen-naar-pki-die-hieronder-verder-worden-toegelicht" aria-label="Permalink for Section 5.2.3"></a></div>
+</section><section id="intenties"><div class="header-wrapper"><h4 id="x5-2-4-intenties"><bdi class="secno">5.2.4 </bdi>Intenties:</h4><a class="self-link" href="#intenties" aria-label="Permalink for Section 5.2.4"></a></div>
+<ul>
+<li>Clients in de client credentials flow zijn pre-registerd <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/#step-1-client-authentication">Step 1. Client Authentication</a></li>
+<li>Private_key_jwt is naast tls_client_auth toegestaan. In beide situaties is een Private key nodig om ofwel de JWT te signen ofwel de mTLS connectie op te zetten. Indien dus de PKIO verplicht is is in beide gevallen een OIN inzichtelijk bij de authorization server.   </li>
+<li>verbindingen tussen client, resource en authorization server zijn altijd versleuteld met TLS en indien PKIO verplicht is dus ook altijd the identificeren (op TLS niveau met de OIN uit het subjectSerialNumber veld van de public key)</li>
+<li></li>
+</ul>
+</section><section id="conclusie"><div class="header-wrapper"><h4 id="x5-2-5-conclusie"><bdi class="secno">5.2.5 </bdi>Conclusie:</h4><a class="self-link" href="#conclusie" aria-label="Permalink for Section 5.2.5"></a></div>
+<ul>
+<li>een kwaadwillende kan nooit met een self signed certificaat een client faken die met een ander certificaat is geregistreerd bij de authorization server</li>
+</ul>
+</section><section id="achtergrondinformatie"><div class="header-wrapper"><h4 id="x5-2-6-achtergrondinformatie"><bdi class="secno">5.2.6 </bdi>Achtergrondinformatie:</h4><a class="self-link" href="#achtergrondinformatie" aria-label="Permalink for Section 5.2.6"></a></div>
+<section id="vragen-duo"><div class="header-wrapper"><h5 id="x5-2-6-1-vragen-duo"><bdi class="secno">5.2.6.1 </bdi>Vragen DUO:</h5><a class="self-link" href="#vragen-duo" aria-label="Permalink for Section 5.2.6.1"></a></div>
+<p>De stapjes binnen Edustandaard over het toepassen van OAUTH gaan langzamer dan ik zou willen, maar zeker wel de goede kant op. Ondertussen heb ik ook een nieuwe 'proposed' versie van NL-GOV (10 juli 2024) gezien.  (Terzijde,  er is ook een versie van 13 mei  vindbaar, zonder dat duidelijk is dat die is vervangen, dat kan verwarrend zijn).  Ook in deze nieuwe versie zit iets of juist niet, wat DUO denkt nodig hebben. Vandaar dat ik er een vraag over stel.</p>
+<p>Eén van de requirements is redelijk scherp,  "de identiteit (OIN) van de client wordt onomstotelijk vastgesteld".</p>
+<p>In deze versie lees ik dit:</p>
+<p>2.3.3 In addition to private_key_jwt, the client authentication method tls_client_auth [rfc8705<a href="https://logius-standaarden.github.io/OAuth-NL-profiel/#bib-rfc8705%5D">https://logius-standaarden.github.io/OAuth-NL-profiel/#bib-rfc8705]</a> MAY also be used. 2.3.4 Clients using the authorization code grant type or direct access clients using the client credentials grant type MUST have a public and private key pair for use in authentication to the token endpoint. These clients MUST register their public keys in their client registration metadata by either sending the public key directly in the jwks field or by registering a jwks_uri that MUST be reachable by the authorization server 2.3.4 In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates with OIN.</p>
+<p>Hieruit spreekt  dezelfde intentie uit als onze requirement. Dat is goed. Maar wordt het waar gemaakt?  Het idee van DUO:</p>
+<ul>
+<li><p>Bij mTLS wel. - De server leest de metadata van het PKI certificaat uit. Haalt daaruit het root - certificaat (NL overheid) en ook het OIN (het SSN-veld) van de certificaat-houder.</p>
+</li>
+<li><p>Bij private_key_jwt niet. - De publieke sleutel wordt uitgelezen met het  jwks- of jwks_uri-veld. Deze versie van NL-GOV beschrijft een JSON Web Key Set (JWK set) van metagegevens dat daarmee toegankelijk is.  Dus wel de publieke sleutel, maar niet het root-certificaat en  het SSN-veld met OIN.  Een kwaadwillende kan met een self signed certificaat een legitieme client faken.</p>
+</li>
+</ul>
+<p>Als dat inderdaad zo is, dan is private-key-jwt ongeschikt voor client credentials en hoort het niet thuis in dit deel van deze standaard.</p>
+<hr>
+</section><section id="interpretatie-kennisnet"><div class="header-wrapper"><h5 id="x5-2-6-2-interpretatie-kennisnet"><bdi class="secno">5.2.6.2 </bdi>Interpretatie Kennisnet:</h5><a class="self-link" href="#interpretatie-kennisnet" aria-label="Permalink for Section 5.2.6.2"></a></div>
+<p>Mijn interpretatie bij de toepassing van een aantal NL GOV aspecten is als volgt:</p>
+<p><strong>Toepassing private_key_jwt voor client authenticatie en PKIo certificaat voor ondertekening:</strong></p>
+<ol>
+<li>De ondertekening is de jwt. De bij registratie opgenomen client_id en public key van client maken het mogelijk voor AS om ondertekening te verifiëren[2].</li>
+</ol>
+<ul>
+<li>Hiermee wordt bewezen dat client over private key PKIo beschikt (proof-of-possession authenticatie). Ik ga er hierbij vanuit dat client authenticatie van gelijkwaardig niveau is als mTLS. Tevens kan AS client_id aan OIN relateren (identificatie).</li>
+</ul>
+<p><strong>Toepassing PKIo (client en AS/RS niet onder beheer van dezelfde partij)</strong></p>
+<ol>
+<li>Omdat client niet door dezelfde partij wordt beheerd als AS/RS schrijven we conform NL GOV OAuth voor dat PKIo gebruikt moet worden.</li>
+</ol>
+<ul>
+<li>In combinatie met toepassing van private_key_jwt client authenticatie (en dus geen mTLS) betekent dit dus dat ondertekening van privat_key_jwt met PKIo certificaat wordt toegepast.   2.  Het PKIo certificaat authenticeerd de rechtspersoon. Met het OIN in certificaat kan de rechtspersoon geïdentificeerd worden.  Met het door de AS uitgegeven client_id kan een client (als onderdeel van het applicatielandschap van rechtspersoon) geïdentificeerd worden.</li>
+<li>Er is dus identificatie op 2 niveaus, OIN en client_id. NL GOV OAuth vereist niet dat de client_id het OIN is. Dit wordt echter niet expliciet aangegeven. Binnen het onderwijs biedt het voordelen op verschillende niveaus te kunnen identificeren, maar toepasbaarheid is onduidelijk. Ook onduidelijk of op dit niveau niet uniformiteit/standaardisatie wenselijk is.</li>
+</ul>
+<ol start="3">
+<li>Voor AS server geldt bij toepassing van private_key_jwt dus GEEN mTLS maar wel toepassing van PKIo voor serverbeveiliging (SSL/TLS) en bepaalde TLS versie.</li>
+</ol>
+<ul>
+<li>In NL GOV staat bij paragraaf 2.4.1 Requests to the Protected Resource: Authorized requests MUST be made over TLS, and clients MUST validate the protected resource server's certificate. Ik neem aan dat dit ook voor requests naar AS geldt als client authenticatie obv private_key_jwt wordt toegepast.</li>
+<li>In deze situatie wordt AS en RS serverbeveiliging vereist op basis van TLS en PKIo. Er gelden dan ook aanvullende eisen rond TLS versie en ciphert suites (NCSC/DK) die expliciet aangegeven moeten worden.</li>
+</ul>
+<p><strong>Discovery</strong></p>
+<ol>
+<li>NL GOV OAuth - Discovery (paragraaf 3.1.5) stelt :"The authorization server MUST provide an [OpenID Connect service discovery] [OpenID.Discovery] endpoint listing the components relevant to the OAuth protocol".  \</li>
+</ol>
+<ul>
+<li>Er is onduidelijkheid wat de exacte scope / betekenis is van discovery. In het NL GOV OAuth profiel lijkt dit expliciet betrekking te hebben op de AS meta data. Het is onduidelijk of discovery ook betrekking heeft op meta data van client (het toepassen van een uri in plaats van opname in een jwks veld). Bij client authenticatie op basis van private_key_jwt kan zowel een jwks_uri gebruikt worden als een jwks veld. Is met het toepassen van discovery de toepassing van een jwks_uri logisch en de toepassing van private_key_jwt het jwks veld[3] onlogisch (en visa versa indien discovery juist niet vereist wordt zoals bij Edukoppeling OAuth Best Practices)?</li>
+</ul>
+<hr>
+</section><section id="links"><div class="header-wrapper"><h5 id="x5-2-6-3-links"><bdi class="secno">5.2.6.3 </bdi>Links:</h5><a class="self-link" href="#links" aria-label="Permalink for Section 5.2.6.3"></a></div>
+<p>[1] <a href="https://www.edustandaard.nl/app/uploads/2024/07/2024-07-16-Edukoppeling-OAuth-Best-Practices-v1.0.pdf">https://www.edustandaard.nl/app/uploads/2024/07/2024-07-16-Edukoppeling-OAuth-Best-Practices-v1.0.pdf</a></p>
+<p>[2] Een client moet zijn publieke sleutel vooraf registreren bij een autorisatieserver, zodat de server hiermee de ondertekening kan verifiëren.</p>
+<p>[3] En hierin ook het PKIoverheid cert als x5c parameter (X. 509 Certificate Chain) en niet x5u. Dit bericht kan informatie bevatten die niet voor u is bestemd. Indien u niet de geadresseerde bent of dit bericht abusievelijk aan u is toegezonden, wordt u verzocht dat aan de afzender te melden en het bericht te verwijderen. De Staat aanvaardt geen aansprakelijkheid voor schade, van welke aard ook, die verband houdt met risico's verbonden aan het elektronisch verzenden van berichten. This message may contain information that is not intended for you. If you are not the addressee or if this message was sent to you by mistake, you are requested to inform the sender and delete the message. The State accepts no liability for damage of any kind resulting from the risks inherent in the electronic transmission of messages.</p>
+</section></section></section>
+  </section>
+  <section id="orkestratie">
+    <div class="header-wrapper"><h2 id="x6-orkestratie"><bdi class="secno">6. </bdi>Orkestratie</h2><a class="self-link" href="#orkestratie" aria-label="Permalink for Section 6."></a></div>
+    <section id="inleiding-2"><div class="header-wrapper"><h3 id="x6-1-inleiding"><bdi class="secno">6.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding-2" aria-label="Permalink for Section 6.1"></a></div>
+<p> API orkestratie is een cruciaal concept binnen de moderne  ICT-architectuur, vooral in de context van het integreren van  verschillende applicaties en services. Het stelt organisaties in staat  om complexe workflows te beheren door verschillende API's te coördineren en hun interacties te stroomlijnen. Dit biedt voordelen zoals verhoogde efficiëntie, verbeterde dataconsistentie en een betere  gebruikerservaring.</p>
+<section id="wat-is-api-orkestratie"><div class="header-wrapper"><h4 id="x6-1-1-wat-is-api-orkestratie"><bdi class="secno">6.1.1 </bdi>Wat is API Orkestratie?</h4><a class="self-link" href="#wat-is-api-orkestratie" aria-label="Permalink for Section 6.1.1"></a></div>
+<p>API orkestratie verwijst naar het proces waarbij meerdere  API-aanroepen worden gecoördineerd om een specifieke taak of workflow  uit te voeren. Dit kan bijvoorbeeld inhouden dat gegevens van  verschillende bronnen worden samengevoegd of dat meerdere services in  een bepaalde volgorde worden aangeroepen om een einddoel te bereiken.</p>
+</section><section id="uitgangspunten"><div class="header-wrapper"><h4 id="x6-1-2-uitgangspunten"><bdi class="secno">6.1.2 </bdi>Uitgangspunten</h4><a class="self-link" href="#uitgangspunten" aria-label="Permalink for Section 6.1.2"></a></div>
+<p>Uitgangspunt is de bestaande registraties met de bestaande registratie-processen.</p>
+<p>Met betrekking tot security zijn er diverse aandachtspunten:</p>
+<ul>
+<li>Data integriteit. Dmv signing zou van individuele gegevens kunnen worden aangetoond wat de authentieke bron is en of dat deze identiek zijn aan de authentieke gegevens. Interessant vraagstuk is wat dit betekent als gegevens tijdens het orkestreren worden getransformeerd. Mogelijk raakvlakken met de <a href="https://www.w3.org/TR/rdf-canon/">RDF Dataset Canonicalization</a> standaard.</li>
+<li>Authenticatie/autorisatie. Bij orkestratie worden verschillende requests uitgevoerd vanuit mogelijk verschillende identiteiten, verschillende identity stores en verschillende scopes/audiences. Hierbij kan zowel een transparant als niet-transparant model worden toegepast. Deze willen we beiden beschrijven. Relevante standaarden zijn <a href="https://commonground.gitlab.io/standards/fsc/">FSC</a> en <a href="https://datatracker.ietf.org/doc/html/rfc8693">OAuth Token Exchange</a>.</li>
+</ul>
+</section><section id="use-cases-0"><div class="header-wrapper"><h4 id="x6-1-3-use-cases"><bdi class="secno">6.1.3 </bdi>Use cases</h4><a class="self-link" href="#use-cases-0" aria-label="Permalink for Section 6.1.3"></a></div>
+<p>Er zijn reeds enkele voorbeelde van uwe cases waarbij orkestratie een belangrijke rol speelt:</p>
+<ul>
+<li><a href="https://www.geonovum.nl/geo-standaarden/imx-geo-semantisch-model-basis-en-kernregistraties">IMX-Geo</a> (Geonovum), Bestuurlijke Gebieden (BZK), Gebouwdossier (Kadaster)</li>
+<li>Diverse Digital Twin use cases (navraag doen bij Bart en/of Koos)</li>
+<li><a href="https://digilab.overheid.nl/">Digilab</a> use cases: opkopersbescherming (RVIG/VNG), maximale huurverhoging (Belastingdienst)</li>
+</ul>
+</section><section id="aandachtsgebieden-van-orkestratie"><div class="header-wrapper"><h4 id="x6-1-4-aandachtsgebieden-van-orkestratie"><bdi class="secno">6.1.4 </bdi>Aandachtsgebieden van Orkestratie</h4><a class="self-link" href="#aandachtsgebieden-van-orkestratie" aria-label="Permalink for Section 6.1.4"></a></div>
+<p>Interessante onderwerpen die sterk gerelateerd zijn aan orkestratie zij:</p>
+<ul>
+<li><p>Fouttolerantie (graceful degradation, resiliency, retry policies, automatisch terugmelden).</p>
+</li>
+<li><p>Doodlopende links (afwijkingen van informatiemodel, actualiteits-issues, etc.)</p>
+</li>
+<li><p>Mapping en herleidbaarheid (zie IMX)</p>
+</li>
+<li><p>Historie en tijdreizen (separate module in concept)</p>
+</li>
+<li><p>Batching (separate module in concept)</p>
+</li>
+<li><p>Orkestratie in OAuth (o.a. Token Exchange, eHerkenning, FSC, etc.)</p>
+</li>
+</ul>
+</section><section id="imx"><div class="header-wrapper"><h4 id="x6-1-5-imx"><bdi class="secno">6.1.5 </bdi>IMX</h4><a class="self-link" href="#imx" aria-label="Permalink for Section 6.1.5"></a></div>
+<p>Kadaster heeft in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. De uitdaging is om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.</p>
+</section><section id="arazzo"><div class="header-wrapper"><h4 id="x6-1-6-arazzo"><bdi class="secno">6.1.6 </bdi>Arazzo</h4><a class="self-link" href="#arazzo" aria-label="Permalink for Section 6.1.6"></a></div>
+<p>De <a href="https://www.openapis.org/arazzo">Arazzo-specificatie</a> is een nieuwe, door de gemeenschap gedreven  standaard die is ontwikkeld onder het OpenAPI-initiatief, met als doel  de documentatie en interactie van API's te verbeteren. Het biedt een <strong>programmeertaal-onafhankelijk</strong> kader om reeksen API-aanroepen en hun afhankelijkheden te definiëren, waardoor de communicatie van workflows duidelijker wordt.</p>
+<p>Dit project bevindt zich echter nog in een vroeg stadium. Ook is het maar de vraag in hoeverre (commerciële) software vendors erbij gebaat zouden zijn een dergelijke standaard te implenteren. Verder wordt de kanttekening geplaatst dat benodigde stappen bij orkestratie ook dynamisch kunnen worden berekend, zoals bij IMX wordt gedaan. In dat geval is het specificeren van een workflow niet relevant.</p>
+<section id="belangrijkste-kenmerken"><div class="header-wrapper"><h5 id="x6-1-6-1-belangrijkste-kenmerken"><bdi class="secno">6.1.6.1 </bdi>Belangrijkste Kenmerken</h5><a class="self-link" href="#belangrijkste-kenmerken" aria-label="Permalink for Section 6.1.6.1"></a></div>
+<ul>
+<li><strong>Deterministische Workflows</strong>: Arazzo maakt zowel menselijke leesbare als machine-leesbare  documentatie mogelijk, wat de ervaring voor API-aanbieders en  -gebruikers verbetert.</li>
+<li><strong>Toepassingen</strong>: Interactieve workflowdocumentatie Automatische documentgeneratie Code- en SDK-generatie op basis van functionele gebruiksgevallen Automatisering van testgevallen en nalevingscontroles AI-gestuurde deterministische API-aanroep</li>
+</ul>
+</section><section id="relatie-met-openapi"><div class="header-wrapper"><h5 id="x6-1-6-2-relatie-met-openapi"><bdi class="secno">6.1.6.2 </bdi>Relatie met OpenAPI</h5><a class="self-link" href="#relatie-met-openapi" aria-label="Permalink for Section 6.1.6.2"></a></div>
+<p>Arazzo aanvult de bestaande OpenAPI-specificatie door beschrijvingen van <strong>groepen API's</strong> en hun interacties mogelijk te maken, in plaats van alleen individuele  API's. Deze bredere scope ondersteunt automatisering en codegeneratie,  met als uiteindelijke doel de waarde die uit API's wordt gehaald te  maximaliseren.Het project staat open voor deelname van de gemeenschap, met  middelen beschikbaar op GitHub voor degenen die geïnteresseerd zijn in  bijdragen of meer willen leren over de specificatie.</p>
+</section></section></section>
+    <section id="orkestratie-beveiliging"><div class="header-wrapper"><h3 id="x6-2-orkestratie-beveiliging"><bdi class="secno">6.2 </bdi>Orkestratie beveiliging</h3><a class="self-link" href="#orkestratie-beveiliging" aria-label="Permalink for Section 6.2"></a></div>
+<section id="context-1"><div class="header-wrapper"><h4 id="x6-2-1-context"><bdi class="secno">6.2.1 </bdi>Context</h4><a class="self-link" href="#context-1" aria-label="Permalink for Section 6.2.1"></a></div>
+<p>Orkestratie services bieden over het algemeen een oplossing voor een complexe vraag en een antwoord wat input uit meerdere databronnen bevat.  Conform de <a href="https://docs.geostandaarden.nl/api/API-Strategie-architectuur/#systeem-proces-convenience">Api Strategie architectuur typologie</a> is het daarmee een zogenaamde "Composite API" die meerdere systeem API's aanroept.</p>
+<p>Voor de beveiliging van een dergelijke composite API is het belangrijkste verschil of de API kennis heeft van de inhoud van de gegevensuitwisseling en  van die inhoud ook logging bijhoudt of dat de Composite API geen kennis heeft van de inhoud en daarmee ook geen logging hoeft bij te houden. </p>
+<p>Wanneer de Composite API geen kennis heeft van de inhoud en geen logging vasthoud noemen we dit transparant.</p>
+<blockquote>
+<p>we focussen in deze context op het bevragen van services en niet op de transactionele kant </p>
+<p>We gaan in onderstaande situaties er vanuit dat er vertrouwelijke gegevens worden bevraagd. Voor het bevragen open data is dergelijke beveiliging niet noodzakelijk.</p>
+<p>We gaan er van uit dat OAuth wordt gebruikt voor de authorisatie van de Services.</p>
+</blockquote>
+</section><section id="use-cases-1"><div class="header-wrapper"><h4 id="x6-2-2-use-cases"><bdi class="secno">6.2.2 </bdi>Use cases</h4><a class="self-link" href="#use-cases-1" aria-label="Permalink for Section 6.2.2"></a></div>
+<p>In deze context onderkennen we vier use cases</p>
+<ul>
+<li>De Client bevraagt direct de bronnen en heeft de orkestratie daarmee ingebed in de client software (deze use case wordt verder niet uitgediept)</li>
+<li>De User Identity wordt onderbroken door de orkestratie (Implicit Identity reuse)</li>
+<li>De User Identity propageert door tot de bronnen (Identity propagation)</li>
+<li>De user bevraagt 1 bron en de service van de bron bevraagt nog een andere bron zonder dat de user of client hier weet van heeft (deze use case wordt verder niet uitgediept)</li>
+</ul>
+</section><section id="begrippen"><div class="header-wrapper"><h4 id="x6-2-3-begrippen"><bdi class="secno">6.2.3 </bdi>Begrippen</h4><a class="self-link" href="#begrippen" aria-label="Permalink for Section 6.2.3"></a></div>
+<ul>
+<li>OAuth:</li>
+<li>Identity propagation:</li>
+<li>Identity reuse:</li>
+<li>Vertrouwelijke gegevens:</li>
+<li>Open Data:</li>
+<li>Token Exchange:</li>
+<li>Identity Service Provider:</li>
+</ul>
+</section><section id="implicit-identity-reuse-token-based"><div class="header-wrapper"><h4 id="x6-2-4-implicit-identity-reuse-token-based"><bdi class="secno">6.2.4 </bdi>Implicit Identity reuse - token based</h4><a class="self-link" href="#implicit-identity-reuse-token-based" aria-label="Permalink for Section 6.2.4"></a></div>
+<section id="rationale-2"><div class="header-wrapper"><h5 id="x6-2-4-1-rationale"><bdi class="secno">6.2.4.1 </bdi>Rationale</h5><a class="self-link" href="#rationale-2" aria-label="Permalink for Section 6.2.4.1"></a></div>
+<ul>
+<li>er is een ontkoppeling tussen de Services en de client. Dit is geen probleem bij open data maar wel bij vertrouwelijke gegevens. </li>
+<li>In de praktijk is dit wel hoe bijvoorbeeld een huisarts werkt en hoe veel balies en overheidsorganisaties werken.</li>
+<li>De token / OAuth flow die wordt geschetst kan in deze situaties ook een andere vorm van authenticatie of identificatie zijn </li>
+<li>Deze situatie is vaak in gebruik binnen 1 organisatie waarbij alle onderdelen van de orkestratie onder verantwoording van 1 organisatie vallen en de User ook in dienst is bij deze organisatie</li>
+</ul>
+</section><section id="identity"><div class="header-wrapper"><h5 id="x6-2-4-2-identity"><bdi class="secno">6.2.4.2 </bdi>Identity</h5><a class="self-link" href="#identity" aria-label="Permalink for Section 6.2.4.2"></a></div>
+<ul>
+<li><p>Service A,B &amp; C kennen de identity van Service Y, niet van Client X of User U</p>
+</li>
+<li><p>Service Y kent de Identity van User U en of Client X</p>
+</li>
+</ul>
+</section><section id="authenticiteit"><div class="header-wrapper"><h5 id="x6-2-4-3-authenticiteit"><bdi class="secno">6.2.4.3 </bdi>Authenticiteit</h5><a class="self-link" href="#authenticiteit" aria-label="Permalink for Section 6.2.4.3"></a></div>
+<ul>
+<li><p>De Authenticiteit van Client X wordt gegarandeerd door Identity Service Provider Z</p>
+</li>
+<li><p>De Authenticiteit van Client X wordt geverifieerd door Service Y en Identity Service Provider Z</p>
+</li>
+<li><p>De Authenticiteit van Service Y moet worden geverifieerd door Client X</p>
+</li>
+<li><p>De Authenticiteit van Service A,B &amp; C moet worden geverifieerd door Service Y</p>
+</li>
+</ul>
+</section><section id="autorisatie"><div class="header-wrapper"><h5 id="x6-2-4-4-autorisatie"><bdi class="secno">6.2.4.4 </bdi>Autorisatie</h5><a class="self-link" href="#autorisatie" aria-label="Permalink for Section 6.2.4.4"></a></div>
+<ul>
+<li><p>De autorisatie is bepaald in en door de Service provider Y, Service A,B &amp; C weten niet dat hun gegevens wordt gedeeld met Client X en User U of een andere client of user</p>
+</li>
+<li><p>Service Y moet geautoriseerd zijn bij Service A,B &amp; C om namens Client X en/of User U gegevens op te vragen</p>
+</li>
+<li><p>Service A,B &amp; C delegeren toegang tot hun gegevens aan Service Y</p>
+</li>
+</ul>
+<p><img src="../../../media/orkestratie-Niet-transparante-Orkestratie.drawio.svg" alt="Schematische weergave van Niet Transparante-Orkestratie"></p>
+</section><section id="implicaties"><div class="header-wrapper"><h5 id="x6-2-4-5-implicaties"><bdi class="secno">6.2.4.5 </bdi>Implicaties</h5><a class="self-link" href="#implicaties" aria-label="Permalink for Section 6.2.4.5"></a></div>
+<ul>
+<li>Er is een sterke vertrouwensband nodig tussen zowel de Client &amp; Service alsook de Service en de Services. Deze vertrouwensband zal waarschijnlijk worden vertaald naar eisen, audits en contracten.</li>
+<li>De aanbieder van Service Y, stel een gemeente, zal zorgvuldig moeten borgen en vastleggen dat de service die ze aanbieden alleen gegevens opvraagt bij de Services wanneer daar ook een expliciete vraag voor is van de User U. Er moet worden voorkomen dat in deze situatie een kwaadwillende toegang krijgt tot de service en daarmee alle Services van alle users kan bevragen.</li>
+<li>Deze oplossing is technisch waarschijnlijk makkelijker te realiseren en vaker in gebruik maar kent ook veel grotere risico's dan de transparante orkestratie.</li>
+</ul>
+</section></section><section id="identity-propagation-token-based"><div class="header-wrapper"><h4 id="x6-2-5-identity-propagation-token-based"><bdi class="secno">6.2.5 </bdi>Identity propagation - token based</h4><a class="self-link" href="#identity-propagation-token-based" aria-label="Permalink for Section 6.2.5"></a></div>
+<section id="rationale-3"><div class="header-wrapper"><h5 id="x6-2-5-1-rationale"><bdi class="secno">6.2.5.1 </bdi>Rationale</h5><a class="self-link" href="#rationale-3" aria-label="Permalink for Section 6.2.5.1"></a></div>
+<p>Er is een direct verband tussen de Services en de identity van de client/gebruiker. Dit is maakt het mogelijk om ook privacy vertrouwelijke gegevens veilig te gebruiken in de orkestratie. </p>
+<ul>
+<li>In de praktijk wordt deze vorm van orkestratie ook vaak client side gedaan door vanuit de client direct meerdere API's aan te roepen,</li>
+<li>en is er bij de orkestratie service vaak geen sprake van filtering van gegevens,</li>
+<li>het betreft dan meer een bundeling van meerdere bronnen dan echt orkestratie,</li>
+<li>het lijkt bij bevragingen vaak meer op het composition patroon dan een orkestratie patroon.</li>
+</ul>
+</section><section id="identity-0"><div class="header-wrapper"><h5 id="x6-2-5-2-identity"><bdi class="secno">6.2.5.2 </bdi>Identity</h5><a class="self-link" href="#identity-0" aria-label="Permalink for Section 6.2.5.2"></a></div>
+<ul>
+<li>Service A,B&amp;C kennen de Identity van user U 
+(de recources zijn namelijk aan de User gerelateerd of de User is vanuit zijn functie gemachtigd de Services te raadplegen)</li>
+<li>Service Y kent de Identity van user U niet</li>
+</ul>
+</section><section id="authenticiteit-0"><div class="header-wrapper"><h5 id="x6-2-5-3-authenticiteit"><bdi class="secno">6.2.5.3 </bdi>Authenticiteit</h5><a class="self-link" href="#authenticiteit-0" aria-label="Permalink for Section 6.2.5.3"></a></div>
+<ul>
+<li>De Authenticiteit van Client X wordt gegarandeerd door Identity Service Provider Z</li>
+<li>De Authenticiteit van Service Y wordt geverifieerd door A,B &amp; C </li>
+<li>De Authenticiteit van Service Y moet worden geverifieerd door Client X</li>
+<li>De Authenticiteit van Service A,B &amp; C moet worden geverifieerd door Service Y</li>
+</ul>
+</section><section id="autorisatie-0"><div class="header-wrapper"><h5 id="x6-2-5-4-autorisatie"><bdi class="secno">6.2.5.4 </bdi>Autorisatie</h5><a class="self-link" href="#autorisatie-0" aria-label="Permalink for Section 6.2.5.4"></a></div>
+<ul>
+<li>De autorisatie is per Service dynamisch in te stellen</li>
+<li>Service Y moet overweg kunnen met het feit dat Service A,B &amp; C de autorisatie kunnen weigeren</li>
+</ul>
+<p><img src="../../../media/orkestratie-Transparante-Orkestratie.drawio.svg" alt="Schematische weergave van Transparante-Orkestratie"></p>
+</section></section><section id="variatie-federated-identity-propagation"><div class="header-wrapper"><h4 id="x6-2-6-variatie-federated-identity-propagation"><bdi class="secno">6.2.6 </bdi>Variatie - Federated Identity Propagation</h4><a class="self-link" href="#variatie-federated-identity-propagation" aria-label="Permalink for Section 6.2.6"></a></div>
+<ol>
+<li>Identity Service Provider Z kan ook de toegang zijn tot een gefedereerde omgeving van Identity providers waarbij Z door middel van  <a href="https://datatracker.ietf.org/doc/html/rfc8693">OAuth Token Exchange</a> de Access tokens worden opgehaald bij de Identity providers van de verschillende Services en deze tokens door de client worden meegegeven bij het request</li>
+</ol>
+<p><img src="../../../media/orkestratie-Federatief-Transparante-Orkestratie.drawio.svg" alt="Schematische weergave van Federatieve Transparante-Orkestratie"></p>
+<section id="implicaties-identity-propagation"><div class="header-wrapper"><h5 id="x6-2-6-1-implicaties-identity-propagation"><bdi class="secno">6.2.6.1 </bdi>Implicaties Identity propagation</h5><a class="self-link" href="#implicaties-identity-propagation" aria-label="Permalink for Section 6.2.6.1"></a></div>
+<ul>
+<li><p>Er is een sterke vertrouwensband nodig tussen zowel de Client &amp; Service alsook de composite Service en de system Services. Deze vertrouwensband zal waarschijnlijk worden vertaald naar eisen, audits en contracten om te voorkomen dat de Service Y toch de gegevens inziet die de resouces terugsturen aan de client.</p>
+</li>
+<li><p>Organisatorisch zullen X, Y, Z, A &amp; B praktisch gezien niet allemaal van verschillende organisaties zijn. Het is logischer wanneer A, B &amp; Y van 1 organisatie zijn of wanneer X &amp; Y van 1 organisatie zijn. Service Y wordt namelijk alleen ontwikkeld als er een vraag is en een voordeel voor de Services of de client.</p>
+</li>
+<li><p>Afhankelijk van de situatie is het waarschijnlijk dat Identity provider Z een algemene dienst is van de overheid (denk aan DigiD of eHerkenning) of dat dit een dienst is van 1 van de organisaties in de orkestratie.</p>
+</li>
+</ul>
+</section></section><section id="conclusies-en-adviezen"><div class="header-wrapper"><h4 id="x6-2-7-conclusies-en-adviezen"><bdi class="secno">6.2.7 </bdi>Conclusies en Adviezen</h4><a class="self-link" href="#conclusies-en-adviezen" aria-label="Permalink for Section 6.2.7"></a></div>
+<ul>
+<li><p>Voor een moderne API architectuur is een identity service provider cruciaal.</p>
+</li>
+<li><p>Niet alleen om IAM toe te passen op de eigen Service maar ook om achterliggende services aan te kunnen spreken.</p>
+</li>
+<li><p>Met de groei van het aantal system APIs en vraag naar Composite APIs groeit het beveiligingsvraagstuk exponentieel mee.</p>
+</li>
+<li><p>Bereid API’s voor op de IAM mbv Oauth.</p>
+</li>
+<li><p>Houd er rekening mee en faciliteer token exchange als onderdeel van je roadmap / groei / maturity level.</p>
+</li>
+</ul>
+</section></section>
+  </section>
+
+
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
+    <dl class="bibliography"><dt id="bib-rfc8693">[rfc8693]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8693"><cite>OAuth 2.0 Token Exchange</cite></a>. M. Jones; A. Nadalin; B. Campbell, Ed.; J. Bradley; C. Mortimore.  IETF. January 2020. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8693">https://www.rfc-editor.org/rfc/rfc8693</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">Logius Praktijkrichtlijn - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
