@@ -2256,19 +2256,6 @@ The underlying RFC defines a set of common data fields that are designed to be u
 
 
 <p>All transactions <em class="rfc2119">MUST</em> be protected in transit by TLS as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-bcp195" title="Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)">BCP195</a></cite>] .</p>
-
-<aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  
-
-<p>In addition to the Best Current Practice for TLS, it is highly <em class="rfc2119">RECOMMENDED</em> for all conforming implementations to incorporate the TLS guidelines from the Dutch NCSC into their implementations. If these guidelines are applied:</p>
-<ul>
-<li>For back-channel communication, the guidelines categorized as "good" <em class="rfc2119">MUST</em> be applied.</li>
-<li>For front-channel communication, the guidelines for "good" <em class="rfc2119">MUST</em> be applied and the guidelines for "sufficient" <em class="rfc2119">MAY</em> be applied, depending on target audience and support requirements.</li>
-<li>Guidelines categorized as "insufficient" <em class="rfc2119">MUST NOT</em> be applied and those categorized as "phase out" <em class="rfc2119">SHOULD NOT</em> be used.</li>
-</ul>
-</aside>
-
-
 <p>Authorization Servers <em class="rfc2119">SHOULD</em> take into account device postures when dealing with native apps if possible. Device postures include characteristics such as a user's lock screen setting, or if the app has 'root access' (meaning the device OS may be compromised to gain additional privilages not intended by the vendor), or if there is a device attestation for the app for its validity. Specific policies or capabilities are outside the scope of this specification.</p>
 <p>All clients <em class="rfc2119">MUST</em> conform to applicable recommendations found in the Security Considerations sections of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] and those found in the [OAuth 2.0 Threat Model and Security Considerations document] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6819" title="OAuth 2.0 Threat Model and Security Considerations">rfc6819</a></cite>] .</p>
 </section>
