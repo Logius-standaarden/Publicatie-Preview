@@ -2159,40 +2159,6 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 </aside>
 
 <p>In this manner, protected resources and authorization servers work together to meet risk tolerance levels for sensitive resources and end-user authentication.</p>
-
-<aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  
-
-<aside class="example" id="example-14"><div class="marker">
-    <a class="self-link" href="#example-14">Example<bdi> 14</bdi></a>
-  </div>
-
-<p>Request:</p>
-<pre><code aria-busy="false" class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/resource</span> <span class="hljs-meta">HTTP/1.1</span>
-<span class="hljs-attribute">Authorization</span><span class="hljs-punctuation">: </span>Bearer 4f626847-91b1-3417-a91e-c5627f377ae1
-<span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/plain, application/json, application/*+json, */*
-<span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>resource.com
-<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>Keep-Alive
-<span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Apache-HttpClient/4.2.3 (java 1.5)
-</code></pre>
-<p>Response:</p>
-<pre><code aria-busy="false" class="hljs css">  HTTP/<span class="hljs-number">1.1</span> <span class="hljs-number">200</span> OK
-  <span class="hljs-attribute">Content</span>-Type: application/json
-  {
-   "sub": <span class="hljs-string">"248289761001"</span>,
-   <span class="hljs-string">"name"</span>: <span class="hljs-string">"Jane Doe"</span>,
-   <span class="hljs-string">"given_name"</span>: <span class="hljs-string">"Jane"</span>,
-   <span class="hljs-string">"family_name"</span>: <span class="hljs-string">"Doe"</span>,
-   <span class="hljs-string">"preferred_username"</span>: <span class="hljs-string">"j.doe"</span>,
-   <span class="hljs-string">"email"</span>: <span class="hljs-string">"janedoe@example.com"</span>,
-   <span class="hljs-string">"picture"</span>: <span class="hljs-string">"http://example.com/janedoe/me.jpg"</span>
-  }
-</code></pre>
-</aside>
-</aside>
-
-
-
 </section><section id="connections-with-clients-0"><div class="header-wrapper"><h3 id="x4-2-connections-with-clients"><bdi class="secno">4.2 </bdi>Connections with Clients</h3><a class="self-link" href="#connections-with-clients-0" aria-label="Permalink for Section 4.2"></a></div>
 <p>A protected resource <em class="rfc2119">MUST</em> accept bearer tokens passed in the authorization header as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">rfc6750</a></cite>] . A protected resource <em class="rfc2119">MAY</em> also accept bearer tokens passed in the form parameter <del>or query parameter</del> method<del>s</del>.</p>
 
