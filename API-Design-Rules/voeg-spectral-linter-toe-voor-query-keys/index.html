@@ -1284,7 +1284,7 @@ In addition to this (normative) document, separate modules are being written to 
       <dd>
          Loop all resource paths in the OpenAPI Description and check that all query keys use letters, digits in camelCase. You can use the following regex for each query key:
          <div class="example">
-            <pre><code aria-busy="false" class="hljs">^[a-z0-9]+[a-zA-Z0-9]*$</code></pre>
+            <pre><code aria-busy="false" class="hljs">^\$?[a-z][a-z0-9]*([A-Z][\w0-9]*)*$</code></pre>
          </div>
       This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fquery%2Dkeys%2Dcamel%2Dcase">linter configuration</a>.</dd>
    </dl>
