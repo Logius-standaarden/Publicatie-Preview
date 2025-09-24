@@ -938,7 +938,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-08-27">September 23, 2025</time>
+      <time class="dt-published" datetime="2025-08-27">September 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1318,13 +1318,12 @@ In addition to this (normative) document, separate modules are being written to 
    <dl>
       <dt>Statement</dt>
       <dd>
-         An API <em class="rfc2119">MUST</em> adhere to the HTTP method semantics defined in [rfc9110].
+         An API <em class="rfc2119">MUST</em> adhere to the HTTP method semantics defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>].
       </dd>
       <dt>Rationale</dt>
       <dd>
          The HTTP specifications offer a set of standard methods, where every method is designed with explicit semantics. Adhering to the HTTP specification is crucial, since HTTP clients and middleware applications rely on standardized characteristics.
-         <p>According to <a href="https://www.rfc-editor.org/rfc/rfc9110#name-overview">RFC 9110 9.1</a> the <code>GET</code> and <code>HEAD</code> HTTP methods <em class="rfc2119">MUST</em> be supported by the server, all other methods are optional.
-         </p><p>The set of methods allowed is determined per target resource. If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.
+         <p>The set of methods allowed is determined per target resource. If an optional HTTP request method is sent to a server and the server does not support that HTTP method for the target resource, an HTTP status code <code>405 Method Not Allowed</code> shall be returned and a list of allowed methods for the target resource shall be provided in the <code>Allow</code> header in the response as stated in <a href="https://www.rfc-editor.org/rfc/rfc9110#name-405-method-not-allowed">RFC 9110 15.5.6</a>.
          </p><table>
             <thead>
                <tr>
