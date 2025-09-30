@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.3.0">
+<meta name="generator" content="ReSpec 35.4.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -127,12 +127,14 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     }
   ],
   "useLogo": true,
+  "fileName": "",
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
     "shortName",
-    "/"
+    "/",
+    "fileName"
   ],
   "thisVersion": [
     "nl_organisationPublishURL",
@@ -141,9 +143,19 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     "shortName",
     "/",
     "publishVersion",
-    "/"
+    "/",
+    "fileName"
   ],
-  "prevVersion": [],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion",
+    "/",
+    "fileName"
+  ],
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -843,8 +855,9 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
   "specType": "ST",
   "pubDomain": "fsc",
   "shortName": "core",
-  "publishDate": "2024-12-12",
-  "publishVersion": "1.0.0",
+  "publishDate": "2025-09-08",
+  "publishVersion": "1.1.1",
+  "previousPublishVersion": "1.1.0",
   "editors": [
     {
       "name": "VNG Realisatie",
@@ -919,7 +932,10 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
       ]
     }
   ],
-  "github": "https://github.com/Logius-standaarden/fsc-core"
+  "github": "https://github.com/Logius-standaarden/fsc-core",
+  "preProcess": [
+    null
+  ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
   <body class="h-entry toc-inline"><div class="head">
@@ -929,7 +945,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2024-12-12">August 14, 2025</time>
+      <time class="dt-published" datetime="2025-09-08">September 30, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -942,7 +958,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
       
       
       
-      
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.1.0/">https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.1.0/</a></dd>
       
       <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
@@ -976,7 +992,10 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     </dl>
     
     
-    
+    <p>
+          This document is also available in these non-normative format:
+          <a rel="alternate" href="fsc-core-1.1.1.pdf">PDF</a>
+        </p>
     <p class="copyright">
             This document is licensed under 
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
@@ -993,7 +1012,7 @@ Peers consuming services can find the required location information for initiati
 Technically FSC leverages PKI based on x.509 architecture to establish trust between Peers. Participating Peers agree on a Root CA acting as Trust Anchor. All connections between Peers leverage mTLS and contracts are cryptographically signed.
 This combination ensures strong confidentiality and integrity.</p>
 </section>
-    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#purpose"><bdi class="secno">1.1 </bdi>Purpose</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.2 </bdi>Terminology</a></li><li class="tocline"><a class="tocxref" href="#overall-operation-of-fsc-core"><bdi class="secno">1.3 </bdi>Overall Operation of FSC Core</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.3.1 </bdi>Extensions</a></li><li class="tocline"><a class="tocxref" href="#group_rules"><bdi class="secno">1.3.2 </bdi>Group rules &amp; restrictions</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.3.3 </bdi>Use cases</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#architecture"><bdi class="secno">2. </bdi>Architecture</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#trustanchor"><bdi class="secno">2.1 </bdi>Identity and Trust </a></li><li class="tocline"><a class="tocxref" href="#contract-management"><bdi class="secno">2.2 </bdi>Contract Management</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#contract-states"><bdi class="secno">2.2.1 </bdi>Contract states</a></li></ol></li><li class="tocline"><a class="tocxref" href="#creating-a-group"><bdi class="secno">2.3 </bdi>Creating a Group</a></li><li class="tocline"><a class="tocxref" href="#service-discovery"><bdi class="secno">2.4 </bdi>Service discovery</a></li><li class="tocline"><a class="tocxref" href="#create-an-authorization-to-connect-to-a-service"><bdi class="secno">2.5 </bdi>Create an authorization to connect to a Service</a></li><li class="tocline"><a class="tocxref" href="#delegate-the-authorization-to-connect-to-a-service"><bdi class="secno">2.6 </bdi>Delegate the authorization to connect to a Service</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#a-delegated-service-connection"><bdi class="secno">2.6.1 </bdi>A delegated service connection</a></li><li class="tocline"><a class="tocxref" href="#combining-a-delegated-service-publication-with-a-delegated-service-connection"><bdi class="secno">2.6.2 </bdi>Combining a delegated service publication with a delegated service connection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#consuming-a-service"><bdi class="secno">2.7 </bdi>Consuming a Service</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-required-components"><bdi class="secno">2.8 </bdi>Use cases and required components</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specifications"><bdi class="secno">3. </bdi>Specifications</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocols"><bdi class="secno">3.1 </bdi>Protocols</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#port-configuration"><bdi class="secno">3.1.1 </bdi>Port configuration</a></li><li class="tocline"><a class="tocxref" href="#group_id"><bdi class="secno">3.1.2 </bdi>Group ID</a></li><li class="tocline"><a class="tocxref" href="#peer_id"><bdi class="secno">3.1.3 </bdi>Peer ID</a></li><li class="tocline"><a class="tocxref" href="#peer_name"><bdi class="secno">3.1.4 </bdi>Peer name</a></li><li class="tocline"><a class="tocxref" href="#trust_anchor"><bdi class="secno">3.1.5 </bdi>Trust Anchor</a></li><li class="tocline"><a class="tocxref" href="#tls_configuration"><bdi class="secno">3.1.6 </bdi>TLS configuration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tls-version"><bdi class="secno">3.1.6.1 </bdi>TLS Version</a></li><li class="tocline"><a class="tocxref" href="#certificate_thumbprints"><bdi class="secno">3.1.6.2 </bdi>Certificate &amp; Public key thumbprints</a></li></ol></li><li class="tocline"><a class="tocxref" href="#error_handling"><bdi class="secno">3.1.7 </bdi>Error Handling</a></li><li class="tocline"><a class="tocxref" href="#json"><bdi class="secno">3.1.8 </bdi>JSON</a></li></ol></li><li class="tocline"><a class="tocxref" href="#contracts"><bdi class="secno">3.2 </bdi>Contracts</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#contract_validation"><bdi class="secno">3.2.1 </bdi>Contract Validation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service_publication_grant"><bdi class="secno">3.2.1.1 </bdi>ServicePublicationGrant</a></li><li class="tocline"><a class="tocxref" href="#grant_delegated_service_publication"><bdi class="secno">3.2.1.2 </bdi>DelegatedServicePublicationGrant </a></li><li class="tocline"><a class="tocxref" href="#service_connection_grant"><bdi class="secno">3.2.1.3 </bdi>ServiceConnectionGrant</a></li><li class="tocline"><a class="tocxref" href="#grant_delegated_service_connection"><bdi class="secno">3.2.1.4 </bdi>DelegatedServiceConnectionGrant</a></li></ol></li><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">3.2.2 </bdi>Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements"><bdi class="secno">3.2.2.1 </bdi>Requirements</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">3.2.2.2 </bdi>Security Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signatures"><bdi class="secno">3.2.3 </bdi>Signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#payload-fields"><bdi class="secno">3.2.3.1 </bdi>Payload fields</a></li><li class="tocline"><a class="tocxref" href="#signature_types"><bdi class="secno">3.2.3.2 </bdi>Signature types</a></li></ol></li><li class="tocline"><a class="tocxref" href="#content_hash"><bdi class="secno">3.2.4 </bdi>The content hash</a></li><li class="tocline"><a class="tocxref" href="#grant_hash"><bdi class="secno">3.2.5 </bdi>Grant hash</a></li><li class="tocline"><a class="tocxref" href="#type-mappings"><bdi class="secno">3.2.6 </bdi>Type mappings</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type_mapping_hash"><bdi class="secno">3.2.6.1 </bdi>Hash types</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_grant"><bdi class="secno">3.2.6.2 </bdi>Grant types</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_hash_algorithm"><bdi class="secno">3.2.6.3 </bdi>Hash algorithms</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_service"><bdi class="secno">3.2.6.4 </bdi>Service types</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#access_token"><bdi class="secno">3.3 </bdi>Access token</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#jwt-payload"><bdi class="secno">3.3.1 </bdi>JWT Payload</a></li></ol></li><li class="tocline"><a class="tocxref" href="#manager"><bdi class="secno">3.4 </bdi>Manager</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior"><bdi class="secno">3.4.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication"><bdi class="secno">3.4.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#contracts-0"><bdi class="secno">3.4.1.2 </bdi>Contracts</a></li><li class="tocline"><a class="tocxref" href="#signatures-1"><bdi class="secno">3.4.1.3 </bdi>Signatures</a></li><li class="tocline"><a class="tocxref" href="#providing-x-509-certificates"><bdi class="secno">3.4.1.4 </bdi>Providing X.509 certificates</a></li><li class="tocline"><a class="tocxref" href="#providing-contracts"><bdi class="secno">3.4.1.5 </bdi>Providing contracts</a></li><li class="tocline"><a class="tocxref" href="#manager_tokens"><bdi class="secno">3.4.1.6 </bdi>Tokens</a></li><li class="tocline"><a class="tocxref" href="#services"><bdi class="secno">3.4.1.7 </bdi>Services</a></li><li class="tocline"><a class="tocxref" href="#service-listing"><bdi class="secno">3.4.1.8 </bdi>Service listing</a></li><li class="tocline"><a class="tocxref" href="#peer-listing"><bdi class="secno">3.4.1.9 </bdi>Peer listing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#announce"><bdi class="secno">3.4.2 </bdi>Announce</a></li><li class="tocline"><a class="tocxref" href="#manager_interface"><bdi class="secno">3.4.3 </bdi>Interfaces</a></li><li class="tocline"><a class="tocxref" href="#fsc-manager-address"><bdi class="secno">3.4.4 </bdi>FSC manager address</a></li><li class="tocline"><a class="tocxref" href="#error-response"><bdi class="secno">3.4.5 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oauth-2-0-error-response"><bdi class="secno">3.4.5.1 </bdi>OAuth 2.0 error response</a></li><li class="tocline"><a class="tocxref" href="#other-endpoints"><bdi class="secno">3.4.5.2 </bdi>Other endpoints</a></li><li class="tocline"><a class="tocxref" href="#codes"><bdi class="secno">3.4.5.3 </bdi>Codes</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#directory"><bdi class="secno">3.5 </bdi>Directory</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-0"><bdi class="secno">3.5.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-publication"><bdi class="secno">3.5.1.1 </bdi>Service publication</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#outway"><bdi class="secno">3.6 </bdi>Outway</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-1"><bdi class="secno">3.6.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-0"><bdi class="secno">3.6.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#routing"><bdi class="secno">3.6.1.2 </bdi>Routing</a></li><li class="tocline"><a class="tocxref" href="#obtaining-access-tokens"><bdi class="secno">3.6.1.3 </bdi>Obtaining access tokens</a></li><li class="tocline"><a class="tocxref" href="#error-response-0"><bdi class="secno">3.6.1.4 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#codes-0"><bdi class="secno">3.6.1.4.1 </bdi>Codes</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inway"><bdi class="secno">3.7 </bdi>Inway</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-2"><bdi class="secno">3.7.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-1"><bdi class="secno">3.7.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#authorization"><bdi class="secno">3.7.1.2 </bdi>Authorization</a></li><li class="tocline"><a class="tocxref" href="#routing-0"><bdi class="secno">3.7.1.3 </bdi>Routing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#interfaces-0"><bdi class="secno">3.7.2 </bdi>Interfaces</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proxy-endpoint"><bdi class="secno">3.7.2.1 </bdi>Proxy Endpoint</a></li><li class="tocline"><a class="tocxref" href="#error-response-1"><bdi class="secno">3.7.2.2 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#codes-1"><bdi class="secno">3.7.2.2.1 </bdi>Codes</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references-0"><bdi class="secno">3.8 </bdi>References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#purpose"><bdi class="secno">1.1 </bdi>Purpose</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.2 </bdi>Terminology</a></li><li class="tocline"><a class="tocxref" href="#overall-operation-of-fsc-core"><bdi class="secno">1.3 </bdi>Overall Operation of FSC Core</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.3.1 </bdi>Extensions</a></li><li class="tocline"><a class="tocxref" href="#group_rules"><bdi class="secno">1.3.2 </bdi>Group rules &amp; restrictions</a></li><li class="tocline"><a class="tocxref" href="#use-cases"><bdi class="secno">1.3.3 </bdi>Use cases</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#guidelines"><bdi class="secno">2. </bdi>Guidelines</a></li><li class="tocline"><a class="tocxref" href="#architecture"><bdi class="secno">3. </bdi>Architecture</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#trustanchor"><bdi class="secno">3.1 </bdi>Identity and Trust </a></li><li class="tocline"><a class="tocxref" href="#contract-management"><bdi class="secno">3.2 </bdi>Contract Management</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#contract-states"><bdi class="secno">3.2.1 </bdi>Contract states</a></li></ol></li><li class="tocline"><a class="tocxref" href="#creating-a-group"><bdi class="secno">3.3 </bdi>Creating a Group</a></li><li class="tocline"><a class="tocxref" href="#service-discovery"><bdi class="secno">3.4 </bdi>Service discovery</a></li><li class="tocline"><a class="tocxref" href="#create-an-authorization-to-connect-to-a-service"><bdi class="secno">3.5 </bdi>Create an authorization to connect to a Service</a></li><li class="tocline"><a class="tocxref" href="#delegate-the-authorization-to-connect-to-a-service"><bdi class="secno">3.6 </bdi>Delegate the authorization to connect to a Service</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#a-delegated-service-connection"><bdi class="secno">3.6.1 </bdi>A delegated service connection</a></li><li class="tocline"><a class="tocxref" href="#combining-a-delegated-service-publication-with-a-delegated-service-connection"><bdi class="secno">3.6.2 </bdi>Combining a delegated service publication with a delegated service connection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#consuming-a-service"><bdi class="secno">3.7 </bdi>Consuming a Service</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-required-components"><bdi class="secno">3.8 </bdi>Use cases and required components</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specifications"><bdi class="secno">4. </bdi>Specifications</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocols"><bdi class="secno">4.1 </bdi>Protocols</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#port-configuration"><bdi class="secno">4.1.1 </bdi>Port configuration</a></li><li class="tocline"><a class="tocxref" href="#group_id"><bdi class="secno">4.1.2 </bdi>Group ID</a></li><li class="tocline"><a class="tocxref" href="#peer_id"><bdi class="secno">4.1.3 </bdi>Peer ID</a></li><li class="tocline"><a class="tocxref" href="#peer_name"><bdi class="secno">4.1.4 </bdi>Peer name</a></li><li class="tocline"><a class="tocxref" href="#trust_anchor"><bdi class="secno">4.1.5 </bdi>Trust Anchor</a></li><li class="tocline"><a class="tocxref" href="#tls_configuration"><bdi class="secno">4.1.6 </bdi>TLS configuration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tls-version"><bdi class="secno">4.1.6.1 </bdi>TLS Version</a></li><li class="tocline"><a class="tocxref" href="#certificate_thumbprints"><bdi class="secno">4.1.6.2 </bdi>Certificate &amp; Public key thumbprints</a></li></ol></li><li class="tocline"><a class="tocxref" href="#error_handling"><bdi class="secno">4.1.7 </bdi>Error Handling</a></li><li class="tocline"><a class="tocxref" href="#json"><bdi class="secno">4.1.8 </bdi>JSON</a></li></ol></li><li class="tocline"><a class="tocxref" href="#contracts"><bdi class="secno">4.2 </bdi>Contracts</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#contract_validation"><bdi class="secno">4.2.1 </bdi>Contract Validation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service_publication_grant"><bdi class="secno">4.2.1.1 </bdi>ServicePublicationGrant</a></li><li class="tocline"><a class="tocxref" href="#grant_delegated_service_publication"><bdi class="secno">4.2.1.2 </bdi>DelegatedServicePublicationGrant </a></li><li class="tocline"><a class="tocxref" href="#service_connection_grant"><bdi class="secno">4.2.1.3 </bdi>ServiceConnectionGrant</a></li><li class="tocline"><a class="tocxref" href="#grant_delegated_service_connection"><bdi class="secno">4.2.1.4 </bdi>DelegatedServiceConnectionGrant</a></li></ol></li><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">4.2.2 </bdi>Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements"><bdi class="secno">4.2.2.1 </bdi>Requirements</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">4.2.2.2 </bdi>Security Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#signatures"><bdi class="secno">4.2.3 </bdi>Signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#payload-fields"><bdi class="secno">4.2.3.1 </bdi>Payload fields</a></li><li class="tocline"><a class="tocxref" href="#signature_types"><bdi class="secno">4.2.3.2 </bdi>Signature types</a></li></ol></li><li class="tocline"><a class="tocxref" href="#content_hash"><bdi class="secno">4.2.4 </bdi>The content hash</a></li><li class="tocline"><a class="tocxref" href="#grant_hash"><bdi class="secno">4.2.5 </bdi>Grant hash</a></li><li class="tocline"><a class="tocxref" href="#type-mappings"><bdi class="secno">4.2.6 </bdi>Type mappings</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#type_mapping_hash"><bdi class="secno">4.2.6.1 </bdi>Hash types</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_grant"><bdi class="secno">4.2.6.2 </bdi>Grant types</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_hash_algorithm"><bdi class="secno">4.2.6.3 </bdi>Hash algorithms</a></li><li class="tocline"><a class="tocxref" href="#type_mapping_service"><bdi class="secno">4.2.6.4 </bdi>Service types</a></li></ol></li><li class="tocline"><a class="tocxref" href="#certificate-renewal"><bdi class="secno">4.2.7 </bdi> Certificate renewal</a></li></ol></li><li class="tocline"><a class="tocxref" href="#access_token"><bdi class="secno">4.3 </bdi>Access token</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#jwt-payload"><bdi class="secno">4.3.1 </bdi>JWT Payload</a></li></ol></li><li class="tocline"><a class="tocxref" href="#manager"><bdi class="secno">4.4 </bdi>Manager</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior"><bdi class="secno">4.4.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication"><bdi class="secno">4.4.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#contracts-0"><bdi class="secno">4.4.1.2 </bdi>Contracts</a></li><li class="tocline"><a class="tocxref" href="#signatures-1"><bdi class="secno">4.4.1.3 </bdi>Signatures</a></li><li class="tocline"><a class="tocxref" href="#providing-x-509-certificates"><bdi class="secno">4.4.1.4 </bdi>Providing X.509 certificates</a></li><li class="tocline"><a class="tocxref" href="#providing-contracts"><bdi class="secno">4.4.1.5 </bdi>Providing contracts</a></li><li class="tocline"><a class="tocxref" href="#manager_tokens"><bdi class="secno">4.4.1.6 </bdi>Tokens</a></li><li class="tocline"><a class="tocxref" href="#services"><bdi class="secno">4.4.1.7 </bdi>Services</a></li><li class="tocline"><a class="tocxref" href="#service-listing"><bdi class="secno">4.4.1.8 </bdi>Service listing</a></li><li class="tocline"><a class="tocxref" href="#peer-listing"><bdi class="secno">4.4.1.9 </bdi>Peer listing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#announce"><bdi class="secno">4.4.2 </bdi>Announce</a></li><li class="tocline"><a class="tocxref" href="#manager_interface"><bdi class="secno">4.4.3 </bdi>Interfaces</a></li><li class="tocline"><a class="tocxref" href="#fsc-manager-address"><bdi class="secno">4.4.4 </bdi>FSC manager address</a></li><li class="tocline"><a class="tocxref" href="#error-response"><bdi class="secno">4.4.5 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oauth-2-0-error-response"><bdi class="secno">4.4.5.1 </bdi>OAuth 2.0 error response</a></li><li class="tocline"><a class="tocxref" href="#other-endpoints"><bdi class="secno">4.4.5.2 </bdi>Other endpoints</a></li><li class="tocline"><a class="tocxref" href="#codes"><bdi class="secno">4.4.5.3 </bdi>Codes</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#directory"><bdi class="secno">4.5 </bdi>Directory</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-0"><bdi class="secno">4.5.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#service-publication"><bdi class="secno">4.5.1.1 </bdi>Service publication</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#outway"><bdi class="secno">4.6 </bdi>Outway</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-1"><bdi class="secno">4.6.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-0"><bdi class="secno">4.6.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#routing"><bdi class="secno">4.6.1.2 </bdi>Routing</a></li><li class="tocline"><a class="tocxref" href="#obtaining-access-tokens"><bdi class="secno">4.6.1.3 </bdi>Obtaining access tokens</a></li><li class="tocline"><a class="tocxref" href="#error-response-0"><bdi class="secno">4.6.1.4 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#codes-0"><bdi class="secno">4.6.1.4.1 </bdi>Codes</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#inway"><bdi class="secno">4.7 </bdi>Inway</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#behavior-2"><bdi class="secno">4.7.1 </bdi>Behavior</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authentication-1"><bdi class="secno">4.7.1.1 </bdi>Authentication</a></li><li class="tocline"><a class="tocxref" href="#authorization"><bdi class="secno">4.7.1.2 </bdi>Authorization</a></li><li class="tocline"><a class="tocxref" href="#routing-0"><bdi class="secno">4.7.1.3 </bdi>Routing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#interfaces-0"><bdi class="secno">4.7.2 </bdi>Interfaces</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proxy-endpoint"><bdi class="secno">4.7.2.1 </bdi>Proxy Endpoint</a></li><li class="tocline"><a class="tocxref" href="#error-response-1"><bdi class="secno">4.7.2.2 </bdi>Error response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#codes-1"><bdi class="secno">4.7.2.2.1 </bdi>Codes</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references-0"><bdi class="secno">4.8 </bdi>References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">5. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">6. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
     
     <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 <p>This section gives an introduction to FSC.
@@ -1063,13 +1082,13 @@ Services in the Group can be discovered through a Directory.<br>The Manager's ad
 <section id="extensions"><div class="header-wrapper"><h4 id="x1-3-1-extensions"><bdi class="secno">1.3.1 </bdi>Extensions</h4><a class="self-link" href="#extensions" aria-label="Permalink for Section 1.3.1"></a></div>
 <p>FSC Core specifies the basics for setting up and managing connections in a Group.
 Auxiliary functionality for either an FSC Peer or an entire FSC Group can be realized with <code>extensions</code>. An Extension performs a well scoped feature enhancing the overall working of FSC. </p>
-<p>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to use FSC Core with the following extensions, each specified in a dedicated RFC:</p>
+<p>It is <em class="rfc2119">RECOMMENDED</em> to use FSC Core with the following extensions, each specified in a dedicated RFC:</p>
 <ul>
 <li><a href="https://gitdocumentatie.logius.nl/publicatie/fsc/logging/">FSC Logging</a>, keep a log of requests to Services.</li>
 </ul>
 </section><section id="group-rules-restrictions"><div class="header-wrapper"><h4 id="group_rules"><bdi class="secno">1.3.2 </bdi>Group rules &amp; restrictions</h4><a class="self-link" href="#group_rules" aria-label="Permalink for Section 1.3.2"></a></div><p>FSC Core provides the foundation for cooperation between organizations (Peers). However, in practice additional decisions have to be made to guarantee a functioning Group within a broader context.
 For example, it may be needed for a Group to have additional restrictions or agreements within the Group. Certain Group rules and restrictions are required for the operation of the Group, others provide optional agreements to enhance collaboration.</p>
-<p>The following decisions <strong><em class="rfc2119">MUST</em></strong> be part of the Profile:</p>
+<p>The following decisions <em class="rfc2119">MUST</em> be part of the Profile:</p>
 <ol>
 <li><p>Select one or more <a href="#trust_anchor">Trust Anchors</a> to include in the Trust Anchor list</p>
 </li>
@@ -1083,10 +1102,12 @@ For example, it may be needed for a Group to have additional restrictions or agr
 </li>
 <li><p>Decide what ports are used for management traffic</p>
 </li>
-<li><p>Determine requirements for allowed TLS versions and Cipher Suites</p>
+<li><p>Determine requirements for allowed TLS versions and Cipher Suites </p>
+</li>
+<li><p>Determine which network will be used</p>
 </li>
 </ol>
-<p>In addition to the mandatory decisions, a Group <strong><em class="rfc2119">MAY</em></strong> also contain additional agreements or restrictions. These are not technically required for the operation of FSC Core, but can become mandatory within a Group. An example would be a set of additional rules in order to comply with local legislation.
+<p>In addition to the mandatory decisions, a Group <em class="rfc2119">MAY</em> also contain additional agreements or restrictions. These are not technically required for the operation of FSC Core, but can become mandatory within a Group. An example would be a set of additional rules in order to comply with local legislation.
 Below are a few examples listed of these additional decisions for inspirational purposes:</p>
 <ol>
 <li>Any extensions required by Peers within the Group</li>
@@ -1100,24 +1121,50 @@ Below are a few examples listed of these additional decisions for inspirational 
 Reasons for participating in multiple Groups could be the use of different environments for production and test deployments or when participating in different ecosystems like health industry and government industry.</p>
 <p>An organization can offer the same API in multiple Groups. When doing so, the organization will be a Peer in every Group, and define the API as a Service in one of the Directories of each Group using a different Inway for each Group.</p>
 </section></section></section>
-    <section id="architecture"><div class="header-wrapper"><h2 id="x2-architecture"><bdi class="secno">2. </bdi>Architecture</h2><a class="self-link" href="#architecture" aria-label="Permalink for Section 2."></a></div>
+    <section class="informative" id="guidelines"><div class="header-wrapper"><h2 id="x2-guidelines"><bdi class="secno">2. </bdi>Guidelines</h2><a class="self-link" href="#guidelines" aria-label="Permalink for Section 2."></a></div><p><em>This section is non-normative.</em></p>
+<p>There are no hard restrictions on the creation of FSC Groups.
+However, an FSC Group establishes the boundaries for its Peers within this Group. Also, the characteristics of a Group are not easily changed.
+Creating a Group should be a well considered decision.</p>
+<p>This non-normative section offers some guidelines that may aid with the decision process in determining whether it is beneficial to create a Group.</p>
+<p>The Group defines the overall scope of collaboration between Peers. It defines technical requirements for communication, like network ports, as well as establishing a <code>network of trust</code> for Peers to collaborate within.
+Collaboration between Peers in a Group is facilitated, not mandated. Because of this it is important to consider making the Group as broad as possible, so many Peers can become part of the Group.
+In principle, fewer (but larger) Groups stimulate broader collaboration, as opposed to a more dispersed Group landscape.</p>
+<p>It is expected that the number of Groups will be limited. But there could be a need for a new Group if more strict isolation is needed: </p>
+<ul>
+<li>for example if FSC is also used within the boundaries of an internal network</li>
+<li>a very specific trust anchor already is used for a specific domain</li>
+</ul>
+<p>Creating a new Group <em>may</em> be appropriate if:</p>
+<ul>
+<li>there is a need to isolate traffic on a network level between a set of Peers</li>
+<li>requiring a specific trust anchor</li>
+</ul>
+<p>Creating a new Group <em>may</em> not be the right approach if:</p>
+<ul>
+<li>collaboration is temporary in nature</li>
+<li>the appropriate trust anchor is already used in an existing Group</li>
+<li>it is not known beforehand with which Peers there must be a collaboration in the future, or this may vary over time</li>
+<li>there is a need to collaborate with a lot of Peers</li>
+</ul>
+</section>
+    <section id="architecture"><div class="header-wrapper"><h2 id="x3-architecture"><bdi class="secno">3. </bdi>Architecture</h2><a class="self-link" href="#architecture" aria-label="Permalink for Section 3."></a></div>
 <p>This chapter describes the basic architecture of an FSC system.</p>
-<section id="identity-and-trust"><div class="header-wrapper"><h3 id="trustanchor"><bdi class="secno">2.1 </bdi>Identity and Trust </h3><a class="self-link" href="#trustanchor" aria-label="Permalink for Section 2.1"></a></div><p>Connections between Managers, Inways, Outways use Mutual Transport Layer Security (mTLS) with X.509 certificates. 
+<section id="identity-and-trust"><div class="header-wrapper"><h3 id="trustanchor"><bdi class="secno">3.1 </bdi>Identity and Trust </h3><a class="self-link" href="#trustanchor" aria-label="Permalink for Section 3.1"></a></div><p>Connections between Managers, Inways, Outways use Mutual Transport Layer Security (mTLS) with X.509 certificates. 
 Components in the Group are configured to accept the same (Sub-) Certificate Authorities (CA) as defined in the Trust Anchors list (TA). Each TA is a Trusted Third Party that ensures the identity of the Peers by verifying a set of fields of the subject field , <a href="https://rfc-editor.org/rfc/rfc5280">section 4.1.2.6</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5279" title="A Uniform Resource Name (URN) Namespace for the 3rd Generation Partnership Project (3GPP)">RFC5279</a></cite>] that act as <a href="#peer_id">PeerID</a> in each X.509 certificate.
 When multiple TAs are used the TAs must ensure that the elements of the subject field used to identify a Peer are the same across the TAs. </p>
 <p>
       </p><figure id="fig-mtls-connections">
-        <img src="diagrams/seq-mtls-connections.svg" alt="mTLS Connections">
+        <img src="media/seq-mtls-connections.svg" alt="mTLS Connections">
         <figcaption><a class="self-link" href="#fig-mtls-connections">Figure <bdi class="figno">1</bdi></a> <span class="fig-title">mTLS Connections</span></figcaption>
       </figure>
     <p></p>
-</section><section id="contract-management"><div class="header-wrapper"><h3 id="x2-2-contract-management"><bdi class="secno">2.2 </bdi>Contract Management</h3><a class="self-link" href="#contract-management" aria-label="Permalink for Section 2.2"></a></div>
+</section><section id="contract-management"><div class="header-wrapper"><h3 id="x3-2-contract-management"><bdi class="secno">3.2 </bdi>Contract Management</h3><a class="self-link" href="#contract-management" aria-label="Permalink for Section 3.2"></a></div>
 <p>Contracts are negotiated between the Managers of Peers. A Directory provides the address of each Manager.
 Connections to Services are authorized by Contracts with ServiceConnectionGrants. To create a new contract, the Manager uses a selection of desired connections as input. (Typically this input comes from a user interface interacting with the Management functionality). For each desired connection, a ServiceConnectionGrant is formulated that contains identifying information about both the Outway from the Service consumer and the Service of the Service provider. One Contract may contain multiple Grants. Grants typically match the connections mentioned in a legal agreement like a Data Processing Agreement (DPA). Valid Contracts are used to configure Inways and Outways and enable the possibility to automatically create on demand connections between Peers, as defined in the Grants.
 Contracts can contain multiple Peers. E.g. if a Peer wants a single Contract for an application, this Contract can contain all the connections required for that application.</p>
 <p>
       </p><figure id="fig-contract-management">
-        <img src="diagrams/seq-contract-management.svg" alt="Contract Management">
+        <img src="media/seq-contract-management.svg" alt="Contract Management">
         <figcaption><a class="self-link" href="#fig-contract-management">Figure <bdi class="figno">2</bdi></a> <span class="fig-title">Contract Management</span></figcaption>
       </figure>
     <p></p>
@@ -1127,7 +1174,7 @@ Contracts can contain multiple Peers. E.g. if a Peer wants a single Contract for
 <li>The initiating Peer sends the Contract proposal with its accept signature to the receiving Peer.</li>
 <li>The receiving Peer sends back its own accept signature to the initiating Peer.</li>
 </ol>
-<section id="contract-states"><div class="header-wrapper"><h4 id="x2-2-1-contract-states"><bdi class="secno">2.2.1 </bdi>Contract states</h4><a class="self-link" href="#contract-states" aria-label="Permalink for Section 2.2.1"></a></div>
+<section id="contract-states"><div class="header-wrapper"><h4 id="x3-2-1-contract-states"><bdi class="secno">3.2.1 </bdi>Contract states</h4><a class="self-link" href="#contract-states" aria-label="Permalink for Section 3.2.1"></a></div>
 <p>Any Peer can submit a Contract to other Peers. This Contract becomes valid when the Peers mentioned in the Contract accept the Contract by placing an accept signature. </p>
 <p>A Contract becomes invalid when at least one Peer mentioned in the Contract revokes the Contract.</p>
 <p>A Contract becomes invalid when at least one Peer mentioned in the Contract rejects the Contract.</p>
@@ -1136,21 +1183,21 @@ Contracts can contain multiple Peers. E.g. if a Peer wants a single Contract for
 <p>The content of a Contract is immutable. When the content of a Contract is subject to change, the Contract is invalidated and replaced by a new one.</p>
 <p>
       </p><figure id="fig-state-contract">
-        <img src="diagrams/state-contract.svg" alt="State Contract">
+        <img src="media/state-contract.svg" alt="State Contract">
         <figcaption><a class="self-link" href="#fig-state-contract">Figure <bdi class="figno">3</bdi></a> <span class="fig-title">State Contract</span></figcaption>
       </figure>
     <p></p>
-</section></section><section id="creating-a-group"><div class="header-wrapper"><h3 id="x2-3-creating-a-group"><bdi class="secno">2.3 </bdi>Creating a Group</h3><a class="self-link" href="#creating-a-group" aria-label="Permalink for Section 2.3"></a></div>
+</section></section><section id="creating-a-group"><div class="header-wrapper"><h3 id="x3-3-creating-a-group"><bdi class="secno">3.3 </bdi>Creating a Group</h3><a class="self-link" href="#creating-a-group" aria-label="Permalink for Section 3.3"></a></div>
 <p>A Group is a system of Peers using Inways, Outways and Managers that confirm to the FSC specification to make use of each other's Services. </p>
-<p>In order to create a Group, additional <a href="#group_rules">Group Rules &amp; Restrictions</a> containing at least the mandatory decisions <strong><em class="rfc2119">MUST</em></strong> be created.</p>
-</section><section id="service-discovery"><div class="header-wrapper"><h3 id="x2-4-service-discovery"><bdi class="secno">2.4 </bdi>Service discovery</h3><a class="self-link" href="#service-discovery" aria-label="Permalink for Section 2.4"></a></div>
+<p>In order to create a Group, additional <a href="#group_rules">Group Rules &amp; Restrictions</a> containing at least the mandatory decisions <em class="rfc2119">MUST</em> be created.</p>
+</section><section id="service-discovery"><div class="header-wrapper"><h3 id="x3-4-service-discovery"><bdi class="secno">3.4 </bdi>Service discovery</h3><a class="self-link" href="#service-discovery" aria-label="Permalink for Section 3.4"></a></div>
 <p>Every Group is defined by at least one Directory, which contains the Services and Peers in the Group.
 Peers can make themselves known to a Directory by having their Manager call the <a href="#announce">Announce</a> endpoint of the Directory. </p>
 <p>When publishing services, Managers register Services by offering Contracts with a <a href="#service_publication_grant">ServicePublicationGrant</a> or <a href="#grant_delegated_service_publication">DelegatedServicePublicationGrant</a> to the Directory.</p>
 <p>Peers query the Directories to discover the Services available in the Group </p>
 <p>
       </p><figure id="fig-providing-a-service">
-        <img src="diagrams/seq-providing-a-service.svg" alt="Providing a Service">
+        <img src="media/seq-providing-a-service.svg" alt="Providing a Service">
         <figcaption><a class="self-link" href="#fig-providing-a-service">Figure <bdi class="figno">4</bdi></a> <span class="fig-title">Providing a Service</span></figcaption>
       </figure>
     <p></p>
@@ -1161,13 +1208,13 @@ Peers can make themselves known to a Directory by having their Manager call the 
 <li>The Directory adds its own accept signature.</li>
 <li>The Directory sends the accept signature to the Peer.</li>
 </ol>
-</section><section id="create-an-authorization-to-connect-to-a-service"><div class="header-wrapper"><h3 id="x2-5-create-an-authorization-to-connect-to-a-service"><bdi class="secno">2.5 </bdi>Create an authorization to connect to a Service</h3><a class="self-link" href="#create-an-authorization-to-connect-to-a-service" aria-label="Permalink for Section 2.5"></a></div>
+</section><section id="create-an-authorization-to-connect-to-a-service"><div class="header-wrapper"><h3 id="x3-5-create-an-authorization-to-connect-to-a-service"><bdi class="secno">3.5 </bdi>Create an authorization to connect to a Service</h3><a class="self-link" href="#create-an-authorization-to-connect-to-a-service" aria-label="Permalink for Section 3.5"></a></div>
 <p>A connection can be established if the Peer connecting to the Service has a valid Contract containing a <a href="#service_connection_grant">ServiceConnectionGrant</a> with the Peer providing the Service.
 The connection Grants contains information about the Service and the public key of the Outway that is authorized to connect to the Service.</p>
 <p>The Contract is distributed among the two Peers. Once the Contract is signed by all Peers, the Outway can connect to the Inway offering the Service.</p>
 <p>
       </p><figure id="fig-connecting-to-a-service">
-        <img src="diagrams/seq-create-an-authorization-to-connect.svg" alt="Create an authorization to connect">
+        <img src="media/seq-create-an-authorization-to-connect.svg" alt="Create an authorization to connect">
         <figcaption><a class="self-link" href="#fig-connecting-to-a-service">Figure <bdi class="figno">5</bdi></a> <span class="fig-title">Connecting to a Service</span></figcaption>
       </figure>
     <p></p>
@@ -1182,7 +1229,7 @@ The connection Grants contains information about the Service and the public key 
 Once the Contract is signed by all the Peers, the Outway can connect to the Inway offering the Service on behalf the Delegator. </p>
 <p>
       </p><figure id="fig-connecting-to-a-service-that-is-offered-on-behalf-of-another-peer">
-        <img src="diagrams/seq-create-an-authorization-to-connect-delegated-publication.svg" alt="Create an authorization to connect">
+        <img src="media/seq-create-an-authorization-to-connect-delegated-publication.svg" alt="Create an authorization to connect">
         <figcaption><a class="self-link" href="#fig-connecting-to-a-service-that-is-offered-on-behalf-of-another-peer">Figure <bdi class="figno">6</bdi></a> <span class="fig-title">Connecting to a Service that is offered on behalf of another Peer</span></figcaption>
       </figure>
     <p></p>
@@ -1198,14 +1245,14 @@ Once the Contract is signed by all the Peers, the Outway can connect to the Inwa
 <li>The Delegator sends the accept signature to the Service provider.</li>
 <li>The Delegator sends the accept signature to the Service consumer.</li>
 </ol>
-</section><section id="delegate-the-authorization-to-connect-to-a-service"><div class="header-wrapper"><h3 id="x2-6-delegate-the-authorization-to-connect-to-a-service"><bdi class="secno">2.6 </bdi>Delegate the authorization to connect to a Service</h3><a class="self-link" href="#delegate-the-authorization-to-connect-to-a-service" aria-label="Permalink for Section 2.6"></a></div>
-<section id="a-delegated-service-connection"><div class="header-wrapper"><h4 id="x2-6-1-a-delegated-service-connection"><bdi class="secno">2.6.1 </bdi>A delegated service connection</h4><a class="self-link" href="#a-delegated-service-connection" aria-label="Permalink for Section 2.6.1"></a></div>
+</section><section id="delegate-the-authorization-to-connect-to-a-service"><div class="header-wrapper"><h3 id="x3-6-delegate-the-authorization-to-connect-to-a-service"><bdi class="secno">3.6 </bdi>Delegate the authorization to connect to a Service</h3><a class="self-link" href="#delegate-the-authorization-to-connect-to-a-service" aria-label="Permalink for Section 3.6"></a></div>
+<section id="a-delegated-service-connection"><div class="header-wrapper"><h4 id="x3-6-1-a-delegated-service-connection"><bdi class="secno">3.6.1 </bdi>A delegated service connection</h4><a class="self-link" href="#a-delegated-service-connection" aria-label="Permalink for Section 3.6.1"></a></div>
 <p>A connection on behalf of another Peer (delegation) can only be established if the Peer connecting to the Service has a valid Contract containing a <a href="#grant_delegated_service_connection">DelegatedServiceConnectionGrant</a> with the Peer providing the Service.
 The connection Grants contains information about the Service, the public key of the Outway that is authorized to connect to the Service and the Peer acting as Delegator.</p>
 <p>The Contract is distributed among the three Peers. Once the Contract is signed by all the Peers, the Outway of the Delegatee can connect to the Inway offering the Service on behalf the Delegator.</p>
 <p>
       </p><figure id="fig-delegate-a-connection-to-a-service">
-        <img src="diagrams/seq-delegate-connection.svg" alt="Delegate connection">
+        <img src="media/seq-delegate-connection.svg" alt="Delegate connection">
         <figcaption><a class="self-link" href="#fig-delegate-a-connection-to-a-service">Figure <bdi class="figno">7</bdi></a> <span class="fig-title">Delegate a connection to a Service</span></figcaption>
       </figure>
     <p></p>
@@ -1221,12 +1268,12 @@ The connection Grants contains information about the Service, the public key of 
 <li>The Service Provider sends the accept signature to the Delegatee.</li>
 <li>The Service Provider sends the accept signature to the Delegator.</li>
 </ol>
-</section><section id="combining-a-delegated-service-publication-with-a-delegated-service-connection"><div class="header-wrapper"><h4 id="x2-6-2-combining-a-delegated-service-publication-with-a-delegated-service-connection"><bdi class="secno">2.6.2 </bdi>Combining a delegated service publication with a delegated service connection</h4><a class="self-link" href="#combining-a-delegated-service-publication-with-a-delegated-service-connection" aria-label="Permalink for Section 2.6.2"></a></div>
+</section><section id="combining-a-delegated-service-publication-with-a-delegated-service-connection"><div class="header-wrapper"><h4 id="x3-6-2-combining-a-delegated-service-publication-with-a-delegated-service-connection"><bdi class="secno">3.6.2 </bdi>Combining a delegated service publication with a delegated service connection</h4><a class="self-link" href="#combining-a-delegated-service-publication-with-a-delegated-service-connection" aria-label="Permalink for Section 3.6.2"></a></div>
 <p>When the Service is being offered on behalf of another Peer the Contract is distributed among four Peers. The Peer acting as Delegator in the Service publication will also receive the Contract.
 Once the Contract is signed by all the Peers, the Outway of the Delegatee can connect to the Inway offering the Service on behalf the Delegator.</p>
 <p>
       </p><figure id="fig-delegate-a-connection-to-a-service-that-is-offered-on-behalf-of-another-peer">
-        <img src="diagrams/seq-delegate-connection-delegated-publication.svg" alt="Delegate connection">
+        <img src="media/seq-delegate-connection-delegated-publication.svg" alt="Delegate connection">
         <figcaption><a class="self-link" href="#fig-delegate-a-connection-to-a-service-that-is-offered-on-behalf-of-another-peer">Figure <bdi class="figno">8</bdi></a> <span class="fig-title">Delegate a connection to a Service that is offered on behalf of another Peer</span></figcaption>
       </figure>
     <p></p>
@@ -1249,14 +1296,14 @@ Once the Contract is signed by all the Peers, the Outway of the Delegatee can co
 <li>The Delegator of the Service publication sends the accept signature to the Delegator.</li>
 <li>The Delegator of the Service publication sends the accept signature to the Service provider.</li>
 </ol>
-</section></section><section id="consuming-a-service"><div class="header-wrapper"><h3 id="x2-7-consuming-a-service"><bdi class="secno">2.7 </bdi>Consuming a Service</h3><a class="self-link" href="#consuming-a-service" aria-label="Permalink for Section 2.7"></a></div>
+</section></section><section id="consuming-a-service"><div class="header-wrapper"><h3 id="x3-7-consuming-a-service"><bdi class="secno">3.7 </bdi>Consuming a Service</h3><a class="self-link" href="#consuming-a-service" aria-label="Permalink for Section 3.7"></a></div>
 <p>A Peer can consume a Service by sending request for said Service to an Outway. 
 The Peer obtains an access token from the Manager of the Peer providing the Service. 
 The Outway proxies the request including the access token to the Inway.
 The Inway will validate the access token and proxy the request to the Service.</p>
 <p>
       </p><figure id="fig-consuming-a-service">
-        <img src="diagrams/seq-consuming-a-service.svg" alt="Consuming a Service">
+        <img src="media/seq-consuming-a-service.svg" alt="Consuming a Service">
         <figcaption><a class="self-link" href="#fig-consuming-a-service">Figure <bdi class="figno">9</bdi></a> <span class="fig-title">Consuming a Service</span></figcaption>
       </figure>
     <p></p>
@@ -1269,54 +1316,54 @@ The Inway will validate the access token and proxy the request to the Service.</
 <li>The Inway returns the response to the Outway.</li>
 <li>The Outway returns the response to the client.</li>
 </ol>
-</section><section id="use-cases-and-required-components"><div class="header-wrapper"><h3 id="x2-8-use-cases-and-required-components"><bdi class="secno">2.8 </bdi>Use cases and required components</h3><a class="self-link" href="#use-cases-and-required-components" aria-label="Permalink for Section 2.8"></a></div>
+</section><section id="use-cases-and-required-components"><div class="header-wrapper"><h3 id="x3-8-use-cases-and-required-components"><bdi class="secno">3.8 </bdi>Use cases and required components</h3><a class="self-link" href="#use-cases-and-required-components" aria-label="Permalink for Section 3.8"></a></div>
 <p>Which components a Peer needs depends on the use case.</p>
 <p>A Peer who wants to consume Services needs a Manager and an Outway.  </p>
 <p>A Peer who wants to offer Services needs a Manager and an Inway.    </p>
 <p>A Peer who wants to both consume and offer Services needs a Manager,an Outway and an Inway.</p>
 </section></section>
-    <section id="specifications"><div class="header-wrapper"><h2 id="x3-specifications"><bdi class="secno">3. </bdi>Specifications</h2><a class="self-link" href="#specifications" aria-label="Permalink for Section 3."></a></div>
-<section id="protocols"><div class="header-wrapper"><h3 id="x3-1-protocols"><bdi class="secno">3.1 </bdi>Protocols</h3><a class="self-link" href="#protocols" aria-label="Permalink for Section 3.1"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> support HTTP/1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9112" title="HTTP/1.1">RFC9112</a></cite>].</p>
-<p>The Manager <strong><em class="rfc2119">MAY</em></strong> support HTTP/2[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9113" title="HTTP/2">RFC9113</a></cite>]. </p>
-<p>The protocol used between the Inway and Outway can be either HTTP/1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9112" title="HTTP/1.1">RFC9112</a></cite>] or HTTP/2[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9113" title="HTTP/2">RFC9113</a></cite>]. The protocol is determined by the <code>protocol</code> field of a Service as specified in the object <code>.components/schemas/serviceListingService</code> of the <a href="manager.yaml">OpenAPI Specification</a>.</p>
-<section id="port-configuration"><div class="header-wrapper"><h4 id="x3-1-1-port-configuration"><bdi class="secno">3.1.1 </bdi>Port configuration</h4><a class="self-link" href="#port-configuration" aria-label="Permalink for Section 3.1.1"></a></div>
+    <section id="specifications"><div class="header-wrapper"><h2 id="x4-specifications"><bdi class="secno">4. </bdi>Specifications</h2><a class="self-link" href="#specifications" aria-label="Permalink for Section 4."></a></div>
+<section id="protocols"><div class="header-wrapper"><h3 id="x4-1-protocols"><bdi class="secno">4.1 </bdi>Protocols</h3><a class="self-link" href="#protocols" aria-label="Permalink for Section 4.1"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> support HTTP/1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9112" title="HTTP/1.1">RFC9112</a></cite>].</p>
+<p>The Manager <em class="rfc2119">MAY</em> support HTTP/2[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9113" title="HTTP/2">RFC9113</a></cite>]. </p>
+<p>The protocol used between the Inway and Outway can be either HTTP/1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9112" title="HTTP/1.1">RFC9112</a></cite>] or HTTP/2[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9113" title="HTTP/2">RFC9113</a></cite>]. The protocol is determined by the <code>protocol</code> field of a Service as specified in the object <code>.components/schemas/serviceListingService</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
+<section id="port-configuration"><div class="header-wrapper"><h4 id="x4-1-1-port-configuration"><bdi class="secno">4.1.1 </bdi>Port configuration</h4><a class="self-link" href="#port-configuration" aria-label="Permalink for Section 4.1.1"></a></div>
 <p>In order to provide a predictable network configuration FSC limits the selection of network ports to be used by components. 
-The ports used by FSC components <strong><em class="rfc2119">MUST</em></strong> be <code>443</code> or <code>8443</code>. </p>
-<p>Port <code>443</code> is <strong><em class="rfc2119">RECOMMENDED</em></strong> for data traffic i.e. HTTP requests to a Service.<br>Port <code>8443</code> is <strong><em class="rfc2119">RECOMMENDED</em></strong> for management traffic i.e. submitting/signing Contracts.  </p>
+The ports used by FSC components <em class="rfc2119">MUST</em> be <code>443</code> or <code>8443</code>. </p>
+<p>Port <code>443</code> is <em class="rfc2119">RECOMMENDED</em> for data traffic i.e. HTTP requests to a Service.<br>Port <code>8443</code> is <em class="rfc2119">RECOMMENDED</em> for management traffic i.e. submitting/signing Contracts.  </p>
 <p>Data traffic: Inway, Outway<br>Management Traffic: Directory, Manager</p>
-</section><section id="group-id"><div class="header-wrapper"><h4 id="group_id"><bdi class="secno">3.1.2 </bdi>Group ID</h4><a class="self-link" href="#group_id" aria-label="Permalink for Section 3.1.2"></a></div><p>The Group ID is the identifier of the Group. This identifier is chosen by the Group upon creation of the Group.<br>The Group ID <strong><em class="rfc2119">MUST</em></strong> match the following regular expression <code>^[a-zA-Z0-9./_-]{1,100}$</code></p>
-</section><section id="peer-id"><div class="header-wrapper"><h4 id="peer_id"><bdi class="secno">3.1.3 </bdi>Peer ID</h4><a class="self-link" href="#peer_id" aria-label="Permalink for Section 3.1.3"></a></div><p>Each Peer <strong><em class="rfc2119">MUST</em></strong> have a unique identifier within the Group, this identifier is called the PeerID. The PeerID is determined by at least one element from the subject field <a href="https://rfc-editor.org/rfc/rfc5280">section 4.1.2.6</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>] of an X.509 certificate. Each Group <strong><em class="rfc2119">MUST</em></strong> define which element(s) of the subject field of the X.509 certificate act as PeerID.
+</section><section id="group-id"><div class="header-wrapper"><h4 id="group_id"><bdi class="secno">4.1.2 </bdi>Group ID</h4><a class="self-link" href="#group_id" aria-label="Permalink for Section 4.1.2"></a></div><p>The Group ID is the identifier of the Group. This identifier is chosen by the Group upon creation of the Group.<br>The Group ID <em class="rfc2119">MUST</em> match the following regular expression <code>^[a-zA-Z0-9./_-]{1,100}$</code></p>
+</section><section id="peer-id"><div class="header-wrapper"><h4 id="peer_id"><bdi class="secno">4.1.3 </bdi>Peer ID</h4><a class="self-link" href="#peer_id" aria-label="Permalink for Section 4.1.3"></a></div><p>Each Peer <em class="rfc2119">MUST</em> have a unique identifier within the Group, this identifier is called the PeerID. The PeerID is determined by at least one element from the subject field <a href="https://rfc-editor.org/rfc/rfc5280">section 4.1.2.6</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>] of an X.509 certificate. Each Group <em class="rfc2119">MUST</em> define which element(s) of the subject field of the X.509 certificate act as PeerID.
 The TA(s) issuing the certificates must ensure that PeerID is always the same for a Peer in each issued certificate for said Peer.    </p>
-</section><section id="peer-name"><div class="header-wrapper"><h4 id="peer_name"><bdi class="secno">3.1.4 </bdi>Peer name</h4><a class="self-link" href="#peer_name" aria-label="Permalink for Section 3.1.4"></a></div><p>Each Peer <strong><em class="rfc2119">MUST</em></strong> have a human-readable name which can be used to identify a Peer. Unlike the PeerID the name does not have to be unique. The name of Peer is determined by an element in the subject field <a href="https://rfc-editor.org/rfc/rfc5280">section 4.1.2.6</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>] of an X.509 certificate. The Group <strong><em class="rfc2119">MUST</em></strong> define which element of the subject field is used.</p>
-</section><section id="trust-anchor"><div class="header-wrapper"><h4 id="trust_anchor"><bdi class="secno">3.1.5 </bdi>Trust Anchor</h4><a class="self-link" href="#trust_anchor" aria-label="Permalink for Section 3.1.5"></a></div><p>The Trust Anchor (TA) is an authoritative entity for which trust is assumed and not derived. In the case of FSC, which uses an X.509 architecture, it is the root certificate from which the whole chain of trust is derived.</p>
+</section><section id="peer-name"><div class="header-wrapper"><h4 id="peer_name"><bdi class="secno">4.1.4 </bdi>Peer name</h4><a class="self-link" href="#peer_name" aria-label="Permalink for Section 4.1.4"></a></div><p>Each Peer <em class="rfc2119">MUST</em> have a human-readable name which can be used to identify a Peer. Unlike the PeerID the name does not have to be unique. The name of Peer is determined by an element in the subject field <a href="https://rfc-editor.org/rfc/rfc5280">section 4.1.2.6</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>] of an X.509 certificate. The Group <em class="rfc2119">MUST</em> define which element of the subject field is used.</p>
+</section><section id="trust-anchor"><div class="header-wrapper"><h4 id="trust_anchor"><bdi class="secno">4.1.5 </bdi>Trust Anchor</h4><a class="self-link" href="#trust_anchor" aria-label="Permalink for Section 4.1.5"></a></div><p>The Trust Anchor (TA) is an authoritative entity for which trust is assumed and not derived. In the case of FSC, which uses an X.509 architecture, it is the root certificate from which the whole chain of trust is derived.</p>
 <p>Each Group can have multiple TAs that are defined in a Trust Anchor List.</p>
-<p>Every Peer in a Group <strong><em class="rfc2119">MUST</em></strong> accept the same TA(s) that are defined in the Trust Anchor List defined by the Group.</p>
-<p>The TA <strong><em class="rfc2119">SHOULD</em></strong> validate a Peers identity, i.e. the TA <strong><em class="rfc2119">MUST</em></strong> perform Organization Validation.</p>
-</section><section id="tls-configuration"><div class="header-wrapper"><h4 id="tls_configuration"><bdi class="secno">3.1.6 </bdi>TLS configuration</h4><a class="self-link" href="#tls_configuration" aria-label="Permalink for Section 3.1.6"></a></div><p>Connections between Inways, Outways, Managers of a Group are mTLS connections based on X.509 certificates as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>].</p>
+<p>Every Peer in a Group <em class="rfc2119">MUST</em> accept the same TA(s) that are defined in the Trust Anchor List defined by the Group.</p>
+<p>The TA <em class="rfc2119">SHOULD</em> validate a Peers identity, i.e. the TA <em class="rfc2119">MUST</em> perform Organization Validation.</p>
+</section><section id="tls-configuration"><div class="header-wrapper"><h4 id="tls_configuration"><bdi class="secno">4.1.6 </bdi>TLS configuration</h4><a class="self-link" href="#tls_configuration" aria-label="Permalink for Section 4.1.6"></a></div><p>Connections between Inways, Outways, Managers of a Group are mTLS connections based on X.509 certificates as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>].</p>
 <p>The certificate guarantees the identity of a Peer.</p>
 <p>FSC places specific requirements on the subject fields of a certificate. <a href="https://www.rfc-editor.org/rfc/rfc5280#section-4.1.2.6">section 4.1.2.6</a> of[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>] which are listed below</p>
 <ul>
 <li>Subject Alternative Name <a href="https://www.rfc-editor.org/rfc/rfc5280#section-4.1.2.6">section 4.1.2.6</a> of[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">RFC5280</a></cite>]: This should contain the Fully Qualified Domain Names (FQDN) of a Manager, Inway or Outway. For an Outway this FQDN does not have to resolve externally.</li>
 <li>Subject Organization: This should contain to the name of the Organization.</li>
 </ul>
-<p>The representation and verification of domains specified in the X.509 certificate <strong><em class="rfc2119">MUST</em></strong> adhere to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6125" title="Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS)">RFC6125</a></cite>]</p>
-<section id="tls-version"><div class="header-wrapper"><h5 id="x3-1-6-1-tls-version"><bdi class="secno">3.1.6.1 </bdi>TLS Version</h5><a class="self-link" href="#tls-version" aria-label="Permalink for Section 3.1.6.1"></a></div>
-<p>The TLS versions used between Peers in a Group <strong><em class="rfc2119">MUST</em></strong> be defined in the additional <a href="#group_rules">Group Rules &amp; Restrictions</a>.</p>
-</section><section id="certificate-public-key-thumbprints"><div class="header-wrapper"><h5 id="certificate_thumbprints"><bdi class="secno">3.1.6.2 </bdi>Certificate &amp; Public key thumbprints</h5><a class="self-link" href="#certificate_thumbprints" aria-label="Permalink for Section 3.1.6.2"></a></div><p>FSC differentiates between two different types of thumbprints, often also called fingerprints. <em>Certificate</em> thumbprints and <em>Public Key</em> thumbprints.</p>
+<p>The representation and verification of domains specified in the X.509 certificate <em class="rfc2119">MUST</em> adhere to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6125" title="Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS)">RFC6125</a></cite>]</p>
+<section id="tls-version"><div class="header-wrapper"><h5 id="x4-1-6-1-tls-version"><bdi class="secno">4.1.6.1 </bdi>TLS Version</h5><a class="self-link" href="#tls-version" aria-label="Permalink for Section 4.1.6.1"></a></div>
+<p>The TLS versions used between Peers in a Group <em class="rfc2119">MUST</em> be defined in the additional <a href="#group_rules">Group Rules &amp; Restrictions</a>.</p>
+</section><section id="certificate-public-key-thumbprints"><div class="header-wrapper"><h5 id="certificate_thumbprints"><bdi class="secno">4.1.6.2 </bdi>Certificate &amp; Public key thumbprints</h5><a class="self-link" href="#certificate_thumbprints" aria-label="Permalink for Section 4.1.6.2"></a></div><p>FSC differentiates between two different types of thumbprints, often also called fingerprints. <em>Certificate</em> thumbprints and <em>Public Key</em> thumbprints.</p>
 <p>Public Key thumbprints are used in FSC contracts, this enables the renewal of the certificate without invalidating the contract, since the Public Key thumbprint remains the same between Certificate renewals.
-Certificate thumbprints are used in the certificate-bound access tokens <a href="https://www.rfc-editor.org/rfc/rfc8705#section-3">section 3</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>]. FSC uses certificate-bound access tokens to authorize a connection to a Service. Certificate thumbprints are always part of a X.509 certificate and <strong><em class="rfc2119">MUST</em></strong> be created as described in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
+Certificate thumbprints are used in the certificate-bound access tokens <a href="https://www.rfc-editor.org/rfc/rfc8705#section-3">section 3</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>]. FSC uses certificate-bound access tokens to authorize a connection to a Service. Certificate thumbprints are always part of a X.509 certificate and <em class="rfc2119">MUST</em> be created as described in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
 <p>Within FSC both <em>Certificate thumbprints</em> and <em>Public Key</em> thumbprints uses the <code>sha256</code> thumbprint. </p>
-</section></section><section id="error-handling"><div class="header-wrapper"><h4 id="error_handling"><bdi class="secno">3.1.7 </bdi>Error Handling</h4><a class="self-link" href="#error_handling" aria-label="Permalink for Section 3.1.7"></a></div><p>The Inway and Outway both have a single endpoint which proxies HTTP requests. 
-In case of an error within the scope of FSC these components <strong><em class="rfc2119">MUST</em></strong> return the HTTP header <code>Fsc-Error-Code</code> which <strong><em class="rfc2119">MUST</em></strong> contain the code specifying the error. </p>
-<p>The response body must contain an object as described in <code>.components/schemas/error</code> of the <a href="manager.yaml">OpenAPI Specification</a>.  </p>
-<p>The HTTP status codes that <strong><em class="rfc2119">MUST</em></strong> be used in combination with the HTTP header <code>Fsc-Error-Code</code> are defined in the sections 3.7.1.4 and 3.8.2.2.</p>
-</section><section id="json"><div class="header-wrapper"><h4 id="x3-1-8-json"><bdi class="secno">3.1.8 </bdi>JSON</h4><a class="self-link" href="#json" aria-label="Permalink for Section 3.1.8"></a></div>
+</section></section><section id="error-handling"><div class="header-wrapper"><h4 id="error_handling"><bdi class="secno">4.1.7 </bdi>Error Handling</h4><a class="self-link" href="#error_handling" aria-label="Permalink for Section 4.1.7"></a></div><p>The Inway and Outway both have a single endpoint which proxies HTTP requests. 
+In case of an error within the scope of FSC these components <em class="rfc2119">MUST</em> return the HTTP header <code>Fsc-Error-Code</code> which <em class="rfc2119">MUST</em> contain the code specifying the error. </p>
+<p>The response body must contain an object as described in <code>.components/schemas/error</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.  </p>
+<p>The HTTP status codes that <em class="rfc2119">MUST</em> be used in combination with the HTTP header <code>Fsc-Error-Code</code> are defined in the sections 3.7.1.4 and 3.8.2.2.</p>
+</section><section id="json"><div class="header-wrapper"><h4 id="x4-1-8-json"><bdi class="secno">4.1.8 </bdi>JSON</h4><a class="self-link" href="#json" aria-label="Permalink for Section 4.1.8"></a></div>
 <p>Since all hashes are created using the JSON Canonicalization Scheme (JCS) [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>] representation, the content
 of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rules as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8259" title="The JavaScript Object Notation (JSON) Data Interchange Format">RFC8259</a></cite>] and [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7493" title="The I-JSON Message Format">RFC7493</a></cite>].</p>
 <p>When introducing new properties as part of an extension, these <strong><em class="rfc2119">MUST</em></strong> also be checked against these rules.</p>
-</section></section><section id="contracts"><div class="header-wrapper"><h3 id="x3-2-contracts"><bdi class="secno">3.2 </bdi>Contracts</h3><a class="self-link" href="#contracts" aria-label="Permalink for Section 3.2"></a></div>
-<p>The content of a Contract is defined in the object <code>.components/schemas/contractContent</code> of the <a href="manager.yaml">OpenAPI Specification</a></p>
+</section></section><section id="contracts"><div class="header-wrapper"><h3 id="x4-2-contracts"><bdi class="secno">4.2 </bdi>Contracts</h3><a class="self-link" href="#contracts" aria-label="Permalink for Section 4.2"></a></div>
+<p>The content of a Contract is defined in the object <code>.components/schemas/contractContent</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a></p>
 <p>example Contract with a ServiceConnectionGrant</p>
 <pre><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"content"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
@@ -1346,8 +1393,8 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-<section id="contract-validation"><div class="header-wrapper"><h4 id="contract_validation"><bdi class="secno">3.2.1 </bdi>Contract Validation</h4><a class="self-link" href="#contract_validation" aria-label="Permalink for Section 3.2.1"></a></div><ul>
-<li>A UUID <strong><em class="rfc2119">MUST</em></strong> be provided in the field <code>contract.iv</code>. The value must be unique. Each Peer is responsible for ensuring that only one Contract can exist with a given <code>iv</code>. </li>
+<section id="contract-validation"><div class="header-wrapper"><h4 id="contract_validation"><bdi class="secno">4.2.1 </bdi>Contract Validation</h4><a class="self-link" href="#contract_validation" aria-label="Permalink for Section 4.2.1"></a></div><ul>
+<li>A UUID <em class="rfc2119">MUST</em> be provided in the field <code>contract.iv</code>. The value must be unique. Each Peer is responsible for ensuring that only one Contract can exist with a given <code>iv</code>. </li>
 <li>A hash algorithm is provided in the field <code>contract.content.hash_algorithm</code>.</li>
 <li>The date provided in <code>contract.content.created_at</code> can not be in the future.</li>
 <li>The Group ID of the Manager matches the Group ID defined in the field <code>contract.group_id</code>.</li>
@@ -1359,7 +1406,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>A <code>ServicePublicationGrant</code> or <code>DelegatedServicePublicationGrant</code> cannot be mixed with other Grants. Mixing Grant types with different use-cases is prohibited to prevent the creation of Contracts that are hard to maintain and validate.</li>
 </ul>
 <p>Per Grant type, different validation rules apply.</p>
-<section id="servicepublicationgrant"><div class="header-wrapper"><h5 id="service_publication_grant"><bdi class="secno">3.2.1.1 </bdi>ServicePublicationGrant</h5><a class="self-link" href="#service_publication_grant" aria-label="Permalink for Section 3.2.1.1"></a></div><p>The content of a ServicePublicationGrant is defined in the object <code>.components/schemas/grantServicePublication</code> of the <a href="manager.yaml">OpenAPI Specification</a></p>
+<section id="servicepublicationgrant"><div class="header-wrapper"><h5 id="service_publication_grant"><bdi class="secno">4.2.1.1 </bdi>ServicePublicationGrant</h5><a class="self-link" href="#service_publication_grant" aria-label="Permalink for Section 4.2.1.1"></a></div><p>The content of a ServicePublicationGrant is defined in the object <code>.components/schemas/grantServicePublication</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a></p>
 <p>Validation rules:</p>
 <ul>
 <li>The Peer ID provided by the X.509 certificate used by the Manager of the Directory Peer matches the value of the field <code>grant.data.directory.peer_id</code></li>
@@ -1372,7 +1419,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>A signature is present with the Peer ID of the Peer defined in the field <code>grant.data.directory.peer_id</code></li>
 <li>A signature is present with the Peer ID of the Peer defined in the field <code>grant.data.service.peer_id</code></li>
 </ul>
-</section><section id="delegatedservicepublicationgrant"><div class="header-wrapper"><h5 id="grant_delegated_service_publication"><bdi class="secno">3.2.1.2 </bdi>DelegatedServicePublicationGrant </h5><a class="self-link" href="#grant_delegated_service_publication" aria-label="Permalink for Section 3.2.1.2"></a></div><p><em>The Delegatee is the Peer specified in <code>grant.data.service.peer_id</code></em>
+</section><section id="delegatedservicepublicationgrant"><div class="header-wrapper"><h5 id="grant_delegated_service_publication"><bdi class="secno">4.2.1.2 </bdi>DelegatedServicePublicationGrant </h5><a class="self-link" href="#grant_delegated_service_publication" aria-label="Permalink for Section 4.2.1.2"></a></div><p><em>The Delegatee is the Peer specified in <code>grant.data.service.peer_id</code></em>
 <em>The Delegator is the Peer specified in <code>grant.data.delegator.peer_id</code></em></p>
 <p>Validation rules:</p>
 <ul>
@@ -1388,7 +1435,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>A signature is present with the subject serial number of the Peer defined the field <code>grant.data.directory.peer_id</code></li>
 <li>A signature is present with the subject serial number of the Peer defined the field <code>grant.data.delegator.peer_id</code></li>
 </ul>
-</section><section id="serviceconnectiongrant"><div class="header-wrapper"><h5 id="service_connection_grant"><bdi class="secno">3.2.1.3 </bdi>ServiceConnectionGrant</h5><a class="self-link" href="#service_connection_grant" aria-label="Permalink for Section 3.2.1.3"></a></div><p>The content of a ServiceConnectionGrant is defined in the object <code>.components/schemas/grantServiceConnection</code> of the <a href="manager.yaml">OpenAPI Specification</a></p>
+</section><section id="serviceconnectiongrant"><div class="header-wrapper"><h5 id="service_connection_grant"><bdi class="secno">4.2.1.3 </bdi>ServiceConnectionGrant</h5><a class="self-link" href="#service_connection_grant" aria-label="Permalink for Section 4.2.1.3"></a></div><p>The content of a ServiceConnectionGrant is defined in the object <code>.components/schemas/grantServiceConnection</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a></p>
 <p>Validation rules:</p>
 <ul>
 <li>The Peer ID provided by the X.509 certificate used by the Manager of the Peer providing the Service matches the value of the field <code>grant.data.service.peer_id</code></li>
@@ -1402,7 +1449,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>A signature is present with the Peer ID of the Peer defined in the field <code>grant.data.outway.peer_id</code></li>
 <li>A signature is present with the Peer ID of the Peer defined in the field <code>grant.data.service.peer_id</code></li>
 </ul>
-</section><section id="delegatedserviceconnectiongrant"><div class="header-wrapper"><h5 id="grant_delegated_service_connection"><bdi class="secno">3.2.1.4 </bdi>DelegatedServiceConnectionGrant</h5><a class="self-link" href="#grant_delegated_service_connection" aria-label="Permalink for Section 3.2.1.4"></a></div><p><em>The Delegatee is the Peer specified in <code>grant.data.outway.peer_id</code></em>
+</section><section id="delegatedserviceconnectiongrant"><div class="header-wrapper"><h5 id="grant_delegated_service_connection"><bdi class="secno">4.2.1.4 </bdi>DelegatedServiceConnectionGrant</h5><a class="self-link" href="#grant_delegated_service_connection" aria-label="Permalink for Section 4.2.1.4"></a></div><p><em>The Delegatee is the Peer specified in <code>grant.data.outway.peer_id</code></em>
 <em>The Delegator is the Peer specified in <code>grant.data.delegator.peer_id</code></em></p>
 <p>Validation rules:</p>
 <ul>
@@ -1420,14 +1467,14 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>A signature is present with the subject serial number of the Peer defined the field <code>grant.data.service.peer_id</code></li>
 <li>In case of a Service that is published on behalf of another Peer, a signature is present with the subject serial number of the Peer defined the field <code>grant.data.service.delegator.peer_id</code></li>
 </ul>
-</section></section><section id="properties"><div class="header-wrapper"><h4 id="x3-2-2-properties"><bdi class="secno">3.2.2 </bdi>Properties</h4><a class="self-link" href="#properties" aria-label="Permalink for Section 3.2.2"></a></div>
+</section></section><section id="properties"><div class="header-wrapper"><h4 id="x4-2-2-properties"><bdi class="secno">4.2.2 </bdi>Properties</h4><a class="self-link" href="#properties" aria-label="Permalink for Section 4.2.2"></a></div>
 <p>Contracts contain the minimum amount of information needed to ensure a secure Service Connection or Publication. 
 Some use cases might require additional information to ensure correct authentication/authorization or to provide additional functionality. </p>
 <p>Use case specific information can be provided using the <code>properties</code> field of a Grant. 
 This field can contain any type of data as long as the data is valid JSON, making it flexible and suitable for a broad range of use cases.</p>
 <p>Only a limited set of properties is allowed. These should be documented in an <a href="https://github.com/Logius-standaarden/fsc-extensie-template">extension</a> 
 and the extension should be supported by the FSC Group you are using.</p>
-<section id="requirements"><div class="header-wrapper"><h5 id="x3-2-2-1-requirements"><bdi class="secno">3.2.2.1 </bdi>Requirements</h5><a class="self-link" href="#requirements" aria-label="Permalink for Section 3.2.2.1"></a></div>
+<section id="requirements"><div class="header-wrapper"><h5 id="x4-2-2-1-requirements"><bdi class="secno">4.2.2.1 </bdi>Requirements</h5><a class="self-link" href="#requirements" aria-label="Permalink for Section 4.2.2.1"></a></div>
 <ul>
 <li>Each Grant <strong><em class="rfc2119">MAY</em></strong> contain a <code>properties</code> object. </li>
 <li>The <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be added to Grants using the key <code>properties</code>.</li>
@@ -1435,14 +1482,14 @@ and the extension should be supported by the FSC Group you are using.</p>
 <li>When provided, the fields of the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the access token as specified in the [access token section].(#access_token)</li>
 <li>When provided, the fields of the <code>properties</code> object <strong><em class="rfc2119">MUST</em></strong> be included in the Grant Hash as specified in the [Grant hash section].(#grant-hash)</li>
 </ul>
-</section><section id="security-considerations"><div class="header-wrapper"><h5 id="x3-2-2-2-security-considerations"><bdi class="secno">3.2.2.2 </bdi>Security Considerations</h5><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 3.2.2.2"></a></div>
+</section><section id="security-considerations"><div class="header-wrapper"><h5 id="x4-2-2-2-security-considerations"><bdi class="secno">4.2.2.2 </bdi>Security Considerations</h5><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 4.2.2.2"></a></div>
 <ul>
 <li>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to implement a size limit of 1 MB for the serialized properties object. This limit should prevent excessive data transfer and storage. </li>
 <li>Sensitive information like secrets or other private information should not be stored in the <code>properties</code> object, as it may be visible to Services and potentially logged or stored in various systems.</li>
 <li>Implementers should be aware that the content of the <code>properties</code> object is unsanitized. For example, they should consider sanitizing the data before showing it in user interfaces to prevent XSS injections or other security vulnerabilities.</li>
 </ul>
-</section></section><section id="signatures-0"><div class="header-wrapper"><h4 id="signatures"><bdi class="secno">3.2.3 </bdi>Signatures</h4><a class="self-link" href="#signatures" aria-label="Permalink for Section 3.2.3"></a></div><p>A signature <strong><em class="rfc2119">MUST</em></strong> follow the JSON Web Signature (JWS) format specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>]</p>
-<p>A signature on a Contract <strong><em class="rfc2119">SHOULD</em></strong> only be accepted if the Peer is present in one of the Grants as:</p>
+</section></section><section id="signatures-0"><div class="header-wrapper"><h4 id="signatures"><bdi class="secno">4.2.3 </bdi>Signatures</h4><a class="self-link" href="#signatures" aria-label="Permalink for Section 4.2.3"></a></div><p>A signature <em class="rfc2119">MUST</em> follow the JSON Web Signature (JWS) format specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>]</p>
+<p>A signature on a Contract <em class="rfc2119">SHOULD</em> only be accepted if the Peer is present in one of the Grants as:</p>
 <p><em>ServicePublicationGrant</em></p>
 <ul>
 <li><code>grant.data.directory.peer_id</code></li>
@@ -1467,9 +1514,9 @@ and the extension should be supported by the FSC Group you are using.</p>
 <li><code>grant.data.delegator.peer_id</code></li>
 <li><code>grant.data.service.delegator.peer_id</code></li>
 </ul>
-<p>The JWS <strong><em class="rfc2119">MUST</em></strong> specify the certificate thumbprint of the keypair used to create the digital signature using the <code>x5t#S256</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] field of the <code>JOSE Header</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4">section 4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
-<p>The JWS <strong><em class="rfc2119">MUST</em></strong> use the JWS Compact Serialization described in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-7.1">section 7.1</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>]</p>
-<p>The JWS <strong><em class="rfc2119">MUST</em></strong> be created using one of the following digital signature algorithms:</p>
+<p>The JWS <em class="rfc2119">MUST</em> specify the certificate thumbprint of the keypair used to create the digital signature using the <code>x5t#S256</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] field of the <code>JOSE Header</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4">section 4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
+<p>The JWS <em class="rfc2119">MUST</em> use the JWS Compact Serialization described in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-7.1">section 7.1</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>]</p>
+<p>The JWS <em class="rfc2119">MUST</em> be created using one of the following digital signature algorithms:</p>
 <ul>
 <li>RS256</li>
 <li>RS384</li>
@@ -1478,7 +1525,7 @@ and the extension should be supported by the FSC Group you are using.</p>
 <li>ES384</li>
 <li>ES512</li>
 </ul>
-<p>The JWS Payload as defined in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-2">section 2</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>], <strong><em class="rfc2119">MUST</em></strong> contain a hash of the <code>contract.content</code> as described in the section <a href="#content_hash">Content Hash</a>, one of the signature types described in the <a href="#signature_types">signature type section</a> and a Unix timestamp of the sign date.</p>
+<p>The JWS Payload as defined in <a href="https://www.rfc-editor.org/rfc/rfc7515#section-2">section 2</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>], <em class="rfc2119">MUST</em> contain a hash of the <code>contract.content</code> as described in the section <a href="#content_hash">Content Hash</a>, one of the signature types described in the <a href="#signature_types">signature type section</a> and a Unix timestamp of the sign date.</p>
 <p>JWS Payload example:</p>
 <pre><code class="JSON hljs json" aria-busy="false"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"contract_content_hash"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"--------"</span><span class="hljs-punctuation">,</span>
@@ -1486,18 +1533,18 @@ and the extension should be supported by the FSC Group you are using.</p>
   <span class="hljs-attr">"signed_at"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1672527600</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-<section id="payload-fields"><div class="header-wrapper"><h5 id="x3-2-3-1-payload-fields"><bdi class="secno">3.2.3.1 </bdi>Payload fields</h5><a class="self-link" href="#payload-fields" aria-label="Permalink for Section 3.2.3.1"></a></div>
+<section id="payload-fields"><div class="header-wrapper"><h5 id="x4-2-3-1-payload-fields"><bdi class="secno">4.2.3.1 </bdi>Payload fields</h5><a class="self-link" href="#payload-fields" aria-label="Permalink for Section 4.2.3.1"></a></div>
 <ul>
 <li><code>contract_content_hash</code>, hash of the content of the Contract.</li>
 <li><code>type</code>, type of signature.</li>
 <li><code>signed_at</code> Unix timestamp of the sign date.</li>
 </ul>
-</section><section id="signature-types"><div class="header-wrapper"><h5 id="signature_types"><bdi class="secno">3.2.3.2 </bdi>Signature types</h5><a class="self-link" href="#signature_types" aria-label="Permalink for Section 3.2.3.2"></a></div><ul>
+</section><section id="signature-types"><div class="header-wrapper"><h5 id="signature_types"><bdi class="secno">4.2.3.2 </bdi>Signature types</h5><a class="self-link" href="#signature_types" aria-label="Permalink for Section 4.2.3.2"></a></div><ul>
 <li><code>accept</code>, Peer has accepted the contract</li>
 <li><code>reject</code>, Peer has rejected the contract</li>
 <li><code>revoke</code>, Peer has revoked the contract</li>
 </ul>
-</section></section><section id="the-content-hash"><div class="header-wrapper"><h4 id="content_hash"><bdi class="secno">3.2.4 </bdi>The content hash</h4><a class="self-link" href="#content_hash" aria-label="Permalink for Section 3.2.4"></a></div><p>A Peer should ensure that a signature is intended for the Contract.<br>This validation is done by comparing the hash of the received Contract with the hash in the signature.<br>The Validation <strong><em class="rfc2119">MUST</em></strong> be done every time a Peer receives a signature.  </p>
+</section></section><section id="the-content-hash"><div class="header-wrapper"><h4 id="content_hash"><bdi class="secno">4.2.4 </bdi>The content hash</h4><a class="self-link" href="#content_hash" aria-label="Permalink for Section 4.2.4"></a></div><p>A Peer should ensure that a signature is intended for the Contract.<br>This validation is done by comparing the hash of the received Contract with the hash in the signature.<br>The Validation <em class="rfc2119">MUST</em> be done every time a Peer receives a signature.  </p>
 <p>The <code>contract_content_hash</code> of the signature payload contains the signature hash. The algorithm to create a <code>contract_content_hash</code> is described below. 
 The algorithm ensures that the content hash is unique for a specific Contract content. Because a signature contains the content hash, it becomes possible to guarantee that a signature is intended for a specific Contract.</p>
 <ol>
@@ -1509,13 +1556,13 @@ To convert the hash algorithm to an integer, see the <a href="#type_mapping_hash
 <li>Add <code>1$</code> as suffix to the string created in step 13. This is the enum <code>HASH_TYPE_CONTRACT</code> as defined in the field <code>.components.schemas.HashType</code> of the <a href="manager.yaml">OpenAPI Specification</a> as int32. If the string created in step 13 is <code>$1$</code>, the result should now be <code>$1$1$</code></li>
 <li>Add the Base64 generated in step 4 as suffix to the string generated in step 5.</li>
 </ol>
-</section><section id="grant-hash"><div class="header-wrapper"><h4 id="grant_hash"><bdi class="secno">3.2.5 </bdi>Grant hash</h4><a class="self-link" href="#grant_hash" aria-label="Permalink for Section 3.2.5"></a></div><p>The Grant hash is used in the access token request to identify the Grant which contains the authorization for the connection to the Service. 
+</section><section id="grant-hash"><div class="header-wrapper"><h4 id="grant_hash"><bdi class="secno">4.2.5 </bdi>Grant hash</h4><a class="self-link" href="#grant_hash" aria-label="Permalink for Section 4.2.5"></a></div><p>The Grant hash is used in the access token request to identify the Grant which contains the authorization for the connection to the Service. 
 The <code>iv</code> (Initialization vector) field is included in the Grant hash to create a Grant hash that references to a single Contract. 
 The Grant hash can be created by executing the following steps:</p>
 <ol>
 <li>Create the content hash as described in the <a href="#content_hash">content hash</a> section. </li>
-<li>Convert the content of <code>grant.data</code> to Canonical JSON data as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>]</li>
-<li>Append the Canonical JSON data to the content hash</li>
+<li>Convert the content of <code>grant.data</code> to a Canonical JSON string as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>].</li>
+<li>Append the Canonical JSON string to the content hash.</li>
 <li>Hash the result of step 3 using the hash algorithm specified in <code>contract.content.algorithm</code>.</li>
 <li>Encode the bytes of the hash using Base64 URL encoding with all trailing '=' characters omitted and without the inclusion of any line breaks, whitespace, or other additional characters.</li>
 <li>Convert the value of <code>contract.content.algorithm</code> to an int32 and enclose it with <code>$</code>. The int32 value per hash algorithm type is defined in the <a href="#type_mapping_hash_algorithm">type mapping</a>.. E.g. The enum <code>HASH_ALGORITHM_SHA3_512</code> becomes <code>$1$</code>.</li>
@@ -1523,8 +1570,8 @@ The Grant hash can be created by executing the following steps:</p>
 <li>Combine the strings containing the hash algorithm (step 6) and Hash type (step 7). E.g. The hash algorithm <code>HASH_ALGORITHM_SHA3_512</code> and Grant Type <code>GRANT_TYPE_SERVICE_CONNECTION</code> should result in the string <code>$1$2$</code></li>
 <li>Prefix the Base64 string generated in step 5 with the string generated in step 8.</li>
 </ol>
-</section><section id="type-mappings"><div class="header-wrapper"><h4 id="x3-2-6-type-mappings"><bdi class="secno">3.2.6 </bdi>Type mappings</h4><a class="self-link" href="#type-mappings" aria-label="Permalink for Section 3.2.6"></a></div>
-<section id="hash-types"><div class="header-wrapper"><h5 id="type_mapping_hash"><bdi class="secno">3.2.6.1 </bdi>Hash types</h5><a class="self-link" href="#type_mapping_hash" aria-label="Permalink for Section 3.2.6.1"></a></div><table>
+</section><section id="type-mappings"><div class="header-wrapper"><h4 id="x4-2-6-type-mappings"><bdi class="secno">4.2.6 </bdi>Type mappings</h4><a class="self-link" href="#type-mappings" aria-label="Permalink for Section 4.2.6"></a></div>
+<section id="hash-types"><div class="header-wrapper"><h5 id="type_mapping_hash"><bdi class="secno">4.2.6.1 </bdi>Hash types</h5><a class="self-link" href="#type_mapping_hash" aria-label="Permalink for Section 4.2.6.1"></a></div><table>
 <thead>
 <tr>
 <th>Hash type</th>
@@ -1552,10 +1599,10 @@ The Grant hash can be created by executing the following steps:</p>
 <td>5</td>
 </tr>
 </tbody></table>
-</section><section id="grant-types"><div class="header-wrapper"><h5 id="type_mapping_grant"><bdi class="secno">3.2.6.2 </bdi>Grant types</h5><a class="self-link" href="#type_mapping_grant" aria-label="Permalink for Section 3.2.6.2"></a></div><table>
+</section><section id="grant-types"><div class="header-wrapper"><h5 id="type_mapping_grant"><bdi class="secno">4.2.6.2 </bdi>Grant types</h5><a class="self-link" href="#type_mapping_grant" aria-label="Permalink for Section 4.2.6.2"></a></div><table>
 <thead>
 <tr>
-<th>Hash type</th>
+<th>Grant type</th>
 <th>int32 value</th>
 </tr>
 </thead>
@@ -1576,7 +1623,7 @@ The Grant hash can be created by executing the following steps:</p>
 <td>4</td>
 </tr>
 </tbody></table>
-</section><section id="hash-algorithms"><div class="header-wrapper"><h5 id="type_mapping_hash_algorithm"><bdi class="secno">3.2.6.3 </bdi>Hash algorithms</h5><a class="self-link" href="#type_mapping_hash_algorithm" aria-label="Permalink for Section 3.2.6.3"></a></div><table>
+</section><section id="hash-algorithms"><div class="header-wrapper"><h5 id="type_mapping_hash_algorithm"><bdi class="secno">4.2.6.3 </bdi>Hash algorithms</h5><a class="self-link" href="#type_mapping_hash_algorithm" aria-label="Permalink for Section 4.2.6.3"></a></div><table>
 <thead>
 <tr>
 <th>Hash Algorithm</th>
@@ -1588,7 +1635,7 @@ The Grant hash can be created by executing the following steps:</p>
 <td>1</td>
 </tr>
 </tbody></table>
-</section><section id="service-types"><div class="header-wrapper"><h5 id="type_mapping_service"><bdi class="secno">3.2.6.4 </bdi>Service types</h5><a class="self-link" href="#type_mapping_service" aria-label="Permalink for Section 3.2.6.4"></a></div><table>
+</section><section id="service-types"><div class="header-wrapper"><h5 id="type_mapping_service"><bdi class="secno">4.2.6.4 </bdi>Service types</h5><a class="self-link" href="#type_mapping_service" aria-label="Permalink for Section 4.2.6.4"></a></div><table>
 <thead>
 <tr>
 <th>Service Type</th>
@@ -1604,9 +1651,23 @@ The Grant hash can be created by executing the following steps:</p>
 <td>2</td>
 </tr>
 </tbody></table>
-</section></section></section><section id="access-token"><div class="header-wrapper"><h3 id="access_token"><bdi class="secno">3.3 </bdi>Access token</h3><a class="self-link" href="#access_token" aria-label="Permalink for Section 3.3"></a></div><p>The access token is a JSON Web Token (JWT) as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]</p>
-<p>The JWT <strong><em class="rfc2119">MUST</em></strong> specify the thumbprint of the X.509 certificate used to sign the JWT using the <code>x5t#S256</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] field of the <code>JOSE Header</code>  <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4">section 4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
-<p>The JWT <strong><em class="rfc2119">MUST</em></strong> be created using one of the following digital signature algorithms:</p>
+</section></section><section class="informative" id="certificate-renewal"><div class="header-wrapper"><h4 id="x4-2-7-certificate-renewal"><bdi class="secno">4.2.7 </bdi> Certificate renewal</h4><a class="self-link" href="#certificate-renewal" aria-label="Permalink for Section 4.2.7"></a></div><p><em>This section is non-normative.</em></p>
+
+
+
+<p>There are two scenarios in which a certificate renewal can affect Contracts.</p>
+<ol>
+<li><p>The certificate used to add an accept signature expires before the Contract expires.<br>In this scenario the Peer has to create a new accept signature using the new certificate and resend it to the other Peers on the Contract. Without a valid certificate, Peers cannot verify the signature, rendering the Contract invalid.</p>
+</li>
+<li><p>A Contract contains a ServiceConnectionGrant(s) with a thumbprint of a public key used by a certificate that expires before the Contract expires.<br>In this scenario, the Peer can renew the certificate without rotating the keypair, ensuring that the public key thumbprint remains unchanged. As a result, the Contract remains unaffected. 
+However, if the keypair is rotated, the public key thumbprint will change and the Outway can no longer use the ServiceConnectionGrant to connect to the Service. As a result, a new Contract will need to be created containing a ServiceConnectionGrant with the new public key thumbprint.</p>
+</li>
+</ol>
+</section>
+
+</section><section id="access-token"><div class="header-wrapper"><h3 id="access_token"><bdi class="secno">4.3 </bdi>Access token</h3><a class="self-link" href="#access_token" aria-label="Permalink for Section 4.3"></a></div><p>The access token is a JSON Web Token (JWT) as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]</p>
+<p>The JWT <em class="rfc2119">MUST</em> specify the thumbprint of the X.509 certificate used to sign the JWT using the <code>x5t#S256</code> <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4.1.8">section 4.1.8</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] field of the <code>JOSE Header</code>  <a href="https://www.rfc-editor.org/rfc/rfc7515#section-4">section 4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>].</p>
+<p>The JWT <em class="rfc2119">MUST</em> be created using one of the following digital signature algorithms:</p>
 <ul>
 <li>RS256</li>
 <li>RS384</li>
@@ -1616,7 +1677,7 @@ The Grant hash can be created by executing the following steps:</p>
 <li>ES512</li>
 </ul>
 <p>The access token is a certificate-bound access token as specified in <a href="https://www.rfc-editor.org/rfc/rfc8705#section-3">section 3</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>]</p>
-<section id="jwt-payload"><div class="header-wrapper"><h4 id="x3-3-1-jwt-payload"><bdi class="secno">3.3.1 </bdi>JWT Payload</h4><a class="self-link" href="#jwt-payload" aria-label="Permalink for Section 3.3.1"></a></div>
+<section id="jwt-payload"><div class="header-wrapper"><h4 id="x4-3-1-jwt-payload"><bdi class="secno">4.3.1 </bdi>JWT Payload</h4><a class="self-link" href="#jwt-payload" aria-label="Permalink for Section 4.3.1"></a></div>
 <p>The payload of the JWT:</p>
 <ul>
 <li><em>gth(string):</em><br>The hash of the Grant that serves as the basis for the authorization</li>
@@ -1629,7 +1690,7 @@ The issuer <a href="https://www.rfc-editor.org/rfc/rfc7519#section-4.1.1">sectio
 <li><em>svc(string):</em>
 Name of the Service</li>
 <li><em>aud(string):</em>
-The audience <a href="https://www.rfc-editor.org/rfc/rfc7519#section-4.1.3">section 4.1.3</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]. This should be URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] of the Inway providing the Service. The URI is a URL that <strong><em class="rfc2119">MUST</em></strong> contain the scheme and port number used by the Inway</li>
+The audience <a href="https://www.rfc-editor.org/rfc/rfc7519#section-4.1.3">section 4.1.3</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]. This should be URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] of the Inway providing the Service. The URI is a URL that <em class="rfc2119">MUST</em> contain the scheme and port number used by the Inway</li>
 <li><em>exp(int):</em>
 Expiration time <a href="https://www.rfc-editor.org/rfc/rfc7519#section-4.1.4">section 4.1.4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]</li>
 <li><em>nbf(int):</em>
@@ -1706,7 +1767,7 @@ An object which can be used to provide additional data</li>
     <span class="hljs-attr">"add"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-</section></section><section id="manager-0"><div class="header-wrapper"><h3 id="manager"><bdi class="secno">3.4 </bdi>Manager</h3><a class="self-link" href="#manager" aria-label="Permalink for Section 3.4"></a></div><p>The Manager is an essential component for each Peer in the Group. 
+</section></section><section id="manager-0"><div class="header-wrapper"><h3 id="manager"><bdi class="secno">4.4 </bdi>Manager</h3><a class="self-link" href="#manager" aria-label="Permalink for Section 4.4"></a></div><p>The Manager is an essential component for each Peer in the Group. 
 The Manager is responsible for:</p>
 <ul>
 <li>Receiving Contracts</li>
@@ -1719,28 +1780,28 @@ The Manager is responsible for:</p>
 <li>Listing Peers</li>
 <li>Listing Services</li>
 </ul>
-<p>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to implement the Manager functionality separate from the Inway functionality, in order to be able to have multiple Inways that are configured by one Manager.</p>
-<section id="behavior"><div class="header-wrapper"><h4 id="x3-4-1-behavior"><bdi class="secno">3.4.1 </bdi>Behavior</h4><a class="self-link" href="#behavior" aria-label="Permalink for Section 3.4.1"></a></div>
-<section id="authentication"><div class="header-wrapper"><h5 id="x3-4-1-1-authentication"><bdi class="secno">3.4.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication" aria-label="Permalink for Section 3.4.1.1"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> only accept mTLS connections from other external Managers with an X.509 certificate that is signed by the TA of the Group.</p>
-</section><section id="contracts-0"><div class="header-wrapper"><h5 id="x3-4-1-2-contracts"><bdi class="secno">3.4.1.2 </bdi>Contracts</h5><a class="self-link" href="#contracts-0" aria-label="Permalink for Section 3.4.1.2"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> support Contracts containing Grants of the type ServicePublicationGrant and ServiceConnectionGrant.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> validate Contracts using the rules described in <a href="#contract_validation">Contract validation section</a></p>
+<p>It is <em class="rfc2119">RECOMMENDED</em> to implement the Manager functionality separate from the Inway functionality, in order to be able to have multiple Inways that are configured by one Manager.</p>
+<section id="behavior"><div class="header-wrapper"><h4 id="x4-4-1-behavior"><bdi class="secno">4.4.1 </bdi>Behavior</h4><a class="self-link" href="#behavior" aria-label="Permalink for Section 4.4.1"></a></div>
+<section id="authentication"><div class="header-wrapper"><h5 id="x4-4-1-1-authentication"><bdi class="secno">4.4.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication" aria-label="Permalink for Section 4.4.1.1"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> only accept mTLS connections from other external Managers with an X.509 certificate that is signed by the TA of the Group.</p>
+</section><section id="contracts-0"><div class="header-wrapper"><h5 id="x4-4-1-2-contracts"><bdi class="secno">4.4.1.2 </bdi>Contracts</h5><a class="self-link" href="#contracts-0" aria-label="Permalink for Section 4.4.1.2"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> support Contracts containing Grants of the type ServicePublicationGrant and ServiceConnectionGrant.</p>
+<p>The Manager <em class="rfc2119">MUST</em> validate Contracts using the rules described in <a href="#contract_validation">Contract validation section</a></p>
 <p>When storing Contracts, the order of items in arrays <strong><em class="rfc2119">MUST</em></strong> be persisted to guarantee consistent <a href="#content_hash">Contract hashes</a> and <a href="#grant_hash">Grant hashes</a>.  </p>
 <p>The Manager <strong><em class="rfc2119">MUST</em></strong> persist the Peer ID, name and Manager address of each Peer with whom the Peer has negotiated Contracts.</p>
-<p>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to implement a retry and backoff mechanism in case the Contract propagation fails.</p>
-</section><section id="signatures-1"><div class="header-wrapper"><h5 id="x3-4-1-3-signatures"><bdi class="secno">3.4.1.3 </bdi>Signatures</h5><a class="self-link" href="#signatures-1" aria-label="Permalink for Section 3.4.1.3"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> validate the signature according to the rules described in the <a href="#signatures">signature section</a>.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> generate an error response if a signature is invalid.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> propagate the signature to each of the Peers in the Contract when the Peer signs the Contract.</p>
-<p>It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to implement a retry and backoff mechanism in case the signature propagation fails.</p>
-</section><section id="providing-x-509-certificates"><div class="header-wrapper"><h5 id="x3-4-1-4-providing-x-509-certificates"><bdi class="secno">3.4.1.4 </bdi>Providing X.509 certificates</h5><a class="self-link" href="#providing-x-509-certificates" aria-label="Permalink for Section 3.4.1.4"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> provide X.509 certificates of the keypairs used to sign Contracts and access tokens.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> provide the complete certificate chain excluding the root CA certificate used by the Group as Trust Anchor.</p>
-</section><section id="providing-contracts"><div class="header-wrapper"><h5 id="x3-4-1-5-providing-contracts"><bdi class="secno">3.4.1.5 </bdi>Providing contracts</h5><a class="self-link" href="#providing-contracts" aria-label="Permalink for Section 3.4.1.5"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> provide existing Contracts for a specific Peer. A Contract <strong><em class="rfc2119">SHOULD</em></strong> only be provided to a Peer if the Peer is present in one of the Grants of the Contract.</p>
-</section><section id="tokens"><div class="header-wrapper"><h5 id="manager_tokens"><bdi class="secno">3.4.1.6 </bdi>Tokens</h5><a class="self-link" href="#manager_tokens" aria-label="Permalink for Section 3.4.1.6"></a></div><p>The Manager <strong><em class="rfc2119">MUST</em></strong> be able to provide an <a href="#access_token">access token</a> to Peers that have a valid Contract containing a ServiceConnectionGrant or DelegatedServiceConnectionGrant.</p>
-<p>Before issuing an access token the Manager <strong><em class="rfc2119">MUST</em></strong> validate that:</p>
+<p>It is <em class="rfc2119">RECOMMENDED</em> to implement a retry and backoff mechanism in case the Contract propagation fails.</p>
+</section><section id="signatures-1"><div class="header-wrapper"><h5 id="x4-4-1-3-signatures"><bdi class="secno">4.4.1.3 </bdi>Signatures</h5><a class="self-link" href="#signatures-1" aria-label="Permalink for Section 4.4.1.3"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> validate the signature according to the rules described in the <a href="#signatures">signature section</a>.</p>
+<p>The Manager <em class="rfc2119">MUST</em> generate an error response if a signature is invalid.</p>
+<p>The Manager <em class="rfc2119">MUST</em> propagate the signature to each of the Peers in the Contract when the Peer signs the Contract.</p>
+<p>It is <em class="rfc2119">RECOMMENDED</em> to implement a retry and backoff mechanism in case the signature propagation fails.</p>
+</section><section id="providing-x-509-certificates"><div class="header-wrapper"><h5 id="x4-4-1-4-providing-x-509-certificates"><bdi class="secno">4.4.1.4 </bdi>Providing X.509 certificates</h5><a class="self-link" href="#providing-x-509-certificates" aria-label="Permalink for Section 4.4.1.4"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> provide X.509 certificates of the keypairs used to sign Contracts and access tokens.</p>
+<p>The Manager <em class="rfc2119">MUST</em> provide the complete certificate chain excluding the root CA certificate used by the Group as Trust Anchor.</p>
+</section><section id="providing-contracts"><div class="header-wrapper"><h5 id="x4-4-1-5-providing-contracts"><bdi class="secno">4.4.1.5 </bdi>Providing contracts</h5><a class="self-link" href="#providing-contracts" aria-label="Permalink for Section 4.4.1.5"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> provide existing Contracts for a specific Peer. A Contract <em class="rfc2119">SHOULD</em> only be provided to a Peer if the Peer is present in one of the Grants of the Contract.</p>
+</section><section id="tokens"><div class="header-wrapper"><h5 id="manager_tokens"><bdi class="secno">4.4.1.6 </bdi>Tokens</h5><a class="self-link" href="#manager_tokens" aria-label="Permalink for Section 4.4.1.6"></a></div><p>The Manager <em class="rfc2119">MUST</em> be able to provide an <a href="#access_token">access token</a> to Peers that have a valid Contract containing a ServiceConnectionGrant or DelegatedServiceConnectionGrant.</p>
+<p>Before issuing an access token the Manager <em class="rfc2119">MUST</em> validate that:</p>
 <ol>
 <li>The <code>scope</code> provided in the token request contains a Grant hash that matches with a ServiceConnectionGrant or DelegatedServiceConnectionGrant of a valid Contract. </li>
 <li>The <code>client_id</code> provided in the token request contains a PeerID that matches with the PeerID specified in the X.509 certificate of the client requesting the access token and later using the access token to make an API request.</li>
@@ -1753,32 +1814,32 @@ The Manager is responsible for:</p>
 The <code>act</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Peer who is connecting to the Service on behalf of another Peer. I.e. the authorization to connect has been granted using a DelegatedServiceConnectionGrant.
 The <code>pdi</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Service which is being offered on behalf of another Peer. 
 The <code>prp</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when the Grant contains the <code>properties</code> object in the <code>grant.data.properties</code> field. </p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> include the address of the Inway in the field <code>aud</code> of the access token.</p>
-</section><section id="services"><div class="header-wrapper"><h5 id="x3-4-1-7-services"><bdi class="secno">3.4.1.7 </bdi>Services</h5><a class="self-link" href="#services" aria-label="Permalink for Section 3.4.1.7"></a></div>
-<p>The name of a Service <strong><em class="rfc2119">MUST</em></strong> be unique within the scope of a Peer.</p>
+<p>The Manager <em class="rfc2119">MUST</em> include the address of the Inway in the field <code>aud</code> of the access token.</p>
+</section><section id="services"><div class="header-wrapper"><h5 id="x4-4-1-7-services"><bdi class="secno">4.4.1.7 </bdi>Services</h5><a class="self-link" href="#services" aria-label="Permalink for Section 4.4.1.7"></a></div>
+<p>The name of a Service <em class="rfc2119">MUST</em> be unique within the scope of a Peer.</p>
 <p>The Peer is responsible for checking the uniqueness of a Service name.</p>
-</section><section id="service-listing"><div class="header-wrapper"><h5 id="x3-4-1-8-service-listing"><bdi class="secno">3.4.1.8 </bdi>Service listing</h5><a class="self-link" href="#service-listing" aria-label="Permalink for Section 3.4.1.8"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> list a Service when a valid Contract containing a ServicePublicationGrant or DelegatedServicePublicationGrant for the Service exists.</p>
-</section><section id="peer-listing"><div class="header-wrapper"><h5 id="x3-4-1-9-peer-listing"><bdi class="secno">3.4.1.9 </bdi>Peer listing</h5><a class="self-link" href="#peer-listing" aria-label="Permalink for Section 3.4.1.9"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> list the Peers with whom the Peer has negotiated Contracts or who announced themselves to the Peer.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> persist the Peer ID, name and Manager address of each Peer with whom the Peer has negotiated Contracts.</p>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> persist the Peer ID, name and Manager address of each Peer who called the <code>announce</code> endpoint as specified in the <a href="manager.yaml">OpenAPI Specification</a>.</p>
-</section></section><section id="announce"><div class="header-wrapper"><h4 id="x3-4-2-announce"><bdi class="secno">3.4.2 </bdi>Announce</h4><a class="self-link" href="#announce" aria-label="Permalink for Section 3.4.2"></a></div>
+</section><section id="service-listing"><div class="header-wrapper"><h5 id="x4-4-1-8-service-listing"><bdi class="secno">4.4.1.8 </bdi>Service listing</h5><a class="self-link" href="#service-listing" aria-label="Permalink for Section 4.4.1.8"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> list a Service when a valid Contract containing a ServicePublicationGrant or DelegatedServicePublicationGrant for the Service exists.</p>
+</section><section id="peer-listing"><div class="header-wrapper"><h5 id="x4-4-1-9-peer-listing"><bdi class="secno">4.4.1.9 </bdi>Peer listing</h5><a class="self-link" href="#peer-listing" aria-label="Permalink for Section 4.4.1.9"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> list the Peers with whom the Peer has negotiated Contracts or who announced themselves to the Peer.</p>
+<p>The Manager <em class="rfc2119">MUST</em> persist the Peer ID, name and Manager address of each Peer with whom the Peer has negotiated Contracts.</p>
+<p>The Manager <em class="rfc2119">MUST</em> persist the Peer ID, name and Manager address of each Peer who called the <code>announce</code> endpoint as specified in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
+</section></section><section id="announce"><div class="header-wrapper"><h4 id="x4-4-2-announce"><bdi class="secno">4.4.2 </bdi>Announce</h4><a class="self-link" href="#announce" aria-label="Permalink for Section 4.4.2"></a></div>
 <p>The <code>announce</code> is used to share the <code>Manager</code> address and <code>Peer</code> information among Peers. The <code>announce</code> is also used by the <code>Directory</code> to obtain the <code>Manager</code> addresses of all <code>Peers</code> in the <code>Group</code>. 
-Each <code>Peer</code> <strong><em class="rfc2119">MUST</em></strong> call the <code>announce</code> endpoint of a Directory to register themselves as participant of the <code>Group</code>. </p>
-<p>In addition to announcing to the <code>Directory</code> a Manager <strong><em class="rfc2119">SHOULD</em></strong> call the <code>announce</code> endpoint of the Peers with whom the Peer has negotiated Contracts when the address of Manager changes.</p>
-</section><section id="interfaces"><div class="header-wrapper"><h4 id="manager_interface"><bdi class="secno">3.4.3 </bdi>Interfaces</h4><a class="self-link" href="#manager_interface" aria-label="Permalink for Section 3.4.3"></a></div><p>The Manager functionality <strong><em class="rfc2119">MUST</em></strong> implement an HTTP interface as specified in the <a href="manager.yaml">OpenAPI Specification</a>.  </p>
-</section><section id="fsc-manager-address"><div class="header-wrapper"><h4 id="x3-4-4-fsc-manager-address"><bdi class="secno">3.4.4 </bdi>FSC manager address</h4><a class="self-link" href="#fsc-manager-address" aria-label="Permalink for Section 3.4.4"></a></div>
+Each <code>Peer</code> <em class="rfc2119">MUST</em> call the <code>announce</code> endpoint of a Directory to register themselves as participant of the <code>Group</code>. </p>
+<p>In addition to announcing to the <code>Directory</code> a Manager <em class="rfc2119">SHOULD</em> call the <code>announce</code> endpoint of the Peers with whom the Peer has negotiated Contracts when the address of Manager changes.</p>
+</section><section id="interfaces"><div class="header-wrapper"><h4 id="manager_interface"><bdi class="secno">4.4.3 </bdi>Interfaces</h4><a class="self-link" href="#manager_interface" aria-label="Permalink for Section 4.4.3"></a></div><p>The Manager functionality <em class="rfc2119">MUST</em> implement an HTTP interface as specified in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.  </p>
+</section><section id="fsc-manager-address"><div class="header-wrapper"><h4 id="x4-4-4-fsc-manager-address"><bdi class="secno">4.4.4 </bdi>FSC manager address</h4><a class="self-link" href="#fsc-manager-address" aria-label="Permalink for Section 4.4.4"></a></div>
 <p>The Manager is required to include its public address as HTTP Header <code>Fsc-Manager-Address</code> in each POST or PUT request sent to another Manager.</p>
-</section><section id="error-response"><div class="header-wrapper"><h4 id="x3-4-5-error-response"><bdi class="secno">3.4.5 </bdi>Error response</h4><a class="self-link" href="#error-response" aria-label="Permalink for Section 3.4.5"></a></div>
+</section><section id="error-response"><div class="header-wrapper"><h4 id="x4-4-5-error-response"><bdi class="secno">4.4.5 </bdi>Error response</h4><a class="self-link" href="#error-response" aria-label="Permalink for Section 4.4.5"></a></div>
 <p>The Manager implements two error formats </p>
-<section id="oauth-2-0-error-response"><div class="header-wrapper"><h5 id="x3-4-5-1-oauth-2-0-error-response"><bdi class="secno">3.4.5.1 </bdi>OAuth 2.0 error response</h5><a class="self-link" href="#oauth-2-0-error-response" aria-label="Permalink for Section 3.4.5.1"></a></div>
-<p>The <code>/token</code> endpoint <strong><em class="rfc2119">MUST</em></strong> return an error response as described in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-5.2">section 5,2</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>].</p>
-</section><section id="other-endpoints"><div class="header-wrapper"><h5 id="x3-4-5-2-other-endpoints"><bdi class="secno">3.4.5.2 </bdi>Other endpoints</h5><a class="self-link" href="#other-endpoints" aria-label="Permalink for Section 3.4.5.2"></a></div>
-<p>The Manager <strong><em class="rfc2119">MUST</em></strong> return the error response object as described in <code>.components/schemas/error</code> of the <a href="manager.yaml">OpenAPI Specification</a>.</p>
-<p>The code field of the error response <strong><em class="rfc2119">MUST</em></strong> contain one of the codes defined as <code>.components.schemas.ManagerErrorCode</code> in the <a href="manager.yaml">OpenAPI Specification</a>.  </p>
-<p>The domain field of the error response <strong><em class="rfc2119">MUST</em></strong> be equal to <code>ERROR_DOMAIN_MANAGER</code>.  </p>
-</section><section id="codes"><div class="header-wrapper"><h5 id="x3-4-5-3-codes"><bdi class="secno">3.4.5.3 </bdi>Codes</h5><a class="self-link" href="#codes" aria-label="Permalink for Section 3.4.5.3"></a></div>
+<section id="oauth-2-0-error-response"><div class="header-wrapper"><h5 id="x4-4-5-1-oauth-2-0-error-response"><bdi class="secno">4.4.5.1 </bdi>OAuth 2.0 error response</h5><a class="self-link" href="#oauth-2-0-error-response" aria-label="Permalink for Section 4.4.5.1"></a></div>
+<p>The <code>/token</code> endpoint <em class="rfc2119">MUST</em> return an error response as described in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-5.2">section 5,2</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>].</p>
+</section><section id="other-endpoints"><div class="header-wrapper"><h5 id="x4-4-5-2-other-endpoints"><bdi class="secno">4.4.5.2 </bdi>Other endpoints</h5><a class="self-link" href="#other-endpoints" aria-label="Permalink for Section 4.4.5.2"></a></div>
+<p>The Manager <em class="rfc2119">MUST</em> return the error response object as described in <code>.components/schemas/error</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
+<p>The code field of the error response <em class="rfc2119">MUST</em> contain one of the codes defined as <code>.components.schemas.ManagerErrorCode</code> in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.  </p>
+<p>The domain field of the error response <em class="rfc2119">MUST</em> be equal to <code>ERROR_DOMAIN_MANAGER</code>.  </p>
+</section><section id="codes"><div class="header-wrapper"><h5 id="x4-4-5-3-codes"><bdi class="secno">4.4.5.3 </bdi>Codes</h5><a class="self-link" href="#codes" aria-label="Permalink for Section 4.4.5.3"></a></div>
 <table>
 <thead>
 <tr>
@@ -1793,9 +1854,14 @@ Each <code>Peer</code> <strong><em class="rfc2119">MUST</em></strong> call the <
 <td>The Group ID in the Contract does not match the GroupID of the receiving Manager</td>
 </tr>
 <tr>
-<td>ERROR_CODE_PEER_NOT_PART_OF_CONTRACT</td>
+<td>ERROR_CODE_SUBMITTING_PEER_NOT_PART_OF_CONTRACT</td>
 <td>422</td>
-<td>The Peer tried to submit or sign a Contract without being a Peer on the Contract</td>
+<td>The Peer tried to submit or sign a Contract where the submitting Peer is not on the Contract</td>
+</tr>
+<tr>
+<td>ERROR_CODE_RECEIVING_PEER_NOT_PART_OF_CONTRACT</td>
+<td>422</td>
+<td>The Peer tried to submit or sign a Contract where the receiving Peer is not on the Contract</td>
 </tr>
 <tr>
 <td>ERROR_CODE_SIGNATURE_CONTRACT_CONTENT_HASH_MISMATCH</td>
@@ -1838,7 +1904,7 @@ Each <code>Peer</code> <strong><em class="rfc2119">MUST</em></strong> call the <
 <td>The Algorithm in the Signature is not supported</td>
 </tr>
 </tbody></table>
-</section></section></section><section id="directory-0"><div class="header-wrapper"><h3 id="directory"><bdi class="secno">3.5 </bdi>Directory</h3><a class="self-link" href="#directory" aria-label="Permalink for Section 3.5"></a></div><p>The Directory is a Manager chosen by the Group to act as a Directory. </p>
+</section></section></section><section id="directory-0"><div class="header-wrapper"><h3 id="directory"><bdi class="secno">4.5 </bdi>Directory</h3><a class="self-link" href="#directory" aria-label="Permalink for Section 4.5"></a></div><p>The Directory is a Manager chosen by the Group to act as a Directory. </p>
 <p>The Directory is used by Peers to:</p>
 <ul>
 <li>Discover Services</li>
@@ -1846,13 +1912,13 @@ Each <code>Peer</code> <strong><em class="rfc2119">MUST</em></strong> call the <
 <li>Publish Services</li>
 <li>Register themselves</li>
 </ul>
-<section id="behavior-0"><div class="header-wrapper"><h4 id="x3-5-1-behavior"><bdi class="secno">3.5.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-0" aria-label="Permalink for Section 3.5.1"></a></div>
-<section id="service-publication"><div class="header-wrapper"><h5 id="x3-5-1-1-service-publication"><bdi class="secno">3.5.1.1 </bdi>Service publication</h5><a class="self-link" href="#service-publication" aria-label="Permalink for Section 3.5.1.1"></a></div>
+<section id="behavior-0"><div class="header-wrapper"><h4 id="x4-5-1-behavior"><bdi class="secno">4.5.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-0" aria-label="Permalink for Section 4.5.1"></a></div>
+<section id="service-publication"><div class="header-wrapper"><h5 id="x4-5-1-1-service-publication"><bdi class="secno">4.5.1.1 </bdi>Service publication</h5><a class="self-link" href="#service-publication" aria-label="Permalink for Section 4.5.1.1"></a></div>
 <p>Service publication is accomplished by offering a Contract to the Directory which contains one or more ServicePublicationGrants with each ServicePublicationGrant containing a single Service. Once the Directory and the Peer offering the Service have both signed the Contract, the Service is published in the Directory.</p>
-<p>The Directory <strong><em class="rfc2119">MUST</em></strong> be able to sign Contracts with Grants of the type ServicePublicationGrant.</p>
-<p>The Directory <strong><em class="rfc2119">MUST</em></strong> validate the ServicePublicationGrant in the Contract using the rules described in <a href="#service_publication_grant">ServicePublicationGrant section</a></p>
-<p>Although multiple ServicePublicationGrants are allowed in a single Contract it is <strong><em class="rfc2119">RECOMMENDED</em></strong> to limit this to one per Contract. Adding multiple ServicePublicationGrants on a single Contract makes the Contract fragile. If the publication of one Service changes the whole Contract will be invalidated. </p>
-</section></section></section><section id="outway"><div class="header-wrapper"><h3 id="x3-6-outway"><bdi class="secno">3.6 </bdi>Outway</h3><a class="self-link" href="#outway" aria-label="Permalink for Section 3.6"></a></div>
+<p>The Directory <em class="rfc2119">MUST</em> be able to sign Contracts with Grants of the type ServicePublicationGrant.</p>
+<p>The Directory <em class="rfc2119">MUST</em> validate the ServicePublicationGrant in the Contract using the rules described in <a href="#service_publication_grant">ServicePublicationGrant section</a></p>
+<p>Although multiple ServicePublicationGrants are allowed in a single Contract it is <em class="rfc2119">RECOMMENDED</em> to limit this to one per Contract. Adding multiple ServicePublicationGrants on a single Contract makes the Contract fragile. If the publication of one Service changes the whole Contract will be invalidated. </p>
+</section></section></section><section id="outway"><div class="header-wrapper"><h3 id="x4-6-outway"><bdi class="secno">4.6 </bdi>Outway</h3><a class="self-link" href="#outway" aria-label="Permalink for Section 4.6"></a></div>
 <p>The Outway is used by Peers to connect to a Service.<br>The Outway functions as a forwarding proxy that is responsible for setting up the connection to the Inway that is offering a Service.  </p>
 <p>The Outway is responsible for:</p>
 <ul>
@@ -1860,19 +1926,19 @@ Each <code>Peer</code> <strong><em class="rfc2119">MUST</em></strong> call the <
 <li>including a valid access token with each request</li>
 <li>deliver the response from the Service to the client calling the Outway</li>
 </ul>
-<section id="behavior-1"><div class="header-wrapper"><h4 id="x3-6-1-behavior"><bdi class="secno">3.6.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-1" aria-label="Permalink for Section 3.6.1"></a></div>
-<section id="authentication-0"><div class="header-wrapper"><h5 id="x3-6-1-1-authentication"><bdi class="secno">3.6.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication-0" aria-label="Permalink for Section 3.6.1.1"></a></div>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> use mTLS when connecting to Inways with an X.509 certificate signed by the chosen TA of the Group.</p>
-</section><section id="routing"><div class="header-wrapper"><h5 id="x3-6-1-2-routing"><bdi class="secno">3.6.1.2 </bdi>Routing</h5><a class="self-link" href="#routing" aria-label="Permalink for Section 3.6.1.2"></a></div>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> proxy the request to the address of the Inway specified in the field <code>aud</code> of the access token.</p>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> use an <a href="#access_token">access token</a> provided by the Peer specified in the <code>grant.data.service.peer_id</code> field of the ServiceConnectionGrant.</p>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> include an access token in the HTTP header <code>Fsc-Authorization</code> when proxying the HTTP request to the Inway.  </p>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> validate that the Group ID specified in the claim <code>gid</code> of the access token matches the Group ID of the Outway.</p>
-<p>The Outway <strong><em class="rfc2119">MUST NOT</em></strong> alter the path of the HTTP Request.</p>
-<p>Clients <strong><em class="rfc2119">MAY</em></strong> use TLS when communicating with the Outway.</p>
-</section><section id="obtaining-access-tokens"><div class="header-wrapper"><h5 id="x3-6-1-3-obtaining-access-tokens"><bdi class="secno">3.6.1.3 </bdi>Obtaining access tokens</h5><a class="self-link" href="#obtaining-access-tokens" aria-label="Permalink for Section 3.6.1.3"></a></div>
+<section id="behavior-1"><div class="header-wrapper"><h4 id="x4-6-1-behavior"><bdi class="secno">4.6.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-1" aria-label="Permalink for Section 4.6.1"></a></div>
+<section id="authentication-0"><div class="header-wrapper"><h5 id="x4-6-1-1-authentication"><bdi class="secno">4.6.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication-0" aria-label="Permalink for Section 4.6.1.1"></a></div>
+<p>The Outway <em class="rfc2119">MUST</em> use mTLS when connecting to Inways with an X.509 certificate signed by the chosen TA of the Group.</p>
+</section><section id="routing"><div class="header-wrapper"><h5 id="x4-6-1-2-routing"><bdi class="secno">4.6.1.2 </bdi>Routing</h5><a class="self-link" href="#routing" aria-label="Permalink for Section 4.6.1.2"></a></div>
+<p>The Outway <em class="rfc2119">MUST</em> proxy the request to the address of the Inway specified in the field <code>aud</code> of the access token.</p>
+<p>The Outway <em class="rfc2119">MUST</em> use an <a href="#access_token">access token</a> provided by the Peer specified in the <code>grant.data.service.peer_id</code> field of the ServiceConnectionGrant.</p>
+<p>The Outway <em class="rfc2119">MUST</em> include an access token in the HTTP header <code>Fsc-Authorization</code> when proxying the HTTP request to the Inway.  </p>
+<p>The Outway <em class="rfc2119">MUST</em> validate that the Group ID specified in the claim <code>gid</code> of the access token matches the Group ID of the Outway.</p>
+<p>The Outway <em class="rfc2119">MUST NOT</em> alter the path of the HTTP Request.</p>
+<p>Clients <em class="rfc2119">MAY</em> use TLS when communicating with the Outway.</p>
+</section><section id="obtaining-access-tokens"><div class="header-wrapper"><h5 id="x4-6-1-3-obtaining-access-tokens"><bdi class="secno">4.6.1.3 </bdi>Obtaining access tokens</h5><a class="self-link" href="#obtaining-access-tokens" aria-label="Permalink for Section 4.6.1.3"></a></div>
 <p>Access tokens are obtained using the Client Credentials flow <a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.4">section 4,4</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">RFC6749</a></cite>].
-Access tokens <strong><em class="rfc2119">MUST</em></strong> be obtained by calling the <code>/token</code> endpoint defined in the <a href="manager.yaml">OpenAPI Specification</a>.</p>
+Access tokens <em class="rfc2119">MUST</em> be obtained by calling the <code>/token</code> endpoint defined in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
 <p>To request a token via the Client Credentials flow the following information must be sent to the Manager which acts as an Authorization Server:</p>
 <ul>
 <li>GrantHash of a <code>Service Connection grant</code> or <code>Delegated Service Connection grant</code> provided in the <code>scope</code> field.</li>
@@ -1881,22 +1947,22 @@ Access tokens <strong><em class="rfc2119">MUST</em></strong> be obtained by call
 </ul>
 <p>The <code>GrantHash</code> provided in the request to the Manager acts as a reference to a <code>Grant</code> on a <code>Contract</code>. 
 The Manager (Authorization Server) will perform the verification steps defined in the <a href="#manager_tokens">token section</a> before providing an access token.</p>
-<p>The component retrieving the access token <strong><em class="rfc2119">MUST</em></strong> use mTLS to authenticate with the Authorization server (Manager) as defined in <a href="https://datatracker.ietf.org/doc/html/rfc8705#section-2.1">section 2.1</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].
-The component retrieving the access token <strong><em class="rfc2119">MUST</em></strong> use an X.509 certificate signed by the chosen TA of the Group.
-The Manager <strong><em class="rfc2119">MUST</em></strong> verify this client certificate and issue a token bound to this client certificate according to <a href="https://www.rfc-editor.org/rfc/rfc8705#section-3">section 3</a>.</p>
+<p>The component retrieving the access token <em class="rfc2119">MUST</em> use mTLS to authenticate with the Authorization server (Manager) as defined in <a href="https://datatracker.ietf.org/doc/html/rfc8705#section-2.1">section 2.1</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].
+The component retrieving the access token <em class="rfc2119">MUST</em> use an X.509 certificate signed by the chosen TA of the Group.
+The Manager <em class="rfc2119">MUST</em> verify this client certificate and issue a token bound to this client certificate according to <a href="https://www.rfc-editor.org/rfc/rfc8705#section-3">section 3</a>.</p>
 <p>
       </p><figure id="fig-obtaining-an-access-token">
-        <img src="diagrams/seq-obtaining-an-access-token.svg" alt="Obtaining access token">
+        <img src="media/seq-obtaining-an-access-token.svg" alt="Obtaining access token">
         <figcaption><a class="self-link" href="#fig-obtaining-an-access-token">Figure <bdi class="figno">10</bdi></a> <span class="fig-title">Obtaining an Access Token</span></figcaption>
       </figure>
     <p></p>
 <p>Which component obtains an access token for a Service is an implementation detail and out of scope for this document.</p>
-</section><section id="error-response-0"><div class="header-wrapper"><h5 id="x3-6-1-4-error-response"><bdi class="secno">3.6.1.4 </bdi>Error response</h5><a class="self-link" href="#error-response-0" aria-label="Permalink for Section 3.6.1.4"></a></div>
-<p>If the Error has occurred in the Inway or Service the Outway <strong><em class="rfc2119">MUST</em></strong> return the error without altering the response. </p>
-<p>The Outway <strong><em class="rfc2119">MUST</em></strong> return an error response defined in the <a href="#error_handling">Error handling section</a> when the error is produced by the Outway.</p>
-<p>The code field of the error response <strong><em class="rfc2119">MUST</em></strong> contain one of the codes defined as <code>.components.schemas.OutwayErrorCode</code> in the <a href="manager.yaml">OpenAPI Specification</a>.</p>
-<p>The domain field of the error response <strong><em class="rfc2119">MUST</em></strong> be equal to <code>ERROR_DOMAIN_OUTWAY</code>.</p>
-<section id="codes-0"><div class="header-wrapper"><h6 id="x3-6-1-4-1-codes"><bdi class="secno">3.6.1.4.1 </bdi>Codes</h6><a class="self-link" href="#codes-0" aria-label="Permalink for Section 3.6.1.4.1"></a></div>
+</section><section id="error-response-0"><div class="header-wrapper"><h5 id="x4-6-1-4-error-response"><bdi class="secno">4.6.1.4 </bdi>Error response</h5><a class="self-link" href="#error-response-0" aria-label="Permalink for Section 4.6.1.4"></a></div>
+<p>If the Error has occurred in the Inway or Service the Outway <em class="rfc2119">MUST</em> return the error without altering the response. </p>
+<p>The Outway <em class="rfc2119">MUST</em> return an error response defined in the <a href="#error_handling">Error handling section</a> when the error is produced by the Outway.</p>
+<p>The code field of the error response <em class="rfc2119">MUST</em> contain one of the codes defined as <code>.components.schemas.OutwayErrorCode</code> in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
+<p>The domain field of the error response <em class="rfc2119">MUST</em> be equal to <code>ERROR_DOMAIN_OUTWAY</code>.</p>
+<section id="codes-0"><div class="header-wrapper"><h6 id="x4-6-1-4-1-codes"><bdi class="secno">4.6.1.4.1 </bdi>Codes</h6><a class="self-link" href="#codes-0" aria-label="Permalink for Section 4.6.1.4.1"></a></div>
 <table>
 <thead>
 <tr>
@@ -1911,7 +1977,7 @@ The Manager <strong><em class="rfc2119">MUST</em></strong> verify this client ce
 <td>The Outway received a request with an HTTP Method that is not supported. The CONNECT method is not supported.</td>
 </tr>
 </tbody></table>
-</section></section></section></section><section id="inway"><div class="header-wrapper"><h3 id="x3-7-inway"><bdi class="secno">3.7 </bdi>Inway</h3><a class="self-link" href="#inway" aria-label="Permalink for Section 3.7"></a></div>
+</section></section></section></section><section id="inway"><div class="header-wrapper"><h3 id="x4-7-inway"><bdi class="secno">4.7 </bdi>Inway</h3><a class="self-link" href="#inway" aria-label="Permalink for Section 4.7"></a></div>
 <p>The Inway is used by Peers to offer a Service to other Peers.<br>The Inway is a Reverse proxy that handles incoming connections from Outways and routes the request to the correct Service.</p>
 <p>The Inway is responsible for:</p>
 <ul>
@@ -1920,32 +1986,32 @@ The Manager <strong><em class="rfc2119">MUST</em></strong> verify this client ce
 <li>forwarding the access token to the Service which is being called.</li>
 <li>returning the response from the Service to the Outway.</li>
 </ul>
-<section id="behavior-2"><div class="header-wrapper"><h4 id="x3-7-1-behavior"><bdi class="secno">3.7.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-2" aria-label="Permalink for Section 3.7.1"></a></div>
-<section id="authentication-1"><div class="header-wrapper"><h5 id="x3-7-1-1-authentication"><bdi class="secno">3.7.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication-1" aria-label="Permalink for Section 3.7.1.1"></a></div>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> only accept connections from Outways using mTLS with an X.509 certificate signed by the chosen TA of the Group.</p>
-</section><section id="authorization"><div class="header-wrapper"><h5 id="x3-7-1-2-authorization"><bdi class="secno">3.7.1.2 </bdi>Authorization</h5><a class="self-link" href="#authorization" aria-label="Permalink for Section 3.7.1.2"></a></div>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> validate the access token provided in the HTTP <code>Fsc-Authorization</code>.   </p>
-<p>The request <strong><em class="rfc2119">MUST</em></strong> be authorized if the access token meets the following conditions:  </p>
+<section id="behavior-2"><div class="header-wrapper"><h4 id="x4-7-1-behavior"><bdi class="secno">4.7.1 </bdi>Behavior</h4><a class="self-link" href="#behavior-2" aria-label="Permalink for Section 4.7.1"></a></div>
+<section id="authentication-1"><div class="header-wrapper"><h5 id="x4-7-1-1-authentication"><bdi class="secno">4.7.1.1 </bdi>Authentication</h5><a class="self-link" href="#authentication-1" aria-label="Permalink for Section 4.7.1.1"></a></div>
+<p>The Inway <em class="rfc2119">MUST</em> only accept connections from Outways using mTLS with an X.509 certificate signed by the chosen TA of the Group.</p>
+</section><section id="authorization"><div class="header-wrapper"><h5 id="x4-7-1-2-authorization"><bdi class="secno">4.7.1.2 </bdi>Authorization</h5><a class="self-link" href="#authorization" aria-label="Permalink for Section 4.7.1.2"></a></div>
+<p>The Inway <em class="rfc2119">MUST</em> validate the access token provided in the HTTP <code>Fsc-Authorization</code>.   </p>
+<p>The request <em class="rfc2119">MUST</em> be authorized if the access token meets the following conditions:  </p>
 <ul>
 <li>The access token is signed by the same Peer that owns Inway.</li>
 <li>The access token is used by an Outway that uses the X.509 certificate to which the access token is bound. This is verified by applying the JWT Certificate Thumbprint Confirmation Method specified in <a href="https://datatracker.ietf.org/doc/html/rfc8705#section-3.1">section 3.1</a> of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].</li>
 <li>The Service specified in the access token is known to the Inway.</li>
 <li>The Group ID specified in the claim <code>gid</code> of the access token matches the Group ID of the Inway.</li>
 </ul>
-</section><section id="routing-0"><div class="header-wrapper"><h5 id="x3-7-1-3-routing"><bdi class="secno">3.7.1.3 </bdi>Routing</h5><a class="self-link" href="#routing-0" aria-label="Permalink for Section 3.7.1.3"></a></div>
-<p>The HTTP request <strong><em class="rfc2119">MUST</em></strong> contain the HTTP Header <code>Fsc-Authorization</code> which contains the access token obtained by the Outway.</p>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> proxy the HTTP request to the Service specified in the field <code>svc</code> of the access token.</p>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> not delete the HTTP Header <code>Fsc-Authorization</code> from the HTTP Request before forwarding the request to the Service.</p>
+</section><section id="routing-0"><div class="header-wrapper"><h5 id="x4-7-1-3-routing"><bdi class="secno">4.7.1.3 </bdi>Routing</h5><a class="self-link" href="#routing-0" aria-label="Permalink for Section 4.7.1.3"></a></div>
+<p>The HTTP request <em class="rfc2119">MUST</em> contain the HTTP Header <code>Fsc-Authorization</code> which contains the access token obtained by the Outway.</p>
+<p>The Inway <em class="rfc2119">MUST</em> proxy the HTTP request to the Service specified in the field <code>svc</code> of the access token.</p>
+<p>The Inway <em class="rfc2119">MUST</em> not delete the HTTP Header <code>Fsc-Authorization</code> from the HTTP Request before forwarding the request to the Service.</p>
 <p>The security of the connection between the Inway and the Service is out of scope for this document.        </p>
-</section></section><section id="interfaces-0"><div class="header-wrapper"><h4 id="x3-7-2-interfaces"><bdi class="secno">3.7.2 </bdi>Interfaces</h4><a class="self-link" href="#interfaces-0" aria-label="Permalink for Section 3.7.2"></a></div>
-<section id="proxy-endpoint"><div class="header-wrapper"><h5 id="x3-7-2-1-proxy-endpoint"><bdi class="secno">3.7.2.1 </bdi>Proxy Endpoint</h5><a class="self-link" href="#proxy-endpoint" aria-label="Permalink for Section 3.7.2.1"></a></div>
-<p>The HTTP endpoint <code>/</code> <strong><em class="rfc2119">MUST</em></strong> be implemented.</p>
-</section><section id="error-response-1"><div class="header-wrapper"><h5 id="x3-7-2-2-error-response"><bdi class="secno">3.7.2.2 </bdi>Error response</h5><a class="self-link" href="#error-response-1" aria-label="Permalink for Section 3.7.2.2"></a></div>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> return the error response of a Service to the Outway without altering the response.</p>
-<p>The Inway <strong><em class="rfc2119">MUST</em></strong> return an error response defined in the <a href="#error_handling">Error handling section</a> when the error is produced by the Inway.</p>
-<p>The code field of the error response <strong><em class="rfc2119">MUST</em></strong> contain one of the codes defined as <code>.components.schemas.InwayErrorCode</code> in the <a href="manager.yaml">OpenAPI Specification</a>.</p>
-<p>The domain field of the error response <strong><em class="rfc2119">MUST</em></strong> be equal to <code>ERROR_DOMAIN_INWAY</code>.</p>
-<section id="codes-1"><div class="header-wrapper"><h6 id="x3-7-2-2-1-codes"><bdi class="secno">3.7.2.2.1 </bdi>Codes</h6><a class="self-link" href="#codes-1" aria-label="Permalink for Section 3.7.2.2.1"></a></div>
+</section></section><section id="interfaces-0"><div class="header-wrapper"><h4 id="x4-7-2-interfaces"><bdi class="secno">4.7.2 </bdi>Interfaces</h4><a class="self-link" href="#interfaces-0" aria-label="Permalink for Section 4.7.2"></a></div>
+<section id="proxy-endpoint"><div class="header-wrapper"><h5 id="x4-7-2-1-proxy-endpoint"><bdi class="secno">4.7.2.1 </bdi>Proxy Endpoint</h5><a class="self-link" href="#proxy-endpoint" aria-label="Permalink for Section 4.7.2.1"></a></div>
+<p>The HTTP endpoint <code>/</code> <em class="rfc2119">MUST</em> be implemented.</p>
+</section><section id="error-response-1"><div class="header-wrapper"><h5 id="x4-7-2-2-error-response"><bdi class="secno">4.7.2.2 </bdi>Error response</h5><a class="self-link" href="#error-response-1" aria-label="Permalink for Section 4.7.2.2"></a></div>
+<p>The Inway <em class="rfc2119">MUST</em> return the error response of a Service to the Outway without altering the response.</p>
+<p>The Inway <em class="rfc2119">MUST</em> return an error response defined in the <a href="#error_handling">Error handling section</a> when the error is produced by the Inway.</p>
+<p>The code field of the error response <em class="rfc2119">MUST</em> contain one of the codes defined as <code>.components.schemas.InwayErrorCode</code> in the <a href="media/specs/manager.yaml">OpenAPI Specification</a>.</p>
+<p>The domain field of the error response <em class="rfc2119">MUST</em> be equal to <code>ERROR_DOMAIN_INWAY</code>.</p>
+<section id="codes-1"><div class="header-wrapper"><h6 id="x4-7-2-2-1-codes"><bdi class="secno">4.7.2.2.1 </bdi>Codes</h6><a class="self-link" href="#codes-1" aria-label="Permalink for Section 4.7.2.2.1"></a></div>
 <table>
 <thead>
 <tr>
@@ -1957,17 +2023,17 @@ The Manager <strong><em class="rfc2119">MUST</em></strong> verify this client ce
 <tbody><tr>
 <td>ERROR_CODE_ACCESS_TOKEN_MISSING</td>
 <td>401</td>
-<td>The HTTP header <code>Fsc-Authorization</code> does not contain an access token. In this scenario the HTTP header <code>WWW-Authenticate</code> <strong><em class="rfc2119">MUST</em></strong> be set to <code>Bearer</code></td>
+<td>The HTTP header <code>Fsc-Authorization</code> does not contain an access token. In this scenario the HTTP header <code>WWW-Authenticate</code> <em class="rfc2119">MUST</em> be set to <code>Bearer</code></td>
 </tr>
 <tr>
 <td>ERROR_CODE_ACCESS_TOKEN_INVALID</td>
 <td>401</td>
-<td>The provided access token is invalid. In this scenario the HTTP header <code>WWW-Authenticate</code> <strong><em class="rfc2119">MUST</em></strong> be set to <code>Bearer</code></td>
+<td>The provided access token is invalid. In this scenario the HTTP header <code>WWW-Authenticate</code> <em class="rfc2119">MUST</em> be set to <code>Bearer</code></td>
 </tr>
 <tr>
 <td>ERROR_CODE_ACCESS_TOKEN_EXPIRED</td>
 <td>401</td>
-<td>The provided access token has expired. In this scenario the HTTP header <code>WWW-Authenticate</code> <strong><em class="rfc2119">MUST</em></strong> be set to <code>Bearer</code></td>
+<td>The provided access token has expired. In this scenario the HTTP header <code>WWW-Authenticate</code> <em class="rfc2119">MUST</em> be set to <code>Bearer</code></td>
 </tr>
 <tr>
 <td>ERROR_CODE_WRONG_GROUP_ID_IN_TOKEN</td>
@@ -1985,17 +2051,18 @@ The Manager <strong><em class="rfc2119">MUST</em></strong> verify this client ce
 <td>The Inway is unable to reach the Service</td>
 </tr>
 </tbody></table>
-</section></section></section></section><section id="references-0"><div class="header-wrapper"><h3 id="x3-8-references"><bdi class="secno">3.8 </bdi>References</h3><a class="self-link" href="#references-0" aria-label="Permalink for Section 3.8"></a></div>
-<p><a href="manager.yaml">OpenAPI Specification</a></p>
+</section></section></section></section><section id="references-0"><div class="header-wrapper"><h3 id="x4-8-references"><bdi class="secno">4.8 </bdi>References</h3><a class="self-link" href="#references-0" aria-label="Permalink for Section 4.8"></a></div>
+<p><a href="media/specs/manager.yaml">OpenAPI Specification</a></p>
 </section></section>
-    <section id="conformance"><div class="header-wrapper"><h2 id="x4-conformance"><bdi class="secno">4. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+    <section id="conformance"><div class="header-wrapper"><h2 id="x5-conformance"><bdi class="secno">5. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 5."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">RECOMMENDED</em>, and <em class="rfc2119">SHOULD</em> in this document
         are to be interpreted as described in
         <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
-        when, and only when, they appear in all capitals, as shown here.
+        when, and only when, they appear in all
+        capitals, as shown here.
       </p></section>
-    <section id="tof"><div class="header-wrapper"><h2 id="x5-list-of-figures"><bdi class="secno">5. </bdi>List of Figures</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></div><ul class="tof">
+    <section id="tof"><div class="header-wrapper"><h2 id="x6-list-of-figures"><bdi class="secno">6. </bdi>List of Figures</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 6."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-mtls-connections"><span class="self-link">Figure <bdi class="figno">1</bdi></span> <span class="fig-title">mTLS Connections</span></a>
   </li><li class="tofline">
