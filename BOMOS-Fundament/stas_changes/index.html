@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.4.1">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -36,14 +36,6 @@ dfn{cursor:pointer}
   
 <title>BOMOS, het fundament</title>
   
-  
-  
-<script>
-   respecConfig = {...organisationConfig, ...respecConfig};
-  </script>
-  
-  
-<link href="./media/style.css" rel="stylesheet" type="text/css">
  
 <style id="respec-mainstyle">
 @keyframes pop{
@@ -61,7 +53,7 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
+cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
@@ -89,8 +81,9 @@ dd{margin-left:0}
 }
 </style>
 <style id="respec-nlgov">
-img.license{float:left;padding-right:5px}
+img.license{float:left;padding-right:5px;background:0 0}
 </style>
+<meta name="color-scheme" content="light">
 <meta name="description" content="BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
   van en voor de standaardisatiewereld. Dit deel 1 bevat als fundament een
   beschrijving van het Beheer- en Ontwikkelmodel; een gelaagde set van
@@ -124,15 +117,18 @@ img.license{float:left;padding-right:5px}
       "id": "Logius",
       "height": 77,
       "width": 44,
-      "url": "https://www.logius.nl/standaarden"
+      "url": "https://www.logius.nl/onze-dienstverlening/standaarden"
     }
   ],
+  "useLogo": true,
+  "fileName": "",
   "latestVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
     "/",
     "shortName",
-    "/"
+    "/",
+    "fileName"
   ],
   "thisVersion": [
     "nl_organisationPublishURL",
@@ -141,7 +137,8 @@ img.license{float:left;padding-right:5px}
     "shortName",
     "/",
     "publishVersion",
-    "/"
+    "/",
+    "fileName"
   ],
   "prevVersion": [
     "nl_organisationPublishURL",
@@ -150,11 +147,9 @@ img.license{float:left;padding-right:5px}
     "shortName",
     "/",
     "previousPublishVersion",
-    "/"
+    "/",
+    "fileName"
   ],
-  "useLogo": true,
-  "useLabel": true,
-  "license": "cc-by",
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -218,6 +213,7 @@ img.license{float:left;padding-right:5px}
     "cv": "#000000",
     "vv": "#000000"
   },
+  "useLabel": true,
   "licenses": {
     "cc0": {
       "name": "Creative Commons 0 Public Domain Dedication",
@@ -238,16 +234,25 @@ img.license{float:left;padding-right:5px}
       "image": "https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by-nd.svg"
     }
   },
+  "license": "cc-by",
   "localBiblio": {
     "ADR": {
       "authors": [
         "Jasper Roes",
         "Joost Farla"
       ],
-      "date": "Juli 2020",
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules (Nederlandse API Strategie IIa)"
+      "title": "API Design Rules"
+    },
+    "ADR1": {
+      "authors": [
+        "Jasper Roes",
+        "Joost Farla"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/1.0",
+      "publisher": "Logius",
+      "title": "API Design Rules"
     },
     "ADR-ext": {
       "authors": [
@@ -264,6 +269,12 @@ img.license{float:left;padding-right:5px}
       "href": "https://www.logius.nl/onze-organisatie/zakendoen-met-logius/voorwaarden/algemene-voorwaarden-logius",
       "publisher": "Logius",
       "title": "Algemene voorwaarden Logius"
+    },
+    "AuthZEN": {
+      "date": "6 September 2024 ",
+      "href": "https://openid.net/specs/authorization-api-1_0-01.html",
+      "publisher": "OpenID",
+      "title": "Authorization API 1.0 – draft 01"
     },
     "AVG": {
       "date": "27 april 2016",
@@ -454,6 +465,7 @@ img.license{float:left;padding-right:5px}
       "title": "Expertadvies CloudEvents 1.0"
     },
     "folmer2011": {
+      "href": "https://research.utwente.nl/en/publications/management-and-development-model-for-open-standards-bomos-version",
       "title": "Management and Development Model for Open Standards (BOMOS) version 2",
       "keywords": "IR-76837",
       "authors": [
@@ -465,7 +477,7 @@ img.license{float:left;padding-right:5px}
       "publisher": "Programmabureau NOiV"
     },
     "folmer2012": {
-      "href": "https://ris.utwente.nl/ws/portalfiles/portal/6064223/thesis_E_Folmer.pdf",
+      "href": "https://research.utwente.nl/en/publications/quality-of-semantic-standards",
       "title": "Quality of Semantic Standards",
       "authors": [
         "Erwin Folmer"
@@ -502,6 +514,14 @@ img.license{float:left;padding-right:5px}
       "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
       "publisher": "OpenID foundation",
       "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3"
+    },
+    "NLGOV.OpenID": {
+      "authors": [
+        "Remco Schaar, Frank van Es, Joris Joosten, Jan Geert Koops"
+      ],
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
+      "publisher": "Logius",
+      "title": "OpenID NLGov"
     },
     "Introspection": {
       "authors": [
@@ -566,6 +586,12 @@ img.license{float:left;padding-right:5px}
     "NCSC 2021": {
       "date": "Jan 2021",
       "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
+      "publisher": "NCSC",
+      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+    },
+    "NCSC 2025": {
+      "date": "June 2025",
+      "href": "https://www.ncsc.nl/wat-kun-je-zelf-doen/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05",
       "publisher": "NCSC",
       "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
     },
@@ -727,25 +753,109 @@ img.license{float:left;padding-right:5px}
       ],
       "publisher": "Association of Computing Machinery (ACM)",
       "date": "March 2002"
+    },
+    "FSC-Core": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "title": "FSC - Core",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "FSC-Logging": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "title": "FSC - Logging",
+      "authors": [
+        "Eelco Hotting",
+        "Ronald Koster",
+        "Henk van Maanen",
+        "Niels Dequeker",
+        "Edward van Gelderen",
+        "Pim Gaemers"
+      ],
+      "publisher": "Logius"
+    },
+    "HEART.OAuth2": {
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "publisher": "OpenID foundation",
+      "title": "Health Relationship Trust Profile for OAuth 2.0"
+    },
+    "JWS.JWE.Algs": {
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "publisher": "IANA",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "publisher": "IETF",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture"
+    },
+    "iGOV.OAuth2": {
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0-03.html",
+      "publisher": "OpenID foundation",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
+    },
+    "ietf-oauth-v2-1-10-refresh-token-grant": {
+      "authors": [
+        "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
+      ],
+      "date": "January 9, 2024",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant",
+      "publisher": "IETF",
+      "title": "The OAuth 2.1 Authorization Framework: Refresh Token Grant"
+    },
+    "OpenID.FAPI2.0": {
+      "authors": [
+        "D. Fett, D. Tonge, J. Heenan"
+      ],
+      "date": "February 22 2025",
+      "href": "https://openid.net/specs/fapi-security-profile-2_0-final.html",
+      "publisher": "OpenID foundation",
+      "title": "FAPI 2.0 Security Profile"
+    },
+    "logboek-extensie-guideline": {
+      "href": "https://logius-standaarden.github.io/logboek-extensie-template/",
+      "publisher": "Logius",
+      "title": "LDV Extensie Guideline"
+    },
+    "logboek dataverwerkingen": {
+      "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+      "publisher": "Logius",
+      "title": "Logboek Dataverwerkingen"
     }
   },
-  "alternateFormats": [
-    {
-      "label": "pdf",
-      "uri": "BOMOS-Fundament.pdf"
-    }
-  ],
   "authors": [
     {
       "company": "HAN University of Applied Sciences",
-      "companyURL": "https://www.utwente.nl/",
+      "companyURL": "https://www.han.nl/",
       "name": "Erwin Folmer"
     }
   ],
   "editors": [
     {
       "company": "HAN University of Applied Sciences",
-      "companyURL": "https://www.utwente.nl/",
+      "companyURL": "https://www.han.nl/",
       "name": "Erwin Folmer"
     },
     {
@@ -755,8 +865,13 @@ img.license{float:left;padding-right:5px}
     },
     {
       "company": "Logius",
-      "companyURL": "http://www.logius.nl/",
+      "companyURL": "https://www.logius.nl/",
       "name": "Edwin Wisse"
+    },
+    {
+      "company": "TNO",
+      "companyURL": "https://www.tno.nl/nl/",
+      "name": "Wouter van den Berg"
     }
   ],
   "github": "https://github.com/Logius-standaarden/BOMOS-Fundament",
@@ -769,17 +884,20 @@ img.license{float:left;padding-right:5px}
   "publishVersion": "3.0.1",
   "shortName": "fundament",
   "specStatus": "WV",
-  "specType": "HR"
+  "specType": "HR",
+  "preProcess": [
+    null
+  ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
  <body class="h-entry informative toc-inline"><div class="head">
-    <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
+    <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">BOMOS, het fundament</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2023-11-02">07 oktober 2024</time>
+      <time class="dt-published" datetime="2023-11-02">06 oktober 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -796,15 +914,17 @@ img.license{float:left;padding-right:5px}
       
       <dt>Redacteurs:</dt>
       <dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.utwente.nl/">HAN University of Applied Sciences</a>)
+    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.han.nl/">HAN University of Applied Sciences</a>)
   </dd><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Gül Işik</span> (<a class="p-org org h-org" href="https://www.logius.nl/">Logius</a>)
   </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Edwin Wisse</span> (<a class="p-org org h-org" href="http://www.logius.nl/">Logius</a>)
+    <span class="p-name fn">Edwin Wisse</span> (<a class="p-org org h-org" href="https://www.logius.nl/">Logius</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Wouter van den Berg</span> (<a class="p-org org h-org" href="https://www.tno.nl/nl/">TNO</a>)
   </dd>
       
       <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.utwente.nl/">HAN University of Applied Sciences</a>)
+    <span class="p-name fn">Erwin Folmer</span> (<a class="p-org org h-org" href="https://www.han.nl/">HAN University of Applied Sciences</a>)
   </dd>
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Logius-standaarden/BOMOS-Fundament/">GitHub Logius-standaarden/BOMOS-Fundament</a>
@@ -820,12 +940,12 @@ img.license{float:left;padding-right:5px}
     
     <p>
           Dit document is ook beschikbaar in dit niet-normatieve formaat:
-          <a rel="alternate" href="BOMOS-Fundament.pdf">pdf</a>
+          <a rel="alternate" href="bomos-fundament-3.0.1.pdf">PDF</a>
         </p>
     <p class="copyright">
-          Dit document valt onder de volgende licentie: 
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
-        </p>
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
     <hr title="Separator for header">
   </div>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p> BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
@@ -905,7 +1025,7 @@ BOMOS. Het heeft ook geleidt tot verschillende versies en variaties
 van BOMOS, wat het gebruik niet makkelijker maakt.</p>
 <p>
       </p><figure id="fig-strip-over-standaarden">
-        <img src="images/xkcd_standards.png" alt="xkcd comic about competing standards">
+        <img src="media/xkcd_standards.png" alt="xkcd comic about competing standards">
         <figcaption><a class="self-link" href="#fig-strip-over-standaarden">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Strip over standaarden</span></figcaption>
       </figure>
     <p></p>
@@ -1158,17 +1278,17 @@ dit document evengoed van toepassing zijn buiten de overheidscontext.</p>
 <aside class="example" id="example-gegevenswoordenboek-stedelijk-water"><div class="marker">
     <a class="self-link" href="#example-gegevenswoordenboek-stedelijk-water">Voorbeeld<bdi> 2</bdi></a><span class="example-title">: Gegevenswoordenboek Stedelijk Water</span>
   </div>
-Het Gegevenswoordenboek Stedelijk Water (GWSW) is een open standaard voor 
-het eenduidig vastleggen, uitwisselen en delen van gegevens in het stedelijk 
-waterbeheer. Het GWSW is een semantische standaard. Het specificeert de vaste 
-gegevens over objecten, maar ook het netwerk, maatregelen (aanleg, vervanging, 
-reparatie, renovatie) en processen zoals inspectie, capaciteits- en 
-afvoerberekeningen. Voor het uitwisselen van data en informatie is het 
-essentieel dat alle partijen met dezelfde systematiek en definities werken 
-en dezelfde (computer)taal spreken. Het GWSW is die gezamenlijke taal, waarin 
-voor toepassingen minimale datasets en kwaliteitseisen vastliggen waartegen 
-datasets getoetst kunnen worden. Het GWSW geeft verbeteringen in het 
-gegevensbeheer en -uitwisseling en daarmee in de basis aan het rioleringsbeheer. 
+Het Gegevenswoordenboek Stedelijk Water (GWSW) is een open standaard voor
+het eenduidig vastleggen, uitwisselen en delen van gegevens in het stedelijk
+waterbeheer. Het GWSW is een semantische standaard. Het specificeert de vaste
+gegevens over objecten, maar ook het netwerk, maatregelen (aanleg, vervanging,
+reparatie, renovatie) en processen zoals inspectie, capaciteits- en
+afvoerberekeningen. Voor het uitwisselen van data en informatie is het
+essentieel dat alle partijen met dezelfde systematiek en definities werken
+en dezelfde (computer)taal spreken. Het GWSW is die gezamenlijke taal, waarin
+voor toepassingen minimale datasets en kwaliteitseisen vastliggen waartegen
+datasets getoetst kunnen worden. Het GWSW geeft verbeteringen in het
+gegevensbeheer en -uitwisseling en daarmee in de basis aan het rioleringsbeheer.
 Via de GWSW-standaard is het voor gemeenten en waterschappen ook eenvoudig om actuele rioleringsdata via PDOK open te publiceren.
 </aside>
 
@@ -1187,9 +1307,10 @@ standaard en software.</p>
 De standaard NL-LOM beschrijft op welke
 manier metadata moet worden vastgelegd bij educatief materiaal. Een
 voorziening dat gebruik maakt van NL-LOM is Edurep, een zoekmachine
-die op basis van metadata educatief materiaal vindbaar maakt. 
-(<a href="https://www.forumstandaardisatie.nl/standaard/nl-lom">NL-LOM</a>;
-<a href="https://www.kennisnet.nl/edurep/&quot;">Edurep</a>)
+die op basis van metadata educatief materiaal vindbaar maakt.
+
+<p>(<a href="https://www.forumstandaardisatie.nl/standaard/nl-lom">NL-LOM</a>;
+<a href="https://www.kennisnet.nl/edurep/">Edurep</a>)</p>
 </aside>
 
 <p>Standaarden hebben daarmee andere gebruikers, en andere uitdagingen
@@ -1214,7 +1335,7 @@ data, of software. Dit soort gebruikservaringen, die eventueel leiden
 tot aangepaste BOMOS versies voor gebruik in een specifieke context,
 kunnen gepubliceerd worden als BOMOS Aanvullende Module.</p>
 </section><section id="definities"><div class="header-wrapper"><h3 id="x2-2-definities"><bdi class="secno">2.2 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 2.2"></a></div>
-<p><strong>Beheer en Ontwikkelen van standaarden (kortweg: beheer)</strong>
+<p>Beheer en Ontwikkelen van standaarden (kortweg: beheer)
 Alle activiteiten gericht op het structureel werken aan, beschikbaar
 stellen, en houden van een (set van) standaard(en) die steeds past bij
 de actuele behoefte van de belanghebbenden.</p>
@@ -1232,17 +1353,20 @@ bestaande standaard wordt uitgebreid of dat er een nieuwe standaard
 ontstaat.</p>
 <p>Beheer en ontwikkeling, in de brede zin, voor een standaard bevat ook
 onderwerpen als adoptie en certificering.</p>
-<p><strong>Beheer- en Ontwikkelmodel</strong><br>Het Beheer- en Ontwikkelmodel is een gelaagde structuur van
+<p><dfn id="dfn-beheer-en-ontwikkelmodel" tabindex="0" aria-haspopup="dialog">Beheer- en Ontwikkelmodel</dfn> 
+Het Beheer- en Ontwikkelmodel is een gelaagde structuur van
 onderwerpen die nodig zijn voor het ontwikkelen en beheren van een
 open standaard, en is weergegeven als een activiteitendiagram. Het is
 de kern van BOMOS.</p>
-<p><strong>Community</strong><br>Elke specifieke gemeenschap of groep in het elektronische
+<p><dfn id="dfn-community" tabindex="0" aria-haspopup="dialog">Community</dfn>
+Elke specifieke gemeenschap of groep in het elektronische
 (overheids-)veld die zich bezighoudt met de ontwikkeling en/of het
 beheer van een specifieke (set van) standaard(en), vanuit een
 expliciete gezamenlijke behoefte. Omdat dergelijke behoeften vaak
 zowel in het private als in het publieke domein worden gevoeld, kan
 een community een publiek-private samenwerkingsvorm zijn.</p>
-<p><strong>Open standaard</strong><br>Er zijn vele meningen over de definitie van een open standaard, vooral
+<p><dfn id="dfn-open-standaard" tabindex="0" aria-haspopup="dialog">Open standaard</dfn>
+Er zijn vele meningen over de definitie van een open standaard, vooral
 vanwege belangen van verschillende organisaties is het nooit gelukt om
 dit goed te definiëren. In BOMOS hanteren we een definitie die in de
 start periode van het European Interoperability Framework werd
@@ -1266,24 +1390,32 @@ van (delen van) de standaard is onherroepelijk ter beschikking gesteld
 op een royalty-free basis;</li>
 <li>Er zijn geen beperkingen omtrent het hergebruik van de standaard.</li>
 </ol>
-<p><strong>Semantische interoperabiliteit</strong><br>Betekent dat samenwerkende partijen aan gegevens, die uitgewisseld
+<p><dfn id="dfn-semantische-interoperabiliteit" tabindex="0" aria-haspopup="dialog">Semantische interoperabiliteit</dfn>
+Betekent dat samenwerkende partijen aan gegevens, die uitgewisseld
 worden, dezelfde betekenis toekennen.</p>
-<p><strong>Semantische standaarden</strong><br>Zijn afspraken over de betekenis van gegevens.</p>
-<p><strong>Werkgroep</strong><br>Een groep binnen de community met een afgebakende deelactiviteit met
+<p><dfn id="dfn-semantische-standaarden" tabindex="0" aria-haspopup="dialog">Semantische standaarden</dfn>
+Zijn afspraken over de betekenis van gegevens.</p>
+<p><dfn id="dfn-werkgroep" tabindex="0" aria-haspopup="dialog">Werkgroep</dfn>
+Een groep binnen de community met een afgebakende deelactiviteit met
 een eenduidig gedefinieerd eindresultaat als doel.</p>
 <p>Voor meer informatie over interoperabiliteit en standaarden:</p>
-<p>Open Standaard:<br><a href="https://forumstandaardisatie.nl/open-standaarden">https://forumstandaardisatie.nl/open-standaarden</a></p>
+<p>Open Standaard:
+<a href="https://forumstandaardisatie.nl/open-standaarden">https://forumstandaardisatie.nl/open-standaarden</a></p>
 <p>Standardisation Handbook:
 <a href="https://en.wikipedia.org/wiki/Open_standard">https://en.wikipedia.org/wiki/Open_standard</a></p>
 <p><a href="https://open-stand.org/">https://open-stand.org/</a></p>
-<p>European Interoperability Framework:<br><a href="https://ec.europa.eu/isa2/eif_en">https://ec.europa.eu/isa2/eif_en</a></p>
-<p>BSI Guide to Standardization:<br><a href="https://www.bsigroup.com/en-GB/standards/Information-about-standards/how-are-standards-made/The-BSI-Guide-to-Standardization/">https://www.bsigroup.com/en-GB/standards/Information-about-standards/how-are-standards-made/The-BSI-Guide-to-Standardization/</a></p>
-<p>Standardisation Handbook:<br><a href="https://en.wikipedia.org/wiki/Open_standard">https://en.wikipedia.org/wiki/Open_standard</a></p>
+<p>European Interoperability Framework:
+<a href="https://ec.europa.eu/isa2/eif_en">https://ec.europa.eu/isa2/eif_en</a></p>
+<p>BSI Guide to Standardization:
+<a href="https://www.bsigroup.com/en-GB/standards/Information-about-standards/how-are-standards-made/The-BSI-Guide-to-Standardization/">https://www.bsigroup.com/en-GB/standards/Information-about-standards/how-are-standards-made/The-BSI-Guide-to-Standardization/</a></p>
+<p>Standardisation Handbook:
+<a href="https://en.wikipedia.org/wiki/Open_standard">https://en.wikipedia.org/wiki/Open_standard</a></p>
 <p>Handreiking Standardisatie voor onderzoekers:
 <a href="https://op.europa.eu/en/publication-detail/-/publication/db289e47-140b-11eb-b57e-01aa75ed71a1/">https://op.europa.eu/en/publication-detail/-/publication/db289e47-140b-11eb-b57e-01aa75ed71a1/</a></p>
 <p>Verplichte open standaarden in Nederland:
 <a href="https://www.forumstandaardisatie.nl/open-standaarden/lijst/verplicht/">https://www.forumstandaardisatie.nl/open-standaarden/lijst/verplicht/</a></p>
-<p>Nederlandse Overheids Referentie Architectuur (NORA):<br><a href="https://www.digitaleoverheid.nl/dossiers/nederlandse-overheid-referentie-architectuur-nora/">https://www.digitaleoverheid.nl/dossiers/nederlandse-overheid-referentie-architectuur-nora/</a></p>
+<p>Nederlandse Overheids Referentie Architectuur (NORA):
+<a href="https://www.digitaleoverheid.nl/dossiers/nederlandse-overheid-referentie-architectuur-nora/">https://www.digitaleoverheid.nl/dossiers/nederlandse-overheid-referentie-architectuur-nora/</a></p>
 </section></section>
   <section id="bomos-gebruiken"><div class="header-wrapper"><h2 id="x3-bomos-gebruiken"><bdi class="secno">3. </bdi>BOMOS gebruiken</h2><a class="self-link" href="#bomos-gebruiken" aria-label="Permalink for Section 3."></a></div>
 <p>Hoe kan BOMOS ingezet worden? Er zijn verschillende mogelijkheden:</p>
@@ -1426,7 +1558,7 @@ open standaard.</p>
 </ul>
 <p>
       </p><figure id="fig-bomos-activiteitendiagram">
-        <img src="images/BOMOS-15_Bomos-activiteiten-blanco.png" alt="BOMOS Activiteitendiagram">
+        <img src="media/BOMOS-15_Bomos-activiteiten-blanco.png" alt="BOMOS Activiteitendiagram">
         <figcaption><a class="self-link" href="#fig-bomos-activiteitendiagram">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">BOMOS Activiteitendiagram</span></figcaption>
       </figure>
     <p></p>
@@ -1625,7 +1757,7 @@ beschrijving van de fasen van de standaardenlevenscyclus, zodat u kunt
 toetsen in welke fase uw standaard zich bevindt.</p>
 <p>
       </p><figure id="fig-levensfases-van-een-standaard">
-        <img src="images/BOMOS-17_Adoptie-Tijd-blanco.png" alt="Levensfases van een standaard. Een peil gaat van creatie, via introductie en volwassen naar uitfaseren. Een lus gaat van introductie en implementatie naar volwassen en weer terug">
+        <img src="media/BOMOS-17_Adoptie-Tijd-blanco.png" alt="Levensfases van een standaard. Een peil gaat van creatie, via introductie en volwassen naar uitfaseren. Een lus gaat van introductie en implementatie naar volwassen en weer terug">
         <figcaption><a class="self-link" href="#fig-levensfases-van-een-standaard">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">Levensfases van een standaard</span></figcaption>
       </figure>
     <p></p>
@@ -1838,7 +1970,7 @@ wordt veelal als langdurig en niet efficiënt bestempeld. Methodes die
 gebruik maken van Web 2.0 toepassingen, of het concept van de pressure
 cooker, maken het mogelijk om sneller en goedkoper standaarden te
 ontwikkelen.</p>
-<p><strong><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/index.html#kwaliteit-van-implementaties">Conformance, certificering, validatie</a></strong></p>
+<p><strong><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping#kwaliteit-van-implementaties">Conformance, certificering, validatie</a></strong></p>
 <p>Vaak als een standaard grofweg 2 jaar bestaat ontstaat er behoefte aan
 certificatie. Leveranciers willen graag hun implementatie van de
 standaard commercieel uitbuiten, en certificatie kan hen daarbij
@@ -1854,7 +1986,7 @@ standaard gecontroleerd worden maar op een laagdrempelige manier.</p>
 <p><strong><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/index.html#implementatie-ondersteuning">Ondersteuning bieden aan implementaties</a></strong>
 De ondersteuning bieden aan implementaties is het gevolg van strategische en met name tactische keuzes rond onder meer adoptie en kwaliteit; andere best practices onderwerpen.
 Vandaar een wat kortere beschrijving mogelijke invullingen.</p>
-<p><strong><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/index.html#communicatie">Bekendheid creëren</a></strong>
+<p><strong><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping#communicatie">Bekendheid creëren</a></strong>
 Voorgaande geldt ook voor de communicatie activiteiten, echter deze mogen zeker niet onderschat worden. Uiteindelijk draait het erom dat de standaard in de praktijk gebruikt wordt, dat betekent dat de standaard een hoge mate van bekendheid moet hebben in het werkveld. Deze bekendheid ontstaat niet vanzelf.</p>
 </section>
   <section id="tot-slot"><div class="header-wrapper"><h2 id="x6-tot-slot"><bdi class="secno">6. </bdi>Tot slot</h2><a class="self-link" href="#tot-slot" aria-label="Permalink for Section 6."></a></div>
@@ -1914,7 +2046,67 @@ BOMOS Aanvullende Modules beschikbaar stelt.</p>
 
 <p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script id="respec-dfn-panel">(() => {
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheer-en-ontwikkelmodel" aria-label="Links in this document to definition: Beheer- en Ontwikkelmodel">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beheer-en-ontwikkelmodel" aria-label="Permalink for definition: Beheer- en Ontwikkelmodel. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-community" aria-label="Links in this document to definition: Community">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-community" aria-label="Permalink for definition: Community. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-open-standaard" aria-label="Links in this document to definition: Open standaard">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-open-standaard" aria-label="Permalink for definition: Open standaard. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-semantische-interoperabiliteit" aria-label="Links in this document to definition: Semantische interoperabiliteit">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-semantische-interoperabiliteit" aria-label="Permalink for definition: Semantische interoperabiliteit. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-semantische-standaarden" aria-label="Links in this document to definition: Semantische standaarden">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-semantische-standaarden" aria-label="Permalink for definition: Semantische standaarden. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-werkgroep" aria-label="Links in this document to definition: Werkgroep">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-werkgroep" aria-label="Permalink for definition: Werkgroep. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
   document.respec.ready.then(setupPanel);
@@ -2136,4 +2328,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
