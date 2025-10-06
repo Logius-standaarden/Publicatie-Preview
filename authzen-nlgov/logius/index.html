@@ -146,14 +146,7 @@ ul.index code{color:inherit}
   ],
   "useLogo": true,
   "fileName": "",
-  "latestVersion": [
-    "nl_organisationPublishURL",
-    "pubDomain",
-    "/",
-    "shortName",
-    "/",
-    "fileName"
-  ],
+  "latestVersion": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
   "thisVersion": [
     "nl_organisationPublishURL",
     "pubDomain",
@@ -164,16 +157,7 @@ ul.index code{color:inherit}
     "/",
     "fileName"
   ],
-  "prevVersion": [
-    "nl_organisationPublishURL",
-    "pubDomain",
-    "/",
-    "shortName",
-    "/",
-    "previousPublishVersion",
-    "/",
-    "fileName"
-  ],
+  "prevVersion": [],
   "addSectionLinks": true,
   "localizationStrings": {
     "en": {
@@ -971,7 +955,6 @@ ul.index code{color:inherit}
   "shortName": "authzen",
   "publishDate": "2025-07-01",
   "publishVersion": "0.0.1",
-  "previousPublishVersion": [],
   "editors": [
     {
       "name": "Project Federatieve Toegangsverlening",
@@ -1007,13 +990,13 @@ ul.index code{color:inherit}
               <a class="u-url status" href="https://logius-standaarden.github.io/authzen-nlgov/">https://logius-standaarden.github.io/authzen-nlgov/</a>
             </dd>
       <dt>Latest published version:</dt><dd>
-              <a href="https://gitdocumentatie.logius.nl/publicatie/api/authzen/">https://gitdocumentatie.logius.nl/publicatie/api/authzen/</a>
+              <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/authzen-nlgov/">https://logius-standaarden.github.io/authzen-nlgov/</a></dd>
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/authzen//">https://gitdocumentatie.logius.nl/publicatie/api/authzen//</a></dd>
+      
       
       <dt>Editor:</dt>
       <dd class="editor p-author h-card vcard">
@@ -1990,7 +1973,7 @@ ul.index code{color:inherit}
   <section id="policy-decision-point-metadata"><div class="header-wrapper"><h2 id="pdp-metadata"><bdi class="secno">11. </bdi>Policy Decision Point Metadata</h2><a class="self-link" href="#pdp-metadata" aria-label="Permalink for Section 11."></a></div><p>Policy Decision Points can have metadata describing their configuration.</p>
 <section id="data-structure"><div class="header-wrapper"><h3 id="pdp-metadata-data"><bdi class="secno">11.1 </bdi>Data structure</h3><a class="self-link" href="#pdp-metadata-data" aria-label="Permalink for Section 11.1"></a></div><p>The following Policy Decision Point metadata parameters are used by this specification and are registered in the IANA "AuthZEN PDP Metadata" registry established in <a href="#iana-pdp-registry" data-matched-text="[[[#iana-pdp-registry]]]" class="sec-ref"><bdi class="secno">14.1 </bdi>AuthZEN Policy Decision Point Metadata Registry</a>.</p>
 <section id="endpoint-parameters"><div class="header-wrapper"><h4 id="pdp-metadata-data-endpoint"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</h4><a class="self-link" href="#pdp-metadata-data-endpoint" aria-label="Permalink for Section 11.1.1"></a></div><p><code>policy_decision_point</code>:
-: <em class="rfc2119">REQUIRED</em>. The policy decision point's policy decision point identifier, which is a URL that uses the "https" scheme and has no query or fragment components. Policy Decision Point metadata is published at a location that is ".well-known" according to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5785" title="Defining Well-Known Uniform Resource Identifiers (URIs)">RFC5785</a></cite>] derived from this policy decision point identifier, as described in <a href="pdp-metadata-access#"></a>. The policy decision point identifier is used to prevent policy decision point mix-up attacks.</p>
+: <em class="rfc2119">REQUIRED</em>. The policy decision point's policy decision point identifier, which is a URL that uses the "https" scheme and has no query or fragment components. Policy Decision Point metadata is published at a location that is ".well-known" according to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5785" title="Defining Well-Known Uniform Resource Identifiers (URIs)">RFC5785</a></cite>] derived from this policy decision point identifier, as described in <a href="#pdp-metadata-access" data-matched-text="[[[#pdp-metadata-access]]]" class="sec-ref"><bdi class="secno">11.2 </bdi>Obtaining Policy Decision Point Metadata</a>. The policy decision point identifier is used to prevent policy decision point mix-up attacks.</p>
 <p><code>access_evaluation_endpoint</code>:
 : <em class="rfc2119">REQUIRED</em>. URL of Policy Decision Point Access Evaluation API endpoint</p>
 <p><code>access_evaluations_endpoint</code>:
