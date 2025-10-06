@@ -967,13 +967,11 @@ ul.index code{color:inherit}
   },
   "specStatus": "WV",
   "specType": "ST",
-  "pubDomain": "dk",
-  "shortName": "authzen-nlgov",
+  "pubDomain": "api",
+  "shortName": "authzen",
   "publishDate": "2025-07-01",
   "publishVersion": "0.0.1",
-  "previousPublishVersion": null,
-  "previousPublishDate": null,
-  "previousMaturity": "WV",
+  "previousPublishVersion": [],
   "editors": [
     {
       "name": "Project Federatieve Toegangsverlening",
@@ -988,7 +986,7 @@ ul.index code{color:inherit}
       "companyURL": "https://vng-realisatie.github.io/ftv"
     }
   ],
-  "github": "https://github.com/vng-realisatie/authzen-nlgov",
+  "github": "https://github.com/Logius-standaarden/authzen-nlgov",
   "preProcess": [
     null
   ]
@@ -1006,16 +1004,16 @@ ul.index code{color:inherit}
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
-              <a class="u-url status" href="https://vng-realisatie.github.io/authzen-nlgov/">https://vng-realisatie.github.io/authzen-nlgov/</a>
+              <a class="u-url status" href="https://logius-standaarden.github.io/authzen-nlgov/">https://logius-standaarden.github.io/authzen-nlgov/</a>
             </dd>
       <dt>Latest published version:</dt><dd>
-              <a href="https://gitdocumentatie.logius.nl/publicatie/dk/authzen-nlgov/">https://gitdocumentatie.logius.nl/publicatie/dk/authzen-nlgov/</a>
+              <a href="https://gitdocumentatie.logius.nl/publicatie/api/authzen/">https://gitdocumentatie.logius.nl/publicatie/api/authzen/</a>
             </dd>
-      <dt>Latest editor's draft:</dt><dd><a href="https://vng-realisatie.github.io/authzen-nlgov/">https://vng-realisatie.github.io/authzen-nlgov/</a></dd>
+      <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/authzen-nlgov/">https://logius-standaarden.github.io/authzen-nlgov/</a></dd>
       
       
       
-      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/dk/authzen-nlgov/null/">https://gitdocumentatie.logius.nl/publicatie/dk/authzen-nlgov/null/</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/api/authzen//">https://gitdocumentatie.logius.nl/publicatie/api/authzen//</a></dd>
       
       <dt>Editor:</dt>
       <dd class="editor p-author h-card vcard">
@@ -1026,20 +1024,20 @@ ul.index code{color:inherit}
     <span class="p-name fn">Project Federatieve Toegangsverlening</span> (<a class="p-org org h-org" href="https://vng-realisatie.github.io/ftv">MinBZK</a>)
   </dd>
       <dt>Participate:</dt><dd>
-    <a href="https://github.com/vng-realisatie/authzen-nlgov/">GitHub vng-realisatie/authzen-nlgov</a>
+    <a href="https://github.com/Logius-standaarden/authzen-nlgov/">GitHub Logius-standaarden/authzen-nlgov</a>
   </dd><dd>
-    <a href="https://github.com/vng-realisatie/authzen-nlgov/issues/">File an issue</a>
+    <a href="https://github.com/Logius-standaarden/authzen-nlgov/issues/">File an issue</a>
   </dd><dd>
-    <a href="https://github.com/vng-realisatie/authzen-nlgov/commits/">Commit history</a>
+    <a href="https://github.com/Logius-standaarden/authzen-nlgov/commits/">Commit history</a>
   </dd><dd>
-    <a href="https://github.com/vng-realisatie/authzen-nlgov/pulls/">Pull requests</a>
+    <a href="https://github.com/Logius-standaarden/authzen-nlgov/pulls/">Pull requests</a>
   </dd>
     </dl>
     
     
     <p>
           This document is also available in these non-normative format:
-          <a rel="alternate" href="dk-authzen-nlgov-0.0.1.pdf">PDF</a>
+          <a rel="alternate" href="api-authzen-0.0.1.pdf">PDF</a>
         </p>
     <p class="copyright">
             This document is licensed under 
@@ -2010,7 +2008,7 @@ ul.index code{color:inherit}
 : A JWT containing metadata parameters about the protected resource as claims. This is a string value consisting of the entire signed JWT. A <code>signed_metadata</code> parameter <em class="rfc2119">SHOULD NOT</em> appear as a claim in the JWT; it is <em class="rfc2119">RECOMMENDED</em> to reject any metadata in which this occurs.</p>
 </section></section><section id="obtaining-policy-decision-point-metadata"><div class="header-wrapper"><h3 id="pdp-metadata-access"><bdi class="secno">11.2 </bdi>Obtaining Policy Decision Point Metadata</h3><a class="self-link" href="#pdp-metadata-access" aria-label="Permalink for Section 11.2"></a></div><p>Policy Decision Point supporting metadata <em class="rfc2119">MUST</em> make a JSON document containing metadata as specified in <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a> available at a URL formed by inserting a well-known URI string between the host component and the path and/or query components, if any. The well-known URI string used is <code>/.well-known/authzen-configuration</code>.</p>
 <p>The syntax and semantics of .well-known are defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8615" title="Well-Known Uniform Resource Identifiers (URIs)">RFC8615</a></cite>]. The well-known URI path suffix used is registered in the IANA "Well-Known URIs" registry [<cite><a class="bibref" data-link-type="biblio" href="#bib-iana.well-known-uris" title="Well-Known URIs">IANA.well-known-uris</a></cite>].</p>
-<section id="policy-decision-point-metadata-request"><div class="header-wrapper"><h4 id="pdp-metadata-access-request"><bdi class="secno">11.2.1 </bdi>Policy Decision Point Metadata Request</h4><a class="self-link" href="#pdp-metadata-access-request" aria-label="Permalink for Section 11.2.1"></a></div><p>A policy decision point metadata document <em class="rfc2119">MUST</em> be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is <a href="https://pdp.mycompany.com">https://pdp.mycompany.com</a>:</p>
+<section id="policy-decision-point-metadata-request"><div class="header-wrapper"><h4 id="pdp-metadata-access-request"><bdi class="secno">11.2.1 </bdi>Policy Decision Point Metadata Request</h4><a class="self-link" href="#pdp-metadata-access-request" aria-label="Permalink for Section 11.2.1"></a></div><p>A policy decision point metadata document <em class="rfc2119">MUST</em> be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is <code>https://pdp.mycompany.com</code>:</p>
 <pre><code class="http hljs" aria-busy="false"><span class="hljs-keyword">GET</span> <span class="hljs-string">/.well-known/authzen-configuration</span> <span class="hljs-meta">HTTP/1.1</span>
 <span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>pdp.mycompany.com
 </code></pre>
