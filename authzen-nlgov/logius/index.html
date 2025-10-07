@@ -251,7 +251,8 @@ ul.index code{color:inherit}
       ],
       "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
       "publisher": "Logius",
-      "title": "API Design Rules"
+      "title": "API Design Rules",
+      "id": "adr"
     },
     "ADR1": {
       "authors": [
@@ -850,21 +851,12 @@ ul.index code{color:inherit}
     "logboek dataverwerkingen": {
       "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
       "publisher": "Logius",
-      "title": "Logboek Dataverwerkingen"
-    },
-    "XACML": {
-      "href": "https://www.oasis-open.org/committees/xacml/repository/cs-xacml-specification-1.1.pdf",
-      "title": "eXtensible Access Control Markup Language (XACML) Version 1.1",
-      "authors": [
-        "Simon Godik",
-        "Tim Moses (Ed.)"
-      ],
-      "date": "2006",
-      "id": "xacml"
+      "title": "Logboek Dataverwerkingen",
+      "id": "logboek dataverwerkingen"
     },
     "IANA.well-known-uris": {
       "href": "https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml",
-      "title": "Well-Known URIs",
+      "title": "IANA \"Well-Known URIs\" registry",
       "date": "2010-01-20",
       "id": "iana.well-known-uris"
     },
@@ -873,80 +865,6 @@ ul.index code{color:inherit}
       "title": "Metamodel Informatie Modellering",
       "date": "13 juni 2024",
       "id": "mim"
-    },
-    "REST API Design Rules": {
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/",
-      "title": "NLGov REST API Design Rules 2.0.0",
-      "authors": [
-        "Jasper Roes",
-        "Joost Farla"
-      ],
-      "date": "Maart 2024",
-      "id": "rest api design rules"
-    },
-    "Logboek dataverwerkingen": {
-      "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
-      "title": "Logboek dataverwerkingen",
-      "authors": [
-        "Eelco Hotting",
-        "Vedran Bilanovic"
-      ],
-      "date": "n.t.b.",
-      "id": "logboek dataverwerkingen"
-    },
-    "W3C Verifiable Credentials": {
-      "href": "https://www.w3.org/TR/vc-data-model/",
-      "title": "Verifiable Credentials Data Model v1.1",
-      "authors": [
-        "Manu Sporny",
-        "Dave Longley",
-        "David Chadwick"
-      ],
-      "date": "3 maart 2022"
-    },
-    "NL GOV Assurance profile for OAuth": {
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oauth/",
-      "title": "NL GOV Assurance profile for OAuth 2.0",
-      "authors": [
-        "Frank Terpstra",
-        "Jan van Gelder"
-      ],
-      "date": "9 juli 2020"
-    },
-    "FSC - Core": {
-      "href": "https://commonground.gitlab.io/standards/fsc/core/draft-fsc-core-00.html",
-      "title": "FSC - Core",
-      "authors": [
-        "Eelco Hotting",
-        "Ronald Koster",
-        "Henk van Maanen",
-        "Niels Dequeker",
-        "Edward van Gelderen",
-        "Pim Gaemers"
-      ],
-      "date": "8 december 2023"
-    },
-    "OpenID NLGov": {
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oidc/",
-      "title": "OpenID NLGov 1.0.1",
-      "authors": [
-        "Remco Schaar",
-        "Frank van Es",
-        "Joris Joosten",
-        "Jan Geert Koops"
-      ],
-      "date": "18 september 2023"
-    },
-    "SAML": {
-      "href": "https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf",
-      "title": "Assertions and Protocols for the OASIS Security Assertion Markup Language (SAML) V2.0",
-      "authors": [
-        "Scott Cantor",
-        "John Kemp",
-        "Rob Philpott",
-        "Eve Maler"
-      ],
-      "date": "15 maart 2005"
     }
   },
   "specStatus": "WV",
@@ -954,7 +872,7 @@ ul.index code{color:inherit}
   "pubDomain": "api",
   "shortName": "authzen",
   "publishDate": "2025-07-01",
-  "publishVersion": "0.0.1",
+  "publishVersion": "1.0.0",
   "editors": [
     {
       "name": "Project Federatieve Toegangsverlening",
@@ -983,7 +901,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-07-01">October 06, 2025</time>
+      <time class="dt-published" datetime="2025-07-01">October 07, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1020,7 +938,7 @@ ul.index code{color:inherit}
     
     <p>
           This document is also available in these non-normative format:
-          <a rel="alternate" href="api-authzen-0.0.1.pdf">PDF</a>
+          <a rel="alternate" href="api-authzen-1.0.0.pdf">PDF</a>
         </p>
     <p class="copyright">
             This document is licensed under 
@@ -1032,7 +950,7 @@ ul.index code{color:inherit}
 </section>
   <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#model"><bdi class="secno">2. </bdi>Model</a></li><li class="tocline"><a class="tocxref" href="#features"><bdi class="secno">3. </bdi>Features</a></li><li class="tocline"><a class="tocxref" href="#api-version"><bdi class="secno">4. </bdi>API Version</a></li><li class="tocline"><a class="tocxref" href="#information-model"><bdi class="secno">5. </bdi>Information Model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject"><bdi class="secno">5.1 </bdi>Subject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-properties"><bdi class="secno">5.1.1 </bdi>Subject Properties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-ip-address"><bdi class="secno">5.1.1.1 </bdi>IP Address</a></li><li class="tocline"><a class="tocxref" href="#subject-device-id"><bdi class="secno">5.1.1.2 </bdi>Device ID</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#resource"><bdi class="secno">5.2 </bdi>Resource</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#examples-non-normative"><bdi class="secno">5.2.1 </bdi>Examples (non-normative)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#action"><bdi class="secno">5.3 </bdi>Action</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-properties"><bdi class="secno">5.3.1 </bdi><span class="nlgov-add">Action Properties</span></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-activity-and-algorithm-identifiers"><bdi class="secno">5.3.1.1 </bdi><span class="nlgov-add">Processing Activity and Algorithm identifiers</span></a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">5.4 </bdi>Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context-properties"><bdi class="secno">5.4.1 </bdi><span class="nlgov-add">Context Properties</span></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#time"><bdi class="secno">5.4.1.1 </bdi><span class="nlgov-add">Time</span></a></li><li class="tocline"><a class="tocxref" href="#w3c-trace-context"><bdi class="secno">5.4.1.2 </bdi><span class="nlgov-add">W3C Trace Context</span></a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#access-evaluation-api"><bdi class="secno">6. </bdi>Access Evaluation API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#access-evaluation-request"><bdi class="secno">6.1 </bdi>The Access Evaluation API Request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-non-normative"><bdi class="secno">6.1.1 </bdi>Example (non-normative)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#access-evaluation-response"><bdi class="secno">6.2 </bdi>The Access Evaluation API Response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#decision"><bdi class="secno">6.2.1 </bdi>Access Evaluation Decision</a></li><li class="tocline"><a class="tocxref" href="#additional-context-in-a-response"><bdi class="secno">6.2.2 </bdi>Additional Context in a Response</a></li><li class="tocline"><a class="tocxref" href="#example-context"><bdi class="secno">6.2.3 </bdi>Example Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">6.2.3.1 </bdi>Reasons</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reason-field"><bdi class="secno">6.2.3.1.1 </bdi>Reason Field</a></li><li class="tocline"><a class="tocxref" href="#reason-object"><bdi class="secno">6.2.3.1.2 </bdi>Reason Object</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#sample-response-with-additional-context-non-normative"><bdi class="secno">6.2.4 </bdi>Sample Response with additional context (non-normative)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#access-evaluations-api"><bdi class="secno">7. </bdi>Access Evaluations API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#access-evaluations-request"><bdi class="secno">7.1 </bdi>The Access Evaluations API Request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#default-values"><bdi class="secno">7.1.1 </bdi>Default values</a></li><li class="tocline"><a class="tocxref" href="#evaluations-options"><bdi class="secno">7.1.2 </bdi>Evaluations options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#evaluation-semantics"><bdi class="secno">7.1.2.1 </bdi>Evaluations semantics</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-evaluate-read-action-for-three-documents-using-all-three-semantics"><bdi class="secno">7.1.2.1.1 </bdi>Example: Evaluate <code>read</code> action for three documents using all three semantics</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#access-evaluations-response"><bdi class="secno">7.2 </bdi>Access Evaluations API Response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#errors"><bdi class="secno">7.2.1 </bdi>Errors</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#subject-search-api"><bdi class="secno">8. </bdi>Subject Search API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-search-semantics"><bdi class="secno">8.1 </bdi>Subject Search Semantics</a></li><li class="tocline"><a class="tocxref" href="#subject-search-request"><bdi class="secno">8.2 </bdi>The Subject Search API Request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-non-normative-0"><bdi class="secno">8.2.1 </bdi>Example (non-normative)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#subject-search-response"><bdi class="secno">8.3 </bdi>The Subject Search API Response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#paged-requests"><bdi class="secno">8.3.1 </bdi>Paged requests</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example"><bdi class="secno">8.3.1.1 </bdi>Example</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#resource-search-api"><bdi class="secno">9. </bdi>Resource Search API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resource-search-semantics"><bdi class="secno">9.1 </bdi>Resource Search Semantics</a></li><li class="tocline"><a class="tocxref" href="#resource-search-request"><bdi class="secno">9.2 </bdi>The Resource Search API Request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-non-normative-1"><bdi class="secno">9.2.1 </bdi>Example (non-normative)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#resource-search-response"><bdi class="secno">9.3 </bdi>The Resource Search API Response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#paged-requests-0"><bdi class="secno">9.3.1 </bdi>Paged requests</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-0"><bdi class="secno">9.3.1.1 </bdi>Example</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#action-search-api"><bdi class="secno">10. </bdi>Action Search API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#action-search-semantics"><bdi class="secno">10.1 </bdi>Action Search Semantics</a></li><li class="tocline"><a class="tocxref" href="#action-search-request"><bdi class="secno">10.2 </bdi>The Action Search API Request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-non-normative-2"><bdi class="secno">10.2.1 </bdi>Example (non-normative)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#action-search-response"><bdi class="secno">10.3 </bdi>The Action Search API Response</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#paged-requests-1"><bdi class="secno">10.3.1 </bdi>Paged requests</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example-1"><bdi class="secno">10.3.1.1 </bdi>Example</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#pdp-metadata"><bdi class="secno">11. </bdi>Policy Decision Point Metadata</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pdp-metadata-data"><bdi class="secno">11.1 </bdi>Data structure</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pdp-metadata-data-endpoint"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></li><li class="tocline"><a class="tocxref" href="#pdp-metadata-data-sig"><bdi class="secno">11.1.2 </bdi>Signature Parameter</a></li></ol></li><li class="tocline"><a class="tocxref" href="#pdp-metadata-access"><bdi class="secno">11.2 </bdi>Obtaining Policy Decision Point Metadata</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pdp-metadata-access-request"><bdi class="secno">11.2.1 </bdi>Policy Decision Point Metadata Request</a></li><li class="tocline"><a class="tocxref" href="#pdp-metadata-access-response"><bdi class="secno">11.2.2 </bdi>Policy Decision Point Metadata Response</a></li><li class="tocline"><a class="tocxref" href="#pdp-metadata-data-endpoint-validation"><bdi class="secno">11.2.3 </bdi>Policy Decision Point Metadata Validation</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#transport"><bdi class="secno">12. </bdi>Transport</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#https-binding"><bdi class="secno">12.1 </bdi>HTTPS Binding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#https-access-evaluation-request"><bdi class="secno">12.1.1 </bdi>HTTPS Access Evaluation Request</a></li><li class="tocline"><a class="tocxref" href="#https-access-evaluation-response"><bdi class="secno">12.1.2 </bdi>HTTPS Access Evaluation Response</a></li><li class="tocline"><a class="tocxref" href="#https-access-evaluations-request"><bdi class="secno">12.1.3 </bdi>HTTPS Access Evaluations Request</a></li><li class="tocline"><a class="tocxref" href="#https-access-evaluations-response"><bdi class="secno">12.1.4 </bdi>HTTPS Access Evaluations Response</a></li><li class="tocline"><a class="tocxref" href="#https-subject-search-request"><bdi class="secno">12.1.5 </bdi>HTTPS Subject Search Request</a></li><li class="tocline"><a class="tocxref" href="#https-subject-search-response"><bdi class="secno">12.1.6 </bdi>HTTPS Subject Search Response</a></li><li class="tocline"><a class="tocxref" href="#https-resource-search-request"><bdi class="secno">12.1.7 </bdi>HTTPS Resource Search Request</a></li><li class="tocline"><a class="tocxref" href="#https-resource-search-response"><bdi class="secno">12.1.8 </bdi>HTTPS Resource Search Response</a></li><li class="tocline"><a class="tocxref" href="#https-action-search-request"><bdi class="secno">12.1.9 </bdi>HTTPS Action Search Request</a></li><li class="tocline"><a class="tocxref" href="#https-action-search-response"><bdi class="secno">12.1.10 </bdi>HTTPS Action Search Response</a></li><li class="tocline"><a class="tocxref" href="#error-responses"><bdi class="secno">12.1.11 </bdi>Error Responses</a></li><li class="tocline"><a class="tocxref" href="#request-identification"><bdi class="secno">12.1.12 </bdi><span class="nlgov-del">Request Identification</span></a></li><li class="tocline"><a class="tocxref" href="#request-identification-in-a-response"><bdi class="secno">12.1.13 </bdi><span class="nlgov-del">Request Identification in a Response</span></a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#Security"><bdi class="secno">13. </bdi>Security Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#security-integrity-confidentiality"><bdi class="secno">13.1 </bdi>Communication Integrity and Confidentiality</a></li><li class="tocline"><a class="tocxref" href="#security-confidentiality-authn"><bdi class="secno">13.2 </bdi>Policy Confidentiality and Sender Authentication</a></li><li class="tocline"><a class="tocxref" href="#security-trust"><bdi class="secno">13.3 </bdi>Trust</a></li><li class="tocline"><a class="tocxref" href="#security-avail-dos"><bdi class="secno">13.4 </bdi>Availability &amp; Denial of Service</a></li><li class="tocline"><a class="tocxref" href="#security-metadata-sig"><bdi class="secno">13.5 </bdi>Differences between Unsigned and Signed Metadata</a></li><li class="tocline"><a class="tocxref" href="#security-metadata-caching"><bdi class="secno">13.6 </bdi>Metadata Caching</a></li></ol></li><li class="tocline"><a class="tocxref" href="#iana"><bdi class="secno">14. </bdi>IANA Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#iana-pdp-registry"><bdi class="secno">14.1 </bdi>AuthZEN Policy Decision Point Metadata Registry</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#iana-pdp-registry-template"><bdi class="secno">14.1.1 </bdi>Registration Template</a></li><li class="tocline"><a class="tocxref" href="#iana-pdp-registry-content"><bdi class="secno">14.1.2 </bdi>Initial Registry Contents</a></li></ol></li><li class="tocline"><a class="tocxref" href="#iana-wk-registry"><bdi class="secno">14.2 </bdi>Well-Known URI Registry</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#iana-wk-registry-content"><bdi class="secno">14.2.1 </bdi>Registry Contents</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">15. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Terms defined by this specification</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Terms defined by reference</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li></ol></li></ol></nav>
   <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
-<p>Computational services often implement access control within their components by separating Policy Decision Points (PDPs) from Policy Enforcement Points (PEPs). PDPs and PEPs are defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-xacml" title="eXtensible Access Control Markup Language (XACML) Version 1.1">XACML</a></cite>] and NIST's ABAC SP 800-162. Communication between PDPs and PEPs follows similar patterns across different software and services that require or provide authorization information. The Authorization API described in this document enables different providers to offer PDP and PEP capabilities without having to bind themselves to one particular implementation of a PDP or PEP.</p>
+<p>Computational services often implement access control within their components by separating Policy Decision Points (PDPs) from Policy Enforcement Points (PEPs). PDPs and PEPs are defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-xacml20" title="OASIS eXtensible Access Control Markup Language (XACML) Version 2.0">XACML20</a></cite>] and NIST's ABAC SP 800-162. Communication between PDPs and PEPs follows similar patterns across different software and services that require or provide authorization information. The Authorization API described in this document enables different providers to offer PDP and PEP capabilities without having to bind themselves to one particular implementation of a PDP or PEP.</p>
 </section>
   <section id="model"><div class="header-wrapper"><h2 id="x2-model"><bdi class="secno">2. </bdi>Model</h2><a class="self-link" href="#model" aria-label="Permalink for Section 2."></a></div>
 <p>The Authorization API is a transport-agnostic API published by the PDP, to which the PEP acts as a client. Possible bindings of this specification, such as HTTPS or gRPC, are described in <a href="#transport" data-matched-text="[[[#transport]]]" class="sec-ref"><bdi class="secno">12. </bdi>Transport</a>.</p>
@@ -1171,7 +1089,7 @@ ul.index code{color:inherit}
 <p><span class="nlgov-add">Actions <em class="rfc2119">MAY</em> include zero or more additional attributes as key-value pairs, under the properties object.</span></p>
 <p><span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span></p>
 <section id="processing-activity-and-algorithm-identifiers"><div class="header-wrapper"><h5 id="x5-3-1-1-processing-activity-and-algorithm-identifiers"><bdi class="secno">5.3.1.1 </bdi><span class="nlgov-add">Processing Activity and Algorithm identifiers</span></h5><a class="self-link" href="#processing-activity-and-algorithm-identifiers" aria-label="Permalink for Section 5.3.1.1"></a></div>
-<p><span class="nlgov-add">Under Dutch and EU legislation every action <em class="rfc2119">SHOULD</em> include a relation to the processing activity - or algorithm under which it is performed. These identifiers <em class="rfc2119">SHOULD</em> be included in the action properties and <em class="rfc2119">MUST</em> use the property names as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-logboek dataverwerkingen" title="Logboek dataverwerkingen">Logboek dataverwerkingen</a></cite>] standard and its extensions.</span></p>
+<p><span class="nlgov-add">Under Dutch and EU legislation every action <em class="rfc2119">SHOULD</em> include a relation to the processing activity - or algorithm under which it is performed. These identifiers <em class="rfc2119">SHOULD</em> be included in the action properties and <em class="rfc2119">MUST</em> use the property names as defined in [[<cite><a class="bibref" data-link-type="biblio" href="#bib-logboek dataverwerkingen" title="Logboek Dataverwerkingen">logboek dataverwerkingen</a></cite>]] standard and its extensions.</span></p>
 </section></section></section><section id="context-0"><div class="header-wrapper"><h3 id="context"><bdi class="secno">5.4 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 5.4"></a></div><p>The Context object is a set of attributes that represent environmental or contextual data about the request such as time of day. It is a JSON ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8259" title="The JavaScript Object Notation (JSON) Data Interchange Format">RFC8259</a></cite>]) object. <span class="nlgov-add">The Context <em class="rfc2119">MAY</em> contain [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld11" title="JSON-LD 1.1">JSON-LD11</a></cite>] keys starting with the <code>@</code>-symbol.</span></p>
 <p><span class="nlgov-add">As described in <a href="#security-trust" data-matched-text="[[[#security-trust]]]" class="sec-ref"><bdi class="secno">13.3 </bdi>Trust</a> it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability proof of values <em class="rfc2119">MAY</em> be provided. If provided, these <em class="rfc2119">SHOULD</em> be included in the Context object.</span></p>
 <p>The following is a non-normative example of a Context:</p>
@@ -1188,7 +1106,7 @@ ul.index code{color:inherit}
 <p><span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span></p>
 <section id="time"><div class="header-wrapper"><h5 id="x5-4-1-1-time"><bdi class="secno">5.4.1.1 </bdi><span class="nlgov-add">Time</span></h5><a class="self-link" href="#time" aria-label="Permalink for Section 5.4.1.1"></a></div>
 <p><span class="nlgov-add">The logical time at which the action was considered to be initiated, identified by the <code>time</code> field, whose value is a textual representation of the time as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3339" title="Date and Time on the Internet: Timestamps">RFC3339</a></cite>].</span></p>
-<p><span class="nlgov-add">This timestamp <em class="rfc2119">SHOULD</em> be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [<cite><a class="bibref" data-link-type="biblio" href="#bib-rest api design rules" title="NLGov REST API Design Rules 2.0.0">REST API Design Rules</a></cite>] and its <a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal">temporal extension</a>.</span></p>
+<p><span class="nlgov-add">This timestamp <em class="rfc2119">SHOULD</em> be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the <cite><a data-matched-text="[[[ADR]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0">API Design Rules</a></cite> and its <a href="https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal">temporal extension</a>.</span></p>
 </section><section id="w3c-trace-context"><div class="header-wrapper"><h5 id="x5-4-1-2-w3c-trace-context"><bdi class="secno">5.4.1.2 </bdi><span class="nlgov-add">W3C Trace Context</span></h5><a class="self-link" href="#w3c-trace-context" aria-label="Permalink for Section 5.4.1.2"></a></div>
 <p><span class="nlgov-add">To enable tracing of requests request identifiers <em class="rfc2119">MUST</em> be included in the evaluation request. Request identifiers <em class="rfc2119">SHOULD</em> be included in the Context object. They <em class="rfc2119">SHOULD</em> be in the form of <code>tracestate</code>, <code>traceparent</code> as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-trace-context" title="Trace Context">Trace-Context</a></cite>].</span></p>
 </section></section></section></section>
@@ -1990,7 +1908,7 @@ ul.index code{color:inherit}
 <p><code>signed_metadata</code>:
 : A JWT containing metadata parameters about the protected resource as claims. This is a string value consisting of the entire signed JWT. A <code>signed_metadata</code> parameter <em class="rfc2119">SHOULD NOT</em> appear as a claim in the JWT; it is <em class="rfc2119">RECOMMENDED</em> to reject any metadata in which this occurs.</p>
 </section></section><section id="obtaining-policy-decision-point-metadata"><div class="header-wrapper"><h3 id="pdp-metadata-access"><bdi class="secno">11.2 </bdi>Obtaining Policy Decision Point Metadata</h3><a class="self-link" href="#pdp-metadata-access" aria-label="Permalink for Section 11.2"></a></div><p>Policy Decision Point supporting metadata <em class="rfc2119">MUST</em> make a JSON document containing metadata as specified in <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a> available at a URL formed by inserting a well-known URI string between the host component and the path and/or query components, if any. The well-known URI string used is <code>/.well-known/authzen-configuration</code>.</p>
-<p>The syntax and semantics of .well-known are defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8615" title="Well-Known Uniform Resource Identifiers (URIs)">RFC8615</a></cite>]. The well-known URI path suffix used is registered in the IANA "Well-Known URIs" registry [<cite><a class="bibref" data-link-type="biblio" href="#bib-iana.well-known-uris" title="Well-Known URIs">IANA.well-known-uris</a></cite>].</p>
+<p>The syntax and semantics of .well-known are defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8615" title="Well-Known Uniform Resource Identifiers (URIs)">RFC8615</a></cite>]. The well-known URI path suffix used is registered in the <cite><a data-matched-text="[[[IANA.well-known-uris]]]" href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">IANA "Well-Known URIs" registry</a></cite>.</p>
 <section id="policy-decision-point-metadata-request"><div class="header-wrapper"><h4 id="pdp-metadata-access-request"><bdi class="secno">11.2.1 </bdi>Policy Decision Point Metadata Request</h4><a class="self-link" href="#pdp-metadata-access-request" aria-label="Permalink for Section 11.2.1"></a></div><p>A policy decision point metadata document <em class="rfc2119">MUST</em> be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is <code>https://pdp.mycompany.com</code>:</p>
 <pre><code class="http hljs" aria-busy="false"><span class="hljs-keyword">GET</span> <span class="hljs-string">/.well-known/authzen-configuration</span> <span class="hljs-meta">HTTP/1.1</span>
 <span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>pdp.mycompany.com
@@ -2398,7 +2316,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : Base URL of the Policy Decision Point</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
 <p>Metadata name:
@@ -2407,7 +2325,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : URL of Policy Decision Point Access Evaluation API endpoint</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
 <p>Metadata name:
@@ -2416,7 +2334,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : URL of Policy Decision Point Access Evaluations API endpoint</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
 <p>Metadata name:
@@ -2425,7 +2343,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : URL of the Search Endpooint based on Subject element</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
 <p>Metadata name:
@@ -2434,7 +2352,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : URL of the Search Endpooint based on Resource element</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
 <p>Metadata name:
@@ -2443,10 +2361,10 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : JWT containing metadata parameters about the protected resource as claims.</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Specification Document(s):
 : <a href="#pdp-metadata-data-endpoint" data-matched-text="[[[#pdp-metadata-data-endpoint]]]" class="sec-ref"><bdi class="secno">11.1.1 </bdi>Endpoint Parameters</a></p>
-</section></section><section id="well-known-uri-registry"><div class="header-wrapper"><h3 id="iana-wk-registry"><bdi class="secno">14.2 </bdi>Well-Known URI Registry</h3><a class="self-link" href="#iana-wk-registry" aria-label="Permalink for Section 14.2"></a></div><p>This specification registers the well-known URI defined in Section 3 in the IANA "Well-Known URIs" registry [<cite><a class="bibref" data-link-type="biblio" href="#bib-iana.well-known-uris" title="Well-Known URIs">IANA.well-known-uris</a></cite>].</p>
+</section></section><section id="well-known-uri-registry"><div class="header-wrapper"><h3 id="iana-wk-registry"><bdi class="secno">14.2 </bdi>Well-Known URI Registry</h3><a class="self-link" href="#iana-wk-registry" aria-label="Permalink for Section 14.2"></a></div><p>This specification registers the well-known URI defined in Section 3 in the <cite><a data-matched-text="[[[IANA.well-known-uris]]]" href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">IANA "Well-Known URIs" registry</a></cite>.</p>
 <section id="registry-contents"><div class="header-wrapper"><h4 id="iana-wk-registry-content"><bdi class="secno">14.2.1 </bdi>Registry Contents</h4><a class="self-link" href="#iana-wk-registry-content" aria-label="Permalink for Section 14.2.1"></a></div><p>URI Suffix:
 : authzen-configuration</p>
 <p>Reference:
@@ -2455,7 +2373,7 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 : permanent</p>
 <p>Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:<a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
+: <a href="mailto:openid-specs-authzen@lists.openid.net">openid-specs-authzen@lists.openid.net</a></p>
 <p>Related Information:
 : (none)</p>
 </section></section></section>
@@ -2483,16 +2401,16 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references">
     <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
-    <dl class="bibliography"><dt id="bib-iana.well-known-uris">[IANA.well-known-uris]</dt><dd>
-      <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml"><cite>Well-Known URIs</cite></a>. 2010-01-20. URL: <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml</a>
+    <dl class="bibliography"><dt id="bib-adr">[ADR]</dt><dd>
+      <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0"><cite>API Design Rules</cite></a>. Jasper Roes; Joost Farla.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0">https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0</a>
+    </dd><dt id="bib-iana.well-known-uris">[IANA.well-known-uris]</dt><dd>
+      <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml"><cite>IANA "Well-Known URIs" registry</cite></a>. 2010-01-20. URL: <a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml</a>
     </dd><dt id="bib-json-ld11">[JSON-LD11]</dt><dd>
       <a href="https://www.w3.org/TR/json-ld11/"><cite>JSON-LD 1.1</cite></a>. Gregg Kellogg; Pierre-Antoine Champin; Dave Longley.  W3C. 16 July 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld11/">https://www.w3.org/TR/json-ld11/</a>
-    </dd><dt id="bib-logboek dataverwerkingen">[Logboek dataverwerkingen]</dt><dd>
-      <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/"><cite>Logboek dataverwerkingen</cite></a>. Eelco Hotting; Vedran Bilanovic. n.t.b.. URL: <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a>
+    </dd><dt id="bib-logboek dataverwerkingen">[logboek dataverwerkingen]</dt><dd>
+      <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/"><cite>Logboek Dataverwerkingen</cite></a>.  Logius. URL: <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/">https://logius-standaarden.github.io/logboek-dataverwerkingen/</a>
     </dd><dt id="bib-mim">[MIM]</dt><dd>
       <a href="https://docs.geostandaarden.nl/mim/mim/"><cite>Metamodel Informatie Modellering</cite></a>. 13 juni 2024. URL: <a href="https://docs.geostandaarden.nl/mim/mim/">https://docs.geostandaarden.nl/mim/mim/</a>
-    </dd><dt id="bib-rest api design rules">[REST API Design Rules]</dt><dd>
-      <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/"><cite>NLGov REST API Design Rules 2.0.0</cite></a>. Jasper Roes; Joost Farla. Maart 2024. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc3339">[RFC3339]</dt><dd>
@@ -2523,8 +2441,8 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
       <a href="https://www.rfc-editor.org/rfc/rfc9525"><cite>Service Identity in TLS</cite></a>. P. Saint-Andre; R. Salz.  IETF. November 2023. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9525">https://www.rfc-editor.org/rfc/rfc9525</a>
     </dd><dt id="bib-trace-context">[Trace-Context]</dt><dd>
       <a href="https://www.w3.org/TR/trace-context-1/"><cite>Trace Context</cite></a>. Sergey Kanzhelev; Morgan McLean; Alois Reitbauer; Bogdan Drutu; Nik Molnar; Yuri Shkuro.  W3C. 23 November 2021. W3C Recommendation. URL: <a href="https://www.w3.org/TR/trace-context-1/">https://www.w3.org/TR/trace-context-1/</a>
-    </dd><dt id="bib-xacml">[XACML]</dt><dd>
-      <a href="https://www.oasis-open.org/committees/xacml/repository/cs-xacml-specification-1.1.pdf"><cite>eXtensible Access Control Markup Language (XACML) Version 1.1</cite></a>. Simon Godik; Tim Moses (Ed.). 2006. URL: <a href="https://www.oasis-open.org/committees/xacml/repository/cs-xacml-specification-1.1.pdf">https://www.oasis-open.org/committees/xacml/repository/cs-xacml-specification-1.1.pdf</a>
+    </dd><dt id="bib-xacml20">[XACML20]</dt><dd>
+      <a href="http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf"><cite>OASIS eXtensible Access Control Markup Language (XACML) Version 2.0</cite></a>. Tim Moses. 1 February 2005. URL: <a href="http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf">http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
