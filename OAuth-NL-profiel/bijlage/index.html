@@ -988,6 +988,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   "specStatus": "WV",
   "specType": "ST",
   "preProcess": [
+    null,
     null
   ]
 }</script>
@@ -1000,7 +1001,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">October 09, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">October 10, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1074,7 +1075,55 @@ img.license{float:left;padding-right:5px;background:0 0}
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div>
+  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements-notation-and-conventions">Requirements Notation and Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology">Terminology</a></li><li class="tocline"><a class="tocxref" href="#conformance-0">Conformance</a></li></ol></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#dutch-government-assurance-profile-for-oauth-2-0">Dutch government Assurance profile for OAuth 2.0</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#usecases">Usecases</a></li><li class="tocline"><a class="tocxref" href="#introduction">Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resource-server">Resource Server</a></li><li class="tocline"><a class="tocxref" href="#authorization-server">Authorization Server</a></li><li class="tocline"><a class="tocxref" href="#client">Client</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-client-credentials-flow">Use case: Client credentials flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-client-authentication">Step 1. Client Authentication</a></li><li class="tocline"><a class="tocxref" href="#step-2-access-token-response">Step 2. Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-3-resource-interaction">Step 3. Resource interaction</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-authorization-code-flow">Use case: Authorization code flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-authorization-initiation">Step 1. Authorization initiation</a></li><li class="tocline"><a class="tocxref" href="#step-2-authorization-request">Step 2. Authorization Request</a></li><li class="tocline"><a class="tocxref" href="#step-3-user-authorization-and-consent">Step 3. User Authorization and consent</a></li><li class="tocline"><a class="tocxref" href="#step-4-authorization-grant">Step 4. Authorization Grant</a></li><li class="tocline"><a class="tocxref" href="#step-5-access-token-request">Step 5. Access Token Request</a></li><li class="tocline"><a class="tocxref" href="#step-6-access-token-response">Step 6. Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-7-resource-interaction">Step 7. Resource interaction</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-token-exchange">Use case: Token exchange</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-token-exchange-request">Step 1: Token Exchange Request</a></li><li class="tocline"><a class="tocxref" href="#step-2-access-token-response-0">Step 2: Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-3-resource-interaction-0">Step 3: Resource Interaction</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#client-profiles"><bdi class="secno">1. </bdi>Client Profiles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-types"><bdi class="secno">1.1 </bdi>Client Types</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#full-client-with-user-delegation"><bdi class="secno">1.1.1 </bdi>Full Client with User Delegation</a></li><li class="tocline"><a class="tocxref" href="#native-client-with-user-delegation"><bdi class="secno">1.1.2 </bdi>Native Client with User Delegation</a></li><li class="tocline"><a class="tocxref" href="#direct-access-client"><bdi class="secno">1.1.3 </bdi>Direct Access Client</a></li></ol></li><li class="tocline"><a class="tocxref" href="#client-registration"><bdi class="secno">1.2 </bdi>Client Registration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#redirect-uri"><bdi class="secno">1.2.1 </bdi>Redirect URI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connection-to-the-authorization-server"><bdi class="secno">1.3 </bdi>Connection to the Authorization Server</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requests-to-the-authorization-endpoint"><bdi class="secno">1.3.1 </bdi>Requests to the Authorization Endpoint</a></li><li class="tocline"><a class="tocxref" href="#response-from-the-authorization-endpoint"><bdi class="secno">1.3.2 </bdi>Response from the Authorization Endpoint</a></li><li class="tocline"><a class="tocxref" href="#requests-to-the-token-endpoint"><bdi class="secno">1.3.3 </bdi>Requests to the Token Endpoint</a></li><li class="tocline"><a class="tocxref" href="#client-keys"><bdi class="secno">1.3.4 </bdi>Client Keys</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connection-to-the-protected-resource"><bdi class="secno">1.4 </bdi>Connection to the Protected Resource</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requests-to-the-protected-resource"><bdi class="secno">1.4.1 </bdi>Requests to the Protected Resource</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#authorization-server-profile"><bdi class="secno">2. </bdi>Authorization Server Profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#connections-with-clients"><bdi class="secno">2.1 </bdi>Connections with clients</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#grant-types"><bdi class="secno">2.1.1 </bdi>Grant types</a></li><li class="tocline"><a class="tocxref" href="#client-authentication"><bdi class="secno">2.1.2 </bdi>Client authentication</a></li><li class="tocline"><a class="tocxref" href="#dynamic-registration"><bdi class="secno">2.1.3 </bdi>Dynamic Registration</a></li><li class="tocline"><a class="tocxref" href="#client-approval"><bdi class="secno">2.1.4 </bdi>Client Approval</a></li><li class="tocline"><a class="tocxref" href="#discovery"><bdi class="secno">2.1.5 </bdi>Discovery</a></li><li class="tocline"><a class="tocxref" href="#revocation"><bdi class="secno">2.1.6 </bdi>Revocation</a></li><li class="tocline"><a class="tocxref" href="#pkce"><bdi class="secno">2.1.7 </bdi>PKCE</a></li><li class="tocline"><a class="tocxref" href="#redirect-uris"><bdi class="secno">2.1.8 </bdi>Redirect URIs</a></li><li class="tocline"><a class="tocxref" href="#refreshtokens"><bdi class="secno">2.1.9 </bdi>RefreshTokens</a></li><li class="tocline"><a class="tocxref" href="#token-response"><bdi class="secno">2.1.10 </bdi>Token Response</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connections-between-authorization-servers-and-protected-resources"><bdi class="secno">2.2 </bdi>Connections between authorization servers and protected resources</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#json-web-tokens-jwt"><bdi class="secno">2.2.1 </bdi>JSON Web Tokens (JWT)</a></li><li class="tocline"><a class="tocxref" href="#introspection"><bdi class="secno">2.2.2 </bdi>Introspection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#response-to-authorization-requests"><bdi class="secno">2.3 </bdi>Response to Authorization Requests</a></li><li class="tocline"><a class="tocxref" href="#token-lifetimes"><bdi class="secno">2.4 </bdi>Token Lifetimes</a></li><li class="tocline"><a class="tocxref" href="#scopes"><bdi class="secno">2.5 </bdi>Scopes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#claims-for-authorization-outside-of-delegation-scenarios"><bdi class="secno">2.5.1 </bdi>Claims for Authorization Outside of Delegation Scenarios</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#protected-resource-profile"><bdi class="secno">3. </bdi>Protected Resource Profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protecting-resources"><bdi class="secno">3.1 </bdi>Protecting Resources</a></li><li class="tocline"><a class="tocxref" href="#connections-with-clients-0"><bdi class="secno">3.2 </bdi>Connections with Clients</a></li><li class="tocline"><a class="tocxref" href="#connections-with-authorization-servers"><bdi class="secno">3.3 </bdi>Connections with Authorization Servers</a></li></ol></li><li class="tocline"><a class="tocxref" href="#advanced-oauth-security-options"><bdi class="secno">4. </bdi>Advanced OAuth Security Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pushed-authorization-requests-par"><bdi class="secno">4.1 </bdi>Pushed Authorization Requests (PAR)</a></li><li class="tocline"><a class="tocxref" href="#proof-of-possession-tokens-pop"><bdi class="secno">4.2 </bdi>Proof of Possession Tokens (PoP)</a></li><li class="tocline"><a class="tocxref" href="#rich-authorization-requests"><bdi class="secno">4.3 </bdi>Rich Authorization Requests</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#security-considerations-0"><bdi class="secno">6. </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#multi-actor-authorization-in-oauth"><bdi class="secno">A. </bdi>Multi-Actor Authorization in OAuth</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction-0"><bdi class="secno">A.1 </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#delegation-vs-representation"><bdi class="secno">A.1.1 </bdi>Delegation vs Representation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#oauth-tokens"><bdi class="secno">A.2 </bdi>OAuth tokens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#application-in-nl-gov-profiles"><bdi class="secno">A.2.1 </bdi>Application in NL GOV Profiles</a></li></ol></li><li class="tocline"><a class="tocxref" href="#delegation-relationships"><bdi class="secno">A.3 </bdi>Delegation Relationships</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#claim-structure"><bdi class="secno">A.3.1 </bdi>Claim Structure</a></li><li class="tocline"><a class="tocxref" href="#example-nested-delegation"><bdi class="secno">A.3.2 </bdi>Example: Nested Delegation</a></li><li class="tocline"><a class="tocxref" href="#integration-with-rich-authorization-requests-rar"><bdi class="secno">A.3.3 </bdi>Integration with Rich Authorization Requests (RAR)</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships-in-nl-gov-context"><bdi class="secno">A.3.4 </bdi>Representation Relationships in NL GOV Context</a></li><li class="tocline"><a class="tocxref" href="#example-claims"><bdi class="secno">A.3.5 </bdi>Example claims</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">A.4 </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships"><bdi class="secno">A.5 </bdi>Representation Relationships</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformance-1">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
+        are to be interpreted as described in
+        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        when, and only when, they appear in all
+        capitals, as shown here.
+      </p><div class="header-wrapper"><h2 id="introduction-1">Introduction</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div>
+
+
+<p>This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:</p>
+<ol>
+<li>Define a mandatory baseline set of security controls suitable for a wide range of government use cases, while maintaining reasonable ease of implementation and functionality</li>
+<li>Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.</li>
+</ol>
+<p>This OAuth profile is intended to be shared broadly, and has been <del>greatly influenced by the [HEART OAuth2 Profile][<cite><a class="bibref" data-link-type="biblio" href="#bib-heart.oauth2" title="Health Relationship Trust Profile for OAuth 2.0">HEART.OAuth2</a></cite>].</del> derived from the [iGov OAuth2 profile] [<cite><a class="bibref" data-link-type="biblio" href="#bib-igov.oauth2" title="International Government Assurance Profile (iGov) for OAuth 2.0">iGOV.OAuth2</a></cite>].</p>
+
+<section id="requirements-notation-and-conventions"><div class="header-wrapper"><h3 id="requirements-notation-and-conventions-0">Requirements Notation and Conventions</h3><a class="self-link" href="#requirements-notation-and-conventions" aria-label="Permalink for this Section"></a></div>
+<p>The key words "<em class="rfc2119">MUST</em>", "<em class="rfc2119">MUST NOT</em>", "<em class="rfc2119">REQUIRED</em>", "<em class="rfc2119">SHALL</em>", "<em class="rfc2119">SHALL NOT</em>", "<em class="rfc2119">SHOULD</em>", "<em class="rfc2119">SHOULD NOT</em>", "<em class="rfc2119">RECOMMENDED</em>", "<em class="rfc2119">NOT RECOMMENDED</em>", "<em class="rfc2119">MAY</em>", and "<em class="rfc2119">OPTIONAL</em>" in this document are to be interpreted as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">rfc2119</a></cite>] .</p>
+<p>All uses of [JSON Web Signature (JWS)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">rfc7515</a></cite>] and [JSON Web Encryption (JWE)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7516" title="JSON Web Encryption (JWE)">rfc7516</a></cite>] data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.</p>
+
+</section><section id="terminology"><div class="header-wrapper"><h3 id="terminology-0">Terminology</h3><a class="self-link" href="#terminology" aria-label="Permalink for this Section"></a></div>
+<p>This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">rfc7519</a></cite>] , and the terms defined by [OpenID Connect Core 1.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>] .</p>
+
+</section><section id="conformance-0"><div class="header-wrapper"><h3 id="conformance-2">Conformance</h3><a class="self-link" href="#conformance-0" aria-label="Permalink for this Section"></a></div>
+<p>This specification defines requirements for the following components:</p>
+<ul>
+<li>OAuth 2.0 clients.</li>
+<li>OAuth 2.0 authorization servers.</li>
+<li>OAuth 2.0 protected resources.</li>
+</ul>
+<p>The specification also defines features for interaction between these components:</p>
+<ul>
+<li>Client to authorization server.</li>
+<li>Protected resource to authorization server.</li>
+</ul>
+ 
+<aside class=" addition">
+<b>iGov-NL : Additional content</b><br>  
+This profile is based upon the international government assurance profile for OAuth 2.0 (iGov) [<cite><a class="bibref" data-link-type="biblio" href="#bib-igov.oauth2" title="International Government Assurance Profile (iGov) for OAuth 2.0">iGOV.OAuth2</a></cite>] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
+</aside>
+
+
+
+<p>When an <del>iGov</del> iGov-NL-compliant component is interacting with other <del>iGov</del> iGov-NL-compliant components, in any valid combination, all components <em class="rfc2119">MUST</em> fully conform to the features and requirements of this specification. All interaction with non-<del>iGov</del> iGov-NL components is outside the scope of this specification.</p>
+<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 authorization server <em class="rfc2119">MUST</em> support all features as described in this specification. A general-purpose authorization server <em class="rfc2119">MAY</em> support additional features for use with non-<del>iGov</del> iGov-NL clients and protected resources.</p>
+<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 client <em class="rfc2119">MUST</em> use all functions as described in this specification. A general-purpose client library <em class="rfc2119">MAY</em> support additional features for use with non-iGov authorization servers and protected resources.</p>
+<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 protected resource <em class="rfc2119">MUST</em> use all functions as described in this specification. A general-purpose protected resource library <em class="rfc2119">MAY</em> support additional features for use with non-<del>iGov</del> iGov-NL authorization servers and clients.</p>
+</section></section>
   <div>
    <i>
     This document is an adaptation of the
@@ -1096,7 +1145,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <p>The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.</p>
 <p>This specification profiles the OAuth 2.0 protocol framework to increase baseline security, provide greater interoperability, and structure deployments in a manner specifically applicable, but not limited to consumer-to-government deployments in the Netherlands.</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#dutch-government-assurance-profile-for-oauth-2-0">Dutch government Assurance profile for OAuth 2.0</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#usecases">Usecases</a></li><li class="tocline"><a class="tocxref" href="#introduction">Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#resource-server">Resource Server</a></li><li class="tocline"><a class="tocxref" href="#authorization-server">Authorization Server</a></li><li class="tocline"><a class="tocxref" href="#client">Client</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-client-credentials-flow">Use case: Client credentials flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-client-authentication">Step 1. Client Authentication</a></li><li class="tocline"><a class="tocxref" href="#step-2-access-token-response">Step 2. Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-3-resource-interaction">Step 3. Resource interaction</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-authorization-code-flow">Use case: Authorization code flow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-authorization-initiation">Step 1. Authorization initiation</a></li><li class="tocline"><a class="tocxref" href="#step-2-authorization-request">Step 2. Authorization Request</a></li><li class="tocline"><a class="tocxref" href="#step-3-user-authorization-and-consent">Step 3. User Authorization and consent</a></li><li class="tocline"><a class="tocxref" href="#step-4-authorization-grant">Step 4. Authorization Grant</a></li><li class="tocline"><a class="tocxref" href="#step-5-access-token-request">Step 5. Access Token Request</a></li><li class="tocline"><a class="tocxref" href="#step-6-access-token-response">Step 6. Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-7-resource-interaction">Step 7. Resource interaction</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-case-token-exchange">Use case: Token exchange</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#step-1-token-exchange-request">Step 1: Token Exchange Request</a></li><li class="tocline"><a class="tocxref" href="#step-2-access-token-response-0">Step 2: Access Token Response</a></li><li class="tocline"><a class="tocxref" href="#step-3-resource-interaction-0">Step 3: Resource Interaction</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requirements-notation-and-conventions"><bdi class="secno">1.1 </bdi>Requirements Notation and Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.2 </bdi>Terminology</a></li><li class="tocline"><a class="tocxref" href="#conformance-0"><bdi class="secno">1.3 </bdi>Conformance</a></li></ol></li><li class="tocline"><a class="tocxref" href="#client-profiles"><bdi class="secno">2. </bdi>Client Profiles</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#client-types"><bdi class="secno">2.1 </bdi>Client Types</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#full-client-with-user-delegation"><bdi class="secno">2.1.1 </bdi>Full Client with User Delegation</a></li><li class="tocline"><a class="tocxref" href="#native-client-with-user-delegation"><bdi class="secno">2.1.2 </bdi>Native Client with User Delegation</a></li><li class="tocline"><a class="tocxref" href="#direct-access-client"><bdi class="secno">2.1.3 </bdi>Direct Access Client</a></li></ol></li><li class="tocline"><a class="tocxref" href="#client-registration"><bdi class="secno">2.2 </bdi>Client Registration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#redirect-uri"><bdi class="secno">2.2.1 </bdi>Redirect URI</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connection-to-the-authorization-server"><bdi class="secno">2.3 </bdi>Connection to the Authorization Server</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requests-to-the-authorization-endpoint"><bdi class="secno">2.3.1 </bdi>Requests to the Authorization Endpoint</a></li><li class="tocline"><a class="tocxref" href="#response-from-the-authorization-endpoint"><bdi class="secno">2.3.2 </bdi>Response from the Authorization Endpoint</a></li><li class="tocline"><a class="tocxref" href="#requests-to-the-token-endpoint"><bdi class="secno">2.3.3 </bdi>Requests to the Token Endpoint</a></li><li class="tocline"><a class="tocxref" href="#client-keys"><bdi class="secno">2.3.4 </bdi>Client Keys</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connection-to-the-protected-resource"><bdi class="secno">2.4 </bdi>Connection to the Protected Resource</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#requests-to-the-protected-resource"><bdi class="secno">2.4.1 </bdi>Requests to the Protected Resource</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#authorization-server-profile"><bdi class="secno">3. </bdi>Authorization Server Profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#connections-with-clients"><bdi class="secno">3.1 </bdi>Connections with clients</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#grant-types"><bdi class="secno">3.1.1 </bdi>Grant types</a></li><li class="tocline"><a class="tocxref" href="#client-authentication"><bdi class="secno">3.1.2 </bdi>Client authentication</a></li><li class="tocline"><a class="tocxref" href="#dynamic-registration"><bdi class="secno">3.1.3 </bdi>Dynamic Registration</a></li><li class="tocline"><a class="tocxref" href="#client-approval"><bdi class="secno">3.1.4 </bdi>Client Approval</a></li><li class="tocline"><a class="tocxref" href="#discovery"><bdi class="secno">3.1.5 </bdi>Discovery</a></li><li class="tocline"><a class="tocxref" href="#revocation"><bdi class="secno">3.1.6 </bdi>Revocation</a></li><li class="tocline"><a class="tocxref" href="#pkce"><bdi class="secno">3.1.7 </bdi>PKCE</a></li><li class="tocline"><a class="tocxref" href="#redirect-uris"><bdi class="secno">3.1.8 </bdi>Redirect URIs</a></li><li class="tocline"><a class="tocxref" href="#refreshtokens"><bdi class="secno">3.1.9 </bdi>RefreshTokens</a></li><li class="tocline"><a class="tocxref" href="#token-response"><bdi class="secno">3.1.10 </bdi>Token Response</a></li></ol></li><li class="tocline"><a class="tocxref" href="#connections-between-authorization-servers-and-protected-resources"><bdi class="secno">3.2 </bdi>Connections between authorization servers and protected resources</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#json-web-tokens-jwt"><bdi class="secno">3.2.1 </bdi>JSON Web Tokens (JWT)</a></li><li class="tocline"><a class="tocxref" href="#introspection"><bdi class="secno">3.2.2 </bdi>Introspection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#response-to-authorization-requests"><bdi class="secno">3.3 </bdi>Response to Authorization Requests</a></li><li class="tocline"><a class="tocxref" href="#token-lifetimes"><bdi class="secno">3.4 </bdi>Token Lifetimes</a></li><li class="tocline"><a class="tocxref" href="#scopes"><bdi class="secno">3.5 </bdi>Scopes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#claims-for-authorization-outside-of-delegation-scenarios"><bdi class="secno">3.5.1 </bdi>Claims for Authorization Outside of Delegation Scenarios</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#protected-resource-profile"><bdi class="secno">4. </bdi>Protected Resource Profile</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protecting-resources"><bdi class="secno">4.1 </bdi>Protecting Resources</a></li><li class="tocline"><a class="tocxref" href="#connections-with-clients-0"><bdi class="secno">4.2 </bdi>Connections with Clients</a></li><li class="tocline"><a class="tocxref" href="#connections-with-authorization-servers"><bdi class="secno">4.3 </bdi>Connections with Authorization Servers</a></li></ol></li><li class="tocline"><a class="tocxref" href="#advanced-oauth-security-options"><bdi class="secno">5. </bdi>Advanced OAuth Security Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pushed-authorization-requests-par"><bdi class="secno">5.1 </bdi>Pushed Authorization Requests (PAR)</a></li><li class="tocline"><a class="tocxref" href="#proof-of-possession-tokens-pop"><bdi class="secno">5.2 </bdi>Proof of Possession Tokens (PoP)</a></li><li class="tocline"><a class="tocxref" href="#rich-authorization-requests"><bdi class="secno">5.3 </bdi>Rich Authorization Requests</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">6. </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#security-considerations-0"><bdi class="secno">7. </bdi>Security Considerations</a></li><li class="tocline"><a class="tocxref" href="#multi-actor-authorization-in-oauth"><bdi class="secno">A. </bdi>Multi-Actor Authorization in OAuth</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction-0"><bdi class="secno">A.1 </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#delegation-vs-representation"><bdi class="secno">A.1.1 </bdi>Delegation vs Representation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#oauth-tokens"><bdi class="secno">A.2 </bdi>OAuth tokens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#application-in-nl-gov-profiles"><bdi class="secno">A.2.1 </bdi>Application in NL GOV Profiles</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships-in-nl-gov-context"><bdi class="secno">A.2.2 </bdi>Representation Relationships in NL GOV Context</a></li><li class="tocline"><a class="tocxref" href="#example-claims"><bdi class="secno">A.2.3 </bdi>Example claims</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">A.3 </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#delegation-relationships"><bdi class="secno">A.4 </bdi>Delegation Relationships</a></li><li class="tocline"><a class="tocxref" href="#representation-relationships"><bdi class="secno">A.5 </bdi>Representation Relationships</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  
   <div><table>
 <thead>
 <tr>
@@ -1165,7 +1214,7 @@ by the <a href="https://openid.net/foundation/">OpenID Foundation</a>. It should
 <p><a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/">The Governance of this standard</a> is described by the API-Standaarden beheermodel in a <a href="https://github.com/Logius-standaarden/API-Standaarden-Beheermodel/">separate repository</a> and published by Logius (<a href="mailto:api@logius.nl">api@logius.nl</a>).</p>
 <section id="usecases"><div class="header-wrapper"><h3 id="usecases-0">Usecases</h3><a class="self-link" href="#usecases" aria-label="Permalink for this Section"></a></div>
 <p>There are two use cases: The <em>client credentials</em> flow and the <em>authorization code flow</em>. In two sections below we will elaborate on these, first we will introduce some common concepts.</p>
-</section><section id="introduction"><div class="header-wrapper"><h3 id="introduction-1">Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for this Section"></a></div>
+</section><section id="introduction"><div class="header-wrapper"><h3 id="introduction-2">Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for this Section"></a></div>
 <p>For the Client credentials flow and Authorization code flow usecases to work properly the following application building blocks need to be in place:</p>
 <ol>
 <li>the <strong>Resource Server</strong> (usually described as the API)</li>
@@ -1296,63 +1345,15 @@ The contents and protocol of the Resource Request and Resource Response are out 
 </section><section id="step-3-resource-interaction-0"><div class="header-wrapper"><h4 id="step-3-resource-interaction-2">Step 3: Resource Interaction</h4><a class="self-link" href="#step-3-resource-interaction-0" aria-label="Permalink for this Section"></a></div>
 <p>The client can now use the new token to send requests to the service. These requests are directed to the Resource Server, which evaluates the access token as part of its access control decisions (e.g., by using the subject in the access token). The Resource Server responds based on these access control decisions. The specifics of the Resource Request and Resource Response are beyond the scope of this document.</p>
 </section></section></section>
-  <section id="conformance"><div class="header-wrapper"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
-        are to be interpreted as described in
-        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
-        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
-        when, and only when, they appear in all
-        capitals, as shown here.
-      </p><div class="header-wrapper"><h2 id="introduction-2">Introduction</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div>
-
-
-<p>This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:</p>
-<ol>
-<li>Define a mandatory baseline set of security controls suitable for a wide range of government use cases, while maintaining reasonable ease of implementation and functionality</li>
-<li>Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.</li>
-</ol>
-<p>This OAuth profile is intended to be shared broadly, and has been <del>greatly influenced by the [HEART OAuth2 Profile][<cite><a class="bibref" data-link-type="biblio" href="#bib-heart.oauth2" title="Health Relationship Trust Profile for OAuth 2.0">HEART.OAuth2</a></cite>].</del> derived from the [iGov OAuth2 profile] [<cite><a class="bibref" data-link-type="biblio" href="#bib-igov.oauth2" title="International Government Assurance Profile (iGov) for OAuth 2.0">iGOV.OAuth2</a></cite>].</p>
-
-<section id="requirements-notation-and-conventions"><div class="header-wrapper"><h3 id="x1-1-requirements-notation-and-conventions"><bdi class="secno">1.1 </bdi>Requirements Notation and Conventions</h3><a class="self-link" href="#requirements-notation-and-conventions" aria-label="Permalink for Section 1.1"></a></div>
-<p>The key words "<em class="rfc2119">MUST</em>", "<em class="rfc2119">MUST NOT</em>", "<em class="rfc2119">REQUIRED</em>", "<em class="rfc2119">SHALL</em>", "<em class="rfc2119">SHALL NOT</em>", "<em class="rfc2119">SHOULD</em>", "<em class="rfc2119">SHOULD NOT</em>", "<em class="rfc2119">RECOMMENDED</em>", "<em class="rfc2119">NOT RECOMMENDED</em>", "<em class="rfc2119">MAY</em>", and "<em class="rfc2119">OPTIONAL</em>" in this document are to be interpreted as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">rfc2119</a></cite>] .</p>
-<p>All uses of [JSON Web Signature (JWS)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">rfc7515</a></cite>] and [JSON Web Encryption (JWE)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7516" title="JSON Web Encryption (JWE)">rfc7516</a></cite>] data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.</p>
-
-</section><section id="terminology"><div class="header-wrapper"><h3 id="x1-2-terminology"><bdi class="secno">1.2 </bdi>Terminology</h3><a class="self-link" href="#terminology" aria-label="Permalink for Section 1.2"></a></div>
-<p>This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">rfc7519</a></cite>] , and the terms defined by [OpenID Connect Core 1.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>] .</p>
-
-</section><section id="conformance-0"><div class="header-wrapper"><h3 id="x1-3-conformance"><bdi class="secno">1.3 </bdi>Conformance</h3><a class="self-link" href="#conformance-0" aria-label="Permalink for Section 1.3"></a></div>
-<p>This specification defines requirements for the following components:</p>
-<ul>
-<li>OAuth 2.0 clients.</li>
-<li>OAuth 2.0 authorization servers.</li>
-<li>OAuth 2.0 protected resources.</li>
-</ul>
-<p>The specification also defines features for interaction between these components:</p>
-<ul>
-<li>Client to authorization server.</li>
-<li>Protected resource to authorization server.</li>
-</ul>
- 
-<aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  
-This profile is based upon the international government assurance profile for OAuth 2.0 (iGov) [<cite><a class="bibref" data-link-type="biblio" href="#bib-igov.oauth2" title="International Government Assurance Profile (iGov) for OAuth 2.0">iGOV.OAuth2</a></cite>] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
-</aside>
+  
+  <section id="client-profiles"><div class="header-wrapper"><h2 id="x1-client-profiles"><bdi class="secno">1. </bdi>Client Profiles</h2><a class="self-link" href="#client-profiles" aria-label="Permalink for Section 1."></a></div>
 
 
 
-<p>When an <del>iGov</del> iGov-NL-compliant component is interacting with other <del>iGov</del> iGov-NL-compliant components, in any valid combination, all components <em class="rfc2119">MUST</em> fully conform to the features and requirements of this specification. All interaction with non-<del>iGov</del> iGov-NL components is outside the scope of this specification.</p>
-<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 authorization server <em class="rfc2119">MUST</em> support all features as described in this specification. A general-purpose authorization server <em class="rfc2119">MAY</em> support additional features for use with non-<del>iGov</del> iGov-NL clients and protected resources.</p>
-<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 client <em class="rfc2119">MUST</em> use all functions as described in this specification. A general-purpose client library <em class="rfc2119">MAY</em> support additional features for use with non-iGov authorization servers and protected resources.</p>
-<p>An <del>iGov</del> iGov-NL-compliant OAuth 2.0 protected resource <em class="rfc2119">MUST</em> use all functions as described in this specification. A general-purpose protected resource library <em class="rfc2119">MAY</em> support additional features for use with non-<del>iGov</del> iGov-NL authorization servers and clients.</p>
-</section></section>
-  <section id="client-profiles"><div class="header-wrapper"><h2 id="x2-client-profiles"><bdi class="secno">2. </bdi>Client Profiles</h2><a class="self-link" href="#client-profiles" aria-label="Permalink for Section 2."></a></div>
-
-
-
-<section id="client-types"><div class="header-wrapper"><h3 id="x2-1-client-types"><bdi class="secno">2.1 </bdi>Client Types</h3><a class="self-link" href="#client-types" aria-label="Permalink for Section 2.1"></a></div>
+<section id="client-types"><div class="header-wrapper"><h3 id="x1-1-client-types"><bdi class="secno">1.1 </bdi>Client Types</h3><a class="self-link" href="#client-types" aria-label="Permalink for Section 1.1"></a></div>
 <p>The following profile descriptions give patterns of deployment for use in different types of client applications based on the OAuth grant type. Additional grant types, such as assertions, chained tokens, or other mechanisms, are out of scope of this profile and must be covered separately by appropriate profile documents.</p>
 
-<section id="full-client-with-user-delegation"><div class="header-wrapper"><h4 id="x2-1-1-full-client-with-user-delegation"><bdi class="secno">2.1.1 </bdi>Full Client with User Delegation</h4><a class="self-link" href="#full-client-with-user-delegation" aria-label="Permalink for Section 2.1.1"></a></div>
+<section id="full-client-with-user-delegation"><div class="header-wrapper"><h4 id="x1-1-1-full-client-with-user-delegation"><bdi class="secno">1.1.1 </bdi>Full Client with User Delegation</h4><a class="self-link" href="#full-client-with-user-delegation" aria-label="Permalink for Section 1.1.1"></a></div>
 <p>This client type applies to clients that act on behalf of a particular resource owner and require delegation of that user’s authority to access the protected resource. Furthermore, these clients are capable of interacting with a separate web browser application to facilitate the resource owner's interaction with the authentication endpoint of the authorization server.</p>
 <p>These clients <em class="rfc2119">MUST</em> use the authorization code flow of OAuth 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user <em class="rfc2119">MUST</em> authenticate to the authorization endpoint. The user’s web browser is then redirected back to a URI hosted by the client service, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along with its own credentials (<code>private_key_jwt</code>) to the authorization server's token endpoint to obtain an access token.</p>
 
@@ -1365,7 +1366,7 @@ In addition to <code>private_key_jwt</code>, the client authentication method <c
 <p>These clients <em class="rfc2119">MUST</em> be associated with a unique public key, as described in <a href="#client-keys">Section 2.3.4</a>.</p>
 <p>This client type <em class="rfc2119">MAY</em> request and be issued a refresh token if the security parameters of the access request allow for it.</p>
 
-</section><section id="native-client-with-user-delegation"><div class="header-wrapper"><h4 id="x2-1-2-native-client-with-user-delegation"><bdi class="secno">2.1.2 </bdi>Native Client with User Delegation</h4><a class="self-link" href="#native-client-with-user-delegation" aria-label="Permalink for Section 2.1.2"></a></div>
+</section><section id="native-client-with-user-delegation"><div class="header-wrapper"><h4 id="x1-1-2-native-client-with-user-delegation"><bdi class="secno">1.1.2 </bdi>Native Client with User Delegation</h4><a class="self-link" href="#native-client-with-user-delegation" aria-label="Permalink for Section 1.1.2"></a></div>
 <p>This client type applies to clients that act on behalf of a particular resource owner, such as an app on a mobile platform, and require delegation of that user's authority to access the protected resource. Furthermore, these clients are capable of interacting with a separate web browser application to facilitate the resource owner's interaction with the authentication endpoint of the authorization server. In particular, this client type runs natively on the resource owner's device, often leading to many identical instances of a piece of software operating in different environments and running simultaneously for different end users.</p>
 <p>These clients <em class="rfc2119">MUST</em> use the authorization code flow of OAuth 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user <em class="rfc2119">MUST</em> authenticate to the authorization endpoint. The user is then redirected back to a URI hosted by the client, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along to the authorization server's token endpoint to obtain an access token.</p>
 <p>Native clients <em class="rfc2119">MUST</em> either:</p>
@@ -1377,16 +1378,16 @@ In addition to <code>private_key_jwt</code>, the client authentication method <c
 <p>Dynamically registered native applications <em class="rfc2119">MAY</em> use PKCE.</p>
 <p>Native applications not registering a separate public key for each instance are considered Public Clients, and <em class="rfc2119">MUST</em> use PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">rfc7636</a></cite>] with the S256 code challenge mechanism. Public Clients do not authenticate with the Token Endpoint in any other way.</p>
 
-</section><section id="direct-access-client"><div class="header-wrapper"><h4 id="x2-1-3-direct-access-client"><bdi class="secno">2.1.3 </bdi>Direct Access Client</h4><a class="self-link" href="#direct-access-client" aria-label="Permalink for Section 2.1.3"></a></div>
+</section><section id="direct-access-client"><div class="header-wrapper"><h4 id="x1-1-3-direct-access-client"><bdi class="secno">1.1.3 </bdi>Direct Access Client</h4><a class="self-link" href="#direct-access-client" aria-label="Permalink for Section 1.1.3"></a></div>
 <p>This client type <em class="rfc2119">MUST NOT</em> request or be issued a refresh token.</p>
 <p>This profile applies to clients that connect directly to protected resources and do not act on behalf of a particular resource owner, such as those clients that facilitate bulk transfers.</p>
 <p>These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.</p>
 
-</section></section><section id="client-registration"><div class="header-wrapper"><h3 id="x2-2-client-registration"><bdi class="secno">2.2 </bdi>Client Registration</h3><a class="self-link" href="#client-registration" aria-label="Permalink for Section 2.2"></a></div>
+</section></section><section id="client-registration"><div class="header-wrapper"><h3 id="x1-2-client-registration"><bdi class="secno">1.2 </bdi>Client Registration</h3><a class="self-link" href="#client-registration" aria-label="Permalink for Section 1.2"></a></div>
 <p>All clients <em class="rfc2119">MUST</em> register with the authorization server. For client software that may be installed on multiple client instances, such as native applications or web application software, each client instance <em class="rfc2119">MAY</em> receive a unique client identifier from the authorization server. Clients that share client identifiers are considered public clients.</p>
 <p>Client registration <em class="rfc2119">MAY</em> be completed by either static configuration (out-of-band, through an administrator, etc...) or dynamically.</p>
 
-<section id="redirect-uri"><div class="header-wrapper"><h4 id="x2-2-1-redirect-uri"><bdi class="secno">2.2.1 </bdi>Redirect URI</h4><a class="self-link" href="#redirect-uri" aria-label="Permalink for Section 2.2.1"></a></div>
+<section id="redirect-uri"><div class="header-wrapper"><h4 id="x1-2-1-redirect-uri"><bdi class="secno">1.2.1 </bdi>Redirect URI</h4><a class="self-link" href="#redirect-uri" aria-label="Permalink for Section 1.2.1"></a></div>
 <p>Clients using the authorization code grant type <em class="rfc2119">MUST</em> register their full redirect URIs. The Authorization Server <em class="rfc2119">MUST</em> validate the redirect URI given by the client at the authorization endpoint using strict string comparison.</p>
 <p>A client <em class="rfc2119">MUST</em> protect the values passed back to its redirect URI by ensuring that the redirect URI is one of the following:</p>
 <ul>
@@ -1398,9 +1399,9 @@ In addition to <code>private_key_jwt</code>, the client authentication method <c
 <p>Clients <em class="rfc2119">SHOULD NOT</em> have multiple redirect URIs on different domains.</p>
 <p>Clients <em class="rfc2119">MUST NOT</em> forward values passed back to their redirect URIs to other arbitrary or user-provided URIs (a practice known as an "open redirector").</p>
 
-</section></section><section id="connection-to-the-authorization-server"><div class="header-wrapper"><h3 id="x2-3-connection-to-the-authorization-server"><bdi class="secno">2.3 </bdi>Connection to the Authorization Server</h3><a class="self-link" href="#connection-to-the-authorization-server" aria-label="Permalink for Section 2.3"></a></div>
+</section></section><section id="connection-to-the-authorization-server"><div class="header-wrapper"><h3 id="x1-3-connection-to-the-authorization-server"><bdi class="secno">1.3 </bdi>Connection to the Authorization Server</h3><a class="self-link" href="#connection-to-the-authorization-server" aria-label="Permalink for Section 1.3"></a></div>
 
-<section id="requests-to-the-authorization-endpoint"><div class="header-wrapper"><h4 id="x2-3-1-requests-to-the-authorization-endpoint"><bdi class="secno">2.3.1 </bdi>Requests to the Authorization Endpoint</h4><a class="self-link" href="#requests-to-the-authorization-endpoint" aria-label="Permalink for Section 2.3.1"></a></div>
+<section id="requests-to-the-authorization-endpoint"><div class="header-wrapper"><h4 id="x1-3-1-requests-to-the-authorization-endpoint"><bdi class="secno">1.3.1 </bdi>Requests to the Authorization Endpoint</h4><a class="self-link" href="#requests-to-the-authorization-endpoint" aria-label="Permalink for Section 1.3.1"></a></div>
 <p>Full clients and browser-embedded clients making a request to the authorization endpoint <em class="rfc2119">MUST</em> use an unpredictable value for the state parameter with at least 128 bits of entropy. Clients <em class="rfc2119">MUST</em> validate the value of the <samp>state</samp> parameter upon return to the redirect URI and <em class="rfc2119">MUST</em> ensure that the state value is securely tied to the user’s current session (e.g., by relating the state value to a session identifier issued by the client software to the browser).</p>
 <p>Clients <em class="rfc2119">MUST</em> include their full redirect URI in the authorization request. To prevent open redirection and other injection attacks, the authorization server <em class="rfc2119">MUST</em> match the entire redirect URI using a direct string comparison against registered values and <em class="rfc2119">MUST</em> reject requests with an invalid or missing redirect URI.</p>
 
@@ -1453,7 +1454,7 @@ Host:</span> idp-p.example.com
 </aside>
 
 
-</section><section id="response-from-the-authorization-endpoint"><div class="header-wrapper"><h4 id="x2-3-2-response-from-the-authorization-endpoint"><bdi class="secno">2.3.2 </bdi>Response from the Authorization Endpoint</h4><a class="self-link" href="#response-from-the-authorization-endpoint" aria-label="Permalink for Section 2.3.2"></a></div>
+</section><section id="response-from-the-authorization-endpoint"><div class="header-wrapper"><h4 id="x1-3-2-response-from-the-authorization-endpoint"><bdi class="secno">1.3.2 </bdi>Response from the Authorization Endpoint</h4><a class="self-link" href="#response-from-the-authorization-endpoint" aria-label="Permalink for Section 1.3.2"></a></div>
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
@@ -1471,7 +1472,7 @@ Host:</span> idp-p.example.com
 
 
 
-</section><section id="requests-to-the-token-endpoint"><div class="header-wrapper"><h4 id="x2-3-3-requests-to-the-token-endpoint"><bdi class="secno">2.3.3 </bdi>Requests to the Token Endpoint</h4><a class="self-link" href="#requests-to-the-token-endpoint" aria-label="Permalink for Section 2.3.3"></a></div>
+</section><section id="requests-to-the-token-endpoint"><div class="header-wrapper"><h4 id="x1-3-3-requests-to-the-token-endpoint"><bdi class="secno">1.3.3 </bdi>Requests to the Token Endpoint</h4><a class="self-link" href="#requests-to-the-token-endpoint" aria-label="Permalink for Section 1.3.3"></a></div>
 <p>Full clients, native clients with dynamically registered keys, and direct access clients as defined above <em class="rfc2119">MUST</em> authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants][<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7523" title="JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants">rfc7523</a></cite>] using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core] [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.core" title="OpenID Connect Core 1.0">OpenID.Core</a></cite>]. <del>The assertion <em class="rfc2119">MUST</em> use the claims as follows:</del></p>
 
 <aside class=" addition">
@@ -1577,7 +1578,7 @@ xuCxgOotXY6O3et4n77GtgspMgOEKj3b_WpCiuNEwQ</code></pre>
 </aside>
 
 
-</section><section id="client-keys"><div class="header-wrapper"><h4 id="x2-3-4-client-keys"><bdi class="secno">2.3.4 </bdi>Client Keys</h4><a class="self-link" href="#client-keys" aria-label="Permalink for Section 2.3.4"></a></div>
+</section><section id="client-keys"><div class="header-wrapper"><h4 id="x1-3-4-client-keys"><bdi class="secno">1.3.4 </bdi>Client Keys</h4><a class="self-link" href="#client-keys" aria-label="Permalink for Section 1.3.4"></a></div>
 <p>Clients using the authorization code grant type or direct access clients using the client credentials grant type <em class="rfc2119">MUST</em> have a public and private key pair for use in authentication to the token endpoint. These clients <em class="rfc2119">MUST</em> register their public keys in their client registration metadata by either sending the public key directly in the <samp>jwks</samp> field or by registering a <samp>jwks_uri</samp> that <em class="rfc2119">MUST</em> be reachable by the authorization server. It is <em class="rfc2119">RECOMMENDED</em> that clients use a <samp>jwks_uri</samp> if possible as this allows for key rotation more easily. This applies to both dynamic and static (out-of-band) client registration.</p>
 <p>The <samp>jwks</samp> field or the content available from the <samp>jwks_uri</samp> of a client <em class="rfc2119">MUST</em> contain a public key in [JSON Web Key Set (JWK Set)] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7517" title="JSON Web Key (JWK)">rfc7517</a></cite>] format. The authorization server <em class="rfc2119">MUST</em> validate the content of the client's registered jwks_uri document and verify that it contains a JWK Set. The following example is of a 2048-bit RSA key:</p>
 <aside class="example" id="example-3"><div class="marker">
@@ -1630,9 +1631,9 @@ For reference, the corresponding public/private key pair for this public key is 
 
 
 
-</section></section><section id="connection-to-the-protected-resource"><div class="header-wrapper"><h3 id="x2-4-connection-to-the-protected-resource"><bdi class="secno">2.4 </bdi>Connection to the Protected Resource</h3><a class="self-link" href="#connection-to-the-protected-resource" aria-label="Permalink for Section 2.4"></a></div>
+</section></section><section id="connection-to-the-protected-resource"><div class="header-wrapper"><h3 id="x1-4-connection-to-the-protected-resource"><bdi class="secno">1.4 </bdi>Connection to the Protected Resource</h3><a class="self-link" href="#connection-to-the-protected-resource" aria-label="Permalink for Section 1.4"></a></div>
 
-<section id="requests-to-the-protected-resource"><div class="header-wrapper"><h4 id="x2-4-1-requests-to-the-protected-resource"><bdi class="secno">2.4.1 </bdi>Requests to the Protected Resource</h4><a class="self-link" href="#requests-to-the-protected-resource" aria-label="Permalink for Section 2.4.1"></a></div>
+<section id="requests-to-the-protected-resource"><div class="header-wrapper"><h4 id="x1-4-1-requests-to-the-protected-resource"><bdi class="secno">1.4.1 </bdi>Requests to the Protected Resource</h4><a class="self-link" href="#requests-to-the-protected-resource" aria-label="Permalink for Section 1.4.1"></a></div>
 <p>Clients <em class="rfc2119">SHOULD</em> send bearer tokens passed in the Authentication header as defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">rfc6750</a></cite>] . Clients <em class="rfc2119">MAY</em> use the form-parameter <del>or query-parameter</del> method<del>s</del> in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">rfc6750</a></cite>] . Authorized requests <em class="rfc2119">MUST</em> be made over TLS, and clients <em class="rfc2119">MUST</em> validate the protected resource server's certificate.</p>
 <aside class="example" id="example-5"><div class="marker">
     <a class="self-link" href="#example-5">Example<bdi> 5</bdi></a>
@@ -1648,15 +1649,15 @@ An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, s
 <span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>Apache-HttpClient/4.2.3 (java 1.5)
 </code></pre>
 </aside></section></section></section>
-  <section id="authorization-server-profile"><div class="header-wrapper"><h2 id="x3-authorization-server-profile"><bdi class="secno">3. </bdi>Authorization Server Profile</h2><a class="self-link" href="#authorization-server-profile" aria-label="Permalink for Section 3."></a></div>
+  <section id="authorization-server-profile"><div class="header-wrapper"><h2 id="x2-authorization-server-profile"><bdi class="secno">2. </bdi>Authorization Server Profile</h2><a class="self-link" href="#authorization-server-profile" aria-label="Permalink for Section 2."></a></div>
 
 
 <p>All servers <em class="rfc2119">MUST</em> conform to applicable recommendations found in the Security Considerations sections of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] and those found in the "OAuth Threat Model Document" [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6819" title="OAuth 2.0 Threat Model and Security Considerations">rfc6819</a></cite>] .</p>
 <p>The authorization server <em class="rfc2119">MUST</em> protect all communications to and from its OAuth endpoints using TLS.</p>
 
-<section id="connections-with-clients"><div class="header-wrapper"><h3 id="x3-1-connections-with-clients"><bdi class="secno">3.1 </bdi>Connections with clients</h3><a class="self-link" href="#connections-with-clients" aria-label="Permalink for Section 3.1"></a></div>
+<section id="connections-with-clients"><div class="header-wrapper"><h3 id="x2-1-connections-with-clients"><bdi class="secno">2.1 </bdi>Connections with clients</h3><a class="self-link" href="#connections-with-clients" aria-label="Permalink for Section 2.1"></a></div>
 
-<section id="grant-types"><div class="header-wrapper"><h4 id="x3-1-1-grant-types"><bdi class="secno">3.1.1 </bdi>Grant types</h4><a class="self-link" href="#grant-types" aria-label="Permalink for Section 3.1.1"></a></div>
+<section id="grant-types"><div class="header-wrapper"><h4 id="x2-1-1-grant-types"><bdi class="secno">2.1.1 </bdi>Grant types</h4><a class="self-link" href="#grant-types" aria-label="Permalink for Section 2.1.1"></a></div>
 <p>The authorization server <em class="rfc2119">MUST</em> support the <samp>authorization_code</samp> , and <em class="rfc2119">MAY</em> support the <samp>client_credentials</samp> grant types as described in <a href="#client-profiles">Section 2</a>.
  The authorization server <em class="rfc2119">MUST</em> limit each registered client (identified by a client ID) to a single grant type only, since a single piece of software will be functioning at runtime in only one of the modes described in <a href="#client-profiles">Section 2</a>. Clients that have multiple modes of operation <em class="rfc2119">MUST</em> have a separate client ID for each mode.</p>
 
@@ -1669,11 +1670,11 @@ An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, s
 
 
 
-</section><section id="client-authentication"><div class="header-wrapper"><h4 id="x3-1-2-client-authentication"><bdi class="secno">3.1.2 </bdi>Client authentication</h4><a class="self-link" href="#client-authentication" aria-label="Permalink for Section 3.1.2"></a></div>
+</section><section id="client-authentication"><div class="header-wrapper"><h4 id="x2-1-2-client-authentication"><bdi class="secno">2.1.2 </bdi>Client authentication</h4><a class="self-link" href="#client-authentication" aria-label="Permalink for Section 2.1.2"></a></div>
 <p>The authorization server <em class="rfc2119">MUST</em> enforce client authentication as described above for the authorization code and client credentials grant types. Public client cannot authenticate to the authorization server.</p>
 <p>The authorization server <em class="rfc2119">MUST</em> validate all redirect URIs for authorization code <del>and implicit grant types</del>.</p>
 
-</section><section id="dynamic-registration"><div class="header-wrapper"><h4 id="x3-1-3-dynamic-registration"><bdi class="secno">3.1.3 </bdi>Dynamic Registration</h4><a class="self-link" href="#dynamic-registration" aria-label="Permalink for Section 3.1.3"></a></div>
+</section><section id="dynamic-registration"><div class="header-wrapper"><h4 id="x2-1-3-dynamic-registration"><bdi class="secno">2.1.3 </bdi>Dynamic Registration</h4><a class="self-link" href="#dynamic-registration" aria-label="Permalink for Section 2.1.3"></a></div>
 <p>Dynamic Registration allows for authorized Clients to on-board programmatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers <em class="rfc2119">MUST</em> support dynamic client registration,
 and clients <em class="rfc2119">MAY</em> register using the [Dynamic Client Registration Protocol] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] for authorization code grant types. Clients <em class="rfc2119">MUST NOT</em> dynamically register for the client credentials grant type. Authorization servers <em class="rfc2119">MAY</em> limit the scopes available to dynamically registered clients.</p>
 <p>Authorization servers <em class="rfc2119">MAY</em> protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers <em class="rfc2119">MAY</em> accept signed software statements as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] issued 
@@ -1712,7 +1713,7 @@ The current requirement fits an architecture where there is a limited number of 
 
 
 
-</section><section id="client-approval"><div class="header-wrapper"><h4 id="x3-1-4-client-approval"><bdi class="secno">3.1.4 </bdi>Client Approval</h4><a class="self-link" href="#client-approval" aria-label="Permalink for Section 3.1.4"></a></div>
+</section><section id="client-approval"><div class="header-wrapper"><h4 id="x2-1-4-client-approval"><bdi class="secno">2.1.4 </bdi>Client Approval</h4><a class="self-link" href="#client-approval" aria-label="Permalink for Section 2.1.4"></a></div>
 <p>When prompting the end user with an interactive approval page, the authorization server <em class="rfc2119">MUST</em> indicate to the user:</p>
 <ul>
 <li>Whether the client was dynamically registered, or else statically registered by a trusted administrator, or a public client.</li>
@@ -1721,7 +1722,7 @@ The current requirement fits an architecture where there is a limited number of 
 </ul>
 <p>For example, for native clients a message indicating a new App installation has been registered as a client can help users determine if this is the expected behaviour. This signal helps users protect themselves from potentially rogue clients.</p>
 
-</section><section id="discovery"><div class="header-wrapper"><h4 id="x3-1-5-discovery"><bdi class="secno">3.1.5 </bdi>Discovery</h4><a class="self-link" href="#discovery" aria-label="Permalink for Section 3.1.5"></a></div>
+</section><section id="discovery"><div class="header-wrapper"><h4 id="x2-1-5-discovery"><bdi class="secno">2.1.5 </bdi>Discovery</h4><a class="self-link" href="#discovery" aria-label="Permalink for Section 2.1.5"></a></div>
 <p>The authorization server <em class="rfc2119">MUST</em> provide an [OpenID Connect service discovery] [<cite><a class="bibref" data-link-type="biblio" href="#bib-openid.discovery" title="OpenID Connect Discovery 1.0">OpenID.Discovery</a></cite>] endpoint listing the components relevant to the OAuth protocol:</p>
 <dl>
 
@@ -1858,18 +1859,18 @@ The following is an example of a 2048-bit RSA public key:
 
 
 
-</section><section id="revocation"><div class="header-wrapper"><h4 id="x3-1-6-revocation"><bdi class="secno">3.1.6 </bdi>Revocation</h4><a class="self-link" href="#revocation" aria-label="Permalink for Section 3.1.6"></a></div>
+</section><section id="revocation"><div class="header-wrapper"><h4 id="x2-1-6-revocation"><bdi class="secno">2.1.6 </bdi>Revocation</h4><a class="self-link" href="#revocation" aria-label="Permalink for Section 2.1.6"></a></div>
 <p>Token revocation allows a client to signal to an authorization server that a given token will no longer be used.</p>
 <p>An authorization server <em class="rfc2119">MUST</em> revoke the token if the client requesting the revocation is the client to which the token was issued, the client has permission to revoke tokens, and the token is revocable.</p>
 <p>A client <em class="rfc2119">MUST</em> immediately discard the token and not use it again after revoking it.</p>
 
-</section><section id="pkce"><div class="header-wrapper"><h4 id="x3-1-7-pkce"><bdi class="secno">3.1.7 </bdi>PKCE</h4><a class="self-link" href="#pkce" aria-label="Permalink for Section 3.1.7"></a></div>
+</section><section id="pkce"><div class="header-wrapper"><h4 id="x2-1-7-pkce"><bdi class="secno">2.1.7 </bdi>PKCE</h4><a class="self-link" href="#pkce" aria-label="Permalink for Section 2.1.7"></a></div>
 <p>An authorization server <em class="rfc2119">MUST</em> support the Proof Key for Code Exchange (PKCE [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7636" title="Proof Key for Code Exchange by OAuth Public Clients">rfc7636</a></cite>] ) extension to the authorization code flow, including support for the S256 code challenge method. The authorization server <em class="rfc2119">MUST NOT</em> allow an <del>iGov</del> iGov-NL client to use the plain code challenge method.</p>
 
-</section><section id="redirect-uris"><div class="header-wrapper"><h4 id="x3-1-8-redirect-uris"><bdi class="secno">3.1.8 </bdi>Redirect URIs</h4><a class="self-link" href="#redirect-uris" aria-label="Permalink for Section 3.1.8"></a></div>
+</section><section id="redirect-uris"><div class="header-wrapper"><h4 id="x2-1-8-redirect-uris"><bdi class="secno">2.1.8 </bdi>Redirect URIs</h4><a class="self-link" href="#redirect-uris" aria-label="Permalink for Section 2.1.8"></a></div>
 <p>The authorization server <em class="rfc2119">MUST</em> compare a client's registered redirect URIs with the redirect URI presented during an authorization request using an exact string match.</p>
 
-</section><section id="refreshtokens"><div class="header-wrapper"><h4 id="x3-1-9-refreshtokens"><bdi class="secno">3.1.9 </bdi>RefreshTokens</h4><a class="self-link" href="#refreshtokens" aria-label="Permalink for Section 3.1.9"></a></div>
+</section><section id="refreshtokens"><div class="header-wrapper"><h4 id="x2-1-9-refreshtokens"><bdi class="secno">2.1.9 </bdi>RefreshTokens</h4><a class="self-link" href="#refreshtokens" aria-label="Permalink for Section 2.1.9"></a></div>
 <p>Authorization Servers <em class="rfc2119">MAY</em> issue refresh tokens to clients under the following context:</p>
 <p>Clients <em class="rfc2119">MUST</em> be registered with the Authorization Server.</p>
 <p>Clients <em class="rfc2119">MUST</em> present a valid client_id. Confidential clients <em class="rfc2119">MUST</em> present a signed client_assertion with their associated keypair.</p>
@@ -1880,7 +1881,7 @@ Refresh tokens for public clients must either be sender-constrained or one-time 
 </aside>
 
 
-</section><section id="token-response"><div class="header-wrapper"><h4 id="x3-1-10-token-response"><bdi class="secno">3.1.10 </bdi>Token Response</h4><a class="self-link" href="#token-response" aria-label="Permalink for Section 3.1.10"></a></div>
+</section><section id="token-response"><div class="header-wrapper"><h4 id="x2-1-10-token-response"><bdi class="secno">2.1.10 </bdi>Token Response</h4><a class="self-link" href="#token-response" aria-label="Permalink for Section 2.1.10"></a></div>
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
@@ -1904,12 +1905,12 @@ Refresh tokens for public clients must either be sender-constrained or one-time 
 
 
 
-</section></section><section id="connections-between-authorization-servers-and-protected-resources"><div class="header-wrapper"><h3 id="x3-2-connections-between-authorization-servers-and-protected-resources"><bdi class="secno">3.2 </bdi>Connections between authorization servers and protected resources</h3><a class="self-link" href="#connections-between-authorization-servers-and-protected-resources" aria-label="Permalink for Section 3.2"></a></div>
+</section></section><section id="connections-between-authorization-servers-and-protected-resources"><div class="header-wrapper"><h3 id="x2-2-connections-between-authorization-servers-and-protected-resources"><bdi class="secno">2.2 </bdi>Connections between authorization servers and protected resources</h3><a class="self-link" href="#connections-between-authorization-servers-and-protected-resources" aria-label="Permalink for Section 2.2"></a></div>
 <p>Unlike the core OAuth protocol, the <del>iGov</del> iGov-NL profile defines interoperability requirements between authorization servers and resource servers.</p>
 
 
 <p>[/]: Dit is §3.3 geworden in de nieuwe versie van iGov. De tekst is ook (qua zinsbouw) aangepast.</p>
-<section id="json-web-tokens-jwt"><div class="header-wrapper"><h4 id="x3-2-1-json-web-tokens-jwt"><bdi class="secno">3.2.1 </bdi>JSON Web Tokens (JWT)</h4><a class="self-link" href="#json-web-tokens-jwt" aria-label="Permalink for Section 3.2.1"></a></div>
+<section id="json-web-tokens-jwt"><div class="header-wrapper"><h4 id="x2-2-1-json-web-tokens-jwt"><bdi class="secno">2.2.1 </bdi>JSON Web Tokens (JWT)</h4><a class="self-link" href="#json-web-tokens-jwt" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>In order to facilitate interoperability with multiple protected resources, all <del>iGov</del> iGov-NL-compliant authorization servers <em class="rfc2119">MUST</em> issue cryptographically signed tokens in the JSON Web Token (JWT) format as defined in <cite><a data-matched-text="[[[RFC9068]]]" href="https://www.rfc-editor.org/rfc/rfc9068">JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens</a></cite> . The information carried in the JWT is intended to allow a protected resource to quickly test the integrity of the token without additional network calls, and to allow the protected resource to determine which authorization server issued the token. The protected resource <em class="rfc2119">MAY</em> use the authorization server token introspection service, which is in turn used for conveying service to retrieve additional security information about the token. </p>
 <p>The server <em class="rfc2119">MUST</em> issue tokens as JWTs with, at minimum, the following claims:</p>
 <dl>
@@ -2008,7 +2009,7 @@ pXDaLyyY-4HT9XHT9V73fKF8rLWJu9grrA</code></pre>
 
 
 
-</section><section id="introspection"><div class="header-wrapper"><h4 id="x3-2-2-introspection"><bdi class="secno">3.2.2 </bdi>Introspection</h4><a class="self-link" href="#introspection" aria-label="Permalink for Section 3.2.2"></a></div>
+</section><section id="introspection"><div class="header-wrapper"><h4 id="x2-2-2-introspection"><bdi class="secno">2.2.2 </bdi>Introspection</h4><a class="self-link" href="#introspection" aria-label="Permalink for Section 2.2.2"></a></div>
 <p>Token introspection allows a protected resource to query the authorization server for metadata about a token. The protected resource makes a request like the following to the token introspection endpoint:</p>
 <aside class="example" id="example-10"><div class="marker">
     <a class="self-link" href="#example-10">Example<bdi> 10</bdi></a>
@@ -2106,7 +2107,7 @@ The following example is a response from the introspection endpoint:
 <p>The authorization server <em class="rfc2119">MUST</em> require authentication for both the revocation and introspection endpoints as described in <a href="#requests-to-the-token-endpoint">Section 2.3.2</a> . Protected resources calling the introspection endpoint <em class="rfc2119">MUST</em> use credentials distinct from any other OAuth client registered at the server.</p>
 <p>A protected resource <em class="rfc2119">MAY</em> cache the response from the introspection endpoint for a period of time no greater than half the lifetime of the token. A protected resource <em class="rfc2119">MUST NOT</em> accept a token that is not active according to the response from the introspection endpoint.</p>
 
-</section></section><section id="response-to-authorization-requests"><div class="header-wrapper"><h3 id="x3-3-response-to-authorization-requests"><bdi class="secno">3.3 </bdi>Response to Authorization Requests</h3><a class="self-link" href="#response-to-authorization-requests" aria-label="Permalink for Section 3.3"></a></div>
+</section></section><section id="response-to-authorization-requests"><div class="header-wrapper"><h3 id="x2-3-response-to-authorization-requests"><bdi class="secno">2.3 </bdi>Response to Authorization Requests</h3><a class="self-link" href="#response-to-authorization-requests" aria-label="Permalink for Section 2.3"></a></div>
 <p>The following data will be sent as an Authorization Response to the Authorization Code Flow as described above. The authentication response is sent via HTTP redirect to the redirect URI specified in the request.</p>
 <p>The following fields <em class="rfc2119">MUST</em> be included in the response:</p>
 <dl>
@@ -2131,31 +2132,31 @@ The following is an example response:
 </aside>
 
 
-</section><section id="token-lifetimes"><div class="header-wrapper"><h3 id="x3-4-token-lifetimes"><bdi class="secno">3.4 </bdi>Token Lifetimes</h3><a class="self-link" href="#token-lifetimes" aria-label="Permalink for Section 3.4"></a></div>
+</section><section id="token-lifetimes"><div class="header-wrapper"><h3 id="x2-4-token-lifetimes"><bdi class="secno">2.4 </bdi>Token Lifetimes</h3><a class="self-link" href="#token-lifetimes" aria-label="Permalink for Section 2.4"></a></div>
 <p>This profile provides <em class="rfc2119">RECOMMENDED</em> lifetimes for different types of tokens issued to different types of clients. Specific applications <em class="rfc2119">MAY</em> issue tokens with different lifetimes. Any active token <em class="rfc2119">MAY</em> be revoked at any time.</p>
 <p>For clients using the authorization code grant type, access tokens <em class="rfc2119">SHOULD</em> have a valid lifetime no greater than one hour, and refresh tokens (if issued) <em class="rfc2119">SHOULD</em> have a valid lifetime no greater than twenty-four hours.</p>
 <p>For public clients access tokens <em class="rfc2119">SHOULD</em> have a valid lifetime no greater than fifteen minutes.</p>
 <p>For clients using the client credentials grant type, access tokens <em class="rfc2119">SHOULD</em> have a valid lifetime no greater than six hours.</p>
 
-</section><section id="scopes"><div class="header-wrapper"><h3 id="x3-5-scopes"><bdi class="secno">3.5 </bdi>Scopes</h3><a class="self-link" href="#scopes" aria-label="Permalink for Section 3.5"></a></div>
+</section><section id="scopes"><div class="header-wrapper"><h3 id="x2-5-scopes"><bdi class="secno">2.5 </bdi>Scopes</h3><a class="self-link" href="#scopes" aria-label="Permalink for Section 2.5"></a></div>
 <p>Scopes define individual pieces of authority that can be requested by clients, granted by resource owners, and enforced by protected resources. Specific scope values will be highly dependent on the specific types of resources being protected in a given interface. OpenID Connect, for example, defines scope values to enable access to different attributes of user profiles.</p>
 <p>Authorization servers <em class="rfc2119">SHOULD</em> define and document default scope values that will be used if an authorization request does not specify a requested set of scopes.</p>
 <p>To facilitate general use across a wide variety of protected resources, authorization servers <em class="rfc2119">SHOULD</em> allow for the use of arbitrary scope values at runtime, such as allowing clients or protected resources to use arbitrary scope strings upon registration. Authorization servers <em class="rfc2119">MAY</em> restrict certain scopes from use by dynamically registered systems or public clients.</p>
  
-<section id="claims-for-authorization-outside-of-delegation-scenarios"><div class="header-wrapper"><h4 id="x3-5-1-claims-for-authorization-outside-of-delegation-scenarios"><bdi class="secno">3.5.1 </bdi>Claims for Authorization Outside of Delegation Scenarios</h4><a class="self-link" href="#claims-for-authorization-outside-of-delegation-scenarios" aria-label="Permalink for Section 3.5.1"></a></div>
+<section id="claims-for-authorization-outside-of-delegation-scenarios"><div class="header-wrapper"><h4 id="x2-5-1-claims-for-authorization-outside-of-delegation-scenarios"><bdi class="secno">2.5.1 </bdi>Claims for Authorization Outside of Delegation Scenarios</h4><a class="self-link" href="#claims-for-authorization-outside-of-delegation-scenarios" aria-label="Permalink for Section 2.5.1"></a></div>
 
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>
 
 <p>If there is a need to include resource owner memberships in roles and groups that are relevant to the resource being accessed, entitlements assigned to the resource owner for the targeted resource that the authorization server knows about. The authorization server <em class="rfc2119">SHOULD</em> include such attributes as claims in a JWT access token as defined in section 2.2.3.1 of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9068" title="JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens">rfc9068</a></cite>].</p>
-<p>In cases where the default scopes provided by Authorization Server are not descriptive enough, one can make use of the <code>authorization_details</code> claim (see <a href="#rich-authorization-requests" data-matched-text="[[[#rich-authorization-requests]]]" class="sec-ref"><bdi class="secno">5.3 </bdi>Rich Authorization Requests</a>) which provide extra details and thus greater flexibility for the Resource Server to handle the request.</p>
+<p>In cases where the default scopes provided by Authorization Server are not descriptive enough, one can make use of the <code>authorization_details</code> claim (see <a href="#rich-authorization-requests" data-matched-text="[[[#rich-authorization-requests]]]" class="sec-ref"><bdi class="secno">4.3 </bdi>Rich Authorization Requests</a>) which provide extra details and thus greater flexibility for the Resource Server to handle the request.</p>
 </aside>
 </section></section></section>
-  <section id="protected-resource-profile"><div class="header-wrapper"><h2 id="x4-protected-resource-profile"><bdi class="secno">4. </bdi>Protected Resource Profile</h2><a class="self-link" href="#protected-resource-profile" aria-label="Permalink for Section 4."></a></div>
+  <section id="protected-resource-profile"><div class="header-wrapper"><h2 id="x3-protected-resource-profile"><bdi class="secno">3. </bdi>Protected Resource Profile</h2><a class="self-link" href="#protected-resource-profile" aria-label="Permalink for Section 3."></a></div>
 
 
 
-<section id="protecting-resources"><div class="header-wrapper"><h3 id="x4-1-protecting-resources"><bdi class="secno">4.1 </bdi>Protecting Resources</h3><a class="self-link" href="#protecting-resources" aria-label="Permalink for Section 4.1"></a></div>
+<section id="protecting-resources"><div class="header-wrapper"><h3 id="x3-1-protecting-resources"><bdi class="secno">3.1 </bdi>Protecting Resources</h3><a class="self-link" href="#protecting-resources" aria-label="Permalink for Section 3.1"></a></div>
 <p>Protected Resources grant access to clients if they present a valid <samp>access_token</samp> with the appropriate <samp>scope</samp>. Resource servers trust the authorization server to authenticate the end user and client appropriately for the importance, risk, and value level of the protected resource scope.</p>
 <p>Protected resources that require a higher end-user authentication trust level to access certain resources <em class="rfc2119">MUST</em> associate those resources with a unique scope.</p>
 <p>Clients wishing access to these higher level resources <em class="rfc2119">MUST</em> include the higher level scope in their authorization request to the authorization server.</p>
@@ -2204,7 +2205,7 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 
 
-</section><section id="connections-with-clients-0"><div class="header-wrapper"><h3 id="x4-2-connections-with-clients"><bdi class="secno">4.2 </bdi>Connections with Clients</h3><a class="self-link" href="#connections-with-clients-0" aria-label="Permalink for Section 4.2"></a></div>
+</section><section id="connections-with-clients-0"><div class="header-wrapper"><h3 id="x3-2-connections-with-clients"><bdi class="secno">3.2 </bdi>Connections with Clients</h3><a class="self-link" href="#connections-with-clients-0" aria-label="Permalink for Section 3.2"></a></div>
 <p>A protected resource <em class="rfc2119">MUST</em> accept bearer tokens passed in the authorization header as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">rfc6750</a></cite>] . A protected resource <em class="rfc2119">MAY</em> also accept bearer tokens passed in the form parameter <del>or query parameter</del> method<del>s</del>.</p>
 
 <aside class=" addition">
@@ -2218,7 +2219,7 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 <p>Protected resources <em class="rfc2119">MUST</em> define and document which scopes are required for access to the resource.</p>
 
-</section><section id="connections-with-authorization-servers"><div class="header-wrapper"><h3 id="x4-3-connections-with-authorization-servers"><bdi class="secno">4.3 </bdi>Connections with Authorization Servers</h3><a class="self-link" href="#connections-with-authorization-servers" aria-label="Permalink for Section 4.3"></a></div>
+</section><section id="connections-with-authorization-servers"><div class="header-wrapper"><h3 id="x3-3-connections-with-authorization-servers"><bdi class="secno">3.3 </bdi>Connections with Authorization Servers</h3><a class="self-link" href="#connections-with-authorization-servers" aria-label="Permalink for Section 3.3"></a></div>
 <p>Protected resources <em class="rfc2119">MUST</em> interpret access tokens using either JWT, token introspection, or a combination of the two.</p>
 <p>The protected resource <em class="rfc2119">MUST</em> check the <samp>aud</samp> (audience) claim, if it exists in the token, to ensure that it includes the protected resource's identifier. The protected resource <em class="rfc2119">MUST</em> ensure that the rights associated with the token are sufficient to grant access to the resource. For example, this can be accomplished by querying the scopes and acr associated with the token from the authorization server's token introspection endpoint.</p>
 
@@ -2231,12 +2232,12 @@ A resource server has resources classified as "public" and "sensitive". "Sensiti
 
 <p>A protected resource <em class="rfc2119">MUST</em> limit which authorization servers it will accept valid tokens from. A resource server <em class="rfc2119">MAY</em> accomplish this using a whitelist of trusted servers, a dynamic policy engine, or other means.</p>
 </section></section>
-  <section id="advanced-oauth-security-options"><div class="header-wrapper"><h2 id="x5-advanced-oauth-security-options"><bdi class="secno">5. </bdi>Advanced OAuth Security Options</h2><a class="self-link" href="#advanced-oauth-security-options" aria-label="Permalink for Section 5."></a></div>
+  <section id="advanced-oauth-security-options"><div class="header-wrapper"><h2 id="x4-advanced-oauth-security-options"><bdi class="secno">4. </bdi>Advanced OAuth Security Options</h2><a class="self-link" href="#advanced-oauth-security-options" aria-label="Permalink for Section 4."></a></div>
 
 
 <p>The preceding portions of this OAuth profile provide a level of security adequate for a wide range of use cases, while still maintaining relative ease of implementation and usability for developers, system administrators, and end users. The following are some additional security measures that can be employed for use cases where elevated risks justify the use of additional controls at the expense of implementation effort and usability. This section also addresses future security capabilities, currently in the early draft stages, being added to the OAuth standard suite.</p>
 
-<section id="pushed-authorization-requests-par"><div class="header-wrapper"><h3 id="x5-1-pushed-authorization-requests-par"><bdi class="secno">5.1 </bdi>Pushed Authorization Requests (PAR)</h3><a class="self-link" href="#pushed-authorization-requests-par" aria-label="Permalink for Section 5.1"></a></div>
+<section id="pushed-authorization-requests-par"><div class="header-wrapper"><h3 id="x4-1-pushed-authorization-requests-par"><bdi class="secno">4.1 </bdi>Pushed Authorization Requests (PAR)</h3><a class="self-link" href="#pushed-authorization-requests-par" aria-label="Permalink for Section 4.1"></a></div>
 <aside class="addition">
 <b>iGov-NL : Additional content</b><br>
 
@@ -2256,7 +2257,7 @@ Traditional flows delay client authentication until after user interaction, maki
 
 
 
-</section><section id="proof-of-possession-tokens-pop"><div class="header-wrapper"><h3 id="x5-2-proof-of-possession-tokens-pop"><bdi class="secno">5.2 </bdi>Proof of Possession Tokens (PoP)</h3><a class="self-link" href="#proof-of-possession-tokens-pop" aria-label="Permalink for Section 5.2"></a></div>
+</section><section id="proof-of-possession-tokens-pop"><div class="header-wrapper"><h3 id="x4-2-proof-of-possession-tokens-pop"><bdi class="secno">4.2 </bdi>Proof of Possession Tokens (PoP)</h3><a class="self-link" href="#proof-of-possession-tokens-pop" aria-label="Permalink for Section 4.2"></a></div>
 <p><del>OAuth proof of possession tokens are currently defined in a set of drafts under active development in the Internet Engineering Task Force (IETF) OAuth Working Group.</del><br>While a bearer token can be used by anyone in possession of the token, a proof of possession token is bound to a particular symmetric or asymmetric key issued to, or already possessed by, the client. The association of the key to the token is also communicated to the protected resource.<br><del>a variety of mechanisms for doing this are outlined in the draft [OAuth 2.0 Proof-of-Possession (PoP) Security Architecture] [<cite><a class="bibref" data-link-type="biblio" href="#bib-i-d.ietf-oauth-pop-architecture" title="OAuth 2.0 Proof-of-Possession (PoP) Security Architecture">I-D.ietf-oauth-pop-architecture</a></cite>] .</del><br>When the client presents the token to the protected resource, it is also required to demonstrate possession of the corresponding key <del>(e.g., by creating a cryptographic hash or signature of the request)</del>.</p>
 
 <aside class=" addition">
@@ -2282,7 +2283,7 @@ Another implementation of PoP is using TLS with mutual authentication, where the
 
 
 
-</section><section id="rich-authorization-requests"><div class="header-wrapper"><h3 id="x5-3-rich-authorization-requests"><bdi class="secno">5.3 </bdi>Rich Authorization Requests</h3><a class="self-link" href="#rich-authorization-requests" aria-label="Permalink for Section 5.3"></a></div>
+</section><section id="rich-authorization-requests"><div class="header-wrapper"><h3 id="x4-3-rich-authorization-requests"><bdi class="secno">4.3 </bdi>Rich Authorization Requests</h3><a class="self-link" href="#rich-authorization-requests" aria-label="Permalink for Section 4.3"></a></div>
 <aside class=" addition">
 <b>iGov-NL : Additional content</b><br>  
 
@@ -2297,7 +2298,7 @@ The underlying RFC defines a set of common data fields that are designed to be u
 <p>In case more data, or more recent data, is required for fine-grained authorization then one <em class="rfc2119">MAY</em> include the OpenID AuthZEN standard in the <code>authorization_details</code>.</p>
 </aside>
 </section></section>
-  <section id="security-considerations"><div class="header-wrapper"><h2 id="x6-security-considerations"><bdi class="secno">6. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 6."></a></div>
+  <section id="security-considerations"><div class="header-wrapper"><h2 id="x5-security-considerations"><bdi class="secno">5. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations" aria-label="Permalink for Section 5."></a></div>
 
 
 <p>All transactions <em class="rfc2119">MUST</em> be protected in transit by TLS as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-bcp195" title="Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)">BCP195</a></cite>] .</p>
@@ -2317,7 +2318,7 @@ The underlying RFC defines a set of common data fields that are designed to be u
 <p>Authorization Servers <em class="rfc2119">SHOULD</em> take into account device postures when dealing with native apps if possible. Device postures include characteristics such as a user's lock screen setting, or if the app has 'root access' (meaning the device OS may be compromised to gain additional privilages not intended by the vendor), or if there is a device attestation for the app for its validity. Specific policies or capabilities are outside the scope of this specification.</p>
 <p>All clients <em class="rfc2119">MUST</em> conform to applicable recommendations found in the Security Considerations sections of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] and those found in the [OAuth 2.0 Threat Model and Security Considerations document] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6819" title="OAuth 2.0 Threat Model and Security Considerations">rfc6819</a></cite>] .</p>
 </section>
-  <section id="security-considerations-0"><div class="header-wrapper"><h2 id="x7-security-considerations"><bdi class="secno">7. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations-0" aria-label="Permalink for Section 7."></a></div>
+  <section id="security-considerations-0"><div class="header-wrapper"><h2 id="x6-security-considerations"><bdi class="secno">6. </bdi>Security Considerations</h2><a class="self-link" href="#security-considerations-0" aria-label="Permalink for Section 6."></a></div>
 
 
 <p>All transactions <em class="rfc2119">MUST</em> be protected in transit by TLS as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-bcp195" title="Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)">BCP195</a></cite>] .</p>
@@ -2397,7 +2398,58 @@ Examples include:</p>
 <section id="application-in-nl-gov-profiles"><div class="header-wrapper"><h4 id="a-2-1-application-in-nl-gov-profiles"><bdi class="secno">A.2.1 </bdi>Application in NL GOV Profiles</h4><a class="self-link" href="#application-in-nl-gov-profiles" aria-label="Permalink for Appendix A.2.1"></a></div>
 <p>Token Exchange ([<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>]) will be included in an future release of the OAuth 2.0 NL GOV Profile.
 See the draft version: <a href="https://logius-standaarden.github.io/OAuth-NL-profiel/#grant-types">Logius OAuth Profile – Grant Types</a></p>
-</section><section id="representation-relationships-in-nl-gov-context"><div class="header-wrapper"><h4 id="a-2-2-representation-relationships-in-nl-gov-context"><bdi class="secno">A.2.2 </bdi>Representation Relationships in NL GOV Context</h4><a class="self-link" href="#representation-relationships-in-nl-gov-context" aria-label="Permalink for Appendix A.2.2"></a></div>
+</section></section><section id="delegation-relationships"><div class="header-wrapper"><h3 id="a-3-delegation-relationships"><bdi class="secno">A.3 </bdi>Delegation Relationships</h3><a class="self-link" href="#delegation-relationships" aria-label="Permalink for Appendix A.3"></a></div>
+<p>In Use Cases that involve Delegation Relationships, as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>], an actor (for example, an intermediary or system) is authorized to perform actions on behalf of another principal, while remaining a distinct identity.</p>
+<p>Resources <em class="rfc2119">SHOULD</em> process the <code>act</code> claim when identification of an intermediary or other acting party is applicable in the context of the OpenID Client and Resource Server.</p>
+<section id="claim-structure"><div class="header-wrapper"><h4 id="a-3-1-claim-structure"><bdi class="secno">A.3.1 </bdi>Claim Structure</h4><a class="self-link" href="#claim-structure" aria-label="Permalink for Appendix A.3.1"></a></div>
+<p>This profile specifies delegation relationships in ID Tokens as follows:</p>
+<ul>
+<li>The <code>sub</code> claim identifies the represented user (the subject of the authorization).</li>
+<li>The <code>act</code> (or <code>may_act</code>) claim identifies the intermediary or acting party.</li>
+<li>In case of a delegation chain (multiple parties acting on behalf of each other), these can be nested via multiple <code>act</code> objects.</li>
+<li>Each <code>act</code> claim:<ul>
+<li><em class="rfc2119">MUST</em> contain <code>sub</code> and <code>iss</code> claims to uniquely identify the acting party.</li>
+<li><em class="rfc2119">SHOULD</em> include a <code>subject_type</code> claim to indicate the identifier type if multiple types are supported.</li>
+<li><em class="rfc2119">MAY</em> include additional identity-related claims (e.g., <code>email</code>) to convey useful information about the acting party.</li>
+</ul>
+</li>
+</ul>
+</section><section id="example-nested-delegation"><div class="header-wrapper"><h4 id="a-3-2-example-nested-delegation"><bdi class="secno">A.3.2 </bdi>Example: Nested Delegation</h4><a class="self-link" href="#example-nested-delegation" aria-label="Permalink for Appendix A.3.2"></a></div>
+<p><a href="https://gitdocumentatie.logius.nl/publicatie/api/oidc/#example-3">Example 3</a></p>
+<p>A sample delegation chain may look like this (note: the requested scope also includes the required <code>openid</code> scope and a fictional <code>brp_sensitief</code> scope; claims not essential to the example are omitted for readability):</p>
+<pre><code aria-busy="false" class="hljs json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"scope"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"openid brp_sensitief"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-comment">/* Represented party — user with access rights */</span>
+  <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RKyLpEVr1L"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:pseudonym"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"act"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-comment">/* Intermediary organization acting on behalf of the user */</span>
+    <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"492099595"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"act"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-comment">/* Individual acting on behalf of the intermediary organization */</span>
+      <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4Yg8u72NxR"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"pairwise"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:pseudonym"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+</section><section id="integration-with-rich-authorization-requests-rar"><div class="header-wrapper"><h4 id="a-3-3-integration-with-rich-authorization-requests-rar"><bdi class="secno">A.3.3 </bdi>Integration with Rich Authorization Requests (RAR)</h4><a class="self-link" href="#integration-with-rich-authorization-requests-rar" aria-label="Permalink for Appendix A.3.3"></a></div>
+<p>If more specific authorization information is required — for example, identifying the organization (e.g., RSIN or KvK number), data categories, or access levels — such details <em class="rfc2119">MAY</em> be included using the <code>authorization_details</code> claim, as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9396" title="OAuth 2.0 Rich Authorization Requests">rfc9396</a></cite>].</p>
+<p>Example:</p>
+<pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"authorization_details"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"party_authorization_example"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"represented_party"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"492099595"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN"</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+</section><section id="representation-relationships-in-nl-gov-context"><div class="header-wrapper"><h4 id="a-3-4-representation-relationships-in-nl-gov-context"><bdi class="secno">A.3.4 </bdi>Representation Relationships in NL GOV Context</h4><a class="self-link" href="#representation-relationships-in-nl-gov-context" aria-label="Permalink for Appendix A.3.4"></a></div>
 <p>In Use Cases that involve Representation Relationships, Representation Relationships are explicitly mentioned in the form of a <code>represents</code> Claim, analogous to the Delegation Semantics specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>].</p>
 <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span><span class="issue-label">: Token Exchange in Assurance profile for OAuth 2.0</span></div><p class="">
   Token Exchange [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>] will be included in the upcoming release of the <cite><a data-matched-text="[[[NLGOV.OAuth2]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">NL GOV Assurance profile for OAuth 2.0</a></cite>. See the section in the latest draft: https://logius-standaarden.github.io/OAuth-NL-profiel/#grant-types
@@ -2446,7 +2498,7 @@ A sample chain representation for a requested scope <code>urn:uuid:a9e17a2e-d358
 <span class="hljs-punctuation">}</span></code></pre>
 </aside>
 
-</section><section id="example-claims"><div class="header-wrapper"><h4 id="a-2-3-example-claims"><bdi class="secno">A.2.3 </bdi>Example claims</h4><a class="self-link" href="#example-claims" aria-label="Permalink for Appendix A.2.3"></a></div>
+</section><section id="example-claims"><div class="header-wrapper"><h4 id="a-3-5-example-claims"><bdi class="secno">A.3.5 </bdi>Example claims</h4><a class="self-link" href="#example-claims" aria-label="Permalink for Appendix A.3.5"></a></div>
 <aside class="example" id="example-16"><div class="marker">
     <a class="self-link" href="#example-16">Example<bdi> 16</bdi></a>
   </div>
@@ -2475,7 +2527,7 @@ Its Claims are as follows:
 </code></pre><p></p>
 </aside>
 
-</section></section><section id="glossary"><div class="header-wrapper"><h3 id="a-3-glossary"><bdi class="secno">A.3 </bdi>Glossary</h3><a class="self-link" href="#glossary" aria-label="Permalink for Appendix A.3"></a></div>
+</section></section><section id="glossary"><div class="header-wrapper"><h3 id="a-4-glossary"><bdi class="secno">A.4 </bdi>Glossary</h3><a class="self-link" href="#glossary" aria-label="Permalink for Appendix A.4"></a></div>
 <table>
 <thead>
 <tr>
@@ -2509,49 +2561,6 @@ Its Claims are as follows:
 </tr>
 </tbody></table>
 <hr>
-</section><section id="delegation-relationships"><div class="header-wrapper"><h3 id="a-4-delegation-relationships"><bdi class="secno">A.4 </bdi>Delegation Relationships</h3><a class="self-link" href="#delegation-relationships" aria-label="Permalink for Appendix A.4"></a></div>
-<p>In Use Cases that involve Delegation Relationships, as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8693" title="OAuth 2.0 Token Exchange">rfc8693</a></cite>].</p>
-<p>Resources <em class="rfc2119">SHOULD</em> process the act claim, in case identification or the representing party (e.g. an intermediary party action on behalf of the subject) can be applicable in the context of the OpenID Client and OpenID Resouce.</p>
-<p>This profile specifies Delegation Relations in ID Tokens as follows:</p>
-<ul>
-<li>The sub Claim is used for authorizing access to resources; This is the person being represented.</li>
-<li>In case a chain with parties acting on behalf of the represented user is applicable, this is represented as an act (or may_act) claim.</li>
-<li>Each act Claim <em class="rfc2119">MUST</em> contain sub and iss Claims to uniquely identify the acting party and <em class="rfc2119">SHOULD</em> contain a subject_type Claim to explicitly indicate the type of identifier used in the sub claim if the OpenID Provider supports multiple types of subject identifiers.</li>
-<li>Act Claims <em class="rfc2119">MAY</em> contain additional Claims (e.g. email, etc.) to provide additional useful information about the acting party.</li>
-</ul>
-<p><a href="https://gitdocumentatie.logius.nl/publicatie/api/oidc/#example-3">Example 3</a></p>
-<p>A sample chain representation for may look like (note: the requested scope also includes the required openid scope and a fictional scope brp_sensitief; Claims that do not add to the example are omitted for readability):</p>
-<pre><code aria-busy="false" class="hljs json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"scope"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"openid brp_sensitief"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-comment">/* represented party - User that has access the data */</span>
-  <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"RKyLpEVr1L"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"aud"</span><span class="hljs-punctuation">:</span> <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-attr">"urn:nl-eid-gdi:1.0:id:pseudonym"</span><span class="hljs-punctuation">:</span>
-  <span class="hljs-attr">"act"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-comment">/* Intermediary in representation chain - an organization in this example */</span>
-    <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"492099595"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"aud"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">" urn:nl-eid-gdi:1.0:id:RSIN "</span><span class="hljs-punctuation">,</span>    <span class="hljs-punctuation">}</span>
-    <span class="hljs-attr">"act"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-comment">/* person acting on behalf of the intermediary organisation */</span>
-      <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4Yg8u72NxR"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"pairwise"</span><span class="hljs-punctuation">,</span>
-     <span class="hljs-attr">"aud"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:pseudonym"</span>
-    <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span>
-</code></pre>
-<p>NOTE. If more specific information (than a generic scope) is required for authorization - such as the organisation (E.g. the Dutch RSIN and/or KvK number etc.), or specific data, level of access, etc. - this information <em class="rfc2119">MAY</em> be included as claims within the authorization_details claim, as specified in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9396" title="OAuth 2.0 Rich Authorization Requests">rfc9396</a></cite>].
-Example:</p>
-<pre><code aria-busy="false" class="hljs yaml">  <span class="hljs-attr">"authorization_details":</span> {
-        <span class="hljs-string">“type”:</span> <span class="hljs-string">“party_authorization_example”</span>
-   <span class="hljs-string">“represented_party”:</span>{
-            <span class="hljs-attr">"sub":</span> <span class="hljs-string">"492099595"</span>,
-            <span class="hljs-string">/*</span> <span class="hljs-string">represented</span> <span class="hljs-string">party</span> <span class="hljs-bullet">-</span> <span class="hljs-string">an</span> <span class="hljs-string">organization</span> <span class="hljs-string">in</span> <span class="hljs-string">this</span> <span class="hljs-string">example</span> <span class="hljs-string">*/</span>
-            <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">" public"</span>,
-          <span class="hljs-attr">"sub_id_type":</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN”, 
- }
-}
-</span></code></pre>
 </section><section id="representation-relationships"><div class="header-wrapper"><h3 id="a-5-representation-relationships"><bdi class="secno">A.5 </bdi>Representation Relationships</h3><a class="self-link" href="#representation-relationships" aria-label="Permalink for Appendix A.5"></a></div>
 <p>In Use Cases that involve Representation Relationships and other situations where a token is meant to be used in the context of a specific scope, Rich Authorization requests <em class="rfc2119">MAY</em> be used
 Example 4
@@ -2586,14 +2595,10 @@ E.g. an intermediary party acting on behalf of a government party.</p>
     <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-bcp195">[BCP195]</dt><dd>
       <a href="https://tools.ietf.org/html/bcp195"><cite>Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)</cite></a>. Y. Sheffer; R. Holz; P. Saint-Andre.  IETF. May 2015. URL: <a href="https://tools.ietf.org/html/bcp195">https://tools.ietf.org/html/bcp195</a>
-    </dd><dt id="bib-heart.oauth2">[HEART.OAuth2]</dt><dd>
-      <a href="https://openid.net/specs/openid-heart-oauth2-1_0.html"><cite>Health Relationship Trust Profile for OAuth 2.0</cite></a>. J. Richer.  OpenID foundation. April 25, 2017. URL: <a href="https://openid.net/specs/openid-heart-oauth2-1_0.html">https://openid.net/specs/openid-heart-oauth2-1_0.html</a>
     </dd><dt id="bib-i-d.ietf-oauth-pop-architecture">[I-D.ietf-oauth-pop-architecture]</dt><dd>
       <a href="https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08"><cite>OAuth 2.0 Proof-of-Possession (PoP) Security Architecture</cite></a>. P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig.  IETF. July 8, 2016. URL: <a href="https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08">https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08</a>
     </dd><dt id="bib-ietf-oauth-v2-1-10-refresh-token-grant">[ietf-oauth-v2-1-10-refresh-token-grant]</dt><dd>
       <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant"><cite>The OAuth 2.1 Authorization Framework: Refresh Token Grant</cite></a>. Dick Hardt, Aaron Parecki, Torsten Lodderstedt.  IETF. January 9, 2024. URL: <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-10#name-refresh-token-grant</a>
-    </dd><dt id="bib-igov.oauth2">[iGOV.OAuth2]</dt><dd>
-      <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html"><cite>International Government Assurance Profile (iGov) for OAuth 2.0</cite></a>. J. Richer, M. Varley, P. Grassi.  OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html">https://openid.net/specs/openid-igov-oauth2-1_0-03.html</a>
     </dd><dt id="bib-jws.jwe.algs">[JWS.JWE.Algs]</dt><dd>
       <a href="https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms"><cite>IANA JSON Web Signatures and Encryption Algorithms registry</cite></a>. Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner.  IANA. URL: <a href="https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms">https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms</a>
     </dd><dt id="bib-nlgov.openid">[NLGOV.OpenID]</dt><dd>
@@ -2604,7 +2609,7 @@ E.g. an intermediary party acting on behalf of a government party.</p>
       <a href="https://openid.net/specs/openid-connect-discovery-1_0.html"><cite>OpenID Connect Discovery 1.0</cite></a>. N. Sakimura, J. Bradley, M. Jones, E. Jay.  OpenID foundation. November 8 2014. URL: <a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>
     </dd><dt id="bib-openid.fapi2.0">[OpenID.FAPI2.0]</dt><dd>
       <a href="https://openid.net/specs/fapi-security-profile-2_0-final.html"><cite>FAPI 2.0 Security Profile</cite></a>. D. Fett, D. Tonge, J. Heenan.  OpenID foundation. February 22 2025. URL: <a href="https://openid.net/specs/fapi-security-profile-2_0-final.html">https://openid.net/specs/fapi-security-profile-2_0-final.html</a>
-    </dd><dt id="bib-rfc2119">[rfc2119]</dt><dd>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc4122">[rfc4122]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc4122"><cite>A Universally Unique IDentifier (UUID) URN Namespace</cite></a>. P. Leach; M. Mealling; R. Salz.  IETF. July 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4122">https://www.rfc-editor.org/rfc/rfc4122</a>
@@ -2616,7 +2621,7 @@ E.g. an intermediary party acting on behalf of a government party.</p>
       <a href="https://www.rfc-editor.org/rfc/rfc6819"><cite>OAuth 2.0 Threat Model and Security Considerations</cite></a>. T. Lodderstedt, Ed.; M. McGloin; P. Hunt.  IETF. January 2013. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc6819">https://www.rfc-editor.org/rfc/rfc6819</a>
     </dd><dt id="bib-rfc7009">[rfc7009]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7009"><cite>OAuth 2.0 Token Revocation</cite></a>. T. Lodderstedt, Ed.; S. Dronia; M. Scurtescu.  IETF. August 2013. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7009">https://www.rfc-editor.org/rfc/rfc7009</a>
-    </dd><dt id="bib-rfc7515">[rfc7515]</dt><dd>
+    </dd><dt id="bib-rfc7515">[RFC7515]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7515"><cite>JSON Web Signature (JWS)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7515">https://www.rfc-editor.org/rfc/rfc7515</a>
     </dd><dt id="bib-rfc7516">[rfc7516]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7516"><cite>JSON Web Encryption (JWE)</cite></a>. M. Jones; J. Hildebrand.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7516">https://www.rfc-editor.org/rfc/rfc7516</a>
@@ -2624,8 +2629,6 @@ E.g. an intermediary party acting on behalf of a government party.</p>
       <a href="https://www.rfc-editor.org/rfc/rfc7517"><cite>JSON Web Key (JWK)</cite></a>. M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7517">https://www.rfc-editor.org/rfc/rfc7517</a>
     </dd><dt id="bib-rfc7518">[rfc7518]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7518"><cite>JSON Web Algorithms (JWA)</cite></a>. M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7518">https://www.rfc-editor.org/rfc/rfc7518</a>
-    </dd><dt id="bib-rfc7519">[rfc7519]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc7519"><cite>JSON Web Token (JWT)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7519">https://www.rfc-editor.org/rfc/rfc7519</a>
     </dd><dt id="bib-rfc7522">[rfc7522]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7522"><cite>Security Assertion Markup Language (SAML) 2.0 Profile for OAuth 2.0 Client Authentication and Authorization Grants</cite></a>. B. Campbell; C. Mortimore; M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7522">https://www.rfc-editor.org/rfc/rfc7522</a>
     </dd><dt id="bib-rfc7523">[rfc7523]</dt><dd>
@@ -2657,8 +2660,14 @@ E.g. an intermediary party acting on behalf of a government party.</p>
     </dd></dl>
   </section><section id="informative-references">
     <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
-    <dl class="bibliography"><dt id="bib-nlgov.oauth2">[NLGOV.OAuth2]</dt><dd>
+    <dl class="bibliography"><dt id="bib-heart.oauth2">[HEART.OAuth2]</dt><dd>
+      <a href="https://openid.net/specs/openid-heart-oauth2-1_0.html"><cite>Health Relationship Trust Profile for OAuth 2.0</cite></a>. J. Richer.  OpenID foundation. April 25, 2017. URL: <a href="https://openid.net/specs/openid-heart-oauth2-1_0.html">https://openid.net/specs/openid-heart-oauth2-1_0.html</a>
+    </dd><dt id="bib-igov.oauth2">[iGOV.OAuth2]</dt><dd>
+      <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html"><cite>International Government Assurance Profile (iGov) for OAuth 2.0</cite></a>. J. Richer, M. Varley, P. Grassi.  OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-oauth2-1_0-03.html">https://openid.net/specs/openid-igov-oauth2-1_0-03.html</a>
+    </dd><dt id="bib-nlgov.oauth2">[NLGOV.OAuth2]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/"><cite>NL GOV Assurance profile for OAuth 2.0</cite></a>.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">https://gitdocumentatie.logius.nl/publicatie/api/oauth/</a>
+    </dd><dt id="bib-rfc7519">[rfc7519]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7519"><cite>JSON Web Token (JWT)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7519">https://www.rfc-editor.org/rfc/rfc7519</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
