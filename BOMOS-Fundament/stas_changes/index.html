@@ -816,6 +816,11 @@ img.license{float:left;padding-right:5px;background:0 0}
       "publisher": "OpenID foundation",
       "title": "International Government Assurance Profile (iGov) for OAuth 2.0"
     },
+    "NLGOV.OAuth2": {
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/oauth/",
+      "publisher": "Logius",
+      "title": "NL GOV Assurance profile for OAuth 2.0"
+    },
     "ietf-oauth-v2-1-10-refresh-token-grant": {
       "authors": [
         "Dick Hardt, Aaron Parecki, Torsten Lodderstedt"
@@ -886,18 +891,19 @@ img.license{float:left;padding-right:5px;background:0 0}
   "specStatus": "WV",
   "specType": "HR",
   "preProcess": [
+    null,
     null
   ]
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
- <body class="h-entry informative toc-inline"><div class="head">
+ <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">BOMOS, het fundament</h1>
     
     <h2>
       Logius Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2023-11-02">06 oktober 2025</time>
+      <time class="dt-published" datetime="2023-11-02">13 oktober 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -947,7 +953,7 @@ img.license{float:left;padding-right:5px;background:0 0}
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div>
+  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#woord-van-dank"><bdi class="secno">1.1 </bdi>Woord van dank</a></li><li class="tocline"><a class="tocxref" href="#de-13-bomos-geboden"><bdi class="secno">1.2 </bdi>De 13 BOMOS "geboden"</a></li><li class="tocline"><a class="tocxref" href="#aanleiding"><bdi class="secno">1.3 </bdi>Aanleiding</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#aanpak-historie"><bdi class="secno">1.6 </bdi>Aanpak &amp; Historie</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.7 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.8 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#context-definities"><bdi class="secno">2. </bdi>Context &amp; Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context-standaarden-voor-interoperabiliteit"><bdi class="secno">2.1 </bdi>Context: standaarden voor interoperabiliteit</a></li><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">2.2 </bdi>Definities</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bomos-gebruiken"><bdi class="secno">3. </bdi>BOMOS gebruiken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bomos-als-hulpmiddel-voor-verdere-ontwikkeling-van-de-beheerorganisaties"><bdi class="secno">3.1 </bdi>BOMOS als hulpmiddel voor verdere ontwikkeling van de beheerorganisaties</a></li><li class="tocline"><a class="tocxref" href="#bomos-als-achtergrondinformatie-ter-inspiratie"><bdi class="secno">3.2 </bdi>BOMOS als achtergrondinformatie ter inspiratie</a></li><li class="tocline"><a class="tocxref" href="#bomos-als-spiegel-voor-het-huidige-beheerproces"><bdi class="secno">3.3 </bdi>BOMOS als spiegel voor het huidige beheerproces</a></li></ol></li><li class="tocline"><a class="tocxref" href="#het-beheer-en-ontwikkelmodel-onderwerpen-voor-ontwikkeling-en-beheer"><bdi class="secno">4. </bdi>Het Beheer- en Ontwikkelmodel: Onderwerpen voor ontwikkeling en beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#benodigde-invulling-per-situatie"><bdi class="secno">4.1 </bdi>Benodigde invulling per situatie</a></li><li class="tocline"><a class="tocxref" href="#de-onderwerpen-uit-het-model"><bdi class="secno">4.2 </bdi>De onderwerpen uit het model</a></li><li class="tocline"><a class="tocxref" href="#activiteiten-en-rollen"><bdi class="secno">4.3 </bdi>Activiteiten en Rollen</a></li><li class="tocline"><a class="tocxref" href="#hoe-bomos-als-hulpmiddel-te-gebruiken-voor-beheerorganisatie"><bdi class="secno">4.4 </bdi>Hoe BOMOS als hulpmiddel te gebruiken voor beheerorganisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#creatie-ontwikkeling-1"><bdi class="secno">4.4.1 </bdi>Creatie / ontwikkeling (1)</a></li><li class="tocline"><a class="tocxref" href="#introductiefase-van-de-standaard-2"><bdi class="secno">4.4.2 </bdi>Introductiefase van de standaard (2)</a></li><li class="tocline"><a class="tocxref" href="#implementatie-groei-van-de-standaard-3"><bdi class="secno">4.4.3 </bdi>Implementatie / groei van de standaard (3)</a></li><li class="tocline"><a class="tocxref" href="#volwaardige-toepassing-volwassenheid-van-de-standaard-4"><bdi class="secno">4.4.4 </bdi>Volwaardige toepassing / volwassenheid van de standaard (4)</a></li><li class="tocline"><a class="tocxref" href="#uitfaseren-overgang-naar-een-andere-versie-van-de-standaard-5"><bdi class="secno">4.4.5 </bdi>Uitfaseren / overgang naar een andere (versie van de) standaard (5)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#de-bomos-best-practices-in-vogelvlucht-introductie-van-bomos-deel-2-de-verdieping"><bdi class="secno">5. </bdi>De BOMOS best practices in vogelvlucht - Introductie van BOMOS Deel 2: De Verdieping</a></li><li class="tocline"><a class="tocxref" href="#tot-slot"><bdi class="secno">6. </bdi>Tot slot</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p> BOMOS (Beheer- en OntwikkelModel voor Open Standaarden) is een hulpmiddel
   van en voor de standaardisatiewereld. Dit deel 1 bevat als fundament een
   beschrijving van het Beheer- en Ontwikkelmodel; een gelaagde set van
@@ -957,7 +963,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   in de standaardisatiepraktijk te gebruiken is.
  </p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#woord-van-dank"><bdi class="secno">1.1 </bdi>Woord van dank</a></li><li class="tocline"><a class="tocxref" href="#de-13-bomos-geboden"><bdi class="secno">1.2 </bdi>De 13 BOMOS "geboden"</a></li><li class="tocline"><a class="tocxref" href="#aanleiding"><bdi class="secno">1.3 </bdi>Aanleiding</a></li><li class="tocline"><a class="tocxref" href="#doel"><bdi class="secno">1.4 </bdi>Doel</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.5 </bdi>Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#aanpak-historie"><bdi class="secno">1.6 </bdi>Aanpak &amp; Historie</a></li><li class="tocline"><a class="tocxref" href="#structuur-bomos"><bdi class="secno">1.7 </bdi>Structuur BOMOS</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.8 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#context-definities"><bdi class="secno">2. </bdi>Context &amp; Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context-standaarden-voor-interoperabiliteit"><bdi class="secno">2.1 </bdi>Context: standaarden voor interoperabiliteit</a></li><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">2.2 </bdi>Definities</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bomos-gebruiken"><bdi class="secno">3. </bdi>BOMOS gebruiken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bomos-als-hulpmiddel-voor-verdere-ontwikkeling-van-de-beheerorganisaties"><bdi class="secno">3.1 </bdi>BOMOS als hulpmiddel voor verdere ontwikkeling van de beheerorganisaties</a></li><li class="tocline"><a class="tocxref" href="#bomos-als-achtergrondinformatie-ter-inspiratie"><bdi class="secno">3.2 </bdi>BOMOS als achtergrondinformatie ter inspiratie</a></li><li class="tocline"><a class="tocxref" href="#bomos-als-spiegel-voor-het-huidige-beheerproces"><bdi class="secno">3.3 </bdi>BOMOS als spiegel voor het huidige beheerproces</a></li></ol></li><li class="tocline"><a class="tocxref" href="#het-beheer-en-ontwikkelmodel-onderwerpen-voor-ontwikkeling-en-beheer"><bdi class="secno">4. </bdi>Het Beheer- en Ontwikkelmodel: Onderwerpen voor ontwikkeling en beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#benodigde-invulling-per-situatie"><bdi class="secno">4.1 </bdi>Benodigde invulling per situatie</a></li><li class="tocline"><a class="tocxref" href="#de-onderwerpen-uit-het-model"><bdi class="secno">4.2 </bdi>De onderwerpen uit het model</a></li><li class="tocline"><a class="tocxref" href="#activiteiten-en-rollen"><bdi class="secno">4.3 </bdi>Activiteiten en Rollen</a></li><li class="tocline"><a class="tocxref" href="#hoe-bomos-als-hulpmiddel-te-gebruiken-voor-beheerorganisatie"><bdi class="secno">4.4 </bdi>Hoe BOMOS als hulpmiddel te gebruiken voor beheerorganisatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#de-bomos-best-practices-in-vogelvlucht-introductie-van-bomos-deel-2-de-verdieping"><bdi class="secno">5. </bdi>De BOMOS best practices in vogelvlucht - Introductie van BOMOS Deel 2: De Verdieping</a></li><li class="tocline"><a class="tocxref" href="#tot-slot"><bdi class="secno">6. </bdi>Tot slot</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li></ol></nav>
+  
   <section class="introductory" id="documentbeheer"><div class="header-wrapper"><h2 id="documentbeheer-0">Documentbeheer</h2><a class="self-link" href="#documentbeheer" aria-label="Permalink for this Section"></a></div>
 <table>
 <thead>
@@ -1335,7 +1341,7 @@ data, of software. Dit soort gebruikservaringen, die eventueel leiden
 tot aangepaste BOMOS versies voor gebruik in een specifieke context,
 kunnen gepubliceerd worden als BOMOS Aanvullende Module.</p>
 </section><section id="definities"><div class="header-wrapper"><h3 id="x2-2-definities"><bdi class="secno">2.2 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 2.2"></a></div>
-<p>Beheer en Ontwikkelen van standaarden (kortweg: beheer)
+<p><dfn id="dfn-beheer-en-ontwikkelen-van-standaarden-kortweg-beheer" tabindex="0" aria-haspopup="dialog">Beheer en Ontwikkelen van standaarden (kortweg: beheer)</dfn>
 Alle activiteiten gericht op het structureel werken aan, beschikbaar
 stellen, en houden van een (set van) standaard(en) die steeds past bij
 de actuele behoefte van de belanghebbenden.</p>
@@ -1601,13 +1607,13 @@ Verdieping</a>)
 gaat hier verder op in.</p>
 </section><section id="de-onderwerpen-uit-het-model"><div class="header-wrapper"><h3 id="x4-2-de-onderwerpen-uit-het-model"><bdi class="secno">4.2 </bdi>De onderwerpen uit het model</h3><a class="self-link" href="#de-onderwerpen-uit-het-model" aria-label="Permalink for Section 4.2"></a></div>
 <p>Onder de genoemde activiteiten verstaan we het volgende:</p>
-<p><strong>Strategie</strong>, Richtinggevende activiteiten gerelateerd aan de strategische (lange) termijn:</p>
+<p><dfn id="dfn-strategie" tabindex="0" aria-haspopup="dialog">Strategie</dfn> Richtinggevende activiteiten gerelateerd aan de strategische (lange) termijn:</p>
 <ul>
 <li>Governance: beleid uitzetten over de eigen bestuurlijke organisatie (zoals de rechtsvorm); het huishoudelijke reglement (de charter), maar ook allianties vormen met andere organisaties. Het regelen van besluitvorming is cruciaal.</li>
 <li>Visie: het beschrijven van een ontwikkelrichting. Dit is de stip op de horizon en geldt als focus voor de lange termijn.</li>
 <li>Financiën: een financieel model voor de lange termijn hebben die opbrengsten garandeert in overeenstemming met de behoefte.</li>
 </ul>
-<p><strong>Tactiek</strong>, Activiteiten die op middellang termijn voor stabiliteit zorgen:</p>
+<p><dfn id="dfn-tactiek" tabindex="0" aria-haspopup="dialog">Tactiek</dfn> Activiteiten die op middellang termijn voor stabiliteit zorgen:</p>
 <ul>
 <li>Adoptie &amp; erkenning: Activiteiten die te maken hebben met de certificiering, verplichtstelling of promotie van de standaard.</li>
 <li>Architectuur: Opbouw van de standaard en de aangrenzende processen en technieken.</li>
@@ -1615,7 +1621,7 @@ gaat hier verder op in.</p>
 <li>Kwaliteitsbeleid benchmarking: ontwikkeling van beleid dat toeziet op de kwaliteit van implementaties van de standaard.</li>
 <li>Rechtenbeleid: Vaststellen van rechten van intellectueel eigendom.</li>
 </ul>
-<p><strong>Operationeel</strong>, de uitvoerende activiteiten die leiden tot nieuwe versies van standaarden, waaronder:</p>
+<p><dfn id="dfn-operationeel" tabindex="0" aria-haspopup="dialog">Operationeel</dfn> de uitvoerende activiteiten die leiden tot nieuwe versies van standaarden, waaronder:</p>
 <ul>
 <li>Initiatie: identificatie van nieuwe ideeën (voor bijvoorbeeld een nieuwe specificatie en nieuwe werkgroep) en alle activiteiten die horen bij het succesvol optuigen daarvan (bijv. belangenanalyse, business case, agendering).</li>
 <li>Wensen en eisen: opstellen van de wensen en eisen aan de te ontwikkelen en te beheren specificatie, ook wel bekend onder de naam Maintenance Requests (MRs).</li>
@@ -1623,7 +1629,7 @@ gaat hier verder op in.</p>
 <li>Uitvoeren: de daadwerkelijke aanpassingen op basis van de conceptuele oplossingen doorvoeren in de specificatie en eventuele technische invulling.</li>
 <li>Documentatie: verzorgen van passende neerslag van de resultaten van het primaire beheerproces. Niet alleen de beschikbaarheid van de specificaties, maar bijvoorbeeld ook de mogelijkheid bieden tot een historisch overzicht van verzoeken tot wijzigingen (maintenance requests) en de actuele status daarvan.</li>
 </ul>
-<p><strong>Implementatie-ondersteuning</strong>, ondersteunende activiteiten gericht op het bevorderen van implementaties van de standaard, waaronder:</p>
+<p><dfn id="dfn-implementatie-ondersteuning" tabindex="0" aria-haspopup="dialog">Implementatie-ondersteuning</dfn> ondersteunende activiteiten gericht op het bevorderen van implementaties van de standaard, waaronder:</p>
 <ul>
 <li>Opleiding: Het bieden van opleidingsmogelijkheden aan verschillende gebruikersgroepen variërend van een informatie bijeenkomst tot aan een (online) cursus.</li>
 <li>Helpdesk: Het bieden van ondersteuning aan verschillende gebruikersgroepen, bijvoorbeeld telefonisch of per e-mail volgens een service level agreement (bijv. beantwoording van vragen binnen 24 uur). Een frequently asked questionslijst opstellen en bijhouden kan ook een helpdeskactiviteit zijn.</li>
@@ -1631,7 +1637,7 @@ gaat hier verder op in.</p>
 <li>Pilot: Proeven met de implementatie van de specificaties. Bij sommige standaardisatieorganisaties is het verplicht dat er 1 of meerdere pilots zijn geweest voordat de standaard officieel vrijgegeven wordt.</li>
 <li>Validatie &amp; Certificatie: Het bieden van mogelijkheden om de correctheid van de implementaties te testen (validatie). Daaraan kan een officieel traject verbonden worden wat leidt tot certificatie van een organisatie of product. Ook verplicht stellen van het doorlopen van validatie en certificatietrajecten behoort tot de mogelijkheden. Module-ontwikkeling en Certificatie zijn riskante activiteiten, waarmee er actief ingegrepen wordt in de markt. De uitvoering daarvan dient zorgvuldig te gebeuren en zoveel mogelijk buiten de eigen organisatie.</li>
 </ul>
-<p><strong>Communicatie</strong>, ondersteunende activiteiten gericht op het creëren van draagvlak voor de standaard, waaronder:</p>
+<p><dfn id="dfn-communicatie" tabindex="0" aria-haspopup="dialog">Communicatie</dfn> ondersteunende activiteiten gericht op het creëren van draagvlak voor de standaard, waaronder:</p>
 <ul>
 <li>Promotie: Het uitdragen van nut/noodzaak/voordelen van de standaard.</li>
 <li>Publicatie: Het vindbaar/kenbaar maken van de standaard en de actuele stand van zaken (website).</li>
@@ -1643,19 +1649,19 @@ rollen. Een overzicht van rollen die relevant zijn bij het ontwikkelen
 en beheren van standaarden is opgenomen in <a href="https://www.nen.nl/nen-7522-2021-nl-283706">NEN 7522:2021 "Medische
 informatica - Ontwikkelen en beheren van standaarden en stelsels van
 standaarden"</a>, en is hier in licht aangepaste versie overgenomen.</p>
-<p><strong>Eigenaar</strong>: eindverantwoordelijk voor het ontwikkelen en beheren van
+<p><dfn id="dfn-eigenaar" tabindex="0" aria-haspopup="dialog">Eigenaar</dfn> eindverantwoordelijk voor het ontwikkelen en beheren van
   een standaard. De eigenaar bepaalt de scope en het doel van een
   standaard, en bepaalt de principes en de uitgangspunten die worden
   gehanteerd bij ontwikkeling en beheer.</p>
-<p><strong>Financier</strong>: verantwoordelijk voor het financieren van het
+<p><dfn id="dfn-financier" tabindex="0" aria-haspopup="dialog">Financier</dfn> verantwoordelijk voor het financieren van het
   ontwikkelen en beheren van standaarden.</p>
-<p><strong>Autorisator</strong>: keurt een standaard goed. Toelichting: een
+<p><dfn id="dfn-autorisator" tabindex="0" aria-haspopup="dialog">Autorisator</dfn> keurt een standaard goed. Toelichting: een
   autorisator kan een persoon, organisatie of groep van personen en
   organisaties zijn. Het is aan de eigenaar om de autorisator te
   benoemen. Een autorisator bevat vaak een vertegenwoordiging van
   stakeholders, die als persoon of organisatie ook de ook de rol
   gebruiker hebben.</p>
-<p><strong>Functioneel beheerder</strong>: verantwoordelijk voor het proces van
+<p><dfn id="dfn-functioneel-beheerder" tabindex="0" aria-haspopup="dialog">Functioneel beheerder</dfn> verantwoordelijk voor het proces van
   ontwikkelen en beheren van standaarden, binnen de kaders van de
   gemaakte afspraken en afgesproken governance. Toelichting: de
   functioneel beheerder is verantwoordelijk voor het proces van ontwikkelen
@@ -1663,7 +1669,7 @@ standaarden"</a>, en is hier in licht aangepaste versie overgenomen.</p>
   samen met experts, gebruikers, de technische beheerder en de
   distributeur. De functioneel beheerder heeft vaak een regie voerende
   rol. Resultaten van het proces worden voorgelegd aan de autorisator.</p>
-<p><strong>Technisch beheerder</strong>: verantwoordelijk voor het technisch beheren
+<p><dfn id="dfn-technisch-beheerder" tabindex="0" aria-haspopup="dialog">Technisch beheerder</dfn> verantwoordelijk voor het technisch beheren
   van standaarden. De technisch beheerder zorgt voor de inrichting en
   beheer van een technische omgeving die noodzakelijk is om de
   artefacten die onderdeel zijn van de standaard te
@@ -1676,9 +1682,9 @@ standaarden"</a>, en is hier in licht aangepaste versie overgenomen.</p>
   beheerder valt o.a. het kunnen toepassen van versiebeheer op de
   technische omgeving en het beschikbaar stellen en houden van de
   technische omgeving, in overleg met de functioneel beheerder.</p>
-<p><strong>Distributeur</strong>: verantwoordelijk voor het distribueren van
+<p><dfn id="dfn-distributeur" tabindex="0" aria-haspopup="dialog">Distributeur</dfn> verantwoordelijk voor het distribueren van
   standaarden.</p>
-<p><strong>Expert</strong>: brengt specifieke noodzakelijke expertise in ten behoeve
+<p><dfn id="dfn-expert" tabindex="0" aria-haspopup="dialog">Expert</dfn> brengt specifieke noodzakelijke expertise in ten behoeve
   van het ontwikkelen of beheren van een standaard. Toelichting:
   verschillende type experts kunnen, afhankelijk van de standaard,
   noodzakelijk zijn. Veel voorkomende experts zijn domein-inhoudelijk
@@ -1687,7 +1693,7 @@ standaarden"</a>, en is hier in licht aangepaste versie overgenomen.</p>
   voorkomend is ook een vertegenwoordiging ervaringsdeskundige
   stakeholders die als persoon of organisatie ook de rol gebruiker
   hebben.</p>
-<p><strong>Gebruiker</strong>: gebruikt de standaarden direct of indirect. Voorbeelden
+<p><dfn id="dfn-gebruiker" tabindex="0" aria-haspopup="dialog">Gebruiker</dfn> gebruikt de standaarden direct of indirect. Voorbeelden
   van deze gebruikers zijn leveranciers van componenten (vaak
   applicaties), of gebruikers van deze applicaties (indirect).</p>
 <p>Van bovenstaande rollen kunnen de financier-rol, de expert-rol, de
@@ -1761,7 +1767,7 @@ toetsen in welke fase uw standaard zich bevindt.</p>
         <figcaption><a class="self-link" href="#fig-levensfases-van-een-standaard">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">Levensfases van een standaard</span></figcaption>
       </figure>
     <p></p>
-<p><strong>1. Creatie / ontwikkeling</strong></p>
+<section id="creatie-ontwikkeling-1"><div class="header-wrapper"><h4 id="x4-4-1-creatie-ontwikkeling-1"><bdi class="secno">4.4.1 </bdi>Creatie / ontwikkeling (1)</h4><a class="self-link" href="#creatie-ontwikkeling-1" aria-label="Permalink for Section 4.4.1"></a></div>
 <p>Deze fase markeert het moment waarop een community van belanghebbenden
 en geïnteresseerden de behoefte aan een standaard vaststelt en start
 met het opstellen van de standaard.  Dit hoeft niet altijd te
@@ -1783,7 +1789,7 @@ een duidelijk adoptiebeleid zijn. In grotere organisaties is het ook
 belangrijk dat de processen rondom de adoptie zijn verankerd in het
 proceslandschap. Dit is immers een goede manier om de adoptie ook via
 formele wegen af te dwingen.</p>
-<p><strong>2. Introductiefase van de standaard</strong></p>
+</section><section id="introductiefase-van-de-standaard-2"><div class="header-wrapper"><h4 id="x4-4-2-introductiefase-van-de-standaard-2"><bdi class="secno">4.4.2 </bdi>Introductiefase van de standaard (2)</h4><a class="self-link" href="#introductiefase-van-de-standaard-2" aria-label="Permalink for Section 4.4.2"></a></div>
 <p>In deze fase wordt gekozen voor een specifieke standaard om in een
 behoefte te voorzien. Tijdens deze fase zullen veel wijzigingen aan de
 orde zijn. De inrichting van beheer wordt belangrijk. De keuze kan
@@ -1800,7 +1806,7 @@ van de standaard is relevant. Nieuw in deze fase is het monitoren van
 de adoptie en het publiceren van de standaard. Waar er tijdens de
 creatiefase misschien nog geen (concept)versie beschikbaar is, moet
 dit tijdens de introductie wel het geval zijn.</p>
-<p><strong>3. Implementatie / groei van de standaard</strong></p>
+</section><section id="implementatie-groei-van-de-standaard-3"><div class="header-wrapper"><h4 id="x4-4-3-implementatie-groei-van-de-standaard-3"><bdi class="secno">4.4.3 </bdi>Implementatie / groei van de standaard (3)</h4><a class="self-link" href="#implementatie-groei-van-de-standaard-3" aria-label="Permalink for Section 4.4.3"></a></div>
 <p>In deze fase kiezen gebruikers bewust voor de implementatie van de
 standaard. In het beheer wordt ook rekening gehouden met het feit dat
 niet alle gebruikers beschikken over een volwaardig kennisniveau van
@@ -1816,7 +1822,7 @@ besluiten een standaard te gaan toepassen. Tijdens deze fase zullen
 veel wijzigingen aan de orde zijn. De inrichting voor beheer wordt
 belangrijk, net als de adoptie van de standaard bij de ‘early
 adopters’ van belang.  activiteiten zullen hierop gericht moeten zijn.</p>
-<p><strong>4. Volwaardige toepassing / volwassenheid van de standaard</strong></p>
+</section><section id="volwaardige-toepassing-volwassenheid-van-de-standaard-4"><div class="header-wrapper"><h4 id="x4-4-4-volwaardige-toepassing-volwassenheid-van-de-standaard-4"><bdi class="secno">4.4.4 </bdi>Volwaardige toepassing / volwassenheid van de standaard (4)</h4><a class="self-link" href="#volwaardige-toepassing-volwassenheid-van-de-standaard-4" aria-label="Permalink for Section 4.4.4"></a></div>
 <p>In deze fase is de standaard algemeen geaccepteerd en
 geïmplementeerd. Het beheer is in deze fase volledig ingericht om de
 stabiliteit en kwaliteit van de standaard te waarborgen.</p>
@@ -1832,7 +1838,7 @@ of er nieuwe (internationale) standaarden beschikbaar zijn gekomen met
 dezelfde toepassing als de standaard. Beschikbaarheid van een nieuwe, 
 internationale standaard met internationale toepassing kan prioriteit 
 gegeven worden boven een in nationale context beheerde standaard.</p>
-<p><strong>5. Uitfaseren / overgang naar een andere (versie van de) standaard</strong></p>
+</section><section id="uitfaseren-overgang-naar-een-andere-versie-van-de-standaard-5"><div class="header-wrapper"><h4 id="x4-4-5-uitfaseren-overgang-naar-een-andere-versie-van-de-standaard-5"><bdi class="secno">4.4.5 </bdi>Uitfaseren / overgang naar een andere (versie van de) standaard (5)</h4><a class="self-link" href="#uitfaseren-overgang-naar-een-andere-versie-van-de-standaard-5" aria-label="Permalink for Section 4.4.5"></a></div>
 <p>Tijdens het uitfaseren van een standaard is het van belang dat de
 samenhang met verschillende producten goed wordt bewaakt. Het kan
 namelijk zo zijn dat de standaard een cruciale plaats inneemt in het
@@ -1841,7 +1847,7 @@ organisatiestructuur van belang aangezien het verwijderen van
 standaard kan zorgen voor verschuivende verantwoordelijkheden. Verder
 is het afbouwen van financiëringen een aandachtspunt, net als het
 beheersen van verwachtingen.</p>
-</section></section>
+</section></section></section>
   <section id="de-bomos-best-practices-in-vogelvlucht-introductie-van-bomos-deel-2-de-verdieping"><div class="header-wrapper"><h2 id="x5-de-bomos-best-practices-in-vogelvlucht-introductie-van-bomos-deel-2-de-verdieping"><bdi class="secno">5. </bdi>De BOMOS best practices in vogelvlucht - Introductie van BOMOS Deel 2: De Verdieping</h2><a class="self-link" href="#de-bomos-best-practices-in-vogelvlucht-introductie-van-bomos-deel-2-de-verdieping" aria-label="Permalink for Section 5."></a></div>
 <p>Met alleen het Beheer- en Ontwikkelmodel voor standaarden leggen we
 een fundament, maar daarmee kunnen niet al standaardisatievraagstukken
@@ -1983,11 +1989,11 @@ zijn.</p>
 validatie en een overzicht te creëren van leveranciers die de
 standaard gebruiken. Ook met validatie kan conformance aan een
 standaard gecontroleerd worden maar op een laagdrempelige manier.</p>
-<p><strong><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/index.html#implementatie-ondersteuning">Ondersteuning bieden aan implementaties</a></strong>
-De ondersteuning bieden aan implementaties is het gevolg van strategische en met name tactische keuzes rond onder meer adoptie en kwaliteit; andere best practices onderwerpen.
+<p><strong><a href="https://logius-standaarden.github.io/BOMOS-Verdieping/index.html#implementatie-ondersteuning">Ondersteuning bieden aan implementaties</a></strong></p>
+<p>De ondersteuning bieden aan implementaties is het gevolg van strategische en met name tactische keuzes rond onder meer adoptie en kwaliteit; andere best practices onderwerpen.
 Vandaar een wat kortere beschrijving mogelijke invullingen.</p>
-<p><strong><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping#communicatie">Bekendheid creëren</a></strong>
-Voorgaande geldt ook voor de communicatie activiteiten, echter deze mogen zeker niet onderschat worden. Uiteindelijk draait het erom dat de standaard in de praktijk gebruikt wordt, dat betekent dat de standaard een hoge mate van bekendheid moet hebben in het werkveld. Deze bekendheid ontstaat niet vanzelf.</p>
+<p><strong><a href="https://gitdocumentatie.logius.nl/publicatie/bomos/verdieping#communicatie">Bekendheid creëren</a></strong></p>
+<p>Voorgaande geldt ook voor de communicatie activiteiten, echter deze mogen zeker niet onderschat worden. Uiteindelijk draait het erom dat de standaard in de praktijk gebruikt wordt, dat betekent dat de standaard een hoge mate van bekendheid moet hebben in het werkveld. Deze bekendheid ontstaat niet vanzelf.</p>
 </section>
   <section id="tot-slot"><div class="header-wrapper"><h2 id="x6-tot-slot"><bdi class="secno">6. </bdi>Tot slot</h2><a class="self-link" href="#tot-slot" aria-label="Permalink for Section 6."></a></div>
 <p>Een belangrijk onderbelicht onderwerp in de kennis over standaarden is
@@ -2046,7 +2052,17 @@ BOMOS Aanvullende Modules beschikbaar stelt.</p>
 
 <p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheer-en-ontwikkelmodel" aria-label="Links in this document to definition: Beheer- en Ontwikkelmodel">
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheer-en-ontwikkelen-van-standaarden-kortweg-beheer" aria-label="Links in this document to definition: Beheer en Ontwikkelen van standaarden (kortweg: beheer)">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-beheer-en-ontwikkelen-van-standaarden-kortweg-beheer" aria-label="Permalink for definition: Beheer en Ontwikkelen van standaarden (kortweg: beheer). Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-beheer-en-ontwikkelmodel" aria-label="Links in this document to definition: Beheer- en Ontwikkelmodel">
       <span class="caret"></span>
       <div>
         <a class="self-link" href="#dfn-beheer-en-ontwikkelmodel" aria-label="Permalink for definition: Beheer- en Ontwikkelmodel. Activate to close this dialog.">Permalink</a>
@@ -2100,6 +2116,136 @@ BOMOS Aanvullende Modules beschikbaar stelt.</p>
       <span class="caret"></span>
       <div>
         <a class="self-link" href="#dfn-werkgroep" aria-label="Permalink for definition: Werkgroep. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-strategie" aria-label="Links in this document to definition: Strategie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-strategie" aria-label="Permalink for definition: Strategie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-tactiek" aria-label="Links in this document to definition: Tactiek">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-tactiek" aria-label="Permalink for definition: Tactiek. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-operationeel" aria-label="Links in this document to definition: Operationeel">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-operationeel" aria-label="Permalink for definition: Operationeel. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-implementatie-ondersteuning" aria-label="Links in this document to definition: Implementatie-ondersteuning">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-implementatie-ondersteuning" aria-label="Permalink for definition: Implementatie-ondersteuning. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-communicatie" aria-label="Links in this document to definition: Communicatie">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-communicatie" aria-label="Permalink for definition: Communicatie. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-eigenaar" aria-label="Links in this document to definition: Eigenaar">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-eigenaar" aria-label="Permalink for definition: Eigenaar. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-financier" aria-label="Links in this document to definition: Financier">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-financier" aria-label="Permalink for definition: Financier. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-autorisator" aria-label="Links in this document to definition: Autorisator">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-autorisator" aria-label="Permalink for definition: Autorisator. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-functioneel-beheerder" aria-label="Links in this document to definition: Functioneel beheerder">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-functioneel-beheerder" aria-label="Permalink for definition: Functioneel beheerder. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-technisch-beheerder" aria-label="Links in this document to definition: Technisch beheerder">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-technisch-beheerder" aria-label="Permalink for definition: Technisch beheerder. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-distributeur" aria-label="Links in this document to definition: Distributeur">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-distributeur" aria-label="Permalink for definition: Distributeur. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-expert" aria-label="Links in this document to definition: Expert">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-expert" aria-label="Permalink for definition: Expert. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-gebruiker" aria-label="Links in this document to definition: Gebruiker">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-gebruiker" aria-label="Permalink for definition: Gebruiker. Activate to close this dialog.">Permalink</a>
          
       </div>
       <p><b>Referenced in:</b></p>
