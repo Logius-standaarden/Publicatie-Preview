@@ -846,6 +846,16 @@ ul.index code{color:inherit}
       "href": "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
       "publisher": "Logius",
       "title": "Logboek Dataverwerkingen"
+    },
+    "NEN7513": {
+      "authors": [
+        "Normcommissie Informatievoorziening in de zorg"
+      ],
+      "date": "December 2024",
+      "href": "https://www.nen.nl/nen-7513-2024-nl-329182",
+      "publisher": "NEN",
+      "title": "Medische informatica - Logging - Vastleggen van acties op persoonlijke gezondheidsinformatie",
+      "id": "nen7513"
     }
   },
   "maxTocLevel": 3,
@@ -910,7 +920,7 @@ ul.index code{color:inherit}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2024-12-13">13 oktober 2025</time>
+      <time class="dt-published" datetime="2024-12-13">15 oktober 2025</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -964,7 +974,7 @@ ul.index code{color:inherit}
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#abstract">Context bij de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verwijzingen">Verwijzingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback">Feedback en Issues</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doelen-van-de-standaard"><bdi class="secno">1.1 </bdi>Doelen van de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-van-de-standaard"><bdi class="secno">1.1.1 </bdi>Werkingsgebied van de standaard</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.1.2 </bdi>Doelgroep</a></li></ol></li><li class="tocline"><a class="tocxref" href="#terminologie"><bdi class="secno">1.2 </bdi>Terminologie</a></li><li class="tocline"><a class="tocxref" href="#algemene-werking-van-de-standaard"><bdi class="secno">1.3 </bdi>Algemene werking van de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensies"><bdi class="secno">1.3.1 </bdi>Extensies</a></li><li class="tocline"><a class="tocxref" href="#profielen"><bdi class="secno">1.3.2 </bdi>Profielen</a></li><li class="tocline"><a class="tocxref" href="#use-case"><bdi class="secno">1.3.3 </bdi>Use case</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2. </bdi>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.1 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#componenten"><bdi class="secno">2.2 </bdi>Componenten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#applicatie"><bdi class="secno">2.2.1 </bdi>Applicatie</a></li><li class="tocline"><a class="tocxref" href="#logboek"><bdi class="secno">2.2.2 </bdi>Logboek</a></li><li class="tocline"><a class="tocxref" href="#register"><bdi class="secno">2.2.3 </bdi>Register</a></li></ol></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">2.3 </bdi>Scope</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vastlegging-door-verantwoordelijke"><bdi class="secno">2.3.1 </bdi>Vastlegging door Verantwoordelijke</a></li><li class="tocline"><a class="tocxref" href="#geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><bdi class="secno">2.3.2 </bdi>Geen inhoudelijke uitwisseling tussen Verantwoordelijken</a></li><li class="tocline"><a class="tocxref" href="#geen-specificatie-voor-het-beheren-van-logboeken"><bdi class="secno">2.3.3 </bdi>Geen specificatie voor het beheren van Logboeken</a></li><li class="tocline"><a class="tocxref" href="#geen-data-over-gebruikers-in-logregels"><bdi class="secno">2.3.4 </bdi>Geen data over gebruikers in Logregels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#flows"><bdi class="secno">2.4 </bdi>Flows</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wegschrijven-van-een-logregel-na-een-dataverwerking"><bdi class="secno">2.4.1 </bdi>Wegschrijven van een logregel na een Dataverwerking</a></li><li class="tocline"><a class="tocxref" href="#tonen-van-informatie-over-een-dataverwerking"><bdi class="secno">2.4.2 </bdi>Tonen van informatie over een Dataverwerking</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#specificaties"><bdi class="secno">3. </bdi>Specificaties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocollen"><bdi class="secno">3.1 </bdi>Protocollen</a></li><li class="tocline"><a class="tocxref" href="#component-logboek"><bdi class="secno">3.2 </bdi>Component: Logboek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag"><bdi class="secno">3.2.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface"><bdi class="secno">3.2.2 </bdi>Interface</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#component-applicatie"><bdi class="secno">3.3 </bdi>Component: Applicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-0"><bdi class="secno">3.3.1 </bdi>Gedrag</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#component-register"><bdi class="secno">3.4 </bdi>Component: Register</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-1"><bdi class="secno">3.4.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface-0"><bdi class="secno">3.4.2 </bdi>Interface</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#detailniveaus"><bdi class="secno">4. </bdi>Detailniveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities-van-niveaus"><bdi class="secno">4.1 </bdi>Definities van niveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#niveau-1-registerverwijzing"><bdi class="secno">4.1.1 </bdi>Niveau 1: registerverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-2-kolomverwijzing"><bdi class="secno">4.1.2 </bdi>Niveau 2: kolomverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-3-concrete-data"><bdi class="secno">4.1.3 </bdi>Niveau 3: concrete data</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implicaties-van-niveaus"><bdi class="secno">4.2 </bdi>Implicaties van niveaus</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p><p>
+  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#abstract">Context bij de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verwijzingen">Verwijzingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#feedback">Feedback en Issues</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-van-de-standaard"><bdi class="secno">1.1 </bdi>Werkingsgebied van de standaard</a></li><li class="tocline"><a class="tocxref" href="#doelgroep"><bdi class="secno">1.2 </bdi>Doelgroep</a></li><li class="tocline"><a class="tocxref" href="#terminologie"><bdi class="secno">1.3 </bdi>Terminologie</a></li><li class="tocline"><a class="tocxref" href="#algemene-werking-van-de-standaard"><bdi class="secno">1.4 </bdi>Algemene werking van de standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensies"><bdi class="secno">1.4.1 </bdi>Extensies</a></li><li class="tocline"><a class="tocxref" href="#profielen"><bdi class="secno">1.4.2 </bdi>Profielen</a></li><li class="tocline"><a class="tocxref" href="#use-case"><bdi class="secno">1.4.3 </bdi>Use case</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2. </bdi>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.1 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#componenten"><bdi class="secno">2.2 </bdi>Componenten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#applicatie"><bdi class="secno">2.2.1 </bdi>Applicatie</a></li><li class="tocline"><a class="tocxref" href="#logboek"><bdi class="secno">2.2.2 </bdi>Logboek</a></li><li class="tocline"><a class="tocxref" href="#register"><bdi class="secno">2.2.3 </bdi>Register</a></li></ol></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">2.3 </bdi>Scope</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vastlegging-door-verantwoordelijke"><bdi class="secno">2.3.1 </bdi>Vastlegging door Verantwoordelijke</a></li><li class="tocline"><a class="tocxref" href="#geen-inhoudelijke-uitwisseling-tussen-verantwoordelijken"><bdi class="secno">2.3.2 </bdi>Geen inhoudelijke uitwisseling tussen Verantwoordelijken</a></li><li class="tocline"><a class="tocxref" href="#geen-specificatie-voor-het-beheren-van-logboeken"><bdi class="secno">2.3.3 </bdi>Geen specificatie voor het beheren van Logboeken</a></li><li class="tocline"><a class="tocxref" href="#geen-data-over-gebruikers-in-logregels"><bdi class="secno">2.3.4 </bdi>Geen data over gebruikers in Logregels</a></li></ol></li><li class="tocline"><a class="tocxref" href="#flows"><bdi class="secno">2.4 </bdi>Flows</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#wegschrijven-van-een-logregel-na-een-dataverwerking"><bdi class="secno">2.4.1 </bdi>Wegschrijven van een logregel na een Dataverwerking</a></li><li class="tocline"><a class="tocxref" href="#tonen-van-informatie-over-een-dataverwerking"><bdi class="secno">2.4.2 </bdi>Tonen van informatie over een Dataverwerking</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#specificaties"><bdi class="secno">3. </bdi>Specificaties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#protocollen"><bdi class="secno">3.1 </bdi>Protocollen</a></li><li class="tocline"><a class="tocxref" href="#component-logboek"><bdi class="secno">3.2 </bdi>Component: Logboek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag"><bdi class="secno">3.2.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface"><bdi class="secno">3.2.2 </bdi>Interface</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#component-applicatie"><bdi class="secno">3.3 </bdi>Component: Applicatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-0"><bdi class="secno">3.3.1 </bdi>Gedrag</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#component-register"><bdi class="secno">3.4 </bdi>Component: Register</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedrag-1"><bdi class="secno">3.4.1 </bdi>Gedrag</a></li><li class="tocline"><a class="tocxref" href="#interface-0"><bdi class="secno">3.4.2 </bdi>Interface</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#detailniveaus"><bdi class="secno">4. </bdi>Detailniveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities-van-niveaus"><bdi class="secno">4.1 </bdi>Definities van niveaus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#niveau-1-registerverwijzing"><bdi class="secno">4.1.1 </bdi>Niveau 1: registerverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-2-kolomverwijzing"><bdi class="secno">4.1.2 </bdi>Niveau 2: kolomverwijzing</a></li><li class="tocline"><a class="tocxref" href="#niveau-3-concrete-data"><bdi class="secno">4.1.3 </bdi>Niveau 3: concrete data</a></li></ol></li><li class="tocline"><a class="tocxref" href="#implicaties-van-niveaus"><bdi class="secno">4.2 </bdi>Implicaties van niveaus</a></li></ol></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p><p>
         De trefwoorden <em class="rfc2119">AANBEVOLEN</em>, <em class="rfc2119">MAG</em>, <em class="rfc2119">MOET</em> en <em class="rfc2119">MOETEN</em> in dit
         document moeten worden geïnterpreteerd als in
         <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
@@ -1023,24 +1033,22 @@ ul.index code{color:inherit}
       <a href="mailto:api@logius.nl">api@logius.nl</a>.
     </p>
   </section>
-  <section id="introductie">
-    <div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div>
-    <section id="doelen-van-de-standaard"><div class="header-wrapper"><h3 id="x1-1-doelen-van-de-standaard"><bdi class="secno">1.1 </bdi>Doelen van de standaard</h3><a class="self-link" href="#doelen-van-de-standaard" aria-label="Permalink for Section 1.1"></a></div>
-<p>De standaard Logboek Dataverwerkingen beschrijft een manier om technisch interoperabele functionaliteit voor het
-loggen van dataverwerkingen te implementeren, door voor de volgende functionaliteit de interface en het gedrag voor te schrijven:</p>
+  <section id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div>
+<p>De standaard Logboek Dataverwerkingen beschrijft een manier om technisch interoperabele functionaliteit voor het loggen van dataverwerkingen te implementeren, door voor de volgende functionaliteit de interface en het gedrag voor te schrijven:</p>
 <ul>
 <li>het vastleggen van logs van dataverwerkingen</li>
 <li>het aan elkaar relateren van logs van dataverwerkingen</li>
 <li>het aan elkaar relateren van dataverwerkingen over de grenzen van systemen</li>
 </ul>
 <p>Door Dataverwerkingen te loggen volgens de standaard kunnen organisaties het datagebruik verantwoorden.</p>
-<section id="werkingsgebied-van-de-standaard"><div class="header-wrapper"><h4 id="x1-1-1-werkingsgebied-van-de-standaard"><bdi class="secno">1.1.1 </bdi>Werkingsgebied van de standaard</h4><a class="self-link" href="#werkingsgebied-van-de-standaard" aria-label="Permalink for Section 1.1.1"></a></div>
-<p>Functioneel toepassingsgebied: De standaard Logboek Dataverwerkingen kan worden toegepast als data wordt verwerkt in geautomatiseerde systemen. Uitgangspunt is de verantwoordingsplicht van de overheid over de uitvoering van haar taken en de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">wetten en kaders</a> die daarbij horen.</p>
+<section id="werkingsgebied-van-de-standaard"><div class="header-wrapper"><h3 id="x1-1-werkingsgebied-van-de-standaard"><bdi class="secno">1.1 </bdi>Werkingsgebied van de standaard</h3><a class="self-link" href="#werkingsgebied-van-de-standaard" aria-label="Permalink for Section 1.1"></a></div>
+<p>Functioneel toepassingsgebied: De standaard Logboek Dataverwerkingen kan worden toegepast als data wordt verwerkt in geautomatiseerde systemen.
+Uitgangspunt is de verantwoordingsplicht van de overheid over de uitvoering van haar taken en de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">wetten en kaders</a> die daarbij horen.</p>
 <p>Organisatorisch werkingsgebied: Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen) en instellingen uit de (semi-) publieke sector.</p>
-</section><section id="doelgroep"><div class="header-wrapper"><h4 id="x1-1-2-doelgroep"><bdi class="secno">1.1.2 </bdi>Doelgroep</h4><a class="self-link" href="#doelgroep" aria-label="Permalink for Section 1.1.2"></a></div>
-<p>De standaard heeft als doelgroep iedereen die zich bezighoudt met het implementeren van logging rond dataverwerkingen en beschrijft alleen wat relevant is voor de implementatie. Alle achterliggende overwegingen zijn te vinden in de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/">Algemene inleiding</a> en het <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">Juridisch Beleidskader</a>.</p>
-</section></section>
-    <section id="terminologie"><div class="header-wrapper"><h3 id="x1-2-terminologie"><bdi class="secno">1.2 </bdi>Terminologie</h3><a class="self-link" href="#terminologie" aria-label="Permalink for Section 1.2"></a></div>
+</section><section id="doelgroep"><div class="header-wrapper"><h3 id="x1-2-doelgroep"><bdi class="secno">1.2 </bdi>Doelgroep</h3><a class="self-link" href="#doelgroep" aria-label="Permalink for Section 1.2"></a></div>
+<p>De standaard heeft als doelgroep iedereen die zich bezighoudt met het implementeren van logging rond dataverwerkingen en beschrijft alleen wat relevant is voor de implementatie.
+Alle achterliggende overwegingen zijn te vinden in de <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/">Algemene inleiding</a> en het <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/">Juridisch Beleidskader</a>.</p>
+</section><section id="terminologie"><div class="header-wrapper"><h3 id="x1-3-terminologie"><bdi class="secno">1.3 </bdi>Terminologie</h3><a class="self-link" href="#terminologie" aria-label="Permalink for Section 1.3"></a></div>
 <p>De volgende lijst beschrijft terminologie in de betekenis zoals deze wordt gebruikt in dit document.</p>
 <p><dfn data-lt="Acties|Actie" id="dfn-acties" tabindex="0" aria-haspopup="dialog">Actie</dfn></p>
 <p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-1"><code>Dataverwerking</code></a> bestaat uit één of meerdere kleinere discrete stappen. Een Actie is één discrete stap binnen een Dataverwerking.</p>
@@ -1068,27 +1076,21 @@ loggen van dataverwerkingen te implementeren, door voor de volgende functionalit
 <p>Een natuurlijke persoon of rechtspersoon, een overheidsinstantie, een dienst of een ander orgaan die/dat ten behoeve van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsverantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-2"><code>Verwerkingsverantwoordelijke</code></a> persoonsdata verwerkt. Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>] art. 4, lid 8.), maar laat de verantwoordelijkheid betrekking hebben op de verwerking van álle data, niet alleen persoonsdata.</p>
 <p><dfn data-lt="Verwerkingsactiviteiten|Verwerkingsactiviteit" id="dfn-verwerkingsactiviteiten" tabindex="0" aria-haspopup="dialog">Verwerkingsactiviteit</dfn></p>
 <p>Activiteiten die een organisatie onderkent heeft als activiteiten waarbinnen <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-5"><code>Dataverwerkingen</code></a> plaatsvinden.</p>
-</section>
-    <section id="algemene-werking-van-de-standaard"><div class="header-wrapper"><h3 id="x1-3-algemene-werking-van-de-standaard"><bdi class="secno">1.3 </bdi>Algemene werking van de standaard</h3><a class="self-link" href="#algemene-werking-van-de-standaard" aria-label="Permalink for Section 1.3"></a></div>
+</section><section id="algemene-werking-van-de-standaard"><div class="header-wrapper"><h3 id="x1-4-algemene-werking-van-de-standaard"><bdi class="secno">1.4 </bdi>Algemene werking van de standaard</h3><a class="self-link" href="#algemene-werking-van-de-standaard" aria-label="Permalink for Section 1.4"></a></div>
 <p><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-1"><code>Applicaties</code></a> loggen metadata over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-6"><code>Dataverwerkingen</code></a> in een daarvoor ingerichte softwaretoepassing, het Logboek Dataverwerkingen. Elke Dataverwerking wordt apart gelogd. Dataverwerkingen binnen dezelfde context (bijvoorbeeld een organisatie of een verantwoordelijkheid binnen een organisatie) worden gegroepeerd met behulp van een Trace. Wanneer een Dataverwerking een andere Dataverwerking tot gevolg heeft worden de logregels van beide Dataverwerkingen aan elkaar gelinkt. Statische informatie over Dataverwerkingen kan worden opgezocht in Registers op basis van een verwijzing die in elke logregel wordt opgenomen.</p>
-<section id="extensies"><div class="header-wrapper"><h4 id="x1-3-1-extensies"><bdi class="secno">1.3.1 </bdi>Extensies</h4><a class="self-link" href="#extensies" aria-label="Permalink for Section 1.3.1"></a></div>
+<section id="extensies"><div class="header-wrapper"><h4 id="x1-4-1-extensies"><bdi class="secno">1.4.1 </bdi>Extensies</h4><a class="self-link" href="#extensies" aria-label="Permalink for Section 1.4.1"></a></div>
 <p>De standaard Logboek Dataverwerkingen specificeert de basis voor het loggen en aan elkaar relateren van Dataverwerkingen.
-Aanvullende functionaliteit wordt gestandaardiseerd in <code>extensies</code>:</p>
+Aanvullende functionaliteit wordt gestandaardiseerd in <code>extensies</code>, conform de <cite><a data-matched-text="[[[logboek-extensie-guideline]]]" href="https://logius-standaarden.github.io/logboek-extensie-template/">LDV Extensie Guideline</a></cite> richtlijnen.
+Enkele voorbeelden van extensies (deze zijn nog niet per definitie vastgesteld):</p>
 <ul>
-<li><p><em>Extensie Betrokkenen</em><br>
-Met deze extensie wordt meer precies uitgewerkt hoe de identiteit van een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-2"><code>Betrokkene</code></a> wordt gerelateerd aan een verwerking, zodat actief informeren of het faciliteren van inzageverzoeken gestandaardiseerd mogelijk wordt. Dit is een nadere uitwerking van wat in de kern van de standaard al mogelijk is rond vastlegging van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-3"><code>Betrokkene</code></a>.</p>
+<li><p><a href="https://logius-standaarden.github.io/logboek-extensie-object/">Extensie (geo)objecten</a> <br>
+Deze extensie specificeert hoe dataverwerkingen voor (geo)objecten kunnen worden vastgelegd en beheerd in een logboek.</p>
 </li>
-<li><p><em>Extensie Verwerkte Data</em><br>
-Deze extensie specificeert een uniforme manier om verwerkte data in logregels op te nemen.</p>
-</li>
-<li><p><em>Extensie Inzage</em><br>
-Deze extensie heeft een afhankelijkheid van de extensies <em>Betrokkenen</em> en <em>Verwerkte Data</em>, en biedt een interface op de logs vanuit een bepaald perspectief.</p>
-</li>
-<li><p><em>Extensie (geo)objecten</em><br>
-Deze extensie specificeert hoe dataverwerkingen voor <a href="https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/">objecten</a> kunnen worden vastgelegd en beheerd in een logboek.</p>
+<li><p><a href="https://logius-standaarden.github.io/logboek-extensie-nen7513/">Concept-extensie zorg</a> <br>
+Deze extensie was een proof-of-concept hoe dataverwerkingen die aan de [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen7513" title="Medische informatica - Logging - Vastleggen van acties op persoonlijke gezondheidsinformatie">NEN7513</a></cite>] norm kunnen worden vastgelegd en beheerd in een logboek.</p>
 </li>
 </ul>
-</section><section id="profielen"><div class="header-wrapper"><h4 id="x1-3-2-profielen"><bdi class="secno">1.3.2 </bdi>Profielen</h4><a class="self-link" href="#profielen" aria-label="Permalink for Section 1.3.2"></a></div>
+</section><section id="profielen"><div class="header-wrapper"><h4 id="x1-4-2-profielen"><bdi class="secno">1.4.2 </bdi>Profielen</h4><a class="self-link" href="#profielen" aria-label="Permalink for Section 1.4.2"></a></div>
 <p>In een <strong>profiel</strong> worden aanvullende beperkingen en verplichtingen vastgelegd over het gebruik van de standaard. Op deze
 manier kan een groep organisaties interoperabiliteit organiseren. Voorbeelden van aanvullende afspraken in een profiel zijn:</p>
 <ul>
@@ -1097,10 +1099,9 @@ manier kan een groep organisaties interoperabiliteit organiseren. Voorbeelden va
 <li>Afspraken over data-retentie</li>
 <li>De wijze waarop <a href="https://logius-standaarden.github.io/logboek-dataverwerkingen-inleiding/#pseudonimiseren-gegevens">pseudonimisering</a> van persoonsdata plaatsvindt</li>
 </ul>
-</section><section id="use-case"><div class="header-wrapper"><h4 id="x1-3-3-use-case"><bdi class="secno">1.3.3 </bdi>Use case</h4><a class="self-link" href="#use-case" aria-label="Permalink for Section 1.3.3"></a></div>
+</section><section id="use-case"><div class="header-wrapper"><h4 id="x1-4-3-use-case"><bdi class="secno">1.4.3 </bdi>Use case</h4><a class="self-link" href="#use-case" aria-label="Permalink for Section 1.4.3"></a></div>
 <p>Een typische use case voor het gebruik van de standaard is een samenwerking tussen meerdere organisaties die interoperabiliteit willen bereiken bij het loggen van Dataverwerkingen, om zo op eenduidige manier te kunnen verantwoorden over de dataverwerking.</p>
-</section></section>
-  </section>
+</section></section></section>
  
   <section id="architectuur">
     <div class="header-wrapper"><h2 id="x2-architectuur"><bdi class="secno">2. </bdi>Architectuur</h2><a class="self-link" href="#architectuur" aria-label="Permalink for Section 2."></a></div>
@@ -1428,7 +1429,7 @@ De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-
 </section></section><section id="implicaties-van-niveaus"><div class="header-wrapper"><h3 id="x4-2-implicaties-van-niveaus"><bdi class="secno">4.2 </bdi>Implicaties van niveaus</h3><a class="self-link" href="#implicaties-van-niveaus" aria-label="Permalink for Section 4.2"></a></div>
 <p>Hoe hoger het niveau, hoe bruikbaarder de data is die uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-3"><code>Logboek</code></a> kan worden opgemaakt.
 Echter, de consequenties van een hoger niveau brengen ook lastigere vraagstukken met zich mee omtrent schaalbaarheid en technische haalbaarheid.
-Als voor elke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-11"><code>Dataverwerking</code></a> alle informatie wordt gelogd, dan kan dat problemen opleveren voor de hoeveelheid data en ook of het doenlijk is om de data te verwijderen als de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-4"><code>Betrokkene</code></a> daar om vraagt.</p>
+Als voor elke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-11"><code>Dataverwerking</code></a> alle informatie wordt gelogd, dan kan dat problemen opleveren voor de hoeveelheid data en ook of het doenlijk is om de data te verwijderen als de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-2"><code>Betrokkene</code></a> daar om vraagt.</p>
 <p>Tegelijkertijd is het laagste niveau van logging niet per definitie voldoende om de vereiste verantwoordelijkheid af te kunnen leggen.
 Dit hangt af van de situatie en de wettelijke bepalingen die verbonden zijn aan een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-12"><code>Dataverwerking</code></a>.
 Daarom is het van belang dat bij elke dataverwerking er wordt gekeken welk niveau van toepassing is, in plaats van een generiek niveau voor alle dataverwerkingen te bepalen.
@@ -1447,31 +1448,31 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
     <ul class="index">
     <li>
       <a class="index-term" href="#dfn-acties">Actie</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-applicaties">Applicatie</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-betrokkenen">Betrokkene</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-dataverwerkingen">Dataverwerking</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-detailniveaus">Detailniveaus</a> 
     <span class="print-only">§4.</span></li><li>
       <a class="index-term" href="#dfn-inzage">Inzage</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-logboeken">Logboek</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-logregel">Logregel</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-registers">Register</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-traces">Trace</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-verwerkers">Verwerker</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-verwerkingsactiviteiten">Verwerkingsactiviteit</a> 
-    <span class="print-only">§1.2</span></li><li>
+    <span class="print-only">§1.3</span></li><li>
       <a class="index-term" href="#dfn-verantwoordelijke">Verwerkingsverantwoordelijke</a> 
-    <span class="print-only">§1.2</span></li>
+    <span class="print-only">§1.3</span></li>
   </ul>
   </section><section id="index-defined-elsewhere">
     <div class="header-wrapper"><h3 id="a-2-begrippen-gedefinieerd-door-verwijzing"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
@@ -1485,6 +1486,8 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
     <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-avg">[AVG]</dt><dd>
       <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679"><cite>Algemene Verordening Gegevensbescherming</cite></a>.  Verordening (EU) 2016/679 van het Europees Parlement. 27 april 2016. URL: <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679">https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32016R0679</a>
+    </dd><dt id="bib-logboek-extensie-guideline">[logboek-extensie-guideline]</dt><dd>
+      <a href="https://logius-standaarden.github.io/logboek-extensie-template/"><cite>LDV Extensie Guideline</cite></a>.  Logius. URL: <a href="https://logius-standaarden.github.io/logboek-extensie-template/">https://logius-standaarden.github.io/logboek-extensie-template/</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
@@ -1498,8 +1501,8 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
     </dd></dl>
   </section><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="b-2-informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.2"></a></div>
-    <dl class="bibliography"><dt id="bib-logboek-extensie-guideline">[logboek-extensie-guideline]</dt><dd>
-      <a href="https://logius-standaarden.github.io/logboek-extensie-template/"><cite>LDV Extensie Guideline</cite></a>.  Logius. URL: <a href="https://logius-standaarden.github.io/logboek-extensie-template/">https://logius-standaarden.github.io/logboek-extensie-template/</a>
+    <dl class="bibliography"><dt id="bib-nen7513">[NEN7513]</dt><dd>
+      <a href="https://www.nen.nl/nen-7513-2024-nl-329182"><cite>Medische informatica - Logging - Vastleggen van acties op persoonlijke gezondheidsinformatie</cite></a>. Normcommissie Informatievoorziening in de zorg.  NEN. December 2024. URL: <a href="https://www.nen.nl/nen-7513-2024-nl-329182">https://www.nen.nl/nen-7513-2024-nl-329182</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
@@ -1512,7 +1515,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-acties-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> 
+      <a href="#ref-for-dfn-acties-1" title="§ 1.3 Terminologie">§ 1.3 Terminologie</a> 
     </li><li>
       <a href="#ref-for-dfn-acties-2" title="§ 3.2.2 Interface">§ 3.2.2 Interface</a> 
     </li>
@@ -1526,7 +1529,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-applicaties-1" title="§ 1.3 Algemene werking van de standaard">§ 1.3 Algemene werking van de standaard</a> 
+      <a href="#ref-for-dfn-applicaties-1" title="§ 1.4 Algemene werking van de standaard">§ 1.4 Algemene werking van de standaard</a> 
     </li><li>
       <a href="#ref-for-dfn-applicaties-2" title="§ 2.1 Context">§ 2.1 Context</a> 
     </li><li>
@@ -1544,11 +1547,9 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-betrokkenen-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> 
+      <a href="#ref-for-dfn-betrokkenen-1" title="§ 1.3 Terminologie">§ 1.3 Terminologie</a> 
     </li><li>
-      <a href="#ref-for-dfn-betrokkenen-2" title="§ 1.3.1 Extensies">§ 1.3.1 Extensies</a> <a href="#ref-for-dfn-betrokkenen-3" title="Reference 2">(2)</a> 
-    </li><li>
-      <a href="#ref-for-dfn-betrokkenen-4" title="§ 4.2 Implicaties van niveaus">§ 4.2 Implicaties van niveaus</a> 
+      <a href="#ref-for-dfn-betrokkenen-2" title="§ 4.2 Implicaties van niveaus">§ 4.2 Implicaties van niveaus</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-dataverwerkingen" aria-label="Links in this document to definition: Dataverwerking">
@@ -1560,9 +1561,9 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-dataverwerkingen-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> <a href="#ref-for-dfn-dataverwerkingen-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-dataverwerkingen-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-dataverwerkingen-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-dataverwerkingen-5" title="Reference 5">(5)</a> 
+      <a href="#ref-for-dfn-dataverwerkingen-1" title="§ 1.3 Terminologie">§ 1.3 Terminologie</a> <a href="#ref-for-dfn-dataverwerkingen-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-dataverwerkingen-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-dataverwerkingen-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-dataverwerkingen-5" title="Reference 5">(5)</a> 
     </li><li>
-      <a href="#ref-for-dfn-dataverwerkingen-6" title="§ 1.3 Algemene werking van de standaard">§ 1.3 Algemene werking van de standaard</a> 
+      <a href="#ref-for-dfn-dataverwerkingen-6" title="§ 1.4 Algemene werking van de standaard">§ 1.4 Algemene werking van de standaard</a> 
     </li><li>
       <a href="#ref-for-dfn-dataverwerkingen-7" title="§ 3.2.2 Interface">§ 3.2.2 Interface</a> 
     </li><li>
@@ -1662,7 +1663,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-verantwoordelijke-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> <a href="#ref-for-dfn-verantwoordelijke-2" title="Reference 2">(2)</a> 
+      <a href="#ref-for-dfn-verantwoordelijke-1" title="§ 1.3 Terminologie">§ 1.3 Terminologie</a> <a href="#ref-for-dfn-verantwoordelijke-2" title="Reference 2">(2)</a> 
     </li><li>
       <a href="#ref-for-dfn-verantwoordelijke-3" title="§ 2.3.1 Vastlegging door Verantwoordelijke">§ 2.3.1 Vastlegging door Verantwoordelijke</a> 
     </li>
@@ -1688,7 +1689,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-verwerkingsactiviteiten-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> 
+      <a href="#ref-for-dfn-verwerkingsactiviteiten-1" title="§ 1.3 Terminologie">§ 1.3 Terminologie</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-detailniveaus" aria-label="Links in this document to definition: Detailniveaus">
