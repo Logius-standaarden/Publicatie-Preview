@@ -1000,7 +1000,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">October 20, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">October 21, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1675,7 +1675,7 @@ An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, s
 
 </section><section id="dynamic-registration"><div class="header-wrapper"><h4 id="x2-1-3-dynamic-registration"><bdi class="secno">2.1.3 </bdi>Dynamic Registration</h4><a class="self-link" href="#dynamic-registration" aria-label="Permalink for Section 2.1.3"></a></div>
 <p>Dynamic Registration allows for authorized Clients to on-board programmatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers <em class="rfc2119">MUST</em> support dynamic client registration,
-and clients <em class="rfc2119">MAY</em> register using the [Dynamic Client Registration Protocol] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] for authorization code grant types. Clients <em class="rfc2119">MUST NOT</em> dynamically register for the client credentials grant type. Authorization servers <em class="rfc2119">MAY</em> limit the scopes available to dynamically registered clients.</p>
+and clients <em class="rfc2119">MAY</em> register using the [Dynamic Client Registration Protocol] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] for authorization code grant types.S Authorization servers <em class="rfc2119">MAY</em> limit the scopes available to dynamically registered clients.</p>
 <p>Authorization servers <em class="rfc2119">MAY</em> protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers <em class="rfc2119">MAY</em> accept signed software statements as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7591" title="OAuth 2.0 Dynamic Client Registration Protocol">rfc7591</a></cite>] issued 
 to client software developers from a trusted registration entity. The software statement can be used to tie together many instances of the same client software that will be run, dynamically registered, and authorized separately at runtime. The software statement <em class="rfc2119">MUST</em> include the following client metadata parameters:</p>
 <dl>
