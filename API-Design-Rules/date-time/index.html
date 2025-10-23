@@ -1343,6 +1343,14 @@ https://api.example.org/v1/vergunningen/d285e05c-6b01-45c3-92d8-5e19a946b66f</pr
 </div>
 
 </section><section id="date-and-time"><div class="header-wrapper"><h3 id="x2-3-date-and-time"><bdi class="secno">2.3 </bdi>Date and time</h3><a class="self-link" href="#date-and-time" aria-label="Permalink for Section 2.3"></a></div>
+<p>Handling date and time is tricky and can lead to confusion among clients. The date-time rules remove ambiguity and provide clarity in the API contract between servers and clients.</p>
+<aside class="example" id="example-8"><div class="marker">
+    <a class="self-link" href="#example-8">Example<bdi> 8</bdi></a>
+  </div>
+   <p>A child is born on March 20th 2025 in The Netherlands. If a client sends a request with value <code>2025-03-20T00:00:00+01:00</code>, timezone conversion would result in <code>2025-03-19T23:00:00Z</code>. When the client receives this value in a response and incorrectly converts it to a date (by removing the time portion), this would result in <code>2025-03-19</code>.
+   </p><p>Ambiguous date and time handling can therefore lead to misinterpretation and changes of days/months/years depending on which component performs which incorrect conversion. Clients could incorrectly remove a time portion from a datetime value if the value should have been a date in the first place. By specifying which formats are allowed in which fields, the odds of invalid conversion are reduced.
+</p></aside>
+
 <div class="rule" id="/core/date-time/format" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
    <p class="rulelab"><a href="#/core/date-time/format">/core/date-time/format</a>: Use standard format for date, datetime and time</p>
    <dl>
@@ -1410,14 +1418,6 @@ https://api.example.org/v1/vergunningen/d285e05c-6b01-45c3-92d8-5e19a946b66f</pr
       </p></dd>
    </dl>
 </div>
-
-<p>Handling date and time is tricky and can lead to confusion among clients. The date-time rules remove ambiguity and provide clarity in the API contract between servers and clients.</p>
-<aside class="example" id="example-8"><div class="marker">
-    <a class="self-link" href="#example-8">Example<bdi> 8</bdi></a>
-  </div>
-   <p>A child is born on March 20th 2025 in The Netherlands. If a client sends a request with value <code>2025-03-20T00:00:00+01:00</code>, timezone conversion would result in <code>2025-03-19T23:00:00Z</code>. When the client receives this value in a response and incorrectly converts it to a date (by removing the time portion), this would result in <code>2025-03-19</code>.
-   </p><p>Ambiguous date and time handling can therefore lead to misinterpretation and changes of days/months/years depending on which component performs which incorrect conversion. Clients could incorrectly remove a time portion from a datetime value if the value should have been a date in the first place. By specifying which formats are allowed in which fields, the odds of invalid conversion are reduced.
-</p></aside>
 
 </section><section id="http-methods"><div class="header-wrapper"><h3 id="x2-4-http-methods"><bdi class="secno">2.4 </bdi>HTTP methods</h3><a class="self-link" href="#http-methods" aria-label="Permalink for Section 2.4"></a></div>
 <p>Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9110" title="HTTP Semantics">rfc9110</a></cite>].</p>
