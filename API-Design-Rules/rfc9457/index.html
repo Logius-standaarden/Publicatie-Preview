@@ -1656,7 +1656,7 @@ https://api.example.org/v1/comments/456</pre>
     <dt>How to test</dt>
     <dd>
       Verify that operations accepting query parameters and/or a request body contain a response with status code <code>400</code>.
-    </dd>
+    This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Ferror%2Dhandling%2Finvalid%2Dinput">linter configuration</a>.</dd>
   </dl>
 </div>
 
@@ -2423,6 +2423,23 @@ This avoids XXE-attack vectors for example.</li>
               <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
               <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
               <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+
+  <span class="hljs-comment">#/core/error-handling/invalid-input</span>
+  <span class="hljs-attr">nlgov:problem-invalid-input:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">message:</span> <span class="hljs-string">"Endpoints that have parameters must be able to return a 400 response"</span>
+    <span class="hljs-attr">given:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">$.paths..[?(</span> <span class="hljs-string">@property.match(/(get)|(put)|(post)/)</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@.parameters</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@.parameters.length</span> <span class="hljs-string">&gt;</span> <span class="hljs-number">0</span> <span class="hljs-string">)]</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">schema:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">responses:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">required:</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">"400"</span>
 
   <span class="hljs-comment">#/core/error-handling/bad-request</span>
   <span class="hljs-attr">nlgov:problem-schema-members-bad-request:</span>
