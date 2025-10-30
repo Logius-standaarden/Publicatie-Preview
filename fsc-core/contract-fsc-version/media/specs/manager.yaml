@@ -501,7 +501,7 @@ components:
       type: object
       properties:
         fsc_version:
-          description: The version of the FSC specification that the Contract adheres to.  
+          description: The version of the FSC specification that this Contract adheres to.  
           type: string
           example: 1.0.0
         iv:
