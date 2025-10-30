@@ -1009,7 +1009,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#the-core-set-of-design-rules"><bdi class="secno">2. </bdi>The core set of Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2.1 </bdi>Summary</a></li><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">2.2 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">2.3 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">2.4 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">2.5 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">2.6 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">2.7 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">2.8 </bdi>Versioning</a></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">2.9 </bdi>Transport Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-level-security"><bdi class="secno">2.9.1 </bdi>HTTP-level Security</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">2.9.2 </bdi>Browser-based applications</a></li><li class="tocline"><a class="tocxref" href="#validate-content-types"><bdi class="secno">2.9.3 </bdi>Validate content types</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geospatial"><bdi class="secno">2.10 </bdi>Geospatial</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">3. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#spectral-linter-configuration"><bdi class="secno">A. </bdi>Spectral linter configuration</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav><section class="notoc introductory" id="conformance"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#goal"><bdi class="secno">1.1 </bdi>Goal</a></li><li class="tocline"><a class="tocxref" href="#status"><bdi class="secno">1.2 </bdi>Status</a></li><li class="tocline"><a class="tocxref" href="#authors"><bdi class="secno">1.3 </bdi>Authors</a></li><li class="tocline"><a class="tocxref" href="#reading-guide"><bdi class="secno">1.4 </bdi>Reading Guide</a></li><li class="tocline"><a class="tocxref" href="#extensions"><bdi class="secno">1.5 </bdi>Extensions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#the-core-set-of-design-rules"><bdi class="secno">2. </bdi>The core set of Design Rules</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary"><bdi class="secno">2.1 </bdi>Summary</a></li><li class="tocline"><a class="tocxref" href="#resources"><bdi class="secno">2.2 </bdi>Resources</a></li><li class="tocline"><a class="tocxref" href="#http-methods"><bdi class="secno">2.3 </bdi>HTTP methods</a></li><li class="tocline"><a class="tocxref" href="#statelessness"><bdi class="secno">2.4 </bdi>Statelessness</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">2.5 </bdi>Relationships</a></li><li class="tocline"><a class="tocxref" href="#operations"><bdi class="secno">2.6 </bdi>Operations</a></li><li class="tocline"><a class="tocxref" href="#error-handling"><bdi class="secno">2.7 </bdi>Error handling</a></li><li class="tocline"><a class="tocxref" href="#documentation"><bdi class="secno">2.8 </bdi>Documentation</a></li><li class="tocline"><a class="tocxref" href="#versioning"><bdi class="secno">2.9 </bdi>Versioning</a></li><li class="tocline"><a class="tocxref" href="#transport-security"><bdi class="secno">2.10 </bdi>Transport Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-level-security"><bdi class="secno">2.10.1 </bdi>HTTP-level Security</a></li><li class="tocline"><a class="tocxref" href="#browser-based-applications"><bdi class="secno">2.10.2 </bdi>Browser-based applications</a></li><li class="tocline"><a class="tocxref" href="#validate-content-types"><bdi class="secno">2.10.3 </bdi>Validate content types</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geospatial"><bdi class="secno">2.11 </bdi>Geospatial</a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">3. </bdi>Glossary</a></li><li class="tocline"><a class="tocxref" href="#spectral-linter-configuration"><bdi class="secno">A. </bdi>Spectral linter configuration</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav><section class="notoc introductory" id="conformance"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
         <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
@@ -1120,7 +1120,7 @@ In addition to this (normative) document, separate modules are being written to 
 </aside></div></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x2-the-core-set-of-design-rules"><bdi class="secno">2. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 2."></a></div>
 <section id="summary"><div class="header-wrapper"><h3 id="x2-1-summary"><bdi class="secno">2.1 </bdi>Summary</h3><a class="self-link" href="#summary" aria-label="Permalink for Section 2.1"></a></div>
-<div id="design-rule-summary">Design rules are technical rules, which should be tested automatically, and functional rules, which should be considered when designing and building the API.<h3 id="list-of-technical-rules">List of technical rules</h3><ul><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/problem-details">/core/problem-details</a>: Include problem details with error responses</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in all API responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul><h3 id="list-of-functional-rules">List of functional rules</h3><ul><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul></div>
+<div id="design-rule-summary">Design rules are technical rules, which should be tested automatically, and functional rules, which should be considered when designing and building the API.<h3 id="list-of-technical-rules">List of technical rules</h3><ul><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/problem-details">/core/problem-details</a>: Use problem details for error responses</li><li><a href="#/core/invalid-input">/core/invalid-input</a>: Use status code 400 for invalid input</li><li><a href="#/core/problem-bad-request">/core/problem-bad-request</a>: Add specific errors for bad-request responses</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in all API responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul><h3 id="list-of-functional-rules">List of functional rules</h3><ul><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul></div>
 
 </section><section id="resources"><div class="header-wrapper"><h3 id="x2-2-resources"><bdi class="secno">2.2 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 2.2"></a></div>
 <p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is an abstraction of a conceptual entity, identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a>. It may correspond to anything from a physical object (e.g. a building or a person) to an abstract concept (e.g. a permit, an event or today's weather). Although a resource is not tied to any specific exchange format, its current state can be transferred to clients through one or more representations, such as JSON or XML.</p>
@@ -1609,7 +1609,135 @@ https://api.example.org/v1/comments/456</pre>
    </dl>
 </div>
 
-</section><section id="documentation"><div class="header-wrapper"><h3 id="x2-7-documentation"><bdi class="secno">2.7 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 2.7"></a></div>
+</section><section id="error-handling"><div class="header-wrapper"><h3 id="x2-7-error-handling"><bdi class="secno">2.7 </bdi>Error handling</h3><a class="self-link" href="#error-handling" aria-label="Permalink for Section 2.7"></a></div>
+<div class="rule" id="/core/problem-details" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+   <p class="rulelab"><a href="#/core/problem-details">/core/problem-details</a>: Use problem details for error responses</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         <p>Error responses with HTTP status codes <code>4xx</code> or <code>5xx</code> <em class="rfc2119">MUST</em> use either <code>application/problem+json</code> or <code>application/problem+xml</code> as the <code>Content-Type</code> header, and the response body <em class="rfc2119">MUST</em> conform to the structure defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9457" title="Problem Details for HTTP APIs">rfc9457</a></cite>].
+         </p><p>The following fields <em class="rfc2119">MUST</em> be present: <code>status</code>, <code>title</code>, and <code>detail</code>.
+      </p></dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p>Providing problem details in a machine-readable format aids automation and debugging. By using a common error format, APIs do not need to define their own or misuse existing HTTP status codes.</p>
+         <div class="example">
+            The following example shows the head and body of a detailed error response.
+            <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">404</span> Not Found
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+json</code><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"status"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">404</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Resource Not Found"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"detail"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"No building found with id 12345."</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+         </div>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         Verify all responses with status code <code>4xx</code> or <code>5xx</code> have <code>Content-Type</code> set to <code>application/problem+json</code> or <code>application/problem+xml</code> and contain the fields <code>status</code>, <code>title</code>, and <code>detail</code>. Optional fields are <code>type</code> and <code>instance</code>. Verify no additional fields are present.
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fproblem%2Ddetails">linter configuration</a>.</dd>
+   </dl>
+</div>
+
+<div class="rule" id="/core/invalid-input" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+  <p class="rulelab"><a href="#/core/invalid-input">/core/invalid-input</a>: Use status code 400 for invalid input</p>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      <p>API requests containing invalid input <em class="rfc2119">MUST</em> result in HTTP status code <code>400 Bad Request</code>. Invalid input includes syntax errors, missing or invalid query parameters and schema violations for the request payload.</p>
+    </dd>
+    <dt>Rationale</dt>
+    <dd>
+      <p>The semantics of status code <code>400</code> ("the server cannot or will not process the request due to something that is perceived to be a client error") match validation failures more closely than status code <code>422</code>, which historically originates from WebDAV and introduces no added interoperability benefit.</p>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      Verify that operations accepting query parameters and/or a request body contain a response with status code <code>400</code>.
+    </dd>
+  </dl>
+</div>
+
+<div class="rule" id="/core/problem-bad-request" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+  <p class="rulelab"><a href="#/core/problem-bad-request">/core/problem-bad-request</a>: Add specific errors for bad-request responses</p>
+  <dl>
+    <dt>Statement</dt>
+    <dd>
+      <p>Problem details with status code <code>400</code> (Bad Request) <em class="rfc2119">MUST</em> include an additional member <code>errors</code> containing an ordered list of validation error objects, as specified below.</p>
+      <p>Each error object <em class="rfc2119">MUST</em> contain <code>in</code> and <code>detail</code> members, and <em class="rfc2119">MAY</em> optionally contain <code>location</code> and <code>code</code> members.</p>
+      <ul>
+        <li><strong><code>in</code></strong> - where the error occurs: <code>body</code> or <code>query</code>.</li>
+        <li><strong><code>location</code></strong> (optional) - a structured locator for the offending value:
+          <ul>
+            <li>For JSON request bodies: an object with a <code>pointer</code> property containing a JSON Pointer [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6901" title="JavaScript Object Notation (JSON) Pointer">rfc6901</a></cite>] expression pointing to the value.</li>
+            <li>For XML request bodies: an element with a <code>path</code> attribute containing an absolute XPath v3.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-xpath-31" title="XML Path Language (XPath) 3.1">xpath-31</a></cite>] expression pointing to the value.</li>
+            <li>For query parameters: an object with a <code>name</code> property (the parameter name). When the same name appears multiple times, include an <code>index</code> property, containing a zero-based index position.</li>
+          </ul>
+          For <code>body</code> errors, the <code>location</code> member may be omitted, in case the error refers to the body as a whole (e.g. syntax errors).
+        </li>
+        <li><strong><code>code</code></strong> (optional) - a short, stable machine-readable code as a rule identifier (e.g. <code>date.format</code>). If a <code>type</code> URI is provided on the message-level, dereferencing this URI <em class="rfc2119">SHOULD</em> result in a page describing all possible <code>code</code> values including a description for each value.</li>
+        <li><strong><code>detail</code></strong> - a human-readable message describing the violation.</li>
+      </ul>
+      <div class="example">
+        <p>JSON example:</p>
+        <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">400</span> Bad Request
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+json</code><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"status"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">400</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Request validation failed"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">"errors"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"in"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"body"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"location"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"pointer"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/foo[0]/bar"</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"code"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"date.format"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"detail"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"must be ISO 8601"</span>
+      <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"in"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"query"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"location"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"foo"</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">"index"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"code"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"date.format"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"detail"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"must be ISO 8601"</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span></code></pre>
+      </div>
+      <div class="example">
+        <p>XML example:</p>
+        <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">400</span> Bad Request
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+xml</code><code class="xml hljs" aria-busy="false"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span>?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">problem</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:ietf:rfc:7807"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">status</span>&gt;</span>400<span class="hljs-tag">&lt;/<span class="hljs-name">status</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Request validation failed<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">errors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">error</span> <span class="hljs-attr">in</span>=<span class="hljs-string">"body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">location</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/foo[1]/bar/text()"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>date.format<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>must be ISO 8601<span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">error</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">error</span> <span class="hljs-attr">in</span>=<span class="hljs-string">"query"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">location</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"foo"</span> <span class="hljs-attr">index</span>=<span class="hljs-string">"1"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>date.format<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">detail</span>&gt;</span>must be ISO 8601<span class="hljs-tag">&lt;/<span class="hljs-name">detail</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">error</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">errors</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">problem</span>&gt;</span></code></pre>
+      </div>
+    </dd>
+    <dt>Rationale</dt>
+    <dd>
+      <p>Having a single, consistent <code>errors</code> structure makes validation issues predictable for clients, while relying on established locators using universal standards (JSON Pointer, XPath).</p>
+    </dd>
+    <dt>How to test</dt>
+    <dd>
+      Verify that content schemas for media types <code>application/problem+json</code> or <code>application/problem+xml</code> as part of responses with status 400, contain a required <code>errors</code> member conforming to the requirements above.
+    </dd>
+  </dl>
+</div>
+
+</section><section id="documentation"><div class="header-wrapper"><h3 id="x2-8-documentation"><bdi class="secno">2.8 </bdi>Documentation</h3><a class="self-link" href="#documentation" aria-label="Permalink for Section 2.8"></a></div>
 <p>An API is as good as the accompanying documentation. The documentation has to be easily findable, searchable and publicly accessible. Most developers will first read the documentation before they start implementing. Hiding the technical documentation in PDF documents and/or behind a login creates a barrier for both developers and search engines.</p>
 <p><span id="api-16"></span></p>
 <div class="rule" id="/core/doc-openapi" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
@@ -1708,36 +1836,7 @@ https://api.example.org/v1/comments/456</pre>
    </dl>
 </div>
 
-<div class="rule" id="/core/problem-details" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-   <p class="rulelab"><a href="#/core/problem-details">/core/problem-details</a>: Include problem details with error responses</p>
-   <dl>
-      <dt>Statement</dt>
-      <dd>
-         <p>Error responses with HTTP status codes <code>4xx</code> or <code>5xx</code> <em class="rfc2119">MUST</em> use either <code>application/problem+json</code> or <code>application/problem+xml</code> as the <code>Content-Type</code> header, and the response body <em class="rfc2119">MUST</em> conform to the structure defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc9457" title="Problem Details for HTTP APIs">rfc9457</a></cite>].
-         </p><p>The following fields <em class="rfc2119">MUST</em> be present: <code>status</code>, <code>title</code>, and <code>detail</code>.
-      </p></dd>
-      <dt>Rationale</dt>
-      <dd>
-         <p>Providing problem details in a machine-readable format aids automation and debugging. By using a common error format, APIs do not need to define their own or misuse existing HTTP status codes.</p>
-         <div class="example">
-            The following example shows the head and body of a detailed error response.
-            <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">404</span> Not Found
-<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+json</code><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"title"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Resource Not Found"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"status"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">404</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"detail"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"No building found with id 12345."</span>
-<span class="hljs-punctuation">}</span>
-</code></pre>
-         </div>
-      </dd>
-      <dt>How to test</dt>
-      <dd>
-         Verify all responses with status code <code>4xx</code> or <code>5xx</code> have <code>Content-Type</code> set to <code>application/problem+json</code> or <code>application/problem+xml</code> and contain the fields <code>status</code>, <code>title</code>, and <code>detail</code>. Optional fields are <code>type</code> and <code>instance</code>. Verify no additional fields are present.
-      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fproblem%2Ddetails">linter configuration</a>.</dd>
-   </dl>
-</div>
-
-</section><section id="versioning"><div class="header-wrapper"><h3 id="x2-8-versioning"><bdi class="secno">2.8 </bdi>Versioning</h3><a class="self-link" href="#versioning" aria-label="Permalink for Section 2.8"></a></div>
+</section><section id="versioning"><div class="header-wrapper"><h3 id="x2-9-versioning"><bdi class="secno">2.9 </bdi>Versioning</h3><a class="self-link" href="#versioning" aria-label="Permalink for Section 2.9"></a></div>
 <p>Changes in APIs are inevitable. APIs should therefore always be versioned, facilitating the transition between changes.</p>
 <p><span id="api-18"></span></p>
 <div class="rule" id="/core/deprecation-schedule" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
@@ -1861,7 +1960,7 @@ https://api.example.org/v1/comments/456</pre>
    </dl>
 </div>
 
-</section><section id="transport-security"><div class="header-wrapper"><h3 id="x2-9-transport-security"><bdi class="secno">2.9 </bdi>Transport Security</h3><a class="self-link" href="#transport-security" aria-label="Permalink for Section 2.9"></a></div>
+</section><section id="transport-security"><div class="header-wrapper"><h3 id="x2-10-transport-security"><bdi class="secno">2.10 </bdi>Transport Security</h3><a class="self-link" href="#transport-security" aria-label="Permalink for Section 2.10"></a></div>
 <p>This section describes security principles, concepts and technologies to apply when working with APIs.
 Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API (which includes the services and data provided thereby).
 The <a href="https://docs.geostandaarden.nl/api/API-Strategie-architectuur/">architecture section of the API strategy</a> contains architecture patterns for implementing transport security.</p>
@@ -1905,7 +2004,7 @@ Effectively, only security standards directly applicable to interactions are dis
    </dl>
 </div>
 
-<section id="http-level-security"><div class="header-wrapper"><h4 id="x2-9-1-http-level-security"><bdi class="secno">2.9.1 </bdi>HTTP-level Security</h4><a class="self-link" href="#http-level-security" aria-label="Permalink for Section 2.9.1"></a></div>
+<section id="http-level-security"><div class="header-wrapper"><h4 id="x2-10-1-http-level-security"><bdi class="secno">2.10.1 </bdi>HTTP-level Security</h4><a class="self-link" href="#http-level-security" aria-label="Permalink for Section 2.10.1"></a></div>
 <p>The guidelines and principles defined in this section are client agnostic.
 When implementing a client agnostic API, one <em class="rfc2119">SHOULD</em> at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API.
 When implementing an API for a specific client it may be possible to limit measures as long as it ensures secure access for this specific client.
@@ -2033,7 +2132,7 @@ For outbound filtering, the main concern is leaking of information.</p>
    </dl>
 </div>
 
-</section><section id="browser-based-applications"><div class="header-wrapper"><h4 id="x2-9-2-browser-based-applications"><bdi class="secno">2.9.2 </bdi>Browser-based applications</h4><a class="self-link" href="#browser-based-applications" aria-label="Permalink for Section 2.9.2"></a></div>
+</section><section id="browser-based-applications"><div class="header-wrapper"><h4 id="x2-10-2-browser-based-applications"><bdi class="secno">2.10.2 </bdi>Browser-based applications</h4><a class="self-link" href="#browser-based-applications" aria-label="Permalink for Section 2.10.2"></a></div>
 <p>A specific subclass of clients are browser-based applications, that require the presence of particular security controls to facilitate secure implementation.
 Clients in this class are also known as <em>user-agent-based</em> or <em>single-page-applications</em> (SPA).
 All browser-based applications <em class="rfc2119">SHOULD</em> follow the best practices specified in <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps-22">OAuth 2.0 for Browser-Based Apps</a>.
@@ -2045,7 +2144,7 @@ Effectively, these are not different from regular web-application for this secur
 <li>JavaScript applications without a backend; these clients are considered public clients, and are potentially more vulnerable to several types of attacks, including Cross-Site Scripting (XSS), Cross Site Request Forgery (CSRF) and OAuth token theft.
 In order to support these clients, the Cross-Origin Resource Sharing (CORS) policy mentioned above is critical and <em class="rfc2119">MUST</em> be supported.</li>
 </ul>
-</section><section id="validate-content-types"><div class="header-wrapper"><h4 id="x2-9-3-validate-content-types"><bdi class="secno">2.9.3 </bdi>Validate content types</h4><a class="self-link" href="#validate-content-types" aria-label="Permalink for Section 2.9.3"></a></div>
+</section><section id="validate-content-types"><div class="header-wrapper"><h4 id="x2-10-3-validate-content-types"><bdi class="secno">2.10.3 </bdi>Validate content types</h4><a class="self-link" href="#validate-content-types" aria-label="Permalink for Section 2.10.3"></a></div>
 <p>A REST request or response body <em class="rfc2119">SHOULD</em> match the intended content type in the header.
 Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.</p>
 <ul>
@@ -2062,7 +2161,7 @@ This avoids XXE-attack vectors for example.</li>
 <ul>
 <li>Ensure the intended Content-Type headers are sent in the response, matching the body content, e.g. <code>application/json</code> and not <code>application/javascript</code>.</li>
 </ul>
-</section></section><section id="geospatial"><div class="header-wrapper"><h3 id="x2-10-geospatial"><bdi class="secno">2.10 </bdi>Geospatial</h3><a class="self-link" href="#geospatial" aria-label="Permalink for Section 2.10"></a></div>
+</section></section><section id="geospatial"><div class="header-wrapper"><h3 id="x2-11-geospatial"><bdi class="secno">2.11 </bdi>Geospatial</h3><a class="self-link" href="#geospatial" aria-label="Permalink for Section 2.11"></a></div>
 <p>Geospatial data refers to information that is associated with a physical location on Earth, often expressed by its 2D/3D coordinates.</p>
 <div class="rule" id="/core/geospatial" data-type="functional"><div title="This is a functional design rule and hence cannot be tested automatically." class="flag">functional</div>
   <p class="rulelab"><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</p>
@@ -2356,6 +2455,8 @@ This avoids XXE-attack vectors for example.</li>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
     </dd><dt id="bib-rfc3986">[rfc3986]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>. T. Berners-Lee; R. Fielding; L. Masinter.  IETF. January 2005. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
+    </dd><dt id="bib-rfc6901">[rfc6901]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc6901"><cite>JavaScript Object Notation (JSON) Pointer</cite></a>. P. Bryan, Ed.; K. Zyp; M. Nottingham, Ed. IETF. April 2013. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6901">https://www.rfc-editor.org/rfc/rfc6901</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
     </dd><dt id="bib-rfc8252">[rfc8252]</dt><dd>
@@ -2368,6 +2469,8 @@ This avoids XXE-attack vectors for example.</li>
       <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
     </dd><dt id="bib-sri">[SRI]</dt><dd>
       <a href="https://www.w3.org/TR/SRI/"><cite>Subresource Integrity</cite></a>. Devdatta Akhawe; Frederik Braun; Francois Marier; Joel Weinberger.  W3C. 23 June 2016. W3C Recommendation. URL: <a href="https://www.w3.org/TR/SRI/">https://www.w3.org/TR/SRI/</a>
+    </dd><dt id="bib-xpath-31">[xpath-31]</dt><dd>
+      <a href="https://www.w3.org/TR/xpath-31/"><cite>XML Path Language (XPath) 3.1</cite></a>. Jonathan Robie; Michael Dyck; Josh Spiegel.  W3C. 21 March 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xpath-31/">https://www.w3.org/TR/xpath-31/</a>
     </dd></dl>
   </section><section id="informative-references">
     <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
@@ -2429,9 +2532,9 @@ This avoids XXE-attack vectors for example.</li>
     </li><li>
       <a href="#ref-for-dfn-uri-9" title="§ 2.5 Relationships">§ 2.5 Relationships</a> 
     </li><li>
-      <a href="#ref-for-dfn-uri-10" title="§ 2.7 Documentation">§ 2.7 Documentation</a> 
+      <a href="#ref-for-dfn-uri-10" title="§ 2.8 Documentation">§ 2.8 Documentation</a> 
     </li><li>
-      <a href="#ref-for-dfn-uri-11" title="§ 2.8 Versioning">§ 2.8 Versioning</a> <a href="#ref-for-dfn-uri-12" title="Reference 2">(2)</a> <a href="#ref-for-dfn-uri-13" title="Reference 3">(3)</a> 
+      <a href="#ref-for-dfn-uri-11" title="§ 2.9 Versioning">§ 2.9 Versioning</a> <a href="#ref-for-dfn-uri-12" title="Reference 2">(2)</a> <a href="#ref-for-dfn-uri-13" title="Reference 3">(3)</a> 
     </li><li>
       <a href="#ref-for-dfn-uri-14" title="§ 3. Glossary">§ 3. Glossary</a> 
     </li>
