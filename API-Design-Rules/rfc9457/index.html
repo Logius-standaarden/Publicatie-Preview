@@ -1120,7 +1120,7 @@ In addition to this (normative) document, separate modules are being written to 
 </aside></div></section></section>
   <section id="the-core-set-of-design-rules"><div class="header-wrapper"><h2 id="x2-the-core-set-of-design-rules"><bdi class="secno">2. </bdi>The core set of Design Rules</h2><a class="self-link" href="#the-core-set-of-design-rules" aria-label="Permalink for Section 2."></a></div>
 <section id="summary"><div class="header-wrapper"><h3 id="x2-1-summary"><bdi class="secno">2.1 </bdi>Summary</h3><a class="self-link" href="#summary" aria-label="Permalink for Section 2.1"></a></div>
-<div id="design-rule-summary">Design rules are technical rules, which should be tested automatically, and functional rules, which should be considered when designing and building the API.<h3 id="list-of-technical-rules">List of technical rules</h3><ul><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/problem-details">/core/problem-details</a>: Use problem details for error responses</li><li><a href="#/core/invalid-input">/core/invalid-input</a>: Use status code 400 for invalid input</li><li><a href="#/core/problem-bad-request">/core/problem-bad-request</a>: Add specific errors for bad-request responses</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in all API responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul><h3 id="list-of-functional-rules">List of functional rules</h3><ul><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul></div>
+<div id="design-rule-summary">Design rules are technical rules, which should be tested automatically, and functional rules, which should be considered when designing and building the API.<h3 id="list-of-technical-rules">List of technical rules</h3><ul><li><a href="#/core/no-trailing-slash">/core/no-trailing-slash</a>: Leave off trailing slashes from URIs</li><li><a href="#/core/path-segments-kebab-case">/core/path-segments-kebab-case</a>: Use kebab-case in path segments</li><li><a href="#/core/query-keys-camel-case">/core/query-keys-camel-case</a>: Use camelCase in query keys</li><li><a href="#/core/http-methods">/core/http-methods</a>: Only apply standard HTTP methods</li><li><a href="#/core/error-handling/problem-details">/core/error-handling/problem-details</a>: Use problem details for error responses</li><li><a href="#/core/error-handling/invalid-input">/core/error-handling/invalid-input</a>: Use status code 400 for invalid input</li><li><a href="#/core/error-handling/bad-request">/core/error-handling/bad-request</a>: Add specific errors for Bad Request responses</li><li><a href="#/core/doc-openapi">/core/doc-openapi</a>: Use OpenAPI Specification for documentation</li><li><a href="#/core/doc-openapi-contact">/core/doc-openapi-contact</a>: Document contact information for publicly available APIs</li><li><a href="#/core/publish-openapi">/core/publish-openapi</a>: Publish OAS document at a standard location in JSON-format</li><li><a href="#/core/uri-version">/core/uri-version</a>: Include the major version number in the URI</li><li><a href="#/core/semver">/core/semver</a>: Adhere to the Semantic Versioning model when releasing API changes</li><li><a href="#/core/version-header">/core/version-header</a>: Return the full version number in a response header</li><li><a href="#/core/transport/tls">/core/transport/tls</a>: Secure connections using TLS</li><li><a href="#/core/transport/security-headers">/core/transport/security-headers</a>: Use mandatory security headers in all API responses</li><li><a href="#/core/transport/cors">/core/transport/cors</a>: Use CORS to control access</li></ul><h3 id="list-of-functional-rules">List of functional rules</h3><ul><li><a href="#/core/naming-resources">/core/naming-resources</a>: Use nouns to name resources</li><li><a href="#/core/naming-collections">/core/naming-collections</a>: Use plural nouns to name collection resources</li><li><a href="#/core/interface-language">/core/interface-language</a>: Define interfaces in Dutch unless there is an official English glossary available</li><li><a href="#/core/hide-implementation">/core/hide-implementation</a>: Hide irrelevant implementation details</li><li><a href="#/core/http-safety">/core/http-safety</a>: Adhere to HTTP safety and idempotency semantics for operations</li><li><a href="#/core/http-response-code">/core/http-response-code</a>: Adhere to HTTP status codes to convey appropriate errors</li><li><a href="#/core/stateless">/core/stateless</a>: Do not maintain session state on the server</li><li><a href="#/core/nested-child">/core/nested-child</a>: Use nested URIs for child resources</li><li><a href="#/core/resource-operations">/core/resource-operations</a>: Model resource operations as a sub-resource or dedicated resource</li><li><a href="#/core/doc-language">/core/doc-language</a>: Publish documentation in Dutch unless there is existing documentation in English</li><li><a href="#/core/deprecation-schedule">/core/deprecation-schedule</a>: Include a deprecation schedule when deprecating features or versions</li><li><a href="#/core/transition-period">/core/transition-period</a>: Schedule a fixed transition period for a new major API version</li><li><a href="#/core/changelog">/core/changelog</a>: Publish a changelog for API changes between versions</li><li><a href="#/core/transport/no-sensitive-uris">/core/transport/no-sensitive-uris</a>: No sensitive information in URIs</li><li><a href="#/core/geospatial">/core/geospatial</a>: Apply the geospatial module for geospatial data</li></ul></div>
 
 </section><section id="resources"><div class="header-wrapper"><h3 id="x2-2-resources"><bdi class="secno">2.2 </bdi>Resources</h3><a class="self-link" href="#resources" aria-label="Permalink for Section 2.2"></a></div>
 <p>The REST architectural style is centered around the concept of a <a data-link-type="dfn|abstract-op" href="#dfn-resource" class="internalDFN" id="ref-for-dfn-resource-1">resource</a>. A resource is an abstraction of a conceptual entity, identified by a globally unique <a data-link-type="dfn|abstract-op" href="#dfn-uri" class="internalDFN" id="ref-for-dfn-uri-1">URI</a>. It may correspond to anything from a physical object (e.g. a building or a person) to an abstract concept (e.g. a permit, an event or today's weather). Although a resource is not tied to any specific exchange format, its current state can be transferred to clients through one or more representations, such as JSON or XML.</p>
@@ -1610,8 +1610,8 @@ https://api.example.org/v1/comments/456</pre>
 </div>
 
 </section><section id="error-handling"><div class="header-wrapper"><h3 id="x2-7-error-handling"><bdi class="secno">2.7 </bdi>Error handling</h3><a class="self-link" href="#error-handling" aria-label="Permalink for Section 2.7"></a></div>
-<div class="rule" id="/core/problem-details" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-   <p class="rulelab"><a href="#/core/problem-details">/core/problem-details</a>: Use problem details for error responses</p>
+<div class="rule" id="/core/error-handling/problem-details" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+   <p class="rulelab"><a href="#/core/error-handling/problem-details">/core/error-handling/problem-details</a>: Use problem details for error responses</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -1637,17 +1637,18 @@ https://api.example.org/v1/comments/456</pre>
       <dt>How to test</dt>
       <dd>
          Verify all responses with status code <code>4xx</code> or <code>5xx</code> have <code>Content-Type</code> set to <code>application/problem+json</code> or <code>application/problem+xml</code> and the body contains fields <code>status</code>, <code>title</code>, and <code>detail</code>.
-      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Fproblem%2Ddetails">linter configuration</a>.</dd>
+      This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Ferror%2Dhandling%2Fproblem%2Ddetails">linter configuration</a>.</dd>
    </dl>
 </div>
 
-<div class="rule" id="/core/invalid-input" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/invalid-input">/core/invalid-input</a>: Use status code 400 for invalid input</p>
+<div class="rule" id="/core/error-handling/invalid-input" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+  <p class="rulelab"><a href="#/core/error-handling/invalid-input">/core/error-handling/invalid-input</a>: Use status code 400 for invalid input</p>
   <dl>
     <dt>Statement</dt>
     <dd>
-      <p>API requests containing invalid input <em class="rfc2119">MUST</em> result in HTTP status code <code>400 Bad Request</code>. Invalid input includes syntax errors, missing or invalid query parameters and schema violations for the request payload.</p>
-    </dd>
+      <p>API requests containing invalid input <em class="rfc2119">MUST</em> result in HTTP status code <code>400</code> (Bad Request).
+      Invalid input includes syntax errors, missing or invalid query parameters and schema violations for the request payload.
+    </p></dd>
     <dt>Rationale</dt>
     <dd>
       <p>The semantics of status code <code>400</code> ("the server cannot or will not process the request due to something that is perceived to be a client error") match validation failures more closely than status code <code>422</code>, which historically originates from WebDAV and introduces no added interoperability benefit.</p>
@@ -1659,14 +1660,14 @@ https://api.example.org/v1/comments/456</pre>
   </dl>
 </div>
 
-<div class="rule" id="/core/problem-bad-request" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
-  <p class="rulelab"><a href="#/core/problem-bad-request">/core/problem-bad-request</a>: Add specific errors for bad-request responses</p>
+<div class="rule" id="/core/error-handling/bad-request" data-type="technical"><div title="This is a technical design rule and hence should be tested automatically." class="flag">technical</div>
+  <p class="rulelab"><a href="#/core/error-handling/bad-request">/core/error-handling/bad-request</a>: Add specific errors for Bad Request responses</p>
   <dl>
     <dt>Statement</dt>
     <dd>
-      <p>Problem details with status code <code>400</code> (Bad Request) <em class="rfc2119">MUST</em> include an additional member <code>errors</code> containing an ordered list of validation error objects, as specified below.</p>
-      <p>Each error object <em class="rfc2119">MUST</em> contain <code>in</code> and <code>detail</code> members, and <em class="rfc2119">MAY</em> optionally contain <code>location</code> and <code>code</code> members.</p>
-      <ul>
+      <p>Problem details with status code <code>400</code> (Bad Request) <em class="rfc2119">MUST</em> include an additional member <code>errors</code> containing an ordered list of validation error objects, as specified below.
+      </p><p>Each error object <em class="rfc2119">MUST</em> contain <code>in</code> and <code>detail</code> members, and <em class="rfc2119">MAY</em> optionally contain <code>location</code> and <code>code</code> members.
+      </p><ul>
         <li><strong><code>in</code></strong> - where the error occurs: <code>body</code> or <code>query</code>.</li>
          <li><strong><code>detail</code></strong> - a human-readable message describing the violation.</li>
         <li><strong><code>location</code></strong> (optional) - a structured locator for the offending value:
@@ -1682,7 +1683,6 @@ https://api.example.org/v1/comments/456</pre>
       <aside class="example" id="example-11"><div class="marker">
     <a class="self-link" href="#example-11">Example<bdi> 11</bdi></a>
   </div>
-        <p>JSON example:</p>
         <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">400</span> Bad Request
 <span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+json</code><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
     <span class="hljs-attr">"status"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">400</span><span class="hljs-punctuation">,</span>
@@ -1711,7 +1711,6 @@ https://api.example.org/v1/comments/456</pre>
       <aside class="example" id="example-12"><div class="marker">
     <a class="self-link" href="#example-12">Example<bdi> 12</bdi></a>
   </div>
-        <p>XML example:</p>
         <pre><code class="http hljs" aria-busy="false"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">400</span> Bad Request
 <span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/problem+xml</code><code class="xml hljs" aria-busy="false"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">problem</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:ietf:rfc:7807"</span>&gt;</span>
@@ -1738,8 +1737,8 @@ https://api.example.org/v1/comments/456</pre>
     </dd>
     <dt>How to test</dt>
     <dd>
-      Verify that content schemas for media types <code>application/problem+json</code> or <code>application/problem+xml</code> as part of responses with status 400, contain a required <code>errors</code> member conforming to the requirements above.
-    </dd>
+      Verify all responses with status code <code>400</code> contain a required <code>errors</code> member conforming to the requirements above.
+    This rule can be automatically checked and an example test is shown in the <a href="#:~:text=%23%2Fcore%2Ferror%2Dhandling%2Fbad%2Drequest">linter configuration</a>.</dd>
   </dl>
 </div>
 
@@ -2395,7 +2394,7 @@ This avoids XXE-attack vectors for example.</li>
       <span class="hljs-attr">functionOptions:</span>
         <span class="hljs-attr">match:</span> <span class="hljs-string">^https://.*</span>
 
-  <span class="hljs-comment">#/core/problem-details</span>
+  <span class="hljs-comment">#/core/error-handling/problem-details</span>
   <span class="hljs-attr">nlgov:use-problem-schema:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
     <span class="hljs-attr">message:</span> <span class="hljs-string">"The content type of an error response should be application/problem+json or application/problem+xml to match RFC 9457."</span>
@@ -2424,6 +2423,42 @@ This avoids XXE-attack vectors for example.</li>
               <span class="hljs-bullet">-</span> <span class="hljs-string">status</span>
               <span class="hljs-bullet">-</span> <span class="hljs-string">title</span>
               <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+
+  <span class="hljs-comment">#/core/error-handling/bad-request</span>
+  <span class="hljs-attr">nlgov:problem-schema-members-bad-request:</span>
+    <span class="hljs-attr">severity:</span> <span class="hljs-string">error</span>
+    <span class="hljs-attr">given:</span> <span class="hljs-string">$..[responses][?(@property</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">@property.match(400))].content[?(@property=="application/problem+json"</span> <span class="hljs-string">||</span> <span class="hljs-string">@property=="application/problem+xml")]..schema.properties</span>
+    <span class="hljs-attr">then:</span>
+      <span class="hljs-attr">function:</span> <span class="hljs-string">schema</span>
+      <span class="hljs-attr">functionOptions:</span>
+        <span class="hljs-attr">schema:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+          <span class="hljs-attr">properties:</span>
+            <span class="hljs-attr">errors:</span>
+              <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+              <span class="hljs-attr">properties:</span>
+                <span class="hljs-attr">properties:</span>
+                  <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+                  <span class="hljs-attr">properties:</span>
+                    <span class="hljs-attr">in:</span> {}
+                    <span class="hljs-attr">detail:</span> {}
+                    <span class="hljs-attr">location:</span>
+                      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+                      <span class="hljs-attr">properties:</span>
+                        <span class="hljs-attr">properties:</span>
+                          <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+                          <span class="hljs-attr">properties:</span>
+                            <span class="hljs-attr">pointer:</span> {}
+                            <span class="hljs-attr">name:</span> {}
+                            <span class="hljs-attr">index:</span> {}
+                          <span class="hljs-attr">additionalProperties:</span> <span class="hljs-literal">false</span>
+                    <span class="hljs-attr">code:</span> {}
+                  <span class="hljs-attr">required:</span>
+                    <span class="hljs-bullet">-</span> <span class="hljs-string">in</span>
+                    <span class="hljs-bullet">-</span> <span class="hljs-string">detail</span>
+                  <span class="hljs-attr">additionalProperties:</span> <span class="hljs-literal">false</span>
+          <span class="hljs-attr">required:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">errors</span>
 
   <span class="hljs-attr">nlgov:property-casing:</span>
     <span class="hljs-attr">severity:</span> <span class="hljs-string">warn</span>
