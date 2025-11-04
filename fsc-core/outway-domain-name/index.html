@@ -951,7 +951,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-09-08">October 31, 2025</time>
+      <time class="dt-published" datetime="2025-09-08">November 04, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1811,8 +1811,8 @@ The Manager is responsible for:</p>
 <li>The Manager is provided by a Peer with the same PeerID as specified in <code>grant.data.service.peer_id</code>.</li>
 <li>The Manager is provided by a Peer who has an Inway which is offering the Service specified in <code>grant.data.service.name</code>. </li>
 <li>The Peer ID specified by the X.509 certificate of the client requesting the access token matches the value of the field <code>grant.data.outway.peer_id</code>.</li>
-<li>The X.509 certificate provided by the client contains a public key with the same public key thumbprint  as specified in <code>grant.data.outway.public_key_thumbprint</code>. This validation should only be preformed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_PUBLIC_KEY_THUMBPRINT</code> </li>
-<li>The X.509 certificate provided by the client has a Subject Alternative Name(SAN) that matches the domain name specified in <code>grant.data.outway.domain_name</code>. This validation should only be preformed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_DOMAIN_NAME</code></li>
+<li>The X.509 certificate provided by the client contains a public key with the same public key thumbprint  as specified in <code>grant.data.outway.public_key_thumbprint</code>. This validation should only be performed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_PUBLIC_KEY_THUMBPRINT</code> </li>
+<li>The X.509 certificate provided by the client has a Subject Alternative Name (SAN) that matches the domain name specified in <code>grant.data.outway.domain_name</code>. This validation should only be performed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_DOMAIN_NAME</code></li>
 </ol>
 <p>The <code>cnf.x5t#S256</code> claim <strong><em class="rfc2119">MUST</em></strong> contain the certificate thumbprint of the X.509 certificate provided by the client requesting the token according to [section 3.1] of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].
 The <code>act</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Peer who is connecting to the Service on behalf of another Peer. I.e. the authorization to connect has been granted using a DelegatedServiceConnectionGrant.
