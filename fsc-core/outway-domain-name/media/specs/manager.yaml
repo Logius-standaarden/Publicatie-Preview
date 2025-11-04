@@ -706,7 +706,7 @@ components:
         - peer_id
         - identification
     outwayIdentificationPublicKeyThumbprint:
-      description: The details of the Outway based on a public key thumbprint for which a connection authorization was granted
+      description: The details of the Outway based on a public key thumbprint for which a connection was authorized
       type: object
       properties:
         type:
@@ -717,7 +717,7 @@ components:
         - type
         - public_key_thumbprint
     outwayIdentificationDomainName:
-      description: The details of the Outway based on a domain name for which a connection authorization was granted
+      description: The details of the Outway based on a domain name for which a connection was authorized
       type: object 
       properties:
         type:
