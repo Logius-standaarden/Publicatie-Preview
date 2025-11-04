@@ -1386,7 +1386,10 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
           <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
           <span class="hljs-attr">"outway"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
             <span class="hljs-attr">"peer_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"00000000000000000002"</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"public_key_thumbprint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"3a56f2e9269ac63f0d4394c46b96539da1625b6a985d38029ff89f34e490960c"</span>
+            <span class="hljs-string">"identification"</span> <span class="hljs-punctuation">{</span>
+              <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"OUTWAY_IDENTIFICATION_TYPE_PUBLIC_KEY_THUMBPRINT"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">"public_key_thumbprint"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"3a56f2e9269ac63f0d4394c46b96539da1625b6a985d38029ff89f34e490960c"</span>
+            <span class="hljs-punctuation">}</span>
           <span class="hljs-punctuation">}</span>
         <span class="hljs-punctuation">}</span>
       <span class="hljs-punctuation">}</span>
@@ -1444,7 +1447,8 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>The Peer ID provided by the X.509 certificate used by the Manager of the Peer providing the Service matches the value of the field <code>grant.data.service.peer_id</code></li>
 <li>The Peer ID provided by the X.509 certificate used by the Manager offering the Contract to the Service providing Peer matches the value of the field <code>grant.data.outway.peer_id</code></li>
 <li>The Service provided in the field <code>grant.data.service.name</code> is offered by the Peer provided in the field <code>grant.data.service.peer_id</code></li>
-<li>A Public key fingerprint also called thumbprint is provided in the field <code>grant.data.outway.public_key_thumbprint</code></li>
+<li>A Public key thumbprint is provided in the field <code>grant.data.outway.identification.public_key_thumbprint</code>. This validation should only be performed when the value of <code>grant.outway.identification.type</code> equals <code>OUTWAY_IDENTIFICATION_TYPE_PUBLIC_KEY_THUMBPRINT</code> </li>
+<li>A domain name is provided in the field <code>grant.data.outway.identification.domain_name</code>. This validation should only be performed when the value of <code>grant.outway.identification.type</code> equals <code>OUTWAY_IDENTIFICATION_TYPE_DOMAIN_NAME</code> </li>
 <li>If <code>grant.data.properties</code> is provided, it <strong><em class="rfc2119">MUST</em></strong> be a valid JSON Object</li>
 </ul>
 <p>Signature requirements:</p>
@@ -1459,7 +1463,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <li>The Peer ID provided by the X.509 certificate used by the Manager of the Peer creating the delegation matches the value of the field <code>grant.delegator.peer_id</code></li>
 <li>The Peer ID provided by the X.509 certificate used by the Manager consuming the DelegatedServiceConnectionGrant matches with the value of the field <code>grant.outway.peer_id</code></li>
 <li>The Peer ID provided by the X.509 certificate used by the Manager of the Peer providing the Service matches with the value of the field <code>grant.data.service.peer_id</code></li>
-<li>The validation rules of the fields <code>Outway</code> and <code>Service</code> of the ServiceConnectionGrant described in Core must be applied to corresponding fields <code>grant.data.outway</code> and <code>grant.data.service</code> of the DelegatedServiceConnectionGrant</li>
+<li>The validation rules of the fields <code>grant.data.outway</code> and <code>grant.data.service</code> of the ServiceConnectionGrant must be applied to the fields <code>grant.data.outway</code> and <code>grant.data.service</code> of the DelegatedServiceConnectionGrant</li>
 <li>In case of a Service that is published on behalf of another Peer, The Peer ID provided by the X.509 certificate used by the Manager of the Peer delegating the publication of Service matches with the value of the field <code>grant.data.service.delegator.peer_id</code></li>
 <li>If <code>grant.data.properties</code> is provided, it <strong><em class="rfc2119">MUST</em></strong> be a valid JSON Object</li>
 </ul>
@@ -1811,8 +1815,8 @@ The Manager is responsible for:</p>
 <li>The Manager is provided by a Peer with the same PeerID as specified in <code>grant.data.service.peer_id</code>.</li>
 <li>The Manager is provided by a Peer who has an Inway which is offering the Service specified in <code>grant.data.service.name</code>. </li>
 <li>The Peer ID specified by the X.509 certificate of the client requesting the access token matches the value of the field <code>grant.data.outway.peer_id</code>.</li>
-<li>The X.509 certificate provided by the client contains a public key with the same public key thumbprint  as specified in <code>grant.data.outway.public_key_thumbprint</code>. This validation should only be performed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_PUBLIC_KEY_THUMBPRINT</code> </li>
-<li>The X.509 certificate provided by the client has a Subject Alternative Name (SAN) that matches the domain name specified in <code>grant.data.outway.domain_name</code>. This validation should only be performed when the value of <code>grant.outway.type</code> equals <code>OUTWAY_TYPE_DOMAIN_NAME</code></li>
+<li>The X.509 certificate provided by the client contains a public key with the same public key thumbprint  as specified in <code>grant.data.outway.identification.public_key_thumbprint</code>. This validation should only be performed when the value of <code>grant.outway.identification.type</code> equals <code>OUTWAY_IDENTIFICATION_TYPE_PUBLIC_KEY_THUMBPRINT</code> </li>
+<li>The X.509 certificate provided by the client has a Subject Alternative Name (SAN) that matches the domain name specified in <code>grant.data.outway.identification.domain_name</code>. This validation should only be performed when the value of <code>grant.outway.identification.type</code> equals <code>OUTWAY_IDENTIFICATION_TYPE_DOMAIN_NAME</code></li>
 </ol>
 <p>The <code>cnf.x5t#S256</code> claim <strong><em class="rfc2119">MUST</em></strong> contain the certificate thumbprint of the X.509 certificate provided by the client requesting the token according to [section 3.1] of [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8705" title="OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens">RFC8705</a></cite>].
 The <code>act</code> claim <strong><em class="rfc2119">MUST</em></strong> be set when an access token is generated for a Peer who is connecting to the Service on behalf of another Peer. I.e. the authorization to connect has been granted using a DelegatedServiceConnectionGrant.
