@@ -1994,9 +1994,9 @@ For outbound filtering, the main concern is leaking of information.</p>
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p></p>Different resources can have different uses, as some resources are publicly available whereas others are restricted to several domains.
+         <p>Different resources can have different uses, as some resources are publicly available whereas others are restricted to several domains.
          Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests.
-         <p>By default browsers only allow 'same origin' access to resources.
+         </p><p>By default browsers only allow 'same origin' access to resources.
          This means that responses on requests to another <code>[scheme]://[hostname]:[port]</code> than the <code>Origin</code> request header of the initial request will not be processed by the browser.
          To enable cross-site requests APIs can return a <code>Access-Control-Allow-Origin</code> response header.
          </p><p>An allowlist <em class="rfc2119">SHOULD</em> be used to determine the validity of different cross-site requests.
