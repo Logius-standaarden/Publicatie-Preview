@@ -955,7 +955,7 @@ This document is part of the Nederlandse API Strategie, which consists of a set 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-08-27">November 19, 2025</time>
+      <time class="dt-published" datetime="2025-08-27">November 24, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1647,7 +1647,8 @@ https://api.example.org/v1/comments/456</pre>
     <dt>Statement</dt>
     <dd>
       <p>API requests containing invalid input <em class="rfc2119">MUST</em> result in HTTP status code <code>400</code> (Bad Request).
-      Invalid input includes syntax errors, missing or invalid query parameters and schema violations for the request payload.
+      Invalid input includes syntax errors, missing or invalid query parameters.
+      </p><p>The request payload <em class="rfc2119">SHOULD</em> be validated with a schema. A request payload with schema validation errors <em class="rfc2119">MUST</em> be treated as invalid input.
     </p></dd>
     <dt>Rationale</dt>
     <dd>
