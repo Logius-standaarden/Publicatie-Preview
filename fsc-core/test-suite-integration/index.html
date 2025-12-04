@@ -652,7 +652,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
       "title": "Lijst Verplichte standaarden"
     },
     "PKIO-PvE": {
-      "href": "https://por.pkioverheid.nl/",
+      "href": "https://cp.pkioverheid.nl/",
       "publisher": "Logius",
       "title": "Certificate Policy/Programme of Requirements PKIoverheid"
     },
@@ -951,7 +951,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-09-08">December 03, 2025</time>
+      <time class="dt-published" datetime="2025-09-08">December 04, 2025</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1173,7 +1173,7 @@ Contracts can contain multiple Peers. E.g. if a Peer wants a single Contract for
     <p></p>
 <ol>
 <li>The initiating Peer gets the address of the Manager from a Directory.</li>
-<li>The Directory return the Manager address to the Peer.</li>
+<li>The Directory returns the Manager address to the Peer.</li>
 <li>The initiating Peer sends the Contract proposal with its accept signature to the receiving Peer.</li>
 <li>The receiving Peer sends back its own accept signature to the initiating Peer.</li>
 </ol>
@@ -1222,14 +1222,14 @@ The connection Grants contains information about the Service and the public key 
       </figure>
     <p></p>
 <ol>
-<li>The Service consumer creates a Contract with a Service Connection Grant which contains the details of the Service.</li>
+<li>The Service consumer creates a Contract with a Service Connection Grant. This Grant contains the details of the Service and the consumer.</li>
 <li>The Service consumer adds an accept signature to the Contract.</li>
 <li>The Service consumer sends the Contract and the accept signature to the Service Provider.</li>
 <li>The Service provider adds its own accept signature.</li>
 <li>The Service provider sends the accept signature to the Service consumer.</li>
 </ol>
-<p>When the Service is being offered on behalf of another Peer the Contract is distributed among three Peers. The Peer acting as Delegator in the Service publication will also receive the Contract.
-Once the Contract is signed by all the Peers, the Outway can connect to the Inway offering the Service on behalf the Delegator. </p>
+<p>When the Service is being offered on behalf of another Peer, the Contract is distributed among three Peers. The Peer acting as Delegator in the Service publication will also receive the Contract.
+Once the Contract is signed by all the Peers, the Outway can connect to the Inway offering the Service on behalf of the Delegator. </p>
 <p>
       </p><figure id="fig-connecting-to-a-service-that-is-offered-on-behalf-of-another-peer">
         <img src="media/seq-create-an-authorization-to-connect-delegated-publication.svg" alt="Create an authorization to connect">
@@ -1237,7 +1237,7 @@ Once the Contract is signed by all the Peers, the Outway can connect to the Inwa
       </figure>
     <p></p>
 <ol>
-<li>The Service consumer creates a Contract with a Service Connection Grant which contains the details of the Service.</li>
+<li>The Service consumer creates a Contract with a Service Connection Grant. This Grant contains the details of the Service, the Delegator of the Service publication and the consumer.</li>
 <li>The Service consumer adds an accept signature to the Contract.</li>
 <li>The Service consumer sends the Contract and the accept signature to the Service provider.</li>
 <li>The Service consumer sends the Contract and the accept signature to the Delegator of Service Publication.</li>
@@ -1260,20 +1260,20 @@ The connection Grants contains information about the Service, the public key of 
       </figure>
     <p></p>
 <ol>
-<li>The Delegator creates a Contract with a Delegated Service Connection Grant which contains the details of the Service and the Peer who will be acting as Delegatee (who will consume the Service).</li>
-<li>The Delegator adds its own accept signature to the Contract.</li>
-<li>The Delegator sends the Contract and accept signature to the Delegatee.</li>
-<li>The Delegatee adds its own accept signature.</li>
-<li>The Delegatee sends the accept signature to the Delegator.</li>
-<li>The Delegatee sends the accept signature to the Service Provider.</li>
-<li>The Delegator sends the Contract and accept signature to the Service Provider.</li>
+<li>The Delegatee creates a Contract with a Delegated Service Connection Grant. This Grant contains the details of the Delegator, the Service and the Delegatee (the Peer who will consume the Service).</li>
+<li>The Delegatee adds its own accept signature to the Contract.</li>
+<li>The Delegatee sends the Contract and accept signature to the Delegator.</li>
+<li>The Delegatee sends the Contract and accept signature to the Service Provider.</li>
+<li>The Delegator adds its own accept signature.</li>
+<li>The Delegator sends the accept signature to the Delegatee.</li>
+<li>The Delegator sends the accept signature to the Service Provider.</li>
 <li>The Service Provider adds its own accept signature.</li>
 <li>The Service Provider sends the accept signature to the Delegatee.</li>
 <li>The Service Provider sends the accept signature to the Delegator.</li>
 </ol>
 </section><section id="combining-a-delegated-service-publication-with-a-delegated-service-connection"><div class="header-wrapper"><h4 id="x3-6-2-combining-a-delegated-service-publication-with-a-delegated-service-connection"><bdi class="secno">3.6.2 </bdi>Combining a delegated service publication with a delegated service connection</h4><a class="self-link" href="#combining-a-delegated-service-publication-with-a-delegated-service-connection" aria-label="Permalink for Section 3.6.2"></a></div>
 <p>When the Service is being offered on behalf of another Peer the Contract is distributed among four Peers. The Peer acting as Delegator in the Service publication will also receive the Contract.
-Once the Contract is signed by all the Peers, the Outway of the Delegatee can connect to the Inway offering the Service on behalf the Delegator.</p>
+Once the Contract is signed by all the Peers, the Outway of the Delegatee can connect to the Inway offering the Service on behalf of the Delegator.</p>
 <p>
       </p><figure id="fig-delegate-a-connection-to-a-service-that-is-offered-on-behalf-of-another-peer">
         <img src="media/seq-delegate-connection-delegated-publication.svg" alt="Delegate connection">
@@ -1281,15 +1281,15 @@ Once the Contract is signed by all the Peers, the Outway of the Delegatee can co
       </figure>
     <p></p>
 <ol>
-<li>The Delegator creates a Contract with a Delegated Service Connection Grant which contains the details of the Service and the Peer who will be acting as Delegatee (who will consume the Service).</li>
-<li>The Delegator adds its own accept signature to the Contract.</li>
-<li>The Delegator sends the Contract and accept signature to the Delegatee.</li>
-<li>The Delegator sends the Contract and accept signature to the Service provider.</li>
-<li>The Delegator sends the Contract and accept signature to the Delegator of the Service publication.</li>
-<li>The Delegatee adds its own accept signature.</li>
-<li>The Delegatee sends the accept signature to the Delegator.</li>
-<li>The Delegatee sends the accept signature to the Service provider.</li>
-<li>The Delegatee sends the accept signature to the Delegator of the Service publication.</li>
+<li>The Delegatee creates a Contract with a Delegated Service Connection Grant. This Grant contains the details of the Delegator, the Service, the Delegator of the Service publication, and the Delegatee (the Peer who will consume the Service).</li>
+<li>The Delegatee adds its own accept signature to the Contract.</li>
+<li>The Delegatee sends the Contract and accept signature to the Delegator.</li>
+<li>The Delegatee sends the Contract and accept signature to the Service provider.</li>
+<li>The Delegatee sends the Contract and accept signature to the Delegator of the Service publication.</li>
+<li>The Delegator adds its own accept signature.</li>
+<li>The Delegator sends the accept signature to the Delegatee.</li>
+<li>The Delegator sends the accept signature to the Service provider.</li>
+<li>The Delegator sends the accept signature to the Delegator of the Service publication.</li>
 <li>The Service provider adds its own accept signature.</li>
 <li>The Service provider sends the accept signature to the Delegatee.</li>
 <li>The Service provider sends the accept signature to the Delegator.</li>
@@ -1300,7 +1300,7 @@ Once the Contract is signed by all the Peers, the Outway of the Delegatee can co
 <li>The Delegator of the Service publication sends the accept signature to the Service provider.</li>
 </ol>
 </section></section><section id="consuming-a-service"><div class="header-wrapper"><h3 id="x3-7-consuming-a-service"><bdi class="secno">3.7 </bdi>Consuming a Service</h3><a class="self-link" href="#consuming-a-service" aria-label="Permalink for Section 3.7"></a></div>
-<p>A Peer can consume a Service by sending request for said Service to an Outway. 
+<p>A Peer can consume a Service by sending a request for said Service to an Outway. 
 The Peer obtains an access token from the Manager of the Peer providing the Service. 
 The Outway proxies the request including the access token to the Inway.
 The Inway will validate the access token and proxy the request to the Service.</p>
@@ -1312,7 +1312,7 @@ The Inway will validate the access token and proxy the request to the Service.</
     <p></p>
 <ol>
 <li>The client application sends a request to the Outway.</li>
-<li>The Outway creates an connection with the Inway and proxies the request. In this diagram it is assumed that the Outway already has an access token. </li>
+<li>The Outway creates a connection with the Inway and proxies the request. In this diagram, it is assumed that the Outway already has an access token. </li>
 <li>The Inway validates the provided access token before proxying the request to the Service.</li>
 <li>The Inway proxies the request to the Service.</li>
 <li>The Service returns the response to the Inway.</li>
@@ -1323,7 +1323,7 @@ The Inway will validate the access token and proxy the request to the Service.</
 <p>Which components a Peer needs depends on the use case.</p>
 <p>A Peer who wants to consume Services needs a Manager and an Outway.  </p>
 <p>A Peer who wants to offer Services needs a Manager and an Inway.    </p>
-<p>A Peer who wants to both consume and offer Services needs a Manager,an Outway and an Inway.</p>
+<p>A Peer who wants to both consume and offer Services needs a Manager, an Outway and an Inway.</p>
 </section></section>
     <section id="specifications"><div class="header-wrapper"><h2 id="x4-specifications"><bdi class="secno">4. </bdi>Specifications</h2><a class="self-link" href="#specifications" aria-label="Permalink for Section 4."></a></div>
 <section id="protocols"><div class="header-wrapper"><h3 id="x4-1-protocols"><bdi class="secno">4.1 </bdi>Protocols</h3><a class="self-link" href="#protocols" aria-label="Permalink for Section 4.1"></a></div>
