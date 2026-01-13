@@ -305,12 +305,9 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
       "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
     },
     "CloudEvents": {
-      "authors": [
-        "@@@"
-      ],
       "date": "May 2011",
       "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
-      "publisher": "@@@",
+      "publisher": "CNCF Serverless Working Group",
       "title": "CloudEvents - Version 1.0.1"
     },
     "NLGOV-CloudEvents": {
@@ -951,7 +948,7 @@ The goal of FSC is to achieve technically interoperable API gateway functionalit
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-09-08">December 04, 2025</time>
+      <time class="dt-published" datetime="2025-09-08">January 13, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1370,6 +1367,7 @@ of a Contract <strong><em class="rfc2119">MUST</em></strong> conform to the rule
 <p>example Contract with a ServiceConnectionGrant</p>
 <pre><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"content"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"fsc_version"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"1.0.0"</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">"iv"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"06338364-8305-7b74-8000-de4963503139"</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">"group_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"fsc-example-group"</span><span class="hljs-punctuation">,</span>
       <span class="hljs-attr">"validity"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
@@ -1905,6 +1903,11 @@ Each <code>Peer</code> <em class="rfc2119">MUST</em> call the <code>announce</co
 <td>ERROR_CODE_UNKNOWN_ALGORITHM_SIGNATURE</td>
 <td>422</td>
 <td>The Algorithm in the Signature is not supported</td>
+</tr>
+<tr>
+<td>ERROR_CODE_UNKNOWN_FSC_VERSION</td>
+<td>422</td>
+<td>The FSC version in the Contract is unknown to the Manager</td>
 </tr>
 </tbody></table>
 </section></section></section><section id="directory-0"><div class="header-wrapper"><h3 id="directory"><bdi class="secno">4.5 </bdi>Directory</h3><a class="self-link" href="#directory" aria-label="Permalink for Section 4.5"></a></div><p>The Directory is a Manager chosen by the Group to act as a Directory. </p>
