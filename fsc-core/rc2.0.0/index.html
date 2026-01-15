@@ -1550,10 +1550,9 @@ The algorithm ensures that the content hash is unique for a specific Contract co
 <li>Convert the Contract <code>content</code> to Canonical JSON data as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>].</li>
 <li>Hash the Canonical JSON data using the hash algorithm specified in <code>content.hash_algorithm</code>.</li>
 <li>Encode the bytes of the hash using Base64 URL encoding with all trailing '=' characters omitted and without the inclusion of any line breaks, whitespace, or other additional characters.</li>
-<li>Convert the value of <code>content.hash_algorithm</code> to an int32 and surround it with dollar signs (<code>$</code>). When using the <code>SHA3-512</code> algorithm this would result in <code>$1$</code>.
-To convert the hash algorithm to an integer, see the <a href="#type_mapping_hash_algorithm">type mapping</a></li>
-<li>Add <code>1$</code> as suffix to the string created in step 4. This is the enum <code>HASH_TYPE_CONTRACT</code> as defined in the field <code>.components.schemas.HashType</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a> as int32. If the string created in step 13 is <code>$1$</code>, the result should now be <code>$1$1$</code></li>
-<li>Add the Base64 generated in step 4 as suffix to the string generated in step 5.</li>
+<li>Convert the value of <code>content.hash_algorithm</code> to an int32 and enclose it with <code>$</code>. The int32 value per hash algorithm type is defined in the <a href="#type_mapping_hash_algorithm">type mapping</a>. E.g. The enum <code>HASH_ALGORITHM_SHA3_512</code> becomes <code>$1$</code>.</li>
+<li>Add <code>1$</code> as suffix to the string created in step 4. This is the enum <code>HASH_TYPE_CONTRACT</code> as defined in the field <code>.components.schemas.HashType</code> of the <a href="media/specs/manager.yaml">OpenAPI Specification</a> as int32. E.g. If the string created in step 4 is <code>$1$</code>, the result of this step should be <code>$1$1$</code></li>
+<li>Prefix the Base64 string generated in step 3 with the string generated in step 5.</li>
 </ol>
 </section><section id="grant-hash"><div class="header-wrapper"><h4 id="grant_hash"><bdi class="secno">4.2.5 </bdi>Grant hash</h4><a class="self-link" href="#grant_hash" aria-label="Permalink for Section 4.2.5"></a></div><p>The Grant hash is used in the access token request to identify the Grant which contains the authorization for the connection to the Service. 
 The <code>iv</code> (Initialization vector) field is included in the Grant hash to create a Grant hash that references to a single Contract. 
