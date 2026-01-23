@@ -267,7 +267,7 @@ img.license{float:left;padding-right:5px;background:0 0}
         "Jasper Roes",
         "Joost Farla"
       ],
-      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1",
       "publisher": "Logius",
       "title": "API Design Rules"
     },
@@ -326,12 +326,9 @@ img.license{float:left;padding-right:5px;background:0 0}
       "title": "Digikoppeling Beveiligingsstandaarden en voorschriften"
     },
     "CloudEvents": {
-      "authors": [
-        "@@@"
-      ],
       "date": "May 2011",
       "href": "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
-      "publisher": "@@@",
+      "publisher": "CNCF Serverless Working Group",
       "title": "CloudEvents - Version 1.0.1"
     },
     "NLGOV-CloudEvents": {
@@ -605,12 +602,6 @@ img.license{float:left;padding-right:5px;background:0 0}
       "publisher": "IETF",
       "title": "JSON Web Token (JWT)"
     },
-    "NCSC 2019": {
-      "date": "April 2019",
-      "href": "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
-      "publisher": "NCSC",
-      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.0"
-    },
     "NCSC 2021": {
       "date": "Jan 2021",
       "href": "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
@@ -621,7 +612,7 @@ img.license{float:left;padding-right:5px;background:0 0}
       "date": "June 2025",
       "href": "https://www.ncsc.nl/wat-kun-je-zelf-doen/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05",
       "publisher": "NCSC",
-      "title": "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS) v2.1"
+      "title": "Transport Layer Security (TLS) richtlijnen 2025-05"
     },
     "NEN3610": {
       "authors": [
@@ -676,7 +667,7 @@ img.license{float:left;padding-right:5px;background:0 0}
       "title": "Lijst Verplichte standaarden"
     },
     "PKIO-PvE": {
-      "href": "https://por.pkioverheid.nl/",
+      "href": "https://cp.pkioverheid.nl/",
       "publisher": "Logius",
       "title": "Certificate Policy/Programme of Requirements PKIoverheid"
     },
@@ -785,7 +776,7 @@ img.license{float:left;padding-right:5px;background:0 0}
       "date": "March 2002"
     },
     "FSC-Core": {
-      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/1.0.0/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/core/2.0.0/",
       "title": "FSC - Core",
       "authors": [
         "Eelco Hotting",
@@ -798,7 +789,7 @@ img.license{float:left;padding-right:5px;background:0 0}
       "publisher": "Logius"
     },
     "FSC-Logging": {
-      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.0.0/",
+      "href": "https://gitdocumentatie.logius.nl/publicatie/fsc/logging/1.1.0/",
       "title": "FSC - Logging",
       "authors": [
         "Eelco Hotting",
@@ -988,6 +979,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   "specType": "ST",
   "preProcess": [
     null,
+    null,
     null
   ]
 }</script>
@@ -1000,7 +992,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-01-09">October 24, 2025</time>
+      <time class="dt-published" datetime="2025-01-09">January 23, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -2389,7 +2381,7 @@ See the draft version: <a href="https://logius-standaarden.github.io/OAuth-NL-pr
     <a class="self-link" href="#example-15">Example<bdi> 15</bdi></a>
   </div>
 RAR example:
-<pre aria-busy="false"><code class="hljs json"><span class="hljs-attr">"authorization_details"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+<pre aria-busy="false"><code class="hljs json"><span class="hljs-attr">"authorization_details"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"party_authorization_example"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-comment">/* represented party - an organization in this example */</span>
   <span class="hljs-attr">"represented_party"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
@@ -2397,7 +2389,7 @@ RAR example:
     <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">"sub_id_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN"</span>
   <span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span></code></pre>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span></code></pre>
 </aside>
 
 </section></section><section id="representation-relationships-in-nl-gov-context"><div class="header-wrapper"><h3 id="a-4-representation-relationships-in-nl-gov-context"><bdi class="secno">A.4 </bdi>Representation Relationships in NL GOV Context</h3><a class="self-link" href="#representation-relationships-in-nl-gov-context" aria-label="Permalink for Appendix A.4"></a></div>
@@ -2409,27 +2401,28 @@ In contrast to delegation, where the actor remains a distinct identity, represen
     <a class="self-link" href="#example-16">Example<bdi> 16</bdi></a>
   </div>
 A sample chain representation for a requested scope <code>urn:uuid:a9e17a2e-d358-406d-9d5f-ad6045f712ba</code> may look like (note: the requested scope also includes the required <code>openid</code> scope; claims that do not add to the example are omitted for readability):
-<pre aria-busy="false"><code class="hljs yaml">      {
-        <span class="hljs-attr">"scope":</span> <span class="hljs-string">"openid brp_sensitief"</span>,
-        <span class="hljs-string">/*</span> <span class="hljs-string">Intermediary</span> <span class="hljs-string">in</span> <span class="hljs-string">representation</span> <span class="hljs-string">chain</span> <span class="hljs-bullet">-</span> <span class="hljs-string">a</span> <span class="hljs-string">system</span> <span class="hljs-string">(client)</span> <span class="hljs-string">in</span> <span class="hljs-string">this</span> <span class="hljs-string">example*/</span>
-        <span class="hljs-attr">"sub":</span> <span class="hljs-string">"example-client-id"</span>,
-        <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">"public"</span>,
-        <span class="hljs-attr">"iss":</span> <span class="hljs-string">"example.as,
-        "</span><span class="hljs-string">authorization_details":</span> {
-          <span class="hljs-string">“type”:</span> <span class="hljs-string">“party_authorization_example"</span>
-     	   <span class="hljs-string">/*</span> <span class="hljs-string">represented</span> <span class="hljs-string">party</span> <span class="hljs-bullet">-</span> <span class="hljs-string">an</span> <span class="hljs-string">organization</span> <span class="hljs-string">in</span> <span class="hljs-string">this</span> <span class="hljs-string">example</span> <span class="hljs-string">*/</span>
-           <span class="hljs-string">“represented_party”:</span>{
-                <span class="hljs-attr">"sub":</span> <span class="hljs-string">"492099595"</span>,
-              <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">"public"</span>,
-              <span class="hljs-attr">"iss":</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN"</span>,
-              <span class="hljs-string">/*</span> <span class="hljs-string">person</span> <span class="hljs-string">acting</span> <span class="hljs-string">on</span> <span class="hljs-string">behalf</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">represented</span> <span class="hljs-string">organisation</span> <span class="hljs-string">*/</span>
-              <span class="hljs-attr">"responsible_person":</span> {
-                <span class="hljs-attr">"sub":</span> <span class="hljs-string">"4Yg8u72NxR"</span>,
-                <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">"pairwise"</span>,
-                <span class="hljs-attr">"iss":</span> <span class="hljs-string">"urn:"</span>
-                  }
-            }
-      }
+<pre aria-busy="false"><code class="hljs json">      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"scope"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"openid brp_sensitief"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-comment">/* Intermediary in representation chain - a system (client) in this example*/</span>
+        <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"example-client-id"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"iss"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"example.as"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"authorization_details"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"party_authorization_example"</span><span class="hljs-punctuation">,</span>
+     	   <span class="hljs-comment">/* represented party - an organization in this example */</span>
+           <span class="hljs-attr">"represented_party"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">{</span>
+                <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"492099595"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"public"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-attr">"iss"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:nl-eid-gdi:1.0:id:RSIN"</span><span class="hljs-punctuation">,</span>
+              <span class="hljs-comment">/* person acting on behalf of the represented organisation */</span>
+              <span class="hljs-attr">"responsible_person"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                <span class="hljs-attr">"sub"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4Yg8u72NxR"</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">"subject_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"pairwise"</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">"iss"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"urn:"</span>
+                  <span class="hljs-punctuation">}</span>
+           <span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
 </code></pre>
 </aside>
 
@@ -2491,27 +2484,27 @@ A sample chain representation for a requested scope <code>urn:uuid:a9e17a2e-d358
 <p>In Use Cases that involve Representation Relationships and other situations where a token is meant to be used in the context of a specific scope, Rich Authorization requests <em class="rfc2119">MAY</em> be used
 Example 4
 E.g. an intermediary party acting on behalf of a government party.</p>
-<pre><code aria-busy="false" class="hljs css">{
-  "scope": <span class="hljs-string">"openid brp_sensitief"</span>,
-  <span class="hljs-comment">/* Intermediary in representation chain - a system (client) in this */</span>
-  <span class="hljs-string">"sub"</span>: <span class="hljs-string">" example-client-id"</span>,
-  <span class="hljs-string">"subject_type"</span>: <span class="hljs-string">"public"</span>,
-  <span class="hljs-string">"iss"</span>: <span class="hljs-string">"example.as"</span>,
-  <span class="hljs-string">"authorization_details"</span>: {
-        “type”: “party_authorization_example
-        “represented_party”:{
-                "sub": <span class="hljs-string">"492099595"</span>,
-               <span class="hljs-comment">/* represented party - an organization in this example */</span>
-               <span class="hljs-string">"subject_type"</span>: <span class="hljs-string">" public"</span>,
-               <span class="hljs-string">"iss"</span>: <span class="hljs-string">" urn:nl-eid-gdi:1.0:id:RSIN "</span>,    
-               <span class="hljs-string">"responsible_person"</span>: {
-                         <span class="hljs-comment">/* person acting on behalf of the repreented organisation */</span>
-                         "sub": <span class="hljs-string">"4Yg8u72NxR"</span>,
-                        <span class="hljs-string">"subject_type"</span>: <span class="hljs-string">"pairwise"</span>,
-                         <span class="hljs-string">"iss"</span>: <span class="hljs-string">" urn:&lt;..eherkenning…&gt;. "</span>
+<pre><code aria-busy="false" class="hljs yaml">{
+  <span class="hljs-attr">"scope":</span> <span class="hljs-string">"openid brp_sensitief"</span>,
+  <span class="hljs-string">/*</span> <span class="hljs-string">Intermediary</span> <span class="hljs-string">in</span> <span class="hljs-string">representation</span> <span class="hljs-string">chain</span> <span class="hljs-bullet">-</span> <span class="hljs-string">a</span> <span class="hljs-string">system</span> <span class="hljs-string">(client)</span> <span class="hljs-string">in</span> <span class="hljs-string">this</span> <span class="hljs-string">*/</span>
+  <span class="hljs-attr">"sub":</span> <span class="hljs-string">" example-client-id"</span>,
+  <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">"public"</span>,
+  <span class="hljs-attr">"iss":</span> <span class="hljs-string">"example.as"</span>,
+  <span class="hljs-attr">"authorization_details":</span> [{
+        <span class="hljs-attr">"type":</span> <span class="hljs-string">"party_authorization_example,
+        "</span><span class="hljs-string">represented_party":</span>{
+                <span class="hljs-attr">"sub":</span> <span class="hljs-string">"492099595"</span>,
+               <span class="hljs-string">/*</span> <span class="hljs-string">represented</span> <span class="hljs-string">party</span> <span class="hljs-bullet">-</span> <span class="hljs-string">an</span> <span class="hljs-string">organization</span> <span class="hljs-string">in</span> <span class="hljs-string">this</span> <span class="hljs-string">example</span> <span class="hljs-string">*/</span>
+               <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">" public"</span>,
+               <span class="hljs-attr">"iss":</span> <span class="hljs-string">" urn:nl-eid-gdi:1.0:id:RSIN "</span>,
+               <span class="hljs-attr">"responsible_person":</span> {
+                         <span class="hljs-string">/*</span> <span class="hljs-string">person</span> <span class="hljs-string">acting</span> <span class="hljs-string">on</span> <span class="hljs-string">behalf</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">repreented</span> <span class="hljs-string">organisation</span> <span class="hljs-string">*/</span>
+                         <span class="hljs-attr">"sub":</span> <span class="hljs-string">"4Yg8u72NxR"</span>,
+                        <span class="hljs-attr">"subject_type":</span> <span class="hljs-string">"pairwise"</span>,
+                         <span class="hljs-attr">"iss":</span> <span class="hljs-string">" urn:&lt;..eherkenning…&gt;. "</span>
                 }
           }
-}
+}]
 }
 </code></pre>
 </section></section>
