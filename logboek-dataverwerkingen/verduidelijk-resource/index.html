@@ -1310,8 +1310,9 @@ Dit is een tekstuele beschrijving bestemd voor mensen, niet voor machines.</p>
 </section><section id="end_time"><div class="header-wrapper"><h5 id="x3-2-2-6-end_time"><bdi class="secno">3.2.2.6 </bdi><code>end_time</code></h5><a class="self-link" href="#end_time" aria-label="Permalink for Section 3.2.2.6"></a></div>
 <p>Tijdstip waarop de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-5"><code>Actie</code></a> beëindigd is in milliseconden sinds Epoch.</p>
 </section><section id="parent_span_id"><div class="header-wrapper"><h5 id="x3-2-2-7-parent_span_id"><bdi class="secno">3.2.2.7 </bdi><code>parent_span_id</code></h5><a class="self-link" href="#parent_span_id" aria-label="Permalink for Section 3.2.2.7"></a></div>
-<p>Unieke identificerende code aanroepende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-6"><code>Actie</code></a> <em>binnen de huidige applicatie</em>.
-Als er een andere applicatie de aanroep doet, dan wordt dat opgeslagen in <a href="#attributes"><code>dpl.core.foreign_operation.span_id</code></a>.</p>
+<p>Unieke identificerende code aanroepende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-6"><code>Actie</code></a>.
+Dit geldt voor zowel binnen de huidige applicatie als bij een aanroep van een andere applicatie.
+Als <code>dpl.core.foreign_operation.processor</code> aanwezig is (zie <a href="#attributes">attributes</a>), dan is het een aanroep van een andere applicatie.</p>
 </section><section id="resource"><div class="header-wrapper"><h5 id="x3-2-2-8-resource"><bdi class="secno">3.2.2.8 </bdi><code>resource</code></h5><a class="self-link" href="#resource" aria-label="Permalink for Section 3.2.2.8"></a></div>
 <p>Het veld <code>resource</code> is een object, opgebouwd uit de volgende velden:</p>
 <table>
@@ -1333,17 +1334,22 @@ Als er een andere applicatie de aanroep doet, dan wordt dat opgeslagen in <a hre
 <aside class="example" id="example-1"><div class="marker">
     <a class="self-link" href="#example-1">Voorbeeld<bdi> 1</bdi></a>
   </div>
-<pre><code class="json hljs" aria-busy="false">"resource": {
-  "attributes": {
-    "process.pid": 12345,
-    "process.executable.name": "node",
-    "process.command": "/app.js",
-    "process.command_line": "/bin/node /app.js",
-    "process.runtime.version": "16.17.0",
-    "process.runtime.name": "nodejs",
-    "process.runtime.description": "Node.js'
-  }
-}</code></pre>
+<pre><code class="json hljs" aria-busy="false"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"attributes"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"dpl.core.processing_activity_id"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">14</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"resource"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"attributes"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">"process.pid"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">12345</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.executable.name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"node"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.command"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/app.js"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.command_line"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"/bin/node /app.js"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.runtime.version"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"16.17.0"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.runtime.name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"nodejs"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">"process.runtime.description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Node.js"</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre>
 </aside>
 
 <div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="6"><span>Noot</span></div><div class="">
@@ -1390,11 +1396,6 @@ Een logregel bevat de hoofdvelden "resource" en "attributes" (volgende sectie) e
 </tr>
 </thead>
 <tbody><tr>
-<td>dpl.core.foreign_operation.span_id</td>
-<td>8 byte</td>
-<td>Unieke identificerende code van de <em>Actie</em> bij externe applicatie</td>
-</tr>
-<tr>
 <td>dpl.core.foreign_operation.processor</td>
 <td>URL</td>
 <td>Link naar externe applicatie</td>
