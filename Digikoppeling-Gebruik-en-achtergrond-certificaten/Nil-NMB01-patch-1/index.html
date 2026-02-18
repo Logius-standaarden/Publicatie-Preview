@@ -716,8 +716,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     "X520": {
       "href": "https://www.iso.org/standard/43796.html",
       "publisher": "ISO",
-      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6",
-      "id": "x520"
+      "title": "ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6"
     },
     "ADR-Validator": {
       "href": "https://gitlab.com/commonground/don/adr-validator/-/tree/v0.5.0/pkg/rulesets",
@@ -935,14 +934,7 @@ img.license{float:left;padding-right:5px;background:0 0}
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-standaarden"><bdi class="secno">1.2 </bdi>Digikoppeling standaarden</a></li><li class="tocline"><a class="tocxref" href="#achtergrond"><bdi class="secno">1.3 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#omgang-met-certificaat"><bdi class="secno">1.4 </bdi>Omgang met certificaat</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.5 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">1.6 </bdi>Referenties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrond-pkioverheid-certificaten"><bdi class="secno">2. </bdi>Achtergrond PKIoverheid certificaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pkioverheid"><bdi class="secno">2.1 </bdi>PKIoverheid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stamcertificaat"><bdi class="secno">2.1.1 </bdi>Stamcertificaat</a></li><li class="tocline"><a class="tocxref" href="#certificaat-hierarchieen"><bdi class="secno">2.1.2 </bdi>Certificaat hiërarchieën</a></li><li class="tocline"><a class="tocxref" href="#tsps"><bdi class="secno">2.1.3 </bdi>TSPs</a></li><li class="tocline"><a class="tocxref" href="#persoonsgebonden-certificaten"><bdi class="secno">2.1.4 </bdi>Persoonsgebonden certificaten</a></li><li class="tocline"><a class="tocxref" href="#server-service-certificaten"><bdi class="secno">2.1.5 </bdi>Server (service) certificaten</a></li><li class="tocline"><a class="tocxref" href="#private-services-servercertificaten"><bdi class="secno">2.1.6 </bdi>Private services servercertificaten</a></li><li class="tocline"><a class="tocxref" href="#generaties-en-naamgeving"><bdi class="secno">2.1.7 </bdi>Generaties en naamgeving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toepassingen"><bdi class="secno">2.2 </bdi>Toepassingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hoe-werkt-pki-in-digikoppeling"><bdi class="secno">2.2.1 </bdi>Hoe werkt PKI in Digikoppeling?</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ontwerp-aspecten-digikoppeling-adapter"><bdi class="secno">3. </bdi>Ontwerp aspecten Digikoppeling adapter</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen"><bdi class="secno">3.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-0"><bdi class="secno">3.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen"><bdi class="secno">3.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestellen-certificaat"><bdi class="secno">4. </bdi>Bestellen certificaat</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-0"><bdi class="secno">4.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-1"><bdi class="secno">4.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-0"><bdi class="secno">4.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#installatie-certificaat"><bdi class="secno">5. </bdi>Installatie certificaat</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-1"><bdi class="secno">5.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-2"><bdi class="secno">5.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-1"><bdi class="secno">5.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distributie-en-cpa-creatie"><bdi class="secno">6. </bdi>Distributie en CPA-creatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-2"><bdi class="secno">6.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-3"><bdi class="secno">6.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-2"><bdi class="secno">6.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gebruiksaspecten"><bdi class="secno">7. </bdi>Gebruiksaspecten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-3"><bdi class="secno">7.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-4"><bdi class="secno">7.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-3"><bdi class="secno">7.3 </bdi>Stappen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tls-offloading-cpa"><bdi class="secno">7.3.1 </bdi>TLS Offloading - CPA</a></li><li class="tocline"><a class="tocxref" href="#tls-offloading-wus"><bdi class="secno">7.3.2 </bdi>TLS offloading - WUS</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-bestandsformaten-voor-certificaten"><bdi class="secno">8. </bdi>Bijlage 1: Bestandsformaten voor certificaten</a></li><li class="tocline"><a class="tocxref" href="#bijlage-2-richtlijnen-voor-een-veilig-password"><bdi class="secno">9. </bdi>Bijlage 2: Richtlijnen voor een veilig password</a></li><li class="tocline"><a class="tocxref" href="#bijlage-3-basisattributen-in-certificaat"><bdi class="secno">10. </bdi>Bijlage 3: Basisattributen in certificaat</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">11. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section class="notoc introductory" id="conformance"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p><p>
-        De trefwoorden <em class="rfc2119">MAG</em>, <em class="rfc2119">MOET</em>, <em class="rfc2119">MOETEN</em> en <em class="rfc2119">MOGEN</em> in dit
-        document moeten worden geïnterpreteerd als in
-        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
-        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
-        als, en alleen als deze in hoofdletters zijn weergegeven, zoals hier
-        getoond.
-      </p>
+  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#documentbeheer">Documentbeheer</a></li><li class="tocline"><a class="tocxref" href="#colofon">Colofon</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#doel-en-doelgroep"><bdi class="secno">1.1 </bdi>Doel en doelgroep</a></li><li class="tocline"><a class="tocxref" href="#digikoppeling-standaarden"><bdi class="secno">1.2 </bdi>Digikoppeling standaarden</a></li><li class="tocline"><a class="tocxref" href="#achtergrond"><bdi class="secno">1.3 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#omgang-met-certificaat"><bdi class="secno">1.4 </bdi>Omgang met certificaat</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.5 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">1.6 </bdi>Referenties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrond-pkioverheid-certificaten"><bdi class="secno">2. </bdi>Achtergrond PKIoverheid certificaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pkioverheid"><bdi class="secno">2.1 </bdi>PKIoverheid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#stamcertificaat"><bdi class="secno">2.1.1 </bdi>Stamcertificaat</a></li><li class="tocline"><a class="tocxref" href="#certificaat-hierarchieen"><bdi class="secno">2.1.2 </bdi>Certificaat hiërarchieën</a></li><li class="tocline"><a class="tocxref" href="#tsps"><bdi class="secno">2.1.3 </bdi>TSPs</a></li><li class="tocline"><a class="tocxref" href="#persoonsgebonden-certificaten"><bdi class="secno">2.1.4 </bdi>Persoonsgebonden certificaten</a></li><li class="tocline"><a class="tocxref" href="#server-service-certificaten"><bdi class="secno">2.1.5 </bdi>Server (service) certificaten</a></li><li class="tocline"><a class="tocxref" href="#private-services-servercertificaten"><bdi class="secno">2.1.6 </bdi>Private services servercertificaten</a></li><li class="tocline"><a class="tocxref" href="#generaties-en-naamgeving"><bdi class="secno">2.1.7 </bdi>Generaties en naamgeving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toepassingen"><bdi class="secno">2.2 </bdi>Toepassingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hoe-werkt-pki-in-digikoppeling"><bdi class="secno">2.2.1 </bdi>Hoe werkt PKI in Digikoppeling?</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ontwerp-aspecten-digikoppeling-adapter"><bdi class="secno">3. </bdi>Ontwerp aspecten Digikoppeling adapter</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen"><bdi class="secno">3.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-0"><bdi class="secno">3.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen"><bdi class="secno">3.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestellen-certificaat"><bdi class="secno">4. </bdi>Bestellen certificaat</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-0"><bdi class="secno">4.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-1"><bdi class="secno">4.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-0"><bdi class="secno">4.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#installatie-certificaat"><bdi class="secno">5. </bdi>Installatie certificaat</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-1"><bdi class="secno">5.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-2"><bdi class="secno">5.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-1"><bdi class="secno">5.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#distributie-en-cpa-creatie"><bdi class="secno">6. </bdi>Distributie en CPA-creatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-2"><bdi class="secno">6.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-3"><bdi class="secno">6.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-2"><bdi class="secno">6.3 </bdi>Stappen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gebruiksaspecten"><bdi class="secno">7. </bdi>Gebruiksaspecten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vragen-3"><bdi class="secno">7.1 </bdi>Vragen</a></li><li class="tocline"><a class="tocxref" href="#achtergrond-4"><bdi class="secno">7.2 </bdi>Achtergrond</a></li><li class="tocline"><a class="tocxref" href="#stappen-3"><bdi class="secno">7.3 </bdi>Stappen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tls-offloading-cpa"><bdi class="secno">7.3.1 </bdi>TLS Offloading - CPA</a></li><li class="tocline"><a class="tocxref" href="#tls-offloading-wus"><bdi class="secno">7.3.2 </bdi>TLS offloading - WUS</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-1-bestandsformaten-voor-certificaten"><bdi class="secno">8. </bdi>Bijlage 1: Bestandsformaten voor certificaten</a></li><li class="tocline"><a class="tocxref" href="#bijlage-2-richtlijnen-voor-een-veilig-password"><bdi class="secno">9. </bdi>Bijlage 2: Richtlijnen voor een veilig password</a></li><li class="tocline"><a class="tocxref" href="#bijlage-3-basisattributen-in-certificaat"><bdi class="secno">10. </bdi>Bijlage 3: Basisattributen in certificaat</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">11. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section class="notoc introductory" id="conformance"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p>
   </section>
   <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft de wijze waarop, binnen de context van Digikoppeling, met certificaten wordt omgegaan. </p></section>
   
@@ -1461,180 +1453,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 </ol>
 </section>
   <section id="bijlage-3-basisattributen-in-certificaat"><div class="header-wrapper"><h2 id="x10-bijlage-3-basisattributen-in-certificaat"><bdi class="secno">10. </bdi>Bijlage 3: Basisattributen in certificaat</h2><a class="self-link" href="#bijlage-3-basisattributen-in-certificaat" aria-label="Permalink for Section 10."></a></div>
-<p>Voor de meest actuele versie zie het [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]<sup>27</sup></p>
-<p><sup>27</sup>: <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://cp.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite></p>
-<table>
-<thead>
-<tr>
-<th>Veld / attribuut</th>
-<th>Criteria</th>
-<th>Beschrijving</th>
-<th>Norm referentie</th>
-<th>Type</th>
-<th>Toelichting</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Version</td>
-<td>V</td>
-<td><em class="rfc2119">MOET</em> ingesteld worden op 2 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6187" title="X.509v3 Certificates for Secure Shell Authentication">rfc6187</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7633" title="X.509v3 Transport Layer Security (TLS) Feature Extension">rfc7633</a></cite>].</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">rfc5280</a></cite>]</td>
-<td>Integer</td>
-<td>Beschrijft de versie van het certificaat, de waarde 2 staat voor X.509 versie 3.</td>
-</tr>
-<tr>
-<td>SerialNumber</td>
-<td>V</td>
-<td>Een serienummer dat op unieke wijze het certificaat binnen het uitgevende CA domein <em class="rfc2119">MOET</em> identificeren.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">rfc5280</a></cite>]</td>
-<td>Integer</td>
-<td>Alle eindgebruiker certificaten moeten tenminste 8 bytes aan niet te voorspellen willekeurige data bevatten in het serienummer (SerialNumber) van het certificaat.</td>
-</tr>
-<tr>
-<td>Signature</td>
-<td>V</td>
-<td><em class="rfc2119">MOET</em> worden ingesteld op het algoritme, zoals deze door de PA is bepaald.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">rfc5280</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-176-1" title="ETSI TS 102 176-1 V2.1.1 (2011-07): Electronic Signatures and Infrastructures (ESI); Algorithms and Parameters for Secure Electronic Signatures; Part 1: Hash functions and asymmetric algorithms">etsi-ts-102-176-1</a></cite>]<br>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-176-2" title="ETSI TS 102 176-2 V1.2.1 (2005-07): Electronic Signatures and Infrastructures (ESI); Algorithms and Parameters for Secure Electronic Signatures; Part 2: Secure channel protocols and algorithms for signature creation devices">etsi-ts-102-176-2</a></cite>]</td>
-<td>OID</td>
-<td><em class="rfc2119">MOET</em> gelijk zijn aan het veld signatureAlgorithm. Voor certificaten onder het G2 en G3 stamcertificaat wordt alleen sha-256WithRSAEncryption toegestaan.</td>
-</tr>
-<tr>
-<td>Issuer</td>
-<td>V</td>
-<td><em class="rfc2119">MOET</em> een Distinguished Name (DN) bevatten. Veld heeft de onderstaande attributen:</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>],  [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-280" title="ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons">etsi-ts-102-280</a></cite>]</td>
-<td></td>
-<td>Andere attributen dan hieronder genoemd <em class="rfc2119">MOGEN</em> NIET worden gebruikt.</td>
-</tr>
-<tr>
-<td>Issuer.countryName</td>
-<td>V</td>
-<td>zie eis 7.1-pkio174   [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-101-862" title="ETSI TS 101 862 V1.3.3 (2006-01): Qualified Certificate profile">etsi-ts-101-862</a></cite>],  [<cite><a class="bibref" data-link-type="biblio" href="#bib-x520" title="ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6">X520</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso3166" title="Codes for the representation of names of countries and their subdivisions — Part 1: Country code">ISO3166</a></cite>]</td>
-<td>Printable String</td>
-<td></td>
-</tr>
-<tr>
-<td>Issuer.OrganizationName</td>
-<td>V</td>
-<td>zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>] eis 7.1-pkio174</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-280" title="ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons">etsi-ts-102-280</a></cite>]</td>
-<td>UTF8String</td>
-<td></td>
-</tr>
-<tr>
-<td>Issuer. organizationalUnitName</td>
-<td>O</td>
-<td>zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>] eis 7.1-pkio174</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-280" title="ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons">etsi-ts-102-280</a></cite>]</td>
-<td>UTF8String</td>
-<td></td>
-</tr>
-<tr>
-<td>Issuer.serialNumber</td>
-<td>O</td>
-<td>zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>] eis7.1-pkio174</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]</td>
-<td>Printable String</td>
-<td></td>
-</tr>
-<tr>
-<td>Issuer.commonName</td>
-<td>V</td>
-<td>zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>] eis 7.1-pkio174</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]</td>
-<td>UTF8String</td>
-<td>Het commonName attribuut <em class="rfc2119">MAG</em> NIET nodig zijn om de uitgevende instantie te identificeren (geen onderdeel van de Distinguished Name, eis uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]).</td>
-</tr>
-<tr>
-<td>Issuer.organizationIdentifier</td>
-<td>V/N</td>
-<td>In het organizationIdentifier veld wordt een identificatie van de uitgevende CA opgenomen. Dit veld <em class="rfc2119">MOET</em> worden opgenomen wanneer het veld  subject.organizationIdentifier voorkomt in het TSP certificaat en <em class="rfc2119">MAG</em> NIET worden opgenomen wanneer dit veld in het betreffende TSP certificaat niet voorkomt.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-en-319-412-1" title="ETSI EN 319 412-1 V1.1.1 (2016-02): Electronic Signatures and Infrastructures (ESI); Certificate Profiles; Part 1: Overview and common data structures">etsi-en-319-412-1</a></cite>]</td>
-<td>String</td>
-<td>De opmaak van de identificatiestring wordt gespecificeerd in paragraaf  5.1.4 van ETSI [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-en-319-412-1" title="ETSI EN 319 412-1 V1.1.1 (2016-02): Electronic Signatures and Infrastructures (ESI); Certificate Profiles; Part 1: Overview and common data structures">etsi-en-319-412-1</a></cite>] en bevat:  3 character legal person identity type reference;  2 character [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso3166" title="Codes for the representation of names of countries and their subdivisions — Part 1: Country code">ISO3166</a></cite>] [2] country code;  hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); and  identifier (according to country and identity type reference).</td>
-</tr>
-<tr>
-<td>Validity</td>
-<td>V</td>
-<td><em class="rfc2119">MOET</em> de geldigheidsperiode (validity) van het certificaat definiëren volgens [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">rfc5280</a></cite>].</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5280" title="Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile">rfc5280</a></cite>]</td>
-<td>UTCTime</td>
-<td><em class="rfc2119">MOET</em> begin- en einddatum bevatten voor geldigheid van het certificaat conform het van toepassing zijnde beleid vastgelegd in het CPS.</td>
-</tr>
-<tr>
-<td>Subject</td>
-<td>V</td>
-<td>De attributen die worden gebruikt om het subject (service) te beschrijven <em class="rfc2119">MOETEN</em> het subject op unieke wijze benoemen en gegevens bevatten over de abonneeorganisatie. Dit veld heeft de volgende attributen:</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-280" title="ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons">etsi-ts-102-280</a></cite>]</td>
-<td></td>
-<td><em class="rfc2119">MOET</em> een Distinguished Name (DN) bevatten. Andere attributen dan hieronder genoemd <em class="rfc2119">MOGEN</em> NIET worden gebruikt.</td>
-</tr>
-<tr>
-<td>Subject.countryName</td>
-<td>V</td>
-<td>C vullen met tweeletterige landcode conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso3166" title="Codes for the representation of names of countries and their subdivisions — Part 1: Country code">ISO3166-1</a></cite>]. Indien een officiële alpha-2 code ontbreekt, <em class="rfc2119">MAG</em> de TSP de user-assigned code XX gebruiken.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-x520" title="ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6">X520</a></cite>],  [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso3166" title="Codes for the representation of names of countries and their subdivisions — Part 1: Country code">ISO3166</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]</td>
-<td>PrintableString</td>
-<td>De landcode die wordt gehanteerd in Subject.countryName <em class="rfc2119">MOET</em> in overeenstemming zijn met het adres van de abonnee volgens geaccepteerd document of registratie.</td>
-</tr>
-<tr>
-<td>Subject.commonName</td>
-<td>V</td>
-<td>Naam die de service identificeert. Bij services certificaten is dit veld verplicht</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-ts-102-280" title="ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons">etsi-ts-102-280</a></cite>],  [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]</td>
-<td>UTF8String</td>
-<td>In de subject.commonname wordt de functie van een organisatorische entiteit of de naam waarmee het apparaat of systeem wordt aangeduid opgenomen.</td>
-</tr>
-<tr>
-<td>Subject.organizationName</td>
-<td>V</td>
-<td>Volledige naam van de organisatie van de abonnee conform geaccepteerd document of Basisregistratie.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]</td>
-<td>UTF8String</td>
-<td>De abonnee-organisatie is de organisatie waarmee de TSP een overeenkomst heeft gesloten en namens welke de certificaathouder (service) communiceert of handelt.</td>
-</tr>
-<tr>
-<td>Subject.organizationIdentifier</td>
-<td>V</td>
-<td>In het organizationIdentifier veld wordt een identificatie van het subject.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-en-319-412-1" title="ETSI EN 319 412-1 V1.1.1 (2016-02): Electronic Signatures and Infrastructures (ESI); Certificate Profiles; Part 1: Overview and common data structures">etsi-en-319-412-1</a></cite>]</td>
-<td>String</td>
-<td>De opmaak van de identificatiestring wordt gespecificeerd in paragraaf 5.1.4 van ETSI [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-en-319-412-1" title="ETSI EN 319 412-1 V1.1.1 (2016-02): Electronic Signatures and Infrastructures (ESI); Certificate Profiles; Part 1: Overview and common data structures">etsi-en-319-412-1</a></cite>] en bevat:  3 character legal person identity type reference;  2 character [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso3166" title="Codes for the representation of names of countries and their subdivisions — Part 1: Country code">ISO3166</a></cite>] [2] country code;  hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); and  identifier (according to country and identity type reference).</td>
-</tr>
-<tr>
-<td>Subject.stateOrProvinceName</td>
-<td>A</td>
-<td>Het gebruik wordt afgeraden. Indien aanwezig <em class="rfc2119">MOET</em> dit veld de provincie van vestiging van de abonnee conform geaccepteerd document of Basisregistratie bevatten.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]</td>
-<td>UTF8String</td>
-<td>Naam van de provincie <em class="rfc2119">MOET</em> in overeenstemming zijn met het adres van de abonnee volgens geaccepteerd document of registratie.</td>
-</tr>
-<tr>
-<td>Subject.localityName</td>
-<td>A</td>
-<td>Het gebruik wordt afgeraden. Indien aanwezig <em class="rfc2119">MOET</em> dit veld de  vestigingsplaats van de abonnee conform geaccepteerd document of Basisregistratie bevatten.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]</td>
-<td>UTF8String</td>
-<td>Naam van de vestigingsplaats <em class="rfc2119">MOET</em> in overeenstemming zijn met het adres van de abonnee volgens geaccepteerd document of registratie.</td>
-</tr>
-<tr>
-<td>Subject.postalAddress</td>
-<td>A</td>
-<td>Het gebruik wordt afgeraden. Indien aanwezig <em class="rfc2119">MOET</em> dit veld het postadres van de abonnee conform geaccepteerd document of Basisregistratie te bevatten.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>]</td>
-<td>UTF8String</td>
-<td>Adres <em class="rfc2119">MOET</em> in overeenstemming zijn met het adres van de abonnee volgens geaccepteerd document of registratie.</td>
-</tr>
-<tr>
-<td>Subject.serialNumber</td>
-<td>O</td>
-<td>Het is de verantwoordelijkheid van een  TSP om de uniciteit van het subject  (service) te waarborgen. Het  Subject.serialNumber <em class="rfc2119">MOET</em> gebruikt worden om het subject uniek te identificeren. Het gebruik van 20 posities is uitsluitend toegestaan voor OIN en HRN na aanvullende afspraken met Logius.</td>
-<td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3739" title="Internet X.509 Public Key Infrastructure: Qualified Certificates Profile">rfc3739</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-x520" title="ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6">X520</a></cite>], [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PvE</a></cite>]</td>
-<td>Printable String</td>
-<td>Het nummer wordt door de TSP en/of de overheid bepaald. Het nummer kan per domein verschillen en voor meerdere toepassingen gebruikt worden.</td>
-</tr>
-</tbody></table>
+<p>Voor meer informatie rondom de basisattribuut vindt u in <a href="https://cp.pkioverheid.nl/pkioverheid-por-v5.3.html#id__7-certificate-crl-and-ocsp-profiles">sectie 7</a> van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-pkio-pve" title="Certificate Policy/Programme of Requirements PKIoverheid">PKIO-PVE</a></cite>].</p>
 </section>
   <section id="tof">
   <div class="header-wrapper"><h2 id="x11-lijst-met-figuren"><bdi class="secno">11. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 11."></a></div><ul class="tof">
@@ -1646,34 +1465,8 @@ img.license{float:left;padding-right:5px;background:0 0}
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
-    <dl class="bibliography"><dt id="bib-etsi-en-319-412-1">[etsi-en-319-412-1]</dt><dd>
-      <a href="http://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf"><cite>ETSI EN 319 412-1 V1.1.1 (2016-02): Electronic Signatures and Infrastructures (ESI); Certificate Profiles; Part 1: Overview and common data structures</cite></a>.  ETSI. February 2016. Published. URL: <a href="http://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf">http://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf</a>
-    </dd><dt id="bib-etsi-ts-101-862">[etsi-ts-101-862]</dt><dd>
-      <a href="http://www.etsi.org/deliver/etsi_ts/101800_101899/101862/01.03.03_60/ts_101862v010303p.pdf"><cite>ETSI TS 101 862 V1.3.3 (2006-01): Qualified Certificate profile</cite></a>.  ETSI. January 2006. Historical. URL: <a href="http://www.etsi.org/deliver/etsi_ts/101800_101899/101862/01.03.03_60/ts_101862v010303p.pdf">http://www.etsi.org/deliver/etsi_ts/101800_101899/101862/01.03.03_60/ts_101862v010303p.pdf</a>
-    </dd><dt id="bib-etsi-ts-102-176-1">[etsi-ts-102-176-1]</dt><dd>
-      <a href="http://www.etsi.org/deliver/etsi_ts/102100_102199/10217601/02.01.01_60/ts_10217601v020101p.pdf"><cite>ETSI TS 102 176-1 V2.1.1 (2011-07): Electronic Signatures and Infrastructures (ESI); Algorithms and Parameters for Secure Electronic Signatures; Part 1: Hash functions and asymmetric algorithms</cite></a>.  ETSI. July 2011. Historical. URL: <a href="http://www.etsi.org/deliver/etsi_ts/102100_102199/10217601/02.01.01_60/ts_10217601v020101p.pdf">http://www.etsi.org/deliver/etsi_ts/102100_102199/10217601/02.01.01_60/ts_10217601v020101p.pdf</a>
-    </dd><dt id="bib-etsi-ts-102-176-2">[etsi-ts-102-176-2]</dt><dd>
-      <a href="http://www.etsi.org/deliver/etsi_ts/102100_102199/10217602/01.02.01_60/ts_10217602v010201p.pdf"><cite>ETSI TS 102 176-2 V1.2.1 (2005-07): Electronic Signatures and Infrastructures (ESI); Algorithms and Parameters for Secure Electronic Signatures; Part 2: Secure channel protocols and algorithms for signature creation devices</cite></a>.  ETSI. July 2005. Historical. URL: <a href="http://www.etsi.org/deliver/etsi_ts/102100_102199/10217602/01.02.01_60/ts_10217602v010201p.pdf">http://www.etsi.org/deliver/etsi_ts/102100_102199/10217602/01.02.01_60/ts_10217602v010201p.pdf</a>
-    </dd><dt id="bib-etsi-ts-102-280">[etsi-ts-102-280]</dt><dd>
-      <a href="http://www.etsi.org/deliver/etsi_ts/102200_102299/102280/01.01.01_60/ts_102280v010101p.pdf"><cite>ETSI TS 102 280 V1.1.1 (2004-03): X.509 V.3 Certificate Profile for Certificates Issued to Natural Persons</cite></a>.  ETSI. March 2004. Historical. URL: <a href="http://www.etsi.org/deliver/etsi_ts/102200_102299/102280/01.01.01_60/ts_102280v010101p.pdf">http://www.etsi.org/deliver/etsi_ts/102200_102299/102280/01.01.01_60/ts_102280v010101p.pdf</a>
-    </dd><dt id="bib-iso3166">[ISO3166]</dt><dd>
-      <a href="https://www.iso.org/standard/72482.html"><cite>Codes for the representation of names of countries and their subdivisions — Part 1: Country code</cite></a>.  International Organization for Standardization (ISO). August 2020. Published. URL: <a href="https://www.iso.org/standard/72482.html">https://www.iso.org/standard/72482.html</a>
-    </dd><dt id="bib-pkio-pve">[PKIO-PvE]</dt><dd>
+    <dl class="bibliography"><dt id="bib-pkio-pve">[PKIO-PvE]</dt><dd>
       <a href="https://cp.pkioverheid.nl/"><cite>Certificate Policy/Programme of Requirements PKIoverheid</cite></a>.  Logius. URL: <a href="https://cp.pkioverheid.nl/">https://cp.pkioverheid.nl/</a>
-    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
-    </dd><dt id="bib-rfc3739">[rfc3739]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc3739"><cite>Internet X.509 Public Key Infrastructure: Qualified Certificates Profile</cite></a>. S. Santesson; M. Nystrom; T. Polk.  IETF. March 2004. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3739">https://www.rfc-editor.org/rfc/rfc3739</a>
-    </dd><dt id="bib-rfc5280">[rfc5280]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc5280"><cite>Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile</cite></a>. D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk.  IETF. May 2008. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc5280">https://www.rfc-editor.org/rfc/rfc5280</a>
-    </dd><dt id="bib-rfc6187">[rfc6187]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc6187"><cite>X.509v3 Certificates for Secure Shell Authentication</cite></a>. K. Igoe; D. Stebila.  IETF. March 2011. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc6187">https://www.rfc-editor.org/rfc/rfc6187</a>
-    </dd><dt id="bib-rfc7633">[rfc7633]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc7633"><cite>X.509v3 Transport Layer Security (TLS) Feature Extension</cite></a>. P. Hallam-Baker.  IETF. October 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7633">https://www.rfc-editor.org/rfc/rfc7633</a>
-    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
-    </dd><dt id="bib-x520">[X520]</dt><dd>
-      <a href="https://www.iso.org/standard/43796.html"><cite>ITU-T Recommendation X.520 (2001) ISO/IEC 9594-6</cite></a>.  ISO. URL: <a href="https://www.iso.org/standard/43796.html">https://www.iso.org/standard/43796.html</a>
     </dd></dl>
   </section><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a></div>
