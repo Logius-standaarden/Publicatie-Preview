@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.4.1">
+<meta name="generator" content="ReSpec 35.6.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -880,7 +880,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2025-06-24">21 februari 2026</time>
+      <time class="dt-published" datetime="2025-06-24">02 maart 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1147,7 +1147,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <p>De geldigheid van het certificaat wordt getoetst met betrekking tot de geldigheidsdatum en de Certificate Revocation List (CRL) die voldoet aan de eisen van PKIoverheid. Zie eis PKI002 en PKI003. </p>
 <p>De betreffende CRL dient zowel voor de versturende als ontvangende partij te benaderen zijn. Zie eis PKI004 (WT005)</p>
 <p>Wanneer er tijdens de looptijd van een certificaat een bepaalde gebeurtenis plaatsvindt, dan moet het certificaat worden ingetrokken. Bijvoorbeeld wanneer de bijbehorende private sleutel is gecompromitteerd of wanneer de organisatie waarvoor het certificaat is uitgegeven wordt opgeheven of van (handels)naam wijzigt. </p>
-<p>Het <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://cp.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite> beschrijft in de secties 4.1.2, 4.5.2 en 4.9.1 de gebeurtenissen wanneer certificaten ingetrokken moeten worden. </p>
+<p>Het <cite><a data-matched-text="[[[PKIO-PvE]]]" href="https://cp.pkioverheid.nl/">Certificate Policy/Programme of Requirements PKIoverheid</a></cite> beschrijft in de secties 4.1.2, 4.5.2 en 4.9.1 de gebeurtenissen wanneer certificaten ingetrokken moeten worden. Om de geldigheid van certificaten correct te controleren is een juiste systeemtijd essentieel. Afwijkingen kunnen leiden tot onterechte acceptatie of afwijzing. Het is daarom verstandig systemen automatisch te synchroniseren met een betrouwbare tijdsbron, bijvoorbeeld via <a href="https://www.forumstandaardisatie.nl/open-standaarden/ntp">NTP</a>.</p>
 </section></section><section id="best-practices"><div class="header-wrapper"><h3 id="x3-4-best-practices"><bdi class="secno">3.4 </bdi>Best practices</h3><a class="self-link" href="#best-practices" aria-label="Permalink for Section 3.4"></a></div>
 <p>De best practices voor inrichting en gebruik zijn beschreven in <em>Gebruik en achtergronden Digikoppeling certificaten</em>.</p>
 </section></section>
@@ -1399,7 +1399,7 @@ PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der N
       <a href="https://www.logius.nl/domeinen/toegang/pkioverheid"><cite>PKIoverheid</cite></a>.  Logius. URL: <a href="https://www.logius.nl/domeinen/toegang/pkioverheid">https://www.logius.nl/domeinen/toegang/pkioverheid</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+    <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
