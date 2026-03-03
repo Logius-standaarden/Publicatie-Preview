@@ -1,7 +1,20 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.4.1">
+<meta name="generator" content="ReSpec 35.6.1">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -880,7 +893,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2025-06-24">26 februari 2026</time>
+      <time class="dt-published" datetime="2025-06-24">03 maart 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1172,7 +1185,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>Dit is de PKIo G4 certificaat die gebruikt  moet worden voor Digikoppeling.</td>
 </tr>
 </tbody></table>
-</section></section>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span></div><p class="">Let op: De PKIo G1/G3 certificaten vervallen vanaf november 2028. Zorg ervoor dat je tijdig migreert naar de G4 certificaten. Voor meer informatie, zie [artikel](https://www.logius.nl/onze-dienstverlening/toegang/pkioverheid/wees-voorbereid-de-nieuwe-generatie-pkioverheidcertificaten-komen-eraan).</p></div></section></section>
   <section id="tls-transport-layer-security"><div class="header-wrapper"><h2 id="x4-tls-transport-layer-security"><bdi class="secno">4. </bdi>TLS (Transport Layer Security)</h2><a class="self-link" href="#tls-transport-layer-security" aria-label="Permalink for Section 4."></a></div>
 <p>Transport Layer Security (TLS) is een protocol dat een veilige versleutelde verbinding legt tussen systemen waardoor gegevens vertrouwelijk en compleet wordt uitgewisseld. Binnen de context van Digikoppeling verplicht TLS het gebruik van wederzijde authenticatie van de betrokken partijen, zodat alleen geautoriseerde systemen kunnen communiceren met elkaar.</p>
 <section id="standaarden-0"><div class="header-wrapper"><h3 id="x4-1-standaarden"><bdi class="secno">4.1 </bdi>Standaarden</h3><a class="self-link" href="#standaarden-0" aria-label="Permalink for Section 4.1"></a></div>
@@ -1421,7 +1434,7 @@ PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der N
       <a href="https://www.logius.nl/domeinen/toegang/pkioverheid"><cite>PKIoverheid</cite></a>.  Logius. URL: <a href="https://www.logius.nl/domeinen/toegang/pkioverheid">https://www.logius.nl/domeinen/toegang/pkioverheid</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+    <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
