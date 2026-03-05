@@ -1247,8 +1247,11 @@ Wat nu als alle Logregels zonder relaties worden opgeslagen? Bij een rapportage 
 <p>Als er een Dataverwerking plaatsvindt, moet dit altijd een relatie hebben met het Register van Verwerkingsactiviteiten. In dit Register staat informatie over de data die een organisatie verwerkt. Het Register is verplicht, een geautomatiseerde koppeling met het Logboek niet.</p>
 <p>Bij elke Dataverwerking wordt door het Logboek een relatie gelegd met het Register door middel van het <code>processing_activity_id</code>.
 Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus allemaal dezelfde <code>processing_activity_id</code>.</p>
-<p><img src="./media/relatie_logboekelementen_afbeelding1.svg" alt="Afbeelding relaties processing_activity_id">
-<em>[Figuur 5]</em></p>
+<figure id="Afbeelding relaties processing_activity_id">
+    <img alt="Afbeelding relaties processing_activity_id" src="media/relatie_logboekelementen_afbeelding1.svg" width="600">
+    <figcaption><a class="self-link" href="#Afbeelding relaties processing_activity_id">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">Afbeelding relaties processing_activity_id</span></figcaption>
+</figure>
+
 <p>In het geval er een Dataverwerking plaatsvindt ter ondersteuning van een andere Dataverwerking (suboperation), dan kan deze ondersteunende Dataverwerking een eigen <code>processing_activity_id</code> krijgen. Deze kan anders zijn dan het <code>processing_activity_id</code> van de 'hoofdprocessingActivity'.</p>
 <p><img src="./media/relatie_logboekelementen_afbeelding2.svg" alt="Afbeelding relaties processing_activity_id tussen Logboek en Register">
 <em>[Figuur 6]</em></p>
