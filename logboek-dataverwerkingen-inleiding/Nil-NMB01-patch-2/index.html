@@ -1261,16 +1261,16 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 
 <p>De subOperation heeft nu een eigen <code>processing_activity_id</code> gekregen, maar het is nog niet duidelijk aan welke hoofdprocessingActivityId deze gekoppeld is. Om dit op te lossen, wordt ook een 'parentProcessingActivityId' geregistreerd.</p>
 <p>Bij de subOperation wordt in dit geval naast de <code>processing_activity_id</code> ook een parentProcessingActivityId geregistreerd. De waarde van deze parentProcessingActivityId is gelijk aan de waarde van het hoofdProcessingActivityId.</p>
-<figure id="fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent-processing-activity-id">
+<figure id="fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent_processing_activity_id">
     <img src="media/relatie_logboekelementen_afbeelding3.svg">
-    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent-processing-activity-id">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Afbeelding relaties processing_activity_id tussen Logboek en Register met parent processing activity id</span></figcaption>
+    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent_processing_activity_id">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Afbeelding relaties processing_activity_id tussen Logboek en Register met parent_processing_activity_id</span></figcaption>
 </figure>
 
 <p>Bij een Dataverwerking kan het zijn dat data moeten worden opgevraagd bij een andere organisatie. Deze organisatie heeft zelf ook een Register van Verwerkingsactiviteiten. In dit Register staat beschreven dat een specifieke organisatie specifieke gegevens mag opvragen als aparte operation.</p>
 <p>Bij het verstrekken van deze data aan de aanvragende organisatie, wordt het <code>processing_activity_id</code> van de gegevensverstrekkende organisatie geregistreerd. Er is dus GEEN rechtstreekse koppeling tussen het Register van de aanvragende en het Register van de verstrekkende organisatie.</p>
-<figure id="fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent-processing-activity-id-en-meerdere-organisaties">
+<figure id="fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent_processing_activity_id-en-meerdere-organisaties">
     <img src="media/relatie_logboekelementen_afbeelding4.svg">
-    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent-processing-activity-id-en-meerdere-organisaties">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Afbeelding relaties processing_activity_id tussen Logboek en Register met parent processing activity id en meerdere organisaties</span></figcaption>
+    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-processing_activity_id-tussen-logboek-en-register-met-parent_processing_activity_id-en-meerdere-organisaties">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Afbeelding relaties processing_activity_id tussen Logboek en Register met parent_processing_activity_id en meerdere organisaties</span></figcaption>
 </figure>
 
 
@@ -1291,9 +1291,9 @@ Als er meerdere dezelfde Dataverwerkingen ('Operations') zijn, krijgen deze dus 
 
 <p>In het geval dat er data wordt opgevraagd aan een andere organisatie, geeft de vragende organisatie de <code>trace_id</code> door aan de verstrekkende organisatie.
 De <code>trace_id</code> is identiek bij beide organisaties, waardoor er een relatie te leggen is tussen de verwerkingen van de vragende en de verstrekkende organisatie.</p>
-<figure id="fig-afbeelding-relaties-trace_id-en-foreign_trace_id-en-meerdere-organisaties">
+<figure id="fig-afbeelding-relaties-trace_id-en-meerdere-organisaties">
     <img src="media/relatie_logboekelementen_afbeelding7.svg">
-    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-trace_id-en-foreign_trace_id-en-meerdere-organisaties">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">Afbeelding relaties trace_id en foreign_trace_id en meerdere organisaties</span></figcaption>
+    <figcaption><a class="self-link" href="#fig-afbeelding-relaties-trace_id-en-meerdere-organisaties">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">Afbeelding relaties trace_id en meerdere organisaties</span></figcaption>
 </figure>
 
 </section><section id="relatie-tussen-sub-operations"><div class="header-wrapper"><h3 id="x3-4-relatie-tussen-sub-operations"><bdi class="secno">3.4 </bdi>Relatie tussen (sub)Operations</h3><a class="self-link" href="#relatie-tussen-sub-operations" aria-label="Permalink for Section 3.4"></a></div>
@@ -1355,9 +1355,9 @@ De <code>trace_id</code> is identiek bij beide organisaties, waardoor er een rel
 <li>De RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen <code>trace_id</code>.</li>
 <li>Om het geheel te koppelen over de organisaties heen, wordt bij het RDW ook een <code>trace_id</code> opgeslagen, de waarde hier van is gelijk aan de waarde van de <code>trace_id</code> van de Operation <strong>Controleer tenaamstelling</strong>.</li>
 </ul>
-<figure id="fig-afbeelding-trace_id-en-foreign_trace_id-bij-gemeente-en-rdw">
+<figure id="fig-afbeelding-trace_id-bij-gemeente-en-rdw">
     <img src="media/relatie_logboekelementen_afbeelding12.svg">
-    <figcaption><a class="self-link" href="#fig-afbeelding-trace_id-en-foreign_trace_id-bij-gemeente-en-rdw">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">Afbeelding trace_id en foreign_trace_id bij Gemeente en RDW</span></figcaption>
+    <figcaption><a class="self-link" href="#fig-afbeelding-trace_id-bij-gemeente-en-rdw">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">Afbeelding trace_id bij Gemeente en RDW</span></figcaption>
 </figure>
 
 </section><section id="span_id"><div class="header-wrapper"><h4 id="x3-5-5-span_id"><bdi class="secno">3.5.5 </bdi>span_id</h4><a class="self-link" href="#span_id" aria-label="Permalink for Section 3.5.5"></a></div>
