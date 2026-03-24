@@ -1016,7 +1016,8 @@ Doel van dit document is ontwikkelaars te informeren wat deze beveiligingsvoorsc
 <p>Digikoppeling biedt de mogelijkheid om op een sterk gestandaardiseerde wijze berichten uit te wisselen tussen serviceaanbieders (service providers) en serviceafnemers (service requesters of consumers).</p>
 <p>De uitwisseling tussen service providers en requesters wordt in drie lagen opgedeeld:</p>
 <ul>
-<li><p>Inhoud: op deze laag worden de afspraken gemaakt over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek, waardebereiken etc.<br>  Digikoppeling houdt zich niet met de inhoud bezig, ‘heeft geen boodschap aan de boodschap’.</p>
+<li><p>Inhoud: op deze laag worden de afspraken gemaakt over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek, waardebereiken etc.
+  Digikoppeling houdt zich niet met de inhoud bezig, ‘heeft geen boodschap aan de boodschap’.</p>
 </li>
 <li><p>Logistiek: op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP &amp; TLS), messaging, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is de laag van Digikoppeling.</p>
 </li>
@@ -1141,7 +1142,7 @@ Doel van dit document is ontwikkelaars te informeren wat deze beveiligingsvoorsc
 </li>
 </ol>
 </section><section id="geldigheid"><div class="header-wrapper"><h4 id="x3-3-3-geldigheid"><bdi class="secno">3.3.3 </bdi>Geldigheid</h4><a class="self-link" href="#geldigheid" aria-label="Permalink for Section 3.3.3"></a></div>
-<p>De geldigheid van het certificaat wordt getoetst met betrekking tot de geldigheidsdatum en de Certificate Revocation List (CRL) die voldoet aan de eisen van PKIoverheid. Zie eis PKI002 en PKI003. </p>
+<p>De geldigheid van het certificaat wordt getoetst met betrekking tot de geldigheidsdatum en de Certificate Revocation List (CRL) die voldoet aan de eisen van PKIoverheid. Zie eis PKI002 en PKI003.</p>
 <p>De betreffende CRL dient zowel voor de versturende als ontvangende partij te benaderen zijn. Zie eis PKI004 (WT005)</p>
 <p>Een certificaat dient te worden ingetrokken als de organisatie niet meer bestaat of als de private sleutel gecompromitteerd is.</p>
 </section></section><section id="best-practices"><div class="header-wrapper"><h3 id="x3-4-best-practices"><bdi class="secno">3.4 </bdi>Best practices</h3><a class="self-link" href="#best-practices" aria-label="Permalink for Section 3.4"></a></div>
@@ -1290,8 +1291,8 @@ Het NCSC adviseert om TLS altijd te configureren op basis van [<cite><a class="b
 </tbody></table>
 </section><section id="reden-voor-vervanging-sha-1-door-sha-2"><div class="header-wrapper"><h4 id="x5-2-2-reden-voor-vervanging-sha-1-door-sha-2"><bdi class="secno">5.2.2 </bdi>Reden voor vervanging SHA-1 door SHA-2</h4><a class="self-link" href="#reden-voor-vervanging-sha-1-door-sha-2" aria-label="Permalink for Section 5.2.2"></a></div>
 <p><em>Certificaten met SHA-1 als hashfunctie worden vervangen door certificaten met hashfuncties uit de SHA-2-familie: SHA-256, SHA-384 en SHA-512. Certificaten met MD5 als hashfunctie zijn enkele jaren geleden al vervangen. MD5 is de voorloper van SHA-1. [<cite><a class="bibref" data-link-type="biblio" href="#bib-https-factsheet ncsc" title="Factsheet HTTPS kan een stuk veiliger">HTTPS-factsheet NCSC</a></cite>]</em></p>
-<p>PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der Nederlanden worden uitgegeven moeten voldoen aan SHA-2. 
-PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der Nederlanden worden uitgegeven moeten voldoen aan SHA-2. </p>
+<p>PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der Nederlanden worden uitgegeven moeten voldoen aan SHA-2.
+PKIoverheid stelt SHA-2 als eis. Alle certificaten die onder de root Staat der Nederlanden worden uitgegeven moeten voldoen aan SHA-2.</p>
 <p>In plaats daarvan is het dus wenselijk om gebruik te maken van een algoritme dat als ‘goed’ is aangemerkt, dus:</p>
 <ul>
 <li><p>SHA-512,</p>
