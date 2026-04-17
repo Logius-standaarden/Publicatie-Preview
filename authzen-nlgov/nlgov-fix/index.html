@@ -47,7 +47,7 @@ dfn{cursor:pointer}
   
 <meta name="color-scheme" content="light dark">
   
-<title>NLGov Profile for OpenID AuthZEN Authorization API</title>
+<title>NLgov Profile for OpenID AuthZEN Authorization API</title>
   
 <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
   
@@ -939,12 +939,12 @@ ul.index code{color:inherit}
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/dark.css"></head>
  <body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.logius.nl/onze-dienstverlening/standaarden"><img alt="Logius" height="77" id="Logius" src="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg" width="44">
-  </a> <h1 id="title" class="title">NLGov Profile for OpenID AuthZEN Authorization API</h1>
+  </a> <h1 id="title" class="title">NLgov Profile for OpenID AuthZEN Authorization API</h1>
     
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2025-07-01">April 15, 2026</time>
+      <time class="dt-published" datetime="2025-07-01">April 17, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1018,7 +1018,7 @@ ul.index code{color:inherit}
   
   <section class="introductory" id="dutch-government-profile-for-openid-authzen-authorization-api"><div class="header-wrapper"><h2 id="dutch-government-profile-for-openid-authzen-authorization-api-0">Dutch government profile for OpenID AuthZEN Authorization API</h2><a class="self-link" href="#dutch-government-profile-for-openid-authzen-authorization-api" aria-label="Permalink for this Section"></a></div>
 <p>This profile is based upon the <a href="https://openid.net/wg/authzen/specifications/">AuthZEN Authorization API</a> as published by the <a href="https://openid.net/">OpenID Foundation</a>. It should be considered a fork of this standard geared more towards the Netherlands and operating within the context of the European Union.</p>
-<p>Starting with chapter Introduction we follow the structure of the AuthZEN Authorization API. Content introduced by the NLGov profile is marked in <span class="nlgov-add">green</span>. Content from the AuthZEN Authorization API that is not used in the NLGov profile is marked <span class="nlgov-del">red</span>.</p>
+<p>Starting with chapter Introduction we follow the structure of the AuthZEN Authorization API. Content introduced by the NLgov profile is marked in <span class="nlgov-add">green</span>. Content from the AuthZEN Authorization API that is not used in the NLgov profile is marked <span class="nlgov-del">red</span>.</p>
 </section>
   <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 <p>Computational services often implement access control within their components by separating Policy Decision Points (PDPs) from Policy Enforcement Points (PEPs). PDPs and PEPs are defined in XACML ([<cite><a class="bibref" data-link-type="biblio" href="#bib-xacml20" title="OASIS eXtensible Access Control Markup Language (XACML) Version 2.0">XACML20</a></cite>]) and NIST's ABAC SP 800-162 ([<cite><a class="bibref" data-link-type="biblio" href="#bib-nist.sp.800-162" title=" Guide to Attribute Based Access Control (ABAC) Definition and Considerations ">NIST.SP.800-162</a></cite>]). Communication between PDPs and PEPs follows similar patterns across different software and services that require or provide authorization information. The Authorization API described in this document enables different providers to offer PDP and PEP capabilities without having to bind themselves to one particular implementation of a PDP or PEP.</p>
