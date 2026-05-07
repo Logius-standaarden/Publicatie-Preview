@@ -17,10 +17,22 @@
 # spectral lint -r .linter.yaml $OAS_URL_OR_FILE
 # ```
 
-extends: spectral:oas
+extends:
+  - ["spectral:oas", "off"] # extend spectral:oas maar zet standaard alle regels uit
 
 rules:
+  #/core/publish-openapi (deze error-rules valideren of OAS valid is)
+  oas3-schema: error
+  operation-operationId-unique: error
+  path-params: error
+  openapi-tags-uniqueness: error
+  oas3-valid-media-example: error
+  oas3-valid-schema-example: error
+  oas3-server-variables: error
   oas3-api-servers: error
+
+  #/core/no-trailing-slash
+  path-keys-no-trailing-slash: error
 
   #/core/doc-openapi
   nlgov:openapi3:
@@ -134,7 +146,7 @@ rules:
   nlgov:paths-kebab-case:
     severity: error
     message: "{{property}} is not kebab-case."
-    given: $.paths[?(@property && !@property.match(/\/openapi\.json/))]~
+    given: $.paths[?(@property && !@property.match(/\/openapi\.(json)|(yaml)/))]~
     then:
       function: pattern
       functionOptions:
@@ -212,6 +224,24 @@ rules:
               - status
               - title
               - detail
+
+  #/core/error-handling/invalid-input
+  nlgov:problem-invalid-input:
+    severity: error
+    message: "GET and DELETE endpoints that have parameters, and all other endpoints must be able to return a 400 response"
+    given:
+      - $.paths..[?( @property.match(/(get)|(delete)/) && @.parameters && @.parameters.length > 0 )]
+      - $.paths..[?( @property.match(/(put)|(post)|(patch)/))]
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          properties:
+            responses:
+              type: object
+              required:
+              - "400"
 
   nlgov:property-casing:
     severity: warn
