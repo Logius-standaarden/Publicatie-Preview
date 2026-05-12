@@ -1014,7 +1014,7 @@ It should be considered a fork of this profile as the CloudEvents specification 
 <p>The goal of the CloudEvents specification is to define interoperability of event systems that allow services to produce or consume events, where the producer and consumer can be developed and deployed independently. The ability to keep services loosely coupled within a distributed system such as the Dutch government makes it possible to work more often and in a better event-driven way. Using the CE standard supports this and makes maximum use of existing worldwide standards.</p>
 <p>The CloudEvents standard is based on the principle of not imposing more requirements on the parties involved than necessary. This means, among other things, that there are no requirements for how consumers should interpret and process received notifications. Constraints pertaining to consumers are therefore more often formulated with '<em class="rfc2119">MAY</em>' than with '<em class="rfc2119">SHOULD</em>' or '<em class="rfc2119">MUST</em>' (e.g. "Consumers <em class="rfc2119">MAY</em> assume that Events with identical <code>source</code> and <code>id</code> are duplicates")) The NLgov profile for CloudEvents endorses this principle. In practice, the parties involved are of course allowed to apply stricter constraints.</p>
 
-<p>Starting with chapter <a href="#introduction">Introduction</a> we follow the structure of the CloudEvents profile. Where we do not use content from CloudEvents we use <del>strikethrough</del> to indicate it is not part of NLgov profile for CloudEvents. Where we have added more specific requirements for the Dutch situation this is indicated with the <strong>CloudEvents-NL</strong> tag.</p>
+<p>Starting with chapter <a href="#introduction">Introduction</a> we follow the structure of the CloudEvents profile. Where we do not use content from CloudEvents we use <del>strikethrough</del> to indicate it is not part of NLgov profile for CloudEvents. Where we have added more specific requirements for the Dutch situation this is indicated with the <strong>NLgov:</strong> tag.</p>
 <section><div class="header-wrapper"><h3 id="usecases">Usecases</h3><a class="self-link" href="#usecases" aria-label="Permalink for this Section"></a></div>
 <figure id="authorization_code">
   <img alt="Pubsub image" src="media/use-case-pubsub1.png" width="600">
@@ -1241,7 +1241,7 @@ Events with identical <code>source</code> and <code>id</code> are duplicates.</l
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li>Constraints:<ul>
@@ -1309,7 +1309,7 @@ collaborate to ensure that <code>source</code> + <code>id</code> is unique for e
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li>Constraints:<ul>
@@ -1389,7 +1389,7 @@ organization which defines the semantics of this event type.</li>
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <p>Constraints:</p>
 <ul>
@@ -1454,7 +1454,7 @@ set explicitly to the implied <code>datacontenttype</code> of the source.</p>
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <p>Constraints:</p>
 <ul>
@@ -1479,7 +1479,7 @@ for more information.</li>
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <p>Constraints:</p>
 <ul>
@@ -1530,7 +1530,7 @@ the name of the newly created blob is carried in <code>subject</code>:<ul>
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <p>Constraints:</p>
 <ul>
@@ -1562,7 +1562,7 @@ the same algorithm to determine the value used.</li>
 </li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li>The time the event was logged <em class="rfc2119">SHOULD</em> be used (in many cases this is the only
@@ -1614,7 +1614,7 @@ without needing to decode and examine the event data. Such identity attributes
 can also be used to help intermediate gateways determine how to route the
 events.</p>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li>Two of the extension attributes included by CloudEvents ('dataref' and
@@ -1670,7 +1670,7 @@ both <code>data</code> and <code>dataref</code> (serialized as JSON):</p>
 <span class="hljs-punctuation">}</span>
 </code></pre>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li><em class="rfc2119">MAY</em> be used to reference an external data location (for example: a link back to
@@ -1725,7 +1725,7 @@ subsequent value (i.e. be contiguous and monotonically increasing).</li>
 (-2^31).</li>
 </ul>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <ul>
 <li>Attribute 'sequence' can be helpful in situations where:<ul>
@@ -1827,7 +1827,7 @@ exchange of CloudEvents.</p>
 <span class="hljs-punctuation">}</span>
 </code></pre>
 <aside class=" addition">
-<b>CloudEvents-NL: Additional content</b><br>
+<b>NLgov: Additional content</b><br>
 
 <p>In the example below, a number of agreements are visible as they apply within the NLgov profile for CloudEvents.
 In order to show as much things as possible, this is done in the form of a very extensive message.
