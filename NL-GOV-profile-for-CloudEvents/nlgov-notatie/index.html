@@ -1014,7 +1014,7 @@ It should be considered a fork of this profile as the CloudEvents specification 
 <p>The goal of the CloudEvents specification is to define interoperability of event systems that allow services to produce or consume events, where the producer and consumer can be developed and deployed independently. The ability to keep services loosely coupled within a distributed system such as the Dutch government makes it possible to work more often and in a better event-driven way. Using the CE standard supports this and makes maximum use of existing worldwide standards.</p>
 <p>The CloudEvents standard is based on the principle of not imposing more requirements on the parties involved than necessary. This means, among other things, that there are no requirements for how consumers should interpret and process received notifications. Constraints pertaining to consumers are therefore more often formulated with '<em class="rfc2119">MAY</em>' than with '<em class="rfc2119">SHOULD</em>' or '<em class="rfc2119">MUST</em>' (e.g. "Consumers <em class="rfc2119">MAY</em> assume that Events with identical <code>source</code> and <code>id</code> are duplicates")) The NLgov profile for CloudEvents endorses this principle. In practice, the parties involved are of course allowed to apply stricter constraints.</p>
 
-<p>Starting with chapter <a href="#introduction">Introduction</a> we follow the structure of the CloudEvents profile. Where we do not use content from CloudEvents we use <del>strikethrough</del> to indicate it is not part of CloudEvents-NL. Where we have added more specific requirements for the Dutch situation this is indicated with the <strong>CloudEvents-NL</strong> tag.</p>
+<p>Starting with chapter <a href="#introduction">Introduction</a> we follow the structure of the CloudEvents profile. Where we do not use content from CloudEvents we use <del>strikethrough</del> to indicate it is not part of NLgov profile for CloudEvents. Where we have added more specific requirements for the Dutch situation this is indicated with the <strong>CloudEvents-NL</strong> tag.</p>
 <section><div class="header-wrapper"><h3 id="usecases">Usecases</h3><a class="self-link" href="#usecases" aria-label="Permalink for this Section"></a></div>
 <figure id="authorization_code">
   <img alt="Pubsub image" src="media/use-case-pubsub1.png" width="600">
@@ -1618,7 +1618,7 @@ events.</p>
 
 <ul>
 <li>Two of the extension attributes included by CloudEvents ('dataref' and
-'sequence') are included as optional attributes in the CloudEvents-NL profile
+'sequence') are included as optional attributes in the NLgov profile for CloudEvents
 because it is foreseen that there is often a need to use these attributes.</li>
 <li>Extension attributes should be kept minimal to ensure the CloudEvent can be
 properly serialized and transported (e.g. when using HTTP-headers most HTTP
@@ -1829,7 +1829,7 @@ exchange of CloudEvents.</p>
 <aside class=" addition">
 <b>CloudEvents-NL: Additional content</b><br>
 
-<p>In the example below, a number of agreements are visible as they apply within the CloudEvents-NL profile.
+<p>In the example below, a number of agreements are visible as they apply within the NLgov profile for CloudEvents.
 In order to show as much things as possible, this is done in the form of a very extensive message.
 In minimal form, a message contains only four mandatory attributes: <code>id</code>, <code>source</code>, <code>specversion</code> and <code>type</code>.
 For more information about a particular attribute, see the detailed attribute description.</p>
