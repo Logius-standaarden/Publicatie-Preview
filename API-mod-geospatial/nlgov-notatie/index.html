@@ -1166,7 +1166,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><aside class="">
 The Geospatial Module is focused on JSON-based encoding of data. However, consider also supporting <code>text/html</code>, as recommended in OGC API Features [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>]. Sharing data on the Web should include publication in HTML, as this allows discovery of the data through common search engines as well as viewing the data directly in a browser.
 </aside></div><section id="geojson"><div class="header-wrapper"><h3 id="x2-1-geojson"><bdi class="secno">2.1 </bdi>GeoJSON</h3><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.1"></a></div>
-<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84 (OGC:CRS84). In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
+<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">RFC7946</a></cite>] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84 (OGC:CRS84). In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
 The GeoJSON conventions and extensions described in this module apply to both geometry passed in input parameters and responses.</p>
 <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span></div><aside class="">
 GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are several valid options:<ul>
@@ -1309,7 +1309,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
   <dl>
     <dt>Statement</dt>
     <dd>
-      For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in <a href="https://docs.ogc.org/DRAFTS/20-002r1.html">OGC API Features part 4</a>, but note that this standard is still in development.
+      For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">RFC7946</a></cite>]. Support GeoJSON as described in <a href="https://docs.ogc.org/DRAFTS/20-002r1.html">OGC API Features part 4</a>, but note that this standard is still in development.
       <aside class="example" id="example-7"><div class="marker">
     <a class="self-link" href="#example-7">Example<bdi> 7</bdi></a>
   </div>
@@ -1427,7 +1427,7 @@ In case a collection of resources is embedded in the request resource, the name 
   <dl>
     <dt>Statement</dt>
     <dd>
-      For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">rfc7946</a></cite>]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>].
+      For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7946" title="The GeoJSON Format">RFC7946</a></cite>]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ogcapi-features-1" title="OGC API - Features - Part 1: Core">ogcapi-features-1</a></cite>].
       <aside class="example" id="example-11"><div class="marker">
     <a class="self-link" href="#example-11">Example<bdi> 11</bdi></a>
   </div>
@@ -2089,7 +2089,7 @@ Officially, WGS 84 longitude-latitude (OGC:CRS84) is the only CRS allowed in Geo
       <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html"><cite>OGC API - Features - Part 1: Core</cite></a>.  Open Geospatial Consortium. Approved. URL: <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html">http://docs.ogc.org/is/17-069r3/17-069r3.html</a>
     </dd><dt id="bib-ogcapi-features-2">[ogcapi-features-2]</dt><dd>
       <a href="https://docs.ogc.org/is/18-058/18-058.html"><cite>OGC API - Features - Part 2: Coordinate Reference Systems by Reference</cite></a>.  Open Geospatial Consortium. Approved. URL: <a href="https://docs.ogc.org/is/18-058/18-058.html">https://docs.ogc.org/is/18-058/18-058.html</a>
-    </dd><dt id="bib-rfc7946">[rfc7946]</dt><dd>
+    </dd><dt id="bib-rfc7946">[RFC7946]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7946"><cite>The GeoJSON Format</cite></a>. H. Butler; M. Daly; A. Doyle; S. Gillies; S. Hagen; T. Schaub.  IETF. August 2016. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7946">https://www.rfc-editor.org/rfc/rfc7946</a>
     </dd><dt id="bib-sdw-bp">[sdw-bp]</dt><dd>
       <a href="https://www.w3.org/TR/sdw-bp/"><cite>Spatial Data on the Web Best Practices</cite></a>. Payam Barnaghi; Jeremy Tandy; Linda van den Brink; Timo Homburg.  W3C. 19 September 2023. DNOTE. URL: <a href="https://www.w3.org/TR/sdw-bp/">https://www.w3.org/TR/sdw-bp/</a>
