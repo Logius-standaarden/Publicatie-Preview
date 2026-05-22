@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="nl"><head>
+<!DOCTYPE html><html lang="en"><head>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 37.0.0">
@@ -942,24 +942,24 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
   </a> <h1 id="title" class="title">Guidelines for NLgov profile for CloudEvents</h1>
     <h2 id="subtitle" class="subtitle">Project Notificatieservices</h2>
     <h2>
-      Logius Handreiking<br>
-      Werkversie
-      <time class="dt-published" datetime="2024-06-27">22 mei 2026</time>
+      Logius Guide<br>
+      Draft
+      <time class="dt-published" datetime="2024-06-27">May 22, 2026</time>
     </h2>
     <dl>
-      <dt>Deze versie:</dt><dd class="status">
+      <dt>This version:</dt><dd class="status">
               <a class="u-url status" href="https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/">https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/</a>
             </dd>
-      <dt>Laatst gepubliceerde versie:</dt><dd>
+      <dt>Latest published version:</dt><dd>
               <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/">https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/">https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/</a></dd>
+      <dt>Latest editor's draft:</dt><dd><a href="https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/">https://logius-standaarden.github.io/CloudEvents-NL-Guidelines/</a></dd>
       
       
       
-      <dt>Vorige versie:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/0.3/">https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/0.3/</a></dd>
+      <dt>Previous version:</dt><dd><a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/0.3/">https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/0.3/</a></dd>
       
-      <dt>Redacteurs:</dt>
+      <dt>Editors:</dt>
       <dd class="editor p-author h-card vcard">
     <span class="p-name fn">Gershon Jansen</span> (<a class="p-org org h-org" href="https://www.vngrealisatie.nl/">VNG Realisatie</a>)
   </dd><dd class="editor p-author h-card vcard">
@@ -968,17 +968,17 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <a class="u-url url p-name fn" href="https://www.logius.nl">Edwin Wisse</a> (<span class="p-org org h-org">Logius</span>)
   </dd>
       
-      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+      <dt>Author:</dt><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Ad Gerrits</span> (<a class="p-org org h-org" href="https://www.vngrealisatie.nl/">VNG Realisatie</a>)
   </dd>
-      <dt>Doe mee:</dt><dd>
+      <dt>Participate:</dt><dd>
     <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/">GitHub Logius-standaarden/CloudEvents-NL-Guidelines</a>
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/issues/">All issues</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/issues/new/choose">Dien een melding in</a>
+    <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/issues/new/choose">File an issue</a>
   </dd><dd>
-    <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/commits/">Revisiehistorie</a>
+    <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/commits/">Commit history</a>
   </dd><dd>
     <a href="https://github.com/Logius-standaarden/CloudEvents-NL-Guidelines/pulls/">Pull requests</a>
   </dd>
@@ -986,17 +986,24 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     
     
     <p>
-          Dit document is ook beschikbaar in dit niet-normatieve formaat:
+          This document is also available in these non-normative format:
           <a rel="alternate" href="notificatieservices-guidelines-1.0.pdf">PDF</a>
         </p>
     <p class="copyright">
-            Dit document valt onder de volgende licentie: 
+            This document is licensed under 
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div><section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents"><bdi class="secno">1. </bdi>Guideline for the use of the HTTP Protocol Binding for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention"><bdi class="secno">1.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations"><bdi class="secno">1.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">1.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">1.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-json-event-format-for-cloudevents"><bdi class="secno">2. </bdi>Guideline for the use of the JSON Event Format for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-0"><bdi class="secno">2.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations-0"><bdi class="secno">2.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-0"><bdi class="secno">2.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-0"><bdi class="secno">2.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents"><bdi class="secno">3. </bdi>Guideline for the use of the Webhook pattern for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-1"><bdi class="secno">3.1 </bdi>Summary with points for attention</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#delivering-notifications"><bdi class="secno">3.1.1 </bdi>Delivering notifications</a></li><li class="tocline"><a class="tocxref" href="#authorization"><bdi class="secno">3.1.2 </bdi>Authorization</a></li><li class="tocline"><a class="tocxref" href="#abuse-protection"><bdi class="secno">3.1.3 </bdi>Abuse protection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#recommendations-1"><bdi class="secno">3.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-1"><bdi class="secno">3.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-1"><bdi class="secno">3.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformiteit">Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>Naast onderdelen die als niet-normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet-normatief. Verder is alles in dit document normatief.</p>
+  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformance</a></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents"><bdi class="secno">1. </bdi>Guideline for the use of the HTTP Protocol Binding for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention"><bdi class="secno">1.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations"><bdi class="secno">1.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">1.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-0"><bdi class="secno">1.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-json-event-format-for-cloudevents"><bdi class="secno">2. </bdi>Guideline for the use of the JSON Event Format for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-0"><bdi class="secno">2.1 </bdi>Summary with points for attention</a></li><li class="tocline"><a class="tocxref" href="#recommendations-0"><bdi class="secno">2.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-0"><bdi class="secno">2.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-1"><bdi class="secno">2.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents"><bdi class="secno">3. </bdi>Guideline for the use of the Webhook pattern for CloudEvents</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#summary-with-points-for-attention-1"><bdi class="secno">3.1 </bdi>Summary with points for attention</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#delivering-notifications"><bdi class="secno">3.1.1 </bdi>Delivering notifications</a></li><li class="tocline"><a class="tocxref" href="#authorization"><bdi class="secno">3.1.2 </bdi>Authorization</a></li><li class="tocline"><a class="tocxref" href="#abuse-protection"><bdi class="secno">3.1.3 </bdi>Abuse protection</a></li></ol></li><li class="tocline"><a class="tocxref" href="#recommendations-1"><bdi class="secno">3.2 </bdi>Recommendations</a></li><li class="tocline"><a class="tocxref" href="#examples-1"><bdi class="secno">3.3 </bdi>Examples</a></li><li class="tocline"><a class="tocxref" href="#normative-references-2"><bdi class="secno">3.4 </bdi>Normative References</a></li></ol></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Terms defined by this specification</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Terms defined by reference</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
+        are to be interpreted as described in
+        <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        when, and only when, they appear in all
+        capitals, as shown here.
+      </p>
   </section>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>This document is provides guidelines for [<cite><a class="bibref" data-link-type="biblio" href="#bib-nlgov-cloudevents" title="NLgov profile for CloudEvents">NLgov.CloudEvents</a></cite>] for multiple transport protocols including HTTP, JSON event format and Webhooks.
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This document is provides guidelines for [<cite><a class="bibref" data-link-type="biblio" href="#bib-nlgov-cloudevents" title="NLgov profile for CloudEvents">NLgov.CloudEvents</a></cite>] for multiple transport protocols including HTTP, JSON event format and Webhooks.
 For each transport protocol, there are lists of things to keep in mind and examples on how to do so.</p>
 </section>
   
@@ -1008,7 +1015,7 @@ For each transport protocol, there are lists of things to keep in mind and examp
 <ul>
 <li>Events can be transferred with all standard or application-defined HTTP request methods that support payload body transfers. Events can be also be transferred in HTTP responses and with all HTTP status codes that permit payload body transfers.</li>
 <li>This specification defines three content modes for transferring events: <ul>
-<li>structured (required): HTTP message body contains both event data and metadata attributes; an appropriate event format is used ((non-batching) JSON is the only event format that MUST be supported); </li>
+<li>structured (required): HTTP message body contains both event data and metadata attributes; an appropriate event format is used ((non-batching) JSON is the only event format that <em class="rfc2119">MUST</em> be supported); </li>
 <li>batched (optional): HTTP message body contains event data and metadata attributes from multiple events; an appropriate event format is used.</li>
 <li>binary (required): HTTP message body contains event data as-is; event attributes mapped to HTTP-headers; HTTP <code>Content-Type</code> header declares the media type.</li>
 </ul>
@@ -1020,21 +1027,21 @@ For each transport protocol, there are lists of things to keep in mind and examp
 </ul>
 </li>
 <li>Structured content mode:<ul>
-<li>The HTTP message body MUST contain both event data and metadata attributes.</li>
-<li>The HTTP Content-Type header MUST be set to the media type of an event format (E.g. <code>application/cloudevents+json; charset=UTF-8</code>)</li>
+<li>The HTTP message body <em class="rfc2119">MUST</em> contain both event data and metadata attributes.</li>
+<li>The HTTP Content-Type header <em class="rfc2119">MUST</em> be set to the media type of an event format (E.g. <code>application/cloudevents+json; charset=UTF-8</code>)</li>
 <li>The chosen event format defines how all attributes, and data, are represented in the HTTP message body.</li>
-<li>Implementations MAY include the same HTTP headers as defined for the binary mode (E.g. <code>ce-id</code>).</li>
+<li>Implementations <em class="rfc2119">MAY</em> include the same HTTP headers as defined for the binary mode (E.g. <code>ce-id</code>).</li>
 </ul>
 </li>
 <li>Batched content mode:<ul>
-<li>The HTTP message body MUST contain both event data and metadata attributes.</li>
-<li>The HTTP Content-Type header MUST be set to the media type of an event format (E.g. <code>application/cloudevents-batch+json; charset=UTF-8</code>)</li>
+<li>The HTTP message body <em class="rfc2119">MUST</em> contain both event data and metadata attributes.</li>
+<li>The HTTP Content-Type header <em class="rfc2119">MUST</em> be set to the media type of an event format (E.g. <code>application/cloudevents-batch+json; charset=UTF-8</code>)</li>
 <li>The chosen event format defines how a batch of events and all event attributes, and data, are represented.</li>
-<li>All batched CloudEvents MUST have the same specversion attribute. Other attributes MAY differ, including the datacontenttype attribute. The batch MAY be empty.</li>
+<li>All batched CloudEvents <em class="rfc2119">MUST</em> have the same specversion attribute. Other attributes <em class="rfc2119">MAY</em> differ, including the datacontenttype attribute. The batch <em class="rfc2119">MAY</em> be empty.</li>
 </ul>
 </li>
 <li>Binary content mode:<ul>
-<li>All CloudEvents context attributes, including extensions, MUST be mapped to HTTP headers with the same name as the attribute name but prefixed with <code>ce-</code>.</li>
+<li>All CloudEvents context attributes, including extensions, <em class="rfc2119">MUST</em> be mapped to HTTP headers with the same name as the attribute name but prefixed with <code>ce-</code>.</li>
 <li>The value for each HTTP header is constructed as described in the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md#3132-http-header-values">specification</a></li>
 </ul>
 </li>
@@ -1042,12 +1049,12 @@ For each transport protocol, there are lists of things to keep in mind and examp
 <p>At the moment there are <em>no additional agreements</em> about the use of the specification within the Dutch government.</p>
 </section><section id="recommendations"><div class="header-wrapper"><h3 id="x1-2-recommendations"><bdi class="secno">1.2 </bdi>Recommendations</h3><a class="self-link" href="#recommendations" aria-label="Permalink for Section 1.2"></a></div>
 <ul>
-<li>One SHOULD use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a>. </li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a>. </li>
 <li>There are no agreements to deviate from the standard in any part.</li>
 <li>Given the fact that many organizations still have little experience with standardized exchange of events, we recommend a useful relatively simple mechanism that consumers are already familiar with:<ul>
-<li>One SHOULD use structured content mode.</li>
-<li>One SHOULD use the JSON (non batched) event format</li>
-<li>When using structured mode one SHOULD NOT depend on the usage of HTTP-headers that replicate context-attributes in the event.</li>
+<li>One <em class="rfc2119">SHOULD</em> use structured content mode.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the JSON (non batched) event format</li>
+<li>When using structured mode one <em class="rfc2119">SHOULD NOT</em> depend on the usage of HTTP-headers that replicate context-attributes in the event.</li>
 </ul>
 </li>
 <li>If the above advice is followed, when notifying via webhooks 1 message will contain JSON-structured data about 1 event that has occurred.</li>
@@ -1109,7 +1116,7 @@ For each transport protocol, there are lists of things to keep in mind and examp
     <span class="hljs-string">...</span> <span class="hljs-string">application</span> <span class="hljs-string">data</span> <span class="hljs-string">...</span>
 }
 </code></pre>
-</section><section id="normative-references"><div class="header-wrapper"><h3 id="x1-4-normative-references"><bdi class="secno">1.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Section 1.4"></a></div>
+</section><section id="normative-references-0"><div class="header-wrapper"><h3 id="x1-4-normative-references"><bdi class="secno">1.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references-0" aria-label="Permalink for Section 1.4"></a></div>
 <ul>
 <li><a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents - Version 1.0.1</a></li>
 </ul>
@@ -1121,9 +1128,9 @@ For each transport protocol, there are lists of things to keep in mind and examp
 <p>The JSON Format for CloudEvents specification defines how events are expressed in JSON. The JSON syntax is not a specification of a complete data interchange. Meaningful data interchange requires agreement between a producer and consumer on the semantics attached to a particular use of the JSON syntax. What JSON does provide is the syntactic framework to which such semantics can be attached.</p>
 <section id="summary-with-points-for-attention-0"><div class="header-wrapper"><h3 id="x2-1-summary-with-points-for-attention"><bdi class="secno">2.1 </bdi>Summary with points for attention</h3><a class="self-link" href="#summary-with-points-for-attention-0" aria-label="Permalink for Section 2.1"></a></div>
 <ul>
-<li>Each CloudEvents event can be wholly represented as a JSON object and MUST use the media type <code>application/cloudevents+json</code>.</li>
+<li>Each CloudEvents event can be wholly represented as a JSON object and <em class="rfc2119">MUST</em> use the media type <code>application/cloudevents+json</code>.</li>
 <li>The <a href="https://github.com/cloudevents/spec/blob/v1.0.1/spec.json">CloudEvents JSONSchema</a> for the spec can be used to validate events in JSON.</li>
-<li>Unset attributes MAY be encoded to the JSON value of null. When decoding attributes and a null value is encountered, it MUST be treated as the equivalent of unset or omitted. OPTIONAL not omitted attributes MAY be represented as a null JSON value.</li>
+<li>Unset attributes <em class="rfc2119">MAY</em> be encoded to the JSON value of null. When decoding attributes and a null value is encountered, it <em class="rfc2119">MUST</em> be treated as the equivalent of unset or omitted. <em class="rfc2119">OPTIONAL</em> not omitted attributes <em class="rfc2119">MAY</em> be represented as a null JSON value.</li>
 <li>The runtime data type of the `data' content inside the JSON object can be either:<ul>
 <li>a textual <a href="https://tools.ietf.org/html/rfc7159#section-3">JSON value</a> with member name <code>data</code></li>
 <li>a binary JSON string expression containing the <a href="https://tools.ietf.org/html/rfc4648#section-4">Base64</a> encoded binary value with member name <code>data_base64</code></li>
@@ -1132,17 +1139,17 @@ For each transport protocol, there are lists of things to keep in mind and examp
 <li>So if a <code>data_base64</code> member is present it indicates that its value is Base64 encoded binary data.</li>
 <li>JSON Batch Format can be used to batch several CloudEvents into a single JSON document.<ul>
 <li>The document contains a JSON array filled with CloudEvents in the JSON Event format.</li>
-<li>Media type <code>application/cloudevents-batch+json</code> MUST be used.</li>
-<li>The JSON Batch Format MUST NOT be used when only support for the JSON Format is indicated.</li>
+<li>Media type <code>application/cloudevents-batch+json</code> <em class="rfc2119">MUST</em> be used.</li>
+<li>The JSON Batch Format <em class="rfc2119">MUST NOT</em> be used when only support for the JSON Format is indicated.</li>
 </ul>
 </li>
 </ul>
 </section><section id="recommendations-0"><div class="header-wrapper"><h3 id="x2-2-recommendations"><bdi class="secno">2.2 </bdi>Recommendations</h3><a class="self-link" href="#recommendations-0" aria-label="Permalink for Section 2.2"></a></div>
 <ul>
-<li>One SHOULD use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents</a>. </li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents</a>. </li>
 <li>There are no agreements to deviate from the standard in any part.</li>
-<li>If applicable then one SHOULD use JSON as primary event format:<ul>
-<li>JSON is the only event format that <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md#14-event-formats">MUST be supported</a> when HTTP structured content mode is used.</li>
+<li>If applicable then one <em class="rfc2119">SHOULD</em> use JSON as primary event format:<ul>
+<li>JSON is the only event format that <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md#14-event-formats"><em class="rfc2119">MUST</em> be supported</a> when HTTP structured content mode is used.</li>
 <li>JSON will be the primary format for APIs as formulated within the <a href="https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/#json">API strategie voor de Nederlandse overheid - Extensies</a>.</li>
 </ul>
 </li>
@@ -1188,7 +1195,7 @@ For each transport protocol, there are lists of things to keep in mind and examp
   <span class="hljs-attr">"data_base64"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"YWFwIG5vb3QgbWllcw=="</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-</section><section id="normative-references-0"><div class="header-wrapper"><h3 id="x2-4-normative-references"><bdi class="secno">2.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references-0" aria-label="Permalink for Section 2.4"></a></div>
+</section><section id="normative-references-1"><div class="header-wrapper"><h3 id="x2-4-normative-references"><bdi class="secno">2.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references-1" aria-label="Permalink for Section 2.4"></a></div>
 <ul>
 <li><a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents - Version 1.0.1</a></li>
 </ul>
@@ -1209,22 +1216,22 @@ The specification</li>
 </ol>
 <section id="delivering-notifications"><div class="header-wrapper"><h4 id="x3-1-1-delivering-notifications"><bdi class="secno">3.1.1 </bdi>Delivering notifications</h4><a class="self-link" href="#delivering-notifications" aria-label="Permalink for Section 3.1.1"></a></div>
 <ul>
-<li>A delivery request MUST use a HTTP POST request via HTTPS.</li>
-<li>A delivery response MUST have the appropriate status code:<ul>
+<li>A delivery request <em class="rfc2119">MUST</em> use a HTTP POST request via HTTPS.</li>
+<li>A delivery response <em class="rfc2119">MUST</em> have the appropriate status code:<ul>
 <li><code>200 OK</code> or <code>200 Created</code> if delivery had been accepted and processed and response carries a payload</li>
 <li><code>201</code> Created or <code>204 No Content</code> when accepted and processed but carries no payload </li>
 <li><code>202 Accepted</code> if accepted but not yet processed or processing status is unknown</li>
 <li><code>410 Gone</code> if delivery target has been retired</li>
-<li><code>429 Too Many Requests</code> when exceeding a request rate limit and MUST include the Retry-After header.</li>
+<li><code>429 Too Many Requests</code> when exceeding a request rate limit and <em class="rfc2119">MUST</em> include the Retry-After header.</li>
 <li><code>415 Unsupported Media Type</code> when notification format is not understood.</li>
 <li>other error status codes apply as specified in <a href="https://tools.ietf.org/html/rfc7231">RFC7231</a>.</li>
 </ul>
 </li>
 </ul>
 </section><section id="authorization"><div class="header-wrapper"><h4 id="x3-1-2-authorization"><bdi class="secno">3.1.2 </bdi>Authorization</h4><a class="self-link" href="#authorization" aria-label="Permalink for Section 3.1.2"></a></div>
-<p>The delivery request MUST use one of the following two methods (both of which lean on the OAuth 2.0 Bearer Token <a href="https://tools.ietf.org/html/rfc6750">RFC6750</a> model):</p>
+<p>The delivery request <em class="rfc2119">MUST</em> use one of the following two methods (both of which lean on the OAuth 2.0 Bearer Token <a href="https://tools.ietf.org/html/rfc6750">RFC6750</a> model):</p>
 <ul>
-<li>The access token is sent in the Authorization request header field; for <a href="https://tools.ietf.org/html/rfc6750#section-2.1">OAuth 2.0 Bearer</a> tokens, the "Bearer" scheme MUST be used.</li>
+<li>The access token is sent in the Authorization request header field; for <a href="https://tools.ietf.org/html/rfc6750#section-2.1">OAuth 2.0 Bearer</a> tokens, the "Bearer" scheme <em class="rfc2119">MUST</em> be used.</li>
 <li>The access token is added to the HTTP Request URI Query component as described in <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md#32-uri-query-parameter">URI Query Parameter</a>.</li>
 </ul>
 </section><section id="abuse-protection"><div class="header-wrapper"><h4 id="x3-1-3-abuse-protection"><bdi class="secno">3.1.3 </bdi>Abuse protection</h4><a class="self-link" href="#abuse-protection" aria-label="Permalink for Section 3.1.3"></a></div>
@@ -1232,7 +1239,7 @@ The specification</li>
 <ul>
 <li><p>A handshake can either be executed immediately at registration time or as a "pre-flight" request immediately preceding a delivery.</p>
 </li>
-<li><p>Delivery targets SHOULD support the abuse protection feature. If a target does not support the feature, the sender MAY choose not to send to the target, at all, or send only at a very low request rate.</p>
+<li><p>Delivery targets <em class="rfc2119">SHOULD</em> support the abuse protection feature. If a target does not support the feature, the sender <em class="rfc2119">MAY</em> choose not to send to the target, at all, or send only at a very low request rate.</p>
 </li>
 <li><p>The <em>validation request</em> uses the HTTP <a href="https://tools.ietf.org/html/rfc7231#section-4.3.7">OPTIONS</a> method with header fields:</p>
 <ul>
@@ -1241,22 +1248,22 @@ The specification</li>
 <li>WebHook-Request-Rate (optional): a positive integer number that expresses the request rate in "requests per minute"</li>
 </ul>
 </li>
-<li><p>The <em>validation response</em> MUST be sent if the delivery target does allow delivery of events with header fields:</p>
+<li><p>The <em>validation response</em> <em class="rfc2119">MUST</em> be sent if the delivery target does allow delivery of events with header fields:</p>
 <ul>
-<li>WebHook-Allowed-Origin (required): MUST either be the origin name supplied in the WebHook-Request-Origin header, or a singular asterisk character ('*'), indicating that the delivery target supports notifications from all origins.</li>
-<li>WebHook-Allowed-Rate (depends): MUST be returned if the request contained the WebHook-Request-Rate, otherwise it SHOULD be returned; an integer number expresses the permitted request rate in "requests per minute" or asterisk when there is no rate limitation.</li>
+<li>WebHook-Allowed-Origin (required): <em class="rfc2119">MUST</em> either be the origin name supplied in the WebHook-Request-Origin header, or a singular asterisk character ('*'), indicating that the delivery target supports notifications from all origins.</li>
+<li>WebHook-Allowed-Rate (depends): <em class="rfc2119">MUST</em> be returned if the request contained the WebHook-Request-Rate, otherwise it <em class="rfc2119">SHOULD</em> be returned; an integer number expresses the permitted request rate in "requests per minute" or asterisk when there is no rate limitation.</li>
 </ul>
 </li>
 </ul>
 </section></section><section id="recommendations-1"><div class="header-wrapper"><h3 id="x3-2-recommendations"><bdi class="secno">3.2 </bdi>Recommendations</h3><a class="self-link" href="#recommendations-1" aria-label="Permalink for Section 3.2"></a></div>
 <ul>
-<li>One SHOULD use the  <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a>. </li>
+<li>One <em class="rfc2119">SHOULD</em> use the  <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a>. </li>
 <li>There are no agreements to deviate from the standard in any part.</li>
-<li>As described in the specification usage of an access token added to the HTTP Request URI Query component has a number of security weaknesses and therefore SHOULD NOT be used unless it is impossible to send an access token in the Authorization request header field.</li>
+<li>As described in the specification usage of an access token added to the HTTP Request URI Query component has a number of security weaknesses and therefore <em class="rfc2119">SHOULD NOT</em> be used unless it is impossible to send an access token in the Authorization request header field.</li>
 <li>The CloudEvents specification focuses on automated validation of intended notification applications. Within the context of the Dutch government, there can (also) be non-automated validation (e.g. by specifying endpoints in agreements between the organizations involved). In those cases it is not always necessary to perform an automated handshake before notifications may be sent.</li>
 <li>An automated handshake as described can take place at different moments. If automated subscription to event notification is used:<ul>
-<li>one SHOULD perform a handshake as described in the specification immediately at registration time</li>
-<li>one MAY perform a handshake as a "pre-flight" request immediately preceding a delivery.</li>
+<li>one <em class="rfc2119">SHOULD</em> perform a handshake as described in the specification immediately at registration time</li>
+<li>one <em class="rfc2119">MAY</em> perform a handshake as a "pre-flight" request immediately preceding a delivery.</li>
 </ul>
 </li>
 </ul>
@@ -1301,7 +1308,7 @@ The specification</li>
 <p>Delivery response:</p>
 <pre><code aria-busy="false" class="hljs http"><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">204</span> No Content
 </code></pre>
-</section><section id="normative-references-1"><div class="header-wrapper"><h3 id="x3-4-normative-references"><bdi class="secno">3.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references-1" aria-label="Permalink for Section 3.4"></a></div>
+</section><section id="normative-references-2"><div class="header-wrapper"><h3 id="x3-4-normative-references"><bdi class="secno">3.4 </bdi>Normative References</h3><a class="self-link" href="#normative-references-2" aria-label="Permalink for Section 3.4"></a></div>
 <ul>
 <li><a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery - Version 1.0.1</a></li>
 </ul>
@@ -1312,25 +1319,32 @@ The specification</li>
   </section>
   <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div>
   <section id="index-defined-here">
-    <div class="header-wrapper"><h3 id="a-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+    <div class="header-wrapper"><h3 id="a-1-terms-defined-by-this-specification"><bdi class="secno">A.1 </bdi>Terms defined by this specification</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
     <ul class="index">
     
   </ul>
   </section><section id="index-defined-elsewhere">
-    <div class="header-wrapper"><h3 id="a-2-termen-gedefinieerd-door-verwijzing"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    <div class="header-wrapper"><h3 id="a-2-terms-defined-by-reference"><bdi class="secno">A.2 </bdi>Terms defined by reference</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
     <ul class="index">
     
   </ul>
   </section></section>
  
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informatieve-referenties">
-    <div class="header-wrapper"><h3 id="b-1-informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normative-references">
+    <div class="header-wrapper"><h3 id="b-1-normative-references"><bdi class="secno">B.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix B.1"></a></div>
+    <dl class="bibliography"><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd></dl>
+  </section><section id="informative-references">
+    <div class="header-wrapper"><h3 id="b-2-informative-references"><bdi class="secno">B.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.2"></a></div>
     <dl class="bibliography"><dt id="bib-nlgov-cloudevents">[NLgov.CloudEvents]</dt><dd>
       <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/cloudevents-nl/"><cite>NLgov profile for CloudEvents</cite></a>. Werkgroep Berichtenstandaard (Project Notificatieservices).  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/cloudevents-nl/">https://gitdocumentatie.logius.nl/publicatie/notificatieservices/cloudevents-nl/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
@@ -1570,4 +1584,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Logius Handreiking - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Logius Guide - Draft</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
