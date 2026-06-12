@@ -1286,7 +1286,7 @@ De <code>trace_id</code> is identiek bij beide organisaties, waardoor er een rel
   <img src="media/relatie_logboekelementen_afbeelding9.svg" alt="Een suboperatie heeft een parent_span_id die de span_id van de hoofdoperatie heeft">
   <figcaption><a class="self-link" href="#fig-afbeelding-span_id-en-parent_span_id">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Afbeelding span_id en parent_span_id</span></figcaption>
 </figure><p>In het geval er data nodig is van een andere organisatie, krijgt de Operation van de verstrekkende organisatie ook een eigen, unieke <code>span_id</code>.</p>
-<p>Daarnaast wordt bij deze Operation ook het <code>span_id</code> geregistreerd die het verzoek voor informatie geïnitieerd heeft (vanuit de vragende organisatie). Deze specifieke <code>span_id</code> wordt het <code>foreign_operation._span_id</code> genoemd en krijgt de waarde gelijk aan het <code>span_id</code> van de initiërende Operation van de vragende organisatie.</p>
+<p>Daarnaast wordt bij deze Operation ook het <code>span_id</code> geregistreerd die het verzoek voor informatie geïnitieerd heeft (vanuit de vragende organisatie). Deze specifieke <code>span_id</code> wordt het <code>parent_span_id</code> genoemd en krijgt de waarde gelijk aan het <code>span_id</code> van de initiërende Operation van de vragende organisatie.</p>
 <figure id="fig-afbeelding-span_id-en-parent_span_id-0">
   <img src="media/relatie_logboekelementen_afbeelding10.svg" alt="Een suboperatie heeft een parent_span_id die de span_id van de hoofdoperatie heeft, ook bij meerdere organisaties">
   <figcaption><a class="self-link" href="#fig-afbeelding-span_id-en-parent_span_id-0">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Afbeelding span_id en parent_span_id</span></figcaption>
@@ -1332,7 +1332,7 @@ De <code>trace_id</code> is identiek bij beide organisaties, waardoor er een rel
 <ul>
 <li>De (sub)Operation <strong>Controleer tenaamstelling</strong> krijgt daarnaast ook nog een <code>parent_span_id</code> met de waarde van <code>span_id</code> van de <strong>Operation Wijzig</strong> kenteken om een relatie te leggen.</li>
 <li>Ook de RDW-Operation <strong>Verstrek houdergegevens</strong> krijgt een eigen unieke <code>span_id</code>.</li>
-<li>Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een <code>foreign_operation.span_id</code> moeten worden vastgelegd. De waarde van deze <code>foreign_operation.span_id</code> is gelijk aan de waarde van de <code>span_id</code> van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.</li>
+<li>Om de relatie over de organisaties heen te leggen, wordt er bij de RDW-Operation <strong>Verstrek houdergegevens</strong> ook een <code>parent_span_id</code> moeten worden vastgelegd. De waarde van deze <code>parent_span_id</code> is gelijk aan de waarde van de <code>span_id</code> van de gemeente-Operation <strong>Controleer tenaamstelling</strong>.</li>
 </ul>
 <figure id="fig-afbeelding-voorbeeld-span_id-en-parent_span_id-bij-gemeente-en-rdw">
   <img src="media/relatie_logboekelementen_afbeelding13.svg" alt="Voorbeeldsituatie gemeente en RDW met span_id en parent_span_id">
