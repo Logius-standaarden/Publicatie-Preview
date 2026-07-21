@@ -1099,7 +1099,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 </div><section id="subject-0"><div class="header-wrapper"><h3 id="subject"><bdi class="secno">5.1 </bdi>Subject</h3><a class="self-link" href="#subject" aria-label="Permalink for Section 5.1"></a></div><p>A Subject is the user or machine principal about whom the Authorization API is being invoked. The Subject may be requesting access at the time the Authorization API is invoked.</p>
 <p>A Subject is an object that contains two <em class="rfc2119">REQUIRED</em> keys, <code>type</code> and <code>id</code>, which have a string value, and an <em class="rfc2119">OPTIONAL</em> key, <code>properties</code>, with a value of an object.</p>
 <p><code>type</code>:
-: <em class="rfc2119">REQUIRED</em>. A string value that specifies the type of the Subject. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is <em class="rfc2119">RECOMMENDED</em> to define the type as a Linked Data URI.</span> </p>
+: <em class="rfc2119">REQUIRED</em>. A string value that specifies the type of the Subject. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is <em class="rfc2119">RECOMMENDED</em> to define the type as a Linked Data URI.</span></p>
 <p><code>id</code>:
 : <em class="rfc2119">REQUIRED</em>. A string value containing the unique identifier of the Subject, scoped to the <code>type</code>.</p>
 <p><code>properties</code>:
@@ -1145,7 +1145,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 <span class="hljs-punctuation">}</span></code></pre>
       </div></section></section><section id="resource-0"><div class="header-wrapper"><h3 id="resource"><bdi class="secno">5.2 </bdi>Resource</h3><a class="self-link" href="#resource" aria-label="Permalink for Section 5.2"></a></div><p>A Resource is the target of an access request. It is an object that is constructed similar to a Subject entity. It has the following keys:</p>
 <p><code>type</code>:
-: <em class="rfc2119">REQUIRED</em>. A string value that specifies the type of the Resource. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is <em class="rfc2119">RECOMMENDED</em> to define the type as a Linked Data URI.</span> </p>
+: <em class="rfc2119">REQUIRED</em>. A string value that specifies the type of the Resource. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is <em class="rfc2119">RECOMMENDED</em> to define the type as a Linked Data URI.</span></p>
 <p><code>id</code>:
 : <em class="rfc2119">REQUIRED</em>. A string value containing the unique identifier of the Resource, scoped to the <code>type</code>.</p>
 <p><code>properties</code>:
@@ -1182,7 +1182,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 : <em class="rfc2119">OPTIONAL</em>. An object which can be used to express additional attributes of an Action.</p>
 <section id="action-properties-0"><div class="header-wrapper"><h4 id="action-properties"><bdi class="secno">5.3.1 </bdi>Action Properties</h4><a class="self-link" href="#action-properties" aria-label="Permalink for Section 5.3.1"></a></div><p>Similarly to the Subject and Resource properties, the PEP can also provide attributes for the Action in the properties field.</p>
 <p>Such attributes can include, but are not limited to, parameters of the action that is being requested.</p>
-<p><span class="nlgov-add" aria-label="section toegevoegd in NLgov">To increase interoperability, a few common properties are specified below:</span> </p>
+<p><span class="nlgov-add" aria-label="section toegevoegd in NLgov">To increase interoperability, a few common properties are specified below:</span></p>
 <section class="nlgov-add" aria-label="section toegevoegd in NLgov" id="processing-activity-identifier"><div class="header-wrapper"><h5 id="x5-3-1-1-processing-activity-identifier"><bdi class="secno">5.3.1.1 </bdi>Processing Activity identifier</h5><a class="self-link" href="#processing-activity-identifier" aria-label="Permalink for Section 5.3.1.1"></a></div>
 <p>Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity <em class="rfc2119">MAY</em> be included.</p>
 <p>When included, the reference to the processing activity <em class="rfc2119">SHOULD</em> be included using the following key:</p>
