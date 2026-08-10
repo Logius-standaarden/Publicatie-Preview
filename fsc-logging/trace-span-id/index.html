@@ -946,7 +946,7 @@ The Logging extensions contains descriptions of the contents of Log Records, as 
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2026-04-21">July 15, 2026</time>
+      <time class="dt-published" datetime="2026-04-21">August 10, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1185,7 +1185,7 @@ It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to also add the Tran
 <p>The Inway <strong><em class="rfc2119">MUST</em></strong> use the TransactionID provided by the Outway in the HTTP header <code>Fsc-Transaction-Id</code>.</p>
 <p>The Inway <strong><em class="rfc2119">MUST</em></strong> add the TransactionID to the request sent to the Service using the HTTP header <code>Fsc-Transaction-Id</code>.</p>
 <p>The TransactionLog record <strong><em class="rfc2119">MUST</em></strong> contain the fields described in the <a href="#log_record">log record section</a></p>
-<p>If the request sent to the Service has the HTTP header <code>traceparent</code>, the Inway <em class="rfc2119">MUST</em> set the <code>trace_id</code> and <code>span_id</code> following <cite><a data-matched-text="[[[trace-context-1]]]" href="https://www.w3.org/TR/trace-context-1/">Trace Context</a></cite>.</p>
+<p>If the request sent to the Service has the HTTP header <code>traceparent</code>, the Inway <em class="rfc2119">MUST</em> extract the <code>trace_id</code> and <code>span_id</code> from the header value following <cite><a data-matched-text="[[[trace-context-1]]]" href="https://www.w3.org/TR/trace-context-1/">Trace Context</a></cite>.</p>
 <p>The Inway <strong><em class="rfc2119">MUST</em></strong> deny the request if the record to the TransactionLog could not be written.</p>
 </section><section id="delegation"><div class="header-wrapper"><h5 id="x3-3-1-2-delegation"><bdi class="secno">3.3.1.2 </bdi>Delegation</h5><a class="self-link" href="#delegation" aria-label="Permalink for Section 3.3.1.2"></a></div>
 <p>When the requesting Peer is making the request on behalf of another Peer the source of a log record <strong><em class="rfc2119">MUST</em></strong> contain a sourceDelegated object as described in the <a href="media/logging.yaml">OpenAPI Specification</a>.</p>
@@ -1224,7 +1224,7 @@ It is <strong><em class="rfc2119">RECOMMENDED</em></strong> to also add the Tran
 <p>The Outway <strong><em class="rfc2119">MUST</em></strong> create a TransactionID which <strong><em class="rfc2119">MUST</em></strong> be unique for the transaction, the format is determined in a FSC Profile.</p>
 <p>The Outway <strong><em class="rfc2119">MUST</em></strong> add the TransactionID to the request sent to the Inway using the HTTP header <code>Fsc-Transaction-Id</code>.</p>
 <p>The TransactionLog record <strong><em class="rfc2119">MUST</em></strong> contain the fields described in the <a href="#log_record">TransactionLog record section</a></p>
-<p>If the request sent to the Inway has the HTTP header <code>traceparent</code>, the Outway <em class="rfc2119">MUST</em> set the <code>trace_id</code> and <code>span_id</code> following <cite><a data-matched-text="[[[trace-context-1]]]" href="https://www.w3.org/TR/trace-context-1/">Trace Context</a></cite>.</p>
+<p>If the request sent to the Inway has the HTTP header <code>traceparent</code>, the Outway <em class="rfc2119">MUST</em> extract the <code>trace_id</code> and <code>span_id</code> from the header value following <cite><a data-matched-text="[[[trace-context-1]]]" href="https://www.w3.org/TR/trace-context-1/">Trace Context</a></cite>.</p>
 <p>The Outway <strong><em class="rfc2119">MUST</em></strong> deny the request if the record to the TransactionLog could not be written.</p>
 <p>The Outway <strong><em class="rfc2119">MUST</em></strong> add the TransactionID to the response sent to the Client using the HTTP header <code>Fsc-Transaction-Id</code>.</p>
 </section><section id="delegation-0"><div class="header-wrapper"><h5 id="x3-4-1-2-delegation"><bdi class="secno">3.4.1.2 </bdi>Delegation</h5><a class="self-link" href="#delegation-0" aria-label="Permalink for Section 3.4.1.2"></a></div>
