@@ -1699,36 +1699,22 @@ The following is an example response:<pre class="nohighlight">https://client.exa
   <section id="protected-resource-profile"><div class="header-wrapper"><h2 id="x3-protected-resource-profile"><bdi class="secno">3. </bdi>Protected Resource Profile</h2><a class="self-link" href="#protected-resource-profile" aria-label="Permalink for Section 3."></a></div>
 
 <section id="protecting-resources"><div class="header-wrapper"><h3 id="x3-1-protecting-resources"><bdi class="secno">3.1 </bdi>Protecting Resources</h3><a class="self-link" href="#protecting-resources" aria-label="Permalink for Section 3.1"></a></div>
-<p>Protected Resources grant access to clients if they present a valid <samp>access_token</samp> with the appropriate <samp>scope</samp>. Resource servers trust the authorization server to authenticate the end user and client appropriately for the importance, risk, and value level of the protected resource scope.</p>
-<p>Protected resources that require a higher end-user authentication trust level to access certain resources <em class="rfc2119">MUST</em> associate those resources with a unique scope.</p>
-<p>Clients wishing access to these higher level resources <em class="rfc2119">MUST</em> include the higher level scope in their authorization request to the authorization server.</p>
-<p>Authorization servers <em class="rfc2119">MUST</em> authenticate the end-user with the appropriate trust level before providing an <samp>authorization_code</samp> or associated <samp>access_token</samp> to the client.</p>
-<p>Authorization servers <em class="rfc2119">MUST</em> only grant access to higher level scope resources to clients that have permission to request these scope levels. Client authorization requests containing scopes that are outside their permission <em class="rfc2119">MUST</em> be rejected.</p>
-<p>Authorization servers <em class="rfc2119">MAY</em> set the expiry time (<samp>exp</samp>) of access_tokens associated with higher level resources to be shorter than access_tokens for less sensitive resources.</p>
-<p>Authorization servers <em class="rfc2119">MAY</em> allow a <samp>refresh_token</samp> issued at a higher level to be used to obtain an access_token for a lower level resource scope with an extended expiry time. The client <em class="rfc2119">MUST</em> request both the higher level scope and lower level scope in the original authorization request. This allows clients to continue accessing lower level resources after the higher level resource access has expired -- without requiring an additional user authentication/authorization.</p>
-<aside class="example" id="example-8"><div class="marker">
-    <a class="self-link" href="#example-8">Example<bdi> 8</bdi></a>
-  </div>
-A resource server has resources classified as "public" and "sensitive". "Sensitive" resources require the user to perform a two-factor authentication, and those access grants are short-lived: 15 minutes. For a client to obtain access to both "public" and "sensitive" resources, it makes an authorization request to the authorization server with <samp>scope=public+sensitive</samp>. The authorization server authenticates the end-user as required to meet the required trust level (two-factor authentication or some approved equivalent) and issues an <samp>access_token</samp> for the "public" and "sensitive" scopes with an expiry time of 15mins, and a <samp>refresh_token</samp> for the "public" scope with an expiry time of 24 hrs. The client can access both "public" and "sensitive" resources for 15mins with the access_token. When the access_token expires, the client will NOT be able to access "public" or "sensitive" resources any longer as the access_token has expired, and must obtain a new access_token. The client makes a access grant request (as described in [OAuth 2.0] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6749" title="The OAuth 2.0 Authorization Framework">rfc6749</a></cite>] section 6) with the refresh_token, and the reduced scope of just "public". The token endpoint validates the refresh_token, and issues a new access_token for just the "public" scopewith an expiry time set to 24hrs. An access grant request for a new access_token with the "sensitive" scope would be rejected, and require the client to get the end-user to re-authenticate/authorize the "sensitive" scope request.
-</aside><p>In this manner, protected resources and authorization servers work together to meet risk tolerance levels for sensitive resources and end-user authentication.</p>
 </section><section id="connections-with-clients-0"><div class="header-wrapper"><h3 id="x3-2-connections-with-clients"><bdi class="secno">3.2 </bdi>Connections with Clients</h3><a class="self-link" href="#connections-with-clients-0" aria-label="Permalink for Section 3.2"></a></div>
-<p>A protected resource <em class="rfc2119">MUST</em> accept bearer tokens passed in the authorization header as described in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc6750" title="The OAuth 2.0 Authorization Framework: Bearer Token Usage">rfc6750</a></cite>] . A protected resource <em class="rfc2119">MAY</em> also accept bearer tokens passed in the form parameter <del>or query parameter</del> method<del>s</del>.</p>
-
-<aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  <p>A Protected Resource under this profile <em class="rfc2119">MUST NOT</em> accept access tokens passed using the query parameter method.</p>
-<p>A Protected Resource under this profile <em class="rfc2119">SHOULD</em> verify if the client is the Authorized party (azp) when client authentication is used. See section <a href="#advanced-oauth-security-options">Advanced OAuth Security Options</a> as well.</p>
-</aside>
-<p>Protected resources <em class="rfc2119">MUST</em> define and document which scopes are required for access to the resource.</p>
-
 </section><section id="connections-with-authorization-servers"><div class="header-wrapper"><h3 id="x3-3-connections-with-authorization-servers"><bdi class="secno">3.3 </bdi>Connections with Authorization Servers</h3><a class="self-link" href="#connections-with-authorization-servers" aria-label="Permalink for Section 3.3"></a></div>
-<p>Protected resources <em class="rfc2119">MUST</em> interpret access tokens using either JWT, token introspection, or a combination of the two.</p>
-<p>The protected resource <em class="rfc2119">MUST</em> check the <samp>aud</samp> (audience) claim, if it exists in the token, to ensure that it includes the protected resource's identifier. The protected resource <em class="rfc2119">MUST</em> ensure that the rights associated with the token are sufficient to grant access to the resource. For example, this can be accomplished by querying the scopes and acr associated with the token from the authorization server's token introspection endpoint.</p>
+</section><section class="nlgov-del" aria-label="sectie verwijderd in NLgov">
+A protected resource <em class="rfc2119">MAY</em> accept bearer tokens passed using the query parameter
+method.</section>
+<section class="nlgov-add" aria-label="sectie toegevoegd in NLgov">
+A Protected Resource under this profile <em class="rfc2119">MUST NOT</em> accept access tokens passed
+using the query parameter method.<p>A Protected Resource under this profile <em class="rfc2119">SHOULD</em> verify if the client is the
+Authorized party (<code>azp</code>) when client authentication is used. See section
+<a href="#advanced-oauth-security-options">Advanced OAuth Security Options</a> as well.</p>
+</section>
 
-<aside class=" addition">
-<b>iGov-NL : Additional content</b><br>  <p>In case these (optional) attributes are already provided within the token, no introspection is needed. For further details we encourage to read the <cite><a data-matched-text="[[[NLgov.OpenID]]]" href="https://gitdocumentatie.logius.nl/publicatie/api/oidc/">NLgov Assurance profile for OpenID Connect 1.0</a></cite> specification.</p>
-</aside>
-<p>A protected resource <em class="rfc2119">MUST</em> limit which authorization servers it will accept valid tokens from. A resource server <em class="rfc2119">MAY</em> accomplish this using a whitelist of trusted servers, a dynamic policy engine, or other means.</p>
-</section></section>
+<section class="nlgov-add" aria-label="sectie toegevoegd in NLgov">
+Where the optional token attributes (<code>aud</code>, <code>sub</code>, <code>azp</code>, etc.) are already
+present within the access token, token introspection is not required for those
+attributes. For further details see the [<cite><a class="bibref" data-link-type="biblio" href="#bib-nlgov-openid" title="NLgov Assurance profile for OpenID Connect 1.0">NLgov.OpenID</a></cite>] specification.</section></section>
   <section id="advanced-oauth-security-options"><div class="header-wrapper"><h2 id="x4-advanced-oauth-security-options"><bdi class="secno">4. </bdi>Advanced OAuth Security Options</h2><a class="self-link" href="#advanced-oauth-security-options" aria-label="Permalink for Section 4."></a></div>
 <p>The preceding portions of this OAuth profile provide a level of security adequate for a wide range of use cases, while still maintaining relative ease of implementation and usability for developers, system administrators, and end users. The following are some additional security measures that can be employed for use cases where elevated risks justify the use of additional controls at the expense of implementation effort and usability. This section also addresses future security capabilities, currently in the early draft stages, being added to the OAuth standard suite.</p>
 
