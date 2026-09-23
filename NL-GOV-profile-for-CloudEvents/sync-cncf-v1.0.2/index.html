@@ -1080,7 +1080,7 @@ formats. Compliant CloudEvents implementations that support those encodings <em 
 adhere to the encoding rules specified in the respective event format. All
 implementations <em class="rfc2119">MUST</em> support the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON format</a>.</p>
 <p>For more information on the history, development and design rationale behind the
-specification, see the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/primer.md">CloudEvents Primer</a> document.</p>
+specification, see the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md">CloudEvents Primer</a> document.</p>
 </section>
   <section id="notations-and-terminology"><div class="header-wrapper"><h2 id="x2-notations-and-terminology"><bdi class="secno">2. </bdi>Notations and Terminology</h2><a class="self-link" href="#notations-and-terminology" aria-label="Permalink for Section 2."></a></div>
 <section id="notational-conventions"><div class="header-wrapper"><h3 id="x2-1-notational-conventions"><bdi class="secno">2.1 </bdi>Notational Conventions</h3><a class="self-link" href="#notational-conventions" aria-label="Permalink for Section 2.1"></a></div>
@@ -1140,7 +1140,7 @@ changed, or more. See the <a href="#event-data">Event Data</a> section for more
 information.</p>
 </section><section id="event-format"><div class="header-wrapper"><h4 id="x2-2-9-event-format"><bdi class="secno">2.2.9 </bdi>Event Format</h4><a class="self-link" href="#event-format" aria-label="Permalink for Section 2.2.9"></a></div>
 <p>An Event Format specifies how to serialize a CloudEvent as a sequence of bytes.
-Stand-alone event formats, such as the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON format</a>, specify
+Stand-alone event formats, such as the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON format</a>, specify
 serialization independent of any protocol or storage medium. Protocol Bindings
 <em class="rfc2119">MAY</em> define formats that are dependent on the protocol.</p>
 </section><section id="message"><div class="header-wrapper"><h4 id="x2-2-10-message"><bdi class="secno">2.2.10 </bdi>Message</h4><a class="self-link" href="#message" aria-label="Permalink for Section 2.2.10"></a></div>
@@ -1400,7 +1400,7 @@ related to the originating occurrence. Often this attribute is used for
 routing, observability, policy enforcement, etc. The format of this is
 producer defined and might include information such as the version of the
 <code>type</code> - see
-<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md">Versioning of CloudEvents in the Primer</a>
+<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#versioning-of-cloudevents">Versioning of CloudEvents in the Primer</a>
 for more information.</li>
 <li>Constraints:<ul>
 <li><em class="rfc2119">REQUIRED</em></li>
@@ -1504,7 +1504,7 @@ for more information.</li>
 <li>The dataschema attribute is expected to be informational, largely to be used
 during development and by tooling that is able to provide diagnostic information
 over arbitrary CloudEvents with a data content type understood by that tooling
-(see: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#the-role-of-the-dataschema-attribute-within-versioning">The role of the dataschema attribute within versioning</a></li>
+(see: <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#the-role-of-the-dataschema-attribute-within-versioning">The role of the dataschema attribute within versioning</a></li>
 </ul>
 </aside></section><section id="subject"><div class="header-wrapper"><h4 id="x3-4-3-subject"><bdi class="secno">3.4.3 </bdi>subject</h4><a class="self-link" href="#subject" aria-label="Permalink for Section 3.4.3"></a></div>
 <ul>
@@ -1916,7 +1916,7 @@ For more information about a particular attribute, see the detailed attribute de
 </aside></section>
   <section class="appendix" id="use-of-json-http-and-webhook"><div class="header-wrapper"><h2 id="a-use-of-json-http-and-webhook"><bdi class="secno">A. </bdi>Use of JSON, HTTP and Webhook</h2><a class="self-link" href="#use-of-json-http-and-webhook" aria-label="Permalink for Appendix A."></a></div>
 <p>This appendix describes how the NLgov profile for CloudEvents can be applied when using the JSON format, the HTTP protocol and the Webhook pattern.</p>
-<p>The NLgov profile for CloudEvents message format can be used when using different formats and protocols. CloudEvents has a <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#architecture">layered architecture</a> for this. In order to be able to use the NLgov profile for CloudEvents properly in practice, agreements must also be made when a certain format and/or protocol is used.</p>
+<p>The NLgov profile for CloudEvents message format can be used when using different formats and protocols. CloudEvents has a <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#architecture">layered architecture</a> for this. In order to be able to use the NLgov profile for CloudEvents properly in practice, agreements must also be made when a certain format and/or protocol is used.</p>
 <p>In addition to the CloudEvent specification the <a href="https://github.com/cncf/wg-serverless">Serverless Working Group</a> has described for <a href="https://github.com/cloudevents/spec#cloudevents-documents">several commonly used formats</a> and protocols how they can be used in a standardized way in combination with the CloudEvents message format.</p>
 <p>Within the Dutch government, frequent use is made of the JSON format, the HTTP protocol and the Webhook pattern for data exchange. For example, a common way to send events to consumers is to use the webhook pattern where a message in JSON format is sent via the HTTP protocol. Further standardization than just event description via the NLgov profile for CloudEvents therefore benefits most from agreements around these 3 areas. In addition to standardization through the use of the NLgov profile for CloudEvents, we therefore work towards standardization on exchanging event information when using JSON, HTTP and Webhook.</p>
 <p>The NLgov profile for CloudEvents is intended to be used as a government-wide standard. This does not yet apply to the additional specification for the use of JSON, HTTP and Webhook. The specifications for them have the character of 'guidelines' ("a statement by which to determine a course of action", <a href="https://en.wikipedia.org/wiki/Guideline">Wikipedia</a>).</p>
@@ -1924,9 +1924,9 @@ For more information about a particular attribute, see the detailed attribute de
 about the use of the specifications within the context of the Dutch government. These are intended to make use of the specifications more unambiguous and to work towards standardisation in the long term.</p>
 <p>For the time being, the following constraints apply:</p>
 <ul>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-json-event-format-for-cloudevents">NLgov Guideline for CloudEvents JSON</a>.</li>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents">NLgov Guideline for CloudEvents HTTP</a>.</li>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents">NLgov Guideline for CloudEvents Webhook</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON Event Format for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-json-event-format-for-cloudevents">NLgov Guideline for CloudEvents JSON</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents">NLgov Guideline for CloudEvents HTTP</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents">NLgov Guideline for CloudEvents Webhook</a>.</li>
 </ul>
 </section>
   <section id="tof">
