@@ -996,7 +996,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2026-04-09">22 september 2026</time>
+      <time class="dt-published" datetime="2026-04-09">24 september 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1127,7 +1127,7 @@ Alle achterliggende overwegingen zijn te vinden in de <a href="https://logius-st
 <p>De volgende lijst beschrijft terminologie in de betekenis zoals deze wordt gebruikt in dit document.</p>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span></div><p class="">Sommige termen zijn in bredere context al bekend, zoals <a href="#dfn-applicaties" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-applicaties-1">Applicatie</a>.
 Deze sectie geeft een vernauwende definitie van deze termen om extra eisen te stellen.</p></div><p><dfn data-lt="Acties|Actie" id="dfn-acties" tabindex="0" aria-haspopup="dialog">Actie</dfn></p>
-<p>Een Actie is één discrete stap binnen een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-2"><code>Dataverwerking</code></a>. 
+<p>Eén discrete stap binnen een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-2"><code>Dataverwerking</code></a>. 
 Een Dataverwerking bestaat uit één of meerdere Acties.</p>
 <p><dfn data-lt="Applicaties|Applicatie" id="dfn-applicaties" tabindex="0" aria-haspopup="dialog">Applicatie</dfn></p>
 <p>Iedere softwaretoepassing waarmee <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-3"><code>Dataverwerkingen</code></a> kunnen worden uitgevoerd.</p>
@@ -1137,9 +1137,9 @@ Betrokkenen kunnen zowel natuurlijke personen als rechtspersonen (bedrijven) zij
 Een (rechts)persoon is identificeerbaar als deze direct of indirect kan worden herkend. 
 Dit kan aan de hand van kenmerken zoals een (bedrijfs)naam, identificatienummer of locatiedata, of door specifieke fysieke, economische of sociale eigenschappen.</p>
 <p><dfn data-lt="Dataverwerkingen|Dataverwerking" id="dfn-dataverwerkingen" tabindex="0" aria-haspopup="dialog">Dataverwerking</dfn></p>
-<p>Iedere bewerking die uitgevoerd wordt met gegevens, al dan niet uitgevoerd via geautomatiseerde procedures. 
-Een Dataverwerking bestaat uit één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-1"><code>Acties</code></a>. 
-Dataverwerkingen omvatten bijvoorbeeld het verzamelen en vastleggen, het aanpassen en combineren, het inzien en gebruiken, het delen en verspreiden, en het beperken en verwijderen van gegevens. </p>
+<p>De uitvoering van een handeling of proces met data, gebaseerd op een vooraf gedefinieerde <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteit" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-1"><code>Verwerkingsactiviteit</code></a>.
+Dataverwerkingen worden (al dan niet geautomatiseerd) uitgevoerd door <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-2"><code>Applicaties</code></a>.
+Een Dataverwerking bestaat uit één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-1"><code>Acties</code></a>.</p>
 <p><dfn id="dfn-inzage" tabindex="0" aria-haspopup="dialog">Inzage</dfn></p>
 <p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-1"><code>Betrokkene</code></a> heeft het recht om van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-2"><code>Verantwoordelijke</code></a> uitsluitsel te verkrijgen over het al dan niet verwerken van hem betreffende data en, wanneer dat het geval is, om inzage te verkrijgen van die data. 
 <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Inzage" href="#dfn-inzage" class="internalDFN" id="ref-for-dfn-inzage-1"><code>Inzage</code></a> is gedefinieerd als de handeling waarmee  dat recht wordt uitgevoerd. 
@@ -1150,14 +1150,14 @@ Voor rechtspersonen sluit dit aan bij het recht op transparantie over besluitvor
 <p><dfn id="dfn-logregel" tabindex="0" aria-haspopup="dialog">Logregel</dfn></p>
 <p>Resultaat van een enkele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-2"><code>Actie</code></a> in de logging.</p>
 <p><dfn data-lt="Registers|Register" id="dfn-registers" tabindex="0" aria-haspopup="dialog">Register</dfn></p>
-<p>Register waarin statische data over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteiten" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-1"><code>Verwerkingsactiviteiten</code></a> worden vastgelegd en ter beschikking gesteld door de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-3"><code>Verantwoordelijke</code></a>.
+<p>Register waarin statische data over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteiten" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-2"><code>Verwerkingsactiviteiten</code></a> worden vastgelegd en ter beschikking gesteld door de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-3"><code>Verantwoordelijke</code></a>.
 Een Register bevat onder meer het doel van de verwerkingen opgenomen, zoals dit bijvoorbeeld op grond van de AVG voor verwerkingen van persoonsdata al verplicht is.
 Registers in het kader van de standaard hebben een bredere reikwijdte dan persoonsdata.</p>
 <aside class="example" id="example-1"><div class="marker">
     <a class="self-link" href="#example-1">Voorbeeld<bdi> 1</bdi></a>
   </div><p>Het Register van Verwerkingsactiviteiten (RvVA in het kader van de AVG) en het <a href="https://algoritmes.overheid.nl/nl">Algoritmeregister</a> zijn voorbeelden van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Registers" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-1"><code>Registers</code></a>.</p>
 </aside><p><dfn data-lt="Traces|Trace" id="dfn-traces" tabindex="0" aria-haspopup="dialog">Trace</dfn></p>
-<p>Concept waarmee bij elkaar behorende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-3"><code>Acties</code></a> en <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-5"><code>Dataverwerkingen</code></a> van één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-2"><code>Applicaties</code></a> worden gegroepeerd.</p>
+<p>Concept waarmee bij elkaar behorende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-3"><code>Acties</code></a> en <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-5"><code>Dataverwerkingen</code></a> van één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-3"><code>Applicaties</code></a> worden gegroepeerd.</p>
 <p><dfn data-lt="Verantwoordelijke|Verantwoordelijken|Verwerkingsverantwoordelijken" id="dfn-verantwoordelijke" tabindex="0" aria-haspopup="dialog">Verantwoordelijke</dfn></p>
 <p>Een natuurlijke persoon of rechtspersoon, een overheidsinstantie, een dienst of een ander orgaan die/dat, alleen of samen met anderen, het doel van en de middelen voor de verwerking van data vaststelt. 
 Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>] art. 4, lid 7.), maar laat de verantwoordelijkheid betrekking hebben op de verwerking van álle data, niet alleen persoonsdata.</p>
@@ -1165,9 +1165,11 @@ Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio"
 <p>Een natuurlijke persoon of rechtspersoon, een overheidsinstantie, een dienst of een ander orgaan die/dat ten behoeve van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-4"><code>Verantwoordelijke</code></a> data verwerkt. 
 Deze definitie is gebaseerd op ([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>] art. 4, lid 8.), maar laat de verantwoordelijkheid betrekking hebben op de verwerking van álle data, niet alleen persoonsdata.</p>
 <p><dfn data-lt="Verwerkingsactiviteiten|Verwerkingsactiviteit" id="dfn-verwerkingsactiviteiten" tabindex="0" aria-haspopup="dialog">Verwerkingsactiviteit</dfn></p>
-<p>Activiteiten die een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-5"><code>Verantwoordelijke</code></a> onderkent heeft als activiteiten waarbinnen <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-6"><code>Dataverwerkingen</code></a> plaatsvinden.</p>
+<p>Gedefinieerde handeling of proces waarbij data wordt gebruikt om een specifiek doel te behalen.
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-5"><code>Verantwoordelijke</code></a> bepaald welke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteiten" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-3"><code>Verwerkingsactiviteiten</code></a> binnen haar <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-4"><code>Applicatie</code></a> zijn toegestaan.
+Een Verwerkingsactiviteit wordt in de praktijk gebracht door middel van één of meerdere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-6"><code>Dataverwerkingen</code></a>.</p>
 </section><section id="algemene-werking-van-de-standaard"><div class="header-wrapper"><h3 id="x1-3-algemene-werking-van-de-standaard"><bdi class="secno">1.3 </bdi>Algemene werking van de standaard</h3><a class="self-link" href="#algemene-werking-van-de-standaard" aria-label="Permalink for Section 1.3"></a></div>
-<p><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-3"><code>Applicaties</code></a> loggen metadata over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-7"><code>Dataverwerkingen</code></a> in een daarvoor ingerichte softwaretoepassing, het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-1"><code>Logboek</code></a>. Elke Dataverwerking wordt apart gelogd. 
+<p><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-5"><code>Applicaties</code></a> loggen metadata over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-7"><code>Dataverwerkingen</code></a> in een daarvoor ingerichte softwaretoepassing, het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-1"><code>Logboek</code></a>. Elke Dataverwerking wordt apart gelogd. 
 Dataverwerkingen binnen dezelfde context (bijvoorbeeld een organisatie of een verantwoordelijkheid binnen een organisatie) worden gegroepeerd met behulp van een Trace. 
 Wanneer een Dataverwerking een andere Dataverwerking tot gevolg heeft worden de logregels van beide Dataverwerkingen aan elkaar gelinkt. 
 Statische informatie over Dataverwerkingen kan worden opgezocht in Registers op basis van een verwijzing die in elke logregel wordt opgenomen.</p>
@@ -1203,7 +1205,7 @@ manier kan een groep organisaties interoperabiliteit organiseren. Voorbeelden va
 <section id="context"><div class="header-wrapper"><h3 id="x2-1-context"><bdi class="secno">2.1 </bdi>Context</h3><a class="self-link" href="#context" aria-label="Permalink for Section 2.1"></a></div>
 <p>Op hoog abstractieniveau zijn voor het begrijpen van deze standaard de volgende componenten te onderscheiden:</p>
 <ul>
-<li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-4"><code>Applicatie</code></a></li>
+<li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-6"><code>Applicatie</code></a></li>
 <li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-2"><code>Logboek</code></a></li>
 <li><a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-2"><code>Register</code></a></li>
 </ul>
@@ -1227,7 +1229,7 @@ Op basis van metadata die tussen Applicaties wordt uitgewisseld is het mogelijk 
 <p>Deze sectie beschrijft de verschillende componenten van de standaard.
 Tevens is er een canoniek gegevensmodel (<a href="./media/datamodel/canoniek.svg">SVG</a>, <a href="./media/datamodel/canoniek.xlsx">XLSX</a>) voor een uniforme structuur en terminologie voor alle relevante data die vastgelegd wordt in de verschillende componenten.</p>
 <section id="applicatie"><div class="header-wrapper"><h4 id="x2-2-1-applicatie"><bdi class="secno">2.2.1 </bdi>Applicatie</h4><a class="self-link" href="#applicatie" aria-label="Permalink for Section 2.2.1"></a></div>
-<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-5"><code>Applicatie</code></a> is een softwarecomponent of groep van softwarecomponenten waarmee een Dataverwerking wordt uitgevoerd. Een Applicatie kan in allerlei vormen voorkomen. Voor de architectuur is niet relevant welke vorm de Applicatie heeft, het is slechts relevant dat dit de component is waar een Dataverwerking wordt uitgevoerd.</p>
+<p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-7"><code>Applicatie</code></a> is een softwarecomponent of groep van softwarecomponenten waarmee een Dataverwerking wordt uitgevoerd. Een Applicatie kan in allerlei vormen voorkomen. Voor de architectuur is niet relevant welke vorm de Applicatie heeft, het is slechts relevant dat dit de component is waar een Dataverwerking wordt uitgevoerd.</p>
 <p>In een Applicatie is de context van de Dataverwerking bekend, zoals welke Verwerkingsactiviteit wordt uitgevoerd met de Dataverwerking. Het is dan ook de Applicatie die het loggen van de Dataverwerking initiëert.</p>
 </section><section id="logboek"><div class="header-wrapper"><h4 id="x2-2-2-logboek"><bdi class="secno">2.2.2 </bdi>Logboek</h4><a class="self-link" href="#logboek" aria-label="Permalink for Section 2.2.2"></a></div>
 <p>Een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-3"><code>Logboek</code></a> is een Applicatie met een specifieke rol in de context van deze standaard. In het Logboek worden Dataverwerkingen gelogd.</p>
@@ -1469,7 +1471,7 @@ Hiervoor gelden de <cite><a data-matched-text="[[[logboek-extensie-guideline]]]"
 Extensies moeten vastgesteld zijn, alvorens een attribuut mag worden gebruikt.
 Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er geen eenduidig gebruik van attributen ontstaat.</p>
 </div></div></section></section></section><section id="component-applicatie"><div class="header-wrapper"><h3 id="x3-3-component-applicatie"><bdi class="secno">3.3 </bdi>Component: Applicatie</h3><a class="self-link" href="#component-applicatie" aria-label="Permalink for Section 3.3"></a></div>
-<p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-6"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
+<p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-8"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
 <section id="gedrag-van-applicatie"><div class="header-wrapper"><h4 id="x3-3-1-gedrag-van-applicatie"><bdi class="secno">3.3.1 </bdi>Gedrag van Applicatie</h4><a class="self-link" href="#gedrag-van-applicatie" aria-label="Permalink for Section 3.3.1"></a></div>
 <p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> een nieuwe Trace  met een uniek <code>trace_id</code> bijhouden voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
@@ -1744,15 +1746,15 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-applicaties-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> <a href="#ref-for-dfn-applicaties-2" title="Reference 2">(2)</a> 
+      <a href="#ref-for-dfn-applicaties-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> <a href="#ref-for-dfn-applicaties-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-applicaties-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-applicaties-4" title="Reference 4">(4)</a> 
     </li><li>
-      <a href="#ref-for-dfn-applicaties-3" title="§ 1.3 Algemene werking van de standaard">§ 1.3 Algemene werking van de standaard</a> 
+      <a href="#ref-for-dfn-applicaties-5" title="§ 1.3 Algemene werking van de standaard">§ 1.3 Algemene werking van de standaard</a> 
     </li><li>
-      <a href="#ref-for-dfn-applicaties-4" title="§ 2.1 Context">§ 2.1 Context</a> 
+      <a href="#ref-for-dfn-applicaties-6" title="§ 2.1 Context">§ 2.1 Context</a> 
     </li><li>
-      <a href="#ref-for-dfn-applicaties-5" title="§ 2.2.1 Applicatie">§ 2.2.1 Applicatie</a> 
+      <a href="#ref-for-dfn-applicaties-7" title="§ 2.2.1 Applicatie">§ 2.2.1 Applicatie</a> 
     </li><li>
-      <a href="#ref-for-dfn-applicaties-6" title="§ 3.3 Component: Applicatie">§ 3.3 Component: Applicatie</a> 
+      <a href="#ref-for-dfn-applicaties-8" title="§ 3.3 Component: Applicatie">§ 3.3 Component: Applicatie</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-betrokkenen" aria-label="Links in this document to definition: Betrokkene">
@@ -1930,7 +1932,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-verwerkingsactiviteiten-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> 
+      <a href="#ref-for-dfn-verwerkingsactiviteiten-1" title="§ 1.2 Terminologie">§ 1.2 Terminologie</a> <a href="#ref-for-dfn-verwerkingsactiviteiten-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-verwerkingsactiviteiten-3" title="Reference 3">(3)</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-detailniveaus" aria-label="Links in this document to definition: Detailniveaus">
