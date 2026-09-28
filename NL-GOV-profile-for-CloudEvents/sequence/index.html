@@ -1688,7 +1688,7 @@ are notified and the time of requesting additional information).</li>
 </aside></section></section></section><section id="sequence"><div class="header-wrapper"><h3 id="x3-5-sequence"><bdi class="secno">3.5 </bdi>Sequence</h3><a class="self-link" href="#sequence" aria-label="Permalink for Section 3.5"></a></div>
 <aside class=" addition">
 <b>CloudEvents-NL: Additional content</b><br>
-The Sequence extension in this section is optional in this profile. 
+The Sequence extension in this section is optional in this profile.
 The following constraints are applicable only if this extension is implemented.
 </aside><p>This extension defines two attributes that can be included within a CloudEvent to describe the position of an event in the ordered sequence of events produced by a unique event source.
 The <code>sequence</code> attribute represents the value of this event's order in the stream of events. The exact value and meaning of this attribute is defined by the <code>sequencetype</code> attribute. If the <code>sequencetype</code> is missing, or not defined in this specification, event consumers will need to have some out-of-band communication with the event producer to understand how to interpret the value
