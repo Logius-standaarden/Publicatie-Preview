@@ -1455,7 +1455,7 @@ Hiervoor gelden de <cite><a data-matched-text="[[[logboek-extensie-guideline]]]"
 Extensies moeten vastgesteld zijn, alvorens een attribuut mag worden gebruikt.
 Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er geen eenduidig gebruik van attributen ontstaat.</p>
 </div></div></section></section></section><section id="component-applicatie"><div class="header-wrapper"><h3 id="x3-3-component-applicatie"><bdi class="secno">3.3 </bdi>Component: Applicatie</h3><a class="self-link" href="#component-applicatie" aria-label="Permalink for Section 3.3"></a></div>
-<p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-5"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
+<p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-5"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag. Voor overwegingen over welke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-7"><code>Acties</code></a> door Applicaties gelogd moeten worden, zie <a href="#overwegingenActies">Overwegingen</a>.</p>
 <section id="gedrag-van-applicatie"><div class="header-wrapper"><h4 id="x3-3-1-gedrag-van-applicatie"><bdi class="secno">3.3.1 </bdi>Gedrag van Applicatie</h4><a class="self-link" href="#gedrag-van-applicatie" aria-label="Permalink for Section 3.3.1"></a></div>
 <p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> een nieuwe Trace  met een uniek <code>trace_id</code> bijhouden voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
@@ -1626,7 +1626,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
   <section id="overwegingen"><div class="header-wrapper"><h2 id="x5-overwegingen"><bdi class="secno">5. </bdi>Overwegingen</h2><a class="self-link" href="#overwegingen" aria-label="Permalink for Section 5."></a></div>
 <p><em>Dit onderdeel is niet normatief.</em></p>
 <section id="overwegingen-voor-bepalen-van-acties-om-te-loggen-als-verantwoordelijke"><div class="header-wrapper"><h3 id="x5-1-overwegingen-voor-bepalen-van-acties-om-te-loggen-als-verantwoordelijke"><bdi class="secno">5.1 </bdi>Overwegingen voor bepalen van Acties om te loggen als Verantwoordelijke</h3><a class="self-link" href="#overwegingen-voor-bepalen-van-acties-om-te-loggen-als-verantwoordelijke" aria-label="Permalink for Section 5.1"></a></div>
-<p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-4"><code>Verantwoordelijke</code></a> moet zorgen dat de juiste <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-7"><code>Acties</code></a> worden gelogd voor het afleggen van verantwoording.
+<p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-4"><code>Verantwoordelijke</code></a> moet zorgen dat de juiste <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-8"><code>Acties</code></a> worden gelogd voor het afleggen van verantwoording.
 Het bepalen van de Acties die door een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-6"><code>Applicatie</code></a> worden uitgevoerd kan complex zijn.</p>
 <p>Afhankelijk van de IT architectuur kan een Applicatie als één of meerdere softwarecomponenten worden gedefinieerd.
 Een Applicatie kan een keten aan verschillende componenten bevatten die samenwerken om een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-17"><code>Dataverwerking</code></a> uit te voeren.
@@ -1642,7 +1642,7 @@ De Verantwoordelijke moet voor haar specifieke situatie en Dataverwerking bepale
 </aside></section><section id="oude-opzet"><div class="header-wrapper"><h3 id="x5-2-oude-opzet"><bdi class="secno">5.2 </bdi>Oude opzet</h3><a class="self-link" href="#oude-opzet" aria-label="Permalink for Section 5.2"></a></div>
 <p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-5"><code>Verantwoordelijke</code></a> definieert haar <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicaties" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-7"><code>Applicaties</code></a> in de context van deze standaard.
 Afhankelijk van de IT Achitectuur kan dit één of meerdere softwarecomponenten bevatten.
-Om <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-18"><code>Dataverwerkingen</code></a> te doen voeren Applicaties <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-8"><code>Acties</code></a> uit.
+Om <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-18"><code>Dataverwerkingen</code></a> te doen voeren Applicaties <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Acties" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-9"><code>Acties</code></a> uit.
 Als gevolg hiervan kunnen Acties verspreid over een IT landschap plaatsvinden.
 Een keten van verschillende componenten kunnen samenwerken om een Dataverwerking uitvoeren.
 Deze keten kan componenten zoals servers, routers, loadbalancers, firewalls, caches bevatten.
@@ -1746,9 +1746,11 @@ Een cruciale afweging voor het bepalen van Acties is dat de Verantwoordelijke be
     </li><li>
       <a href="#ref-for-dfn-acties-6" title="§ 3.2.2.7 parent_span_id">§ 3.2.2.7 parent_span_id</a> 
     </li><li>
-      <a href="#ref-for-dfn-acties-7" title="§ 5.1 Overwegingen voor bepalen van Acties om te loggen als Verantwoordelijke">§ 5.1 Overwegingen voor bepalen van Acties om te loggen als Verantwoordelijke</a> 
+      <a href="#ref-for-dfn-acties-7" title="§ 3.3 Component: Applicatie">§ 3.3 Component: Applicatie</a> 
     </li><li>
-      <a href="#ref-for-dfn-acties-8" title="§ 5.2 Oude opzet">§ 5.2 Oude opzet</a> 
+      <a href="#ref-for-dfn-acties-8" title="§ 5.1 Overwegingen voor bepalen van Acties om te loggen als Verantwoordelijke">§ 5.1 Overwegingen voor bepalen van Acties om te loggen als Verantwoordelijke</a> 
+    </li><li>
+      <a href="#ref-for-dfn-acties-9" title="§ 5.2 Oude opzet">§ 5.2 Oude opzet</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-applicaties" aria-label="Links in this document to definition: Applicatie">
