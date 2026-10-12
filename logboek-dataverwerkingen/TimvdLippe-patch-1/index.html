@@ -997,7 +997,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2026-04-09">09 september 2026</time>
+      <time class="dt-published" datetime="2026-04-09">12 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1139,7 +1139,7 @@ Deze sectie geeft een vernauwende definitie van deze termen om extra eisen te st
 <p>De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Betrokkene" href="#dfn-betrokkenen" class="internalDFN" id="ref-for-dfn-betrokkenen-1"><code>Betrokkene</code></a> heeft het recht om van de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verantwoordelijke" href="#dfn-verantwoordelijke" class="internalDFN" id="ref-for-dfn-verantwoordelijke-1"><code>Verantwoordelijke</code></a> uitsluitsel te verkrijgen over het al dan niet verwerken van hem betreffende gegevens en, wanneer dat het geval is, om inzage te verkrijgen van die gegevens. Voor natuurlijke personen sluit dit aan bij hun recht op inzage zoals bedoeld in de AVG, voor rechtspersonen([<cite><a class="bibref" data-link-type="biblio" href="#bib-avg" title="Algemene Verordening Gegevensbescherming">AVG</a></cite>], art. 15, lid 1). Voor rechtspersonen sluit dit aan bij het recht op transparantie over besluitvorming waar zij bij betrokken zijn. Met <em>Inzage</em> doelen we op de handeling waarmee uitvoering wordt gegeven aan dat recht.</p>
 <p><dfn data-lt="Logboeken|Logboek" id="dfn-logboeken" tabindex="0" aria-haspopup="dialog">Logboek</dfn></p>
 <p>Softwaretoepassing waarmee het log van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerkingen" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-4"><code>Dataverwerkingen</code></a> kunnen worden bijgehouden.</p>
-<p><dfn id="dfn-logregel" tabindex="0" aria-haspopup="dialog">Logregel</dfn></p>
+<p><dfn data-lt="Logregels|Logregel" id="dfn-logregels" tabindex="0" aria-haspopup="dialog">Logregel</dfn></p>
 <p>Resultaat van een enkele gebeurtenis in de logging.</p>
 <p><dfn data-lt="Registers|Register" id="dfn-registers" tabindex="0" aria-haspopup="dialog">Register</dfn></p>
 <p>Register waarin statische data over <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Verwerkingsactiviteiten" href="#dfn-verwerkingsactiviteiten" class="internalDFN" id="ref-for-dfn-verwerkingsactiviteiten-1"><code>Verwerkingsactiviteiten</code></a> kunnen worden geregistreerd en ter beschikking gesteld.
@@ -1342,8 +1342,8 @@ In die extensie zal er wel een specifieke structuur beschreven en hoe daar aan k
 <td>verplicht</td>
 </tr>
 </tbody></table>
-<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd. 
-Een 16 byte array als hexadecimale string bevat 32 karakters. 
+<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd.
+Een 16 byte array als hexadecimale string bevat 32 karakters.
 Zie ook <a href="https://opentelemetry.io/docs/specs/otel/trace/api/#retrieving-the-traceid-and-spanid">OpenTelemetry documentatie</a>.</p></div><section id="trace_id"><div class="header-wrapper"><h5 id="x3-2-2-1-trace_id"><bdi class="secno">3.2.2.1 </bdi><code>trace_id</code></h5><a class="self-link" href="#trace_id" aria-label="Permalink for Section 3.2.2.1"></a></div>
 <p>Unieke identificerende code van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-3"><code>Trace</code></a> die <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-9"><code>Dataverwerking</code></a> volgt.
 Als er meerdere applicaties dataverwerkingen uitvoeren ten behoeve van 1 originele dataverwerking, dan is de trace code identiek voor al deze dataverwerkingen, zie <a href="#gedrag-van-applicatie">gedrag van applicaties</a>.</p>
@@ -1459,14 +1459,16 @@ Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er
 <p>Voor iedere <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Applicatie" href="#dfn-applicaties" class="internalDFN" id="ref-for-dfn-applicaties-5"><code>Applicatie</code></a> waarin Dataverwerkingen plaatsvinden gelden de volgende specificaties voor gedrag.</p>
 <section id="gedrag-van-applicatie"><div class="header-wrapper"><h4 id="x3-3-1-gedrag-van-applicatie"><bdi class="secno">3.3.1 </bdi>Gedrag van Applicatie</h4><a class="self-link" href="#gedrag-van-applicatie" aria-label="Permalink for Section 3.3.1"></a></div>
 <p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
-<p>Als de Applicatie een verzoek van een andere Applicatie ontvangt, <em class="rfc2119">MOET</em> de Applicatie de HTTP header <code>traceparent</code> volgens de W3C Trace Context standaard kunnen verwerken: de daaruit gehaalde <code>trace-id</code> overnemen in <code>trace_id</code> en <code>parent-id</code> overnemen in <code>parent_span_id</code>.
-Is dat niet het geval, dan <em class="rfc2119">MOET</em> de applicatie een nieuwe Trace met een uniek <code>trace_id</code> genereren.</p>
+<p>Als de Applicatie een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-7"><code>Actie</code></a> uitvoert die wordt geïnitieerd door een verzoek van een andere Applicatie, dan <em class="rfc2119">MOET</em> de Applicatie de HTTP header <code>traceparent</code> volgens de <a href="https://www.w3.org/TR/trace-context/#traceparent-header">W3C Trace Context standaard</a> kunnen verwerken in een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-1"><code>Logregel</code></a>.
+Dit houdt in dat de <code>trace-id</code> en <code>parent-id</code> uit het ontvangen verzoek respectievelijk <em class="rfc2119">MOETEN</em> worden overgenomen in de <code>trace_id</code> en <code>parent_span_id</code> van de bijhorende Logregel. 
+Als de Applicatie zelf een Actie initieert, dan <em class="rfc2119">MOET</em> de Applicatie een uniek <code>trace_id</code> genereren en de <code>parent_span_id</code> weglaten in de bijhorende Logregel.</p>
 <p>Een Dataverwerking kan uit meerdere acties bestaan. De applicatie <em class="rfc2119">MOET</em> een voor iedere nieuwe actie een unieke <code>span_id</code> bijhouden. Iedere Trace heeft tenminste één <code>span_id</code>.</p>
 <p>Wanneer een actie binnen een Applicatie is gestart door een andere actie, dan <em class="rfc2119">MOET</em> de Applicatie de <code>trace_id</code> ongewijzigd overnemen en de <code>span_id</code> opnemen in een veld genaamd <code>parent_span_id</code> voor deze nieuwe actie.</p>
 <p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em class="rfc2119">MOET</em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> voor iedere actie (<code>span_id</code>) een logregel wegschrijven via de interface van het Logboek.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> bijhouden of een actie geslaagd of mislukt is en dit per Dataverwerking als status (<code>status</code>) meegeven in de Logregel.</p>
-<p>Als de Applicatie een verzoek van een andere Applicatie ontvangt, <em class="rfc2119">MOET</em> de Applicatie in <code>attributes</code> het veld <code>dpl.core.foreign_operation.processor</code> invullen op basis van het verzoek.
+<p>Als de Applicatie een <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-8"><code>Actie</code></a> uitvoert die wordt geïnitieerd door een verzoek van een andere Applicatie, dan 
+<em class="rfc2119">MOET</em> de waarde van <code>dpl.core.foreign_operation.processor</code> in <code>attributes</code> van de Logregel worden ingevuld op basis van het verzoek. 
 Zie de specificatie van <a href="#attributes">attributes in het logboek</a> voor meer informatie.</p>
 <div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-11" aria-level="5"><span>Noot</span></div><p class="">Deze standaard laat vrij hoe te bepalen wat de waarde van de URL is die voor <code>dpl.core.foreign_operation.processor</code> ingevuld moet worden.
 Het is bijvoorbeeld mogelijk dat de URL wordt opgehaald uit een <cite><a data-matched-text="[[[?FSC-Core]]]" href="https://gitdocumentatie.logius.nl/publicatie/fsc/core/2.0.0/">FSC - Core</a></cite> contract.</p></div><p>Als de Applicatie een verzoek aan een andere Applicatie kan versturen, <em class="rfc2119">MOET</em> de Applicatie metadata volgens de W3C Trace Context standaard meegeven aan dit verzoek.</p>
@@ -1594,13 +1596,13 @@ Een foutregistratie kan er als volgt uitzien:<pre><code class="json hljs" aria-b
 Ter verduidelijking van elk niveau gebruiken we een niet-normatief voorbeeld van het opvragen van informatie over een auto.</p>
 <section id="niveau-1-registerverwijzing"><div class="header-wrapper"><h4 id="x4-1-1-niveau-1-registerverwijzing"><bdi class="secno">4.1.1 </bdi>Niveau 1: registerverwijzing</h4><a class="self-link" href="#niveau-1-registerverwijzing" aria-label="Permalink for Section 4.1.1"></a></div>
 <p>Op het laagste niveau wordt er enkel naar het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-6"><code>Register</code></a> verwezen.
-Dit betekent dat de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-1"><code>Logregel</code></a> enkel de referentie naar het register bevat.
+Dit betekent dat de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-2"><code>Logregel</code></a> enkel de referentie naar het register bevat.
 Hieruit kan worden opgemaakt welke potentiële data is verwerkt, maar hiermee kan niet worden herleid welke data is verwerkt op basis van enkel de Logregel.
 Dit kan wel op basis van de verwerkingsactiviteit ID.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
 Er wordt hier niet verder gespecificeerd welke categorieën van informatie zijn opgevraagd.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-2"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-3"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
 </section><section id="niveau-2-kolomverwijzing"><div class="header-wrapper"><h4 id="x4-1-2-niveau-2-kolomverwijzing"><bdi class="secno">4.1.2 </bdi>Niveau 2: kolomverwijzing</h4><a class="self-link" href="#niveau-2-kolomverwijzing" aria-label="Permalink for Section 4.1.2"></a></div>
 <p>Op dit niveau wordt er zowel naar het betreffende <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-7"><code>Register</code></a> verwezen alsmede de specifieke categorieën van data die zijn verwerkt.
 Hieruit kan dus worden opgemaakt welke specifieke categorieën van data zijn verwerkt, maar kan er niet worden herleid wat de waarde van de data is tijdens het loggen.</p>
@@ -1608,15 +1610,15 @@ Hieruit kan dus worden opgemaakt welke specifieke categorieën van data zijn ver
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-12"><code>Dataverwerking</code></a> betrof het BSN, Kenteken en APK gekeurd.
 Omdat de overige categorien niet werden gebruikt, zijn die ook niet gelogd.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-3"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN, Kenteken, APK gekeurd, <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-4"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN, Kenteken, APK gekeurd, <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
 </section><section id="niveau-3-concrete-data"><div class="header-wrapper"><h4 id="x4-1-3-niveau-3-concrete-data"><bdi class="secno">4.1.3 </bdi>Niveau 3: concrete data</h4><a class="self-link" href="#niveau-3-concrete-data" aria-label="Permalink for Section 4.1.3"></a></div>
-<p>Op het hoogste niveau wordt alle data in de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-4"><code>Logregel</code></a> gezet.
+<p>Op het hoogste niveau wordt alle data in de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-5"><code>Logregel</code></a> gezet.
 Dit betekent dat alle relevante categorieën uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Register" href="#dfn-registers" class="internalDFN" id="ref-for-dfn-registers-8"><code>Register</code></a> met bijbehorende concrete data worden gelogd.
 Op dit niveau kan de gehele <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-13"><code>Dataverwerking</code></a> worden gereconstrueerd.</p>
 <p>Voorbeeld referentie: er is informatie over het bezit van een auto opgevraagd.
 Dit register bevat informatie zoals BSN, Adres, Kenteken, Lease-contract, APK gekeurd.
 De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-14"><code>Dataverwerking</code></a> bevat de BSN, Kenteken en APK gekeurd met specifieke data.
-De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregel" class="internalDFN" id="ref-for-dfn-logregel-5"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN 1234, Kenteken 1-ABC-23, APK gekeurd: ja, <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
+De <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logregel" href="#dfn-logregels" class="internalDFN" id="ref-for-dfn-logregels-6"><code>Logregel</code></a> bevat dus "Bezit van auto opgevraagd uit RDW-register: BSN 1234, Kenteken 1-ABC-23, APK gekeurd: ja, <code>dpl.core.processing_activity_id</code> &lt;&lt;URI&gt;&gt;"</p>
 </section></section><section id="implicaties-van-niveaus"><div class="header-wrapper"><h3 id="x4-2-implicaties-van-niveaus"><bdi class="secno">4.2 </bdi>Implicaties van niveaus</h3><a class="self-link" href="#implicaties-van-niveaus" aria-label="Permalink for Section 4.2"></a></div>
 <p>Hoe hoger het niveau, hoe bruikbaarder de data is die uit het <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Logboek" href="#dfn-logboeken" class="internalDFN" id="ref-for-dfn-logboeken-4"><code>Logboek</code></a> kan worden opgemaakt.
 Echter, de consequenties van een hoger niveau brengen ook lastigere vraagstukken met zich mee omtrent schaalbaarheid en technische haalbaarheid.
@@ -1652,7 +1654,7 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
     <span class="print-only">§1.2</span></li><li>
       <a class="index-term" href="#dfn-logboeken">Logboek</a> 
     <span class="print-only">§1.2</span></li><li>
-      <a class="index-term" href="#dfn-logregel">Logregel</a> 
+      <a class="index-term" href="#dfn-logregels">Logregel</a> 
     <span class="print-only">§1.2</span></li><li>
       <a class="index-term" href="#dfn-registers">Register</a> 
     <span class="print-only">§1.2</span></li><li>
@@ -1722,6 +1724,8 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <a href="#ref-for-dfn-acties-5" title="§ 3.2.2.6 end_time">§ 3.2.2.6 end_time</a> 
     </li><li>
       <a href="#ref-for-dfn-acties-6" title="§ 3.2.2.7 parent_span_id">§ 3.2.2.7 parent_span_id</a> 
+    </li><li>
+      <a href="#ref-for-dfn-acties-7" title="§ 3.3.1 Gedrag van Applicatie">§ 3.3.1 Gedrag van Applicatie</a> <a href="#ref-for-dfn-acties-8" title="Reference 2">(2)</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-applicaties" aria-label="Links in this document to definition: Applicatie">
@@ -1821,21 +1825,23 @@ Hierbij is het niet noodzakelijk dat altijd het meest gedetailleerde niveau word
       <a href="#ref-for-dfn-logboeken-4" title="§ 4.2 Implicaties van niveaus">§ 4.2 Implicaties van niveaus</a> 
     </li>
   </ul>
-    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-logregel" aria-label="Links in this document to definition: Logregel">
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-logregels" aria-label="Links in this document to definition: Logregel">
       <span class="caret"></span>
       <div>
-        <a class="self-link" href="#dfn-logregel" aria-label="Permalink for definition: Logregel. Activate to close this dialog.">Permalink</a>
+        <a class="self-link" href="#dfn-logregels" aria-label="Permalink for definition: Logregel. Activate to close this dialog.">Permalink</a>
          
         
       </div>
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-logregel-1" title="§ 4.1.1 Niveau 1: registerverwijzing">§ 4.1.1 Niveau 1: registerverwijzing</a> <a href="#ref-for-dfn-logregel-2" title="Reference 2">(2)</a> 
+      <a href="#ref-for-dfn-logregels-1" title="§ 3.3.1 Gedrag van Applicatie">§ 3.3.1 Gedrag van Applicatie</a> 
     </li><li>
-      <a href="#ref-for-dfn-logregel-3" title="§ 4.1.2 Niveau 2: kolomverwijzing">§ 4.1.2 Niveau 2: kolomverwijzing</a> 
+      <a href="#ref-for-dfn-logregels-2" title="§ 4.1.1 Niveau 1: registerverwijzing">§ 4.1.1 Niveau 1: registerverwijzing</a> <a href="#ref-for-dfn-logregels-3" title="Reference 2">(2)</a> 
     </li><li>
-      <a href="#ref-for-dfn-logregel-4" title="§ 4.1.3 Niveau 3: concrete data">§ 4.1.3 Niveau 3: concrete data</a> <a href="#ref-for-dfn-logregel-5" title="Reference 2">(2)</a> 
+      <a href="#ref-for-dfn-logregels-4" title="§ 4.1.2 Niveau 2: kolomverwijzing">§ 4.1.2 Niveau 2: kolomverwijzing</a> 
+    </li><li>
+      <a href="#ref-for-dfn-logregels-5" title="§ 4.1.3 Niveau 3: concrete data">§ 4.1.3 Niveau 3: concrete data</a> <a href="#ref-for-dfn-logregels-6" title="Reference 2">(2)</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-registers" aria-label="Links in this document to definition: Register">
