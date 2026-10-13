@@ -1362,8 +1362,8 @@ In die extensie zal er wel een specifieke structuur beschreven en hoe daar aan k
 <td>verplicht</td>
 </tr>
 </tbody></table>
-<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd. 
-Een 16 byte array als hexadecimale string bevat 32 karakters. 
+<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd.
+Een 16 byte array als hexadecimale string bevat 32 karakters.
 Zie ook <a href="https://opentelemetry.io/docs/specs/otel/trace/api/#retrieving-the-traceid-and-spanid">OpenTelemetry documentatie</a>.</p></div><section id="trace_id"><div class="header-wrapper"><h5 id="x3-2-2-1-trace_id"><bdi class="secno">3.2.2.1 </bdi><code>trace_id</code></h5><a class="self-link" href="#trace_id" aria-label="Permalink for Section 3.2.2.1"></a></div>
 <p>Unieke identificerende code van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-4"><code>Trace</code></a> die <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-8"><code>Dataverwerking</code></a> volgt.
 Als er meerdere applicaties dataverwerkingen uitvoeren ten behoeve van 1 originele dataverwerking, dan is de trace code identiek voor al deze dataverwerkingen, zie <a href="#gedrag-van-applicatie">gedrag van applicaties</a>.</p>
@@ -1377,11 +1377,11 @@ Een applicatie kan meerdere <code>span_id</code> voor dezelfde <code>trace_id</c
 <li><code>Ok</code>: De waarde <code>Ok</code> kan optioneel gebruikt worden wanneer de ontwikkelaar expliciet wil markeren dat de dataverwerking succesvol is afgerond.
 Hoewel dit tegenintuïtief lijkt, is het niet nodig om de status van een Actie op <code>Ok</code> te zetten wanneer bekend is dat de Actie zonder fouten is voltooid, aangezien dit onder <code>Unset</code> valt.
 <code>Ok</code> representeert een ondubbelzinnige "laatste bevestiging" van de status van een Actie die expliciet door een gebruiker is ingesteld.
-Dit is handig in elke situatie waarin een ontwikkelaar wil dat er geen andere interpretatie van een Actie mogelijk is dan "geslaagd". </li>
+Dit is handig in elke situatie waarin een ontwikkelaar wil dat er geen andere interpretatie van een Actie mogelijk is dan "geslaagd".</li>
 <li><code>Error</code>: De waarde <code>Error</code> wordt toegekend bij fouten die zijn ontstaan binnen het systeem dat de Actie uitvoert, zoals interne fouten of mislukte uitvoeringen door technische oorzaken. <code>Error</code> is alleen nodig als er een fout is opgetreden bij het interne proces. Een Actie die niet klopt op basis van de gegeven gebruikersinput, maar die zonder fouten is afgehandeld, hoort dus status <code>Unset</code> te krijgen.</li>
 </ul>
-<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="6"><span>Noot</span></div><p class=""> Nogmaals: <code>Unset</code> geeft aan dat een Actie zonder fouten is voltooid. 
-<code>Ok</code> betekent dat een ontwikkelaar een Actie expliciet als succesvol heeft gemarkeerd. 
+<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="6"><span>Noot</span></div><p class=""> Nogmaals: <code>Unset</code> geeft aan dat een Actie zonder fouten is voltooid.
+<code>Ok</code> betekent dat een ontwikkelaar een Actie expliciet als succesvol heeft gemarkeerd.
 In de meeste gevallen is het niet nodig om een Actie expliciet als <code>Ok</code> te markeren.</p></div></section><section id="name"><div class="header-wrapper"><h5 id="x3-2-2-4-name"><bdi class="secno">3.2.2.4 </bdi><code>name</code></h5><a class="self-link" href="#name" aria-label="Permalink for Section 3.2.2.4"></a></div>
 <p>Naam van de specifieke <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Actie" href="#dfn-acties" class="internalDFN" id="ref-for-dfn-acties-6"><code>Actie</code></a> binnen de <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-10"><code>Dataverwerking</code></a>.
 Dit is een tekstuele beschrijving bestemd voor mensen, niet voor machines.</p>
@@ -1490,7 +1490,7 @@ Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er
 <p>De Applicatie <em class="rfc2119">MOET</em> voordat elke Actie (<code>span_id</code>) wordt uitgevoerd een Logregel opslaan in het Logboek.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> kunnen achterhalen of de uitvoer van een Actie geslaagd of mislukt is.
 Dit kan per Logregel als status (<code>status</code>) worden opgeslagen.
-Zie <a href="#status">status</a> voor een voorbeeld beschrijving van hoe dit geimplementeerd kan worden.</p>
+Zie <a href="#status">status</a> voor een gedetaileerde beschrijving.</p>
 <p>Als de Applicatie een verzoek van een andere Applicatie kan ontvangen, <em class="rfc2119">MOET</em> de Applicatie metadata volgens de W3C Trace Context standaard kunnen verwerken en gebruiken in de eigen Trace(s).
 Metadata verkregen via W3C Trace Context <em class="rfc2119">MOET</em> in <code>attributes</code> meegenomen worden als velden die beginnen met <code>dpl.core.foreign_operation</code>.
 Zie de specificatie van <a href="#attributes">attributes in het logboek</a> voor de lijst van velden.</p>
