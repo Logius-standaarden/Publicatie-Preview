@@ -996,7 +996,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2026-04-09">13 oktober 2026</time>
+      <time class="dt-published" datetime="2026-04-09">15 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1460,7 +1460,7 @@ Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er
 <p>Het gespecificeerde gedrag van Applicaties is erop gericht om de interface van het Logboek te gebruiken. Voor alle metadata geldt dat de specificatie te vinden is in de interface van het Logboek.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> een nieuwe Trace met een uniek <code>trace_id</code> bijhouden voor iedere nieuwe Dataverwerking. In een Trace wordt de metadata bijgehouden die nodig is om de interface van een Logboek te gebruiken.</p>
 <p>Een Dataverwerking kan uit meerdere Acties bestaan. De Applicatie <em class="rfc2119">MOET</em> een voor iedere nieuwe Actie een unieke <code>span_id</code> bijhouden. Iedere Trace heeft tenminste één <code>span_id</code>.
-Voor overwegingen voor het bepalen van Acties als Verantwoordelijke, zie <a href="overwegingen#Overwegingen">Overwegingen</a>.</p>
+Voor overwegingen voor het bepalen van Acties als Verantwoordelijke, zie <a href="#overwegingen-voor-bepalen-van-acties-om-te-loggen-als-verantwoordelijke">Overwegingen</a>.</p>
 <p>Wanneer een actie binnen een Applicatie is gestart door een andere actie, dan <em class="rfc2119">MOET</em> de Applicatie de <code>trace_id</code> ongewijzigd overnemen en de <code>span_id</code> opnemen in een veld genaamd <code>parent_span_id</code> voor deze nieuwe actie.</p>
 <p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em class="rfc2119">MOET</em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
 <p>De Applicatie <em class="rfc2119">MOET</em> voor iedere actie (<code>span_id</code>) een logregel wegschrijven via de interface van het Logboek.</p>
