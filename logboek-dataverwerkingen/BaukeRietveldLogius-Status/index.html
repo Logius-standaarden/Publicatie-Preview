@@ -996,7 +996,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2026-04-09">13 oktober 2026</time>
+      <time class="dt-published" datetime="2026-04-09">20 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1362,8 +1362,8 @@ In die extensie zal er wel een specifieke structuur beschreven en hoe daar aan k
 <td>verplicht</td>
 </tr>
 </tbody></table>
-<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd.
-Een 16 byte array als hexadecimale string bevat 32 karakters.
+<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Noot</span></div><p class="">Bytes kunnen als hexadecimaal of binair worden geëncodeerd. 
+Een 16 byte array als hexadecimale string bevat 32 karakters. 
 Zie ook <a href="https://opentelemetry.io/docs/specs/otel/trace/api/#retrieving-the-traceid-and-spanid">OpenTelemetry documentatie</a>.</p></div><section id="trace_id"><div class="header-wrapper"><h5 id="x3-2-2-1-trace_id"><bdi class="secno">3.2.2.1 </bdi><code>trace_id</code></h5><a class="self-link" href="#trace_id" aria-label="Permalink for Section 3.2.2.1"></a></div>
 <p>Unieke identificerende code van <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Trace" href="#dfn-traces" class="internalDFN" id="ref-for-dfn-traces-4"><code>Trace</code></a> die <a data-xref-type="_IDL_" data-link-type="idl" data-lt="Dataverwerking" href="#dfn-dataverwerkingen" class="internalDFN" id="ref-for-dfn-dataverwerkingen-8"><code>Dataverwerking</code></a> volgt.
 Als er meerdere applicaties dataverwerkingen uitvoeren ten behoeve van 1 originele dataverwerking, dan is de trace code identiek voor al deze dataverwerkingen, zie <a href="#gedrag-van-applicatie">gedrag van applicaties</a>.</p>
@@ -1487,9 +1487,8 @@ Dit om te voorkomen dat niet-gestandaardiseerde namespaces worden gebruikt en er
 <p>Een Dataverwerking kan uit meerdere acties bestaan. De applicatie <em class="rfc2119">MOET</em> een voor iedere nieuwe actie een unieke <code>span_id</code> bijhouden. Iedere Trace heeft tenminste één <code>span_id</code>.</p>
 <p>Wanneer een actie binnen een Applicatie is gestart door een andere actie, dan <em class="rfc2119">MOET</em> de Applicatie de <code>trace_id</code> ongewijzigd overnemen en de <code>span_id</code> opnemen in een veld genaamd <code>parent_span_id</code> voor deze nieuwe actie.</p>
 <p>Als een Dataverwerking meerdere Betrokkenen heeft dan <em class="rfc2119">MOET</em> de applicatie voor iedere Betrokkene een aparte logregel wegschrijven. Een logregel kan naar 0 of 1 Betrokkenen verwijzen.</p>
-<p>De Applicatie <em class="rfc2119">MOET</em> voordat elke Actie (<code>span_id</code>) wordt uitgevoerd een Logregel opslaan in het Logboek.</p>
-<p>De Applicatie <em class="rfc2119">MOET</em> kunnen achterhalen of de uitvoer van een Actie geslaagd of mislukt is.
-Dit kan per Logregel als status (<code>status</code>) worden opgeslagen.
+<p>De Applicatie <em class="rfc2119">MOET</em> nadat elke Actie (<code>span_id</code>) is uitgevoerd een Logregel opslaan in het Logboek.
+De Applicatie <em class="rfc2119">MOET</em> opslaan of de Actie is geslaagd of mislukt in de status (<code>status</code>) van de Logregel.
 Zie <a href="#status">status</a> voor een gedetaileerde beschrijving.</p>
 <p>Als de Applicatie een verzoek van een andere Applicatie kan ontvangen, <em class="rfc2119">MOET</em> de Applicatie metadata volgens de W3C Trace Context standaard kunnen verwerken en gebruiken in de eigen Trace(s).
 Metadata verkregen via W3C Trace Context <em class="rfc2119">MOET</em> in <code>attributes</code> meegenomen worden als velden die beginnen met <code>dpl.core.foreign_operation</code>.
