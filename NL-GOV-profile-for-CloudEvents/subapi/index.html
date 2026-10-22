@@ -895,13 +895,6 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
       "href": "https://gitdocumentatie.logius.nl/publicatie/logboek/dataverwerkingen/",
       "publisher": "Logius",
       "title": "Logboek Dataverwerkingen"
-    },
-    "CloudEvents-Extensions": {
-      "title": "CloudEvents Extension Attributes",
-      "href": "https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/README.md",
-      "publisher": "CNCF CloudEvents",
-      "status": "Living document",
-      "id": "cloudevents-extensions"
     }
   },
   "authors": [
@@ -1814,7 +1807,7 @@ For more information about a particular attribute, see the detailed attribute de
 </ul>
 </aside></section>
   <section class="appendix" id="cloudevents-extension-attributes"><div class="header-wrapper"><h2 id="a-cloudevents-extension-attributes"><bdi class="secno">A. </bdi>CloudEvents Extension Attributes</h2><a class="self-link" href="#cloudevents-extension-attributes" aria-label="Permalink for Appendix A."></a></div>
-<p>Alongside the core specification, the CloudEvents project keeps a catalogue of documented extension attributes [<cite><a class="bibref" data-link-type="biblio" href="#bib-cloudevents-extensions" title="CloudEvents Extension Attributes">CloudEvents-Extensions</a></cite>]. These cover concerns that the core attributes leave out on purpose. Examples are distributed tracing, partitioning, event ordering, expiry, data classification and references to externally stored data.</p>
+<p>Alongside the core specification, the CloudEvents project keeps a catalogue of documented extension attributes <a href="https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/README.md">CloudEvents-Extensions</a> . These cover concerns that the core attributes leave out on purpose. Examples are distributed tracing, partitioning, event ordering, expiry, data classification and references to externally stored data.</p>
 <p>CNCF states that documented extensions have no official standing and can be changed or removed at any time. That makes them unsuitable as a normative basis for a government-wide profile. Support for any documented extension is therefore optional for producers, consumers and intermediaries. Before defining a new extension attribute, a producer should check the catalogue.</p>
 <p>This profile refers to two documented extensions:</p>
 <ul>
@@ -1852,8 +1845,6 @@ orderable string, so numeric counters need zero-padding (for example
       <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/"><cite>API Design Rules</cite></a>. Jasper Roes; Joost Farla.  Logius. URL: <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">https://gitdocumentatie.logius.nl/publicatie/api/adr/</a>
     </dd><dt id="bib-cloudevents">[CloudEvents]</dt><dd>
       <a href="https://github.com/cloudevents/spec/blob/v1.0.1/spec.md"><cite>CloudEvents - Version 1.0.1</cite></a>.  CNCF Serverless Working Group. May 2011. URL: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/spec.md">https://github.com/cloudevents/spec/blob/v1.0.1/spec.md</a>
-    </dd><dt id="bib-cloudevents-extensions">[CloudEvents-Extensions]</dt><dd>
-      <a href="https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/README.md"><cite>CloudEvents Extension Attributes</cite></a>.  CNCF CloudEvents. Living document. URL: <a href="https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/README.md">https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/README.md</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/info/rfc2119/"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/info/rfc2119/">https://www.rfc-editor.org/info/rfc2119/</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
