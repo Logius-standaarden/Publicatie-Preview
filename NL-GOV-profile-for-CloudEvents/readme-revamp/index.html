@@ -97,7 +97,7 @@ body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
 img.license{float:left;padding-right:5px;background:0 0}
 </style>
 <meta name="color-scheme" content="light">
-<meta name="description" content="CloudEvents is a vendor neutral specification for defining the format of event data. This specification profiles the CloudEvents specification to standardize the automated exchange of information about events, specifically applicable to the Dutch government.
+<meta name="description" content="CloudEvents is a vendor-neutral specification for defining the format of event data. This specification profiles the CloudEvents specification to standardize the automated exchange of information about events, specifically applicable to the Dutch government.
 The Governance of this standard is described by the API-Standaarden beheermodel published by Logius.">
 <style>
 .hljs,body:has(input[name=color-scheme][value=light]:checked) .hljs,head:not(:has(meta[name=color-scheme][content~=dark]))+body .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
@@ -955,7 +955,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2026-03-17">October 15, 2026</time>
+      <time class="dt-published" datetime="2026-03-17">October 22, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1007,7 +1007,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://gitdocumentatie.logius.nl/publicatie/respec/media/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
           </p>
     <hr title="Separator for header">
-  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformance</a></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">1. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#notations-and-terminology"><bdi class="secno">2. </bdi>Notations and Terminology</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#notational-conventions"><bdi class="secno">2.1 </bdi>Notational Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">2.2 </bdi>Terminology</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#data-schema"><bdi class="secno">2.2.1 </bdi>Data Schema</a></li><li class="tocline"><a class="tocxref" href="#occurrence"><bdi class="secno">2.2.2 </bdi>Occurrence</a></li><li class="tocline"><a class="tocxref" href="#event"><bdi class="secno">2.2.3 </bdi>Event</a></li><li class="tocline"><a class="tocxref" href="#producer"><bdi class="secno">2.2.4 </bdi>Producer</a></li><li class="tocline"><a class="tocxref" href="#source"><bdi class="secno">2.2.5 </bdi>Source</a></li><li class="tocline"><a class="tocxref" href="#consumer"><bdi class="secno">2.2.6 </bdi>Consumer</a></li><li class="tocline"><a class="tocxref" href="#intermediary"><bdi class="secno">2.2.7 </bdi>Intermediary</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.2.8 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#data"><bdi class="secno">2.2.9 </bdi>Data</a></li><li class="tocline"><a class="tocxref" href="#event-format"><bdi class="secno">2.2.10 </bdi>Event Format</a></li><li class="tocline"><a class="tocxref" href="#message"><bdi class="secno">2.2.11 </bdi>Message</a></li><li class="tocline"><a class="tocxref" href="#protocol"><bdi class="secno">2.2.12 </bdi>Protocol</a></li><li class="tocline"><a class="tocxref" href="#protocol-binding"><bdi class="secno">2.2.13 </bdi>Protocol Binding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#context-attributes"><bdi class="secno">3. </bdi>Context Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#attribute-naming-convention"><bdi class="secno">3.1 </bdi>Attribute Naming Convention</a></li><li class="tocline"><a class="tocxref" href="#type-system"><bdi class="secno">3.2 </bdi>Type System</a></li><li class="tocline"><a class="tocxref" href="#required-attributes"><bdi class="secno">3.3 </bdi><em class="rfc2119">REQUIRED</em> Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#id"><bdi class="secno">3.3.1 </bdi>id</a></li><li class="tocline"><a class="tocxref" href="#source-0"><bdi class="secno">3.3.2 </bdi>source</a></li><li class="tocline"><a class="tocxref" href="#specversion"><bdi class="secno">3.3.3 </bdi>specversion</a></li><li class="tocline"><a class="tocxref" href="#type"><bdi class="secno">3.3.4 </bdi>type</a></li></ol></li><li class="tocline"><a class="tocxref" href="#optional-attributes"><bdi class="secno">3.4 </bdi><em class="rfc2119">OPTIONAL</em> Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#datacontenttype"><bdi class="secno">3.4.1 </bdi>datacontenttype</a></li><li class="tocline"><a class="tocxref" href="#dataschema"><bdi class="secno">3.4.2 </bdi>dataschema</a></li><li class="tocline"><a class="tocxref" href="#subject"><bdi class="secno">3.4.3 </bdi>subject</a></li><li class="tocline"><a class="tocxref" href="#time"><bdi class="secno">3.4.4 </bdi>time</a></li><li class="tocline"><a class="tocxref" href="#extension-context-attributes"><bdi class="secno">3.4.5 </bdi>Extension Context Attributes</a></li><li class="tocline"><a class="tocxref" href="#defining-extensions"><bdi class="secno">3.4.6 </bdi>Defining Extensions</a></li><li class="tocline"><a class="tocxref" href="#dataref"><bdi class="secno">3.4.7 </bdi>dataref</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#example"><bdi class="secno">3.4.7.1 </bdi>Example</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#sequence"><bdi class="secno">3.5 </bdi>Sequence</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#attributes"><bdi class="secno">3.5.1 </bdi>Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sequence-0"><bdi class="secno">3.5.1.1 </bdi>sequence</a></li><li class="tocline"><a class="tocxref" href="#sequencetype"><bdi class="secno">3.5.1.2 </bdi>sequencetype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sequencetype-values"><bdi class="secno">3.5.1.2.1 </bdi>SequenceType Values</a></li><li class="tocline"><a class="tocxref" href="#integer"><bdi class="secno">3.5.1.2.2 </bdi>Integer</a></li></ol></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#event-data"><bdi class="secno">4. </bdi>Event Data</a></li><li class="tocline"><a class="tocxref" href="#size-limits"><bdi class="secno">5. </bdi>Size Limits</a></li><li class="tocline"><a class="tocxref" href="#advanced-cloudevents-security-options"><bdi class="secno">6. </bdi>Advanced CloudEvents Security Options</a></li><li class="tocline"><a class="tocxref" href="#example-0"><bdi class="secno">7. </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#use-of-json-http-and-webhook"><bdi class="secno">A. </bdi>Use of JSON, HTTP and Webhook</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">B. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+  </div><section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance">Conformance</a></li><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">1. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#notations-and-terminology"><bdi class="secno">2. </bdi>Notations and Terminology</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#notational-conventions"><bdi class="secno">2.1 </bdi>Notational Conventions</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">2.2 </bdi>Terminology</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#occurrence"><bdi class="secno">2.2.1 </bdi>Occurrence</a></li><li class="tocline"><a class="tocxref" href="#event"><bdi class="secno">2.2.2 </bdi>Event</a></li><li class="tocline"><a class="tocxref" href="#producer"><bdi class="secno">2.2.3 </bdi>Producer</a></li><li class="tocline"><a class="tocxref" href="#source"><bdi class="secno">2.2.4 </bdi>Source</a></li><li class="tocline"><a class="tocxref" href="#consumer"><bdi class="secno">2.2.5 </bdi>Consumer</a></li><li class="tocline"><a class="tocxref" href="#intermediary"><bdi class="secno">2.2.6 </bdi>Intermediary</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">2.2.7 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#data"><bdi class="secno">2.2.8 </bdi>Data</a></li><li class="tocline"><a class="tocxref" href="#event-format"><bdi class="secno">2.2.9 </bdi>Event Format</a></li><li class="tocline"><a class="tocxref" href="#message"><bdi class="secno">2.2.10 </bdi>Message</a></li><li class="tocline"><a class="tocxref" href="#protocol"><bdi class="secno">2.2.11 </bdi>Protocol</a></li><li class="tocline"><a class="tocxref" href="#protocol-binding"><bdi class="secno">2.2.12 </bdi>Protocol Binding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#context-attributes"><bdi class="secno">3. </bdi>Context Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#attribute-naming-convention"><bdi class="secno">3.1 </bdi>Attribute Naming Convention</a></li><li class="tocline"><a class="tocxref" href="#type-system"><bdi class="secno">3.2 </bdi>Type System</a></li><li class="tocline"><a class="tocxref" href="#required-attributes"><bdi class="secno">3.3 </bdi><em class="rfc2119">REQUIRED</em> Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#id"><bdi class="secno">3.3.1 </bdi>id</a></li><li class="tocline"><a class="tocxref" href="#source-0"><bdi class="secno">3.3.2 </bdi>source</a></li><li class="tocline"><a class="tocxref" href="#specversion"><bdi class="secno">3.3.3 </bdi>specversion</a></li><li class="tocline"><a class="tocxref" href="#type"><bdi class="secno">3.3.4 </bdi>type</a></li></ol></li><li class="tocline"><a class="tocxref" href="#optional-attributes"><bdi class="secno">3.4 </bdi><em class="rfc2119">OPTIONAL</em> Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#datacontenttype"><bdi class="secno">3.4.1 </bdi>datacontenttype</a></li><li class="tocline"><a class="tocxref" href="#dataschema"><bdi class="secno">3.4.2 </bdi>dataschema</a></li><li class="tocline"><a class="tocxref" href="#subject"><bdi class="secno">3.4.3 </bdi>subject</a></li><li class="tocline"><a class="tocxref" href="#time"><bdi class="secno">3.4.4 </bdi>time</a></li><li class="tocline"><a class="tocxref" href="#extension-context-attributes"><bdi class="secno">3.4.5 </bdi>Extension Context Attributes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#defining-extensions"><bdi class="secno">3.4.5.1 </bdi>Defining Extensions</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#event-data"><bdi class="secno">4. </bdi>Event Data</a></li><li class="tocline"><a class="tocxref" href="#size-limits"><bdi class="secno">5. </bdi>Size Limits</a></li><li class="tocline"><a class="tocxref" href="#privacy-and-security"><bdi class="secno">6. </bdi>Privacy and Security</a></li><li class="tocline"><a class="tocxref" href="#example"><bdi class="secno">7. </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#use-of-json-http-and-webhook"><bdi class="secno">A. </bdi>Use of JSON, HTTP and Webhook</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">B. </bdi>List of Figures</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li></ol></li></ol></nav><section id="conformance" class="introductory"><div class="header-wrapper"><h2 id="conformance-0">Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for this Section"></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
         <a href="https://www.rfc-editor.org/info/bcp14">BCP 14</a>
@@ -1045,7 +1045,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
    </p>
   </aside></div>
   
-  <section id="abstract" class="introductory"><h2>Abstract</h2><p>CloudEvents is a vendor neutral specification for defining the format of event data. This specification profiles the CloudEvents specification to standardize the automated exchange of information about events, specifically applicable to the Dutch government.
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>CloudEvents is a vendor-neutral specification for defining the format of event data. This specification profiles the CloudEvents specification to standardize the automated exchange of information about events, specifically applicable to the Dutch government.
 The Governance of this standard is described by the <a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/">API-Standaarden beheermodel</a> published by Logius.</p>
 </section>
   
@@ -1078,9 +1078,9 @@ provide interoperability across services, platforms and systems.</p>
 <p>Event Formats specify how to serialize a CloudEvent with certain encoding
 formats. Compliant CloudEvents implementations that support those encodings <em class="rfc2119">MUST</em>
 adhere to the encoding rules specified in the respective event format. All
-implementations <em class="rfc2119">MUST</em> support the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON format</a>.</p>
+implementations <em class="rfc2119">MUST</em> support the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON format</a>.</p>
 <p>For more information on the history, development and design rationale behind the
-specification, see the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md">CloudEvents Primer</a> document.</p>
+specification, see the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md">CloudEvents Primer</a> document.</p>
 </section>
   <section id="notations-and-terminology"><div class="header-wrapper"><h2 id="x2-notations-and-terminology"><bdi class="secno">2. </bdi>Notations and Terminology</h2><a class="self-link" href="#notations-and-terminology" aria-label="Permalink for Section 2."></a></div>
 <section id="notational-conventions"><div class="header-wrapper"><h3 id="x2-1-notational-conventions"><bdi class="secno">2.1 </bdi>Notational Conventions</h3><a class="self-link" href="#notational-conventions" aria-label="Permalink for Section 2.1"></a></div>
@@ -1097,17 +1097,14 @@ prepared for the situation where a consumer ignores that feature. An
 <a href="#intermediary">Intermediary</a> <em class="rfc2119">SHOULD</em> forward <em class="rfc2119">OPTIONAL</em> attributes.</p>
 </section><section id="terminology"><div class="header-wrapper"><h3 id="x2-2-terminology"><bdi class="secno">2.2 </bdi>Terminology</h3><a class="self-link" href="#terminology" aria-label="Permalink for Section 2.2"></a></div>
 <p>This specification defines the following terms:</p>
-<section id="data-schema"><div class="header-wrapper"><h4 id="x2-2-1-data-schema"><bdi class="secno">2.2.1 </bdi>Data Schema</h4><a class="self-link" href="#data-schema" aria-label="Permalink for Section 2.2.1"></a></div>
-<p>The "dataschema" refers to the technical specification of the attributes in a given event. Currently <a href="https://github.com/cloudevents/spec/tree/v1.0.2/cloudevents/formats">v1.0.2 of CloudEvents</a> specifies various different formats for documenting the dataschema.</p>
-<p>"Dataschema" attribute is expected to be informational, largely to be used during development and by tooling that is able to provide diagnostic information over arbitrary CloudEvents with a data content type understood by that tooling. For further specifications, see <a href="#dataschema" data-matched-text="[[[#dataschema]]]" class="sec-ref"><bdi class="secno">3.4.2 </bdi>dataschema</a>.</p>
-</section><section id="occurrence"><div class="header-wrapper"><h4 id="x2-2-2-occurrence"><bdi class="secno">2.2.2 </bdi>Occurrence</h4><a class="self-link" href="#occurrence" aria-label="Permalink for Section 2.2.2"></a></div>
+<section id="occurrence"><div class="header-wrapper"><h4 id="x2-2-1-occurrence"><bdi class="secno">2.2.1 </bdi>Occurrence</h4><a class="self-link" href="#occurrence" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>An "occurrence" is the capture of a statement of fact during the operation of a
 software system. This might occur because of a signal raised by the system or a
 signal being observed by the system, because of a state change, because of a
 timer elapsing, or any other noteworthy activity. For example, a device might go
 into an alert state because the battery is low, or a virtual machine is about to
 perform a scheduled reboot.</p>
-</section><section id="event"><div class="header-wrapper"><h4 id="x2-2-3-event"><bdi class="secno">2.2.3 </bdi>Event</h4><a class="self-link" href="#event" aria-label="Permalink for Section 2.2.3"></a></div>
+</section><section id="event"><div class="header-wrapper"><h4 id="x2-2-2-event"><bdi class="secno">2.2.2 </bdi>Event</h4><a class="self-link" href="#event" aria-label="Permalink for Section 2.2.2"></a></div>
 <p>An "event" is a data record expressing an occurrence and its context. Events are
 routed from an event producer (the source) to interested event consumers. The
 routing can be performed based on information contained in the event, but an
@@ -1115,48 +1112,48 @@ event will not identify a specific routing destination. Events will contain two
 types of information: the <a href="#event-data">Event Data</a> representing the Occurrence
 and <a href="#context">Context</a> metadata providing contextual information about the
 Occurrence. A single occurrence <em class="rfc2119">MAY</em> result in more than one event.</p>
-</section><section id="producer"><div class="header-wrapper"><h4 id="x2-2-4-producer"><bdi class="secno">2.2.4 </bdi>Producer</h4><a class="self-link" href="#producer" aria-label="Permalink for Section 2.2.4"></a></div>
+</section><section id="producer"><div class="header-wrapper"><h4 id="x2-2-3-producer"><bdi class="secno">2.2.3 </bdi>Producer</h4><a class="self-link" href="#producer" aria-label="Permalink for Section 2.2.3"></a></div>
 <p>The "producer" is a specific instance, process or device that creates the data
 structure describing the CloudEvent.</p>
-</section><section id="source"><div class="header-wrapper"><h4 id="x2-2-5-source"><bdi class="secno">2.2.5 </bdi>Source</h4><a class="self-link" href="#source" aria-label="Permalink for Section 2.2.5"></a></div>
+</section><section id="source"><div class="header-wrapper"><h4 id="x2-2-4-source"><bdi class="secno">2.2.4 </bdi>Source</h4><a class="self-link" href="#source" aria-label="Permalink for Section 2.2.4"></a></div>
 <p>The "source" is the context in which the occurrence happened. In a distributed
 system it might consist of multiple <a href="#producer">Producers</a>. If a source is not
 aware of CloudEvents, an external producer creates the CloudEvent on behalf of
 the source.</p>
-</section><section id="consumer"><div class="header-wrapper"><h4 id="x2-2-6-consumer"><bdi class="secno">2.2.6 </bdi>Consumer</h4><a class="self-link" href="#consumer" aria-label="Permalink for Section 2.2.6"></a></div>
+</section><section id="consumer"><div class="header-wrapper"><h4 id="x2-2-5-consumer"><bdi class="secno">2.2.5 </bdi>Consumer</h4><a class="self-link" href="#consumer" aria-label="Permalink for Section 2.2.5"></a></div>
 <p>A "consumer" receives the event and acts upon it. It uses the context and data
 to execute some logic, which might lead to the occurrence of new events.</p>
-</section><section id="intermediary"><div class="header-wrapper"><h4 id="x2-2-7-intermediary"><bdi class="secno">2.2.7 </bdi>Intermediary</h4><a class="self-link" href="#intermediary" aria-label="Permalink for Section 2.2.7"></a></div>
+</section><section id="intermediary"><div class="header-wrapper"><h4 id="x2-2-6-intermediary"><bdi class="secno">2.2.6 </bdi>Intermediary</h4><a class="self-link" href="#intermediary" aria-label="Permalink for Section 2.2.6"></a></div>
 <p>An "intermediary" receives a message containing an event for the purpose of
 forwarding it to the next receiver, which might be another intermediary or a
 <a href="#consumer">Consumer</a>. A typical task for an intermediary is to route the event
 to receivers based on the information in the <a href="#context">Context</a>.</p>
-</section><section id="context"><div class="header-wrapper"><h4 id="x2-2-8-context"><bdi class="secno">2.2.8 </bdi>Context</h4><a class="self-link" href="#context" aria-label="Permalink for Section 2.2.8"></a></div>
+</section><section id="context"><div class="header-wrapper"><h4 id="x2-2-7-context"><bdi class="secno">2.2.7 </bdi>Context</h4><a class="self-link" href="#context" aria-label="Permalink for Section 2.2.7"></a></div>
 <p>Context metadata will be encapsulated in the
 <a href="#context-attributes">Context Attributes</a>. Tools and application code can use
 this information to identify the relationship of Events to aspects of the system
 or to other Events.</p>
-</section><section id="data"><div class="header-wrapper"><h4 id="x2-2-9-data"><bdi class="secno">2.2.9 </bdi>Data</h4><a class="self-link" href="#data" aria-label="Permalink for Section 2.2.9"></a></div>
+</section><section id="data"><div class="header-wrapper"><h4 id="x2-2-8-data"><bdi class="secno">2.2.8 </bdi>Data</h4><a class="self-link" href="#data" aria-label="Permalink for Section 2.2.8"></a></div>
 <p>Domain-specific information about the occurrence (i.e. the payload). This might
 include information about the occurrence, details about the data that was
 changed, or more. See the <a href="#event-data">Event Data</a> section for more
 information.</p>
-</section><section id="event-format"><div class="header-wrapper"><h4 id="x2-2-10-event-format"><bdi class="secno">2.2.10 </bdi>Event Format</h4><a class="self-link" href="#event-format" aria-label="Permalink for Section 2.2.10"></a></div>
+</section><section id="event-format"><div class="header-wrapper"><h4 id="x2-2-9-event-format"><bdi class="secno">2.2.9 </bdi>Event Format</h4><a class="self-link" href="#event-format" aria-label="Permalink for Section 2.2.9"></a></div>
 <p>An Event Format specifies how to serialize a CloudEvent as a sequence of bytes.
-Stand-alone event formats, such as the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON format</a>, specify
+Stand-alone event formats, such as the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON format</a>, specify
 serialization independent of any protocol or storage medium. Protocol Bindings
 <em class="rfc2119">MAY</em> define formats that are dependent on the protocol.</p>
-</section><section id="message"><div class="header-wrapper"><h4 id="x2-2-11-message"><bdi class="secno">2.2.11 </bdi>Message</h4><a class="self-link" href="#message" aria-label="Permalink for Section 2.2.11"></a></div>
+</section><section id="message"><div class="header-wrapper"><h4 id="x2-2-10-message"><bdi class="secno">2.2.10 </bdi>Message</h4><a class="self-link" href="#message" aria-label="Permalink for Section 2.2.10"></a></div>
 <p>Events are transported from a source to a destination via messages.</p>
 <p>A "structured-mode message" is one where the event is fully encoded using
 a stand-alone event format and stored in the message body.</p>
 <p>A "binary-mode message" is one where the event data is stored in the message
 body, and event attributes are stored as part of message meta-data.</p>
-</section><section id="protocol"><div class="header-wrapper"><h4 id="x2-2-12-protocol"><bdi class="secno">2.2.12 </bdi>Protocol</h4><a class="self-link" href="#protocol" aria-label="Permalink for Section 2.2.12"></a></div>
+</section><section id="protocol"><div class="header-wrapper"><h4 id="x2-2-11-protocol"><bdi class="secno">2.2.11 </bdi>Protocol</h4><a class="self-link" href="#protocol" aria-label="Permalink for Section 2.2.11"></a></div>
 <p>Messages can be delivered through various industry standard protocol (e.g. HTTP,
 AMQP, MQTT, SMTP), open-source protocols (e.g. Kafka, NATS), or platform/vendor
 specific protocols (AWS Kinesis, Azure Event Grid).</p>
-</section><section id="protocol-binding"><div class="header-wrapper"><h4 id="x2-2-13-protocol-binding"><bdi class="secno">2.2.13 </bdi>Protocol Binding</h4><a class="self-link" href="#protocol-binding" aria-label="Permalink for Section 2.2.13"></a></div>
+</section><section id="protocol-binding"><div class="header-wrapper"><h4 id="x2-2-12-protocol-binding"><bdi class="secno">2.2.12 </bdi>Protocol Binding</h4><a class="self-link" href="#protocol-binding" aria-label="Permalink for Section 2.2.12"></a></div>
 <p>A protocol binding describes how events are sent and received over a given
 protocol.</p>
 <p>Protocol bindings <em class="rfc2119">MAY</em> choose to use an <a href="#event-format">Event Format</a> to map an
@@ -1190,7 +1187,7 @@ these types <em class="rfc2119">MAY</em> be represented differently by different
 protocol metadata fields. This specification defines a canonical
 string-encoding for each type that <em class="rfc2119">MUST</em> be supported by all implementations.</p>
 <ul>
-<li><code>Boolean</code> - a boolean value of "true" or "false".<ul>
+<li><code>Boolean</code> - A boolean value of "true" or "false".<ul>
 <li>String encoding: a case-sensitive value of <code>true</code> or <code>false</code>.</li>
 </ul>
 </li>
@@ -1198,8 +1195,9 @@ string-encoding for each type that <em class="rfc2119">MUST</em> be supported by
 inclusive. This is the range of a signed, 32-bit, twos-complement encoding.
 Event formats do not have to use this encoding, but they <em class="rfc2119">MUST</em> only use
 <code>Integer</code> values in this range.<ul>
-<li>String encoding: Integer portion of the JSON Number per
-<a href="https://tools.ietf.org/html/rfc7159#section-6">RFC 7159, Section 6</a></li>
+<li>String encoding: Integer component of the JSON Number per
+<a href="https://tools.ietf.org/html/rfc7159#section-6">RFC 7159, Section 6</a>
+optionally prefixed with a minus sign.</li>
 </ul>
 </li>
 <li><code>String</code> - Sequence of allowable Unicode characters. The following characters
@@ -1273,7 +1271,7 @@ Events with identical <code>source</code> and <code>id</code> are duplicates.</l
 </ul>
 </li>
 <li>Examples:<ul>
-<li>An ID  counter maintained by the producer</li>
+<li>An event  counter maintained by the producer</li>
 <li>A UUID</li>
 </ul>
 </li>
@@ -1325,18 +1323,18 @@ collaborate to ensure that <code>source</code> + <code>id</code> is unique for e
 <li><p>Examples</p>
 <ul>
 <li>Internet-wide unique URI with a DNS authority.<ul>
-<li><a href="https://github.com/cloudevents">https://github.com/cloudevents</a></li>
-<li>mailto:<a href="mailto:cncf-wg-serverless@lists.cncf.io">cncf-wg-serverless@lists.cncf.io</a></li>
+<li><code>https://github.com/cloudevents</code></li>
+<li><code>mailto:cncf-wg-serverless@lists.cncf.io</code></li>
 </ul>
 </li>
 <li>Universally-unique URN with a UUID:<ul>
-<li>urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66</li>
+<li><code>urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66</code></li>
 </ul>
 </li>
 <li>Application-specific identifiers<ul>
-<li>/cloudevents/spec/pull/123</li>
-<li>/sensors/tn-1234567/alerts</li>
-<li>1-555-123-4567</li>
+<li><code>/cloudevents/spec/pull/123</code></li>
+<li><code>/sensors/tn-1234567/alerts</code></li>
+<li><code>1-555-123-4567</code></li>
 </ul>
 </li>
 </ul>
@@ -1362,7 +1360,7 @@ national, European or worldwide)</li>
 <li><em class="rfc2119">SHOULD</em> choose an abstraction level for the source that can be used sustainably; even if the initial scope expands (e.g., scope creep from domain specific to more general categorization).</li>
 </ul>
 </li>
-<li><em class="rfc2119">MUST NOT</em> be used to reference an external data location (see <a href="#dataref" data-matched-text="[[[#dataref]]]" class="sec-ref"><bdi class="secno">3.4.7 </bdi>dataref</a>).</li>
+<li><em class="rfc2119">MUST NOT</em> be used to reference an external data location (see <a href="https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/dataref.md">dataref</a>).</li>
 </ul>
 </li>
 <li>Examples:<ul>
@@ -1407,7 +1405,7 @@ related to the originating occurrence. Often this attribute is used for
 routing, observability, policy enforcement, etc. The format of this is
 producer defined and might include information such as the version of the
 <code>type</code> - see
-<a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#versioning-of-cloudevents">Versioning of CloudEvents in the Primer</a>
+<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#versioning-of-cloudevents">Versioning of CloudEvents in the Primer</a>
 for more information.</li>
 <li>Constraints:<ul>
 <li><em class="rfc2119">REQUIRED</em></li>
@@ -1453,16 +1451,16 @@ on the definition of <em class="rfc2119">OPTIONAL</em>.</p>
 <li><p>Description: Content type of <code>data</code> value. This attribute enables <code>data</code> to
 carry any type of content, whereby format and encoding might differ from that
 of the chosen event format. For example, an event rendered using the
-<a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md#3-envelope">JSON envelope</a> format might carry an XML payload
+<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md#3-envelope">JSON envelope</a> format might carry an XML payload
 in <code>data</code>, and the consumer is informed by this attribute being set to
 "application/xml". The rules for how <code>data</code> content is rendered for different
 <code>datacontenttype</code> values are defined in the event format specifications; for
 example, the JSON event format defines the relationship in
-<a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md#31-handling-of-data">section 3.1</a>.</p>
+<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md#31-handling-of-data">section 3.1</a>.</p>
 <p>For some binary mode protocol bindings, this field is directly mapped to the
 respective protocol's content-type metadata property. Normative rules for the
 binary mode and the content-type metadata mapping can be found in the
-respective protocol</p>
+respective protocol.</p>
 <p>In some event formats the <code>datacontenttype</code> attribute <em class="rfc2119">MAY</em> be omitted. For
 example, if a JSON format event has no <code>datacontenttype</code> attribute, then it is
 implied that the <code>data</code> is a JSON value conforming to the "application/json"
@@ -1496,7 +1494,7 @@ preferred to use for payload data.</li>
 <li>Type: <code>URI</code></li>
 <li>Description: Identifies the schema that <code>data</code> adheres to. Incompatible
 changes to the schema <em class="rfc2119">SHOULD</em> be reflected by a different URI. See
-<a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#versioning-of-cloudevents">Versioning of CloudEvents in the Primer</a>
+<a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#versioning-of-cloudevents">Versioning of CloudEvents in the Primer</a>
 for more information.</li>
 <li>Constraints:<ul>
 <li><em class="rfc2119">OPTIONAL</em></li>
@@ -1511,7 +1509,7 @@ for more information.</li>
 <li>The dataschema attribute is expected to be informational, largely to be used
 during development and by tooling that is able to provide diagnostic information
 over arbitrary CloudEvents with a data content type understood by that tooling
-(see: <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#the-role-of-the-dataschema-attribute-within-versioning">The role of the dataschema attribute within versioning</a></li>
+(see: <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#the-role-of-the-dataschema-attribute-within-versioning">The role of the dataschema attribute within versioning</a></li>
 </ul>
 </aside></section><section id="subject"><div class="header-wrapper"><h4 id="x3-4-3-subject"><bdi class="secno">3.4.3 </bdi>subject</h4><a class="self-link" href="#subject" aria-label="Permalink for Section 3.4.3"></a></div>
 <ul>
@@ -1544,8 +1542,8 @@ subscription scope (storage container), the <code>type</code> identifies the "bl
 created" event, and the <code>id</code> uniquely identifies the event instance to
 distinguish separate occurrences of a same-named blob having been created;
 the name of the newly created blob is carried in <code>subject</code>:<ul>
-<li><code>source: https://example.com/storage/tenant/container</code></li>
-<li><code>subject: mynewfile.jpg</code></li>
+<li><code>source</code>: <code>https://example.com/storage/tenant/container</code></li>
+<li><code>subject</code>: <code>mynewfile.jpg</code></li>
 </ul>
 </li>
 </ul>
@@ -1602,14 +1600,14 @@ from copying event attribute values to other parts of a message, in order to
 interact with non-CloudEvents systems that also process the message. Extension
 specifications that do this <em class="rfc2119">SHOULD</em> specify how receivers are to interpret
 messages if the copied values differ from the cloud-event serialized values.</p>
-</section><section id="defining-extensions"><div class="header-wrapper"><h4 id="x3-4-6-defining-extensions"><bdi class="secno">3.4.6 </bdi>Defining Extensions</h4><a class="self-link" href="#defining-extensions" aria-label="Permalink for Section 3.4.6"></a></div>
-<p>See <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#cloudevent-attribute-extensions">CloudEvent Attributes Extensions</a>
+<section id="defining-extensions"><div class="header-wrapper"><h5 id="x3-4-5-1-defining-extensions"><bdi class="secno">3.4.5.1 </bdi>Defining Extensions</h5><a class="self-link" href="#defining-extensions" aria-label="Permalink for Section 3.4.5.1"></a></div>
+<p>See <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#cloudevent-attribute-extensions">CloudEvent Attributes Extensions</a>
 for additional information concerning the use and definition of extensions.</p>
 <p>The definition of an extension <em class="rfc2119">SHOULD</em> fully define all aspects of the
 attribute - e.g. its name, type, semantic meaning and possible values. New
 extension definitions <em class="rfc2119">SHOULD</em> use a name that is descriptive enough to reduce the
 chances of name collisions with other extensions. In particular, extension
-authors <em class="rfc2119">SHOULD</em> check the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/documented-extensions.md">documented extensions</a>
+authors <em class="rfc2119">SHOULD</em> check the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/documented-extensions.md">documented extensions</a>
 document for the set of known extensions - not just for possible name conflicts
 but for extensions that might be of interest.</p>
 <p>Many protocols support the ability for senders to include additional metadata,
@@ -1627,120 +1625,7 @@ event "data", the event producer would also add the identity attributes to the
 without needing to decode and examine the event data. Such identity attributes
 can also be used to help intermediate gateways determine how to route the
 events.</p>
-<aside class=" addition">
-<b>NLgov: Additional content</b><br><ul>
-<li>Two of the extension attributes included by CloudEvents ('dataref' and
-'sequence') are included as optional attributes in the NLgov profile for CloudEvents
-because it is foreseen that there is often a need to use these attributes.</li>
-<li>Extension attributes should be kept minimal to ensure the CloudEvent can be
-properly serialized and transported (e.g. when using HTTP-headers most HTTP
-servers will reject requests with excessive HTTP header data).</li>
-</ul>
-</aside></section><section id="dataref"><div class="header-wrapper"><h4 id="x3-4-7-dataref"><bdi class="secno">3.4.7 </bdi>dataref</h4><a class="self-link" href="#dataref" aria-label="Permalink for Section 3.4.7"></a></div>
-<ul>
-<li><p>Type: <code>URI-reference</code></p>
-</li>
-<li><p>Description: A reference to a location where the event payload is stored. The
-location <em class="rfc2119">MAY</em> not be accessible without further information (e.g. a pre-shared
-secret).</p>
-<p>Known as the "Claim Check Pattern", this attribute <em class="rfc2119">MAY</em> be used for a variety
-of purposes, including:</p>
-<ul>
-<li>If the <a href="#data">Data</a> is too large to be included in the message,
-the <code>data</code> is not present, and the consumer can retrieve it using
-this attribute.</li>
-<li>If the consumer wants to verify that the <a href="#data">Data</a> has not
-been tampered with, it can retrieve it from a trusted source using this
-attribute.</li>
-<li>If the <a href="#data">Data</a> <em class="rfc2119">MUST</em> only be viewed by trusted consumers
-(e.g. personally identifiable information), only a trusted consumer can
-retrieve it using this attribute and a pre-shared secret.</li>
-</ul>
-<p>If this attribute is used, the information <em class="rfc2119">SHOULD</em> be accessible long enough
-for all consumers to retrieve it, but <em class="rfc2119">MAY</em> not be stored for an extended period
-of time.</p>
-</li>
-<li><p>Constraints:</p>
-<ul>
-<li><em class="rfc2119">OPTIONAL</em></li>
-</ul>
-</li>
-</ul>
-<section id="example"><div class="header-wrapper"><h5 id="x3-4-7-1-example"><bdi class="secno">3.4.7.1 </bdi>Example</h5><a class="self-link" href="#example" aria-label="Permalink for Section 3.4.7.1"></a></div>
-<p>The following example shows a CloudEvent in which the event producer has included
-both <code>data</code> and <code>dataref</code> (serialized as JSON):</p>
-<pre><code class="JSON hljs json" aria-busy="false"><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"specversion"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"1.0"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"type"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"com.github.pull_request.opened"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"source"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"https://github.com/cloudevents/spec/pull/123"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"id"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"A234-1234-1234"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"datacontenttype"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"text/xml"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"data"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"&lt;much wow=\"xml\"/&gt;"</span><span class="hljs-punctuation">,</span>
-    <span class="hljs-attr">"dataref"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"https://github.com/cloudevents/spec/pull/123/events/A234-1234-1234.xml"</span>
-<span class="hljs-punctuation">}</span>
-</code></pre>
-<aside class=" addition">
-<b>NLgov: Additional content</b><br><ul>
-<li><em class="rfc2119">MAY</em> be used to reference an external data location (for example: a link back to
-the producer of the event that can be queried for more information about the event).</li>
-<li><em class="rfc2119">MAY</em> be used to implenment 'informatiearm notificeren' where the consumer of the
-event receives some minimal information on the nature of the event, but then has
-to issue a request back to the producer to obtain additional information (the time
-aspect may deserve attention because changes may occur in the period that consumers
-are notified and the time of requesting additional information).</li>
-</ul>
-</aside></section></section></section><section id="sequence"><div class="header-wrapper"><h3 id="x3-5-sequence"><bdi class="secno">3.5 </bdi>Sequence</h3><a class="self-link" href="#sequence" aria-label="Permalink for Section 3.5"></a></div>
-<p>This extension defines two attributes that can be included within a CloudEvent to describe the position of an event in the ordered sequence of events produced by a unique event source.
-The <code>sequence</code> attribute represents the value of this event's order in the stream of events. The exact value and meaning of this attribute is defined by the <code>sequencetype</code> attribute. If the <code>sequencetype</code> is missing, or not defined in this specification, event consumers will need to have some out-of-band communication with the event producer to understand how to interpret the value
-of the attribute.</p>
-<section id="attributes"><div class="header-wrapper"><h4 id="x3-5-1-attributes"><bdi class="secno">3.5.1 </bdi>Attributes</h4><a class="self-link" href="#attributes" aria-label="Permalink for Section 3.5.1"></a></div>
-<section id="sequence-0"><div class="header-wrapper"><h5 id="x3-5-1-1-sequence"><bdi class="secno">3.5.1.1 </bdi>sequence</h5><a class="self-link" href="#sequence-0" aria-label="Permalink for Section 3.5.1.1"></a></div>
-<ul>
-<li>Type: <code>String</code></li>
-<li>Description: Value expressing the relative order of the event. This enables
-interpretation of data supercedence.</li>
-<li>Constraints<ul>
-<li><em class="rfc2119">REQUIRED</em></li>
-<li><em class="rfc2119">MUST</em> be a non-empty lexicographically-orderable string</li>
-<li><em class="rfc2119">RECOMMENDED</em> as monotonically increasing and contiguous</li>
-</ul>
-</li>
-</ul>
-</section><section id="sequencetype"><div class="header-wrapper"><h5 id="x3-5-1-2-sequencetype"><bdi class="secno">3.5.1.2 </bdi>sequencetype</h5><a class="self-link" href="#sequencetype" aria-label="Permalink for Section 3.5.1.2"></a></div>
-<ul>
-<li>Type: <code>String</code></li>
-<li>Description: Specifies the semantics of the sequence attribute. See the
-<a href="#sequencetype-values">SequenceType Values</a> section for more information.</li>
-<li>Constraints:<ul>
-<li><em class="rfc2119">OPTIONAL</em></li>
-<li>If present, <em class="rfc2119">MUST</em> be a non-empty string</li>
-</ul>
-</li>
-</ul>
-<section id="sequencetype-values"><div class="header-wrapper"><h6 id="x3-5-1-2-1-sequencetype-values"><bdi class="secno">3.5.1.2.1 </bdi>SequenceType Values</h6><a class="self-link" href="#sequencetype-values" aria-label="Permalink for Section 3.5.1.2.1"></a></div>
-<p>This specification defines the following values for <code>sequencetype</code>. Additional
-values <em class="rfc2119">MAY</em> be defined by other specifications.</p>
-</section><section id="integer"><div class="header-wrapper"><h6 id="x3-5-1-2-2-integer"><bdi class="secno">3.5.1.2.2 </bdi>Integer</h6><a class="self-link" href="#integer" aria-label="Permalink for Section 3.5.1.2.2"></a></div>
-<p>If the <code>sequencetype</code> is set to <code>Integer</code>, the <code>sequence</code> attribute has the
-following semantics:</p>
-<ul>
-<li>The values of <code>sequence</code> are string-encoded signed 32-bit Integers.</li>
-<li>The sequence <em class="rfc2119">MUST</em> start with a value of <code>1</code> and increase by <code>1</code> for each
-subsequent value (i.e. be contiguous and monotonically increasing).</li>
-<li>The sequence wraps around from 2,147,483,647 (2^31 -1) to -2,147,483,648
-(-2^31).</li>
-</ul>
-<aside class=" addition">
-<b>NLgov: Additional content</b><br><ul>
-<li>Attribute 'sequence' can be helpful in situations where:<ul>
-<li>a form of 'pull mechanism' is used ((e.g. periodically fetching events by consumers
-via HTTP request)) or</li>
-<li>where there is a need for (re)synchronization (e.g.
-after errors have occurred).</li>
-</ul>
-</li>
-</ul>
-</aside></section></section></section></section></section>
+</section></section></section></section>
   <section id="event-data"><div class="header-wrapper"><h2 id="x4-event-data"><bdi class="secno">4. </bdi>Event Data</h2><a class="self-link" href="#event-data" aria-label="Permalink for Section 4."></a></div>
 <p>As defined by the term <a href="#data">Data</a>, CloudEvents <em class="rfc2119">MAY</em> include domain-specific
 information about the occurrence. When present, this information will be
@@ -1790,7 +1675,7 @@ event-related details through resolving links allows for differentiated access
 control and selective disclosure, rather than having sensitive details embedded
 in the event directly.</p>
 </section>
-  <section id="advanced-cloudevents-security-options"><div class="header-wrapper"><h2 id="x6-advanced-cloudevents-security-options"><bdi class="secno">6. </bdi>Advanced CloudEvents Security Options</h2><a class="self-link" href="#advanced-cloudevents-security-options" aria-label="Permalink for Section 6."></a></div>
+  <section id="privacy-and-security"><div class="header-wrapper"><h2 id="x6-privacy-and-security"><bdi class="secno">6. </bdi>Privacy and Security</h2><a class="self-link" href="#privacy-and-security" aria-label="Permalink for Section 6."></a></div>
 <p>Interoperability is the primary driver behind this specification, enabling such
 behavior requires some information to be made available <em>in the clear</em> resulting
 in the potential for information leakage.</p>
@@ -1815,7 +1700,7 @@ exchange of CloudEvents.</p>
 </li>
 </ul>
 </section>
-  <section id="example-0"><div class="header-wrapper"><h2 id="x7-example"><bdi class="secno">7. </bdi>Example</h2><a class="self-link" href="#example-0" aria-label="Permalink for Section 7."></a></div>
+  <section id="example"><div class="header-wrapper"><h2 id="x7-example"><bdi class="secno">7. </bdi>Example</h2><a class="self-link" href="#example" aria-label="Permalink for Section 7."></a></div>
 <p>The following example shows a CloudEvent serialized as JSON:</p>
 <pre><code class="JSON hljs json" aria-busy="false"><span class="hljs-punctuation">{</span>
     <span class="hljs-attr">"specversion"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"1.0"</span><span class="hljs-punctuation">,</span>
@@ -1923,7 +1808,7 @@ For more information about a particular attribute, see the detailed attribute de
 </aside></section>
   <section class="appendix" id="use-of-json-http-and-webhook"><div class="header-wrapper"><h2 id="a-use-of-json-http-and-webhook"><bdi class="secno">A. </bdi>Use of JSON, HTTP and Webhook</h2><a class="self-link" href="#use-of-json-http-and-webhook" aria-label="Permalink for Appendix A."></a></div>
 <p>This appendix describes how the NLgov profile for CloudEvents can be applied when using the JSON format, the HTTP protocol and the Webhook pattern.</p>
-<p>The NLgov profile for CloudEvents message format can be used when using different formats and protocols. CloudEvents has a <a href="https://github.com/cloudevents/spec/blob/v1.0.1/primer.md#architecture">layered architecture</a> for this. In order to be able to use the NLgov profile for CloudEvents properly in practice, agreements must also be made when a certain format and/or protocol is used.</p>
+<p>The NLgov profile for CloudEvents message format can be used when using different formats and protocols. CloudEvents has a <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/primer.md#architecture">layered architecture</a> for this. In order to be able to use the NLgov profile for CloudEvents properly in practice, agreements must also be made when a certain format and/or protocol is used.</p>
 <p>In addition to the CloudEvent specification the <a href="https://github.com/cncf/wg-serverless">Serverless Working Group</a> has described for <a href="https://github.com/cloudevents/spec#cloudevents-documents">several commonly used formats</a> and protocols how they can be used in a standardized way in combination with the CloudEvents message format.</p>
 <p>Within the Dutch government, frequent use is made of the JSON format, the HTTP protocol and the Webhook pattern for data exchange. For example, a common way to send events to consumers is to use the webhook pattern where a message in JSON format is sent via the HTTP protocol. Further standardization than just event description via the NLgov profile for CloudEvents therefore benefits most from agreements around these 3 areas. In addition to standardization through the use of the NLgov profile for CloudEvents, we therefore work towards standardization on exchanging event information when using JSON, HTTP and Webhook.</p>
 <p>The NLgov profile for CloudEvents is intended to be used as a government-wide standard. This does not yet apply to the additional specification for the use of JSON, HTTP and Webhook. The specifications for them have the character of 'guidelines' ("a statement by which to determine a course of action", <a href="https://en.wikipedia.org/wiki/Guideline">Wikipedia</a>).</p>
@@ -1931,9 +1816,9 @@ For more information about a particular attribute, see the detailed attribute de
 about the use of the specifications within the context of the Dutch government. These are intended to make use of the specifications more unambiguous and to work towards standardisation in the long term.</p>
 <p>For the time being, the following constraints apply:</p>
 <ul>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/json-format.md">JSON Event Format for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-json-event-format-for-cloudevents">NLgov Guideline for CloudEvents JSON</a>.</li>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents">NLgov Guideline for CloudEvents HTTP</a>.</li>
-<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents">NLgov Guideline for CloudEvents Webhook</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON Event Format for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-json-event-format-for-cloudevents">NLgov Guideline for CloudEvents JSON</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md">HTTP Protocol Binding for CloudEvents</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-http-protocol-binding-for-cloudevents">NLgov Guideline for CloudEvents HTTP</a>.</li>
+<li>One <em class="rfc2119">SHOULD</em> use the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/http-webhook.md">HTTP 1.1 Web Hooks for Event Delivery</a> specification and pay attention to the points of attention and recommendations in the guideline <a href="https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#guideline-for-the-use-of-the-webhook-pattern-for-cloudevents">NLgov Guideline for CloudEvents Webhook</a>.</li>
 </ul>
 </section>
   <section id="tof">
