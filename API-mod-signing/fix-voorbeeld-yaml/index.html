@@ -919,7 +919,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Logius Standard<br>
       Draft
-      <time class="dt-published" datetime="2024-09-06">October 27, 2026</time>
+      <time class="dt-published" datetime="2024-09-06">October 30, 2026</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
@@ -1156,8 +1156,10 @@ When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdE
     <span class="hljs-attr">description:</span> <span class="hljs-string">Defines</span> <span class="hljs-string">the</span> <span class="hljs-string">string</span> <span class="hljs-string">pattern</span> <span class="hljs-string">as</span> <span class="hljs-string">a</span> <span class="hljs-string">regular</span> <span class="hljs-string">expression</span> <span class="hljs-string">that</span>
       <span class="hljs-string">MUST</span> <span class="hljs-string">be</span> <span class="hljs-string">followed</span> <span class="hljs-string">to</span> <span class="hljs-string">represent</span> <span class="hljs-string">detached</span> <span class="hljs-string">JWS</span> <span class="hljs-string">compact</span> <span class="hljs-string">tokens</span>
     <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
-    <span class="hljs-attr">format:</span> <span class="hljs-string">jws-compact-detached</span>
-    <span class="hljs-attr">pattern:</span> <span class="hljs-string">^[A-Za-z0-9_-]+(?:(\\.\\.)[A-Za-z0-9_-]+){1}</span>
+    <span class="hljs-attr">externalDocs:</span>
+      <span class="hljs-attr">url:</span> <span class="hljs-string">https://www.rfc-editor.org/info/rfc7797/#section-4.2</span>
+    <span class="hljs-attr">example:</span> <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..A5dxf2s96_n5FLueVuW1Z_vh161FwXZC4YLPff6dmDY"</span>
+    <span class="hljs-attr">pattern:</span> <span class="hljs-string">^[A-Za-z0-9_-~]+\\.\\.[A-Za-z0-9_-~]+$</span>
 </code></pre>
 </section>
   <section class="informative appendix" id="tooling"><div class="header-wrapper"><h2 id="b-tooling"><bdi class="secno">B. </bdi>Tooling</h2><a class="self-link" href="#tooling" aria-label="Permalink for Appendix B."></a></div><p><em>This section is non-normative.</em></p>
